@@ -1,0 +1,4 @@
+# Ignore kstarter folders
+builds
+shared
+www
