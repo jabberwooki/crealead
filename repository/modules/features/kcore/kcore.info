@@ -4,6 +4,7 @@ core = 7.x
 package = App
 version = 7.x-1.0
 project = kcore
+dependencies[] = plupload
 dependencies[] = role_export
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
