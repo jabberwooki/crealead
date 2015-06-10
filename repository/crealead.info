@@ -99,7 +99,7 @@ dependencies[] = kcontextes
 
 ;--- Themes -------------------------------------------------------------------
 ; (Activate corresponding inclusions in file drupal-org.make)
-;dependencies[] = kbootstrap
+dependencies[] = kbootstrap
 
 
 

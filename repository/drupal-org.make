@@ -108,6 +108,14 @@ projects[entityreference][version] = "1.1"
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "7.x-2.5"
 
+projects[plupload][subdir] = contrib
+projects[plupload][version] = "1.7"
+
+libraries[plupload][download][type] = "file"
+libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/1.5.4.tar.gz"
+libraries[plupload][directory_name] = "plupload"
+libraries[plupload][destination] = "libraries"
+
 ;projects[views_bulk_operations][subdir] = contrib
 ;projects[views_bulk_operations][version] = "7.x-3.2"
 
@@ -132,3 +140,22 @@ includes[adminimal] = makefiles/themes/adminimal.make
 ; Front themes
 ;-------------
 includes[bootstrap] = makefiles/themes/bootstrap.make
+
+;=== Contrib modules and libraries for Crealead ==================================
+;--- Scald and media related --------------------------------------------------
+projects[scald][subdir] = contrib
+projects[scald][version] = "1.4"
+
+projects[scald_file][subdir] = contrib
+projects[scald_file][version] = "1.1"
+
+projects[scald_gallery][subdir] = contrib
+projects[scald_gallery][version] = "2.5"
+
+libraries[galleria][download][type] = "file"
+libraries[galleria][download][url] = "https://github.com/aino/galleria/archive/1.4.2.zip"
+libraries[galleria][directory_name] = "galleria"
+libraries[galleria][destination] = "libraries"
+
+projects[scald_youtube][subdir] = contrib
+projects[scald_youtube][version] = "1.4"
