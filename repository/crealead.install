@@ -205,3 +205,10 @@ function _crealead_get_settings() {
   }
   return $settings;
 }
+
+/**
+ * Activate feature Multimedia.
+ */
+function crealead_update_7001() {
+	module_enable(array('crealead_multimedia'));
+}

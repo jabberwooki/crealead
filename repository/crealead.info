@@ -101,7 +101,8 @@ dependencies[] = kcontextes
 ; (Activate corresponding inclusions in file drupal-org.make)
 dependencies[] = kbootstrap
 
-
+;=== Crealead features ========================================================
+dependencies[] = crealead_multimedia
 
 
 
