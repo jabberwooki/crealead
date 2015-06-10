@@ -1,4 +1,9 @@
 # Ignore kstarter folders
-builds
-shared
+builds/*
+!builds/README.txt
+shared/settings.php
+shared/files/*
+!shared/files/.htaccess
+shared/private/*
 www
+!shared/private/.htaccess
