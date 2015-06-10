@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Multimedia feature.
+ */
+
+include_once 'crealead_multimedia.features.inc';
