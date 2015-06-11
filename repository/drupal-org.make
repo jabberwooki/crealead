@@ -152,10 +152,5 @@ projects[scald_file][version] = "1.1"
 projects[scald_gallery][subdir] = contrib
 projects[scald_gallery][version] = "2.5"
 
-libraries[galleria][download][type] = "file"
-libraries[galleria][download][url] = "https://github.com/aino/galleria/archive/1.4.2.zip"
-libraries[galleria][directory_name] = "galleria"
-libraries[galleria][destination] = "libraries"
-
 projects[scald_youtube][subdir] = contrib
 projects[scald_youtube][version] = "1.4"
