@@ -100,7 +100,7 @@ function kpages_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'title',
+        'type' => 'file_representation',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -149,7 +149,7 @@ function kpages_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'title',
+        'type' => 'sdl_editor_representation',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -198,7 +198,7 @@ function kpages_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'title',
+        'type' => 'sdl_editor_representation',
         'weight' => 3,
       ),
       'teaser' => array(

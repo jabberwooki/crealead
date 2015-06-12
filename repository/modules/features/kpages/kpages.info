@@ -5,6 +5,7 @@ package = App
 version = 7.x-1.0
 project = kpages
 dependencies[] = atom_reference
+dependencies[] = crealead_multimedia
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = node
