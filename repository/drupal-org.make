@@ -111,11 +111,6 @@ projects[entityreference][version] = "1.1"
 projects[plupload][subdir] = contrib
 projects[plupload][version] = "1.7"
 
-libraries[plupload][download][type] = "file"
-libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/1.5.4.tar.gz"
-libraries[plupload][directory_name] = "plupload"
-libraries[plupload][destination] = "libraries"
-
 ;projects[views_bulk_operations][subdir] = contrib
 ;projects[views_bulk_operations][version] = "7.x-3.2"
 
