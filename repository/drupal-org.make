@@ -84,8 +84,8 @@ projects[views][version] = "3.11"
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.1"
 
-;projects[boxes][subdir] = contrib
-;projects[boxes][version] = ""
+projects[boxes][subdir] = contrib
+projects[boxes][version] = ""
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.8"
