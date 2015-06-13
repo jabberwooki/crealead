@@ -25,6 +25,7 @@ features[variable][] = menu_parent_page
 features[variable][] = node_options_page
 features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
+features[variable][] = pathauto_node_page_pattern
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_files] = field_files
 features_exclude[field_base][field_galleries] = field_galleries
