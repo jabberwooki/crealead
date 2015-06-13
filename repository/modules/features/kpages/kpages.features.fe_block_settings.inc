@@ -14,8 +14,8 @@ function kpages_default_fe_block_settings() {
 
   $export['boxes-crealead_link_advantages'] = array(
     'cache' => -2,
-    'context_group' => 'Boxes for Box',
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'crealead_link_advantages',
     'module' => 'boxes',
     'node_types' => array(),
@@ -35,6 +35,8 @@ function kpages_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   return $export;
