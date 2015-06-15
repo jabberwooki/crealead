@@ -4,6 +4,7 @@ core = 7.x
 package = App
 version = 7.x-1.0
 project = kcore
+dependencies[] = contextual
 dependencies[] = features_date_formats
 dependencies[] = plupload
 dependencies[] = role_export
