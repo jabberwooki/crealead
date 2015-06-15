@@ -45,18 +45,18 @@ function crealead_news_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'bootstrap_4_8';
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
         0 => 'field_image',
-        5 => 'field_sorting_date',
       ),
       'right' => array(
         1 => 'title',
         2 => 'field_news_type',
         3 => 'field_sector',
         4 => 'body',
+        5 => 'field_sorting_date',
       ),
     ),
     'fields' => array(
@@ -65,7 +65,7 @@ function crealead_news_ds_layout_settings_info() {
       'field_news_type' => 'right',
       'field_sector' => 'right',
       'body' => 'right',
-      'field_sorting_date' => 'left',
+      'field_sorting_date' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
