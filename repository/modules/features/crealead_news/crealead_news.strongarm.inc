@@ -61,6 +61,9 @@ function crealead_news_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
