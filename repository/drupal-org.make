@@ -147,6 +147,9 @@ projects[scald][version] = "1.4"
 projects[scald_file][subdir] = contrib
 projects[scald_file][version] = "1.1"
 
+projects[scald_flickr][subdir] = contrib
+projects[scald_flickr][version] = "1.2"
+
 projects[scald_gallery][subdir] = contrib
 projects[scald_gallery][version] = "2.5"
 
