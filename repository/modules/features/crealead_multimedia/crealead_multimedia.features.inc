@@ -184,7 +184,7 @@ function crealead_multimedia_scald_default_context_types() {
         'settings' => array(
           'width' => 690,
           'height' => 450,
-          'fullscreen_link' => FALSE,
+          'fullscreen_link' => 1,
           'thumb_style' => 'thumbnail',
           'normal_style' => 'large',
           'big_style' => 'original',
