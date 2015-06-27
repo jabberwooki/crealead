@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Code for the Réunions d'infos feature.
+ */
+
+include_once 'crealead_info_meetings.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  // Form fields re-ordering
+  $form['who_is_registering']['#weight'] = -10;
+  $form['user']['#weight'] = -9;
+  $form['count']['#weight'] = -8;
+
+  $form['field_registrant_title']['#weight'] =
+  $form['field_registrant_title']['#weight'] = 0;
+  $form['field_registrant_firstname']['#weight'] = 1;
+  $form['field_registrant_lastname']['#weight'] = 2;
+  $form['field_registrant_phone']['#weight'] = 4;
+  $form['field_registrant_activity_domain']['#weight'] = 5;
+  $form['field_registrant_status']['#weight'] = 6;
+
+  $form['state']['#weight'] = 10;
+
+  // Field attendee hidden to user
+  //dpm($form);
+  unset($form['field_attendee']);
+
+}
+
+function crealead_info_meetings_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  // Current node being shown, if any.
+  $node = menu_get_object();
+
+  if ($node && $node->type == 'info_meeting') {
+
+    $tabs =& $data['tabs'][0]['output'];
+
+    // If the formatter 'registration form' has been chosen for the event's
+    // 'full content' view mode, then no need to show the 'register' tab
+    // since the registration form is already showing on the 'view' tab.
+    $field_info = field_info_instance('node', 'field_info_meeting_registration', 'info_meeting');
+    if ($field_info['display']['full']['type'] == 'registration_form') {
+      foreach ($tabs as $tab_index => &$tab) {
+        if ($tab['#link']['path'] == 'node/%/register') {
+
+          unset($tabs[$tab_index]);
+
+          // Since we're unsetting one tab, update the count so if there's
+          // only one tab, the tab bar won't show.
+          $data['tabs'][0]['count']--;
+
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function crealead_info_meetings_menu_alter(&$items) {
+  $items['node/%entity_object/registrations']['page callback'] = 'crealead_registration_list';
+  //$items['node/%entity_object/registrations/list']['page callback'] = 'crealead_registration_list';
+}
+
+//function crealead_info_meetings_menu_alter(&$items){
+//  dpm('otot');
+//  $items['node/%entity_object/registrations']['page callback'] = 'crealead_registration_list';
+//}
+
+function crealead_registration_list(){
+  return views_embed_view('crealead_registrations','registrations_list');
+}
+
