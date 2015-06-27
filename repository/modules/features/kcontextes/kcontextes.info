@@ -5,6 +5,7 @@ package = App
 version = 7.x-1.0
 project = kcontextes
 dependencies[] = context
+dependencies[] = crealead_info_meetings
 dependencies[] = ctools
 dependencies[] = kpages
 dependencies[] = views

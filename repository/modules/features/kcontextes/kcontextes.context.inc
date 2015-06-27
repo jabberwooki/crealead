@@ -32,6 +32,12 @@ function kcontextes_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'boxes-crealead_link_info_meetings' => array(
+          'module' => 'boxes',
+          'delta' => 'crealead_link_info_meetings',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
