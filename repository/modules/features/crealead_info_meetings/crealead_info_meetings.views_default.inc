@@ -11,6 +11,295 @@ function crealead_info_meetings_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'crealead_registrations';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'registration';
+  $view->human_name = 'Inscriptions';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Inscriptions';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'registration_id' => 'registration_id',
+    'created' => 'created',
+    'field_registrant_lastname' => 'field_registrant_lastname',
+    'field_registrant_firstname' => 'field_registrant_lastname',
+    'anon_mail' => 'anon_mail',
+    'view_registration' => 'view_registration',
+    'edit_registration' => 'view_registration',
+    'field_registrant_status' => 'field_registrant_status',
+    'delete_registration' => 'view_registration',
+  );
+  $handler->display->display_options['style_options']['default'] = 'created';
+  $handler->display->display_options['style_options']['info'] = array(
+    'registration_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_lastname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'field_registrant_firstname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'anon_mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'view_registration' => array(
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'edit_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'delete_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Pied de page: Global : Résumé des résultats */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['content'] = 'Nombre total d\'inscriptions : @total';
+  /* Relation: Registration : Registration to Nœud */
+  $handler->display->display_options['relationships']['registration_related_node']['id'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['registration_related_node']['table'] = 'registration';
+  $handler->display->display_options['relationships']['registration_related_node']['field'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['registration_related_node']['label'] = 'Réunion info';
+  /* Relation: Registration Settings : Nœud to Registration Settings */
+  $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
+  $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
+  $handler->display->display_options['relationships']['registration_settings_rel']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
+  /* Champ: Bulk operations : Registration */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_revision' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::crealead_check_registrants_as_absent' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::crealead_check_registrants_as_present' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'info_meeting_registration::field_attendee' => 'info_meeting_registration::field_attendee',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::registration_views_set_state_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'default_registration_state' => 'complete',
+      ),
+    ),
+  );
+  /* Champ: Registration : Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['label'] = '';
+  $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
+  /* Champ: Registration : Date de création */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Champ: Registration : Nom */
+  $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
+  /* Champ: Registration : Prénom */
+  $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
+  /* Champ: Registration : Anonymous e-mail */
+  $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
+  $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
+  /* Champ: Registration : Statut */
+  $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Champ: Registration : Lien d'affichage */
+  $handler->display->display_options['fields']['view_registration']['id'] = 'view_registration';
+  $handler->display->display_options['fields']['view_registration']['table'] = 'registration';
+  $handler->display->display_options['fields']['view_registration']['field'] = 'view_registration';
+  $handler->display->display_options['fields']['view_registration']['label'] = 'Actions';
+  /* Champ: Registration : Lien de modification */
+  $handler->display->display_options['fields']['edit_registration']['id'] = 'edit_registration';
+  $handler->display->display_options['fields']['edit_registration']['table'] = 'registration';
+  $handler->display->display_options['fields']['edit_registration']['field'] = 'edit_registration';
+  /* Champ: Registration : Lien de suppression */
+  $handler->display->display_options['fields']['delete_registration']['id'] = 'delete_registration';
+  $handler->display->display_options['fields']['delete_registration']['table'] = 'registration';
+  $handler->display->display_options['fields']['delete_registration']['field'] = 'delete_registration';
+  /* Champ: Registration : Présent à la réunion */
+  $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
+  /* Filtre contextuel: Contenu : Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'registrations_list');
+  $handler->display->display_options['path'] = 'registrations-list';
+  $translatables['crealead_registrations'] = array(
+    t('Master'),
+    t('Inscriptions'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
+    t('Asc'),
+    t('Desc'),
+    t('Nombre total d\'inscriptions : @total'),
+    t('Réunion info'),
+    t('Paramètres inscription'),
+    t('- Choose an operation -'),
+    t('.'),
+    t(','),
+    t('Date de création'),
+    t('Nom'),
+    t('Prénom'),
+    t('Courriel'),
+    t('Statut'),
+    t('Actions'),
+    t('Lien de modification'),
+    t('Lien de suppression'),
+    t('Présent'),
+    t('Tout'),
+    t('Page'),
+  );
+  $export['crealead_registrations'] = $view;
+
+  $view = new view();
   $view->name = 'info_meetings';
   $view->description = '';
   $view->tag = 'default';
@@ -236,7 +525,7 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
   /* Display: Inscriptions */
   $handler = $view->new_display('page', 'Inscriptions', 'registrations_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Inscriptions réunions d\'information';
+  $handler->display->display_options['title'] = 'Inscriptions aux réunions d\'information';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -267,8 +556,10 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     'field_registrant_firstname' => 'field_registrant_lastname',
     'anon_mail' => 'anon_mail',
     'field_registrant_status' => 'field_registrant_status',
+    'field_registrant_project_domain' => 'field_registrant_project_domain',
+    'field_attendee' => 'field_attendee',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'field_info_meeting_date';
   $handler->display->display_options['style_options']['info'] = array(
     'path' => array(
       'align' => '',
@@ -297,7 +588,7 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
       'empty_column' => 0,
     ),
     'field_registrant_lastname' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => ' ',
@@ -318,7 +609,21 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
       'empty_column' => 0,
     ),
     'field_registrant_status' => array(
-      'sortable' => 1,
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_project_domain' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_attendee' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -396,6 +701,19 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Champ: Registration : Domaine d'activité de votre projet */
+  $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
+  /* Champ: Registration : Présent à la réunion */
+  $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
@@ -481,7 +799,7 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     t('Date'),
     t('Places restantes'),
     t('s\'inscrire'),
-    t('Inscriptions réunions d\'information'),
+    t('Inscriptions aux réunions d\'information'),
     t('Flitrer'),
     t('Select any filter and click on Apply to see results'),
     t('N°'),
@@ -490,6 +808,8 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     t('Prénom'),
     t('Courriel'),
     t('Statut'),
+    t('Domaine d\'activité'),
+    t('Présent'),
   );
   $export['info_meetings'] = $view;
 

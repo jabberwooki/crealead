@@ -46,3 +46,21 @@ function crealead_info_meetings_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_default_registration_type().
+ */
+function crealead_info_meetings_default_registration_type() {
+  $items = array();
+  $items['info_meeting_registration'] = entity_import('registration_type', '{
+    "name" : "info_meeting_registration",
+    "label" : "Inscription \\u00e0 une r\\u00e9union d\\u0027information",
+    "locked" : "0",
+    "default_state" : null,
+    "weight" : "0",
+    "held_expire" : "1",
+    "held_expire_state" : "canceled",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
