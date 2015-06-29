@@ -84,3 +84,37 @@ function kcore_features_date_format_default() {
   );
   return $fdf_config;
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function kcore_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: 400x400.
+  $styles['400x400'] = array(
+    'label' => '400x400',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 400,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+      2 => array(
+        'name' => 'image_crop',
+        'data' => array(
+          'width' => 400,
+          'height' => 400,
+          'anchor' => 'center-center',
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
+}
