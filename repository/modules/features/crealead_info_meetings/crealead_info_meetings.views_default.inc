@@ -32,18 +32,8 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'table';
   /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -249,6 +239,16 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
   $handler->display->display_options['title'] = 'Inscriptions réunions d\'information';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'input_required';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Flitrer';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -423,7 +423,7 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['path'] = 'reunions-information-inscriptions';
+  $handler->display->display_options['path'] = 'admin/reunions-information-inscriptions';
   $translatables['info_meetings'] = array(
     t('Master'),
     t('Les réunions d\'information'),
@@ -433,13 +433,6 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     t('Trier par'),
     t('Asc'),
     t('Desc'),
-    t('Éléments par page'),
-    t('- Tout -'),
-    t('Décalage'),
-    t('« premier'),
-    t('‹ précédent'),
-    t('suivant ›'),
-    t('dernier »'),
     t('
 Co-entreprendre en CAE de 9h15 à 12h30
 
@@ -489,6 +482,8 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
     t('Places restantes'),
     t('s\'inscrire'),
     t('Inscriptions réunions d\'information'),
+    t('Flitrer'),
+    t('Select any filter and click on Apply to see results'),
     t('N°'),
     t('Date d\'inscription'),
     t('Nom'),

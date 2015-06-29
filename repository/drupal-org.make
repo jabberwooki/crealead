@@ -111,14 +111,23 @@ projects[entityreference][version] = "1.1"
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "7.x-2.5"
 
+projects[phone][subdir] = contrib
+projects[phone][version] = "1.0-beta1"
+
 projects[plupload][subdir] = contrib
 projects[plupload][version] = "1.7"
+
+projects[print][subdir] = contrib
+projects[print][version] = "2.0"
 
 ;projects[views_bulk_operations][subdir] = contrib
 ;projects[views_bulk_operations][version] = "7.x-3.2"
 
 ;projects[views_slideshow][subdir] = contrib
 ;projects[views_slideshow][version] = "7.x-3.1"
+
+projects[views_ui_basic][subdir] = contrib
+projects[views_ui_basic][version] = "1.3"
 
 ;=== Kstarter features modules ================================================
 includes[seo] = makefiles/seo.make
@@ -139,7 +148,7 @@ includes[adminimal] = makefiles/themes/adminimal.make
 ;-------------
 includes[bootstrap] = makefiles/themes/bootstrap.make
 
-;=== Contrib modules and libraries for Crealead ==================================
+;=== Contrib modules and libraries for Crealead ===============================
 ;--- Scald and media related --------------------------------------------------
 projects[scald][subdir] = contrib
 projects[scald][version] = "1.4"
@@ -155,3 +164,9 @@ projects[scald_gallery][version] = "2.5"
 
 projects[scald_youtube][subdir] = contrib
 projects[scald_youtube][version] = "1.4"
+
+;--- Registration  ------------------------------------------------------------
+projects[registration][subdir] = contrib
+projects[registration][version] = "1.4"
+projects[registration][patch][] = "https://www.drupal.org/files/registration-Add-views-filters-for-open-date-and-close-date-1949466-1.patch"
+
