@@ -47,26 +47,6 @@ function crealead_news_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Christophe Espiau',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => '76f32463-3bc9-4e2b-9a59-4946a4cb5746',
-    'vocabulary_machine_name' => 'scald_authors',
-    'scald_author_url' => array(),
-    'metatags' => array(),
-  );
-  $terms[] = array(
-    'name' => 'Lucien Chombier',
-    'description' => NULL,
-    'format' => NULL,
-    'weight' => 0,
-    'uuid' => '87b82a5a-bd71-48ed-948f-d4cf66c1525e',
-    'vocabulary_machine_name' => 'scald_authors',
-    'scald_author_url' => array(),
-    'metatags' => array(),
-  );
-  $terms[] = array(
     'name' => 'Salon',
     'description' => '',
     'format' => 'full_html',
