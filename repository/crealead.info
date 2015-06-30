@@ -103,6 +103,8 @@ dependencies[] = kbootstrap
 
 ;=== Crealead features ========================================================
 dependencies[] = crealead_multimedia
+dependencies[] = crealead_news
+dependencies[] = crealead_infos_meetings
 
 
 
