@@ -7,3 +7,4 @@ shared/files/*
 shared/private/*
 www
 !shared/private/.htaccess
+shared/apache_authentication
