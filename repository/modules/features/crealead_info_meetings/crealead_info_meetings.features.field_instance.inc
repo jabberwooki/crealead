@@ -199,7 +199,12 @@ function crealead_info_meetings_field_default_field_instances() {
   // Exported field_instance: 'node-info_meeting-field_info_meeting_map'
   $field_instances['node-info_meeting-field_info_meeting_map'] = array(
     'bundle' => 'info_meeting',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<iframe frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.477429479696!2d3.873967!3d43.596599999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6afb0c6fe293f%3A0x8e6410412d017abc!2sCrealead!5e0!3m2!1sfr!2sfr!4v1434985995735" style="border:0" width="400"></iframe>',
+        'format' => 'full_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -327,10 +332,11 @@ function crealead_info_meetings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_info_meeting_photo',
     'label' => 'Photo',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'default_image_ft_source_var' => 'info_meetings_default_image',
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
