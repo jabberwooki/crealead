@@ -21,6 +21,35 @@ function crealead_multimedia_user_default_permissions() {
     'module' => 'scald_dnd_library',
   );
 
+  // Exported permission: 'add terms in scald_authors'.
+  $permissions['add terms in scald_authors'] = array(
+    'name' => 'add terms in scald_authors',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in scald_tags'.
+  $permissions['add terms in scald_tags'] = array(
+    'name' => 'add terms in scald_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'administer dnd'.
+  $permissions['administer dnd'] = array(
+    'name' => 'administer dnd',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'dnd',
+  );
+
   // Exported permission: 'administer flickr settings'.
   $permissions['administer flickr settings'] = array(
     'name' => 'administer flickr settings',
@@ -116,6 +145,26 @@ function crealead_multimedia_user_default_permissions() {
     'module' => 'scald',
   );
 
+  // Exported permission: 'delete terms in scald_authors'.
+  $permissions['delete terms in scald_authors'] = array(
+    'name' => 'delete terms in scald_authors',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in scald_tags'.
+  $permissions['delete terms in scald_tags'] = array(
+    'name' => 'delete terms in scald_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any atom'.
   $permissions['edit any atom'] = array(
     'name' => 'edit any atom',
@@ -135,6 +184,26 @@ function crealead_multimedia_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald',
+  );
+
+  // Exported permission: 'edit terms in scald_authors'.
+  $permissions['edit terms in scald_authors'] = array(
+    'name' => 'edit terms in scald_authors',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in scald_tags'.
+  $permissions['edit terms in scald_tags'] = array(
+    'name' => 'edit terms in scald_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'fetch any atom'.
