@@ -36,6 +36,7 @@ dependencies[] = print
 dependencies[] = print_ui
 dependencies[] = redirect
 dependencies[] = registration
+dependencies[] = registration_views
 dependencies[] = role_export
 dependencies[] = search
 dependencies[] = system
