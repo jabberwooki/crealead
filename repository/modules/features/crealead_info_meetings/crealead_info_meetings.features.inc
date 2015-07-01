@@ -57,9 +57,8 @@ function crealead_info_meetings_default_registration_type() {
     "label" : "Inscription \\u00e0 une r\\u00e9union d\\u0027information",
     "locked" : "0",
     "default_state" : null,
+    "data" : null,
     "weight" : "0",
-    "held_expire" : "1",
-    "held_expire_state" : "canceled",
     "rdf_mapping" : []
   }');
   return $items;
