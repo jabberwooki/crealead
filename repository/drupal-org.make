@@ -9,7 +9,10 @@ projects[better_formats][subdir] = contrib
 projects[better_formats][version] = "1.0-beta1"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.4"
+
+projects[ds][subdir] = contrib
+projects[ds][version] = "2.8"
 
 projects[ds][subdir] = contrib
 projects[ds][version] = "2.8"
