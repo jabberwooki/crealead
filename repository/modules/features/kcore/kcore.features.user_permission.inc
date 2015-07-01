@@ -682,15 +682,6 @@ function kcore_user_default_permissions() {
     'module' => 'features',
   );
 
-  // Exported permission: 'geocoder_service_handler_google'.
-  $permissions['geocoder_service_handler_google'] = array(
-    'name' => 'geocoder_service_handler_google',
-    'roles' => array(
-      'administrateur' => 'administrateur',
-    ),
-    'module' => 'geocoder',
-  );
-
   // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
