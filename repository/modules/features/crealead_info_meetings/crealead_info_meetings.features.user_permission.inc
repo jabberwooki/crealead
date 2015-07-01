@@ -20,6 +20,13 @@ function crealead_info_meetings_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'administer default image node:info_meeting:field_info_meeting_photo'.
+  $permissions['administer default image node:info_meeting:field_info_meeting_photo'] = array(
+    'name' => 'administer default image node:info_meeting:field_info_meeting_photo',
+    'roles' => array(),
+    'module' => 'default_image_ft',
+  );
+
   // Exported permission: 'administer info_meeting_registration registration'.
   $permissions['administer info_meeting_registration registration'] = array(
     'name' => 'administer info_meeting_registration registration',
