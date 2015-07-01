@@ -30,6 +30,22 @@ function crealead_info_meetings_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_features_date_type_default().
+ */
+function crealead_info_meetings_features_date_type_default() {
+  $fdt_config = array();
+
+  $fdt_config[] = array(
+    'is_new' => FALSE,
+    'module' => '',
+    'type' => 'info_meeting_medium',
+    'title' => 'Réunion d\'info - Moyen',
+    'locked' => 0,
+  );
+  return $fdt_config;
+}
+
+/**
  * Implements hook_node_info().
  */
 function crealead_info_meetings_node_info() {
