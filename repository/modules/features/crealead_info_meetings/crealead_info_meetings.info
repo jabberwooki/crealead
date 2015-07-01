@@ -67,6 +67,7 @@ features[field_instance][] = registration-info_meeting_registration-field_regist
 features[field_instance][] = registration-info_meeting_registration-field_registrant_status
 features[field_instance][] = registration-info_meeting_registration-field_registrant_title
 features[menu_custom][] = management
+features[menu_links][] = management_inscriptions-aux-runions-dinfo:admin/reunions-information-inscriptions
 features[node][] = info_meeting
 features[registration_type][] = info_meeting_registration
 features[taxonomy][] = registrant_statuses

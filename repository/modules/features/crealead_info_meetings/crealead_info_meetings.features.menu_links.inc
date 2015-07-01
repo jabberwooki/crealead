@@ -10,17 +10,17 @@
 function crealead_info_meetings_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: management_inscriptions-aux-runions-dinfo:reunions-information-inscriptions
-  $menu_links['management_inscriptions-aux-runions-dinfo:reunions-information-inscriptions'] = array(
+  // Exported menu link: management_inscriptions-aux-runions-dinfo:admin/reunions-information-inscriptions
+  $menu_links['management_inscriptions-aux-runions-dinfo:admin/reunions-information-inscriptions'] = array(
     'menu_name' => 'management',
-    'link_path' => 'reunions-information-inscriptions',
-    'router_path' => 'reunions-information-inscriptions',
+    'link_path' => 'admin/reunions-information-inscriptions',
+    'router_path' => 'admin/reunions-information-inscriptions',
     'link_title' => 'Inscriptions aux réunions d\'info',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'management_inscriptions-aux-runions-dinfo:reunions-information-inscriptions',
+      'identifier' => 'management_inscriptions-aux-runions-dinfo:admin/reunions-information-inscriptions',
     ),
     'module' => 'menu',
     'hidden' => 0,
