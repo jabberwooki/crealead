@@ -368,6 +368,16 @@ function kcore_user_default_permissions() {
     'module' => 'page_title',
   );
 
+  // Exported permission: 'administer password policies'.
+  $permissions['administer password policies'] = array(
+    'name' => 'administer password policies',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'password_policy',
+  );
+
   // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
@@ -653,6 +663,16 @@ function kcore_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'force password change'.
+  $permissions['force password change'] = array(
+    'name' => 'force password change',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'password_policy',
+  );
+
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
@@ -815,6 +835,16 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'locale',
+  );
+
+  // Exported permission: 'unblock expired accounts'.
+  $permissions['unblock expired accounts'] = array(
+    'name' => 'unblock expired accounts',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'password_policy',
   );
 
   // Exported permission: 'use advanced search'.

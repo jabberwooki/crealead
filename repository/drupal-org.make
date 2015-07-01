@@ -96,6 +96,9 @@ projects[draggableviews][version] = "2.1"
 projects[email][subdir] = contrib
 projects[email][version] = "1.3"
 
+projects[email_registration][subdir] = contrib
+projects[email_registration][version] = "1.2"
+
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
 
@@ -110,6 +113,9 @@ projects[entityreference][version] = "1.1"
 
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "7.x-2.5"
+
+projects[password_policy][subdir] = contrib
+projects[password_policy][version] = "1.11"
 
 projects[phone][subdir] = contrib
 projects[phone][version] = "1.0-beta1"
