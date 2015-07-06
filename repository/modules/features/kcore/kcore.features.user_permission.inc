@@ -15,6 +15,7 @@ function kcore_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
