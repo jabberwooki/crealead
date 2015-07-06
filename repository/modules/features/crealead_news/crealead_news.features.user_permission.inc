@@ -36,6 +36,7 @@ function crealead_news_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -46,6 +47,7 @@ function crealead_news_user_default_permissions() {
     'name' => 'delete any news content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -56,6 +58,7 @@ function crealead_news_user_default_permissions() {
     'name' => 'delete own news content',
     'roles' => array(
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -85,6 +88,7 @@ function crealead_news_user_default_permissions() {
     'name' => 'edit any news content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
