@@ -16,6 +16,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'admin_menu',
@@ -26,6 +27,7 @@ function kcore_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
@@ -46,6 +48,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -56,6 +59,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -67,6 +71,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'contextual',
@@ -87,6 +92,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'draggableviews',
@@ -126,9 +132,20 @@ function kcore_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'add terms in business_groups'.
+  $permissions['add terms in business_groups'] = array(
+    'name' => 'add terms in business_groups',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy_access_fix',
   );
 
   // Exported permission: 'add terms in sectors'.
@@ -503,6 +520,7 @@ function kcore_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'user',
@@ -563,7 +581,13 @@ function kcore_user_default_permissions() {
   // Exported permission: 'change own username'.
   $permissions['change own username'] = array(
     'name' => 'change own username',
-    'roles' => array(),
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
+      'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'user',
   );
 
@@ -584,6 +608,16 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'path',
+  );
+
+  // Exported permission: 'delete terms in business_groups'.
+  $permissions['delete terms in business_groups'] = array(
+    'name' => 'delete terms in business_groups',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in sectors'.
@@ -622,6 +656,16 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'metatag',
+  );
+
+  // Exported permission: 'edit terms in business_groups'.
+  $permissions['edit terms in business_groups'] = array(
+    'name' => 'edit terms in business_groups',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in sectors'.
@@ -732,6 +776,7 @@ function kcore_user_default_permissions() {
     'name' => 'set page title',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'page_title',
@@ -854,6 +899,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
@@ -865,6 +911,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
@@ -876,6 +923,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -886,7 +934,9 @@ function kcore_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'system',
