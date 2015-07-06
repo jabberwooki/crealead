@@ -17,6 +17,13 @@ function kcore_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function kcore_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_features_date_format_default().
  */
 function kcore_features_date_format_default() {
