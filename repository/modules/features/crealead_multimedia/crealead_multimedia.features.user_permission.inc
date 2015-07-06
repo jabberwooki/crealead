@@ -16,6 +16,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald_dnd_library',
@@ -93,6 +94,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald',
@@ -141,6 +143,7 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'delete own atom',
     'roles' => array(
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
     ),
     'module' => 'scald',
   );
@@ -181,6 +184,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald',
@@ -212,6 +216,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald',
@@ -230,6 +235,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'scald_flickr',
