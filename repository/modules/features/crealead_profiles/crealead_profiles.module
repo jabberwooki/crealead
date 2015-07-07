@@ -1,0 +1,106 @@
+<?php
+/**
+ * @file
+ * Code for the Profils feature.
+ */
+
+include_once 'crealead_profiles.features.inc';
+
+/**
+ * Implements hook_profile2_insert().
+ */
+function crealead_profiles_profile2_insert($profile) {
+  dpm($profile);
+  if ($profile->field_saving_type['und'][0]['value'] == 1) {
+    crealead_send_mail_to_referent($profile);
+    $profile_wrapper = entity_metadata_wrapper('profile2', $profile->pid);
+    $profile_wrapper->field_email_sent = 1;
+    $profile_wrapper->save();
+  }
+}
+
+/**
+ * Implements hook_profile2_update().
+ */
+function crealead_profiles_profile2_update($profile) {
+  // Validation request has to be sent only if field_saving_type = 1 and field_email_sent = 0.
+  if ($profile->field_saving_type['und'][0]['value'] == 1 ) {
+    if ($profile->field_email_sent['und'][0]['value'] == 0) {
+      crealead_send_mail_to_referent($profile);
+      $profile->field_email_sent['und'][0]['value'] = 1;
+      entity_save('profile2', $profile);
+    }
+  }
+}
+
+function crealead_send_mail_to_referent($profile) {
+  $user_wrapper = entity_metadata_wrapper('user', $profile->uid);
+  $referent_uid = $user_wrapper->field_user_referent->raw();
+  $referent_wrapper = entity_metadata_wrapper('user', $referent_uid);
+  $referent_email = $referent_wrapper->mail->raw();
+  $referent_fullname = $referent_wrapper->field_user_firstname->raw() . ' ' . $referent_wrapper->field_user_lastname->raw();
+
+  // Build email message to referent.
+  $to = $referent_email;
+  $from = variable_get('site_mail');
+  $mail_subject = '[Site web Crealead] Demande de validation de profil';
+  $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
+    . ' a demandé la validation de son profil entrepreneur : http://' . $_SERVER['HTTP_HOST'] . '/user/' . $profile->uid . '/edit/coe_page';
+  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+  $type = 'status';
+  if (drupal_mail('crealead_profiles', 'profile_validation_request', $to, language_default(), $params, $from)) {
+    $message = t('Validation request email message sent successfully to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+  }
+  else {
+    $message = t('Orientation email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+    $type = 'warning';
+  }
+  drupal_set_message($message, $type);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_profiles_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'profile_validation_request':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_profile2_form_alter().
+ */
+function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
+  //dpm($form_state);
+  //dpm($form);
+  switch($form['#user_category']) {
+    case 'coe_page':
+      // Shows field_coe_pub_status to following roles only : administrateur, webmaster, referent.
+      global $user;
+      $allowed_roles = array('administrateur','webmaster','référent');
+      $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+      if ($user->uid != 1 && empty($user_allowed_roles)) {
+        $form['profile_coe_page']['field_coe_pub_status']['#access'] = FALSE;
+      }
+
+      // If field field_saving_type equals 1, validation request email has been sent.
+      // The field has to be hidden.
+      if (isset($form_state['profiles']['coe_page']->field_saving_type)) {
+        //dpm($form_state['profiles']['coe_page']->field_saving_type['und'][0]['value']);
+        if ($form_state['profiles']['coe_page']->field_saving_type['und'][0]['value'] == 1) {
+          $form['profile_coe_page']['field_saving_type']['#access'] = FALSE;
+        }
+      }
+
+      // Field field_email_sent must be hidden systematically (technical field).
+      $form['profile_coe_page']['field_email_sent']['#access'] = FALSE;
+      break;
+
+    default:
+      break;
+  }
+}
