@@ -93,6 +93,9 @@ projects[boxes][version] = ""
 projects[date][subdir] = contrib
 projects[date][version] = "2.8"
 
+projects[default_image_ft][subdir] = contrib
+projects[default_image_ft][version] = "1.4"
+
 projects[draggableviews][subdir] = contrib
 projects[draggableviews][version] = "2.1"
 
