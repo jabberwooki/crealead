@@ -126,8 +126,14 @@ projects[phone][version] = "1.0-beta1"
 projects[plupload][subdir] = contrib
 projects[plupload][version] = "1.7"
 
+projects[profile2][subdir] = contrib
+projects[profile2][version] = "1.3"
+
 projects[print][subdir] = contrib
 projects[print][version] = "2.0"
+
+projects[term_reference_tree][subdir] = contrib
+projects[term_reference_tree][version] = "1.10"
 
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.2"
