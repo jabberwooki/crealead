@@ -422,7 +422,7 @@ function crealead_profiles_field_default_field_instances() {
     'entity_type' => 'profile2',
     'field_name' => 'field_coe_pub_status',
     'label' => 'Statut de publication',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
