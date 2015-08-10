@@ -20,6 +20,15 @@ function kcore_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Crealead Bâtiment',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 1,
+    'uuid' => '1cc644d8-192f-4ef6-9c13-231190ed63a3',
+    'vocabulary_machine_name' => 'business_groups',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Formation',
     'description' => '',
     'format' => 'full_html',
@@ -38,12 +47,39 @@ function kcore_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Creaexperts',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'b10792ff-2276-43fc-ad00-26750fbdcf8c',
+    'vocabulary_machine_name' => 'business_groups',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Terracoopa',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 3,
+    'uuid' => 'b110f966-eedb-4e5b-a8bb-293e70270d39',
+    'vocabulary_machine_name' => 'business_groups',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Conseil',
     'description' => '',
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => 'c365762c-01dd-4d05-9ea8-e394b0505e5e',
     'vocabulary_machine_name' => 'sectors',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Creaticom',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 2,
+    'uuid' => 'd9f8bcbd-2017-4349-a648-6102613bb103',
+    'vocabulary_machine_name' => 'business_groups',
     'metatags' => array(),
   );
   $terms[] = array(

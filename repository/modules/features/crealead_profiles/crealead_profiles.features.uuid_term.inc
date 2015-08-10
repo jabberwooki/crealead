@@ -11,24 +11,6 @@ function crealead_profiles_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
-    'name' => 'Autre',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 5,
-    'uuid' => '10929d59-1c6f-4861-a97b-88778bd77bd2',
-    'vocabulary_machine_name' => 'business_groups',
-    'metatags' => array(),
-  );
-  $terms[] = array(
-    'name' => 'Crealead Bâtiment',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 1,
-    'uuid' => '1cc644d8-192f-4ef6-9c13-231190ed63a3',
-    'vocabulary_machine_name' => 'business_groups',
-    'metatags' => array(),
-  );
-  $terms[] = array(
     'name' => 'Bureau d\'études',
     'description' => '',
     'format' => 'full_html',
@@ -47,15 +29,6 @@ function crealead_profiles_uuid_features_default_terms() {
     'weight' => 5,
     'uuid' => '22c4b38c-0df9-4697-8f56-1c7171ad86d6',
     'vocabulary_machine_name' => 'entrepreneur_categories',
-    'metatags' => array(),
-  );
-  $terms[] = array(
-    'name' => 'TIC',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 4,
-    'uuid' => '24ece40c-c75e-4a1f-a345-f51a72734bac',
-    'vocabulary_machine_name' => 'business_groups',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -221,24 +194,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     ),
   );
   $terms[] = array(
-    'name' => 'Creaexperts',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 0,
-    'uuid' => 'b10792ff-2276-43fc-ad00-26750fbdcf8c',
-    'vocabulary_machine_name' => 'business_groups',
-    'metatags' => array(),
-  );
-  $terms[] = array(
-    'name' => 'Terracoopa',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 3,
-    'uuid' => 'b110f966-eedb-4e5b-a8bb-293e70270d39',
-    'vocabulary_machine_name' => 'business_groups',
-    'metatags' => array(),
-  );
-  $terms[] = array(
     'name' => 'Service aux particuliers',
     'description' => '',
     'format' => 'full_html',
@@ -279,15 +234,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'parent' => array(
       0 => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
     ),
-  );
-  $terms[] = array(
-    'name' => 'Creaticom',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 2,
-    'uuid' => 'd9f8bcbd-2017-4349-a648-6102613bb103',
-    'vocabulary_machine_name' => 'business_groups',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Conseil Marketing',
