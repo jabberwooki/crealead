@@ -9,11 +9,34 @@
  */
 function crealead_profiles_taxonomy_default_vocabularies() {
   return array(
-    'entrepreneur_categories' => array(
-      'name' => 'Catégories d\'entrepreneurs',
-      'machine_name' => 'entrepreneur_categories',
+    'business_groups' => array(
+      'name' => 'Groupes métier',
+      'machine_name' => 'business_groups',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'business_sectors' => array(
+      'name' => 'Secteurs d\'activité',
+      'machine_name' => 'business_sectors',
+      'description' => '',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

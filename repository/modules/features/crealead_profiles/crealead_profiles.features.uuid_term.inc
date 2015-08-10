@@ -16,7 +16,7 @@ function crealead_profiles_uuid_features_default_terms() {
     'format' => 'full_html',
     'weight' => 3,
     'uuid' => '1ffbbc11-5b13-49c0-9d91-fdac347d48cc',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
@@ -28,7 +28,7 @@ function crealead_profiles_uuid_features_default_terms() {
     'format' => 'full_html',
     'weight' => 5,
     'uuid' => '22c4b38c-0df9-4697-8f56-1c7171ad86d6',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -53,7 +53,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 2,
     'uuid' => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -62,7 +62,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 1,
     'uuid' => '2a52f48f-c5a2-4820-a9e2-e635f395b78e',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
@@ -74,7 +74,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 2,
     'uuid' => '2a61fd9c-1d88-455a-82d6-6b25f057796b',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
@@ -86,7 +86,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 2,
     'uuid' => '3291a48f-12d5-43b3-913a-f6699f2c85f0',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
@@ -98,7 +98,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 2,
     'uuid' => '49df489f-d564-41dc-b8cd-68ea7d6e0883',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
@@ -111,7 +111,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -120,7 +120,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 3,
     'uuid' => '536f6a9c-1415-4238-a284-0008fe746010',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
@@ -132,7 +132,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 1,
     'uuid' => '648596fc-59c1-4fe8-a837-5a65bafb4bdf',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
@@ -144,7 +144,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => '6e362952-c7ba-46ce-9e0c-5e7b5ce287b8',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
@@ -157,7 +157,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 1,
     'uuid' => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -166,7 +166,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => '9903165e-f705-40ac-ad93-7edfee02ab6a',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
@@ -178,7 +178,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 6,
     'uuid' => '9bd98d14-1229-4def-b367-f937ac900e73',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -187,7 +187,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 1,
     'uuid' => 'a4de76b7-606f-45a4-b5d2-0920f8dd8d48',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
@@ -199,7 +199,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 3,
     'uuid' => 'b8a926d4-c201-4e69-8648-ab19de4886f6',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -208,7 +208,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 1,
     'uuid' => 'be3b8d4a-510d-4f59-8e26-aa13b0567eda',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
@@ -229,7 +229,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => 'cfd406db-29f7-4d58-822a-709f7dfdbdca',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
@@ -241,7 +241,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 2,
     'uuid' => 'e9963dbf-39bc-45c3-a0b1-6b942e2f3d26',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
@@ -253,7 +253,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 0,
     'uuid' => 'ecd18783-3430-4c13-95f0-8238c30aaac8',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
     'parent' => array(
       0 => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
@@ -274,7 +274,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'format' => 'full_html',
     'weight' => 4,
     'uuid' => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
-    'vocabulary_machine_name' => 'entrepreneur_categories',
+    'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   return $terms;
