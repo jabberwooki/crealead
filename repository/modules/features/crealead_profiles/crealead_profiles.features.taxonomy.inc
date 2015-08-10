@@ -55,6 +55,29 @@ function crealead_profiles_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'competencies' => array(
+      'name' => 'Compétences et spécialités',
+      'machine_name' => 'competencies',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'entrepreneur_tags' => array(
       'name' => 'Mots-clés entrepreneurs',
       'machine_name' => 'entrepreneur_tags',
