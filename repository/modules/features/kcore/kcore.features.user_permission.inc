@@ -133,6 +133,8 @@ function kcore_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
