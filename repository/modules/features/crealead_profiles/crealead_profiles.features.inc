@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function crealead_profiles_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -46,6 +49,24 @@ function crealead_profiles_image_default_styles() {
   );
 
   return $styles;
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function crealead_profiles_node_info() {
+  $items = array(
+    'client' => array(
+      'name' => t('Client'),
+      'base' => 'node_content',
+      'description' => t('Une référence client.'),
+      'has_title' => '1',
+      'title_label' => t('Nom'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
 }
 
 /**
