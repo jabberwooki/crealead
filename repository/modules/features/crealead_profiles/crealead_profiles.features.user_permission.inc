@@ -67,9 +67,8 @@ function crealead_profiles_user_default_permissions() {
   $permissions['view any coe_page profile'] = array(
     'name' => 'view any coe_page profile',
     'roles' => array(
-      'administrateur' => 'administrateur',
-      'référent' => 'référent',
-      'webmaster' => 'webmaster',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'profile2',
   );

@@ -56,12 +56,15 @@ function crealead_profiles_strongarm() {
         'custom_settings' => FALSE,
       ),
       'page' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'teaser' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
         'custom_settings' => FALSE,
       ),
     ),
