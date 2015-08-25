@@ -92,11 +92,11 @@ function crealead_profiles_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-business_sectors-block_1' => array(
-          'module' => 'views',
-          'delta' => 'business_sectors-block_1',
+        'menu-menu-business-sectors' => array(
+          'module' => 'menu',
+          'delta' => 'menu-business-sectors',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),

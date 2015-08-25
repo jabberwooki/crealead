@@ -119,6 +119,13 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['user']['id'] = 'user';
   $handler->display->display_options['relationships']['user']['table'] = 'profile';
   $handler->display->display_options['relationships']['user']['field'] = 'user';
+  /* Champ: Profil : Identifiant de Profil */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
   /* Champ: Profil : Photo */
   $handler->display->display_options['fields']['field_coe_photo']['id'] = 'field_coe_photo';
   $handler->display->display_options['fields']['field_coe_photo']['table'] = 'field_data_field_coe_photo';
@@ -149,6 +156,8 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_coe_logo']['table'] = 'field_data_field_coe_logo';
   $handler->display->display_options['fields']['field_coe_logo']['field'] = 'field_coe_logo';
   $handler->display->display_options['fields']['field_coe_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_coe_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_coe_logo']['alter']['path'] = 'entrepreneurs/profil/[pid]';
   $handler->display->display_options['fields']['field_coe_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_coe_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_coe_logo']['settings'] = array(
@@ -253,6 +262,89 @@ function crealead_profiles_views_default_views() {
 
   /* Display: Secteurs d'activité */
   $handler = $view->new_display('page', 'Secteurs d\'activité', 'page_business_sector');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Options avancées',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_competencies_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Profil : Utilisateur uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'profile';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Filtre contextuel: Profil : Secteur d&#039;activité (field_coe_category) */
   $handler->display->display_options['arguments']['field_coe_category_tid']['id'] = 'field_coe_category_tid';
@@ -273,6 +365,26 @@ function crealead_profiles_views_default_views() {
     'coe_page' => 'coe_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Critère de filtrage: Profil : Compétences et spécialités (field_competencies) */
+  $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
+  $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator_id'] = 'field_competencies_tid_op';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator'] = 'field_competencies_tid_op';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['identifier'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    7178059 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_competencies_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_competencies_tid']['vocabulary'] = 'competencies';
   $handler->display->display_options['path'] = 'entrepreneurs/activites';
 
   /* Display: Compétences/Marques */
@@ -336,10 +448,17 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_field'] = 'field_coe_brand_name';
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_coe_brand_name_value']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'entrepreneurs/competences-marques';
 
   /* Display: Fiche entrepreneur */
-  $handler = $view->new_display('page_with_page_title', 'Fiche entrepreneur', 'page_with_page_title_1');
+  $handler = $view->new_display('page_with_page_title', 'Fiche entrepreneur', 'page_coe_profile');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -671,6 +790,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['relationship'] = 'field_coe_references_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Nom client';
@@ -686,11 +806,19 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Critère de filtrage: Contenu : Localisation (field_client_location) */
   $handler->display->display_options['filters']['field_client_location_value']['id'] = 'field_client_location_value';
   $handler->display->display_options['filters']['field_client_location_value']['table'] = 'field_data_field_client_location';
   $handler->display->display_options['filters']['field_client_location_value']['field'] = 'field_client_location_value';
   $handler->display->display_options['filters']['field_client_location_value']['relationship'] = 'field_coe_references_target_id';
+  $handler->display->display_options['filters']['field_client_location_value']['operator'] = 'contains';
   $handler->display->display_options['filters']['field_client_location_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_client_location_value']['expose']['operator_id'] = 'field_client_location_value_op';
   $handler->display->display_options['filters']['field_client_location_value']['expose']['label'] = 'Localisation';
@@ -707,6 +835,13 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_field'] = 'field_client_location';
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_client_location_value']['expose']['autocomplete_dependent'] = 0;
   /* Critère de filtrage: Contenu : Type de client (field_client_type) */
   $handler->display->display_options['filters']['field_client_type_tid']['id'] = 'field_client_type_tid';
   $handler->display->display_options['filters']['field_client_type_tid']['table'] = 'field_data_field_client_type';
@@ -730,6 +865,246 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['field_client_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_client_type_tid']['vocabulary'] = 'client_types';
   $handler->display->display_options['path'] = 'entrepreneurs/clients';
+
+  /* Display: Pages thématiques */
+  $handler = $view->new_display('page_with_page_title', 'Pages thématiques', 'page_themes');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Options avancées',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_landing_pages_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Profil : Pages thématiques (field_landing_pages) */
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Profil : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Critère de filtrage: Profil : Pages thématiques (field_landing_pages) */
+  $handler->display->display_options['filters']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_landing_pages_tid']['expose']['operator_id'] = 'field_landing_pages_tid_op';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['expose']['operator'] = 'field_landing_pages_tid_op';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['expose']['identifier'] = 'field_landing_pages_tid';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    7178059 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_landing_pages_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_landing_pages_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['path'] = 'entrepreneurs/themes';
+
+  /* Display: Compétences d'un secteur d'activité */
+  $handler = $view->new_display('page', 'Compétences d\'un secteur d\'activité', 'page_business_sector_competencies_terms');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Options avancées',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'field_competencies_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_user_firstname' => 'field_user_firstname',
+    'field_user_lastname' => 'field_user_lastname',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Profil : Utilisateur uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'profile';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Profil : Compétences et spécialités */
+  $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
+  $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
+  $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
+  $handler->display->display_options['fields']['field_competencies']['label'] = '';
+  $handler->display->display_options['fields']['field_competencies']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_competencies']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_competencies']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_competencies']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Profil : Secteur d&#039;activité (field_coe_category) */
+  $handler->display->display_options['arguments']['field_coe_category_tid']['id'] = 'field_coe_category_tid';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['table'] = 'field_data_field_coe_category';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['field'] = 'field_coe_category_tid';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_coe_category_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Profil : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'entrepreneurs/activites';
   $translatables['entrepreneurs'] = array(
     t('Master'),
     t('Entrepreneurs'),
@@ -749,26 +1124,28 @@ function crealead_profiles_views_default_views() {
     t('dernier »'),
     t('@total personnes à votre service.'),
     t('Utilisateur'),
+    t('.'),
+    t(','),
     t('Tout'),
     t('%1'),
     t('Page recherche'),
     t('Rechercher des co-entrepreneurs de Crealead'),
-    t('.'),
-    t(','),
     t('Secteurs d\'activité'),
+    t('Options avancées'),
     t('Compétences/Marques'),
     t('Rechercher'),
     t('Expression clé'),
     t('Marque'),
     t('Fiche entrepreneur'),
     t('Référence client'),
-    t('Options avancées'),
     t('Client'),
     t('[title] ([field_client_location])'),
     t('Nom client'),
     t('Localisation'),
     t('Saisir une ville ou un pays'),
     t('Type de client'),
+    t('Pages thématiques'),
+    t('Compétences d\'un secteur d\'activité'),
   );
   $export['entrepreneurs'] = $view;
 

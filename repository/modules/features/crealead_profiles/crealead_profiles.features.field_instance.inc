@@ -1138,6 +1138,53 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'profile2-coe_page-field_landing_pages'
+  $field_instances['profile2-coe_page-field_landing_pages'] = array(
+    'bundle' => 'coe_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Sélectionnez la ou les pages thématiques dans lesquelles vous souhaitez apparaître.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 16,
+      ),
+      'page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_landing_pages',
+    'label' => 'Pages thématiques',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'term_reference_tree',
+      'settings' => array(
+        'cascading_selection' => 0,
+        'filter_view' => '',
+        'leaves_only' => 0,
+        'max_depth' => '',
+        'parent_term_id' => '',
+        'select_parents' => 0,
+        'start_minimized' => 0,
+        'token_display' => '',
+        'track_list' => 0,
+      ),
+      'type' => 'term_reference_tree',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'profile2-coe_page-field_saving_type'
   $field_instances['profile2-coe_page-field_saving_type'] = array(
     'bundle' => 'coe_page',
@@ -1196,12 +1243,14 @@ function crealead_profiles_field_default_field_instances() {
   t('Logo');
   t('Mots-clés');
   t('Nom commercial');
+  t('Pages thématiques');
   t('Photo');
   t('Références client');
   t('Secteur d\'activité');
   t('Site web');
   t('Solutions');
   t('Statut de publication');
+  t('Sélectionnez la ou les pages thématiques dans lesquelles vous souhaitez apparaître.');
   t('Type de client');
   t('Type de sauvegarde');
 
