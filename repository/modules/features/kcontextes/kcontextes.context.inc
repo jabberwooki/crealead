@@ -23,24 +23,7 @@ function kcontextes_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'boxes-crealead_link_advantages' => array(
-          'module' => 'boxes',
-          'delta' => 'crealead_link_advantages',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'boxes-crealead_link_info_meetings' => array(
-          'module' => 'boxes',
-          'delta' => 'crealead_link_info_meetings',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables
@@ -70,6 +53,18 @@ function kcontextes_context_default_contexts() {
           'delta' => 'news-block_news_focus',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'boxes-crealead_link_advantages' => array(
+          'module' => 'boxes',
+          'delta' => 'crealead_link_advantages',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'boxes-crealead_link_info_meetings' => array(
+          'module' => 'boxes',
+          'delta' => 'crealead_link_info_meetings',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
         ),
       ),
     ),
