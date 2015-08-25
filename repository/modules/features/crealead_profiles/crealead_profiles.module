@@ -160,7 +160,14 @@ function crealead_profiles_views_pre_render(&$view) {
     drupal_set_breadcrumb($breadcrumb);
   }
 
-  if ($view->name == 'entrepreneurs' && $view->current_display != 'search_page' && $view->current_display != 'page_coe_profile') {
+  // Plural form of the entrepreneurs results count handled on the 4 following displays only.
+  $displays_list = array(
+    'page_business_sector',
+    'page_competencies_brands',
+    'page_clients',
+    'page_themes'
+  );
+  if ($view->name == 'entrepreneurs' && in_array($view->current_display, $displays_list)) {
     if (count($view->result) < 2) {
       $view->display_handler->handlers['header']['result']->options['content'] =
         str_replace('personnes', 'personne', $view->display_handler->handlers['header']['result']->options['content']);
