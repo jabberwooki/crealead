@@ -84,6 +84,9 @@ projects[views][version] = "3.11"
 ;projects[bean][subdir] = contrib
 ;projects[bean][version] = ""
 
+projects[better_exposed_filters][subdir] = contrib
+projects[better_exposed_filters][version] = "3.2"
+
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.1"
 
@@ -135,8 +138,17 @@ projects[profile2][version] = "1.3"
 projects[print][subdir] = contrib
 projects[print][version] = "2.0"
 
+projects[taxonomy_menu][subdir] = contrib
+projects[taxonomy_menu][version] = "1.5"
+
 projects[term_reference_tree][subdir] = contrib
 projects[term_reference_tree][version] = "1.10"
+
+projects[tvi][subdir] = contrib
+projects[tvi][version] = "1.0-beta5"
+
+projects[views_autocomplete_filters][subdir] = contrib
+projects[views_autocomplete_filters][version] = "1.2"
 
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.2"
