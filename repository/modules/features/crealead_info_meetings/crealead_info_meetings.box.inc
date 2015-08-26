@@ -15,7 +15,7 @@ function crealead_info_meetings_default_box() {
   $box->api_version = 1;
   $box->delta = 'crealead_link_info_meetings';
   $box->plugin_key = 'simple';
-  $box->title = '<none>';
+  $box->title = 'Réunions d\'information';
   $box->description = 'Crealead : Lien Réunions d\'info';
   $box->options = array(
     'body' => array(
