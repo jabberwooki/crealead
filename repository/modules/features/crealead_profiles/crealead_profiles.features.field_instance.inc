@@ -10,6 +10,143 @@
 function crealead_profiles_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'field_collection_item-field_coe_recommandations-field_competencies'
+  $field_instances['field_collection_item-field_coe_recommandations-field_competencies'] = array(
+    'bundle' => 'field_coe_recommandations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_competencies',
+    'label' => 'Compétences recommandées',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_coe_recommandations-field_reco_entrepreneur'
+  $field_instances['field_collection_item-field_coe_recommandations-field_reco_entrepreneur'] = array(
+    'bundle' => 'field_coe_recommandations',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'block',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_reco_entrepreneur',
+    'label' => 'Entrepreneur',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_coe_recommandations-field_reco_texte'
+  $field_instances['field_collection_item-field_coe_recommandations-field_reco_texte'] = array(
+    'bundle' => 'field_coe_recommandations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Décrivez en quelques mots votre recommandation. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_reco_texte',
+    'label' => 'Texte',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'debug',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-client-body'
   $field_instances['node-client-body'] = array(
     'bundle' => 'client',
@@ -311,10 +448,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'inline',
@@ -354,6 +490,12 @@ function crealead_profiles_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -397,6 +539,12 @@ function crealead_profiles_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -469,7 +617,7 @@ function crealead_profiles_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'block' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -549,10 +697,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'inline',
@@ -604,9 +751,8 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'default' => array(
@@ -683,9 +829,8 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'hidden',
-        'module' => 'email',
         'settings' => array(),
-        'type' => 'email_default',
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'default' => array(
@@ -729,13 +874,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -793,6 +934,12 @@ function crealead_profiles_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'phone',
@@ -842,7 +989,7 @@ function crealead_profiles_field_default_field_instances() {
           'image_style' => 'photo_utilisateur',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -906,10 +1053,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'above',
@@ -942,6 +1088,55 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'profile2-coe_page-field_coe_recommandations'
+  $field_instances['profile2-coe_page-field_coe_recommandations'] = array(
+    'bundle' => 'coe_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Ajouter',
+          'delete' => 'Supprimer',
+          'description' => TRUE,
+          'edit' => 'Modifier',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 20,
+      ),
+      'page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_coe_recommandations',
+    'label' => 'Recommandations',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'profile2-coe_page-field_coe_references'
   $field_instances['profile2-coe_page-field_coe_references'] = array(
     'bundle' => 'coe_page',
@@ -951,13 +1146,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'view_mode' => 'block',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 15,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'default' => array(
         'label' => 'above',
@@ -1009,9 +1200,8 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 9,
       ),
       'default' => array(
@@ -1088,10 +1278,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'default' => array(
         'label' => 'above',
@@ -1136,9 +1325,8 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'hidden',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'default' => array(
@@ -1206,9 +1394,8 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'default' => array(
@@ -1258,10 +1445,9 @@ function crealead_profiles_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'default' => array(
         'label' => 'above',
@@ -1301,6 +1487,12 @@ function crealead_profiles_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Sélectionnez la ou les pages thématiques dans lesquelles vous souhaitez apparaître.',
     'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -1337,7 +1529,7 @@ function crealead_profiles_field_default_field_instances() {
         'track_list' => 0,
       ),
       'type' => 'term_reference_tree',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1356,7 +1548,7 @@ function crealead_profiles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'default' => array(
         'label' => 'above',
@@ -1390,9 +1582,12 @@ function crealead_profiles_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Compétences et spécialités');
+  t('Compétences recommandées');
   t('Description');
+  t('Décrivez en quelques mots votre recommandation. ');
   t('Email');
   t('Email envoyé');
+  t('Entrepreneur');
   t('Groupe(s) métier');
   t('Indiquez la ville et/ou le pays.');
   t('Localisation');
@@ -1402,6 +1597,7 @@ function crealead_profiles_field_default_field_instances() {
   t('Pages thématiques');
   t('Photo');
   t('Phrase d\'accroche');
+  t('Recommandations');
   t('Réalisations');
   t('Références client');
   t('Secteur d\'activité');
@@ -1409,6 +1605,7 @@ function crealead_profiles_field_default_field_instances() {
   t('Solutions');
   t('Statut de publication');
   t('Sélectionnez la ou les pages thématiques dans lesquelles vous souhaitez apparaître.');
+  t('Texte');
   t('Type de client');
   t('Type de sauvegarde');
   t('Téléphone');

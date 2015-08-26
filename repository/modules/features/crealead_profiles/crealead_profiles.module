@@ -10,7 +10,6 @@ include_once 'crealead_profiles.features.inc';
  * Implements hook_profile2_insert().
  */
 function crealead_profiles_profile2_insert($profile) {
-  dpm($profile);
   if ($profile->field_saving_type['und'][0]['value'] == 1) {
     crealead_send_mail_to_referent($profile);
     $profile_wrapper = entity_metadata_wrapper('profile2', $profile->pid);
@@ -75,8 +74,6 @@ function crealead_profiles_mail($key, &$message, $params) {
  * Implements hook_form_profile2_form_alter().
  */
 function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
-  //dpm($form_state);
-  //dpm($form);
   switch($form['#user_category']) {
     case 'coe_page':
       // Shows field_coe_pub_status to following roles only : administrateur, webmaster, referent.
@@ -132,6 +129,26 @@ function crealead_profiles_form_views_exposed_form_alter(&$form, &$form_state, $
     }
     $form['field_competencies_tid']['#options'] = $options;
   }
+
+  if($form['#id'] == 'views-exposed-form-entrepreneurs-block-coe-reco') {
+    $view = views_get_view('entrepreneurs');
+    $view->set_display('block_coe_recommended_competencies');
+    $view->set_arguments(array(arg(2)));
+    $view->execute();
+
+    $term_ids = array();
+    foreach ($view->result as $result) {
+      $term_ids[] = $result->taxonomy_term_data_field_data_field_competencies_tid;
+    }
+
+    $options = $form['field_competencies_tid']['#options'];
+    foreach ($options as $key=>$option) {
+      if ($key != 'All' && !in_array($key,$term_ids)) {
+        unset($options[$key]);
+      }
+    }
+    $form['field_competencies_tid']['#options'] = $options;
+  }
 }
 
 /**
@@ -175,3 +192,16 @@ function crealead_profiles_views_pre_render(&$view) {
   }
 }
 
+function crealead_profiles_block_view_alter(&$data, $block) {
+  if ($block->bid == 'views-entrepreneurs-block_coe_reco') {
+    $profile = profile2_load(arg(2));
+    $data['subject'] = $profile->field_coe_brand_name['und'][0]['value'] . $data['subject'];
+  }
+}
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function crealead_profiles_block_view_entrepreneurs_block_coe_reco_alter(&$data, $block) {
+  //dpm($data);
+}
