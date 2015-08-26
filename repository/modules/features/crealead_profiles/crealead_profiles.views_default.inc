@@ -397,7 +397,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['path'] = 'entrepreneurs/activites';
 
   /* Display: Compétences/Marques */
-  $handler = $view->new_display('page', 'Compétences/Marques', 'page_competencies_brands');
+  $handler = $view->new_display('page', 'Compétences/Marques', 'comp_brands');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'input_required';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rechercher';
@@ -480,6 +480,7 @@ function crealead_profiles_views_default_views() {
   $handler = $view->new_display('page_with_page_title', 'Fiche entrepreneur', 'page_coe_profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Fiche entrepreneur';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -868,6 +869,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_competencies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_competencies']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_competencies']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Profil : Type */
@@ -1227,7 +1229,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['path'] = 'entrepreneurs/activites';
 
   /* Display: Coordonnées entrepreneur */
-  $handler = $view->new_display('block', 'Coordonnées entrepreneur', 'block_coe_contact_details');
+  $handler = $view->new_display('block', 'Coordonnées entrepreneur', 'block_coe_contact');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Contact';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1559,7 +1561,7 @@ function crealead_profiles_views_default_views() {
   );
 
   /* Display: Compétences recommandées par 1 coe */
-  $handler = $view->new_display('block', 'Compétences recommandées par 1 coe', 'block_coe_recommended_competencies');
+  $handler = $view->new_display('block', 'Compétences recommandées par 1 coe', 'block_recom_comp');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -1702,6 +1704,33 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
+
+  /* Display: Entrepreneurs d'un client */
+  $handler = $view->new_display('block', 'Entrepreneurs d\'un client', 'block_client_coes');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Entrepreneurs ayant travaillé pour cette référence';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Profil : Utilisateur uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'profile';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
+  /* Relation: Entity Reference : Entité référencée */
+  $handler->display->display_options['relationships']['field_coe_references_target_id']['id'] = 'field_coe_references_target_id';
+  $handler->display->display_options['relationships']['field_coe_references_target_id']['table'] = 'field_data_field_coe_references';
+  $handler->display->display_options['relationships']['field_coe_references_target_id']['field'] = 'field_coe_references_target_id';
+  $handler->display->display_options['relationships']['field_coe_references_target_id']['label'] = 'Client';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Contenu : Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_coe_references_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['entrepreneurs'] = array(
     t('Master'),
     t('Entrepreneurs'),
@@ -1759,6 +1788,8 @@ function crealead_profiles_views_default_views() {
     t('terme à partir de field_competencies'),
     t('Autres compétences recommandées'),
     t('Compétences recommandées par 1 coe'),
+    t('Entrepreneurs d\'un client'),
+    t('Entrepreneurs ayant travaillé pour cette référence'),
   );
   $export['entrepreneurs'] = $view;
 

@@ -132,7 +132,7 @@ function crealead_profiles_form_views_exposed_form_alter(&$form, &$form_state, $
 
   if($form['#id'] == 'views-exposed-form-entrepreneurs-block-coe-reco') {
     $view = views_get_view('entrepreneurs');
-    $view->set_display('block_coe_recommended_competencies');
+    $view->set_display('block_recom_comp');
     $view->set_arguments(array(arg(2)));
     $view->execute();
 
