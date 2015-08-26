@@ -64,7 +64,7 @@ function kcontextes_context_default_contexts() {
           'module' => 'boxes',
           'delta' => 'crealead_link_info_meetings',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),
