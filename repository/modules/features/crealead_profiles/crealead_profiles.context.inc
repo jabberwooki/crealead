@@ -164,6 +164,38 @@ function crealead_profiles_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'entrepreneurs_home';
+  $context->description = '';
+  $context->tag = 'Entrepreneurs';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '<front>' => '<front>',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'boxes-crealead_links_coe' => array(
+          'module' => 'boxes',
+          'delta' => 'crealead_links_coe',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Entrepreneurs');
+  $export['entrepreneurs_home'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'entrepreneurs_search';
   $context->description = '';
   $context->tag = 'Entrepreneurs';
