@@ -119,6 +119,26 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Thématique 2',
+    'description' => '<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt.</p>
+',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'edf4a8ce-32bc-447a-999b-259f08003d8d',
+    'vocabulary_machine_name' => 'themes',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Thématique 1',
+    'description' => '<p>Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'f624eff1-d4c2-4db1-a431-1dc65be0fce9',
+    'vocabulary_machine_name' => 'themes',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Bâtiment',
     'description' => '',
     'format' => 'full_html',
