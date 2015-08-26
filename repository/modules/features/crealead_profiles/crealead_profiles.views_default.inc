@@ -340,6 +340,7 @@ function crealead_profiles_views_default_views() {
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relation: Profil : Utilisateur uid */
   $handler->display->display_options['relationships']['user']['id'] = 'user';
@@ -1731,6 +1732,23 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Liste complète */
+  $handler = $view->new_display('page_with_page_title', 'Liste complète', 'page_coe_all');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Tous les entrepreneurs';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Profil : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'entrepreneurs/liste-complete';
   $translatables['entrepreneurs'] = array(
     t('Master'),
     t('Entrepreneurs'),
@@ -1790,6 +1808,8 @@ function crealead_profiles_views_default_views() {
     t('Compétences recommandées par 1 coe'),
     t('Entrepreneurs d\'un client'),
     t('Entrepreneurs ayant travaillé pour cette référence'),
+    t('Liste complète'),
+    t('Tous les entrepreneurs'),
   );
   $export['entrepreneurs'] = $view;
 

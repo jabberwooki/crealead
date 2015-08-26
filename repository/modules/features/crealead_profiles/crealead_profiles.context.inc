@@ -181,6 +181,12 @@ function crealead_profiles_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-business-sectors',
           'region' => 'content',
+          'weight' => '-10',
+        ),
+        'boxes-crealead_link_coe_list' => array(
+          'module' => 'boxes',
+          'delta' => 'crealead_link_coe_list',
+          'region' => 'content',
           'weight' => '-9',
         ),
       ),

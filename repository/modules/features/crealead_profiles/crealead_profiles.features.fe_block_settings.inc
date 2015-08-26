@@ -12,6 +12,31 @@ function crealead_profiles_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['boxes-crealead_link_coe_list'] = array(
+    'cache' => -2,
+    'context_group' => 'Boxes for Box',
+    'css_class' => '',
+    'delta' => 'crealead_link_coe_list',
+    'module' => 'boxes',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   $export['views--exp-entrepreneurs-comp_brands'] = array(
     'cache' => -1,
     'css_class' => '',
