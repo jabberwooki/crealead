@@ -116,7 +116,7 @@ function crealead_profiles_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-entrepreneurs-page_clients',
           'region' => 'content',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
       ),
     ),
@@ -145,11 +145,11 @@ function crealead_profiles_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-873c744ab1d84d2923335dffaa67c44f' => array(
+        'views--exp-entrepreneurs-comp_brands' => array(
           'module' => 'views',
-          'delta' => '873c744ab1d84d2923335dffaa67c44f',
+          'delta' => '-exp-entrepreneurs-comp_brands',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),
@@ -251,7 +251,7 @@ function crealead_profiles_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-themes',
           'region' => 'content',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
       ),
     ),

@@ -14,8 +14,8 @@ function crealead_profiles_default_fe_block_settings() {
 
   $export['boxes-crealead_link_coe_list'] = array(
     'cache' => -2,
-    'context_group' => 'Boxes for Box',
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'crealead_link_coe_list',
     'module' => 'boxes',
     'node_types' => array(),
@@ -35,11 +35,95 @@ function crealead_profiles_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['boxes-crealead_links_coe'] = array(
+    'cache' => -2,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'crealead_links_coe',
+    'module' => 'boxes',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-business-sectors'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-business-sectors',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Par secteur d\'activité',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-themes'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-themes',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Nos entrepreneurs par thématique',
+    'visibility' => 0,
   );
 
   $export['views--exp-entrepreneurs-comp_brands'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => 0,
     'delta' => '-exp-entrepreneurs-comp_brands',
     'module' => 'views',
     'node_types' => array(),
@@ -59,6 +143,8 @@ function crealead_profiles_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views--exp-entrepreneurs-page_clients'] = array(
@@ -226,6 +312,7 @@ function crealead_profiles_default_fe_block_settings() {
   $export['views-entrepreneurs-block_client_coes'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'entrepreneurs-block_client_coes',
     'module' => 'views',
     'node_types' => array(),
@@ -245,6 +332,8 @@ function crealead_profiles_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-entrepreneurs-block_coe_contact'] = array(
