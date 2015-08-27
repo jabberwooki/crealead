@@ -65,25 +65,25 @@ function crealead_profiles_context_default_contexts() {
           'module' => 'views',
           'delta' => 'clients-block_coe_clients',
           'region' => 'content',
-          'weight' => '6',
+          'weight' => '1',
         ),
-        'views-217dc04f828bd7d2e638498f9c4a9ff1' => array(
+        'views-achievements-block_achievements' => array(
           'module' => 'views',
-          'delta' => '217dc04f828bd7d2e638498f9c4a9ff1',
+          'delta' => 'achievements-block_achievements',
           'region' => 'content',
-          'weight' => '7',
+          'weight' => '2',
         ),
-        'views-808ab15e484c599f0def5ebeb376ed07' => array(
+        'views-entrepreneurs-block_coe_contact' => array(
           'module' => 'views',
-          'delta' => '808ab15e484c599f0def5ebeb376ed07',
+          'delta' => 'entrepreneurs-block_coe_contact',
           'region' => 'content',
-          'weight' => '8',
+          'weight' => '3',
         ),
         'views-entrepreneurs-block_coe_reco' => array(
           'module' => 'views',
           'delta' => 'entrepreneurs-block_coe_reco',
           'region' => 'content',
-          'weight' => '10',
+          'weight' => '4',
         ),
       ),
     ),
