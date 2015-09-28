@@ -40,26 +40,12 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'edit any main profile'.
-  $permissions['edit any main profile'] = array(
-    'name' => 'edit any main profile',
-    'roles' => array(),
-    'module' => 'profile2',
-  );
-
   // Exported permission: 'edit own coe_page profile'.
   $permissions['edit own coe_page profile'] = array(
     'name' => 'edit own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
     ),
-    'module' => 'profile2',
-  );
-
-  // Exported permission: 'edit own main profile'.
-  $permissions['edit own main profile'] = array(
-    'name' => 'edit own main profile',
-    'roles' => array(),
     'module' => 'profile2',
   );
 
@@ -73,26 +59,12 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'view any main profile'.
-  $permissions['view any main profile'] = array(
-    'name' => 'view any main profile',
-    'roles' => array(),
-    'module' => 'profile2',
-  );
-
   // Exported permission: 'view own coe_page profile'.
   $permissions['view own coe_page profile'] = array(
     'name' => 'view own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
     ),
-    'module' => 'profile2',
-  );
-
-  // Exported permission: 'view own main profile'.
-  $permissions['view own main profile'] = array(
-    'name' => 'view own main profile',
-    'roles' => array(),
     'module' => 'profile2',
   );
 

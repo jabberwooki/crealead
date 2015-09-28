@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Code for the Marques feature.
+ */
+
+include_once 'crealead_brands.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_id) {
+  // unallowed users cannot create 'grande marque' brands.
+  global $user;
+  $current_user_roles = $user->roles;
+  $crealead_news_allowed_roles = array('administrateur','webmaster','référent');
+  $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
+  if (empty($current_user_allowed_roles) & $user->uid != 1) {
+    unset($form['field_brand_type']['und']['#options'][3]);
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function crealead_brands_node_view_alter(&$build) {
+//  dpm($build);
+//  if ($build['#bundle'] == '') {
+//
+//  }
+}
+
+/**
+ * Implements hook_node_grants_alter().
+ */
+function crealead_brands_node_grants_alter(&$grants, $account, $op) {
+  var_dump($grants);
+}

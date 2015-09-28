@@ -47,7 +47,6 @@ dependencies[] = taxonomy
 dependencies[] = taxonomy_access_fix
 dependencies[] = taxonomy_menu
 dependencies[] = text
-dependencies[] = tvi
 dependencies[] = user
 dependencies[] = user_settings_access
 dependencies[] = uuid

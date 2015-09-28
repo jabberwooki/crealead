@@ -52,7 +52,7 @@ function crealead_send_mail_to_referent($profile) {
     $message = t('Validation request email message sent successfully to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
   }
   else {
-    $message = t('Orientation email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+    $message = t('Email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
     $type = 'warning';
   }
   drupal_set_message($message, $type);

@@ -32,3 +32,10 @@ function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
 	$form['field_user_referent']['#access'] = FALSE;
   }
 }
+
+/**
+ * Implements hook_email_registration_name().
+ */
+function kcore_email_registration_name($edit, $account) {
+  return $edit['field_user_firstname']['und'][0]['value'] . ' ' . $edit['field_user_lastname']['und'][0]['value'];
+}

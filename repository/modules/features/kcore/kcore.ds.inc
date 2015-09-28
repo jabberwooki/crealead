@@ -17,6 +17,7 @@ function kcore_ds_view_modes_info() {
   $ds_view_mode->entities = array(
     'node' => 'node',
     'profile2' => 'profile2',
+    'taxonomy_term' => 'taxonomy_term',
   );
   $export['block'] = $ds_view_mode;
 

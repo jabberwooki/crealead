@@ -98,6 +98,29 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
   $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
   $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'actualites';
 
   /* Display: Tri actus */
@@ -175,6 +198,13 @@ function crealead_news_views_default_views() {
   $handler = $view->new_display('block', 'Focus actus', 'block_news_focus');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Zoom Actus';
+  $handler->display->display_options['display_description'] = 'bloc actu de la page d\'accueil';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'toutes les actus';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -211,6 +241,100 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+
+  /* Display: Actus de la marque */
+  $handler = $view->new_display('entity_view', 'Actus de la marque', 'brand_news');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Actualités';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'toutes les actus';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Entity Reference : Entité référencée */
+  $handler->display->display_options['relationships']['field_related_brands_target_id']['id'] = 'field_related_brands_target_id';
+  $handler->display->display_options['relationships']['field_related_brands_target_id']['table'] = 'field_data_field_related_brands';
+  $handler->display->display_options['relationships']['field_related_brands_target_id']['field'] = 'field_related_brands_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Contenu : Marque(s) concernée(s) (field_related_brands) */
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['id'] = 'field_related_brands_target_id';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['table'] = 'field_data_field_related_brands';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['field'] = 'field_related_brands_target_id';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_related_brands_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'brand',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
+
+  /* Display: Actus d'une thématique */
+  $handler = $view->new_display('entity_view', 'Actus d\'une thématique', 'theme_news');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Actualités';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Contenu : Pages thématiques (field_landing_pages) */
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Terme de taxonomie : Identifiant (ID) du terme */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_landing_pages_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'themes',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
   $translatables['news'] = array(
     t('Master'),
     t('Tri des actualités'),
@@ -233,6 +357,14 @@ function crealead_news_views_default_views() {
     t('Tri actus'),
     t('Focus actus'),
     t('Zoom Actus'),
+    t('bloc actu de la page d\'accueil'),
+    t('toutes les actus'),
+    t('Actus de la marque'),
+    t('Actualités'),
+    t('Entité Contenu réferencée par field_related_brands'),
+    t('Tout'),
+    t('Actus d\'une thématique'),
+    t('terme à partir de field_landing_pages'),
   );
   $export['news'] = $view;
 

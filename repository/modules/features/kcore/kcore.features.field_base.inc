@@ -76,7 +76,7 @@ function kcore_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_1',
+          'display_name' => 'referents_names',
           'view_name' => 'users',
         ),
       ),

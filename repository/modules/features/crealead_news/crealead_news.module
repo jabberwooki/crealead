@@ -12,6 +12,16 @@ include_once 'crealead_news.features.inc';
 function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id) {
   $form['field_sorting_date']['#disabled'] = TRUE;
   $form['#groups']['group_crealead_settings']->weight = 1000;
+
+  // If user is not allowed, field_news_kind and field_related_themes removed.
+  global $user;
+  $current_user_roles = $user->roles;
+  $crealead_news_allowed_roles = array('administrateur','webmaster','référent');
+  $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
+  if (empty($current_user_allowed_roles) & $user->uid != 1) {
+    unset($form['field_news_kind']);
+    unset($form['field_related_themes']);
+  }
 }
 
 /**

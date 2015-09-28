@@ -17,6 +17,12 @@ function kcore_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'brand_coe' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -26,10 +32,9 @@ function kcore_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'referent_fullname' => array(
         'label' => 'hidden',
@@ -96,6 +101,12 @@ function kcore_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'brand_coe' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -105,10 +116,9 @@ function kcore_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'referent_fullname' => array(
         'label' => 'hidden',
@@ -175,6 +185,12 @@ function kcore_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'brand_coe' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'inline',
         'module' => 'entityreference',
@@ -187,12 +203,9 @@ function kcore_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'referent_fullname' => array(
         'label' => 'inline',
@@ -207,7 +220,7 @@ function kcore_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_user_referent',
     'label' => 'Référent',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => 1,
     ),

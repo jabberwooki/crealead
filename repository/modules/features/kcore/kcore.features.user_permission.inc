@@ -28,6 +28,7 @@ function kcore_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -49,7 +50,6 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -59,6 +59,7 @@ function kcore_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -374,6 +375,8 @@ function kcore_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -925,6 +928,7 @@ function kcore_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',

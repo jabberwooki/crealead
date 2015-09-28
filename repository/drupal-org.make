@@ -111,8 +111,11 @@ projects[email_registration][version] = "1.2"
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
 
-;projects[field_collection][subdir] = contrib
-;projects[field_collection][version] = "1.0-beta8"
+projects[entityreference_views_formatter][subdir] = contrib
+projects[entityreference_views_formatter][version] = "1.1"
+
+projects[field_collection][subdir] = contrib
+projects[field_collection][version] = "1.x-dev"
 
 ;projects[filefield_sources][subdir] = contrib
 ;projects[filefield_sources][version] = "1.9"
@@ -137,6 +140,9 @@ projects[profile2][version] = "1.3"
 
 projects[print][subdir] = contrib
 projects[print][version] = "2.0"
+
+projects[socialfield][subdir] = contrib
+projects[socialfield][version] = "1.4"
 
 projects[taxonomy_menu][subdir] = contrib
 projects[taxonomy_menu][version] = "1.5"

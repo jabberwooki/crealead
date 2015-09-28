@@ -48,11 +48,23 @@ function kcontextes_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
         'views-news-block_news_focus' => array(
           'module' => 'views',
           'delta' => 'news-block_news_focus',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'views-brands-block_2' => array(
+          'module' => 'views',
+          'delta' => 'brands-block_2',
+          'region' => 'content',
+          'weight' => '-9',
         ),
         'boxes-crealead_link_advantages' => array(
           'module' => 'boxes',

@@ -36,7 +36,6 @@ function crealead_profiles_strongarm() {
     ),
     'profile2' => array(
       'coe_page' => array(
-        'field_coe_logo' => 'coe_default_logo',
         'field_coe_photo' => 'coe_default_picture',
       ),
     ),
@@ -173,7 +172,7 @@ function crealead_profiles_strongarm() {
         'custom_settings' => TRUE,
       ),
       'teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -185,7 +184,10 @@ function crealead_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '16',
+          'weight' => '10',
+        ),
+        'path' => array(
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -210,6 +212,9 @@ function crealead_profiles_strongarm() {
       ),
       'referent_fullname' => array(
         'custom_settings' => FALSE,
+      ),
+      'brand_coe' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -238,6 +243,9 @@ function crealead_profiles_strongarm() {
         'masquerade' => array(
           'weight' => '10',
         ),
+        'picture' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(
         'summary' => array(
@@ -246,12 +254,16 @@ function crealead_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '4',
-            'visible' => TRUE,
+            'weight' => '5',
+            'visible' => FALSE,
           ),
           'referent_fullname' => array(
             'weight' => '3',
             'visible' => TRUE,
+          ),
+          'brand_coe' => array(
+            'weight' => '4',
+            'visible' => FALSE,
           ),
         ),
         'masquerade' => array(
@@ -260,12 +272,16 @@ function crealead_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '5',
-            'visible' => TRUE,
+            'weight' => '6',
+            'visible' => FALSE,
           ),
           'referent_fullname' => array(
             'weight' => '4',
             'visible' => TRUE,
+          ),
+          'brand_coe' => array(
+            'weight' => '5',
+            'visible' => FALSE,
           ),
         ),
         'profile_main' => array(
@@ -274,11 +290,15 @@ function crealead_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '9',
+            'weight' => '3',
             'visible' => FALSE,
           ),
           'referent_fullname' => array(
             'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'brand_coe' => array(
+            'weight' => '6',
             'visible' => FALSE,
           ),
         ),
@@ -295,6 +315,10 @@ function crealead_profiles_strongarm() {
             'weight' => '6',
             'visible' => FALSE,
           ),
+          'brand_coe' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
         ),
         'profile_coe_page' => array(
           'default' => array(
@@ -302,8 +326,12 @@ function crealead_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '8',
+            'weight' => '3',
             'visible' => TRUE,
+          ),
+          'brand_coe' => array(
+            'weight' => '6',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -550,14 +578,14 @@ function crealead_profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_menu_vocab_menu_business_sectors';
-  $strongarm->value = 'menu-business-sectors';
+  $strongarm->value = '0';
   $export['taxonomy_menu_vocab_menu_business_sectors'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_menu_vocab_menu_themes';
-  $strongarm->value = 'menu-themes';
+  $strongarm->value = '0';
   $export['taxonomy_menu_vocab_menu_themes'] = $strongarm;
 
   $strongarm = new stdClass();

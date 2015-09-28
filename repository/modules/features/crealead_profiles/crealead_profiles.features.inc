@@ -58,32 +58,6 @@ function crealead_profiles_image_default_styles() {
 }
 
 /**
- * Implements hook_node_info().
- */
-function crealead_profiles_node_info() {
-  $items = array(
-    'achievement' => array(
-      'name' => t('Réalisation'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Intitulé'),
-      'help' => '',
-    ),
-    'client' => array(
-      'name' => t('Client'),
-      'base' => 'node_content',
-      'description' => t('Une référence client.'),
-      'has_title' => '1',
-      'title_label' => t('Nom'),
-      'help' => '',
-    ),
-  );
-  drupal_alter('node_info', $items);
-  return $items;
-}
-
-/**
  * Implements hook_default_profile2_type().
  */
 function crealead_profiles_default_profile2_type() {
@@ -92,7 +66,7 @@ function crealead_profiles_default_profile2_type() {
     "userCategory" : true,
     "userView" : true,
     "type" : "coe_page",
-    "label" : "Ma page entrepreneur",
+    "label" : "Profil entrepreneur",
     "weight" : "0",
     "data" : { "registration" : 0, "use_page" : 0 },
     "rdf_mapping" : []

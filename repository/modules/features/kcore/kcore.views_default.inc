@@ -60,7 +60,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: Noms référents (ER) */
-  $handler = $view->new_display('entityreference', 'Noms référents (ER)', 'entityreference_1');
+  $handler = $view->new_display('entityreference', 'Noms référents (ER)', 'referents_names');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Nom des référents';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -75,8 +75,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'entityreference_style';
   $handler->display->display_options['style_options']['search_fields'] = array(
-    'field_user_firstname' => 'field_user_firstname',
-    'field_user_lastname' => 'field_user_lastname',
+    'name' => 'name',
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -88,18 +87,12 @@ function kcore_views_default_views() {
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Champ: Utilisateur : Prénom */
-  $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['field'] = 'field_user_firstname';
-  $handler->display->display_options['fields']['field_user_firstname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_firstname']['element_label_colon'] = FALSE;
   /* Champ: Utilisateur : Nom */
-  $handler->display->display_options['fields']['field_user_lastname']['id'] = 'field_user_lastname';
-  $handler->display->display_options['fields']['field_user_lastname']['table'] = 'field_data_field_user_lastname';
-  $handler->display->display_options['fields']['field_user_lastname']['field'] = 'field_user_lastname';
-  $handler->display->display_options['fields']['field_user_lastname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lastname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Utilisateur : Actif */
@@ -116,6 +109,60 @@ function kcore_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     191976793 => '191976793',
   );
+
+  /* Display: Noms entrepreneurs (ER) */
+  $handler = $view->new_display('entityreference', 'Noms entrepreneurs (ER)', 'coes_names');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Nom des entrepreneurs';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    193262079 => '193262079',
+    103860121 => '103860121',
+    191976793 => '191976793',
+    231346920 => '231346920',
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'name' => 'name',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_user_firstname' => 'field_user_firstname',
+    'field_user_lastname' => 'field_user_lastname',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' ';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Utilisateur : Nom */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Utilisateur : Actif */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Utilisateur : Rôles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    103860121 => '103860121',
+  );
   $translatables['users'] = array(
     t('Master'),
     t('Référents Crealead'),
@@ -129,6 +176,8 @@ function kcore_views_default_views() {
     t('Prénom'),
     t('Noms référents (ER)'),
     t('Nom des référents'),
+    t('Noms entrepreneurs (ER)'),
+    t('Nom des entrepreneurs'),
   );
   $export['users'] = $view;
 
