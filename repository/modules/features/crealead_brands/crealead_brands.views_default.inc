@@ -678,6 +678,78 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['field_brand_type_value']['value'] = array(
     3 => '3',
   );
+
+  /* Display: Marques d'un article */
+  $handler = $view->new_display('entityreference', 'Marques d\'un article', 'entityreference_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Marque à afficher dans le formulaire de création/modification d\'une actu.';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Contenu : Co-entrepreneurs (field_brand_coes) */
+  $handler->display->display_options['relationships']['field_brand_coes_value']['id'] = 'field_brand_coes_value';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['table'] = 'field_data_field_brand_coes';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['field'] = 'field_brand_coes_value';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['delta'] = '-1';
+  /* Relation: Entity Reference : Entité référencée */
+  $handler->display->display_options['relationships']['field_brand_coe_target_id']['id'] = 'field_brand_coe_target_id';
+  $handler->display->display_options['relationships']['field_brand_coe_target_id']['table'] = 'field_data_field_brand_coe';
+  $handler->display->display_options['relationships']['field_brand_coe_target_id']['field'] = 'field_brand_coe_target_id';
+  $handler->display->display_options['relationships']['field_brand_coe_target_id']['relationship'] = 'field_brand_coes_value';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtre contextuel: Utilisateur : Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'field_brand_coe_target_id';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brand' => 'brand',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Critère de filtrage: Contenu : Type de marque (field_brand_type) */
+  $handler->display->display_options['filters']['field_brand_type_value']['id'] = 'field_brand_type_value';
+  $handler->display->display_options['filters']['field_brand_type_value']['table'] = 'field_data_field_brand_type';
+  $handler->display->display_options['filters']['field_brand_type_value']['field'] = 'field_brand_type_value';
+  $handler->display->display_options['filters']['field_brand_type_value']['value'] = array(
+    3 => '3',
+  );
   $translatables['brands'] = array(
     t('Master'),
     t('Les co-entrepreneurs de Crealead'),
@@ -716,6 +788,7 @@ function crealead_brands_views_default_views() {
     t('terme à partir de field_landing_pages'),
     t('Grandes marques'),
     t('Les grandes marques de Crealead'),
+    t('Marques d\'un article'),
   );
   $export['brands'] = $view;
 
@@ -795,7 +868,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences et spécialités */
+  /* Champ: Champ : Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

@@ -83,6 +83,18 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'articles_entity_view_1' => array(
+          'full' => array(
+            'weight' => '11',
+            'visible' => TRUE,
+          ),
+        ),
+        'articles_brand_articles' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

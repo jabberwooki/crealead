@@ -242,8 +242,8 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
 
-  /* Display: Actus de la marque */
-  $handler = $view->new_display('entity_view', 'Actus de la marque', 'brand_news');
+  /* Display: Actus d'une marque */
+  $handler = $view->new_display('entity_view', 'Actus d\'une marque', 'brand_news');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Actualités';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -359,7 +359,7 @@ function crealead_news_views_default_views() {
     t('Zoom Actus'),
     t('bloc actu de la page d\'accueil'),
     t('toutes les actus'),
-    t('Actus de la marque'),
+    t('Actus d\'une marque'),
     t('Actualités'),
     t('Entité Contenu réferencée par field_related_brands'),
     t('Tout'),

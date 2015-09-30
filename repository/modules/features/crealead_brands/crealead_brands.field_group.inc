@@ -72,7 +72,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'field_brand_phone',
       1 => 'field_brand_email',
@@ -139,6 +139,7 @@ function crealead_brands_field_group_info() {
       3 => 'group_brand_blog_tab',
       4 => 'group_brand_contact_tab',
       5 => 'group_brand_achiev_tab',
+      6 => 'group_brand_articles_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
