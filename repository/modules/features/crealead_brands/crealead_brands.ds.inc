@@ -18,7 +18,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(

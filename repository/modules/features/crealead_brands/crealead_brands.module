@@ -7,6 +7,16 @@
 include_once 'crealead_brands.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function crealead_brands_init() {
+  $node = menu_get_object();
+  if (!empty($node) && $node->type == 'brand') {
+    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_id) {
