@@ -181,5 +181,32 @@ function crealead_brands_field_group_info() {
   );
   $export['group_brans_coes_tab|node|brand|full'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_crealead_fields|node|brand|form';
+  $field_group->group_name = 'group_crealead_fields';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Champs Crealead',
+    'weight' => '20',
+    'children' => array(
+      0 => 'field_brand_search',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-crealead-fields field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_crealead_fields|node|brand|form'] = $field_group;
+
   return $export;
 }

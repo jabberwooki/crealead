@@ -165,8 +165,7 @@ function crealead_brands_views_default_views() {
   $handler = $view->new_display('page_with_page_title', 'Marques', 'brands_list');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rechercher';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
@@ -180,18 +179,15 @@ function crealead_brands_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_business_sector_tid' => array(
-      'bef_format' => 'bef',
+    'field_brand_search_value' => array(
+      'bef_format' => 'default',
       'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -279,6 +275,57 @@ function crealead_brands_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
+    'field_business_sector_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
     'secondary_label' => NULL,
     'collapsible_label' => NULL,
     'combine_rewrite' => NULL,
@@ -303,6 +350,15 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|title';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Comportement en l'absence de résultats: Global : Zone de texte */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'Absence de résultat';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Aucune résultat ne correspond à vos critères de recherche.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Logo */
   $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
@@ -344,16 +400,19 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'brand' => 'brand',
   );
-  /* Critère de filtrage: Contenu : Secteur d&#039;activité (field_business_sector) */
-  $handler->display->display_options['filters']['field_business_sector_tid']['id'] = 'field_business_sector_tid';
-  $handler->display->display_options['filters']['field_business_sector_tid']['table'] = 'field_data_field_business_sector';
-  $handler->display->display_options['filters']['field_business_sector_tid']['field'] = 'field_business_sector_tid';
-  $handler->display->display_options['filters']['field_business_sector_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator_id'] = 'field_business_sector_tid_op';
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['label'] = 'Secteur d\'activité';
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator'] = 'field_business_sector_tid_op';
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['identifier'] = 'field_business_sector_tid';
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Critère de filtrage: Contenu : Champ de recherche (field_brand_search) */
+  $handler->display->display_options['filters']['field_brand_search_value']['id'] = 'field_brand_search_value';
+  $handler->display->display_options['filters']['field_brand_search_value']['table'] = 'field_data_field_brand_search';
+  $handler->display->display_options['filters']['field_brand_search_value']['field'] = 'field_brand_search_value';
+  $handler->display->display_options['filters']['field_brand_search_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_brand_search_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_brand_search_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['operator_id'] = 'field_brand_search_value_op';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['label'] = 'Mots-clés';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['operator'] = 'field_brand_search_value_op';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['identifier'] = 'field_brand_search_value';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     14479344 => 0,
@@ -363,13 +422,17 @@ function crealead_brands_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
-  $handler->display->display_options['filters']['field_business_sector_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_business_sector_tid']['vocabulary'] = 'business_sectors';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_dependent'] = 0;
   /* Critère de filtrage: Contenu : Titre */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
@@ -392,6 +455,28 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Critère de filtrage: Contenu : Secteur d&#039;activité (field_business_sector) */
+  $handler->display->display_options['filters']['field_business_sector_tid']['id'] = 'field_business_sector_tid';
+  $handler->display->display_options['filters']['field_business_sector_tid']['table'] = 'field_data_field_business_sector';
+  $handler->display->display_options['filters']['field_business_sector_tid']['field'] = 'field_business_sector_tid';
+  $handler->display->display_options['filters']['field_business_sector_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_business_sector_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator_id'] = 'field_business_sector_tid_op';
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['label'] = 'Secteur d\'activité';
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator'] = 'field_business_sector_tid_op';
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['identifier'] = 'field_business_sector_tid';
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    7178059 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_business_sector_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_business_sector_tid']['vocabulary'] = 'business_sectors';
   $handler->display->display_options['path'] = 'annuaire-entrepreneurs';
 
   /* Display: Marques d'un coe */
@@ -770,6 +855,10 @@ function crealead_brands_views_default_views() {
     t('dernier »'),
     t('Secteur d\'activité'),
     t('Marques'),
+    t('Rechercher'),
+    t('Absence de résultat'),
+    t('Aucune résultat ne correspond à vos critères de recherche.'),
+    t('Mots-clés'),
     t('Marque'),
     t('Marques d\'un coe'),
     t('field collection item from field_brand_coes'),

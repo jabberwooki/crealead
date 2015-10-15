@@ -28,6 +28,51 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     unset($form['field_brand_type']['und']['#options'][3]);
   }
+
+  // Move "Champs Crealed" vertical tab to the bottom.
+  $form['#groups']['group_crealead_fields']->weight = 200;
+
+  $form['#after_build'][] = 'crealead_brands_after_build';
+}
+
+function crealead_brands_after_build($form, &$form_state) {
+  // Make the field field_brand_search readonly.
+  $form['field_brand_search']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
+  $form_state['values']['field_brand_search']['und'][0]['value'] = $form['field_brand_search']['und'][0]['value']['#default_value'];
+
+  return $form;
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function crealead_brands_node_presave($node) {
+  // Fetch all coes names and competencies linked to current brand.
+  $coe_names = '';
+  $coe_competencies = '';
+  foreach($node->field_brand_coes['und'] as $fc_item) {
+    dpm($fc_item);
+    $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
+    $coe = user_load($coe_id);
+    $coe_names .= $coe->name . ' ';
+
+    foreach ($fc_item['field_competencies']['und'] as $competency) {
+      $coe_competencies .= $competency['name'] . ' ';
+    }
+  }
+
+  // Store names, competencies and solutions into field_brand_search technical field.
+  $search_data = $coe_names
+    . $coe_competencies
+    . $node->field_brand_solutions['und'][0]['value'];
+  $search_array = array('value' => $search_data, 'format' => 'plain_text');
+
+  if (!isset($node->field_brand_search['und'][0])) {
+    $node->field_brand_search['und'][] = $search_array;
+  }
+  else {
+    $node->field_brand_search['und'][0] = $search_array;
+  }
 }
 
 /**
