@@ -47,7 +47,6 @@ features[fe_block_settings][] = boxes-crealead_links_coe
 features[fe_block_settings][] = menu-menu-business-sectors
 features[fe_block_settings][] = menu-menu-themes
 features[fe_block_settings][] = views-achievements-block_achiev_pics
-features[fe_block_settings][] = views-business_sectors-block_1
 features[features_api][] = api:2
 features[field_base][] = field_achievement_photos
 features[field_base][] = field_biography

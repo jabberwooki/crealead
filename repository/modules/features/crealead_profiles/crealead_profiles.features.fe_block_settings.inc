@@ -147,32 +147,5 @@ function crealead_profiles_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-business_sectors-block_1'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'business_sectors-block_1',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
-      'crealead' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'crealead',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   return $export;
 }
