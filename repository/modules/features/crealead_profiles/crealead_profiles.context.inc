@@ -247,9 +247,9 @@ function crealead_profiles_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-brands-block_1' => array(
+        'views-brands-client_brands' => array(
           'module' => 'views',
-          'delta' => 'brands-block_1',
+          'delta' => 'brands-client_brands',
           'region' => 'content',
           'weight' => '10',
         ),

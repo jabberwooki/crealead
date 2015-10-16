@@ -559,7 +559,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Marques d'un client */
-  $handler = $view->new_display('block', 'Marques d\'un client', 'block_1');
+  $handler = $view->new_display('block', 'Marques d\'un client', 'client_brands');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Entrepreneurs ayant travaillé pour cette référence';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
