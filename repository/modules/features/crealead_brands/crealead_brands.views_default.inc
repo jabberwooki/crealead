@@ -717,7 +717,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['argument_mode'] = 'none';
 
   /* Display: Grandes marques */
-  $handler = $view->new_display('block', 'Grandes marques', 'block_2');
+  $handler = $view->new_display('block', 'Grandes marques', 'main_brands');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Les grandes marques de Crealead';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -957,7 +957,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences et spécialités */
+  /* Champ: Champ : Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

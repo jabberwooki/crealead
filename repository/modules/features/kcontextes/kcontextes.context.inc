@@ -78,11 +78,11 @@ function kcontextes_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'views-brands-block_2' => array(
+        'views-brands-main_brands' => array(
           'module' => 'views',
-          'delta' => 'brands-block_2',
+          'delta' => 'brands-main_brands',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => '10',
         ),
         'boxes-crealead_link_advantages' => array(
           'module' => 'boxes',
