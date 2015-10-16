@@ -91,3 +91,52 @@ function crealead_brands_node_view_alter(&$build) {
 function crealead_brands_node_grants_alter(&$grants, $account, $op) {
   var_dump($grants);
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function crealead_brands_block_info() {
+  $blocks = array();
+  $blocks['crealead_brands_number'] = array(
+    'info' => t('Crealead : Nombre de grandes marques'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function crealead_brands_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'crealead_brands_number' :
+      $content = '<div class="number  brands-number">' . crealead_main_brands_number() . '</div>';
+      $content .= '<div class="text brands-text">' . 'grandes marques' . '</div>';
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Helper functions.
+ */
+
+/**
+ * Returns the number of main brands (grandes marques).
+ *
+ * @return
+ *   The number of main brands.
+ */
+function crealead_main_brands_number() {
+  $query = db_select('node','n')->fields('n', array('nid'));
+  $query->join('field_data_field_brand_type','bt', 'n.nid=bt.entity_id');
+  $query->condition('n.status', '1');
+  $query->condition('bt.field_brand_type_value', '3');
+  $result = $query->execute()->fetchCol();
+
+  return count($result);
+}

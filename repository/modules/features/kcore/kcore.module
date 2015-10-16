@@ -39,3 +39,69 @@ function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
 function kcore_email_registration_name($edit, $account) {
   return $edit['field_user_firstname']['und'][0]['value'] . ' ' . $edit['field_user_lastname']['und'][0]['value'];
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function kcore_block_info() {
+  $blocks = array();
+  $blocks['crealead_coes_number'] = array(
+    'info' => t('Crealead : Nombre d\'entrepreneurs'),
+  );
+  $blocks['crealead_refs_number'] = array(
+    'info' => t('Crealead : Nombre de référents'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kcore_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'crealead_coes_number' :
+      $content = '<div class="number coes-number">' . crealead_users_number('entrepreneur') . '</div>';
+      $content .= '<div class="text coes-text">' . 'entrepreneurs' . '</div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_refs_number' :
+      $content = '<div class="number refs-number">' . crealead_users_number('referent') . '</div>';
+      $content .= '<div class="text refs-text">' . 'référents' . '</div>';
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Helper functions.
+ */
+
+/**
+ * Returns the number of active user belonging to role given as paramater.
+ * Il no role is passed on, returns the total number of active users.
+ *
+ * @param $role
+ *   A role machine name (ex. Référent role's machine name is 'referent').
+ *
+ * @return
+ *   The number of users.
+ */
+function crealead_users_number($role=null) {
+  $query = db_select('users_roles', 'ur')->fields('ur', array('uid'));
+  if (isset($role)) {
+    $role = user_role_load_by_name($role);
+    $query->condition('ur.rid', $role->rid);
+  }
+  else {
+    $query->distinct();
+  }
+  $result = $query->execute()->fetchCol();
+
+  return count($result);
+}
