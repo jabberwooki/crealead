@@ -52,7 +52,6 @@ function crealead_brands_node_presave($node) {
     $coe_competencies = '';
     // Fetch all coes names and competencies linked to current brand.
     foreach($node->field_brand_coes['und'] as $fc_item) {
-      dpm($fc_item);
       $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
       $coe = user_load($coe_id);
       $coe_names .= $coe->name . ' ';
