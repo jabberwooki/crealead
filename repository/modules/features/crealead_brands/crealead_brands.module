@@ -11,7 +11,7 @@ include_once 'crealead_brands.features.inc';
  */
 function crealead_brands_init() {
   $node = menu_get_object();
-  if (!empty($node) && $node->type == 'brand') {
+  if (!empty($node) && $node->type == 'brand' && arg(2) != 'edit') {
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
   }
 }
