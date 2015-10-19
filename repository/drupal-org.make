@@ -121,7 +121,7 @@ projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
 
 projects[entityreference_views_formatter][subdir] = contrib
-projects[entityreference_views_formatter][version] = "1.1"
+projects[entityreference_views_formatter][version] = "1.x-dev"
 
 projects[eva][subdir] = contrib
 projects[eva][version] = "1.2"
