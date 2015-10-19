@@ -220,7 +220,7 @@ function kcore_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_user_referent',
     'label' => 'Référent',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
     ),
