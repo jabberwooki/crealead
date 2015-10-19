@@ -34,28 +34,32 @@ function crealead_profiles_profile2_update($profile) {
 
 function crealead_send_mail_to_referent($profile) {
   $user_wrapper = entity_metadata_wrapper('user', $profile->uid);
-  $referent_uid = $user_wrapper->field_user_referent->raw();
-  $referent_wrapper = entity_metadata_wrapper('user', $referent_uid);
-  $referent_email = $referent_wrapper->mail->raw();
-  $referent_fullname = $referent_wrapper->field_user_firstname->raw() . ' ' . $referent_wrapper->field_user_lastname->raw();
 
-  // Build email message to referent.
-  $to = $referent_email;
-  $from = variable_get('site_mail');
-  $mail_subject = '[Site web Crealead] Demande de validation de profil';
-  $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
-    . ' a demandé la validation de son profil entrepreneur : http://' . $_SERVER['HTTP_HOST'] . '/user/' . $profile->uid . '/edit/coe_page';
-  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+  // Sends email to referent only if user has a referent.
+  if (isset($user_wrapper->field_user_referent)) {
+    $referent_uid = $user_wrapper->field_user_referent->raw();
+    $referent_wrapper = entity_metadata_wrapper('user', $referent_uid);
+    $referent_email = $referent_wrapper->mail->raw();
+    $referent_fullname = $referent_wrapper->field_user_firstname->raw() . ' ' . $referent_wrapper->field_user_lastname->raw();
 
-  $type = 'status';
-  if (drupal_mail('crealead_profiles', 'profile_validation_request', $to, language_default(), $params, $from)) {
-    $message = t('Validation request email message sent successfully to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+    // Build email message to referent.
+    $to = $referent_email;
+    $from = variable_get('site_mail');
+    $mail_subject = '[Site web Crealead] Demande de validation de profil';
+    $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
+      . ' a demandé la validation de son profil entrepreneur : http://' . $_SERVER['HTTP_HOST'] . '/user/' . $profile->uid . '/edit/coe_page';
+    $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+    $type = 'status';
+    if (drupal_mail('crealead_profiles', 'profile_validation_request', $to, language_default(), $params, $from)) {
+      $message = t('Validation request email message sent successfully to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+    }
+    else {
+      $message = t('Email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+      $type = 'warning';
+    }
+    drupal_set_message($message, $type);
   }
-  else {
-    $message = t('Email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
-    $type = 'warning';
-  }
-  drupal_set_message($message, $type);
 }
 
 /**
