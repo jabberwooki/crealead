@@ -165,6 +165,9 @@ projects[references_dialog][version] = "1.0-beta1"
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
 
+projects[taxonomy_display][subdir] = contrib
+projects[taxonomy_display][version] = "1.1"
+
 projects[taxonomy_menu][subdir] = contrib
 projects[taxonomy_menu][version] = "1.5"
 
