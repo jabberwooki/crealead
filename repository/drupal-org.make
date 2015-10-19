@@ -91,7 +91,16 @@ projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.1"
 
 projects[boxes][subdir] = contrib
-projects[boxes][version] = ""
+projects[boxes][version] = "1.2"
+
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = "2.9"
+
+projects[colorbox_field_formatter][subdir] = contrib
+projects[colorbox_field_formatter][version] = "1.0"
+
+projects[conditional_fields][subdir] = contrib
+projects[conditional_fields][version] = "3.0-alpha1"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.8"
@@ -114,8 +123,17 @@ projects[entityreference][version] = "1.1"
 projects[entityreference_views_formatter][subdir] = contrib
 projects[entityreference_views_formatter][version] = "1.1"
 
+projects[eva][subdir] = contrib
+projects[eva][version] = "1.2"
+
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = "1.x-dev"
+
+projects[field_collection_views][subdir] = contrib
+projects[field_collection_views][version] = "1.0-beta3"
+
+projects[field_slideshow][subdir] = contrib
+projects[field_slideshow][version] = "1.82"
 
 ;projects[filefield_sources][subdir] = contrib
 ;projects[filefield_sources][version] = "1.9"
@@ -140,6 +158,9 @@ projects[profile2][version] = "1.3"
 
 projects[print][subdir] = contrib
 projects[print][version] = "2.0"
+
+projects[references_dialog][subdir] = contrib
+projects[references_dialog][version] = "1.0-beta1"
 
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
