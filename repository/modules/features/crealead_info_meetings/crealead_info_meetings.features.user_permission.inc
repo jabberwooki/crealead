@@ -54,7 +54,6 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'create info_meeting content',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -113,7 +112,8 @@ function crealead_info_meetings_user_default_permissions() {
   $permissions['delete own info_meeting content'] = array(
     'name' => 'delete own info_meeting content',
     'roles' => array(
-      'rédacteur' => 'rédacteur',
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -160,7 +160,8 @@ function crealead_info_meetings_user_default_permissions() {
   $permissions['edit own info_meeting content'] = array(
     'name' => 'edit own info_meeting content',
     'roles' => array(
-      'rédacteur' => 'rédacteur',
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
