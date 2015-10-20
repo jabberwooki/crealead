@@ -60,7 +60,6 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -929,7 +928,6 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
