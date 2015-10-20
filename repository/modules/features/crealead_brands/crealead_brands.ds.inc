@@ -461,5 +461,49 @@ function crealead_brands_ds_layout_settings_info() {
   );
   $export['node|client|full'] = $ds_layout;
 
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|themes|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'themes';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'description',
+        1 => 'group_theme_tabs',
+        2 => 'group_theme_brands_tab',
+        3 => 'group_theme_news_tab',
+        4 => 'group_theme_articles_tab',
+        5 => 'brands_entity_view_1',
+        6 => 'articles_theme_articles',
+        7 => 'news_theme_news',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'central',
+      'group_theme_tabs' => 'central',
+      'group_theme_brands_tab' => 'central',
+      'group_theme_news_tab' => 'central',
+      'group_theme_articles_tab' => 'central',
+      'brands_entity_view_1' => 'central',
+      'articles_theme_articles' => 'central',
+      'news_theme_news' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['taxonomy_term|themes|full'] = $ds_layout;
+
   return $export;
 }
