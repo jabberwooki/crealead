@@ -43,6 +43,15 @@ function crealead_brands_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create new service'.
+  $permissions['create new service'] = array(
+    'name' => 'create new service',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'socialfield',
+  );
+
   // Exported permission: 'delete any achievement content'.
   $permissions['delete any achievement content'] = array(
     'name' => 'delete any achievement content',
@@ -69,6 +78,15 @@ function crealead_brands_user_default_permissions() {
       'administrateur' => 'administrateur',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete any service'.
+  $permissions['delete any service'] = array(
+    'name' => 'delete any service',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'socialfield',
   );
 
   // Exported permission: 'delete own achievement content'.
@@ -136,6 +154,15 @@ function crealead_brands_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any service'.
+  $permissions['edit any service'] = array(
+    'name' => 'edit any service',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'socialfield',
+  );
+
   // Exported permission: 'edit own achievement content'.
   $permissions['edit own achievement content'] = array(
     'name' => 'edit own achievement content',
@@ -164,6 +191,15 @@ function crealead_brands_user_default_permissions() {
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view services'.
+  $permissions['view services'] = array(
+    'name' => 'view services',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'socialfield',
   );
 
   return $permissions;

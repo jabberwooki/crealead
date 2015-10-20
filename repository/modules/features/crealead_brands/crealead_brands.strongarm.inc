@@ -144,5 +144,93 @@ function crealead_brands_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_brand'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'socialfield_services';
+  $strongarm->value = array(
+    'facebook' => array(
+      'name' => 'Facebook',
+      'icon' => 'icon-facebook',
+      'validation_pattern' => '*facebook.com/*',
+    ),
+    'twitter' => array(
+      'name' => 'Twitter',
+      'icon' => 'icon-twitter',
+      'validation_pattern' => '*twitter.com/*',
+    ),
+    'googleplus' => array(
+      'name' => 'Google+',
+      'icon' => 'icon-gplus',
+      'validation_pattern' => '*plus.google.com/*',
+    ),
+    'linkedin' => array(
+      'name' => 'LinkedIn',
+      'icon' => 'icon-linkedin',
+      'validation_pattern' => '*linkedin.com/*',
+    ),
+    'youtube' => array(
+      'name' => 'YouTube',
+      'icon' => 'icon-youtube',
+      'validation_pattern' => '*youtube.com/*',
+    ),
+    'vimeo' => array(
+      'name' => 'Vimeo',
+      'icon' => 'icon-vimeo',
+      'validation_pattern' => '*vimeo.com/*',
+    ),
+    'delicious' => array(
+      'name' => 'Delicious',
+      'icon' => 'icon-delicious',
+      'validation_pattern' => '*delicious.com/*',
+    ),
+    'digg' => array(
+      'name' => 'Digg',
+      'icon' => 'icon-digg',
+      'validation_pattern' => '*digg.com/*',
+    ),
+    'flickr' => array(
+      'name' => 'Flickr',
+      'icon' => 'icon-flickr',
+      'validation_pattern' => '*flickr.com/*',
+    ),
+    'yahoo' => array(
+      'name' => 'Yahoo!',
+      'icon' => 'icon-yahoo',
+      'validation_pattern' => '*yahoo.com/*',
+    ),
+    'myspace' => array(
+      'name' => 'Myspace',
+      'icon' => 'icon-myspace',
+      'validation_pattern' => '*myspace.com/*',
+    ),
+    'pinterest' => array(
+      'name' => 'Pinterest',
+      'icon' => 'icon-pinterest',
+      'validation_pattern' => '*pinterest.com/*',
+    ),
+    'reddit' => array(
+      'name' => 'Reddit',
+      'icon' => 'icon-reddit',
+      'validation_pattern' => '*reddit.com/*',
+    ),
+    'slideshare' => array(
+      'name' => 'Slideshare',
+      'icon' => 'icon-slideshare',
+      'validation_pattern' => '*slideshare.net/*',
+    ),
+    'stumbleupon' => array(
+      'name' => 'Stumbleupon',
+      'icon' => 'icon-stumbleupon',
+      'validation_pattern' => '*stumbleupon.com/*',
+    ),
+    'viadeo' => array(
+      'name' => 'Viadeo',
+      'icon' => 'icon-viadeo',
+      'validation_pattern' => '*viadeo.com/*',
+    ),
+  );
+  $export['socialfield_services'] = $strongarm;
+
   return $export;
 }
