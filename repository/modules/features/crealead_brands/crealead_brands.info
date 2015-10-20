@@ -10,6 +10,7 @@ dependencies[] = entityreference_views_formatter
 dependencies[] = eva
 dependencies[] = field_collection_views
 dependencies[] = field_group
+dependencies[] = font_icons
 dependencies[] = socialfield
 dependencies[] = taxonomy_display
 features[conditional_fields][] = node:article
