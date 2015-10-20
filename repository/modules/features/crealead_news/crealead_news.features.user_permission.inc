@@ -36,7 +36,6 @@ function crealead_news_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -48,7 +47,6 @@ function crealead_news_user_default_permissions() {
     'name' => 'delete any news content',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -59,7 +57,9 @@ function crealead_news_user_default_permissions() {
   $permissions['delete own news content'] = array(
     'name' => 'delete own news content',
     'roles' => array(
+      'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -99,8 +99,9 @@ function crealead_news_user_default_permissions() {
   $permissions['edit own news content'] = array(
     'name' => 'edit own news content',
     'roles' => array(
+      'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
-      'rédacteur' => 'rédacteur',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
