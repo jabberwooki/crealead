@@ -95,6 +95,7 @@ features[field_instance][] = node-client-body
 features[field_instance][] = node-client-field_client_location
 features[field_instance][] = node-client-field_client_logo
 features[field_instance][] = node-client-field_client_type
+features[image][] = thumbnail_50x50
 features[menu_links][] = main-menu_entrepreneurs:annuaire-entrepreneurs
 features[menu_links][] = main-menu_thmatiques:thematiques
 features[node][] = achievement

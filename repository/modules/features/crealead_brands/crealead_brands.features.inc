@@ -33,6 +33,30 @@ function crealead_brands_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function crealead_brands_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: thumbnail_50x50.
+  $styles['thumbnail_50x50'] = array(
+    'label' => 'Thumbnail (50x50)',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 50,
+          'height' => 50,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function crealead_brands_node_info() {
