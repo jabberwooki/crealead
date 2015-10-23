@@ -644,35 +644,5 @@ function crealead_profiles_strongarm() {
   $strongarm->value = FALSE;
   $export['taxonomy_menu_voc_name_themes'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'tvi_vocab_business_sectors';
-  $strongarm->value = array(
-    'is_default' => TRUE,
-    'type' => 'vocab',
-    'xid' => 'business_sectors',
-    'status' => 1,
-    'view_name' => 'entrepreneurs',
-    'display' => 'page_business_sector',
-    'pass_arguments' => 0,
-  );
-  $export['tvi_vocab_business_sectors'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'tvi_vocab_themes';
-  $strongarm->value = array(
-    'is_default' => TRUE,
-    'type' => 'vocab',
-    'xid' => 'themes',
-    'status' => 1,
-    'view_name' => 'entrepreneurs',
-    'display' => 'page_themes',
-    'pass_arguments' => 0,
-  );
-  $export['tvi_vocab_themes'] = $strongarm;
-
   return $export;
 }

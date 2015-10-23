@@ -174,8 +174,8 @@ projects[taxonomy_menu][version] = "1.5"
 projects[term_reference_tree][subdir] = contrib
 projects[term_reference_tree][version] = "1.10"
 
-projects[tvi][subdir] = contrib
-projects[tvi][version] = "1.0-beta5"
+;projects[tvi][subdir] = contrib
+;projects[tvi][version] = "1.0-beta5"
 
 projects[views_autocomplete_filters][subdir] = contrib
 projects[views_autocomplete_filters][version] = "1.2"
