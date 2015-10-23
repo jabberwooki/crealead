@@ -263,5 +263,40 @@ function crealead_profiles_context_default_contexts() {
   t('Références');
   $export['reference_page'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'user_page';
+  $context->description = '';
+  $context->tag = 'Users';
+  $context->conditions = array(
+    'user_page' => array(
+      'values' => array(
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'all',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-brands-coe_brands' => array(
+          'module' => 'views',
+          'delta' => 'brands-coe_brands',
+          'region' => 'content',
+          'weight' => '10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Users');
+  $export['user_page'] = $context;
+
   return $export;
 }

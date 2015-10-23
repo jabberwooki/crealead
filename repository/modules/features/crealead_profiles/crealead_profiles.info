@@ -35,6 +35,7 @@ features[context][] = entrepreneurs_home
 features[context][] = entrepreneurs_search
 features[context][] = entrepreneurs_themes
 features[context][] = reference_page
+features[context][] = user_page
 features[ctools][] = boxes:box:1
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
