@@ -103,6 +103,111 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__themes';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'path' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '3',
+        ),
+        'name' => array(
+          'weight' => '0',
+        ),
+        'description' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_entity_view_1' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'news_entity_view_1' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'news_theme_news' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'articles_theme_articles' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__themes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_brand';
   $strongarm->value = '0';
   $export['language_content_type_brand'] = $strongarm;
