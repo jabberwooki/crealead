@@ -95,6 +95,18 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'brand_contact_submissions_entity_view_1' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+        ),
+        'brand_contact_submissions_eva_contacts_list' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );

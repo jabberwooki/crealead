@@ -117,6 +117,9 @@ projects[email][version] = "1.3"
 projects[email_registration][subdir] = contrib
 projects[email_registration][version] = "1.2"
 
+projects[entityform][subdir] = contrib
+projects[entityform][version] = "2.0-rc1"
+
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
 
@@ -176,6 +179,9 @@ projects[term_reference_tree][version] = "1.10"
 
 ;projects[tvi][subdir] = contrib
 ;projects[tvi][version] = "1.0-beta5"
+
+projects[rules][subdir] = contrib
+projects[rules][version] = "2.9"
 
 projects[views_autocomplete_filters][subdir] = contrib
 projects[views_autocomplete_filters][version] = "1.2"

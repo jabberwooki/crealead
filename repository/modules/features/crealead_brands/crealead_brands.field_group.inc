@@ -130,6 +130,8 @@ function crealead_brands_field_group_info() {
       1 => 'field_brand_email',
       2 => 'field_brand_website',
       3 => 'field_social_links',
+      4 => 'field_contact_form',
+      5 => 'brand_contacts',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -247,6 +249,7 @@ function crealead_brands_field_group_info() {
     'weight' => '20',
     'children' => array(
       0 => 'field_brand_search',
+      1 => 'field_contact_form',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

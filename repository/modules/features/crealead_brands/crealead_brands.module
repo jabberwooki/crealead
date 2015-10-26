@@ -13,6 +13,7 @@ function crealead_brands_init() {
   $node = menu_get_object();
   if (!empty($node) && $node->type == 'brand' && arg(2) != 'edit') {
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
+    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
   }
 }
 
@@ -77,12 +78,24 @@ function crealead_brands_node_presave($node) {
 }
 
 /**
- * Implements hook_node_view_alter().
+ * Implements hook_views_data_alter().
  */
-function crealead_brands_node_view_alter(&$build) {
-//  dpm($build);
-//  if ($build['#bundle'] == '') {
-//
+/**
+ * Implements hook_views_pre_view().
+ */
+function crealead_brands_views_pre_view(&$view, &$display_id, &$args) {
+//  if ($display_id == 'eva_contacts_list') {
+//    dpm($view);
+//  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_brands_views_pre_render(&$view) {
+//  if ($view->current_display == 'eva_contacts_list') {
+//    dpm($view);
+//    $view->result = array();
 //  }
 }
 
@@ -101,6 +114,9 @@ function crealead_brands_block_info() {
   $blocks['crealead_brands_number'] = array(
     'info' => t('Crealead : Nombre de grandes marques'),
   );
+  $blocks['crealead_brands_contacts_list'] = array(
+    'info' => t('Crealead : Liste des contacts email'),
+  );
 
   return $blocks;
 }
@@ -117,9 +133,55 @@ function crealead_brands_block_view($delta = '') {
       $content .= '<div class="text brands-text">' . 'grandes marques' . '</div>';
       $block['content'] = $content;
       break;
+    case 'crealead_brands_contacts_list' :
+      $block['content'] = crealead_brand_contacts_list();
+      break;
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
+  //dpm($entity);
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function crealead_brands_entity_view_alter(&$build, $type) {
+  if ($build['#entity_type'] == 'entityform_type' && $build['#entity']->type == 'contact' && $build['#view_mode'] == 'full') {
+    $build['#entity']->label = '';
+    $build['#entity']->data['redirect_path'] = substr($_SERVER['REDIRECT_URL'],1);
+  }
+
+  if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
+    if (!isset($build['field_brand_email'])) {
+      unset($build['field_contact_form']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'contact_entityform_edit_form') {
+    $node = menu_get_object();
+    if (isset($node->field_contact_form)) {
+      // Brand name added to form
+      $form['field_contact_brand_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $node->title;
+      // Brand nid added to form
+      $form['field_brand_nid'][LANGUAGE_NONE][0]['value']['#default_value'] = $node->nid;
+      // Brand email added to form
+      if (isset($node->field_brand_email['und'][0]['email'])) {
+        $form['field_contact_brand_email'][LANGUAGE_NONE][0]['value']['#default_value'] =
+          $node->field_brand_email['und'][0]['email'];
+      }
+    }
+  }
 }
 
 /**
@@ -140,4 +202,39 @@ function crealead_main_brands_number() {
   $result = $query->execute()->fetchCol();
 
   return count($result);
+}
+
+/**
+ * Returns the view's markup for the current brand's contacts list if current user is allowed to view it.
+ * Otherwise returns an empty string.
+ *
+ * Users allowed to view current brand's email contacts list are :
+ * - superadmin (uid=1)
+ * - users with role administrator, webmaster and referent
+ * - all coes attached to current brand
+ *
+ * @return string
+ *   The listing brand's contacts markup or an empty string.
+ */
+function crealead_brand_contacts_list() {
+  $node = menu_get_object();
+  $allowed_uids = array('1');
+
+  if (!empty($node->field_brand_coes)) {
+    $fc_coes = $node->field_brand_coes['und'];
+    foreach ($fc_coes as $fc_item_id) {
+      $wrapper = entity_metadata_wrapper('field_collection_item', $fc_item_id['value']);
+      $fc_item = $wrapper->value();
+      $allowed_uids[] = $fc_item->field_brand_coe['und'][0]['target_id'];
+    }
+  }
+
+  $allowed_roles = array('administrateur','webmaster','référent');
+  global $user;
+
+  $output = '';
+  if (in_array($user->uid, $allowed_uids) || sizeof(array_intersect($allowed_roles, $user->roles)) > 0) {
+    $output = views_embed_view('brand_contact_submissions', 'brand_contacts');
+  }
+  return $output;
 }
