@@ -140,7 +140,7 @@ function crealead_brands_node_presave($node) {
  * Implements hook_node_grants_alter().
  */
 function crealead_brands_node_grants_alter(&$grants, $account, $op) {
-  var_dump($grants);
+  //var_dump($grants);
 }
 
 /**
@@ -260,8 +260,8 @@ function crealead_brands_node_update($node) {
  *   The number of main brands.
  */
 function crealead_main_brands_number() {
-  $query = db_select('node','n')->fields('n', array('nid'));
-  $query->join('field_data_field_brand_type','bt', 'n.nid=bt.entity_id');
+  $query = db_select('node', 'n')->fields('n', array('nid'));
+  $query->join('field_data_field_brand_type', 'bt', 'n.nid=bt.entity_id');
   $query->condition('n.status', '1');
   $query->condition('bt.field_brand_type_value', '3');
   $result = $query->execute()->fetchCol();
@@ -294,7 +294,7 @@ function crealead_brand_contacts_list() {
     }
   }
 
-  $allowed_roles = array('administrateur','webmaster','référent');
+  $allowed_roles = array('administrateur', 'webmaster', 'référent');
   global $user;
 
   $output = '';
@@ -325,10 +325,16 @@ function crealead_send_brand_mail_to_referent($uid, $brand_nid, $brand_title) {
 
     $type = 'status';
     if (drupal_mail('crealead_brands', 'brand_validation_request', $to, language_default(), $params, $from)) {
-      $message = t('Validation request email message sent successfully to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+      $message = t('Validation request email message sent successfully to %fullname (%to)', array(
+        '%fullname' => $referent_fullname,
+        '%to' => $to
+      ));
     }
     else {
-      $message = t('Email message could not be sent to %fullname (%to)', array('%fullname' => $referent_fullname, '%to' => $to));
+      $message = t('Email message could not be sent to %fullname (%to)', array(
+        '%fullname' => $referent_fullname,
+        '%to' => $to
+      ));
       $type = 'warning';
     }
     drupal_set_message($message, $type);
