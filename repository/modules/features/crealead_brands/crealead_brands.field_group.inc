@@ -246,10 +246,11 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '20',
+    'weight' => '22',
     'children' => array(
       0 => 'field_brand_search',
       1 => 'field_contact_form',
+      2 => 'field_brand_validated',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

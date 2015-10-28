@@ -1654,6 +1654,59 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-brand-field_brand_validated'
+  $field_instances['node-brand-field_brand_validated'] = array(
+    'bundle' => 'brand',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_brand_validated',
+    'label' => 'Marque validée',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-brand-field_brand_website'
   $field_instances['node-brand-field_brand_website'] = array(
     'bundle' => 'brand',
@@ -1888,6 +1941,59 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-brand-field_email_sent'
+  $field_instances['node-brand-field_email_sent'] = array(
+    'bundle' => 'brand',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 20,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_email_sent',
+    'label' => 'Email envoyé',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-brand-field_landing_pages'
   $field_instances['node-brand-field_landing_pages'] = array(
     'bundle' => 'brand',
@@ -1934,6 +2040,59 @@ function crealead_brands_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-brand-field_saving_type'
+  $field_instances['node-brand-field_saving_type'] = array(
+    'bundle' => 'brand',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 19,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_saving_type',
+    'label' => 'Type de sauvegarde',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
     ),
   );
 
@@ -2308,6 +2467,7 @@ function crealead_brands_field_default_field_instances() {
   t('Descriptif');
   t('Description');
   t('Email de contact');
+  t('Email envoyé');
   t('Entrepreneur');
   t('Formulaire de contact');
   t('Groupe(s) métier');
@@ -2317,6 +2477,7 @@ function crealead_brands_field_default_field_instances() {
   t('Localisation');
   t('Logo');
   t('Marque contactée');
+  t('Marque validée');
   t('Mots-clés');
   t('Pages thématiques');
   t('Photos');
@@ -2329,6 +2490,7 @@ function crealead_brands_field_default_field_instances() {
   t('Sujet de votre message');
   t('Type de client');
   t('Type de marque');
+  t('Type de sauvegarde');
   t('Téléphone');
   t('Votre adresse e-mail');
   t('Votre message');

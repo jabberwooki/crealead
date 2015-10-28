@@ -34,7 +34,7 @@ function crealead_brands_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityref_coe_achievements',
+          'display_name' => 'entityref_achievements',
           'view_name' => 'achievements',
         ),
       ),
@@ -329,6 +329,32 @@ function crealead_brands_field_default_field_bases() {
         1 => 'commerciale',
         2 => 'collective',
         3 => 'grande marque',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_brand_validated'
+  $field_bases['field_brand_validated'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_brand_validated',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'non',
+        1 => 'oui',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

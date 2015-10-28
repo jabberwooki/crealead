@@ -50,16 +50,16 @@ function crealead_brands_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '19',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '18',
+          'weight' => '20',
         ),
         'redirect' => array(
-          'weight' => '19',
+          'weight' => '21',
         ),
       ),
       'display' => array(
@@ -242,9 +242,7 @@ function crealead_brands_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_brand';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_brand'] = $strongarm;
 
   $strongarm = new stdClass();
