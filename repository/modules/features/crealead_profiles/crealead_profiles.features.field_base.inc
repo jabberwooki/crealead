@@ -296,7 +296,7 @@ function crealead_profiles_field_default_field_bases() {
         1 => 'oui',
       ),
       'allowed_values_function' => '',
-      'profile2_private' => 0,
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_text',

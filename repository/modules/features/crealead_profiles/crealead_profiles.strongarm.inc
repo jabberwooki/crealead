@@ -33,6 +33,9 @@ function crealead_profiles_strongarm() {
       'info_meeting' => array(
         'field_info_meeting_photo' => 'info_meetings_default_image',
       ),
+      'brand' => array(
+        'field_brand_logo' => 'brand_default_logo',
+      ),
     ),
     'profile2' => array(
       'coe_page' => array(

@@ -1243,6 +1243,7 @@ function crealead_brands_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'default_image_ft_source_var' => 'brand_default_logo',
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
