@@ -370,7 +370,7 @@ function crealead_profiles_field_default_field_bases() {
         1 => 'Soumettre à la validation par votre référent',
       ),
       'allowed_values_function' => '',
-      'profile2_private' => 1,
+      'profile2_private' => TRUE,
     ),
     'translatable' => 0,
     'type' => 'list_text',
