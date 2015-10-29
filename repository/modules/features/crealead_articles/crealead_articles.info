@@ -36,6 +36,7 @@ features[variable][] = menu_parent_article
 features[variable][] = node_options_article
 features[variable][] = node_preview_article
 features[variable][] = node_submitted_article
+features[variable][] = pathauto_node_article_pattern
 features[views_view][] = articles
 features_exclude[dependencies][crealead_news] = crealead_news
 features_exclude[dependencies][ctools] = ctools
