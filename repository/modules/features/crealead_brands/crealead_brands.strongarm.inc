@@ -269,6 +269,27 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_achievement_pattern';
+  $strongarm->value = 'realisations/[node:title]';
+  $export['pathauto_node_achievement_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_brand_pattern';
+  $strongarm->value = 'annuaire-entrepreneurs/[node:title]';
+  $export['pathauto_node_brand_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_client_pattern';
+  $strongarm->value = 'references/[node:title]';
+  $export['pathauto_node_client_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'socialfield_services';
   $strongarm->value = array(
     'facebook' => array(

@@ -76,6 +76,7 @@ features[variable][] = node_options_news
 features[variable][] = node_preview_news
 features[variable][] = node_submitted_news
 features[variable][] = page_title_type_news
+features[variable][] = pathauto_node_news_pattern
 features[views_view][] = news
 features_exclude[dependencies][features_date_formats] = features_date_formats
 features_exclude[dependencies][ds] = ds
