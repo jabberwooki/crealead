@@ -158,6 +158,7 @@ features[user_permission][] = edit own achievement content
 features[user_permission][] = edit own brand content
 features[user_permission][] = edit own client content
 features[user_permission][] = view services
+features[variable][] = brand_default_logo
 features[variable][] = field_bundle_settings_node__brand
 features[variable][] = field_bundle_settings_taxonomy_term__themes
 features[variable][] = language_content_type_brand

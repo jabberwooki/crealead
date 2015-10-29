@@ -13,6 +13,13 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'brand_default_logo';
+  $strongarm->value = 120;
+  $export['brand_default_logo'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__brand';
   $strongarm->value = array(
     'view_modes' => array(
