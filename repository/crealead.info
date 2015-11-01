@@ -107,6 +107,8 @@ dependencies[] = crealead_news
 dependencies[] = crealead_infos_meetings
 dependencies[] = crealead_profiles
 dependencies[] = crealead_brands
+dependencies[] = crealead_articles
+dependencies[] = crealead_social
 
 
 

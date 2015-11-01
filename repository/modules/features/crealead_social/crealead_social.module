@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Réseaux sociaux feature.
+ */
+
+include_once 'crealead_social.features.inc';

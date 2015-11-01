@@ -168,6 +168,9 @@ projects[print][version] = "2.0"
 projects[references_dialog][subdir] = contrib
 projects[references_dialog][version] = "1.0-beta1"
 
+projects[service_links][subdir] = contrib
+projects[socialfield][version] = "2.3"
+
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
 
