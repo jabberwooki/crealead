@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Réseaux sociaux feature.
- */
-
-include_once 'pnf_social.features.inc';
