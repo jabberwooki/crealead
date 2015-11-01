@@ -41,6 +41,86 @@ function crealead_news_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|news|block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'news';
+  $ds_layout->view_mode = 'block';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_image',
+        1 => 'title',
+        2 => 'field_news_type',
+        3 => 'field_sector',
+        4 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'central',
+      'title' => 'central',
+      'field_news_type' => 'central',
+      'field_sector' => 'central',
+      'body' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|news|block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|news|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'news';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_news_type',
+        1 => 'field_sector',
+        2 => 'field_news_author',
+        3 => 'field_image',
+        4 => 'field_news_date',
+        5 => 'body',
+        6 => 'field_coentrepreneurs',
+        7 => 'service_links_displays_group',
+      ),
+    ),
+    'fields' => array(
+      'field_news_type' => 'central',
+      'field_sector' => 'central',
+      'field_news_author' => 'central',
+      'field_image' => 'central',
+      'field_news_date' => 'central',
+      'body' => 'central',
+      'field_coentrepreneurs' => 'central',
+      'service_links_displays_group' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|news|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|news|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news';
