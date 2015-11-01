@@ -50,10 +50,12 @@ function crealead_articles_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'body',
+        1 => 'service_links_displays_group',
       ),
     ),
     'fields' => array(
       'body' => 'central',
+      'service_links_displays_group' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
