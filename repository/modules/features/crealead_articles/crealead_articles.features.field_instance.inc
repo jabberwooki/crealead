@@ -156,7 +156,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -199,7 +199,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
