@@ -702,7 +702,8 @@ function crealead_brands_views_default_views() {
   $handler = $view->new_display('page_with_page_title', 'Marques', 'brands_list');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rechercher';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filtrer';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
@@ -985,9 +986,8 @@ function crealead_brands_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '3';
   $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
@@ -1385,7 +1385,7 @@ function crealead_brands_views_default_views() {
     t('dernier »'),
     t('Secteur d\'activité'),
     t('Marques'),
-    t('Rechercher'),
+    t('Filtrer'),
     t('Absence de résultat'),
     t('Aucune résultat ne correspond à vos critères de recherche.'),
     t('Mots-clés'),
@@ -1728,7 +1728,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
