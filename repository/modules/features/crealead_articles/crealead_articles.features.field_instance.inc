@@ -210,7 +210,7 @@ function crealead_articles_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
-    'label' => 'Pages thématiques',
+    'label' => 'Thématique(s) concernée(s)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -229,7 +229,7 @@ function crealead_articles_field_default_field_instances() {
   t('Corps');
   t('Marque(s) concernée(s)');
   t('Nature de l\'article');
-  t('Pages thématiques');
+  t('Thématique(s) concernée(s)');
 
   return $field_instances;
 }

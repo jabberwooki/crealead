@@ -13,7 +13,7 @@ function crealead_articles_field_default_field_bases() {
   // Exported field_base: 'field_article_kind'
   $field_bases['field_article_kind'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_article_kind',
@@ -26,8 +26,9 @@ function crealead_articles_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'article de marque (onglet Articles des grandes marques)',
-        2 => 'article thématique (onglet Articles des pages thématiques)',
+        1 => 'article Crealead',
+        2 => 'article marque',
+        3 => 'article thématique',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
