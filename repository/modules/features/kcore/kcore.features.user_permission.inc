@@ -343,6 +343,15 @@ function kcore_user_default_permissions() {
     'module' => 'linkit',
   );
 
+  // Exported permission: 'administer masquerade'.
+  $permissions['administer masquerade'] = array(
+    'name' => 'administer masquerade',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'masquerade',
+  );
+
   // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
@@ -748,6 +757,35 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: 'masquerade as admin'.
+  $permissions['masquerade as admin'] = array(
+    'name' => 'masquerade as admin',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'masquerade',
+  );
+
+  // Exported permission: 'masquerade as any user'.
+  $permissions['masquerade as any user'] = array(
+    'name' => 'masquerade as any user',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'masquerade',
+  );
+
+  // Exported permission: 'masquerade as user'.
+  $permissions['masquerade as user'] = array(
+    'name' => 'masquerade as user',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'masquerade',
   );
 
   // Exported permission: 'node-specific print configuration'.
