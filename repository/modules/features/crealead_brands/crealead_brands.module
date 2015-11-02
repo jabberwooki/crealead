@@ -232,9 +232,11 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_insert().
  */
 function crealead_brands_node_insert($node) {
-  if ($node->field_saving_type['und'][0]['value'] == 1) {
-    crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
-    $node->field_email_sent['und'][0]['value'] = 1;
+  if ($node->type == 'brand') {
+    if ($node->field_saving_type['und'][0]['value'] == 1) {
+      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+      $node->field_email_sent['und'][0]['value'] = 1;
+    }
   }
 }
 
@@ -242,10 +244,12 @@ function crealead_brands_node_insert($node) {
  * Implements hook_node_update().
  */
 function crealead_brands_node_update($node) {
-  // Validation request email has to be sent only if field_saving_type = 1 and field_email_sent = 0.
-  if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
-    crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
-    $node->field_email_sent['und'][0]['value'] = 1;
+  if ($node->type == 'brand') {
+    // Validation request email has to be sent only if field_saving_type = 1 and field_email_sent = 0.
+    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+      $node->field_email_sent['und'][0]['value'] = 1;
+    }
   }
 }
 
