@@ -270,6 +270,16 @@ function kcore_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'administer crealead settings'.
+  $permissions['administer crealead settings'] = array(
+    'name' => 'administer crealead settings',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'kcore',
+  );
+
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',

@@ -15,12 +15,24 @@ function kcore_menu() {
     'title' => t('Paramétrages Crealead'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('crealead_settings_form'),
-    'access arguments' => array('administer Crealead settings'),
+    'access arguments' => array('administer crealead settings'),
     'file' => 'kcore.admin.inc',
     'type' => MENU_NORMAL_ITEM,
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kcore_permission() {
+  return array(
+    'administer crealead settings' => array(
+      'title' => t('Administer Crealead settings'),
+      'description' => t('Administer various settings for Crealead site.'),
+    ),
+  );
 }
 
 /**
