@@ -294,6 +294,33 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_theme_blog_tab|taxonomy_term|themes|full';
+  $field_group->group_name = 'group_theme_blog_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'themes';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_theme_tabs';
+  $field_group->data = array(
+    'label' => 'Blog',
+    'weight' => '6',
+    'children' => array(
+      0 => 'news_theme_news',
+      1 => 'articles_theme_articles',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_accordion_item',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'classes' => 'group-theme-blog-tab field-group-bootstrap_fieldgroup_accordion_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_theme_blog_tab|taxonomy_term|themes|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_theme_brands_tab|taxonomy_term|themes|default';
   $field_group->group_name = 'group_theme_brands_tab';
   $field_group->entity_type = 'taxonomy_term';

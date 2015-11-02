@@ -83,6 +83,7 @@ features[field_group][] = group_brand_tabs|node|brand|full
 features[field_group][] = group_brans_coes_tab|node|brand|full
 features[field_group][] = group_crealead_fields|node|brand|form
 features[field_group][] = group_theme_articles_tab|taxonomy_term|themes|full
+features[field_group][] = group_theme_blog_tab|taxonomy_term|themes|full
 features[field_group][] = group_theme_brands_tab|taxonomy_term|themes|default
 features[field_group][] = group_theme_brands_tab|taxonomy_term|themes|full
 features[field_group][] = group_theme_news_tab|taxonomy_term|themes|default
