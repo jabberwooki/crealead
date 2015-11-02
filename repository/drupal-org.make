@@ -117,9 +117,6 @@ projects[email][version] = "1.3"
 projects[email_registration][subdir] = contrib
 projects[email_registration][version] = "1.2"
 
-projects[entity_token][subdir] = contrib
-projects[entity_token][version] = "1.6"
-
 projects[entityform][subdir] = contrib
 projects[entityform][version] = "2.0-rc1"
 
