@@ -98,7 +98,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_brand_articles' => array(
           'full' => array(
-            'weight' => '3',
+            'weight' => '11',
             'visible' => TRUE,
           ),
         ),
@@ -197,7 +197,7 @@ function crealead_brands_strongarm() {
         ),
         'news_theme_news' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '7',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -211,12 +211,16 @@ function crealead_brands_strongarm() {
         ),
         'articles_theme_articles' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '8',
             'visible' => TRUE,
           ),
           'block' => array(
             'weight' => '1',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '11',
+            'visible' => TRUE,
           ),
         ),
       ),

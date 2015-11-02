@@ -1214,7 +1214,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Contenu : Pages thématiques (field_landing_pages) */
+  /* Relation: Contenu : Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
@@ -1365,13 +1365,6 @@ function crealead_brands_views_default_views() {
     'brand' => 'brand',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Contenu : Type de marque (field_brand_type) */
-  $handler->display->display_options['filters']['field_brand_type_value']['id'] = 'field_brand_type_value';
-  $handler->display->display_options['filters']['field_brand_type_value']['table'] = 'field_data_field_brand_type';
-  $handler->display->display_options['filters']['field_brand_type_value']['field'] = 'field_brand_type_value';
-  $handler->display->display_options['filters']['field_brand_type_value']['value'] = array(
-    3 => '3',
-  );
   $translatables['brands'] = array(
     t('Master'),
     t('Les co-entrepreneurs de Crealead'),
@@ -1735,7 +1728,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
