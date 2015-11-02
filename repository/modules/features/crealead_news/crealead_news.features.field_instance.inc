@@ -269,7 +269,7 @@ function crealead_news_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
-    'label' => 'Pages thématiques',
+    'label' => 'Thématique(s) concernée(s)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -411,11 +411,7 @@ function crealead_news_field_default_field_instances() {
   // Exported field_instance: 'node-news-field_news_kind'
   $field_instances['node-news-field_news_kind'] = array(
     'bundle' => 'news',
-    'default_value' => array(
-      0 => array(
-        'value' => 2,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -736,8 +732,8 @@ function crealead_news_field_default_field_instances() {
   t('Image');
   t('Marque(s) concernée(s)');
   t('Nature de l\'actualité');
-  t('Pages thématiques');
   t('Secteur');
+  t('Thématique(s) concernée(s)');
   t('Type d\'actualité');
   t('URL');
 

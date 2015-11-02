@@ -314,7 +314,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Contenu : Pages thématiques (field_landing_pages) */
+  /* Relation: Contenu : Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
