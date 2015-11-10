@@ -166,10 +166,20 @@ function crealead_brands_block_view($delta = '') {
 
   switch($delta) {
     case 'crealead_brands_number' :
-      $content = '<div class="number  brands-number">' . crealead_main_brands_number() . '</div>';
+      $brands_number_display = variable_get('brands_number', 1);
+
+      if ($brands_number_display == 1) {
+        $number = crealead_main_brands_number();
+      }
+      else {
+        $number = variable_get('brands_number_value', '5');
+      }
+
+      $content = '<div class="number  brands-number">' . $number . '</div>';
       $content .= '<div class="text brands-text">' . 'grandes marques' . '</div>';
       $block['content'] = $content;
       break;
+
     case 'crealead_brands_contacts_list' :
       $block['content'] = crealead_brand_contacts_list();
       break;

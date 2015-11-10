@@ -7,6 +7,35 @@
 include_once 'kcore.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function kcore_menu() {
+  $items = array();
+  $items['admin/config/crealead'] = array(
+    'title' => t('Paramétrages Crealead'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'file' => 'kcore.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kcore_permission() {
+  return array(
+    'administer crealead settings' => array(
+      'title' => t('Administer Crealead settings'),
+      'description' => t('Administer various settings for Crealead site.'),
+    ),
+  );
+}
+
+/**
  * Implements hook_menu_alter().
  * Thanks to pfournier, creator of module Empty Front Page (https://www.drupal.org/project/empty_front_page)
  */
@@ -56,6 +85,36 @@ function kcore_block_info() {
 }
 
 /**
+ * Implements hook_block_configure().
+ */
+//function kcore_block_configure($delta = '') {
+//  $form = array();
+//
+//  switch($delta) {
+//    case 'crealead_coes_number' :
+//      $form['crealead_coes_number'] = array(
+//        '#type' => 'textfield',
+//        '#title' => t('Nombre d\'entrepreneurs'),
+//        '#default_value' => variable_get('crealead_coes_number', '100'),
+//        '#size' => 5,
+//      );
+//  }
+//
+//  return $form;
+//}
+
+/**
+ * Implements hook_block_save().
+ */
+//function kcore_block_save($delta = '', $edit = array()) {
+//  switch($delta) {
+//    case 'crealead_coes_number' :
+//      variable_set('crealead_coes_number', $edit['crealead_coes_number']['value']);
+//      break;
+//  }
+//}
+
+/**
  * Implements hook_block_view().
  */
 function kcore_block_view($delta = '') {
@@ -63,13 +122,31 @@ function kcore_block_view($delta = '') {
 
   switch($delta) {
     case 'crealead_coes_number' :
-      $content = '<div class="number coes-number">' . crealead_users_number('entrepreneur') . '</div>';
+      $coes_number_display = variable_get('coes_number', 1);
+
+      if ($coes_number_display == 1) {
+        $number = crealead_users_number('entrepreneur');
+      }
+      else {
+        $number = variable_get('coes_number_value', '100');
+      }
+
+      $content = '<div class="number coes-number">' . $number . '</div>';
       $content .= '<div class="text coes-text">' . 'entrepreneurs' . '</div>';
       $block['content'] = $content;
       break;
 
     case 'crealead_refs_number' :
-      $content = '<div class="number refs-number">' . crealead_users_number('referent') . '</div>';
+      $refs_number_display = variable_get('refs_number', 1);
+
+      if ($refs_number_display == 1) {
+        $number = crealead_users_number('referent');
+      }
+      else {
+        $number = variable_get('refs_number_value', '100');
+      }
+
+      $content = '<div class="number refs-number">' . $number . '</div>';
       $content .= '<div class="text refs-text">' . 'référents' . '</div>';
       $block['content'] = $content;
       break;
