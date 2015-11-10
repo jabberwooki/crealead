@@ -8,3 +8,7 @@ shared/private/*
 www
 !shared/private/.htaccess
 shared/apache_authentication
+# phpstorm project directory
+.idea/
+# ???
+shared/_files/
