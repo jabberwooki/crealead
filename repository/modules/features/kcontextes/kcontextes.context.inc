@@ -23,7 +23,18 @@ function kcontextes_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'kcore-crealead_sponsors' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_sponsors',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

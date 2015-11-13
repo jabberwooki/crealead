@@ -86,6 +86,9 @@ function kcore_block_info() {
   $blocks['crealead_meetings_number'] = array(
     'info' => t('Crealead : Nombre de rencontres'),
   );
+  $blocks['crealead_sponsors'] = array(
+    'info' => t('Crealead : Sponsors'),
+  );
 
   return $blocks;
 }
@@ -140,6 +143,58 @@ function kcore_block_view($delta = '') {
 
       $content = '<div id="meetings-number" class="number meetings-number">' . $number . '</div>';
       $content .= '<div id="meetings-text" class="text meetings-text">' . 'rencontres' . '</div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_sponsors' :
+      $block['subject'] = '';
+
+      $sponsors = array(
+        'caisse-epargne' => array(
+          'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
+          'logo-file' => 'caisse-epargne_240x57.jpg'
+        ),
+        'europe-sengage' => array(
+          'url' => '',
+          'logo-file' => 'europe-sengage-en-france_120x84.jpg'
+        ),
+        'europe-fse' => array(
+          'url' => '',
+          'logo-file' => 'europe-fse_67x59.jpg'
+        ),
+        'ddtefp' => array(
+          'url' => '',
+          'logo-file' => 'ddtefp_92x61.jpg'
+        ),
+        'region-lr' => array(
+          'url' => 'http://www.laregion.fr/',
+          'logo-file' => 'region-lr_120x63.jpg'
+        ),
+        'montpellier-agglo' => array(
+          'url' => 'http://data.montpellier-agglo.com/',
+          'logo-file' => 'montpellier-agglo_45x63.png'
+        ),
+        'herault-dept' => array(
+          'url' => 'http://www.herault.fr/',
+          'logo-file' => 'herault-dept_55x68.jpg'
+        ),
+      );
+
+      $path = drupal_get_path('module', 'kcore') . '/sponsors-logos/';
+      $content = '<div id="crealead-sponsor">';
+      foreach ($sponsors as $name=>$sponsor) {
+        $content .= '<span id="' . $name . '">';
+        $img = theme('image', array('path' => $path . $sponsor['logo-file']));
+        if ($sponsor['url'] != '') {
+          $logo = l($img,$sponsor['url'], array('html' => TRUE));
+        }
+        else {
+          $logo = $img;
+        }
+        $content .= $logo;
+        $content .= '</span>';
+      }
+      $content .= '</div>';
       $block['content'] = $content;
       break;
   }
