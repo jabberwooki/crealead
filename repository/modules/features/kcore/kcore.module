@@ -80,39 +80,15 @@ function kcore_block_info() {
   $blocks['crealead_refs_number'] = array(
     'info' => t('Crealead : Nombre de référents'),
   );
+  $blocks['crealead_speakers_number'] = array(
+    'info' => t('Crealead : Nombre d\'intervenants'),
+  );
+  $blocks['crealead_meetings_number'] = array(
+    'info' => t('Crealead : Nombre de rencontres'),
+  );
 
   return $blocks;
 }
-
-/**
- * Implements hook_block_configure().
- */
-//function kcore_block_configure($delta = '') {
-//  $form = array();
-//
-//  switch($delta) {
-//    case 'crealead_coes_number' :
-//      $form['crealead_coes_number'] = array(
-//        '#type' => 'textfield',
-//        '#title' => t('Nombre d\'entrepreneurs'),
-//        '#default_value' => variable_get('crealead_coes_number', '100'),
-//        '#size' => 5,
-//      );
-//  }
-//
-//  return $form;
-//}
-
-/**
- * Implements hook_block_save().
- */
-//function kcore_block_save($delta = '', $edit = array()) {
-//  switch($delta) {
-//    case 'crealead_coes_number' :
-//      variable_set('crealead_coes_number', $edit['crealead_coes_number']['value']);
-//      break;
-//  }
-//}
 
 /**
  * Implements hook_block_view().
@@ -131,8 +107,8 @@ function kcore_block_view($delta = '') {
         $number = variable_get('coes_number_value', '100');
       }
 
-      $content = '<div class="number coes-number">' . $number . '</div>';
-      $content .= '<div class="text coes-text">' . 'entrepreneurs' . '</div>';
+      $content = '<div id="coes-number" class="number coes-number">' . $number . '</div>';
+      $content .= '<div id="coes-text" class="text coes-text">' . 'entrepreneurs' . '</div>';
       $block['content'] = $content;
       break;
 
@@ -146,8 +122,24 @@ function kcore_block_view($delta = '') {
         $number = variable_get('refs_number_value', '100');
       }
 
-      $content = '<div class="number refs-number">' . $number . '</div>';
-      $content .= '<div class="text refs-text">' . 'référents' . '</div>';
+      $content = '<div id="refs-number" class="number refs-number">' . $number . '</div>';
+      $content .= '<div id="refs-text" class="text refs-text">' . 'référents' . '</div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_speakers_number' :
+      $number = variable_get('speakers_number_value', '10');
+
+      $content = '<div id="speakers-number" class="number speakers-number">' . $number . '</div>';
+      $content .= '<div id="speakers-text" class="text speakers-text">' . 'intervenants' . '</div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_meetings_number' :
+      $number = variable_get('meetings_number_value', '10');
+
+      $content = '<div id="meetings-number" class="number meetings-number">' . $number . '</div>';
+      $content .= '<div id="meetings-text" class="text meetings-text">' . 'rencontres' . '</div>';
       $block['content'] = $content;
       break;
   }

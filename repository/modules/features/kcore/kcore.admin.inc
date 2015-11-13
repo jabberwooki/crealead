@@ -42,18 +42,34 @@ function crealead_settings_form() {
     '#default_value' => variable_get('refs_number_value', '10'),
   );
 
-  $form['key_data_display']['brands_number'] = array(
-    '#type' => 'select',
-    '#title' => t('Nombre de marques'),
-    '#description' => 'Mode d\'affichage',
-    '#options' => $options,
-    '#default_value' => variable_get('brands_number', '1'),
-  );
-  $form['key_data_display']['brands_number_value'] = array(
+//  $form['key_data_display']['brands_number'] = array(
+//    '#type' => 'select',
+//    '#title' => t('Nombre de marques'),
+//    '#description' => 'Mode d\'affichage',
+//    '#options' => $options,
+//    '#default_value' => variable_get('brands_number', '1'),
+//  );
+//  $form['key_data_display']['brands_number_value'] = array(
+//    '#type' => 'textfield',
+//    '#description' => 'Valeur à afficher (si manuel)',
+//    '#size' => 3,
+//    '#default_value' => variable_get('brands_number_value', '5'),
+//  );
+
+  $form['key_data_display']['speakers_number_value'] = array(
     '#type' => 'textfield',
-    '#description' => 'Valeur à afficher (si manuel)',
+    '#title' => t('Nombre d\'intervenants'),
+    '#description' => 'Valeur à afficher',
     '#size' => 3,
-    '#default_value' => variable_get('brands_number_value', '5'),
+    '#default_value' => variable_get('speakers_number_value', '10'),
+  );
+
+  $form['key_data_display']['meetings_number_value'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Nombre de rencontres'),
+    '#description' => 'Valeur à afficher',
+    '#size' => 3,
+    '#default_value' => variable_get('meetings_number_value', '10'),
   );
 
   return system_settings_form($form);

@@ -66,11 +66,17 @@ function kcontextes_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-9',
         ),
-        'crealead_brands-crealead_brands_number' => array(
-          'module' => 'crealead_brands',
-          'delta' => 'crealead_brands_number',
+        'kcore-crealead_speakers_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_speakers_number',
           'region' => 'highlighted',
           'weight' => '-8',
+        ),
+        'kcore-crealead_meetings_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_meetings_number',
+          'region' => 'highlighted',
+          'weight' => '-7',
         ),
         'views-news-block_news_focus' => array(
           'module' => 'views',
