@@ -812,7 +812,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtre contextuel: Contenu : Pages thématiques (field_landing_pages) */
+  /* Filtre contextuel: Contenu : Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['arguments']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['arguments']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['arguments']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
@@ -839,7 +839,7 @@ function crealead_profiles_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
-  /* Critère de filtrage: Contenu : Pages thématiques (field_landing_pages) */
+  /* Critère de filtrage: Contenu : Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['filters']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['filters']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['filters']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';

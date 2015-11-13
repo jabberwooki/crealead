@@ -139,18 +139,7 @@ function crealead_profiles_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'boxes-crealead_links_coe' => array(
-          'module' => 'boxes',
-          'delta' => 'crealead_links_coe',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables
