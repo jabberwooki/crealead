@@ -49,11 +49,13 @@ function crealead_articles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'body',
-        1 => 'service_links_displays_group',
+        0 => 'field_image',
+        1 => 'body',
+        2 => 'service_links_displays_group',
       ),
     ),
     'fields' => array(
+      'field_image' => 'central',
       'body' => 'central',
       'service_links_displays_group' => 'central',
     ),
@@ -66,6 +68,8 @@ function crealead_articles_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|article|full'] = $ds_layout;
 

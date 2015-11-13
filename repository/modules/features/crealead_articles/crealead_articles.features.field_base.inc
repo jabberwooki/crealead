@@ -29,6 +29,7 @@ function crealead_articles_field_default_field_bases() {
         1 => 'article Crealead',
         2 => 'article marque',
         3 => 'article thématique',
+        4 => 'témoignage',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
