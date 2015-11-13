@@ -197,7 +197,7 @@ function crealead_news_views_default_views() {
   /* Display: Focus actus */
   $handler = $view->new_display('block', 'Focus actus', 'block_news_focus');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Zoom Actus';
+  $handler->display->display_options['title'] = 'Actualités';
   $handler->display->display_options['display_description'] = 'bloc actu de la page d\'accueil';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -207,7 +207,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['use_more_text'] = 'toutes les actus';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -220,6 +220,12 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date de l&#039;événement (field_news_date) */
+  $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
+  $handler->display->display_options['sorts']['field_news_date_value']['table'] = 'field_data_field_news_date';
+  $handler->display->display_options['sorts']['field_news_date_value']['field'] = 'field_news_date_value';
+  $handler->display->display_options['sorts']['field_news_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Publié */
@@ -356,11 +362,10 @@ function crealead_news_views_default_views() {
     t('<br>'),
     t('Tri actus'),
     t('Focus actus'),
-    t('Zoom Actus'),
+    t('Actualités'),
     t('bloc actu de la page d\'accueil'),
     t('toutes les actus'),
     t('Actus d\'une marque'),
-    t('Actualités'),
     t('Entité Contenu réferencée par field_related_brands'),
     t('Tout'),
     t('Actus d\'une thématique'),
