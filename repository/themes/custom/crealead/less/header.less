@@ -1,5 +1,55 @@
-// Insert your styling here.
 #h1-logo{
   margin: 0;
   padding: 0;
+}
+/* Menu principal *****************************************************************************************************/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: white;
+  background-color: @rouge-crealead;
+}
+header#navbar nav{
+  margin-top: 30px;
+  ul.menu a{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: @noir-crealead;
+    &:hover{
+      background-color: @noir-crealead;
+    }
+  }
+  ul.dropdown-menu{
+    background-color: @noir-crealead;
+    a:hover{
+      background-color: @noir-crealead;
+    }
+  }
+  > ul.menu:first-child > li.first > a{
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+    color: white;
+    &:before{
+      .glyphicon();
+      content: "\e819";
+      color: white;
+      font-size: 18px;
+      background-color: transparent;
+      padding: 0 !important;
+      margin: 0;
+    }
+    @media (min-width: @screen-sm){
+      padding: 0;
+    }
+  }
+  > ul.menu:first-child > li.first.active > a{
+    background-color: transparent;
+    &:before{
+      color: @rouge-crealead;
+
+    }
+  }
+
 }

@@ -49,19 +49,23 @@ function crealead_news_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_image',
-        1 => 'title',
-        2 => 'field_news_type',
-        3 => 'field_sector',
+        0 => 'group_img_type',
+        1 => 'field_news_type',
+        2 => 'field_image',
+        3 => 'title',
         4 => 'body',
+        5 => 'field_sector',
+        6 => 'field_news_date',
       ),
     ),
     'fields' => array(
+      'group_img_type' => 'central',
+      'field_news_type' => 'central',
       'field_image' => 'central',
       'title' => 'central',
-      'field_news_type' => 'central',
-      'field_sector' => 'central',
       'body' => 'central',
+      'field_sector' => 'central',
+      'field_news_date' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

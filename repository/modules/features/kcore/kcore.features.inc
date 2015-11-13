@@ -126,5 +126,20 @@ function kcore_image_default_styles() {
     ),
   );
 
+  // Exported image style: carre_large.
+  $styles['carre_large'] = array(
+    'label' => 'carré large (480x480)',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 480,
+          'height' => 480,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
