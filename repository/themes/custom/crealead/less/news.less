@@ -14,13 +14,15 @@
 }
 
 .red-title-news {
-  margin-top: 0;
+  margin-top: 5px;
+  line-height: 0.8em;
   a {
     color: @rouge-crealead;
     text-decoration: none;
     font-family: Quicksand, sans-serif;
     font-size: 0.7em;
     font-weight: 700;
+
     &:hover {
       text-decoration: underline;
     }
@@ -36,9 +38,7 @@
     .red-title-news();
   }
   .field-name-body {
-    border-bottom: 1px solid @rouge-crealead;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    .line-bottom-red();
   }
   .home-news-sector {
     font-weight: 700;
