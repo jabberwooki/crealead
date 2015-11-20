@@ -1577,6 +1577,9 @@ img{max-width:100%}
 h3{line-height:.8}
 @media screen and (min-width:992px){.row-eq-height{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
 }
+.main-container{margin-top:60px;padding:20px 0}
+.main-container.main-container-logged-in{margin-top:40px}
+.main-container.main-container-with-header{margin-top:0}
 @font-face{font-family:fontello;src:url(../fontello/font/fontello.eot?90885294);src:url(../fontello/font/fontello.eot?90885294#iefix) format('embedded-opentype'),url(../fontello/font/fontello.woff?90885294) format('woff'),url(../fontello/font/fontello.ttf?90885294) format('truetype'),url(../fontello/font/fontello.svg?90885294#fontello) format('svg');font-weight:400;font-style:normal}
 [class*=" icon-"]:hover{text-decoration:none}
 .glyphicon,.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{font-style:normal;speak:none;display:inline-block;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px;font-family:fontello;font-weight:400;font-size:1em;width:1em;text-transform:none;color:#777}
@@ -1638,10 +1641,12 @@ body.page-actualites .view-news .group-textes{padding:10px}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
 .pic{overflow:hidden}
 .grow img{max-width:none;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease}
-@media (min-width:992px){#block-views-news-block-news-focus .grow img,#block-views-news-block-news-focus .pic{height:255px;width:255px}
+@media (min-width:992px){body.page-actualites .view-news .group-all{height:508px}
+#block-views-news-block-news-focus .grow img,#block-views-news-block-news-focus .pic{height:255px;width:255px}
 #block-views-news-block-news-focus .grow img:hover{width:300px;height:300px}
 }
 .bg-gray-crealead-icons{background:url(../images/motif_1.png) #ededed}
-.content-header{margin-top:40px;padding-top:20px}
+.content-header{margin-top:60px;padding:20px 0}
+.content-header.container-header-logged-in{margin-top:40px}
 @media screen and (min-width:992px){.content-header .region-content-header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
 }
