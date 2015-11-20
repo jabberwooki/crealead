@@ -110,7 +110,7 @@
   </div>
 </header>
 <?php if (!empty($page['content_header'])): ?>
-  <div class="content-header bg-gray-crealead-icons">
+  <div class="content-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in' ?>">
     <div class="container">
       <div class="row">
         <?php print render($page['content_header']); ?>
@@ -119,8 +119,8 @@
   </div>
 <?php endif; ?>
 <div class="main-container container
-  <?php if (!empty($page['content_header'])) echo'main-container-with-header' ?>
-  <?php if ($logged_in) echo 'main-container-logged_in' ?>">
+  <?php if (!empty($page['content_header'])) echo'main-container-with-header ' ?>
+  <?php if ($logged_in) echo 'main-container-logged-in' ?>">
 
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
