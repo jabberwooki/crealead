@@ -70,6 +70,12 @@ function crealead_news_context_default_contexts() {
           'region' => 'content_header',
           'weight' => '-9',
         ),
+        'views--exp-news-page_news_list' => array(
+          'module' => 'views',
+          'delta' => '-exp-news-page_news_list',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

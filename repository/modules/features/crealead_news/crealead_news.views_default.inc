@@ -69,6 +69,12 @@ function crealead_news_views_default_views() {
   $handler = $view->new_display('page_with_page_title', 'Liste actus', 'page_news_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Les actualités Crealead';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -92,6 +98,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -127,6 +134,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
   $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
   $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
@@ -134,6 +142,53 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['filters']['field_news_kind_value']['group'] = 1;
+  /* Critère de filtrage: Contenu : Secteur (field_sector) */
+  $handler->display->display_options['filters']['field_sector_tid']['id'] = 'field_sector_tid';
+  $handler->display->display_options['filters']['field_sector_tid']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['filters']['field_sector_tid']['field'] = 'field_sector_tid';
+  $handler->display->display_options['filters']['field_sector_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_sector_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator_id'] = 'field_sector_tid_op';
+  $handler->display->display_options['filters']['field_sector_tid']['expose']['label'] = 'Secteur';
+  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator'] = 'field_sector_tid_op';
+  $handler->display->display_options['filters']['field_sector_tid']['expose']['identifier'] = 'field_sector_tid';
+  $handler->display->display_options['filters']['field_sector_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    7178059 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sectors';
+  /* Critère de filtrage: Contenu : Type d&#039;actualité (field_news_type) */
+  $handler->display->display_options['filters']['field_news_type_tid']['id'] = 'field_news_type_tid';
+  $handler->display->display_options['filters']['field_news_type_tid']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['filters']['field_news_type_tid']['field'] = 'field_news_type_tid';
+  $handler->display->display_options['filters']['field_news_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_news_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_news_type_tid']['expose']['operator_id'] = 'field_news_type_tid_op';
+  $handler->display->display_options['filters']['field_news_type_tid']['expose']['label'] = 'Catégorie';
+  $handler->display->display_options['filters']['field_news_type_tid']['expose']['operator'] = 'field_news_type_tid_op';
+  $handler->display->display_options['filters']['field_news_type_tid']['expose']['identifier'] = 'field_news_type_tid';
+  $handler->display->display_options['filters']['field_news_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    7178059 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_news_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_news_type_tid']['vocabulary'] = 'news_types';
   $handler->display->display_options['path'] = 'actualites';
 
   /* Display: Tri actus */
@@ -401,6 +456,8 @@ function crealead_news_views_default_views() {
     t('Liste actus'),
     t('Les actualités Crealead'),
     t('<br>'),
+    t('Secteur'),
+    t('Catégorie'),
     t('Tri actus'),
     t('Focus actus'),
     t('Actualités'),

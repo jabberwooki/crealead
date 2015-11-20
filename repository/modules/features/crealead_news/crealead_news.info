@@ -6,7 +6,6 @@ project = crealead_news
 dependencies[] = context
 dependencies[] = date
 dependencies[] = eva
-dependencies[] = fe_block
 dependencies[] = field_group
 dependencies[] = list
 dependencies[] = menu
