@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function crealead_news_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -54,6 +57,30 @@ function crealead_news_features_date_type_default() {
     'locked' => 0,
   );
   return $fdt_config;
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function crealead_news_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: zoom_actu.
+  $styles['zoom_actu'] = array(
+    'label' => 'Zoom actu (600*549)',
+    'effects' => array(
+      7 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 600,
+          'height' => 549,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**
