@@ -10,6 +10,7 @@ dependencies[] = crealead_info_meetings
 dependencies[] = ctools
 dependencies[] = kcore
 dependencies[] = kpages
+dependencies[] = menu
 dependencies[] = views
 features[context][] = all
 features[context][] = front

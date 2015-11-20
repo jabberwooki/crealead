@@ -95,18 +95,6 @@ function kcontextes_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-7',
         ),
-        'views-news-block_news_focus' => array(
-          'module' => 'views',
-          'delta' => 'news-block_news_focus',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-        'views-brands-main_brands' => array(
-          'module' => 'views',
-          'delta' => 'brands-main_brands',
-          'region' => 'content',
-          'weight' => '10',
-        ),
       ),
     ),
   );
