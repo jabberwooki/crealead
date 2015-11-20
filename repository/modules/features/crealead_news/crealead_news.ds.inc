@@ -93,7 +93,15 @@ function crealead_news_ds_field_settings_info() {
     ),
     'body' => array(
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'line-bottom-red',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -107,13 +115,27 @@ function crealead_news_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h3',
-        'class' => '',
+        'wrapper' => 'h2',
+        'class' => 'red-title',
+        'ft' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'line-bottom-red',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -329,32 +351,29 @@ function crealead_news_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'bootstrap_4_8';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'field_image',
-      ),
-      'right' => array(
-        1 => 'title',
-        2 => 'field_sorting_date',
-        3 => 'field_news_type',
-        4 => 'field_sector',
-        5 => 'body',
+      'ds_content' => array(
+        0 => 'group_img_cat',
+        1 => 'field_image',
+        2 => 'field_news_type',
+        3 => 'title',
+        4 => 'body',
+        5 => 'field_sector',
       ),
     ),
     'fields' => array(
-      'field_image' => 'left',
-      'title' => 'right',
-      'field_sorting_date' => 'right',
-      'field_news_type' => 'right',
-      'field_sector' => 'right',
-      'body' => 'right',
+      'group_img_cat' => 'ds_content',
+      'field_image' => 'ds_content',
+      'field_news_type' => 'ds_content',
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'field_sector' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

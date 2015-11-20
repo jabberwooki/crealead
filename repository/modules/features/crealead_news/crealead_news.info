@@ -50,6 +50,7 @@ features[field_base][] = field_sorting_date
 features[field_base][] = scald_author_url
 features[field_group][] = group_all|node|news|news_2_3
 features[field_group][] = group_crealead_settings|node|news|form
+features[field_group][] = group_img_cat|node|news|teaser
 features[field_group][] = group_img_type|node|news|block
 features[field_group][] = group_img_type|node|news|news_2_3
 features[field_group][] = group_textes|node|news|news_2_3

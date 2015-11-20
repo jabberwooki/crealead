@@ -14,7 +14,7 @@ function crealead_news_default_fe_block_settings() {
 
   $export['views-news-block_news_2_3'] = array(
     'cache' => -1,
-    'css_class' => 'col-md-6 row',
+    'css_class' => 'col-md-6',
     'custom' => 0,
     'delta' => 'news-block_news_2_3',
     'module' => 'views',
@@ -89,7 +89,7 @@ function crealead_news_default_fe_block_settings() {
         'weight' => -31,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
