@@ -10,11 +10,23 @@ img{
 .position-relative{
   position: relative;
 }
-.transparent, .container.black{
-  background-color: @noir-crealead;
+.transparent, .container.white{
+  background-color: white;
   border: 0;
 }
-.navbar-default.black{
+.navbar-default.white{
   border: 0;
-  background-color: @noir-crealead;
+  border-bottom: 1px solid @rouge-crealead;
+  background-color: white;
+}
+h3{
+  line-height: 0.8;
+}
+.row-eq-height {
+  @media screen and (min-width:@screen-md){
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }

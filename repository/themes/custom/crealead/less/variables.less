@@ -1,7 +1,12 @@
 //
 // Variables
 // --------------------------------------------------
-
+.quick{
+  font-family: Quicksand, sans-serif
+}
+.source{
+  font-family: 'Source Sans Pro', sans-serif;
+}
 //== Colors
 
 // Crealead
@@ -12,6 +17,8 @@
 @jaune-crealead: #F2CC2B;
 @bleu-clair-crealead: #009AA0;
 @bleu-fonce-crealead: #44059C;
+@gris-fonce-crealead: #999999; /* à utiliser sous les motifs de Sophie */
+@gris-clair-crealead: #EDEDED; /* à utiliser sous les motifs de Sophie */
 
 
 
@@ -29,7 +36,7 @@
 @gray-lighter: lighten(@gray-base, 93.5%);
 // #eee
 
-@brand-primary: darken(#428bca, 6.5%);
+@brand-primary: darken(#BF0E38, 6.5%);
 // #337ab7
 @brand-success: #5cb85c;
 @brand-info: #5bc0de;
@@ -214,7 +221,8 @@
 @input-border-radius-small: @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus: #66afe9;
+@input-border-focus: @rouge-crealead;
+
 
 //** Placeholder text color
 @input-color-placeholder: #999;
