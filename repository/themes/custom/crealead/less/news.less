@@ -1,43 +1,102 @@
+//Cartouche catégorie
+.category {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  background-color: @rouge-crealead;
+  padding: 5px 10px;
+  color: white;
+  .quick();
+  text-transform: uppercase;
+  display: table;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.red-title-news {
+  margin-top: 0;
+  a {
+    color: @rouge-crealead;
+    text-decoration: none;
+    font-family: Quicksand, sans-serif;
+    font-size: 0.7em;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 /* blocs accueil ******************************************************************************************************/
 #block-views-news-block-news-focus {
   .position-relative .field-type-taxonomy-term-reference {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    background-color: @rouge-crealead;
-    padding: 5px;
-    color: white;
-    font-family: Quicksand, sans-serif;
-    text-transform: uppercase;
-    display: table;
-    font-weight: 700;
-    font-size: 0.8em;
+    .category();
   }
   h3.home-news-title {
-    margin-top: 0;
-    a {
-      color: @rouge-crealead;
-      text-decoration: none;
-      font-family: Quicksand, sans-serif;
-      font-size: 0.7em;
-      font-weight: 700;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    .red-title-news();
   }
   .field-name-body {
     border-bottom: 1px solid @rouge-crealead;
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
-  .home-news-sector{
+  .home-news-sector {
     font-weight: 700;
     font-family: Quicksand, sans-serif;
     text-transform: uppercase;
     font-size: 0.8em;
-    span{
+    span {
       font-weight: 400;
+    }
+  }
+}
+
+/* Pages actus ********************************************************************************************************/
+body.page-actualites {
+  h2.page-header {
+    display: none;
+  }
+  .view-news {
+
+    .group-all {
+      background-color: white;
+    }
+    .group-zoom-news {
+      position: relative;
+      h2 {
+        position: absolute;
+        top: 100px;
+        left: 10px;
+        text-transform: uppercase;
+        padding: 10px;
+        width: 60%;
+        line-height: 120%;
+        .source();
+        font-weight: 600;
+        a {
+          color: white;
+          /*border: 10px solid transparent,0;*/
+          background: fade(black, 50%);
+          display: inline;
+          box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+          line-height: 1.3em;
+
+        }
+      }
+      .field-name-field-news-type {
+        .category();
+        top: 105px;
+        left: 11px;
+      }
+    }
+    .position-relative .field-type-taxonomy-term-reference {
+      .category();
+    }
+    .red-title {
+      .red-title-news();
+    }
+    .group-textes {
+      padding: 10px;
     }
   }
 }

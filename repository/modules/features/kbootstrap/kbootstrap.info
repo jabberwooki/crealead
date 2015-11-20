@@ -15,5 +15,6 @@ features[variable][] = jquery_update_compression_type
 features[variable][] = jquery_update_jquery_admin_version
 features[variable][] = jquery_update_jquery_cdn
 features[variable][] = jquery_update_jquery_version
+features[variable][] = theme_crealead_settings
 features[variable][] = theme_kstarter_bootstrap_settings
 project path = profiles/crealead/modules/features

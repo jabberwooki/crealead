@@ -64,6 +64,15 @@ function crealead_news_strongarm() {
       'block' => array(
         'custom_settings' => TRUE,
       ),
+      'zoom_news' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_2_3' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

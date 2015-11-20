@@ -1,0 +1,38 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.pic {
+  overflow: hidden;
+}
+/*GROW*/
+.grow img {
+  max-width: none;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+
+/* Cas des actus sur la page d'accueil quand le navigateur est grand (>992px) *****************************************/
+#block-views-news-block-news-focus{
+  @media (min-width: @screen-md){
+    .pic {
+      height: 255px;
+      width: 255px;
+    }
+    .grow img {
+      height: 255px;
+      width: 255px;
+      &:hover{
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
