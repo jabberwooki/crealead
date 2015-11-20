@@ -30,7 +30,7 @@ function crealead_articles_context_default_contexts() {
           'module' => 'views',
           'delta' => 'articles-testimonials_front',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '1',
         ),
       ),
     ),

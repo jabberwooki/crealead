@@ -14,7 +14,7 @@ function crealead_articles_default_fe_block_settings() {
 
   $export['views-articles-testimonials_front'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'col-md-6',
     'custom' => 0,
     'delta' => 'articles-testimonials_front',
     'module' => 'views',
