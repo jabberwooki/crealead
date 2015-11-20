@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?> black">
+<header id="navbar" role="banner" class="<?php print $navbar_classes; ?> white">
   <div class="container">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -109,8 +109,18 @@
     <?php endif; ?>
   </div>
 </header>
-
-<div class="main-container container">
+<?php if (!empty($page['content_header'])): ?>
+  <div class="content-header bg-gray-crealead-icons">
+    <div class="container">
+      <div class="row">
+        <?php print render($page['content_header']); ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+<div class="main-container container
+  <?php if (!empty($page['content_header'])) echo'main-container-with-header' ?>
+  <?php if ($logged_in) echo 'main-container-logged_in' ?>">
 
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
