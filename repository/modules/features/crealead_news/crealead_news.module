@@ -37,3 +37,17 @@ function crealead_news_node_presave($node) {
     }
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_news_views_pre_render(&$view) {
+
+  if ($view->name == 'news' && $view->current_display == 'page_news_list') {
+
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
+}
