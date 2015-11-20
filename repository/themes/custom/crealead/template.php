@@ -26,5 +26,18 @@ if (drupal_is_front_page()){
     'type' => 'file',
     'group' => JS_THEME,
   ));
-
 }
+/**
+ * Add js to keep same height between elements
+ */
+drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/jquery.matchHeight-min.js', array(
+  'type' => 'file',
+  'group' => JS_THEME,
+));
+if (drupal_is_front_page()) {
+  drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-home-height.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+  ));
+}
+
