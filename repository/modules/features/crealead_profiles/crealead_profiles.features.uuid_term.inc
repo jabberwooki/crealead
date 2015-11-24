@@ -11,16 +11,16 @@ function crealead_profiles_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
-    'name' => 'Commerçants et artisans',
+    'name' => 'Ingenierie Bureau d\'étude',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 6,
+    'weight' => 4,
     'uuid' => '22c4b38c-0df9-4697-8f56-1c7171ad86d6',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Consultants formateurs',
+    'name' => 'RH Gestion Qualité',
     'description' => '<p>Qu\'est-ce que CreaExpert ?<br />
 <br />
 Les Experts sont les entrepreneurs de Crealead exerçant une activité de prestation intellectuelle au service des entreprises.</p>
@@ -30,7 +30,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
 <p>&nbsp;</p>
 ',
     'format' => 'full_html',
-    'weight' => 3,
+    'weight' => 0,
     'uuid' => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
@@ -45,11 +45,11 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Technologies de l\'information et de la communication',
+    'name' => 'Informatique Internet Télécom',
     'description' => '<p>Les métiers "T.I.C." : Techniologies de l\'Information et de la Communication,regroupent :&nbsp;"les techniques principalement de l\'informatique, de l\'audiovisuel, des multimédias, de l\'Internet et des télécommunications qui permettent aux utilisateurs de communiquer, d\'accéder aux sources d\'information, de stocker, de manipuler, de produire et de transmettre l\'information sous toutes les formes: texte, document, musique, son, image, vidéo, et interface graphique interactive". (Wikipedia)</p>
 ',
     'format' => 'full_html',
-    'weight' => 4,
+    'weight' => 2,
     'uuid' => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
@@ -91,26 +91,26 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Communication',
+    'name' => 'Marketing Communication Vente',
     'description' => '<p>Dans cette section vous trouverez les créatifs qui vous permettent de mettre sur des supports (virtuels ou physiques) votre image de marque : Flyers, cartes de visite, dépliants, affiches, mais encore, sites Internet, chartes graphiques, etc.</p>
 ',
     'format' => 'full_html',
-    'weight' => 2,
+    'weight' => 1,
     'uuid' => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Agriculture et environnement',
+    'name' => 'Environnement Eco-Construction Structure-Bois',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 0,
+    'weight' => 3,
     'uuid' => '9bd98d14-1229-4def-b367-f937ac900e73',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Service aux particuliers',
+    'name' => 'Aménagemenent Décoration',
     'description' => '',
     'format' => 'full_html',
     'weight' => 5,
@@ -119,10 +119,10 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Bâtiment',
+    'name' => 'Rénovation Entretien',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 1,
+    'weight' => 6,
     'uuid' => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
     'vocabulary_machine_name' => 'business_sectors',
     'metatags' => array(),

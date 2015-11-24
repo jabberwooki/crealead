@@ -98,7 +98,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -152,7 +152,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_lastname']['relationship'] = 'user';
   $handler->display->display_options['fields']['field_user_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lastname']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -329,7 +329,7 @@ function crealead_profiles_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
-  /* Critère de filtrage: Champ : Compétences (field_competencies) */
+  /* Critère de filtrage: Champ : Compétences et spécialités (field_competencies) */
   $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
   $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
@@ -381,7 +381,7 @@ function crealead_profiles_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
-  /* Critère de filtrage: Champ : Compétences (field_competencies) */
+  /* Critère de filtrage: Champ : Compétences et spécialités (field_competencies) */
   $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
   $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
@@ -484,11 +484,10 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_lastname']['relationship'] = 'user';
   $handler->display->display_options['fields']['field_user_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lastname']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
-  $handler->display->display_options['fields']['field_competencies']['label'] = 'Compétences et spécialités';
   $handler->display->display_options['fields']['field_competencies']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_competencies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_competencies']['type'] = 'taxonomy_term_reference_plain';
@@ -700,7 +699,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_lastname']['relationship'] = 'user';
   $handler->display->display_options['fields']['field_user_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lastname']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -949,7 +948,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['user']['table'] = 'profile';
   $handler->display->display_options['relationships']['user']['field'] = 'user';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -1233,7 +1232,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['field'] = 'field_coe_recommandations_profile2';
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['relationship'] = 'reverse_field_reco_entrepreneur_field_collection_item';
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['label'] = 'field_coe_recommandations';
-  /* Relation: Champ : Compétences (field_competencies) */
+  /* Relation: Champ : Compétences et spécialités (field_competencies) */
   $handler->display->display_options['relationships']['field_competencies_tid']['id'] = 'field_competencies_tid';
   $handler->display->display_options['relationships']['field_competencies_tid']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['relationships']['field_competencies_tid']['field'] = 'field_competencies_tid';
@@ -1298,7 +1297,7 @@ function crealead_profiles_views_default_views() {
     'coe_page' => 'coe_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Champ : Compétences (field_competencies) */
+  /* Critère de filtrage: Champ : Compétences et spécialités (field_competencies) */
   $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
   $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
@@ -1423,7 +1422,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['field'] = 'field_coe_recommandations_profile2';
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['relationship'] = 'reverse_field_reco_entrepreneur_field_collection_item';
   $handler->display->display_options['relationships']['field_coe_recommandations_profile2']['label'] = 'field_coe_recommandations';
-  /* Relation: Champ : Compétences (field_competencies) */
+  /* Relation: Champ : Compétences et spécialités (field_competencies) */
   $handler->display->display_options['relationships']['field_competencies_tid']['id'] = 'field_competencies_tid';
   $handler->display->display_options['relationships']['field_competencies_tid']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['relationships']['field_competencies_tid']['field'] = 'field_competencies_tid';
@@ -1540,7 +1539,7 @@ function crealead_profiles_views_default_views() {
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('Éléments par page'),
-    t('- Tout -'),
+    t('Tout'),
     t('Décalage'),
     t('« premier'),
     t('‹ précédent'),
@@ -1550,7 +1549,6 @@ function crealead_profiles_views_default_views() {
     t('Utilisateur'),
     t('.'),
     t(','),
-    t('Tout'),
     t('%1'),
     t('Page recherche'),
     t('Rechercher des co-entrepreneurs de Crealead'),
