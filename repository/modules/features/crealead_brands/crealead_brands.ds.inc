@@ -62,6 +62,11 @@ function crealead_brands_ds_field_settings_info() {
         'class' => '',
       ),
     ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|brand|block'] = $ds_fieldsetting;
 

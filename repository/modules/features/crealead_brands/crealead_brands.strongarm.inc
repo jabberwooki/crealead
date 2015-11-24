@@ -89,6 +89,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_entity_view_1' => array(
           'full' => array(
@@ -101,6 +105,10 @@ function crealead_brands_strongarm() {
             'weight' => '11',
             'visible' => TRUE,
           ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brand_contact_submissions_entity_view_1' => array(
           'full' => array(
@@ -111,6 +119,10 @@ function crealead_brands_strongarm() {
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
             'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'block' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),

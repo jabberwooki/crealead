@@ -68,7 +68,7 @@ function crealead_brands_default_fe_block_settings() {
 
   $export['kcore-crealead_coes_number'] = array(
     'cache' => 1,
-    'css_class' => '',
+    'css_class' => 'col-md-3',
     'custom' => 0,
     'delta' => 'crealead_coes_number',
     'module' => 'kcore',
@@ -95,7 +95,7 @@ function crealead_brands_default_fe_block_settings() {
 
   $export['kcore-crealead_refs_number'] = array(
     'cache' => 1,
-    'css_class' => '',
+    'css_class' => 'col-md-3',
     'custom' => 0,
     'delta' => 'crealead_refs_number',
     'module' => 'kcore',

@@ -366,3 +366,16 @@ function crealead_brands_mail($key, &$message, $params) {
       break;
   }
 }
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_brands_views_pre_render(&$view) {
+
+  if ($view->name == 'brands' && $view->current_display == 'brands_list') {
+
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/check_label.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
+}
