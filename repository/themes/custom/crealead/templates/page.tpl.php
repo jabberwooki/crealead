@@ -109,8 +109,17 @@
     <?php endif; ?>
   </div>
 </header>
+<?php if (!empty($page['full_content_header'])): ?>
+  <div class="full_content-header <?php if ($logged_in) echo 'container-header-logged-in' ?>">
+      <div class="row">
+        <?php print render($page['full_content_header']); ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php if (!empty($page['content_header'])): ?>
-  <div class="content-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in' ?>">
+  <div class="content-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in';
+  if (!empty($page['full_content_header'])) echo ' container-header-second';?>">
     <div class="container">
       <div class="row">
         <?php print render($page['content_header']); ?>
@@ -119,7 +128,7 @@
   </div>
 <?php endif; ?>
 <div class="main-container container
-  <?php if (!empty($page['content_header'])) echo'main-container-with-header ' ?>
+  <?php if (!empty($page['content_header']) || !empty($page['full_content_header'])) echo'main-container-with-header ' ?>
   <?php if ($logged_in) echo 'main-container-logged-in' ?>">
 
   <header role="banner" id="page-header">
