@@ -400,10 +400,9 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><strong>Co-entreprendre en CAE</strong></p>
+  $handler->display->display_options['header']['area']['content'] = '<h3 class="title-info-meeting">Programme des réunions d\'information :</h3>
 
 <ul>
-	<li>Accueil</li>
 	<li>Qu\'est ce qu\'une Coopérative d\'Activités et d\'Entrepreneurs (CAE) ?</li>
 	<li>A quel moment intégrer la CAE ?</li>
 	<li>Comment se préparer ?</li>
@@ -414,8 +413,6 @@ Téléphone : 04-67-06-96-72';
 	<li>Les animations réseaux de Crealead</li>
 	<li>Quel intérêt par rapport au statut de l\'autoentrepreneur ?</li>
 </ul>
-
-<p><span style="font-size:16px"><strong>Prochaines réunions</strong></span></p>
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -630,6 +627,7 @@ Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['summary'] = 'Prochaines réunions';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -768,10 +766,9 @@ contact@crealead.com
 55, rue Saint Cléophas 34000 Montpellier 
 Téléphone : 04-67-06-96-72'),
     t('Liste dates réunions'),
-    t('<p><strong>Co-entreprendre en CAE</strong></p>
+    t('<h3 class="title-info-meeting">Programme des réunions d\'information :</h3>
 
 <ul>
-	<li>Accueil</li>
 	<li>Qu\'est ce qu\'une Coopérative d\'Activités et d\'Entrepreneurs (CAE) ?</li>
 	<li>A quel moment intégrer la CAE ?</li>
 	<li>Comment se préparer ?</li>
@@ -782,8 +779,6 @@ Téléphone : 04-67-06-96-72'),
 	<li>Les animations réseaux de Crealead</li>
 	<li>Quel intérêt par rapport au statut de l\'autoentrepreneur ?</li>
 </ul>
-
-<p><span style="font-size:16px"><strong>Prochaines réunions</strong></span></p>
 '),
     t('<p class="rtecenter"><strong>Hôtel de la coopération (aile droite)</strong><br />
 <a href="mailto:contact@crealead.com">contact@crealead.com</a><br />
