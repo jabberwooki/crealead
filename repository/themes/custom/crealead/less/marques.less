@@ -1,0 +1,170 @@
+#boxes-box-search_entrepreneur_intro{
+  background: url('../images/fond_entrepreneurs.png') no-repeat;
+  height: 250px;
+  margin: 0;
+  padding: 20px;
+  .boxes-box-content{
+
+    
+    background: fade(black, 80%);
+    color: white;
+
+    @media (min-width: @screen-lg){
+      width: 50%;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    h2{
+      color: white;
+      text-align: center;
+    }
+    p{
+      font-size: 1.2em;
+    }
+  }
+  @media (min-width: @screen-lg){
+
+  }
+}
+
+/* Zone de recherche des marques **************************************************************************************/
+#views-exposed-form-brands-brands-list{
+  .radio+.radio{
+    margin-top: 0;
+  }
+  #label-edit-field-business-sector-tid{
+    .quick();
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    margin: -5px 0 15px 0;
+  }
+  .form-type-radio{
+    float: left;
+    margin-right: 0;
+    &:last-child{
+      margin-right: 0;
+    }
+    label{
+      text-align: center;
+      max-width: 130px;
+      min-width: 80px;
+      text-align: center;
+      word-spacing: 80px;
+      padding: 0;
+      color: #000;
+      background-color: @gris-clair-crealead;
+      padding-bottom: 10px;
+      .quick();
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8em;
+      &.input-checked{
+        color: @rouge-crealead;
+        &:before{
+          background-color: @rouge-crealead;
+          color: #FFF;
+        }
+      }
+      &:hover{
+        color: @rouge-crealead;
+      }
+      &:before{
+        .glyphicon();
+        font-size: 3em;
+        background-color: white;
+        color: #000;
+        display: block;
+        padding:30px 20px;
+        margin: 0 auto 10px auto;
+        background: white url('../images/hexa-bg-grey.png')no-repeat;
+        width: 77px;
+        height: 89px;
+      }
+      &[for=edit-field-business-sector-tid-all]:before{
+        content: "\e845"; /* icon C crealead */
+      }
+      &[for=edit-field-business-sector-tid-92]:before{
+        content: "\e84e"; /* icon RH trophee crealead */
+      }
+      &[for=edit-field-business-sector-tid-81]:before{
+        content: "\e84a"; /* icon Com haut parleur crealead */
+      }
+      &[for=edit-field-business-sector-tid-77]:before{
+        content: "\e84c"; /* icon  ordi TIC crealead */
+      }
+      &[for=edit-field-business-sector-tid-97]:before{
+        content: "\e846"; /* icon arbre crealead */
+      }
+      &[for=edit-field-business-sector-tid-96]:before{
+        content: "\e848"; /* icon engrenage crealead */
+      }
+      &[for=edit-field-business-sector-tid-91]:before{
+        content: "\e849"; /* icon fauteuil deco crealead */
+      }
+      &[for=edit-field-business-sector-tid-86]:before{
+        content: "\e84b"; /* icon engrenage crealead */
+      }
+      &[for=edit-field-business-sector-tid-180]:before{
+        content: "\e847"; /* icon man dev perso crealead */
+      }
+      &:hover:before{
+        background-color: @rouge-crealead;
+        color: #FFF;
+      }
+    }
+  }
+  input.form-radio{
+    display: none;
+  }
+  #edit-field-brand-search-value-wrapper,#edit-title-wrapper{
+    float: left;
+    width: 40%;
+  }
+}
+/* Résultats **********************************************************************************************************/
+#views-bootstrap-grid-1{
+  .col-lg-3{
+    .field-name-field-brand-logo{
+      border: 1px solid @gris-fonce-crealead;
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      > div.field-items{
+        padding: 5px;
+        display: table;
+        width: 100%;
+        div.field-item{
+          display: table-cell;
+          height: 170px;
+          text-align: center;
+          vertical-align: middle;
+          margin: 0 auto;
+          img{
+            max-height: 150px;
+            max-width: 92%;
+
+          }
+        }
+        
+      }
+    }
+    h3 {
+      .quick();
+      margin-top: 5px;
+      > a{
+        font-size: 0.7em;
+        font-weight: 700;
+        display: block;
+        text-align: center;
+      }
+    }
+    .field-name-field-brand-baseline{
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}
