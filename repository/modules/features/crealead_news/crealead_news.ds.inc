@@ -104,6 +104,35 @@ function crealead_news_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_news_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_sector' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Secteur : ',
+          'lb-el' => 'span',
+          'lb-col' => TRUE,
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|news|news_2_3'] = $ds_fieldsetting;
 
@@ -135,6 +164,30 @@ function crealead_news_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_news_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'bold',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_sector' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Secteur : ',
+          'lb-el' => 'span',
+          'lb-cl' => 'bold',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -361,6 +414,7 @@ function crealead_news_ds_layout_settings_info() {
         3 => 'title',
         4 => 'body',
         5 => 'field_sector',
+        6 => 'field_news_date',
       ),
     ),
     'fields' => array(
@@ -370,6 +424,7 @@ function crealead_news_ds_layout_settings_info() {
       'title' => 'ds_content',
       'body' => 'ds_content',
       'field_sector' => 'ds_content',
+      'field_news_date' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
