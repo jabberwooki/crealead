@@ -138,8 +138,8 @@ projects[field_collection_views][version] = "1.0-beta3"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][version] = "1.82"
 
-;projects[filefield_sources][subdir] = contrib
-;projects[filefield_sources][version] = "1.9"
+projects[filefield_sources][subdir] = contrib
+projects[filefield_sources][version] = "1.10"
 
 ;projects[migrate][subdir] = contrib
 ;projects[migrate][version] = "7.x-2.7"
@@ -233,6 +233,9 @@ projects[scald_gallery][version] = "2.5"
 
 projects[scald_youtube][subdir] = contrib
 projects[scald_youtube][version] = "1.4"
+
+projects[filefield_sources_scald][subdir] = contrib
+projects[filefield_sources_scald][version] = "1.1"
 
 ;--- Registration  ------------------------------------------------------------
 projects[registration][subdir] = contrib
