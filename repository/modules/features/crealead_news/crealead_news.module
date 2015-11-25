@@ -49,5 +49,23 @@ function crealead_news_views_pre_render(&$view) {
       'type' => 'file',
       'group' => JS_THEME,
     ));
+
+    $nids_to_skip = array();
+
+    // Fetch nid of node displayed in Zoom block and store it in $nids_to_skip array.
+    $zoom_actu_result = views_get_view_result('news','nid_zoom_actu');
+    $nids_to_skip[] = $zoom_actu_result[0]->nid;
+
+    // Fetch nids of nodes displayed in Actus 2 3 block and store them in $nids_to_skip array.
+    $news_2_3_result = views_get_view_result('news','nids_2_3');
+    $nids_to_skip[] = $news_2_3_result[0]->nid;
+    $nids_to_skip[] = $news_2_3_result[1]->nid;
+
+    // If a nid contained in news list exists in $nids_to_skip array, we get rid of it.
+    foreach ($view->result as $key=>$result) {
+      if (in_array($result->nid, $nids_to_skip)) {
+        unset($view->result[$key]);
+      }
+    }
   }
 }

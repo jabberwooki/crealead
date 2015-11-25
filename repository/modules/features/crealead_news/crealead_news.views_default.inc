@@ -77,8 +77,8 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['pager']['options']['offset'] = '3';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
@@ -423,6 +423,35 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'zoom_news';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date de tri (field_sorting_date) */
+  $handler->display->display_options['sorts']['field_sorting_date_value']['id'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Bloc actu 2 et 3 */
   $handler = $view->new_display('block', 'Bloc actu 2 et 3', 'block_news_2_3');
@@ -437,6 +466,133 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'news_2_3';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date de tri (field_sorting_date) */
+  $handler->display->display_options['sorts']['field_sorting_date_value']['id'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Nid zoom actu */
+  $handler = $view->new_display('block', 'Nid zoom actu', 'nid_zoom_actu');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date de tri (field_sorting_date) */
+  $handler->display->display_options['sorts']['field_sorting_date_value']['id'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Nids actu 2 et 3 */
+  $handler = $view->new_display('block', 'Nids actu 2 et 3', 'nids_2_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date de tri (field_sorting_date) */
+  $handler->display->display_options['sorts']['field_sorting_date_value']['id'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Critère de filtrage: Contenu : Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['news'] = array(
     t('Master'),
     t('Tri des actualités'),
@@ -470,6 +626,8 @@ function crealead_news_views_default_views() {
     t('terme à partir de field_landing_pages'),
     t('Bloc zoom actu'),
     t('Bloc actu 2 et 3'),
+    t('Nid zoom actu'),
+    t('Nids actu 2 et 3'),
   );
   $export['news'] = $view;
 
