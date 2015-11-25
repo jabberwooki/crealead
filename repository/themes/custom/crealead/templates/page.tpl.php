@@ -78,9 +78,9 @@
     <div class="navbar-header">
       <?php if ($logo): ?>
         <h1 id="h1-logo">
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>">
-        <img src="<?php print $logo; ?>" alt="Crealead : Coopérative d'entrepreneurs à Montpellier" />
-      </a>
+          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>">
+            <img src="<?php print $logo; ?>" alt="Crealead : Coopérative d'entrepreneurs à Montpellier" />
+          </a>
         </h1>
       <?php endif; ?>
 
@@ -90,7 +90,7 @@
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">Navigation déroulante</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -111,11 +111,11 @@
 </header>
 <?php if (!empty($page['full_content_header'])): ?>
   <div class="full_content-header <?php if ($logged_in) echo 'container-header-logged-in' ?>">
-      <div class="row">
-        <?php print render($page['full_content_header']); ?>
-      </div>
+    <div class="row">
+      <?php print render($page['full_content_header']); ?>
     </div>
   </div>
+
 <?php endif; ?>
 <?php if (!empty($page['content_header'])): ?>
   <div class="content-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in';
