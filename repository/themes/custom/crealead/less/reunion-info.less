@@ -1,3 +1,7 @@
+.title-info-meeting{
+  font-weight: 700;
+}
+/* Page de présentation de la réunion d'info et des prochaines dates **************************************************/
 .view-info-meetings{
   .view-header{
     float: left;
@@ -51,5 +55,49 @@
       width: 50px;
       margin: 0 auto
     }
+  }
+}
+/* Formulaire d'inscription *******************************************************************************************/
+#registration-form{
+  .form-type-radios{
+    label{
+      float: left;
+    }
+    div.form-radios{
+      float: left;
+      .form-type-radio{
+        float: left;
+        margin-top: 0;
+        margin-right: 15px;
+        input[type=radio]{
+          position: inherit;
+          float: left;
+          margin-left: 25px;
+        }
+        label{
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  fieldset{
+    clear: both;
+  }
+}
+.node-type-info-meeting{
+  a.field-group-format-title:before{
+    .glyphicon();
+    content: "\e834";
+  }
+  h3.label-above:before{
+    .glyphicon();
+    content: "\e835";
+  }
+}
+
+/* Page d'après l'inscription *****************************************************************************************/
+body.page-registration.not-logged-in{
+  .field-name-field-attendee{
+    display: none;
   }
 }

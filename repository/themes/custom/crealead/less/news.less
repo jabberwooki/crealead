@@ -3,6 +3,9 @@
   position: absolute;
   top: 10px;
   left: 5px;
+  .cartouche-rouge();
+}
+.cartouche-rouge{
   background-color: @rouge-crealead;
   padding: 5px 10px;
   color: white;
@@ -11,6 +14,13 @@
   display: table;
   font-weight: 700;
   font-size: 0.8em;
+}
+.cartouche-noir{
+  color: white;
+  background: fade(black, 50%);
+  display: inline;
+  box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+  line-height: 1.3em;
 }
 
 .red-title-news {
@@ -78,13 +88,7 @@ body.page-actualites {
         .source();
         font-weight: 600;
         a {
-          color: white;
-          /*border: 10px solid transparent,0;*/
-          background: fade(black, 50%);
-          display: inline;
-          box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
-          line-height: 1.3em;
-
+          .cartouche-noir();
         }
       }
       .field-name-field-news-type {
@@ -101,6 +105,46 @@ body.page-actualites {
     }
     .group-textes {
       padding: 10px;
+    }
+  }
+}
+/* Page actu ******************************************************************************************************/
+
+body.node-type-news{
+  /* Block haut *********************************/
+  #block-ds-extras-content-header{
+    .group-title-cat{
+      height: 430px;
+      .field-name-field-news-type{
+        margin-top: 250px;
+        .cartouche-rouge();
+        margin-left: -10px;
+
+      }
+      .field-name-title h2{
+        .cartouche-noir();
+        font-size: 3em;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+    }
+    
+  }/* fin block haut ****************************/
+  h2.page-header{
+    display: none;
+  }
+  .field-name-field-news-date, .field-name-field-sector{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 25px;
+  }
+  .field-name-service-links-displays-group{
+    float: right;
+  }
+  .field-name-body{
+    clear: both;
+    h3{
+      .h3-in-text-body();
     }
   }
 }
