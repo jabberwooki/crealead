@@ -22,6 +22,42 @@ function crealead_info_meetings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_info_meeting_registration' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Formulaire d\'inscription :',
+          'lb-el' => 'h3',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_info_meeting_map' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-6',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_info_meeting_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-6',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|info_meeting|full'] = $ds_fieldsetting;
 
@@ -46,24 +82,24 @@ function crealead_info_meetings_ds_layout_settings_info() {
       'top' => array(
         0 => 'links',
         1 => 'field_info_meeting_date',
-        2 => 'body',
-      ),
-      'left' => array(
+        2 => 'group_program',
         3 => 'field_info_meeting_map',
-      ),
-      'right' => array(
-        4 => 'field_info_meeting_photo',
+        4 => 'body',
+        5 => 'field_info_meeting_photo',
+        6 => 'group_plan_photo',
       ),
       'bottom' => array(
-        5 => 'field_info_meeting_registration',
+        7 => 'field_info_meeting_registration',
       ),
     ),
     'fields' => array(
       'links' => 'top',
       'field_info_meeting_date' => 'top',
+      'group_program' => 'top',
+      'field_info_meeting_map' => 'top',
       'body' => 'top',
-      'field_info_meeting_map' => 'left',
-      'field_info_meeting_photo' => 'right',
+      'field_info_meeting_photo' => 'top',
+      'group_plan_photo' => 'top',
       'field_info_meeting_registration' => 'bottom',
     ),
     'classes' => array(),
@@ -78,6 +114,8 @@ function crealead_info_meetings_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|info_meeting|full'] = $ds_layout;
 

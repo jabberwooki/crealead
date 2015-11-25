@@ -49,7 +49,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'print' => array(
         'label' => 'above',
