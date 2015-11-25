@@ -65,6 +65,21 @@ function crealead_news_features_date_type_default() {
 function crealead_news_image_default_styles() {
   $styles = array();
 
+  // Exported image style: large_bandeau.
+  $styles['large_bandeau'] = array(
+    'label' => 'large bandeau (1920x430)',
+    'effects' => array(
+      8 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1920,
+          'height' => 430,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: zoom_actu.
   $styles['zoom_actu'] = array(
     'label' => 'Zoom actu (600*549)',

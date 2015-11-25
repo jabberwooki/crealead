@@ -65,10 +65,28 @@ function crealead_news_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'service_links_displays_group' => array(
+    'title' => array(
       'weight' => '7',
       'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'service_links_displays_group' => array(
+      'weight' => '2',
+      'label' => 'hidden',
       'format' => 'sld_group_image',
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'position-absolute',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|news|full'] = $ds_fieldsetting;
@@ -322,25 +340,33 @@ function crealead_news_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_news_type',
+        0 => 'field_news_date',
         1 => 'field_sector',
-        2 => 'field_news_author',
-        3 => 'field_image',
-        4 => 'field_news_date',
-        5 => 'body',
-        6 => 'field_coentrepreneurs',
-        7 => 'service_links_displays_group',
+        2 => 'service_links_displays_group',
+        3 => 'field_news_author',
+        4 => 'body',
+        5 => 'field_coentrepreneurs',
+      ),
+      'content_header' => array(
+        6 => 'field_news_type',
+        7 => 'group_img_title_cat',
+        8 => 'title',
+        9 => 'field_image',
+        10 => 'group_title_cat',
       ),
     ),
     'fields' => array(
-      'field_news_type' => 'central',
-      'field_sector' => 'central',
-      'field_news_author' => 'central',
-      'field_image' => 'central',
       'field_news_date' => 'central',
+      'field_sector' => 'central',
+      'service_links_displays_group' => 'central',
+      'field_news_author' => 'central',
       'body' => 'central',
       'field_coentrepreneurs' => 'central',
-      'service_links_displays_group' => 'central',
+      'field_news_type' => 'content_header',
+      'group_img_title_cat' => 'content_header',
+      'title' => 'content_header',
+      'field_image' => 'content_header',
+      'group_title_cat' => 'content_header',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -351,6 +377,8 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|news|full'] = $ds_layout;
 
