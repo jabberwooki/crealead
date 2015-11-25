@@ -19,7 +19,11 @@ function crealead_brands_default_box() {
   $box->description = 'Vue : Marque : Recherche : Titre et texte d\'introduction ';
   $box->options = array(
     'body' => array(
-      'value' => '<h2 class="block-title">LES CO-ENTREPRENEURS DE CREALEAD</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor.&nbsp;</p>',
+      'value' => '<h2>LES CO-ENTREPRENEURS DE CREALEAD</h2>
+
+<p>Crealead, c’est 180 co-entrepreneurs aux compétences complémentaires pour répondre à vos besoins.&nbsp;<br />
+Bénéficiez de la proximité et la flexibilité d’entrepreneurs individuels intégrés à une structure <strong>coopérative</strong> <strong>pérenne et solide</strong>.&nbsp;Une garantie de sérieux et de professionnalisme, l’assurance de <strong>prestations de qualité</strong> dans tous nos domaines d’intervention.&nbsp;</p>
+',
       'format' => 'full_html',
     ),
     'additional_classes' => '',
