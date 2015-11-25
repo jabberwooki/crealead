@@ -1641,6 +1641,7 @@ header#navbar nav>ul.menu:first-child>li.first.active>a:before{color:#bf0e38}
 #block-views-news-block-news-focus .home-news-sector{font-weight:700;font-family:Quicksand,sans-serif;text-transform:uppercase;font-size:.8em}
 #block-views-news-block-news-focus .home-news-sector span{font-weight:400}
 body.page-actualites h2.page-header{display:none}
+body.page-actualites .view-news .chapo{font-size:1em}
 body.page-actualites .view-news .group-all{background-color:#fff}
 @media (min-width:992px){body.page-actualites .view-news .group-all{height:508px}
 }
