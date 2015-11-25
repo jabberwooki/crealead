@@ -34,6 +34,10 @@ drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/jquery.matchHeight-min
   'type' => 'file',
   'group' => JS_THEME,
 ));
+drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/open-close.js', array(
+  'type' => 'file',
+  'group' => JS_THEME,
+));
 if (drupal_is_front_page()) {
   drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-home-height.js', array(
     'type' => 'file',
