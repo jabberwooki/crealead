@@ -106,6 +106,39 @@ function crealead_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_img_title_cat|node|news|full';
+  $field_group->group_name = 'group_img_title_cat';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group img titre cat',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_image',
+      1 => 'group_title_cat',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group img titre cat',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-img-title-cat field-group-div position-relative',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_img_title_cat|node|news|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_img_type|node|news|block';
   $field_group->group_name = 'group_img_type';
   $field_group->entity_type = 'node';
@@ -203,6 +236,39 @@ function crealead_news_field_group_info() {
     ),
   );
   $export['group_textes|node|news|news_2_3'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_title_cat|node|news|full';
+  $field_group->group_name = 'group_title_cat';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_img_title_cat';
+  $field_group->data = array(
+    'label' => 'group titre catégorie',
+    'weight' => '31',
+    'children' => array(
+      0 => 'field_news_type',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group titre catégorie',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-title-cat field-group-div container position-relative',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_title_cat|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
