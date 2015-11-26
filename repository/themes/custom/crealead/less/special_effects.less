@@ -23,14 +23,31 @@
 #block-views-news-block-news-focus{
   @media (min-width: @screen-md){
     .pic {
-      height: 255px;
       width: 255px;
+      height: 255px;
     }
     .grow img {
-      height: 255px;
       width: 255px;
+      height: 255px;
       &:hover{
         width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
+/* Cas des témoignanges sur la page d'accueil quand le navigateur est grand (>992px) *****************************************/
+#block-views-articles-testimonials-front{
+  @media (min-width: @screen-md){
+    .pic {
+      width: 540px;
+      height: 256px;
+    }
+    .grow img {
+      width: 540px;
+      height: 256px;
+      &:hover{
+        width: 633px;
         height: 300px;
       }
     }
