@@ -5,3 +5,15 @@
  */
 
 include_once 'crealead_multimedia.features.inc';
+
+/**
+ * Implements hook_entity_load().
+ */
+function crealead_multimedia_entity_load($entities, $type) {
+  if (count($entities) == 1) {
+    $entity = reset($entities);
+    if (isset($entity->provider) && $entity->provider == 'scald_flickr') {
+      $entity->base_entity = file_load($entity->scald_thumbnail['und'][0]['fid']);
+    }
+  }
+}
