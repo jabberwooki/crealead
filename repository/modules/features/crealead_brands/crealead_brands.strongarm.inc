@@ -90,7 +90,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'block' => array(
-            'weight' => '10',
+            'weight' => '24',
             'visible' => FALSE,
           ),
         ),
@@ -106,7 +106,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'block' => array(
-            'weight' => '10',
+            'weight' => '25',
             'visible' => FALSE,
           ),
         ),
@@ -122,7 +122,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'block' => array(
-            'weight' => '10',
+            'weight' => '23',
             'visible' => FALSE,
           ),
         ),
