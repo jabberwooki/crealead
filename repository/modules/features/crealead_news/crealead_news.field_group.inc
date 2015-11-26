@@ -46,6 +46,43 @@ function crealead_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_col8|node|news|full';
+  $field_group->group_name = 'group_col8';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_row';
+  $field_group->data = array(
+    'label' => 'group col-8',
+    'weight' => '34',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_news_author',
+      2 => 'field_coentrepreneurs',
+      3 => 'field_news_date',
+      4 => 'field_sector',
+      5 => 'service_links_displays_group',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group col-8',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-col8 field-group-div col-md-8 col-md-offset-2',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_col8|node|news|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_crealead_settings|node|news|form';
   $field_group->group_name = 'group_crealead_settings';
   $field_group->entity_type = 'node';
@@ -114,7 +151,7 @@ function crealead_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'group img titre cat',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_image',
       1 => 'group_title_cat',
@@ -201,6 +238,38 @@ function crealead_news_field_group_info() {
     ),
   );
   $export['group_img_type|node|news|news_2_3'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_row|node|news|full';
+  $field_group->group_name = 'group_row';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group row',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_col8',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group row',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'row',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_row|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

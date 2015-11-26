@@ -38,7 +38,7 @@ function crealead_news_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 39,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -146,7 +146,7 @@ function crealead_news_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 40,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -329,7 +329,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -391,7 +391,7 @@ function crealead_news_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 38,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -474,7 +474,7 @@ function crealead_news_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 35,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -560,7 +560,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -689,7 +689,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -752,7 +752,7 @@ function crealead_news_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 36,
       ),
       'news_2_3' => array(
         'label' => 'inline',
@@ -820,7 +820,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'news_2_3' => array(
         'label' => 'above',
