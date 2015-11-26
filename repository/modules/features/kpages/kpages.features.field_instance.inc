@@ -24,6 +24,13 @@ function kpages_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -103,6 +110,16 @@ function kpages_field_default_field_instances() {
         'type' => 'file_representation',
         'weight' => 1,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'file_representation',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -152,6 +169,16 @@ function kpages_field_default_field_instances() {
         'type' => 'sdl_editor_representation',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'sdl_editor_representation',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -200,6 +227,16 @@ function kpages_field_default_field_instances() {
         ),
         'type' => 'sdl_editor_representation',
         'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'sdl_editor_representation',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
