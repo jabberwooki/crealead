@@ -3,7 +3,6 @@
   overflow: hidden;
   position: relative;
   .wrapper-diapo{
-    width: 5148px;
     .row-diapo{
       float: left;
       .diapositive{
@@ -27,17 +26,87 @@
   .view-display-id-controlers_1{
     position: absolute;
     top:20px;
-    /*left: 150px;*/
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     width: 286px;
+    #title-controler-col-1{
+      margin: 0;
+      display: block;
+      background-color: rgba(193, 45, 81, 0.8);
+      text-align: center;
+      .source();
+      color: white;
+      padding: 20px 0;
+      text-transform: uppercase;
+      span{
+        text-transform: lowercase;
+      }
+
+    }
+    .controler{
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 10px 0px 10px 20px;
+      &.controler-selected{
+        background: white;
+        color: @rouge-crealead;
+        a{
+          color: @rouge-crealead;
+        }
+      }
+      &.first-controler{
+        margin-top: 20px;
+      }
+      a{
+        color: white;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
   }
   .view-display-id-controlers_2{
     position: absolute;
     top:20px;
-    left: 1100px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     color: white;
     width: 286px;
+    #title-controler-col-2{
+      margin: 0;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      .source();
+      color: white;
+      padding: 20px 0;
+      text-transform: uppercase;
+      span{
+        text-transform: lowercase;
+        font-size: 0.6em;
+      }
+
+    }
+    .controler{
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 10px 0px 10px 20px;
+      color: @noir-crealead;
+      &.controler-selected{
+        background: white;
+        color: @rouge-crealead;
+        a{
+          color: @rouge-crealead;
+        }
+      }
+      &.first-controler{
+        margin-top: 20px;
+      }
+      a{
+        color: @noir-crealead;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
