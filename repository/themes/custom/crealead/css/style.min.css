@@ -1506,7 +1506,6 @@ div.password-confirm{float:right;margin-top:1.5em;visibility:hidden;width:17em}
 div.form-item div.password-suggestions{padding:.2em .5em;margin:.7em 0;width:38.5em;border:1px solid #B4B4B4}
 div.password-suggestions ul{margin-bottom:0}
 .confirm-parent,.password-parent{clear:left;margin:0;width:36.3em}
-#registration-form fieldset,body.node-type-news .field-name-body{clear:both}
 .progress-wrapper .progress{margin-bottom:10px}
 .pagination ul>li>a.progress-disabled{float:left}
 .form-autocomplete .glyphicon{color:#777;font-size:120%}
@@ -1661,6 +1660,7 @@ body.node-type-news #block-ds-extras-content-header .group-title-cat .field-name
 body.node-type-news h2.page-header{display:none}
 body.node-type-news .field-name-field-news-date,body.node-type-news .field-name-field-sector{float:left;margin-right:25px;margin-bottom:25px}
 body.node-type-news .field-name-service-links-displays-group{float:right}
+body.node-type-news .field-name-body{clear:both}
 body.node-type-news .field-name-body h3{font-family:Quicksand,sans-serif;color:#bf0e38;text-transform:uppercase;font-weight:700;line-height:1.6em}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
 .pic{overflow:hidden}
@@ -1745,9 +1745,18 @@ h3.home-news-title a:hover{text-decoration:underline}
 .view-info-meetings .view-footer p.rtecenter:before{color:#777;font-size:3em;content:"\e835";display:block;width:50px;margin:0 auto}
 #registration-form .form-type-radios div.form-radios,#registration-form .form-type-radios label{float:left}
 #registration-form .form-type-radios div.form-radios .form-type-radio{float:left;margin-top:0;margin-right:15px}
+.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
 #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
-.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
-.node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
-.node-type-info-meeting h3.label-above:before{content:"\e835"}
+#registration-form fieldset{clear:both}
+.node-type-info-meeting a.field-group-format-title:before{position:relative;content:"\e834"}
+.node-type-info-meeting h3.label-above:before{position:relative;content:"\e835"}
 body.page-registration.not-logged-in .field-name-field-attendee{display:none}
+.view-display-id-block_home_slideshow{max-height:531px;overflow:hidden;position:relative}
+.view-display-id-block_home_slideshow .wrapper-diapo{width:5148px}
+.view-display-id-block_home_slideshow .wrapper-diapo .row-diapo{float:left}
+.view-display-id-block_home_slideshow .wrapper-diapo .row-diapo .diapositive{position:relative}
+.view-display-id-block_home_slideshow .wrapper-diapo .row-diapo .diapositive .txt-diapo{position:absolute;bottom:30px;text-align:center;width:858px}
+.view-display-id-block_home_slideshow .view-display-id-controlers_1,.view-display-id-block_home_slideshow .view-display-id-controlers_2{position:absolute;top:20px;background-color:rgba(0,0,0,.5);color:#fff;width:286px}
+.view-display-id-block_home_slideshow .wrapper-diapo .row-diapo .diapositive .txt-diapo a p{color:#fff;background:rgba(0,0,0,.5);display:inline;box-shadow:10px 0 0 rgba(0,0,0,.5),-10px 0 0 rgba(0,0,0,.5);line-height:1.3em;font-family:'Source Sans Pro',sans-serif;font-size:2em}
+.view-display-id-block_home_slideshow .view-display-id-controlers_2{left:1100px}
