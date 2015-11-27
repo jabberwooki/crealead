@@ -245,7 +245,7 @@ function diaporama_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2 id="title-controler-col-1">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2 id="title-controler-col-2">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Titre */
@@ -342,7 +342,7 @@ function diaporama_views_default_views() {
     t('<div class="controler"><a href="[field_url_de_destination]" class="link-controler">[title]</a></div>'),
     t('<div class="controler">[title]</div>'),
     t('Col 2 controleurs'),
-    t('<h2 id="title-controler-col-1">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>'),
+    t('<h2 id="title-controler-col-2">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>'),
   );
   $export['diaporama'] = $view;
 
