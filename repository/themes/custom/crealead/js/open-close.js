@@ -6,7 +6,7 @@ jQuery(function($) {
    * link with class "read-more" will hide next text in the same contenair
    */
 
-  // lien pour fermer le paragraphe
+ /* // lien pour fermer le paragraphe
   var link_close = $( '<a id="link-close-txt" href=".">Cacher le texte</a>' );
 
   // lien pour ouvrir le paragraphe
@@ -61,5 +61,5 @@ jQuery(function($) {
     return false;
   });
 
-
+*/
 });
