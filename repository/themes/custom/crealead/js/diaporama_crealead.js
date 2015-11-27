@@ -27,6 +27,8 @@ jQuery(function($) {
   window_width = $(window).width();
   nb_slide = $('.row-diapo').length;
   wrapper_slide_show_width = nb_slide * slide_width;
+  $('.wrapper-diapo').width(wrapper_slide_show_width);
+
 
 
   slide_show_central_zone = (window_width > 1230) ? 1100 : 992;
@@ -35,9 +37,12 @@ jQuery(function($) {
 
   first_mvt_width = - slide_width + (window_width -slide_width) / 2 ;
 
-  // Placement des controlleurs
+  // Placement des controleurs
   $('.view-display-id-controlers_1').css('left', margin_left_controlers_1 + 'px');
   $('.view-display-id-controlers_2').css('left', margin_left_controlers_2 + 'px');
+
+  // Mise en place de la class controler-selected sur le premier controler
+  $(".controler:first").addClass("controler-selected");
 
   // Ajout de la derniere diapo au début
   first_slide = $(".row-diapo:first");
@@ -57,7 +62,11 @@ jQuery(function($) {
 
   // Fonction d'animation
   function moove(num_controler){
-    if(num_controler != selected_slide && num_controler == (nb_slide-1)){
+    //Gestion des controlers
+    $(".controler").removeClass("controler-selected");
+    $(".controler:eq( "+num_controler+" )").addClass("controler-selected");
+
+    if(num_controler != selected_slide && num_controler > (nb_slide-3)){
       last_slide = $(".row-diapo:last");
       if(!last_slide.hasClass( "views-row-first" )){
         console.log("Je rentre dans le cas où il faut envoyer les deux premiers slide en fin...");
@@ -70,7 +79,7 @@ jQuery(function($) {
       mvt_width = slide_width * (num_controler - selected_slide);
       console.log("largeur du déplacement : " + mvt_width);
       }
-    }else if(num_controler != selected_slide && num_controler == 0){
+    }else if(num_controler != selected_slide && num_controler < 2){
       first_slide = $(".row-diapo:first");
       if(!first_slide.hasClass( "views-row-last" )){
         console.log("Je rentre dans le cas où il faut envoyer les deux derniers slide au début...");
