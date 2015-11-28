@@ -43,5 +43,9 @@ if (drupal_is_front_page()) {
     'type' => 'file',
     'group' => JS_THEME,
   ));
+  drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/diaporama_crealead.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+  ));
 }
 

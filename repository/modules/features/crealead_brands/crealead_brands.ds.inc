@@ -52,19 +52,38 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'brand';
   $ds_fieldsetting->view_mode = 'block';
   $ds_fieldsetting->settings = array(
-    'title' => array(
+    'title_brand' => array(
       'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => 'h3',
-        'class' => '',
+        'class' => 'mask',
+        'exclude node title settings' => '0',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'info',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
       ),
     ),
     'field_brand_logo' => array(
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
       ),
     ),
   );
@@ -173,6 +192,24 @@ function crealead_brands_ds_custom_fields_info() {
     'block_render' => '2',
   );
   $export['brand_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'title_brand';
+  $ds_field->label = 'Title brand';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'brand|block';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<h3 class="list-brand"><a href="[node:url:relative]">[node:title]</a></h3>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['title_brand'] = $ds_field;
 
   return $export;
 }
@@ -333,15 +370,19 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_brand_logo',
-        1 => 'title',
-        2 => 'field_brand_baseline',
+        0 => 'group_css_effect_3',
+        1 => 'field_brand_logo',
+        2 => 'title_brand',
+        3 => 'field_brand_baseline',
+        4 => 'title',
       ),
     ),
     'fields' => array(
+      'group_css_effect_3' => 'central',
       'field_brand_logo' => 'central',
-      'title' => 'central',
+      'title_brand' => 'central',
       'field_brand_baseline' => 'central',
+      'title' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

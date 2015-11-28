@@ -1,32 +1,25 @@
 <?php
 /**
  * @file
- * kpages.strongarm.inc
+ * diaporama.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function kpages_strongarm() {
+function diaporama_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_hide_page_title';
-  $strongarm->value = 1;
-  $export['ds_extras_hide_page_title'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__page';
+  $strongarm->name = 'field_bundle_settings_node__diapositive';
   $strongarm->value = array(
     'view_modes' => array(
-      'teaser' => array(
+      'full' => array(
         'custom_settings' => TRUE,
       ),
-      'full' => array(
+      'teaser' => array(
         'custom_settings' => TRUE,
       ),
       'rss' => array(
@@ -41,13 +34,10 @@ function kpages_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-      'revision' => array(
-        'custom_settings' => FALSE,
-      ),
       'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
         'custom_settings' => FALSE,
       ),
       'block' => array(
@@ -57,6 +47,9 @@ function kpages_strongarm() {
         'custom_settings' => FALSE,
       ),
       'zoom_news' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -78,60 +71,52 @@ function kpages_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__page'] = $strongarm;
+  $export['field_bundle_settings_node__diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_page';
+  $strongarm->name = 'language_content_type_diapositive';
   $strongarm->value = '0';
-  $export['language_content_type_page'] = $strongarm;
+  $export['language_content_type_diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_page';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
-  $export['menu_options_page'] = $strongarm;
+  $strongarm->name = 'menu_options_diapositive';
+  $strongarm->value = array();
+  $export['menu_options_diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_page';
+  $strongarm->name = 'menu_parent_diapositive';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_page'] = $strongarm;
+  $export['menu_parent_diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_page';
+  $strongarm->name = 'node_options_diapositive';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'promote',
   );
-  $export['node_options_page'] = $strongarm;
+  $export['node_options_diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_page';
+  $strongarm->name = 'node_preview_diapositive';
   $strongarm->value = '1';
-  $export['node_preview_page'] = $strongarm;
+  $export['node_preview_diapositive'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_page';
+  $strongarm->name = 'node_submitted_diapositive';
   $strongarm->value = 0;
-  $export['node_submitted_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_page_pattern';
-  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
-  $export['pathauto_node_page_pattern'] = $strongarm;
+  $export['node_submitted_diapositive'] = $strongarm;
 
   return $export;
 }

@@ -13,6 +13,41 @@ function crealead_news_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'news_full';
+  $context->description = '';
+  $context->tag = 'Actualités';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'news' => 'news',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'ds_extras-content_header' => array(
+          'module' => 'ds_extras',
+          'delta' => 'content_header',
+          'region' => 'full_content_header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Actualités');
+  $export['news_full'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'news_home';
   $context->description = '';
   $context->tag = 'Actualités';
