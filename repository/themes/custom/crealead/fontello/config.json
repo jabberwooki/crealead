@@ -301,6 +301,34 @@
       ]
     },
     {
+      "uid": "2458519cf2686137171ecceb53fbc899",
+      "css": "fleche-gauche-diapo-selecter",
+      "code": 59483,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M1051 0L1051 3543.3 0 1771.7Z",
+        "width": 297
+      },
+      "search": [
+        "fleche-gauche-diapo-selecter"
+      ]
+    },
+    {
+      "uid": "2bc8dcf1b0a7afb3c2b8b6d9fad269f7",
+      "css": "fleche-droite-diapo-selecter",
+      "code": 59480,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M0 0L0 3543.3 1051 1771.7Z",
+        "width": 297
+      },
+      "search": [
+        "fleche-droite-diapo-selecter"
+      ]
+    },
+    {
       "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
       "css": "search-1",
       "code": 59471,
@@ -514,6 +542,18 @@
       "uid": "76857a03fbaa6857fe063b6c25aa98ed",
       "css": "volume-up",
       "code": 59433,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9dc654095085167524602c9acc0c5570",
+      "css": "left-dir",
+      "code": 59482,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "fb1c799ffe5bf8fb7f8bcb647c8fe9e6",
+      "css": "right-dir-1",
+      "code": 59481,
       "src": "fontawesome"
     },
     {
