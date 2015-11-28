@@ -13,12 +13,21 @@
             bottom: 30px;
             text-align: center;
             width: 858px;
-            a{
-              p{
-                .cartouche-noir();
-                .source();
-                font-size: 2em;
-              }
+            p{
+              .cartouche-noir();
+              .source();
+              font-size: 2em;
+              display: inline;
+              margin: 0;
+            }
+            a > p:after{
+              .glyphicon();
+              content: "\e834";
+              color: white;
+              background-color: @rouge-crealead;
+              top: 2px;
+              font-size: 1.26em;
+              margin: 2px -10px -3px 20px;
             }
           }
         }
@@ -33,6 +42,17 @@
       }
       .controler {
         cursor: pointer;
+        position: relative;
+        &.controler-selected{
+          &:after{
+            .glyphicon();
+            content: "\e858";
+            color: white;
+            font-size: 0.8em;
+            position: absolute;
+            right: -17px;
+          }
+        }
       }
 
     }
@@ -48,7 +68,7 @@
       #title-controler-col-2{
         margin: 0;
         display: block;
-        background-color: rgba(40, 40, 38, 0.8);
+        background-color: rgba(0, 0, 0, 0.8);
         text-align: center;
         .source();
         color: white;
@@ -64,11 +84,22 @@
       .controler{
         cursor: pointer;
         color: @noir-crealead;
+        position: relative;
         &.controler-selected{
+          
           a{
             &:hover{
               text-decoration: none;
             }
+          }
+          &:before{
+            .glyphicon();
+            content: "\e85b";
+            color: white;
+            font-size: 0.8em;
+            position: absolute;
+            left: -15px;
+            left: -15px;
           }
         }
         a{
