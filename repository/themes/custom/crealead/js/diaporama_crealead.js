@@ -19,7 +19,8 @@ jQuery(function($) {
       selected_slide,
       first_slide,
       last_slide,
-      animate;
+      animate,
+      textes_slide;
 
   window_width = $( window ).width();
   animate = (window_width >= 992);
@@ -34,6 +35,10 @@ jQuery(function($) {
     slide_width = 858; // pour l'instant, le diapo ne s'adapte pas en largeur
     control_zone_width = 286;
     selected_slide = 0;
+    textes_slide = [];
+    /*$('.txt-diapo').each(function(index){
+      textes_slide[index] = $(this);
+    });*/
 
     // Mise en place de la class controler-selected sur le premier controler
     $(".controler:first").addClass("controler-selected");
@@ -75,19 +80,22 @@ jQuery(function($) {
 
     }else if((num_controler - selected_slide) < 0) {
       for (var i = 0; i < Math.abs(nb_mvt); i++) {
-        $(".wrapper-diapo").animate({marginLeft: "+=" + slide_width}, timer, function () {
+        $(".wrapper-diapo").animate({marginLeft: "+=" + slide_width}, 0, function () {
           $(this).css({marginLeft: first_mvt_width}).find(".row-diapo:first").before($(this).find(".row-diapo:last"));
         })
       }
     }
 
     selected_slide = num_controler;
-    //Gestion des controlers
+
+    // Gestion des controlers
     $(".controler").removeClass("controler-selected");
     $(".controler:eq( "+num_controler+" )").addClass("controler-selected");
 
+    // Gestion des textes
+   /* $(".txt-diapo").hide();
+    textes_slide[index].show();*/
   }
-
 
   /* Fonction d'initialisation du slideshow ***********************************/
   function initiate_slide_show(){
