@@ -43,6 +43,13 @@ function diaporama_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Pied de page: Global : Zone de texte */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/reunions-information" class="button-action-diaporama">S\'inscrire <br><span class="sub-button-action-diaporama">à une réunion d\'information</span></a>
+<a href="/reunions-information" class="link-white">Nous connaitre</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -125,6 +132,7 @@ function diaporama_views_default_views() {
 
   /* Display: Bloc */
   $handler = $view->new_display('block', 'Bloc', 'block_home_slideshow');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -185,6 +193,13 @@ function diaporama_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 id="title-controler-col-1">Devenez <br><span class="subtitle-controler-1">Co-entrepreneur</span></h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Pied de page: Global : Zone de texte */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/reunions-information" class="button-action-diaporama">S\'inscrire <br /><span class="sub-button-action-diaporama">à une réunion d\'information</span></a><a href="/la-cooperative" class="link-white">Découvrir Crealead</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -247,6 +262,13 @@ function diaporama_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2 id="title-controler-col-2">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Pied de page: Global : Zone de texte */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="annuaire-entrepreneurs" class="button-action-diaporama">Rechercher <br><span class="sub-button-action-diaporama">un prestataire ou un artisan</span></a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -315,6 +337,8 @@ function diaporama_views_default_views() {
     t('‹ précédent'),
     t('suivant ›'),
     t('dernier »'),
+    t('<a href="/reunions-information" class="button-action-diaporama">S\'inscrire <br><span class="sub-button-action-diaporama">à une réunion d\'information</span></a>
+<a href="/reunions-information" class="link-white">Nous connaitre</a>'),
     t('Page'),
     t('<div class="diapositive">
   <a href="[field_url_de_destination]">[field_image_scald]</a>
@@ -339,10 +363,12 @@ function diaporama_views_default_views() {
 </div>'),
     t('Col 1 controleurs'),
     t('<h2 id="title-controler-col-1">Devenez <br><span class="subtitle-controler-1">Co-entrepreneur</span></h2>'),
+    t('<a href="/reunions-information" class="button-action-diaporama">S\'inscrire <br /><span class="sub-button-action-diaporama">à une réunion d\'information</span></a><a href="/la-cooperative" class="link-white">Découvrir Crealead</a>'),
     t('<div class="controler"><a href="[field_url_de_destination]" class="link-controler">[title]</a></div>'),
     t('<div class="controler">[title]</div>'),
     t('Col 2 controleurs'),
     t('<h2 id="title-controler-col-2">Trouvez <br><span class="subtitle-controler-2">un prestataire ou un artisan</span></h2>'),
+    t('<a href="annuaire-entrepreneurs" class="button-action-diaporama">Rechercher <br><span class="sub-button-action-diaporama">un prestataire ou un artisan</span></a>'),
   );
   $export['diaporama'] = $view;
 
