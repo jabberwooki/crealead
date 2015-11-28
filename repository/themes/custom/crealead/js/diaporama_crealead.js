@@ -53,6 +53,10 @@ jQuery(function($) {
     // positionnement initial du slideshow
     $(".wrapper-diapo").animate({marginLeft:first_mvt_width},0);
 
+    // Gestion des textes
+    $(".txt-diapo").hide();
+    $(".txt-diapo:eq(1)").show();
+
     // Gestion des click sur les contrôleurs
     $('.controler').each(function(index){
       $(this).click(function(event){
@@ -67,23 +71,35 @@ jQuery(function($) {
 
   /* Fonction d'animation *****************************************************/
   function moove(num_controler){
+
     mvt_width = slide_width * (num_controler - selected_slide);
     nb_mvt = (num_controler - selected_slide);
     timer = 800 / nb_mvt;
+    // on avance *************************************************/
     if ((num_controler - selected_slide) > 0) {
 
         $(".wrapper-diapo").animate({marginLeft:"-=" + mvt_width},timer,function() {
           for(var i = 0;i< Math.abs(nb_mvt);i++){
             $(this).css({marginLeft:first_mvt_width}).find(".row-diapo:last").after($(this).find(".row-diapo:first"));
           }
-        })
-
+          // Gestion des textes
+          $(".txt-diapo").hide();
+          $(".txt-diapo:eq(1)").show();
+        });
+      // on recule ************************************************/
     }else if((num_controler - selected_slide) < 0) {
       for (var i = 0; i < Math.abs(nb_mvt); i++) {
-        $(".wrapper-diapo").animate({marginLeft: "+=" + slide_width}, 0, function () {
-          $(this).css({marginLeft: first_mvt_width}).find(".row-diapo:first").before($(this).find(".row-diapo:last"));
-        })
+        // L'astuce est de bien mettre la bonne marge avant que l'animation ne commence
+        $(".wrapper-diapo").animate({marginLeft: (first_mvt_width + mvt_width)},0,function() {
+          $(this).find(".row-diapo:first").before($(this).find(".row-diapo:last"));
+        });
       }
+      $(".wrapper-diapo").animate({marginLeft: "-=" + mvt_width}, 600, function () {
+        console.log("mvt_width : " + mvt_width);
+        // Gestion des textes
+        $(".txt-diapo").hide();
+        $(".txt-diapo:eq(1)").show();
+      })
     }
 
     selected_slide = num_controler;
@@ -92,9 +108,7 @@ jQuery(function($) {
     $(".controler").removeClass("controler-selected");
     $(".controler:eq( "+num_controler+" )").addClass("controler-selected");
 
-    // Gestion des textes
-   /* $(".txt-diapo").hide();
-    textes_slide[index].show();*/
+
   }
 
   /* Fonction d'initialisation du slideshow ***********************************/
