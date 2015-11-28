@@ -8,6 +8,8 @@ jQuery(function($) {
       window_width,
       wrapper_slide_show_width,
       nb_slide,
+      nb_mvt,
+      timer,
       slide_width,
       control_zone_width,
       margin_left_controlers_1,
@@ -16,7 +18,6 @@ jQuery(function($) {
       mvt_width,
       selected_slide,
       first_slide,
-      second_slide,
       last_slide;
 
   slide_show_height = 531; // pour l'instant, le diapo ne s'adapte pas en hauteur
@@ -50,7 +51,7 @@ jQuery(function($) {
   $(".wrapper-diapo").prepend(last_slide);
 
   // positionnement initial du slideshow
-  $(".wrapper-diapo").animate({marginLeft:first_mvt_width},800);
+  $(".wrapper-diapo").animate({marginLeft:first_mvt_width},0);
 
   // Gestion des click sur les contrôleurs
   $('.controler').each(function(index){
@@ -62,58 +63,30 @@ jQuery(function($) {
 
   // Fonction d'animation
   function moove(num_controler){
+    mvt_width = slide_width * (num_controler - selected_slide);
+    nb_mvt = (num_controler - selected_slide);
+    timer = 800 / nb_mvt;
+    if ((num_controler - selected_slide) > 0) {
+
+        $(".wrapper-diapo").animate({marginLeft:"-=" + mvt_width},timer,function() {
+          for(var i = 0;i< Math.abs(nb_mvt);i++){
+            $(this).css({marginLeft:first_mvt_width}).find(".row-diapo:last").after($(this).find(".row-diapo:first"));
+          }
+        })
+
+    }else if((num_controler - selected_slide) < 0) {
+      for (var i = 0; i < Math.abs(nb_mvt); i++) {
+        $(".wrapper-diapo").animate({marginLeft: "+=" + slide_width}, timer, function () {
+          $(this).css({marginLeft: first_mvt_width}).find(".row-diapo:first").before($(this).find(".row-diapo:last"));
+        })
+      }
+    }
+
+    selected_slide = num_controler;
     //Gestion des controlers
     $(".controler").removeClass("controler-selected");
     $(".controler:eq( "+num_controler+" )").addClass("controler-selected");
 
-    if(num_controler != selected_slide && num_controler > (nb_slide-3)){
-      last_slide = $(".row-diapo:last");
-      if(!last_slide.hasClass( "views-row-first" )){
-        console.log("Je rentre dans le cas où il faut envoyer les deux premiers slide en fin...");
-        first_slide = $(".row-diapo:first");
-        $(".wrapper-diapo").append(first_slide);
-        first_slide = $(".row-diapo:first");
-        $(".wrapper-diapo").append(first_slide);
-        mvt_width = ((num_controler-2) - selected_slide) * slide_width;
-      }else {
-      mvt_width = slide_width * (num_controler - selected_slide);
-      console.log("largeur du déplacement : " + mvt_width);
-      }
-    }else if(num_controler != selected_slide && num_controler < 2){
-      first_slide = $(".row-diapo:first");
-      if(!first_slide.hasClass( "views-row-last" )){
-        console.log("Je rentre dans le cas où il faut envoyer les deux derniers slide au début...");
-        last_slide = $(".row-diapo:last");
-        $(".wrapper-diapo").prepend(last_slide);
-        last_slide = $(".row-diapo:last");
-        $(".wrapper-diapo").prepend(last_slide);
-        mvt_width = ((num_controler+2) - selected_slide) * slide_width;
-      }else {
-        mvt_width = slide_width * (num_controler - selected_slide);
-        console.log("largeur du déplacement : " + mvt_width);
-      }
-    }else{
-      mvt_width = slide_width * (num_controler - selected_slide);
-      console.log("largeur du déplacement : " + mvt_width);
-    }
-    $(".wrapper-diapo").stop().animate({marginLeft:"-="+mvt_width},800);
-    console.log("diff : " + (num_controler - selected_slide));
-
-    console.log('num_controler : ' + num_controler);
-    console.log('old selected_slide : ' + selected_slide);
-
-    selected_slide = num_controler;
-    console.log('new selected_slide : ' + selected_slide);
   }
-
-  /*console.log("largeur du wrapper : " + wrapper_slide_show_width);
-  console.log("Premier mouvement : " + first_mvt_width);
-*/
-
-  /*$(".slideshow ul").animate({marginLeft:-350},800,function(){
-    $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-  })
-*/
-
 
 });
