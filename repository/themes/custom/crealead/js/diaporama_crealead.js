@@ -19,8 +19,7 @@ jQuery(function($) {
       selected_slide,
       first_slide,
       last_slide,
-      animate,
-      textes_slide;
+      animate;
 
   window_width = $( window ).width();
   animate = (window_width >= 992);
@@ -35,10 +34,6 @@ jQuery(function($) {
     slide_width = 858; // pour l'instant, le diapo ne s'adapte pas en largeur
     control_zone_width = 286;
     selected_slide = 0;
-    textes_slide = [];
-    /*$('.txt-diapo').each(function(index){
-      textes_slide[index] = $(this);
-    });*/
 
     // Mise en place de la class controler-selected sur le premier controler
     $(".controler:first").addClass("controler-selected");
@@ -66,15 +61,41 @@ jQuery(function($) {
         }
       });
     });
-
   }
 
-  /* Fonction d'animation *****************************************************/
-  function moove(num_controler){
+  // lancement automatique du slideshow
+  $(function(){
+    var num = 0;
+    var interval = setInterval(function(){
+      num = num % nb_slide;
+      if (num < nb_slide){
+        moove(num, true);
+      }else clearInterval(interval);
+      num++;
+    }, 3000);
+    $('.wrapper-diapo').hover(function(){
+      clearInterval(interval);
+    });
+  });
 
+  /**
+   * Fonction d'animation
+   * @ num_controler : the controler number (click or automatic)
+   * @ infinite_right : boolean - if true, the slideshow continue to slide on the right
+   * *****************************************************/
+  function moove(num_controler, infinite_right){
+
+    // dans le cas d'un mvt automatique et infini vers la droite, le slide selectionné
+    // devient (-1) quand on arrive à la dernière diapo
+    if(infinite_right){
+      selected_slide = (selected_slide == (nb_slide-1)) ? (-1) : selected_slide;
+    }
+
+    num_controler = num_controler % (nb_slide);
     mvt_width = slide_width * (num_controler - selected_slide);
     nb_mvt = (num_controler - selected_slide);
     timer = 800 / nb_mvt;
+
     // on avance *************************************************/
     if ((num_controler - selected_slide) > 0) {
 
@@ -95,7 +116,6 @@ jQuery(function($) {
         });
       }
       $(".wrapper-diapo").animate({marginLeft: "-=" + mvt_width}, 600, function () {
-        console.log("mvt_width : " + mvt_width);
         // Gestion des textes
         $(".txt-diapo").hide();
         $(".txt-diapo:eq(1)").show();
@@ -107,7 +127,6 @@ jQuery(function($) {
     // Gestion des controlers
     $(".controler").removeClass("controler-selected");
     $(".controler:eq( "+num_controler+" )").addClass("controler-selected");
-
 
   }
 
@@ -134,8 +153,6 @@ jQuery(function($) {
     }else{
       $(".wrapper-diapo").animate({marginLeft:30},0);
     }
-
-
   }
 
 });
