@@ -394,51 +394,56 @@ Téléphone : 04-67-06-96-72';
   /* Display: Liste dates réunions */
   $handler = $view->new_display('page_with_page_title', 'Liste dates réunions', 'info_meetings_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Inscrivez vous à une réunion d\'information';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Entête: Global : Zone de texte */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p class="chapo">Assister à une réunion d’information, c’est la première étape obligatoire avant de déposer un dossier de candidature pour rejoindre Crealead. C’est le moment de poser toutes vos questions pour savoir si Crealead est fait pour vous, et vice versa !</p>
-<ul>
-<li>Quand? Une réunion est organisée tous les dix jours, de 9h15 à 12h15. </li>
-<li>Où? Dans les locaux de Crealead, à l’Hôtel de la Coopération, 55 rue St Cléophas, 34070 Montpellier</li>
-</ul>
-<h3 class="title-info-meeting">Au programme :</h3>
-<ul>
-  <li>Accueil & Présentation</li>
-  <li>Qu’est-ce qu\'une Coopérative d\'Activités et d\'Emploi (CAE) ?</li>
-  <li>Qui peut être co-entrepreneur?</li>
-  <li>Co-entreprendre chez Crealead</li>
-  <li>A quel moment intégrer Crealead ? Comment se préparer ?</li>
-  <li>Rejoindre Crealead: l\'accompagnement, les formations, le conseil.</li>
-  <li>Le parcours porteur de projet en contrat CAPE</li>
-  <li>Le parcours de l’entrepreneur déjà en activité</li>
-  <li>Co-entrepreneur au quotidien : le fonctionnement de Crealead</li>
-  <li>Présentation du système de gestion en ligne,</li>
-  <li>Combien ça coûte ? Combien de temps cela dure ?</li>
-  <li>Le contrat CAPE ? Quelle compatibilité avec mes indemnités Pôle Emploi, mon RSA?</li>
-  <li>Le statut d’entrepreneur-salarié : quelle protection sociale ?</li>
-  <li>En synthèse : quel intérêt par rapport au statut de l\'autoentrepreneur, des autres statuts ?</li>
-  <li>Les Plus Crealead</li>
-  <li>Les animations réseaux de Crealead</li>
-  <li>Les marques sectorielles</li>
-  <li>Le système d’échange de compétence et de services</li>
-</ul>
-';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Pied de page: Global : Zone de texte */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<p class="rtecenter"><strong>Hôtel de la coopération (aile droite)</strong><br />
-<a href="mailto:contact@crealead.com">contact@crealead.com</a><br />
-55, rue Saint Cléophas 34000 Montpellier<br />
-Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
+  $handler->display->display_options['footer']['area']['content'] = '<h3 class="title-info-meeting">Quand? </h3>
+<p>Une réunion est organisée tous les dix jours, de 9h15 à 12h15. </p>
+<h3 class="title-info-meeting">Où? </h3>
+<p>Dans les locaux de Crealead, à l’Hôtel de la Coopération, 55 rue St Cléophas, 34070 Montpellier</p>
+
+<h3 class="title-info-meeting">Au programme :</h3>
+<ul class="coche-rouge">
+  <li>Accueil & Présentation
+    <ul>
+      <li>Qu’est-ce qu\'une Coopérative d\'Activités et d\'Emploi (CAE) ?</li>
+      <li>Qui peut être co-entrepreneur?</li>
+    </ul>
+  </li>
+  <li>Co-entreprendre chez Crealead
+    <ul>
+      <li>A quel moment intégrer Crealead ? Comment se préparer ?</li>
+      <li>Rejoindre Crealead: l\'accompagnement, les formations, le conseil.</li>
+      <li>Le parcours porteur de projet en contrat CAPE</li>
+      <li>Le parcours de l’entrepreneur déjà en activité</li>
+    </ul>
+  </li>
+  
+  <li>Co-entrepreneur au quotidien : le fonctionnement de Crealead
+    <ul>
+      <li>Présentation du système de gestion en ligne,</li>
+      <li>Combien ça coûte ? Combien de temps cela dure ?</li>
+      <li>Le contrat CAPE ? Quelle compatibilité avec mes indemnités Pôle Emploi, mon RSA?</li>
+      <li>Le statut d’entrepreneur-salarié : quelle protection sociale ?</li>
+      <li>En synthèse : quel intérêt par rapport au statut de l\'autoentrepreneur, des autres statuts ?</li>
+    </ul>
+   </li>
+ 
+  <li>Les Plus Crealead
+    <ul>
+      <li>Les animations réseaux de Crealead</li>
+      <li>Les marques sectorielles</li>
+      <li>Le système d’échange de compétence et de services</li>
+    </ul>
+  </li>
+  
+</ul>
+
 ';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -781,38 +786,48 @@ contact@crealead.com
 55, rue Saint Cléophas 34000 Montpellier 
 Téléphone : 04-67-06-96-72'),
     t('Liste dates réunions'),
-    t('Inscrivez vous à une réunion d\'information'),
-    t('<p class="chapo">Assister à une réunion d’information, c’est la première étape obligatoire avant de déposer un dossier de candidature pour rejoindre Crealead. C’est le moment de poser toutes vos questions pour savoir si Crealead est fait pour vous, et vice versa !</p>
-<ul>
-<li>Quand? Une réunion est organisée tous les dix jours, de 9h15 à 12h15. </li>
-<li>Où? Dans les locaux de Crealead, à l’Hôtel de la Coopération, 55 rue St Cléophas, 34070 Montpellier</li>
-</ul>
+    t('<h3 class="title-info-meeting">Quand? </h3>
+<p>Une réunion est organisée tous les dix jours, de 9h15 à 12h15. </p>
+<h3 class="title-info-meeting">Où? </h3>
+<p>Dans les locaux de Crealead, à l’Hôtel de la Coopération, 55 rue St Cléophas, 34070 Montpellier</p>
+
 <h3 class="title-info-meeting">Au programme :</h3>
-<ul>
-  <li>Accueil & Présentation</li>
-  <li>Qu’est-ce qu\'une Coopérative d\'Activités et d\'Emploi (CAE) ?</li>
-  <li>Qui peut être co-entrepreneur?</li>
-  <li>Co-entreprendre chez Crealead</li>
-  <li>A quel moment intégrer Crealead ? Comment se préparer ?</li>
-  <li>Rejoindre Crealead: l\'accompagnement, les formations, le conseil.</li>
-  <li>Le parcours porteur de projet en contrat CAPE</li>
-  <li>Le parcours de l’entrepreneur déjà en activité</li>
-  <li>Co-entrepreneur au quotidien : le fonctionnement de Crealead</li>
-  <li>Présentation du système de gestion en ligne,</li>
-  <li>Combien ça coûte ? Combien de temps cela dure ?</li>
-  <li>Le contrat CAPE ? Quelle compatibilité avec mes indemnités Pôle Emploi, mon RSA?</li>
-  <li>Le statut d’entrepreneur-salarié : quelle protection sociale ?</li>
-  <li>En synthèse : quel intérêt par rapport au statut de l\'autoentrepreneur, des autres statuts ?</li>
-  <li>Les Plus Crealead</li>
-  <li>Les animations réseaux de Crealead</li>
-  <li>Les marques sectorielles</li>
-  <li>Le système d’échange de compétence et de services</li>
+<ul class="coche-rouge">
+  <li>Accueil & Présentation
+    <ul>
+      <li>Qu’est-ce qu\'une Coopérative d\'Activités et d\'Emploi (CAE) ?</li>
+      <li>Qui peut être co-entrepreneur?</li>
+    </ul>
+  </li>
+  <li>Co-entreprendre chez Crealead
+    <ul>
+      <li>A quel moment intégrer Crealead ? Comment se préparer ?</li>
+      <li>Rejoindre Crealead: l\'accompagnement, les formations, le conseil.</li>
+      <li>Le parcours porteur de projet en contrat CAPE</li>
+      <li>Le parcours de l’entrepreneur déjà en activité</li>
+    </ul>
+  </li>
+  
+  <li>Co-entrepreneur au quotidien : le fonctionnement de Crealead
+    <ul>
+      <li>Présentation du système de gestion en ligne,</li>
+      <li>Combien ça coûte ? Combien de temps cela dure ?</li>
+      <li>Le contrat CAPE ? Quelle compatibilité avec mes indemnités Pôle Emploi, mon RSA?</li>
+      <li>Le statut d’entrepreneur-salarié : quelle protection sociale ?</li>
+      <li>En synthèse : quel intérêt par rapport au statut de l\'autoentrepreneur, des autres statuts ?</li>
+    </ul>
+   </li>
+ 
+  <li>Les Plus Crealead
+    <ul>
+      <li>Les animations réseaux de Crealead</li>
+      <li>Les marques sectorielles</li>
+      <li>Le système d’échange de compétence et de services</li>
+    </ul>
+  </li>
+  
 </ul>
-'),
-    t('<p class="rtecenter"><strong>Hôtel de la coopération (aile droite)</strong><br />
-<a href="mailto:contact@crealead.com">contact@crealead.com</a><br />
-55, rue Saint Cléophas 34000 Montpellier<br />
-Téléphone : 04&nbsp;67&nbsp;06&nbsp;96&nbsp;72</p>
+
 '),
     t('Inscriptions'),
     t('Paramètres inscription'),
