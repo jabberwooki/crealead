@@ -31,6 +31,7 @@ dependencies[] = kcore
 dependencies[] = linkit
 dependencies[] = locale
 dependencies[] = masquerade
+dependencies[] = menu_html
 dependencies[] = metatag
 dependencies[] = module_filter
 dependencies[] = node
