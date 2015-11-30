@@ -53,6 +53,9 @@ projects[link][version] = "1.3"
 projects[linkit][subdir] = contrib
 projects[linkit][version] = "3.3"
 
+projects[menu_html][subdir] = contrib
+projects[menu_html][version] = "1.0"
+
 projects[options_element][subdir] = contrib
 projects[options_element][version] = "1.12"
 
