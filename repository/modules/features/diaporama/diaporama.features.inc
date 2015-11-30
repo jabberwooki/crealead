@@ -70,15 +70,16 @@ function diaporama_node_info() {
  */
 function diaporama_scald_default_context_types() {
   $contexts = array();
-  $contexts['diaporama-file'] = array(
+  $contexts['diaporama-image'] = array(
     'player' => array(
-      'file' => array(
+      'image' => array(
         '*' => 'default',
+        'settings' => array(),
       ),
     ),
     'transcoder' => array(
-      'file' => array(
-        '*' => 'passthrough',
+      'image' => array(
+        '*' => 'style-diapositive_accueil',
       ),
     ),
   );
