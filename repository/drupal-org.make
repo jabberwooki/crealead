@@ -13,9 +13,7 @@ projects[ctools][version] = "1.4"
 
 projects[ds][subdir] = contrib
 projects[ds][version] = "2.8"
-
-projects[ds][subdir] = contrib
-projects[ds][version] = "2.8"
+projects[ds][patch][] = "https://www.drupal.org/files/issues/ds_extras_field_group_not_rendered-2221307-18.patch"
 
 projects[entity][subdir] = contrib
 projects[entity][version] = "1.6"
