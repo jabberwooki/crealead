@@ -1618,7 +1618,10 @@ ul.coche-rouge li:before{position:relative;top:1px;font-family:fontello;font-sty
 .private-file a:before{font-family:fontello;font-weight:400;font-size:1em;width:1em;text-transform:none;color:#777;content:"\e83b";margin-right:5px}
 #h1-logo{margin:0;padding:0}
 .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color:#fff;background-color:#bf0e38}
-header#navbar nav{margin-top:30px}
+header#navbar nav{margin:30px 0 0 40px}
+header#navbar nav>ul.menu{margin:0 0 0 5px}
+@media (min-width:1200px){header#navbar nav>ul.menu{margin:0 0 0 40px}
+}
 header#navbar nav ul.menu a{font-family:Quicksand,sans-serif;text-transform:uppercase;font-weight:700;color:#1d1e19;background-color:#fff}
 header#navbar nav ul.menu a:hover{background-color:#bf0e38;color:#fff}
 @media (max-width:1200px){header#navbar nav ul>li{max-width:150px}

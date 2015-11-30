@@ -8,7 +8,14 @@
   background-color: @rouge-crealead;
 }
 header#navbar nav{
-  margin-top: 30px;
+
+  > ul.menu{
+    margin: 0 0 0 5px;
+    @media (min-width: @screen-lg){
+      margin: 0 0 0 40px;
+    }
+  }
+  margin: 30px 0 0 40px;
   ul.menu a{
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
