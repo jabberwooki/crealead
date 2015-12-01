@@ -1717,6 +1717,7 @@ h3.home-news-title{margin-top:5px;line-height:.8em}
 h3.home-news-title a{color:#bf0e38;text-decoration:none;font-family:Quicksand,sans-serif;font-size:.7em;font-weight:700}
 h3.home-news-title a:hover{text-decoration:underline}
 #views-exposed-form-brands-brands-list .form-type-radio label:before,.view-info-meetings .view-content table tr td a:before{position:relative;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.view-display-id-testimonials_front .line-bottom-red{margin-top:30px}
 #boxes-box-search_entrepreneur_intro{background:url(../images/fond_entrepreneurs.jpg) no-repeat;height:250px;margin:0;padding:20px}
 #boxes-box-search_entrepreneur_intro .boxes-box-content{background:rgba(0,0,0,.8);color:#fff}
 @media (min-width:1200px){#boxes-box-search_entrepreneur_intro .boxes-box-content{width:50%;margin:0 auto;padding:20px}
