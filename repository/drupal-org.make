@@ -223,6 +223,7 @@ includes[bootstrap] = makefiles/themes/bootstrap.make
 ;--- Scald and media related --------------------------------------------------
 projects[scald][subdir] = contrib
 projects[scald][version] = "1.4"
+projects[scald][patch][] = "https://www.drupal.org/files/issues/scald_impossible_to_import_more_than_one_flickr_image-2621876-2.patch"
 
 projects[scald_file][subdir] = contrib
 projects[scald_file][version] = "1.1"
