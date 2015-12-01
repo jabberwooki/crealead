@@ -51,64 +51,74 @@
       text-align: center;
       max-width: 130px;
       min-width: 80px;
-      text-align: center;
       word-spacing: 80px;
-      padding: 0;
+      padding: 90px 0 0 0;
       color: #000;
       background-color: @gris-clair-crealead;
-      padding-bottom: 10px;
       .quick();
       text-transform: uppercase;
       font-weight: bold;
       font-size: 0.8em;
       &.input-checked{
         color: @rouge-crealead;
-        &:before{
-          background-color: @rouge-crealead;
-          color: #FFF;
-        }
       }
       &:hover{
         color: @rouge-crealead;
       }
-      &:before{
-        .glyphicon();
-        font-size: 3em;
-        background-color: white;
-        color: #000;
-        display: block;
-        padding:30px 20px;
-        margin: 0 auto 10px auto;
-        background: white url('../images/hexa-bg-grey.png')no-repeat;
-        width: 77px;
-        height: 89px;
+      
+      &[for=edit-field-business-sector-tid-all]{
+        background: url(../images/bg_search/recherche_03.png) no-repeat 50% 0;/*C crealead*/
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_03.png) no-repeat 50% 0;
+        }
       }
-      &[for=edit-field-business-sector-tid-all]:before{
-        content: "\e845"; /* icon C crealead */
+      &#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5{
+        background: url(../images/bg_search/recherche_05.png) no-repeat 50% 0;/*Trophée*/
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_05.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5:before{
-        content: "\e84e"; /* icon RH trophee crealead */
+      &#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2{
+        background: url(../images/bg_search/recherche_07.png) no-repeat 50% 0;/*haut parleur*/
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_07.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2:before{
-        content: "\e84a"; /* icon Com haut parleur crealead */
+      &#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb{
+        background: url(../images/bg_search/recherche_09.png) no-repeat 50% 0;/*ordi*/
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_09.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb:before{
-        content: "\e84c"; /* icon  ordi TIC crealead */
+      &#uuid-9bd98d14-1229-4def-b367-f937ac900e73{
+        background: url(../images/bg_search/recherche_05.png) no-repeat 50% 0; /*arbre*/
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_05.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-9bd98d14-1229-4def-b367-f937ac900e73:before{
-        content: "\e846"; /* icon arbre crealead */
+      &#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6{
+        background: url(../images/bg_search/recherche_13.png) no-repeat 50% 0; /* icon engrenage crealead */
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_13.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6:before{
-        content: "\e848"; /* icon engrenage crealead */
+      &#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6{
+        background: url(../images/bg_search/recherche_15.png) no-repeat 50% 0;/* icon fauteuil deco crealead */
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_15.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6:before{
-        content: "\e849"; /* icon fauteuil deco crealead */
+      &#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4{
+        background: url(../images/bg_search/recherche_17.png) no-repeat 50% 0; /* icon marteau crealead */
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_17.png) no-repeat 50% 0;
+        }
       }
-      &#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4:before{
-        content: "\e84b"; /* icon engrenage crealead */
-      }
-      &#uuid-cd426be7-05fb-43d2-a9df-2d5483226773:before{
-        content: "\e847"; /* icon man dev perso crealead */
+      &#uuid-cd426be7-05fb-43d2-a9df-2d5483226773{
+        background: url(../images/bg_search/recherche_19.png) no-repeat 50% 0; /* icon man dev perso crealead */
+        &:hover, &.input-checked{
+          background: url(../images/bg_search/recherche_hover_19.png) no-repeat 50% 0;
+        }
       }
       &:hover:before{
         background-color: @rouge-crealead;
