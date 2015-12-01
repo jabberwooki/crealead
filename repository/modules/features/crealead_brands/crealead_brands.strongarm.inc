@@ -118,7 +118,7 @@ function crealead_brands_strongarm() {
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
-            'weight' => '5',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'block' => array(
