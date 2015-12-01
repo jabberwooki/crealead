@@ -111,7 +111,7 @@ function kcore_block_view($delta = '') {
       }
 
       $content = '<div id="coes-number" class="number coes-number">' . $number . '</div>';
-      $content .= '<div id="coes-text" class="text coes-text">' . 'entrepreneurs' . '</div>';
+      $content .= '<div id="coes-text" class="text coes-text">Co-entrepreneurs <br><span class="under-key-data">et autant de compétences complémentaires</span></div>';
       $block['content'] = $content;
       break;
 
@@ -126,7 +126,8 @@ function kcore_block_view($delta = '') {
       }
 
       $content = '<div id="refs-number" class="number refs-number">' . $number . '</div>';
-      $content .= '<div id="refs-text" class="text refs-text">' . 'référents' . '</div>';
+      $content .= '<div id="refs-text" class="text refs-text">Salariés<br><span class="under-key-data">d’une équipe support pour
+accompagner et gérer</span></div>';
       $block['content'] = $content;
       break;
 
@@ -134,7 +135,8 @@ function kcore_block_view($delta = '') {
       $number = variable_get('speakers_number_value', '10');
 
       $content = '<div id="speakers-number" class="number speakers-number">' . $number . '</div>';
-      $content .= '<div id="speakers-text" class="text speakers-text">' . 'intervenants' . '</div>';
+      $content .= '<div id="speakers-text" class="text speakers-text">Intervenants<br><span class="under-key-data">en formations, animations et
+prestations.</span></div>';
       $block['content'] = $content;
       break;
 
@@ -142,7 +144,8 @@ function kcore_block_view($delta = '') {
       $number = variable_get('meetings_number_value', '10');
 
       $content = '<div id="meetings-number" class="number meetings-number">' . $number . '</div>';
-      $content .= '<div id="meetings-text" class="text meetings-text">' . 'rencontres' . '</div>';
+      $content .= '<div id="meetings-text" class="text meetings-text">Rencontres par an <br><span  class="under-key-data">organisées pour échanger et
+travailler ensemble.</span></div>';
       $block['content'] = $content;
       break;
 
