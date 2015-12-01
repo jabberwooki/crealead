@@ -24,7 +24,7 @@ function crealead_articles_field_default_field_instances() {
           'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -233,7 +233,7 @@ function crealead_articles_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'large_bandeau',
         ),
         'type' => 'image',
         'weight' => 0,
