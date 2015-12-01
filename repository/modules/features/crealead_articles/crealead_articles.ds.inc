@@ -17,17 +17,6 @@ function crealead_articles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'article';
   $ds_fieldsetting->view_mode = 'block';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h3',
-        'class' => 'home-news-title',
-        'ft' => array(),
-      ),
-    ),
     'body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -68,6 +57,11 @@ function crealead_articles_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'sld_group_image',
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|article|full'] = $ds_fieldsetting;
@@ -112,13 +106,11 @@ function crealead_articles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image',
-        1 => 'title',
-        2 => 'body',
+        1 => 'body',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
-      'title' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(),
