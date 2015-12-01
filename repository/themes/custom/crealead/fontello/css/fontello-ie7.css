@@ -102,3 +102,6 @@
 .icon-right-dir-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe859;&nbsp;'); }
 .icon-left-dir { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe85a;&nbsp;'); }
 .icon-fleche-gauche-diapo-selecter { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe85b;&nbsp;'); }
+.icon-linkedin-squared { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe85c;&nbsp;'); }
+.icon-linkedin { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe85d;&nbsp;'); }
+.icon-viadeo { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe85e;&nbsp;'); }

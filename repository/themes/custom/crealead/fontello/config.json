@@ -671,9 +671,21 @@
       "src": "fontawesome"
     },
     {
+      "uid": "1145676a91138011729fa2909997af66",
+      "css": "linkedin-squared",
+      "code": 59484,
+      "src": "fontawesome"
+    },
+    {
       "uid": "47a35af762c8e06f3d152750134c8750",
       "css": "linux",
       "code": 59408,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e9107949dd6c9e8ab2b29ae07156e38c",
+      "css": "linkedin",
+      "code": 59485,
       "src": "fontawesome"
     },
     {
@@ -753,6 +765,12 @@
       "css": "videocam",
       "code": 59438,
       "src": "mfglabs"
+    },
+    {
+      "uid": "cf31b05e6409526bbea832ca960777ed",
+      "css": "viadeo",
+      "code": 59486,
+      "src": "zocial"
     },
     {
       "uid": "9c5557d93ab810b192b13adcf77e8c84",
