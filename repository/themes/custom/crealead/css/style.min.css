@@ -1707,6 +1707,8 @@ body.node-type-news .field-name-body h3{font-family:Quicksand,sans-serif;color:#
 }
 .region-content-header .number,.region-content-header .text{text-align:center;font-family:'Source Sans Pro',sans-serif;font-weight:700}
 .region-content-header .number{color:#bf0e38;font-size:4em}
+.region-content-header .text{font-size:1.2em}
+.region-content-header .text .under-key-data{font-weight:400}
 h3.home-news-title{margin-top:5px;line-height:.8em}
 h3.home-news-title a{color:#bf0e38;text-decoration:none;font-family:Quicksand,sans-serif;font-size:.7em;font-weight:700}
 h3.home-news-title a:hover{text-decoration:underline}
