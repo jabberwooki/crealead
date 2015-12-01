@@ -40,6 +40,10 @@ function crealead_news_strongarm() {
       'title' => 'content header',
       'info' => 'node_news_full',
     ),
+    'content_header_brand' => array(
+      'title' => 'content header marque',
+      'info' => 'node_brand_full',
+    ),
   );
   $export['ds_extras_region_blocks'] = $strongarm;
 

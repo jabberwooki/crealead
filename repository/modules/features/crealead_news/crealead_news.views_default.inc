@@ -288,6 +288,13 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Entête: Global : Zone de texte */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a id="news-home-more" href="/actualites">Voir toutes les actualités</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Critère de tri: Contenu : Date de l&#039;événement (field_news_date) */
   $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
@@ -619,6 +626,7 @@ function crealead_news_views_default_views() {
     t('Actualités'),
     t('bloc actu de la page d\'accueil'),
     t('toutes les actus'),
+    t('<a id="news-home-more" href="/actualites">Voir toutes les actualités</a>'),
     t('Actus d\'une marque'),
     t('Entité Contenu réferencée par field_related_brands'),
     t('Tout'),
