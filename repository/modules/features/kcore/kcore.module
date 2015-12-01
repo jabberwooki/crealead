@@ -155,32 +155,32 @@ travailler ensemble.</span></div>';
       $sponsors = array(
         'caisse-epargne' => array(
           'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
-          'logo-file' => 'caisse-epargne_240x57.jpg'
+          'logo-file' => 'ca-lr_263x57.png'
         ),
-        'europe-sengage' => array(
+        'l-europe-s-engage' => array(
           'url' => '',
-          'logo-file' => 'europe-sengage-en-france_120x84.jpg'
+          'logo-file' => 'l-europe-s-engage_160x100.png'
         ),
-        'europe-fse' => array(
+        'ue-fse' => array(
           'url' => '',
-          'logo-file' => 'europe-fse_67x59.jpg'
+          'logo-file' => 'ue-fse_100x100.jpg'
         ),
-        'ddtefp' => array(
+        'prefecture' => array(
           'url' => '',
-          'logo-file' => 'ddtefp_92x61.jpg'
+          'logo-file' => 'prefecture_78x100.jpg'
         ),
         'region-lr' => array(
           'url' => 'http://www.laregion.fr/',
-          'logo-file' => 'region-lr_120x63.jpg'
+          'logo-file' => 'region-lr_131x63.jpg'
         ),
-        'montpellier-agglo' => array(
-          'url' => 'http://data.montpellier-agglo.com/',
-          'logo-file' => 'montpellier-agglo_45x63.png'
-        ),
-        'herault-dept' => array(
-          'url' => 'http://www.herault.fr/',
-          'logo-file' => 'herault-dept_55x68.jpg'
-        ),
+//        'montpellier-agglo' => array(
+//          'url' => 'http://data.montpellier-agglo.com/',
+//          'logo-file' => 'montpellier-agglo_45x63.png'
+//        ),
+//        'herault-dept' => array(
+//          'url' => 'http://www.herault.fr/',
+//          'logo-file' => 'herault-dept_55x68.jpg'
+//        ),
       );
 
       $path = drupal_get_path('module', 'kcore') . '/sponsors-logos/';
