@@ -165,6 +165,7 @@ projects[print][version] = "2.0"
 
 projects[references_dialog][subdir] = contrib
 projects[references_dialog][version] = "1.0-beta1"
+projects[references_dialog][patch][] = "https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-5.patch.patch"
 
 projects[service_links][subdir] = contrib
 projects[socialfield][version] = "2.3"
