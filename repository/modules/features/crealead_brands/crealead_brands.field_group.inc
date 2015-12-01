@@ -75,8 +75,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Blog',
     'weight' => '28',
     'children' => array(
-      0 => 'news_brand_news',
-      1 => 'articles_brand_articles',
+      0 => 'articles_brand_articles',
+      1 => 'news_brand_news',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -125,21 +125,16 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '30',
+    'weight' => '29',
     'children' => array(
-      0 => 'field_brand_phone',
-      1 => 'field_brand_email',
-      2 => 'field_brand_website',
-      3 => 'field_social_links',
-      4 => 'field_contact_form',
-      5 => 'brand_contacts',
+      0 => 'field_contact_form',
+      1 => 'brand_contacts',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Contact',
       'instance_settings' => array(
         'classes' => 'group-brand-contact-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -159,10 +154,9 @@ function crealead_brands_field_group_info() {
     'weight' => '24',
     'children' => array(
       0 => 'body',
-      1 => 'field_business_sector',
-      2 => 'field_business_groups',
-      3 => 'field_brand_solutions',
-      4 => 'field_brand_tags',
+      1 => 'field_business_groups',
+      2 => 'field_brand_solutions',
+      3 => 'field_brand_tags',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -186,7 +180,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Onglets',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'group_brand_infos_tab',
       1 => 'group_brans_coes_tab',
@@ -194,7 +188,6 @@ function crealead_brands_field_group_info() {
       3 => 'group_brand_blog_tab',
       4 => 'group_brand_contact_tab',
       5 => 'group_brand_achiev_tab',
-      6 => 'group_brand_articles_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -235,6 +228,107 @@ function crealead_brands_field_group_info() {
     ),
   );
   $export['group_brans_coes_tab|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_col3_3|node|brand|full';
+  $field_group->group_name = 'group_col3_3';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_row_1';
+  $field_group->data = array(
+    'label' => 'group col3-3',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_brand_phone',
+      1 => 'field_brand_email',
+      2 => 'field_brand_website',
+      3 => 'field_social_links',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group col3-3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-col3-3 field-group-div col-md-3',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_col3_3|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_col_1_3|node|brand|full';
+  $field_group->group_name = 'group_col_1_3';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_row_1';
+  $field_group->data = array(
+    'label' => 'group col1-3',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_brand_logo',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group col1-3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-col-1-3 field-group-div col-md-3',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_col_1_3|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_col_2_6|node|brand|full';
+  $field_group->group_name = 'group_col_2_6';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_row_1';
+  $field_group->data = array(
+    'label' => 'group col2-6',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_brand_baseline',
+      1 => 'field_business_sector',
+      2 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group col2-6',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-col-2-6 field-group-div col-md-6',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_col_2_6|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -297,6 +391,40 @@ function crealead_brands_field_group_info() {
     ),
   );
   $export['group_css_effect_3|node|brand|block'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_row_1|node|brand|full';
+  $field_group->group_name = 'group_row_1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group row 1',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_col_1_3',
+      1 => 'group_col_2_6',
+      2 => 'group_col3_3',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group row 1',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-row-1 field-group-div row-eq-height',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_row_1|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

@@ -1,5 +1,5 @@
 #boxes-box-search_entrepreneur_intro{
-  background: url('../images/fond_entrepreneurs.png') no-repeat;
+  background: url('../images/fond_entrepreneurs.jpg') no-repeat;
   height: 250px;
   margin: 0;
   padding: 20px;
@@ -86,28 +86,28 @@
       &[for=edit-field-business-sector-tid-all]:before{
         content: "\e845"; /* icon C crealead */
       }
-      &[for=edit-field-business-sector-tid-92]:before{
+      &#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5:before{
         content: "\e84e"; /* icon RH trophee crealead */
       }
-      &[for=edit-field-business-sector-tid-81]:before{
+      &#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2:before{
         content: "\e84a"; /* icon Com haut parleur crealead */
       }
-      &[for=edit-field-business-sector-tid-77]:before{
+      &#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb:before{
         content: "\e84c"; /* icon  ordi TIC crealead */
       }
-      &[for=edit-field-business-sector-tid-97]:before{
+      &#uuid-9bd98d14-1229-4def-b367-f937ac900e73:before{
         content: "\e846"; /* icon arbre crealead */
       }
-      &[for=edit-field-business-sector-tid-96]:before{
+      &#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6:before{
         content: "\e848"; /* icon engrenage crealead */
       }
-      &[for=edit-field-business-sector-tid-91]:before{
+      &#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6:before{
         content: "\e849"; /* icon fauteuil deco crealead */
       }
-      &[for=edit-field-business-sector-tid-86]:before{
+      &#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4:before{
         content: "\e84b"; /* icon engrenage crealead */
       }
-      &[for=edit-field-business-sector-tid-180]:before{
+      &#uuid-cd426be7-05fb-43d2-a9df-2d5483226773:before{
         content: "\e847"; /* icon man dev perso crealead */
       }
       &:hover:before{
@@ -160,7 +160,6 @@
         
       }
     }
-
     h3 {
       .quick();
       margin-top: 5px;
@@ -174,6 +173,83 @@
     .field-name-field-brand-baseline{
       margin-bottom: 20px;
       text-align: center;
+    }
+  }
+}
+/* page d'une marque **************************************************************************************************/
+body.node-type-brand{
+  .content-header > .container > .row{
+    border: 1px solid @gris-fonce-crealead;
+    background-color: white;
+    margin-bottom: 30px;
+    #block-ds-extras-content-header-brand{
+      width: 100%;
+
+      .group-row-1{
+
+        .group-col-1-3{
+          display: table-cell;
+          vertical-align: middle;
+          border-right: 1px solid @gris-fonce-crealead;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        .group-col-2-6{
+          display: table-cell;
+          border-right: 1px solid @gris-fonce-crealead;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          h2{
+            margin-top: 0;
+            margin-bottom: 0;
+            color: @rouge-crealead;
+            .quick();
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+          .field-name-field-business-sector{
+            border-top: 1px solid @gris-fonce-crealead;
+            margin-top: 15px;
+            padding-top: 15px;
+          }
+        }
+        .group-col3-3{
+          display: table-cell;
+          padding-top: 20px;
+          padding-bottom: 20px;
+            .field-name-field-social-links{
+              border-top: 1px solid @gris-fonce-crealead;
+              margin-top: 15px;
+              padding-top: 15px;
+            }
+        }
+      }
+
+    }
+  }
+  .main-container.main-container-with-header {
+    margin-top: -45px;
+    .group-brand-tabs{
+      border: 0;
+      li{
+        a{
+          .quick();
+          display: block;
+          color: white;
+          background-color: black;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding: 12px 20px;
+          &:hover{
+            background-color: @gris-fonce-crealead;
+          }
+        }
+        &.field-group-bootstrap_fieldgroup_nav_itemactive{
+          a{
+            background-color: @rouge-crealead;
+          }
+        }
+      }
     }
   }
 }

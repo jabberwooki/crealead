@@ -136,7 +136,7 @@ dd{margin-left:0}
 .dl-horizontal dd{margin-left:180px}
 .container{width:750px}
 }
-.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-actions,.form-horizontal .form-group:after,.modal-footer:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after,fieldset .panel-body{clear:both}
+#registration-form fieldset,.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-actions,.form-horizontal .form-group:after,.modal-footer:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after,body.node-type-news .field-name-body,fieldset .panel-body{clear:both}
 abbr[data-original-title],abbr[title]{cursor:help;border-bottom:1px dotted #777}
 .initialism{font-size:90%;text-transform:uppercase}
 blockquote{padding:10px 20px;margin:0 0 20px}
@@ -1507,7 +1507,6 @@ div.password-confirm{float:right;margin-top:1.5em;visibility:hidden;width:17em}
 div.form-item div.password-suggestions{padding:.2em .5em;margin:.7em 0;width:38.5em;border:1px solid #B4B4B4}
 div.password-suggestions ul{margin-bottom:0}
 .confirm-parent,.password-parent{clear:left;margin:0;width:36.3em}
-#registration-form fieldset,body.node-type-news .field-name-body{clear:both}
 .progress-wrapper .progress{margin-bottom:10px}
 .pagination ul>li>a.progress-disabled{float:left}
 .form-autocomplete .glyphicon{color:#777;font-size:120%}
@@ -1712,7 +1711,7 @@ h3.home-news-title{margin-top:5px;line-height:.8em}
 h3.home-news-title a{color:#bf0e38;text-decoration:none;font-family:Quicksand,sans-serif;font-size:.7em;font-weight:700}
 h3.home-news-title a:hover{text-decoration:underline}
 #views-exposed-form-brands-brands-list .form-type-radio label:before,.view-info-meetings .view-content table tr td a:before{position:relative;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-#boxes-box-search_entrepreneur_intro{background:url(../images/fond_entrepreneurs.png) no-repeat;height:250px;margin:0;padding:20px}
+#boxes-box-search_entrepreneur_intro{background:url(../images/fond_entrepreneurs.jpg) no-repeat;height:250px;margin:0;padding:20px}
 #boxes-box-search_entrepreneur_intro .boxes-box-content{background:rgba(0,0,0,.8);color:#fff}
 @media (min-width:1200px){#boxes-box-search_entrepreneur_intro .boxes-box-content{width:50%;margin:0 auto;padding:20px}
 }
@@ -1728,26 +1727,39 @@ h3.home-news-title a:hover{text-decoration:underline}
 #views-exposed-form-brands-brands-list .form-type-radio label:hover{color:#bf0e38}
 #views-exposed-form-brands-brands-list .form-type-radio label:before{top:1px;font-family:fontello;font-weight:400;text-transform:none;font-size:3em;color:#000;display:block;padding:30px 20px;margin:0 auto 10px;background:url(../images/hexa-bg-grey.png) no-repeat #fff;width:77px;height:89px}
 #views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all]:before{content:"\e845"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-92]:before{content:"\e84e"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-81]:before{content:"\e84a"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-77]:before{content:"\e84c"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-97]:before{content:"\e846"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-96]:before{content:"\e848"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-91]:before{content:"\e849"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-86]:before{content:"\e84b"}
-#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-180]:before{content:"\e847"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5:before{content:"\e84e"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2:before{content:"\e84a"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb:before{content:"\e84c"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73:before{content:"\e846"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6:before{content:"\e848"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6:before{content:"\e849"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4:before{content:"\e84b"}
+#views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773:before{content:"\e847"}
 #views-exposed-form-brands-brands-list .form-type-radio label:hover:before{background-color:#bf0e38;color:#FFF}
 #views-exposed-form-brands-brands-list input.form-radio{display:none}
 #views-exposed-form-brands-brands-list #edit-field-brand-search-value-wrapper,#views-exposed-form-brands-brands-list #edit-title-wrapper{float:left;width:40%}
 #views-bootstrap-grid-1 .col-lg-3 h3.list-brand>a{font-family:Quicksand,sans-serif;margin-top:5px;font-size:.8em;font-weight:700;display:block;text-align:center}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-logo{border:1px solid #999;position:relative;width:100%;height:180px;overflow:hidden}
-.view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-logo>div.field-items{padding:5px;display:table;width:100%}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-logo>div.field-items div.field-item{display:table-cell;height:170px;text-align:center;vertical-align:middle;margin:0 auto}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-logo>div.field-items div.field-item img{max-height:150px;max-width:92%}
 #views-bootstrap-grid-1 .col-lg-3 h3{font-family:Quicksand,sans-serif;margin-top:5px}
 #views-bootstrap-grid-1 .col-lg-3 h3>a{font-size:.7em;font-weight:700;display:block;text-align:center}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-baseline{margin-bottom:20px;text-align:center}
+body.node-type-brand .content-header>.container>.row{border:1px solid #999;background-color:#fff;margin-bottom:30px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand{width:100%}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-1-3{display:table-cell;vertical-align:middle;border-right:1px solid #999;padding-top:20px;padding-bottom:20px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-2-6{display:table-cell;border-right:1px solid #999;padding-top:20px;padding-bottom:20px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-2-6 h2{margin-top:0;margin-bottom:0;color:#bf0e38;font-family:Quicksand,sans-serif;text-transform:uppercase;font-weight:700}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-2-6 .field-name-field-business-sector{border-top:1px solid #999;margin-top:15px;padding-top:15px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col3-3{display:table-cell;padding-top:20px;padding-bottom:20px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col3-3 .field-name-field-social-links{border-top:1px solid #999;margin-top:15px;padding-top:15px}
+body.node-type-brand .main-container.main-container-with-header{margin-top:-45px}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs{border:0}
+.view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a{font-family:Quicksand,sans-serif;display:block;color:#fff;background-color:#000;font-weight:700;text-transform:uppercase;padding:12px 20px}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a:hover{background-color:#999}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive a{background-color:#bf0e38}
 .page-reunions-information{background:url(../images/bg_grey.png) 0 30px repeat-x}
 .page-reunions-information .page-header{margin-bottom:0}
 .page-reunions-information ul.coche-rouge{font-size:.8em}

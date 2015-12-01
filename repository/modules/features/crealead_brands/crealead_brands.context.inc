@@ -48,6 +48,41 @@ function crealead_brands_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'brand_page';
+  $context->description = '';
+  $context->tag = 'Marques';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'brand' => 'brand',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'ds_extras-content_header_brand' => array(
+          'module' => 'ds_extras',
+          'delta' => 'content_header_brand',
+          'region' => 'content_header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Marques');
+  $export['brand_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'brand_search';
   $context->description = '';
   $context->tag = 'Marques';
