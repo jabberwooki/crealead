@@ -1804,12 +1804,12 @@ body.page-registration.not-logged-in .field-name-field-attendee{display:none}
 .view-display-id-block_home_slideshow .view-display-id-controlers_1 .controler.controler-selected:before,.view-display-id-block_home_slideshow .wrapper-diapo .row-diapo .diapositive .txt-diapo a>p:after{font-family:fontello;display:inline-block;text-decoration:inherit;text-transform:none;color:#fff;font-style:normal;font-weight:400;speak:none;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .view-display-id-block_home_slideshow .wrapper-diapo .row-diapo .diapositive .txt-diapo a>p:after{position:relative;width:1em;content:"\e834";background-color:#bf0e38;top:2px;font-size:1.26em;margin:2px -10px -3px 20px}
 .view-display-id-block_home_slideshow .view-display-id-controlers_1{position:absolute;top:20px;width:286px}
-.view-display-id-block_home_slideshow .view-display-id-controlers_1 .controler{cursor:pointer;height:30px}
+.view-display-id-block_home_slideshow .view-display-id-controlers_1 .controler{cursor:pointer}
 .view-display-id-block_home_slideshow .view-display-id-controlers_1 .controler.controler-selected:before{position:relative;width:1em;content:"\e858";float:right;font-size:.62em;top:inherit;margin-right:-5px;margin-top:0}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2{position:absolute;top:20px;width:286px;background-color:rgba(255,255,255,.8);color:#fff}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 #title-controler-col-2{margin:0;display:block;background-color:rgba(0,0,0,.8);text-align:center;font-family:'Source Sans Pro',sans-serif;color:#fff;padding:20px 0;text-transform:uppercase}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 #title-controler-col-2 span{text-transform:lowercase;font-size:.6em}
-.view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler{color:#1d1e19;cursor:pointer;height:30px}
+.view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler{color:#1d1e19;cursor:pointer}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler.controler-selected a:hover{text-decoration:none}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler.controler-selected:before{position:relative;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e85b";color:#fff;float:left;font-size:.62em;top:inherit;margin-left:-26px;margin-top:0}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler a{color:#1d1e19}
