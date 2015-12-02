@@ -43,17 +43,17 @@
       }
       .controler {
         cursor: pointer;
-        position: relative;
         height: 30px;
         &.controler-selected{
-          &:after{
+          &:before{
             .glyphicon();
             content: "\e858";
             color: white;
-            position: absolute;
-            font-size: .6em;
-            right: -15px;
+            float: right;
+            font-size: .62em;
             top:inherit;
+            margin-right: -5px;
+            margin-top: -5px;
           }
         }
       }
@@ -81,15 +81,12 @@
           text-transform: lowercase;
           font-size: 0.6em;
         }
-
       }
-
       .controler{
-        cursor: pointer;
         color: @noir-crealead;
-        position: relative;
+        cursor: pointer;
+        height: 30px;
         &.controler-selected{
-          
           a{
             &:hover{
               text-decoration: none;
@@ -99,10 +96,11 @@
             .glyphicon();
             content: "\e85b";
             color: white;
-            font-size: .68em;
-            position: absolute;
-            left: -13px;
+            float: left;
+            font-size: .62em;
             top:inherit;
+            margin-left: -32px;
+            margin-top: -5px;
           }
         }
         a{
