@@ -951,6 +951,7 @@ function kcore_user_default_permissions() {
     'name' => 'use text format filtered_html',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -963,6 +964,7 @@ function kcore_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
