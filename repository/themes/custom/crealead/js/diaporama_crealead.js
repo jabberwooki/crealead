@@ -72,7 +72,7 @@ jQuery(function($) {
         moove(num, true);
       }else clearInterval(interval);
       num++;
-    }, 3000);
+    }, 5000);
     $('.wrapper-diapo').hover(function(){
       clearInterval(interval);
     });
