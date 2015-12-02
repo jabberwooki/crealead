@@ -10,6 +10,23 @@
 function crealead_profiles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'add terms in competencies'.
+  $permissions['add terms in competencies'] = array(
+    'name' => 'add terms in competencies',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in entrepreneur_tags'.
+  $permissions['add terms in entrepreneur_tags'] = array(
+    'name' => 'add terms in entrepreneur_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'administer profile types'.
   $permissions['administer profile types'] = array(
     'name' => 'administer profile types',
@@ -27,6 +44,26 @@ function crealead_profiles_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'profile2',
+  );
+
+  // Exported permission: 'delete terms in competencies'.
+  $permissions['delete terms in competencies'] = array(
+    'name' => 'delete terms in competencies',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in entrepreneur_tags'.
+  $permissions['delete terms in entrepreneur_tags'] = array(
+    'name' => 'delete terms in entrepreneur_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit any coe_page profile'.
@@ -47,6 +84,27 @@ function crealead_profiles_user_default_permissions() {
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit terms in competencies'.
+  $permissions['edit terms in competencies'] = array(
+    'name' => 'edit terms in competencies',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in entrepreneur_tags'.
+  $permissions['edit terms in entrepreneur_tags'] = array(
+    'name' => 'edit terms in entrepreneur_tags',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'view any coe_page profile'.
