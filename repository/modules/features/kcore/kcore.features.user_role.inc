@@ -31,6 +31,13 @@ function kcore_user_default_roles() {
     'machine_name' => 'entrepreneur',
   );
 
+  // Exported role: pôle gestion.
+  $roles['pôle gestion'] = array(
+    'name' => 'pôle gestion',
+    'weight' => 6,
+    'machine_name' => 'pole_gestion',
+  );
+
   // Exported role: rédacteur.
   $roles['rédacteur'] = array(
     'name' => 'rédacteur',

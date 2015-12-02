@@ -109,6 +109,17 @@ function kcore_user_default_permissions() {
     'module' => 'print',
   );
 
+  // Exported permission: 'access service links'.
+  $permissions['access service links'] = array(
+    'name' => 'access service links',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'service_links',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -126,6 +137,15 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'access site-wide contact form'.
+  $permissions['access site-wide contact form'] = array(
+    'name' => 'access site-wide contact form',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'contact',
   );
 
   // Exported permission: 'access user profiles'.
@@ -158,6 +178,13 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'webmaster' => 'webmaster',
     ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in themes'.
+  $permissions['add terms in themes'] = array(
+    'name' => 'add terms in themes',
+    'roles' => array(),
     'module' => 'taxonomy_access_fix',
   );
 
@@ -252,6 +279,15 @@ function kcore_user_default_permissions() {
     'module' => 'boxes',
   );
 
+  // Exported permission: 'administer contact forms'.
+  $permissions['administer contact forms'] = array(
+    'name' => 'administer contact forms',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'contact',
+  );
+
   // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
@@ -278,6 +314,29 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'kcore',
+  );
+
+  // Exported permission: 'administer default image node:brand:field_brand_logo'.
+  $permissions['administer default image node:brand:field_brand_logo'] = array(
+    'name' => 'administer default image node:brand:field_brand_logo',
+    'roles' => array(),
+    'module' => 'default_image_ft',
+  );
+
+  // Exported permission: 'administer default image profile2:coe_page:field_coe_photo'.
+  $permissions['administer default image profile2:coe_page:field_coe_photo'] = array(
+    'name' => 'administer default image profile2:coe_page:field_coe_photo',
+    'roles' => array(),
+    'module' => 'default_image_ft',
+  );
+
+  // Exported permission: 'administer entityform types'.
+  $permissions['administer entityform types'] = array(
+    'name' => 'administer entityform types',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
   );
 
   // Exported permission: 'administer features'.
@@ -484,6 +543,15 @@ function kcore_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: 'administer reroute email'.
+  $permissions['administer reroute email'] = array(
+    'name' => 'administer reroute email',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'reroute_email',
+  );
+
   // Exported permission: 'administer search'.
   $permissions['administer search'] = array(
     'name' => 'administer search',
@@ -634,6 +702,24 @@ function kcore_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'delete any entityform'.
+  $permissions['delete any entityform'] = array(
+    'name' => 'delete any entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
+  );
+
+  // Exported permission: 'delete own entityform'.
+  $permissions['delete own entityform'] = array(
+    'name' => 'delete own entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
+  );
+
   // Exported permission: 'delete terms in business_groups'.
   $permissions['delete terms in business_groups'] = array(
     'name' => 'delete terms in business_groups',
@@ -654,11 +740,31 @@ function kcore_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in themes'.
+  $permissions['delete terms in themes'] = array(
+    'name' => 'delete terms in themes',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
     'roles' => array(),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'edit any entityform'.
+  $permissions['edit any entityform'] = array(
+    'name' => 'edit any entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
   );
 
   // Exported permission: 'edit boxes'.
@@ -682,6 +788,15 @@ function kcore_user_default_permissions() {
     'module' => 'metatag',
   );
 
+  // Exported permission: 'edit own entityform'.
+  $permissions['edit own entityform'] = array(
+    'name' => 'edit own entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
+  );
+
   // Exported permission: 'edit terms in business_groups'.
   $permissions['edit terms in business_groups'] = array(
     'name' => 'edit terms in business_groups',
@@ -697,6 +812,17 @@ function kcore_user_default_permissions() {
     'name' => 'edit terms in sectors',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in themes'.
+  $permissions['edit terms in themes'] = array(
+    'name' => 'edit terms in themes',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
@@ -970,6 +1096,34 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'view any entityform'.
+  $permissions['view any entityform'] = array(
+    'name' => 'view any entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
+  );
+
+  // Exported permission: 'view any unpublished content'.
+  $permissions['view any unpublished content'] = array(
+    'name' => 'view any unpublished content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view own entityform'.
+  $permissions['view own entityform'] = array(
+    'name' => 'view own entityform',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'entityform',
   );
 
   // Exported permission: 'view own unpublished content'.
