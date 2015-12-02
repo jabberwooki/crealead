@@ -66,5 +66,15 @@ function crealead_articles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view any unpublished article content'.
+  $permissions['view any unpublished article content'] = array(
+    'name' => 'view any unpublished article content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   return $permissions;
 }
