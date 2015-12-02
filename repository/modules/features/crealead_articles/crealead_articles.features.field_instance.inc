@@ -24,7 +24,7 @@ function crealead_articles_field_default_field_instances() {
           'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
