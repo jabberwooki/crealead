@@ -10,6 +10,34 @@
 function crealead_brands_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'add terms in achievement_types'.
+  $permissions['add terms in achievement_types'] = array(
+    'name' => 'add terms in achievement_types',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in brand_tags'.
+  $permissions['add terms in brand_tags'] = array(
+    'name' => 'add terms in brand_tags',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in business_sectors'.
+  $permissions['add terms in business_sectors'] = array(
+    'name' => 'add terms in business_sectors',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in client_types'.
+  $permissions['add terms in client_types'] = array(
+    'name' => 'add terms in client_types',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'create achievement content'.
   $permissions['create achievement content'] = array(
     'name' => 'create achievement content',
@@ -121,6 +149,44 @@ function crealead_brands_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in achievement_types'.
+  $permissions['delete terms in achievement_types'] = array(
+    'name' => 'delete terms in achievement_types',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in brand_tags'.
+  $permissions['delete terms in brand_tags'] = array(
+    'name' => 'delete terms in brand_tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in business_sectors'.
+  $permissions['delete terms in business_sectors'] = array(
+    'name' => 'delete terms in business_sectors',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in client_types'.
+  $permissions['delete terms in client_types'] = array(
+    'name' => 'delete terms in client_types',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any achievement content'.
   $permissions['edit any achievement content'] = array(
     'name' => 'edit any achievement content',
@@ -191,6 +257,75 @@ function crealead_brands_user_default_permissions() {
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in achievement_types'.
+  $permissions['edit terms in achievement_types'] = array(
+    'name' => 'edit terms in achievement_types',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in brand_tags'.
+  $permissions['edit terms in brand_tags'] = array(
+    'name' => 'edit terms in brand_tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in business_sectors'.
+  $permissions['edit terms in business_sectors'] = array(
+    'name' => 'edit terms in business_sectors',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in client_types'.
+  $permissions['edit terms in client_types'] = array(
+    'name' => 'edit terms in client_types',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'view any unpublished achievement content'.
+  $permissions['view any unpublished achievement content'] = array(
+    'name' => 'view any unpublished achievement content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished brand content'.
+  $permissions['view any unpublished brand content'] = array(
+    'name' => 'view any unpublished brand content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished client content'.
+  $permissions['view any unpublished client content'] = array(
+    'name' => 'view any unpublished client content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
   );
 
   // Exported permission: 'view services'.
