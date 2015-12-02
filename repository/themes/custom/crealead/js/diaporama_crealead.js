@@ -115,7 +115,7 @@ jQuery(function($) {
           $(this).find(".row-diapo:first").before($(this).find(".row-diapo:last"));
         });
       }
-      $(".wrapper-diapo").animate({marginLeft: "-=" + mvt_width}, 600, function () {
+      $(".wrapper-diapo").animate({marginLeft: "-=" + mvt_width}, 1000, function () {
         // Gestion des textes
         $(".txt-diapo").hide();
         $(".txt-diapo:eq(1)").show();
