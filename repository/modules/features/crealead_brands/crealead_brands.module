@@ -26,7 +26,6 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   $current_user_roles = $user->roles;
   $allowed_roles = array('administrateur','webmaster','référent');
   $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
-  $publication_options_access = TRUE;
 
   // Non allowed users cannot do 3 distinct tasks:
   // 1 - validate brands,
@@ -42,21 +41,30 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     // - get a coe profile
     // - the coe profile must be validated
     // - the brand must be validated
+    $profile_validated = 0;
     $user_coe_profile = profile2_load_by_user($user, 'coe_page');
-    $profile_validated = $user_coe_profile->field_coe_pub_status['und'][0]['value'];
+    if (is_object($user_coe_profile)) {
+      $profile_validated = $user_coe_profile->field_coe_pub_status['und'][0]['value'];
+    }
+
     $brand_validated = 0;
     if (isset($form['#node']->field_brand_validated['und'][0]['value'])) {
       $brand_validated = $form['#node']->field_brand_validated['und'][0]['value'];
     }
 
     if (!$user_coe_profile || !$profile_validated || !$brand_validated) {
-      $publication_options_access = FALSE;
+      $form['options']['status']['#attributes'] = array('disabled' => TRUE);
+      $form['options']['status']['#title'] =
+        'Vous ne pouvez pas publier cette marque. ' .
+        'Soit celle-ci soit votre profil entrepreneur n\'a pas encore été validé par votre référent.';
     }
 
     // 3 - Main brand option systematically removed from brand type.
     unset($form['field_brand_type']['und']['#options'][3]);
   }
-  $form['options']['#access'] = $publication_options_access;
+  // In any case, for brand nodes, promote and sticky publication options are removed.e
+  unset($form['options']['promote']);
+  unset($form['options']['sticky']);
 
   // Handling of fields involved into validation workflow
   // 1 - field_saving_type
@@ -88,6 +96,7 @@ function crealead_brands_after_build($form, &$form_state) {
  */
 function crealead_brands_node_presave($node) {
   if ($node->type == 'brand') {
+    // --- Technical field_brand_search field handling --- //
     $coe_names = '';
     $coe_competencies = '';
     $brand_solutions = '';
@@ -117,6 +126,12 @@ function crealead_brands_node_presave($node) {
     }
     else {
       $node->field_brand_search['und'][0] = $search_array;
+    }
+
+    // -- Email to referent handling -- //
+    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+      $node->field_email_sent['und'][0]['value'] = 1;
     }
   }
 }
@@ -241,27 +256,27 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_node_insert().
  */
-function crealead_brands_node_insert($node) {
-  if ($node->type == 'brand') {
-    if ($node->field_saving_type['und'][0]['value'] == 1) {
-      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
-      $node->field_email_sent['und'][0]['value'] = 1;
-    }
-  }
-}
+//function crealead_brands_node_insert($node) {
+//  if ($node->type == 'brand') {
+//    if ($node->field_saving_type['und'][0]['value'] == 1) {
+//      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+//      $node->field_email_sent['und'][0]['value'] = 1;
+//    }
+//  }
+//}
 
 /**
  * Implements hook_node_update().
  */
-function crealead_brands_node_update($node) {
-  if ($node->type == 'brand') {
-    // Validation request email has to be sent only if field_saving_type = 1 and field_email_sent = 0.
-    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
-      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
-      $node->field_email_sent['und'][0]['value'] = 1;
-    }
-  }
-}
+//function crealead_brands_node_update($node) {
+//  if ($node->type == 'brand') {
+//    // Validation request email has to be sent only if field_saving_type = 1 and field_email_sent = 0.
+//    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+//      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+//      $node->field_email_sent['und'][0]['value'] = 1;
+//    }
+//  }
+//}
 
 /**
  * Helper functions ------------------------------------------------------------

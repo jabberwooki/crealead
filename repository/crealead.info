@@ -94,7 +94,7 @@ dependencies[] = kedition
 
 ;--- Optional -----------------------------------------------------------------
 ; (Activate corresponding inclusions in file drupal-org.make)
-;dependencies[] = kwstatsgoogle   ;Web statistics - Google
+dependencies[] = kwstatsgoogle
 ;dependencies[] = kwstatspiwik    ;Web statistics - Piwik
 
 ;--- Themes -------------------------------------------------------------------

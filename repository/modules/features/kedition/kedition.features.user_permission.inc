@@ -28,5 +28,15 @@ function kedition_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
+  // Exported permission: 'view any unpublished page content'.
+  $permissions['view any unpublished page content'] = array(
+    'name' => 'view any unpublished page content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   return $permissions;
 }
