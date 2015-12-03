@@ -863,7 +863,7 @@ function crealead_news_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_text',
       'weight' => 11,
     ),
   );
