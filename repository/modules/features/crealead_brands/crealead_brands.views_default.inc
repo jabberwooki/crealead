@@ -1683,7 +1683,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -1762,7 +1762,7 @@ function crealead_brands_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Éléments par page'),
-    t('- Tout -'),
+    t('Tout'),
     t('Décalage'),
     t('« premier'),
     t('‹ précédent'),
@@ -1770,7 +1770,6 @@ function crealead_brands_views_default_views() {
     t('dernier »'),
     t('Entité Utilisateur réferencée par field_brand_coe'),
     t('Profil'),
-    t('Tout'),
     t('Coes fiche marque'),
   );
   $export['field_collection_coes'] = $view;
