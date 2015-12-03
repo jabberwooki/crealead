@@ -44,17 +44,9 @@
       .controler {
         cursor: pointer;
         &.controler-selected{
-          &:before{
-            .glyphicon();
-            content: "\e858";
-            color: white;
-            float: right;
-            font-size: .62em;
-            top:inherit;
-            margin-right: -5px;
-            margin-top: 0;
-          }
+          background: url(../images/bg-white-controler-right.png) no-repeat 100% 0;
         }
+        width: 298px;
       }
     }
 
@@ -85,21 +77,9 @@
         color: @noir-crealead;
         cursor: pointer;
         &.controler-selected{
-          a{
-            &:hover{
-              text-decoration: none;
-            }
-          }
-          &:before{
-            .glyphicon();
-            content: "\e85b";
-            color: white;
-            float: left;
-            font-size: .62em;
-            top:inherit;
-            margin-left: -26px;
-            margin-top: 0;
-          }
+          background: url(../images/bg-white-controler-left.png) no-repeat 0 0;
+          width: 298px;
+          margin-left: -12px;
         }
         a{
           color: @noir-crealead;
