@@ -14,9 +14,11 @@
             left: 30px;
             text-align: center;
             width: 95%;
+            text-transform: uppercase;
+            font-weight: bold;
             p{
               .cartouche-noir();
-              .source();
+              .quick();
               font-size: 1.6em;
               display: inline;
               margin: 0;
@@ -38,6 +40,7 @@
       position: absolute;
       top:20px;
       width: 286px;
+      font-weight: bold;
       @media (max-width: @screen-lg){
         top:100px;
       }
@@ -64,10 +67,11 @@
         display: block;
         background-color: rgba(0, 0, 0, 0.8);
         text-align: center;
-        .source();
+        .quick();
         color: white;
         padding: 20px 0;
         text-transform: uppercase;
+        font-weight: bold;
         span{
           text-transform: lowercase;
           font-size: 0.6em;
@@ -113,12 +117,14 @@
     display: block;
     background-color: rgba(193, 45, 81, 0.8);
     text-align: center;
-    .source();
+    .quick();
+    font-weight: bold;
     color: white;
     padding: 20px 0;
     text-transform: uppercase;
     span{
       text-transform: lowercase;
+      font-weight: normal;
     }
 
   }
@@ -162,6 +168,10 @@
     .sub-button-action-diaporama{
       text-transform: lowercase;
       font-size: 0.6em;
+    }
+    &:hover{
+      text-decoration: none;
+      background-color: darken(@rouge-crealead, 6.5%);
     }
   }
   .link-white{
