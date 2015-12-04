@@ -1578,7 +1578,7 @@ img{max-width:100%}
 .link-white{color:#fff}
 .main-container{margin-top:60px;padding-top:20px}
 .main-container.main-container-logged-in{margin-top:40px}
-.main-container.main-container-with-header{margin-top:0}
+.main-container.main-container-with-header{margin-top:-20px}
 h2.block-title,h2.page-header{color:#bf0e38;font-family:Quicksand,sans-serif;text-transform:uppercase;font-size:1.6em}
 h2.page-header{font-size:1.8em}
 .chapo,blockquote{font-family:Quicksand,sans-serif;font-size:1.6em}
