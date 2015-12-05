@@ -203,6 +203,14 @@ body.node-type-brand{
           border-right: 1px solid @gris-fonce-crealead;
           padding-top: 20px;
           padding-bottom: 20px;
+          .field-name-field-brand-logo > div{
+            display: table;
+            > div{
+              display: table-cell;
+              height: 150px;
+              vertical-align: middle;
+            }
+          }
         }
         .group-col-2-6{
           display: table-cell;
@@ -227,6 +235,9 @@ body.node-type-brand{
           display: table-cell;
           padding-top: 20px;
           padding-bottom: 20px;
+          .field-label{
+            .quick();
+          }
             .field-name-field-social-links{
               border-top: 1px solid @gris-fonce-crealead;
               margin-top: 15px;
@@ -257,6 +268,83 @@ body.node-type-brand{
         &.field-group-bootstrap_fieldgroup_nav_itemactive{
           a{
             background-color: @rouge-crealead;
+          }
+        }
+      }
+    }
+  }
+  #bootstrap-fieldgroup-nav-item--informations-gnrales{
+    .field-name-field-business-groups{
+      float: right;
+      background-color: @gris-clair-crealead;
+      width: 275px;
+      padding: 15px 20px;
+      .field-label{
+        margin-top: 5px;
+        color: black;
+      }
+      .field-items{
+        clear: both;
+      }
+      .field-item{
+        margin-bottom:5px;
+      }
+    }
+    .field-label{
+      .quick();
+      color: @rouge-crealead;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .field-item{
+      margin-bottom:20px;
+    }
+  }
+
+  .col-lg-4{
+    margin-top: 20px;
+    > div{
+      border: 1px solid @gris-fonce-crealead;
+      .views-field-field-coe-photo{
+        float: left;
+        margin-right: 10px;
+      }
+      .views-field-field-brand-coe{
+        a{
+          .quick();
+          font-weight: bold;
+        }
+      }
+      .views-field-field-coe-status{
+        font-weight: bold;
+      }
+      .views-field-field-competencies{
+        &:after{
+          content:'';
+          display: block;
+          clear: left;
+        }
+      }
+    }
+  }
+  .view-display-id-brand_clients{
+    .views-exposed-form{
+      .views-exposed-widget {
+        float: none;
+        padding: 0;
+        a{
+          display: block;
+          background-color: @gris-clair-crealead;
+          padding: 8px 0 8px 20px;
+          margin-bottom: 3px;
+          color: black;
+          .quick();
+          &:hover{
+            background-color: darken(@gris-clair-crealead, 6.5%);
+            text-decoration: none;
+          }
+          &.active{
+            background-color: darken(@gris-clair-crealead, 6.5%);
           }
         }
       }

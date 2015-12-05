@@ -57,10 +57,25 @@
 [class*=" iconafter-"]:after {
   .glyphicon();
 }
-.icon-facebook:before{content: "\e801";}
-.icon-twitter:before{content: "\e800";}
-.icon-youtube:before{content: "\e802";}
-.icon-gplus:before{content: "\e803";}
+.icon-facebook:before{content: "\e85f";
+  color: #154EA8;}
+.icon-twitter:before{content: "\e860";color:#0C93FC;}
+.icon-youtube:before{content: "\e802";color:#CD0000;}
+.icon-gplus:before{content: "\e861";color:#FA000D;}
+.social-links ul li {
+  margin: 0px !important;
+}
+.social-links ul {
+  overflow: hidden;
+}
+.social-links .icon,
+.social-links .service-linkedin .icon,
+.social-links .service-googleplus .icon,
+.social-links .service-youtube .icon,
+.social-links .service-twitter .icon,
+.social-links .service-facebook .icon{
+  background-color: transparent;
+}
 
 /* other icons ********************************************************************************************************/
 .icon-doc:before{content: "\e804";} /* icon doc */
@@ -74,8 +89,8 @@
 .icon-right-open:before,
 .icon-right-open-h3-a > h3 > span > a:before{content: "\e834";} /* icon arrow right */
 .plus-open-h3-a > h3 > span > a:after{content: "\e83e"; margin-left:10px} /* icon plus in circle */
-.icon-linkedin:before{content: "\e85d";}
-.icon-viadeo:before{content: "\e85e";}
+.icon-linkedin:before{content: "\e85d";color: #1884BB;}
+.icon-viadeo:before{content: "\e85e";color: #F4982B;}
 
 /* private files ******************************************************************************************************/
 .private-file{
