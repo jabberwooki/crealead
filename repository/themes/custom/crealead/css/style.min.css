@@ -1803,6 +1803,8 @@ body.node-type-brand .col-lg-4>div .views-field-field-coe-photo{float:left;margi
 body.node-type-brand .col-lg-4>div .views-field-field-brand-coe a{font-family:Quicksand,sans-serif;font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-coe-status{font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-competencies:after{content:'';display:block;clear:left}
+@media (min-width:992px){body.node-type-brand .view-display-id-brand_clients .view-filters{float:left;width:225px}
+}
 body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
 body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
 body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a:hover{background-color:#dcdcdc;text-decoration:none}
