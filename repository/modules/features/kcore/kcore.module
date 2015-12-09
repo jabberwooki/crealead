@@ -177,10 +177,10 @@ travailler ensemble.</span></div>';
 //          'url' => 'http://data.montpellier-agglo.com/',
 //          'logo-file' => 'montpellier-agglo_45x63.png'
 //        ),
-//        'herault-dept' => array(
-//          'url' => 'http://www.herault.fr/',
-//          'logo-file' => 'herault-dept_55x68.jpg'
-//        ),
+        'cd34' => array(
+          'url' => 'http://www.herault.fr/',
+          'logo-file' => 'CD34_134x63.png'
+        ),
       );
 
       $path = drupal_get_path('module', 'kcore') . '/sponsors-logos/';
