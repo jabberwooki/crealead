@@ -27,7 +27,7 @@ function crealead_brands_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 30,
+    'weight' => 40,
     'customized' => 1,
   );
   // Translatables

@@ -27,7 +27,7 @@ function kcore_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -20,
+    'weight' => -50,
     'customized' => 1,
   );
   // Translatables

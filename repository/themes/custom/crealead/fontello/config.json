@@ -755,6 +755,18 @@
       "src": "entypo"
     },
     {
+      "uid": "ce1d525f3f31024c6a6b38f5e9a88953",
+      "css": "facebook-circled",
+      "code": 59487,
+      "src": "entypo"
+    },
+    {
+      "uid": "818a6c2a76c89800632c0335e9cdafee",
+      "css": "gplus-circled",
+      "code": 59489,
+      "src": "entypo"
+    },
+    {
       "uid": "59ba4f90d2ca2a843f4f930b03270362",
       "css": "plus-circle",
       "code": 59452,
@@ -764,6 +776,12 @@
       "uid": "40c6538b0fd40540bf78373f8a1fb7af",
       "css": "videocam",
       "code": 59438,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "ccf7ed45e7f05a89376f38abaa9d7d13",
+      "css": "twitter-circled",
+      "code": 59488,
       "src": "mfglabs"
     },
     {

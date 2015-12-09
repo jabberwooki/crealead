@@ -1593,6 +1593,17 @@ function crealead_brands_views_default_views() {
 
   /* Display: Clients d'une marque */
   $handler = $view->new_display('block', 'Clients d\'une marque', 'brand_clients');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'block';
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
 
   /* Display: Liste clients (ER) */
   $handler = $view->new_display('entityreference', 'Liste clients (ER)', 'entityref_clients_list');
@@ -1683,7 +1694,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -1730,7 +1741,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -1753,6 +1764,13 @@ function crealead_brands_views_default_views() {
 
   /* Display: Coes fiche marque */
   $handler = $view->new_display('block', 'Coes fiche marque', 'brand_coes');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['field_collection_coes'] = array(
     t('Master'),
     t('plus'),
@@ -1762,7 +1780,7 @@ function crealead_brands_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Éléments par page'),
-    t('- Tout -'),
+    t('Tout'),
     t('Décalage'),
     t('« premier'),
     t('‹ précédent'),
@@ -1770,7 +1788,6 @@ function crealead_brands_views_default_views() {
     t('dernier »'),
     t('Entité Utilisateur réferencée par field_brand_coe'),
     t('Profil'),
-    t('Tout'),
     t('Coes fiche marque'),
   );
   $export['field_collection_coes'] = $view;

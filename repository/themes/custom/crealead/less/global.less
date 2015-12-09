@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  .source();
 }
 img{
   max-width: 100%;
@@ -36,11 +36,13 @@ img{
     margin-top: 40px;
   }
   &.main-container-with-header{
-    margin-top: 0px;
+    margin-top: -20px;
   }
   margin-top: 60px;
   padding-top: 20px;
-
+}
+body.front .main-container.main-container-with-header{
+  margin-top: 0;
 }
 /* titres *************************************************************************************************************/
 h2.block-title, h2.page-header{
@@ -83,6 +85,9 @@ h4{
 }
 div.chapo{
   margin: 15px 0;
+}
+.p{
+  line-height: 1.2em;
 }
 blockquote{
   .quick();
