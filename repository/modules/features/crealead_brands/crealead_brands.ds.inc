@@ -18,13 +18,15 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '0',
-        'wrapper' => '',
+        'wrapper' => 'h3',
         'class' => '',
+        'exclude node title settings' => '0',
+        'ft' => array(),
       ),
     ),
   );
@@ -297,7 +299,7 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'achievement';
   $ds_layout->view_mode = 'block';
-  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->layout = 'bootstrap_7_5';
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(

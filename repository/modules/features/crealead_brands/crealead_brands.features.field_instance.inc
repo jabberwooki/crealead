@@ -670,7 +670,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -778,7 +778,7 @@ function crealead_brands_field_default_field_instances() {
           'slideshow_controls_position' => 'after',
           'slideshow_field_collection_image' => '',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'large',
+          'slideshow_image_style' => 'realisation',
           'slideshow_link' => 'colorbox',
           'slideshow_order' => '',
           'slideshow_pager' => 'image',

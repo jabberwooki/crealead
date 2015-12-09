@@ -91,6 +91,21 @@ function crealead_brands_default_entityform_type() {
 function crealead_brands_image_default_styles() {
   $styles = array();
 
+  // Exported image style: realisation.
+  $styles['realisation'] = array(
+    'label' => 'realisation (540/400)',
+    'effects' => array(
+      10 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 540,
+          'height' => 400,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: thumbnail_50x50.
   $styles['thumbnail_50x50'] = array(
     'label' => 'Thumbnail (50x50)',
