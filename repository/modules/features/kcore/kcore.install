@@ -12,3 +12,10 @@
 function kcore_update_7001() {
   module_enable(array('view_unpublished'));
 }
+
+/**
+ * Activate site_map module.
+ */
+function kcore_update_7002() {
+  module_enable(array('site_map'));
+}

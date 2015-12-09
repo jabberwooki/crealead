@@ -99,6 +99,7 @@ features[image][] = carre_large
 features[menu_custom][] = main-menu
 features[menu_custom][] = menu-footer-menu
 features[menu_links][] = main-menu_accueil:<front>
+features[menu_links][] = menu-footer-menu_plan-du-site:sitemap
 features[taxonomy][] = business_groups
 features[taxonomy][] = sectors
 features[user_permission][] = access administration menu

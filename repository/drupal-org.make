@@ -170,6 +170,9 @@ projects[references_dialog][patch][] = "https://www.drupal.org/files/issues/refe
 projects[service_links][subdir] = contrib
 projects[socialfield][version] = "2.3"
 
+projects[site_map][subdir] = contrib
+projects[site_map][version] = "1.3"
+
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
 
