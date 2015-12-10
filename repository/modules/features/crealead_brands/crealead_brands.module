@@ -136,20 +136,6 @@ function crealead_brands_node_presave($node) {
   }
 }
 
-/**
- * Implements hook_views_data_alter().
- */
-/**
- * Implements hook_views_pre_view().
- */
-//function crealead_brands_views_pre_view(&$view, &$display_id, &$args) {
-//}
-
-/**
- * Implements hook_views_pre_render().
- */
-//function crealead_brands_views_pre_render(&$view) {
-//}
 
 /**
  * Implements hook_node_grants_alter().
@@ -393,4 +379,11 @@ function crealead_brands_views_pre_render(&$view) {
       'group' => JS_THEME,
     ));
   }
+  if ($view->name == 'field_collection_coes' && $view->current_display == 'brand_coes') {
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-brand-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
+
 }
