@@ -1864,7 +1864,7 @@ function crealead_brands_field_default_field_instances() {
   // Exported field_instance: 'node-brand-field_business_sector'
   $field_instances['node-brand-field_business_sector'] = array(
     'bundle' => 'brand',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1895,6 +1895,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 21,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_business_sector',
     'label' => 'Secteur d\'activité',
@@ -1906,7 +1907,7 @@ function crealead_brands_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 4,
     ),
   );
