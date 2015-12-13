@@ -12,4 +12,32 @@
     display: table;
     margin: 0 auto;
   }
+  .menu.nav{
+    display: table;
+    margin: 25px auto;
+    li{
+      float: left;
+      a{
+        color: white;
+        display: block;
+        .source();
+        text-transform: uppercase;
+        border-right: 2px solid white;
+        font-weight: bold;
+        margin: 0;
+        padding: 0 15px;
+        font-size: 0.8em;
+        &:hover{
+          background-color: transparent;
+          color: @rouge-crealead;
+        }
+      }
+      &.last{
+        a{
+          border-right: 0;
+        }
+
+      }
+    }
+  }
 }

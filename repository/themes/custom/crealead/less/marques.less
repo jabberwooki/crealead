@@ -193,15 +193,16 @@ body.node-type-brand{
     margin-bottom: 30px;
     #block-ds-extras-content-header-brand{
       width: 100%;
-
       .group-row-1{
-
+        .top-brand-col-2-3{
+          min-height: 100px;
+        }
         .group-col-1-3{
           display: table-cell;
           vertical-align: middle;
           border-right: 1px solid @gris-fonce-crealead;
           padding-top: 20px;
-          padding-bottom: 20px;
+          padding-bottom: 5px;
           .field-name-field-brand-logo > div{
             display: table;
             width: 100%;
@@ -220,10 +221,9 @@ body.node-type-brand{
           display: table-cell;
           border-right: 1px solid @gris-fonce-crealead;
           padding-top: 20px;
-          padding-bottom: 20px;
+          padding-bottom: 5px;
           h2{
-            margin-top: 0;
-            margin-bottom: 0;
+            margin: 0 0 10px 0;
             color: @rouge-crealead;
             .quick();
             text-transform: uppercase;
@@ -238,15 +238,19 @@ body.node-type-brand{
         .group-col3-3{
           display: table-cell;
           padding-top: 20px;
-          padding-bottom: 20px;
+          padding-bottom: 5px;
           .field-label{
             .quick();
           }
-            .field-name-field-social-links{
-              border-top: 1px solid @gris-fonce-crealead;
-              margin-top: 15px;
-              padding-top: 15px;
+
+          .field-name-field-social-links{
+            border-top: 1px solid @gris-fonce-crealead;
+            margin-top: 15px;
+            padding-top: 10px;
+            ul{
+              margin-bottom: 5px;
             }
+          }
         }
       }
 
@@ -386,4 +390,47 @@ body.node-type-brand{
       }
     }
   }
+    /* page des références ******************************************************************/
+  #bootstrap-fieldgroup-nav-item--ralisations{
+    .carousel-control{
+      width: 5%;
+      &.left,&.right{
+        background-image: none;
+      }
+    }
+    .field-name-field-achievement-photos{
+      @media (min-width: @screen-desktop){
+        padding-left: 75px;
+      }
+    }
+    .field-name-title{
+      text-align: left;
+      h3{
+        .quick();
+        font-weight: bold;
+        color: @rouge-crealead;
+        margin-top: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+    }
+    .field-name-body{
+      @media (min-width: @screen-desktop){
+        padding-right: 75px;
+      }
+    }
+    .slide-counter{
+      .quick();
+      font-weight: bold;
+      margin: 15px 0;
+      @media (min-width: @screen-desktop){
+        margin-left: 75px;
+      }
+    }
+    .field-slideshow-pager{
+      margin-top: 10px;
+    }
+
+  }
+
 }

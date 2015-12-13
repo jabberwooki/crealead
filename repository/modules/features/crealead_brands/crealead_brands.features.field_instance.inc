@@ -670,7 +670,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -778,7 +778,7 @@ function crealead_brands_field_default_field_instances() {
           'slideshow_controls_position' => 'after',
           'slideshow_field_collection_image' => '',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'large',
+          'slideshow_image_style' => 'realisation',
           'slideshow_link' => 'colorbox',
           'slideshow_order' => '',
           'slideshow_pager' => 'image',
@@ -1031,7 +1031,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1176,7 +1176,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 3,
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1317,7 +1317,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'phone',
         'settings' => array(),
         'type' => 'phone',
-        'weight' => 2,
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1761,7 +1761,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1886,7 +1886,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2154,7 +2154,7 @@ function crealead_brands_field_default_field_instances() {
           'link_text' => 1,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 5,
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',

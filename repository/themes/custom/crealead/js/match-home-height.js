@@ -3,4 +3,5 @@
  */
 jQuery(function($) {
   $('.home-news-title').matchHeight();
+  $('.view-display-id-block_news_focus .field-name-body').matchHeight();
 });

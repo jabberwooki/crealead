@@ -88,14 +88,13 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Entête: Global : Texte non filtré */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="slide-counter"></div>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Pied de page: Global : Texte non filtré */
-  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['label'] = 'Compteur';
-  $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="slide-counter"></div>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relation: Entity Reference : Entité référante */
   $handler->display->display_options['relationships']['reverse_field_brand_achievements_node']['id'] = 'reverse_field_brand_achievements_node';
@@ -266,7 +265,6 @@ function crealead_brands_views_default_views() {
     t('Desc'),
     t('Profil'),
     t('Réalisations fiche marque'),
-    t('Compteur'),
     t('<div class="slide-counter"></div>'),
     t('Contenu référençant Contenu depuis field_brand_achievements'),
     t('Tout'),
@@ -889,6 +887,14 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Entête: Global : Zone de texte */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Annuaire en cours de construction, merci pour votre compréhension...</h3>
+<p style="margin-bottom:20px;">Durant la finalisation de cette rubrique, merci de <a target="_blank" href="http://www.entrepreneurs-crealead.com/" target="_blank">consulter les fiches des co-entrepreneurs de Crealead sur le site www.entrepreneurs-crealead.com.</a></p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* Comportement en l'absence de résultats: Global : Zone de texte */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -1388,6 +1394,8 @@ function crealead_brands_views_default_views() {
     t('Secteur d\'activité'),
     t('Marques'),
     t('Rechercher'),
+    t('<h3>Annuaire en cours de construction, merci pour votre compréhension...</h3>
+<p style="margin-bottom:20px;">Durant la finalisation de cette rubrique, merci de <a target="_blank" href="http://www.entrepreneurs-crealead.com/" target="_blank">consulter les fiches des co-entrepreneurs de Crealead sur le site www.entrepreneurs-crealead.com.</a></p>'),
     t('Absence de résultat'),
     t('Aucune résultat ne correspond à vos critères de recherche.'),
     t('Cliquez sur un secteur d\'activité :'),
@@ -1741,7 +1749,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences et spécialités */
+  /* Champ: Champ : Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
