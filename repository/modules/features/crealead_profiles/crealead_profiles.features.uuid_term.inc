@@ -110,7 +110,7 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'metatags' => array(),
   );
   $terms[] = array(
-    'name' => 'Aménagemenent Décoration',
+    'name' => 'Aménagement Décoration',
     'description' => '',
     'format' => 'full_html',
     'weight' => 5,
