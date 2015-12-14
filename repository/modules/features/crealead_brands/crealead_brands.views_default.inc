@@ -902,7 +902,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'Absence de résultat';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Aucune résultat ne correspond à vos critères de recherche.';
+  $handler->display->display_options['empty']['area']['content'] = 'Aucun résultat ne correspond à vos critères de recherche.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Champ: Contenu : Logo */
@@ -1397,7 +1397,7 @@ function crealead_brands_views_default_views() {
     t('<h3>Annuaire en cours de construction, merci pour votre compréhension...</h3>
 <p style="margin-bottom:20px;">Durant la finalisation de cette rubrique, merci de <a target="_blank" href="http://www.entrepreneurs-crealead.com/" target="_blank">consulter les fiches des co-entrepreneurs de Crealead sur le site www.entrepreneurs-crealead.com.</a></p>'),
     t('Absence de résultat'),
-    t('Aucune résultat ne correspond à vos critères de recherche.'),
+    t('Aucun résultat ne correspond à vos critères de recherche.'),
     t('Cliquez sur un secteur d\'activité :'),
     t('Mots-clés'),
     t('Marque'),
@@ -1749,7 +1749,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_coe_status']['label'] = '';
   $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
