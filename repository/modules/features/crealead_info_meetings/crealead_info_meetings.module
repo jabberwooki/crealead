@@ -7,6 +7,18 @@
 include_once 'crealead_info_meetings.features.inc';
 
 /**
+ * Implements hook_permission().
+ */
+function crealead_info_meetings_permission() {
+  return array(
+    'administer info meetings' => array(
+      'title' => t('Administer information meetings'),
+      'description' => t('See list of information meetings and perform administration tasks.'),
+    ),
+  );
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
