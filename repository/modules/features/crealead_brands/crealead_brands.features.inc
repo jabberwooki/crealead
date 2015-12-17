@@ -57,7 +57,7 @@ function crealead_brands_default_entityform_type() {
       "preview_page" : 0,
       "submission_page_title" : "Envoi du formulaire de contact ",
       "submission_text" : {
-        "value" : "\\u003Cp\\u003EVotre formulaire a bien \\u00e9t\\u00e9 envoy\\u00e9.\\u003C\\/p\\u003E\\r\\n",
+        "value" : "\\u003Cp\\u003EVotre demande a bien \\u00e9t\\u00e9 envoy\\u00e9e.\\u003C\\/p\\u003E\\r\\n",
         "format" : "full_html"
       },
       "submission_show_submitted" : 0,
@@ -71,11 +71,12 @@ function crealead_brands_default_entityform_type() {
         "103860121" : 0,
         "191976793" : 0,
         "7178059" : 0,
+        "31497918" : 0,
         "231346920" : 0,
         "193262079" : 0
       },
       "resubmit_action" : "new",
-      "redirect_path" : "annuaire-entrepreneurs\\/korora",
+      "redirect_path" : "[current-page:url]",
       "instruction_pre" : { "value" : "", "format" : "full_html" }
     },
     "weight" : "0",
