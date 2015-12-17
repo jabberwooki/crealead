@@ -46,6 +46,18 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'assign roles'.
+  $permissions['assign roles'] = array(
+    'name' => 'assign roles',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'roleassign',
+  );
+
   // Exported permission: 'delete terms in competencies'.
   $permissions['delete terms in competencies'] = array(
     'name' => 'delete terms in competencies',

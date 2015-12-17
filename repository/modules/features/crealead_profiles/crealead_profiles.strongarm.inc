@@ -440,6 +440,21 @@ function crealead_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'roleassign_roles';
+  $strongarm->value = array(
+    14479344 => '14479344',
+    103860121 => '103860121',
+    31497918 => '31497918',
+    191976793 => 0,
+    7178059 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $export['roleassign_roles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_menu_display_descendants_business_sectors';
   $strongarm->value = 0;
   $export['taxonomy_menu_display_descendants_business_sectors'] = $strongarm;
