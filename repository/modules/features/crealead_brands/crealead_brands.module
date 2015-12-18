@@ -1,0 +1,389 @@
+<?php
+/**
+ * @file
+ * Code for the Marques feature.
+ */
+
+include_once 'crealead_brands.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_brands_init() {
+  $node = menu_get_object();
+  if (!empty($node) && $node->type == 'brand' && arg(2) != 'edit') {
+    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
+    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_id) {
+  // Values required to decide how to alter form.
+  global $user;
+  $current_user_roles = $user->roles;
+  $allowed_roles = array('administrateur','webmaster','référent');
+  $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+
+  // Non allowed users cannot do 3 distinct tasks:
+  // 1 - validate brands,
+  // 2 - publish brand nodes, unless brand has been validated by referent,
+  // 3 - create main brands.
+  if (empty($current_user_allowed_roles) & $user->uid != 1) {
+    // 1 - Brand validation radio buttons systematically disabled.
+    $form['field_brand_validated']['und'][0]['#attributes'] = array('disabled' => TRUE);
+    $form['field_brand_validated']['und'][1]['#attributes'] = array('disabled' => TRUE);
+
+    // 2 - Publication options fieldset access conditionally set to false.
+    // Required conditions to publish brand are :
+    // - get a coe profile
+    // - the coe profile must be validated
+    // - the brand must be validated
+    $profile_validated = 0;
+    $user_coe_profile = profile2_load_by_user($user, 'coe_page');
+    if (is_object($user_coe_profile)) {
+      $profile_validated = $user_coe_profile->field_coe_pub_status['und'][0]['value'];
+    }
+
+    $brand_validated = 0;
+    if (isset($form['#node']->field_brand_validated['und'][0]['value'])) {
+      $brand_validated = $form['#node']->field_brand_validated['und'][0]['value'];
+    }
+
+    if (!$user_coe_profile || !$profile_validated || !$brand_validated) {
+      $form['options']['status']['#attributes'] = array('disabled' => TRUE);
+      $form['options']['status']['#title'] =
+        'Vous ne pouvez pas publier cette marque. ' .
+        'Soit celle-ci soit votre profil entrepreneur n\'a pas encore été validé par votre référent.';
+    }
+
+    // 3 - Main brand option systematically removed from brand type.
+    unset($form['field_brand_type']['und']['#options'][3]);
+  }
+  // In any case, for brand nodes, promote and sticky publication options are removed.e
+  unset($form['options']['promote']);
+  unset($form['options']['sticky']);
+
+  // Handling of fields involved into validation workflow
+  // 1 - field_saving_type
+  // If field field_saving_type equals 1, validation request email has been sent. The field has to be hidden.
+  if (isset($form['#node']->field_saving_type['und'][0]['value']) && $form['#node']->field_saving_type['und'][0]['value'] == 1) {
+    $form['field_saving_type']['#access'] = FALSE;
+  }
+  // 2 - field_email_sent
+  // It's a technical field, it must be systematically hidden.
+  $form['field_email_sent']['#access'] = FALSE;
+
+  // Move "Champs Crealed" vertical tab to the bottom.
+  $form['#groups']['group_crealead_fields']->weight = 200;
+
+  // Stuff that has to be done after form build.
+  $form['#after_build'][] = 'crealead_brands_after_build';
+}
+
+function crealead_brands_after_build($form, &$form_state) {
+  // Make the field field_brand_search readonly.
+  $form['field_brand_search']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
+  $form_state['values']['field_brand_search']['und'][0]['value'] = $form['field_brand_search']['und'][0]['value']['#default_value'];
+
+  return $form;
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function crealead_brands_node_presave($node) {
+  if ($node->type == 'brand') {
+    // --- Technical field_brand_search field handling --- //
+    $coe_names = '';
+    $coe_competencies = '';
+    $brand_solutions = '';
+    // Fetch all coes names and competencies linked to current brand.
+    foreach($node->field_brand_coes['und'] as $fc_item) {
+      $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
+      $coe = user_load($coe_id);
+      $coe_names .= $coe->name . ' ';
+
+      foreach ($fc_item['field_competencies']['und'] as $competency) {
+        $coe_competencies .= $competency['name'] . ' ';
+      }
+    }
+    // Check whether Solutions field has content.
+    if (isset($node->field_brand_solutions['und'][0]['value'])) {
+      $brand_solutions = $node->field_brand_solutions['und'][0]['value'];
+    }
+
+    // Store names, competencies and solutions into field_brand_search technical field.
+    $search_data = $coe_names
+      . $coe_competencies
+      . $brand_solutions;
+    $search_array = array('value' => $search_data, 'format' => 'plain_text');
+
+    if (!isset($node->field_brand_search['und'][0])) {
+      $node->field_brand_search['und'][] = $search_array;
+    }
+    else {
+      $node->field_brand_search['und'][0] = $search_array;
+    }
+
+    // -- Email to referent handling -- //
+    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+      $node->field_email_sent['und'][0]['value'] = 1;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_node_grants_alter().
+ */
+function crealead_brands_node_grants_alter(&$grants, $account, $op) {
+  //var_dump($grants);
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function crealead_brands_block_info() {
+  $blocks = array();
+  $blocks['crealead_brands_number'] = array(
+    'info' => t('Crealead : Nombre de grandes marques'),
+  );
+  $blocks['crealead_brands_contacts_list'] = array(
+    'info' => t('Crealead : Liste des contacts email'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function crealead_brands_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'crealead_brands_number' :
+      $brands_number_display = variable_get('brands_number', 1);
+
+      if ($brands_number_display == 1) {
+        $number = crealead_main_brands_number();
+      }
+      else {
+        $number = variable_get('brands_number_value', '5');
+      }
+
+      $content = '<div class="number  brands-number">' . $number . '</div>';
+      $content .= '<div class="text brands-text">' . 'grandes marques' . '</div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_brands_contacts_list' :
+      $block['content'] = crealead_brand_contacts_list();
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
+  //dpm($entity);
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function crealead_brands_entity_view_alter(&$build, $type) {
+  if ($build['#entity_type'] == 'entityform_type' && $build['#entity']->type == 'contact' && $build['#view_mode'] == 'full') {
+    $build['#entity']->label = '';
+    $build['#entity']->data['redirect_path'] = substr($_SERVER['REDIRECT_URL'],1);
+  }
+
+  if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
+    if (empty($build['#node']->field_brand_email)) {
+      unset($build['field_contact_form']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
+  // Handling of Contact form in brands full mode Contact tab
+  if ($form_id == 'contact_entityform_edit_form') {
+    // Fetch the current brand node.
+    $node = menu_get_object();
+    // If contact form exists (displayed only if brand's email field has been fulfilled),
+    // brand name, nid and email added to "technical" form fields (hidden from view with via css).
+    if (isset($node->field_contact_form)) {
+      // Brand name added to form
+      $form['field_contact_brand_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $node->title;
+      // Brand nid added to form
+      $form['field_brand_nid'][LANGUAGE_NONE][0]['value']['#default_value'] = $node->nid;
+      // Brand email added to form
+      if (isset($node->field_brand_email['und'][0]['email'])) {
+        $form['field_contact_brand_email'][LANGUAGE_NONE][0]['value']['#default_value'] =
+          $node->field_brand_email['und'][0]['email'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_type_insert().
+ */
+/**
+ * Implements hook_node_insert().
+ */
+//function crealead_brands_node_insert($node) {
+//  if ($node->type == 'brand') {
+//    if ($node->field_saving_type['und'][0]['value'] == 1) {
+//      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+//      $node->field_email_sent['und'][0]['value'] = 1;
+//    }
+//  }
+//}
+
+/**
+ * Implements hook_node_update().
+ */
+//function crealead_brands_node_update($node) {
+//  if ($node->type == 'brand') {
+//    // Validation request email has to be sent only if field_saving_type = 1 and field_email_sent = 0.
+//    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+//      crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
+//      $node->field_email_sent['und'][0]['value'] = 1;
+//    }
+//  }
+//}
+
+/**
+ * Helper functions ------------------------------------------------------------
+ */
+
+/**
+ * Returns the number of main brands (grandes marques).
+ *
+ * @return
+ *   The number of main brands.
+ */
+function crealead_main_brands_number() {
+  $query = db_select('node', 'n')->fields('n', array('nid'));
+  $query->join('field_data_field_brand_type', 'bt', 'n.nid=bt.entity_id');
+  $query->condition('n.status', '1');
+  $query->condition('bt.field_brand_type_value', '3');
+  $result = $query->execute()->fetchCol();
+
+  return count($result);
+}
+
+/**
+ * Returns the view's markup for the current brand's contacts list if current user is allowed to view it.
+ * Otherwise returns an empty string.
+ *
+ * Users allowed to view current brand's email contacts list are :
+ * - superadmin (uid=1)
+ * - users with role administrator, webmaster and referent
+ * - all coes attached to current brand
+ *
+ * @return string
+ *   The listing brand's contacts markup or an empty string.
+ */
+function crealead_brand_contacts_list() {
+  $node = menu_get_object();
+  $allowed_uids = array('1');
+
+  if (!empty($node->field_brand_coes)) {
+    $fc_coes = $node->field_brand_coes['und'];
+    foreach ($fc_coes as $fc_item_id) {
+      $wrapper = entity_metadata_wrapper('field_collection_item', $fc_item_id['value']);
+      $fc_item = $wrapper->value();
+      $allowed_uids[] = $fc_item->field_brand_coe['und'][0]['target_id'];
+    }
+  }
+
+  $allowed_roles = array('administrateur', 'webmaster', 'référent');
+  global $user;
+
+  $output = '';
+  if (in_array($user->uid, $allowed_uids) || sizeof(array_intersect($allowed_roles, $user->roles)) > 0) {
+    $output = views_embed_view('brand_contact_submissions', 'brand_contacts');
+  }
+  return $output;
+}
+
+
+function crealead_send_brand_mail_to_referent($uid, $brand_nid, $brand_title) {
+  $user_wrapper = entity_metadata_wrapper('user', $uid);
+
+  // Sends email to referent only if user has a referent.
+  if (isset($user_wrapper->field_user_referent)) {
+    $referent_uid = $user_wrapper->field_user_referent->raw();
+    $referent_wrapper = entity_metadata_wrapper('user', $referent_uid);
+    $referent_email = $referent_wrapper->mail->raw();
+    $referent_fullname = $referent_wrapper->field_user_firstname->raw() . ' ' . $referent_wrapper->field_user_lastname->raw();
+
+    // Build email message to referent.
+    $to = $referent_email;
+    $from = variable_get('site_mail');
+    $mail_subject = '[Site web Crealead] Demande de validation d\'une marque';
+    $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
+      . ' a demandé la validation de sa marque ' . $brand_title . ' : http://' . $_SERVER['HTTP_HOST'] . '/node/' . $brand_nid;
+    $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+    $type = 'status';
+    if (drupal_mail('crealead_brands', 'brand_validation_request', $to, language_default(), $params, $from)) {
+      $message = t('Validation request email message sent successfully to %fullname (%to)', array(
+        '%fullname' => $referent_fullname,
+        '%to' => $to
+      ));
+    }
+    else {
+      $message = t('Email message could not be sent to %fullname (%to)', array(
+        '%fullname' => $referent_fullname,
+        '%to' => $to
+      ));
+      $type = 'warning';
+    }
+    drupal_set_message($message, $type);
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_brands_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'brand_validation_request':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_brands_views_pre_render(&$view) {
+
+  if ($view->name == 'brands' && $view->current_display == 'brands_list') {
+
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/check_label.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
+  if ($view->name == 'field_collection_coes' && $view->current_display == 'brand_coes') {
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-brand-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
+
+}

@@ -1,0 +1,186 @@
+@media (min-width: @screen-md){
+  .view-display-id-block_home_slideshow{
+    max-height: 531px;
+    overflow: hidden;
+    position: relative;
+    .wrapper-diapo{
+      .row-diapo{
+        float: left;
+        .diapositive{
+          position: relative;
+          .txt-diapo{
+            position: absolute;
+            top: 460px;
+            left: 30px;
+            text-align: center;
+            width: 95%;
+            text-transform: uppercase;
+            font-weight: bold;
+            p{
+              .cartouche-noir();
+              .quick();
+              font-size: 1.2em;
+              display: inline;
+              margin: 0;
+            }
+            a > p:after{
+              .glyphicon();
+              content: "\e834";
+              color: white;
+              background-color: @rouge-crealead;
+              top: 2px;
+              font-size: 1.26em;
+              margin: 2px -10px -3px 20px;
+            }
+          }
+        }
+      }
+    }
+    .view-display-id-controlers_1{
+      position: absolute;
+      top:20px;
+      width: 286px;
+      font-weight: bold;
+      @media (max-width: @screen-lg){
+        top:100px;
+      }
+      .controler {
+        cursor: pointer;
+        &.controler-selected{
+          background: url(../images/bg-white-controler-right.png) no-repeat 100% 0;
+        }
+        width: 298px;
+      }
+    }
+
+    .view-display-id-controlers_2{
+      position: absolute;
+      top:20px;
+      width: 286px;
+      @media (max-width: @screen-lg){
+        top:100px;
+      }
+      background-color: rgba(255, 255, 255, 0.8);
+      color: white;
+      #title-controler-col-2{
+        margin: 0;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        .quick();
+        color: white;
+        padding: 20px 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        span{
+          text-transform: lowercase;
+          font-size: 0.6em;
+        }
+      }
+      .controler{
+        color: @noir-crealead;
+        cursor: pointer;
+        &.controler-selected{
+          background: url(../images/bg-white-controler-left.png) no-repeat 0 0;
+          width: 298px;
+          margin-left: -12px;
+        }
+        a{
+          color: @noir-crealead;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      .button-action-diaporama{
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+/* Affichage sur petits écrans  ***************************************************************************************/
+@media (max-width: @screen-md){
+  #block-views-diaporama-block-home-slideshow{
+    margin: 30px;
+  }
+  .wrapper-diapo{
+    display: none;
+  }
+
+}
+/* Affichage identique quelle que soit la taille de la fenêtre ********************************************************/
+.view-display-id-controlers_1,.view-display-id-controlers_2{
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  #title-controler-col-1,#title-controler-col-2{
+    margin: 0;
+    display: block;
+    background-color: rgba(193, 45, 81, 0.8);
+    text-align: center;
+    .quick();
+    font-weight: bold;
+    color: white;
+    padding: 20px 0;
+    text-transform: uppercase;
+    span{
+      text-transform: lowercase;
+      font-weight: normal;
+    }
+
+  }
+  .controler{
+    margin: 5px 0;
+    padding: 6px 0px 6px 15px;
+    font-weight: 700;
+    &.controler-selected{
+      top:inherit;
+      background: white;
+      color: @rouge-crealead;
+      a{
+        color: @rouge-crealead;
+      }
+    }
+    &.first-controler{
+      margin-top: 20px;
+    }
+    a{
+      color: white;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .button-action-diaporama{
+    display: block;
+    background-color: @rouge-crealead;
+    width: 70%;
+    margin: 20px auto 0 auto;
+    color: white;
+    .source();
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 0.7em;
+    .sub-button-action-diaporama{
+      text-transform: lowercase;
+      font-size: 0.6em;
+    }
+    &:hover{
+      text-decoration: none;
+      background-color: darken(@rouge-crealead, 6.5%);
+    }
+  }
+  .link-white{
+    display: block;
+    text-align: center;
+    margin: 10px 0 15px 0;
+    text-decoration: underline;
+  }
+}
+
+
+

@@ -205,3 +205,18 @@ function _crealead_get_settings() {
   }
   return $settings;
 }
+
+/**
+ * Activate feature Multimedia.
+ */
+function crealead_update_7001() {
+	module_enable(array('crealead_multimedia'));
+}
+
+
+/**
+ * Activate feature Google Web Stats (provided by Korora install profile).
+ */
+function crealead_update_7002() {
+	module_enable(array('kwstatsgoogle'));
+}

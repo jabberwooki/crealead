@@ -30,3 +30,9 @@ projects[module_filter][version] = "2.0"
 ;projects[replicate_ui][subdir] = contrib
 ;projects[replicate_ui][version] = ""
 
+projects[masquerade][subdir] = contrib
+projects[masquerade][version] = "1.0-rc7"
+
+projects[reroute_email][subdir] = contrib
+projects[reroute_email][version] = "1.2"
+

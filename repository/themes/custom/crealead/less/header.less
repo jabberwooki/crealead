@@ -1,1 +1,101 @@
-// Insert your styling here.
+#h1-logo{
+  margin: 0;
+  padding: 0;
+}
+.navbar-fixed-top{
+  @media (max-width: @screen-sm){
+    position: static;
+  }
+}
+/* Menu principal *****************************************************************************************************/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: white;
+  background-color: @rouge-crealead;
+}
+header#navbar nav{
+  margin: 18px 0 0 40px;
+  > ul.menu{
+    margin: 0 0 0 5px;
+    @media (min-width: @screen-lg){
+      margin: 0 0 0 40px;
+    }
+  }
+
+  ul.menu a{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @noir-crealead;
+    background-color: white;
+    &:hover{
+      background-color: @rouge-crealead;
+      color: white;
+    }
+  }
+  ul > li{
+    @media (max-width: @screen-lg){
+      max-width: 150px;
+    }
+    @media (max-width: @screen-sm){
+      max-width: none;
+      a br{
+        display: none;
+      }
+    }
+  }
+  ul.dropdown-menu{
+    background-color: white;
+    a:hover{
+      background-color: @noir-crealead;
+    }
+
+  }
+  > ul.menu:first-child > li.first > a{
+    @media (min-width: @screen-sm){
+      width: 20px;
+      height: 20px;
+      margin-top: 15px;
+      margin-right: 15px;
+      overflow: hidden;
+      color: white;
+      &:before{
+        .glyphicon();
+        content: "\e819";
+        color: black;
+        font-size: 18px;
+        background-color: transparent;
+        padding: 0 !important;
+        margin: 0;
+      }
+      @media (min-width: @screen-sm){
+        padding: 0;
+      }
+    }
+  }
+  > ul.menu:first-child > li.first.active > a{
+    @media (min-width: @screen-sm){
+      background-color: transparent;
+      &:before{
+        color: @rouge-crealead;
+      }
+    }
+  }
+  > ul.menu:first-child > li.first > a:hover{
+    @media (min-width: @screen-sm) {
+      background-color: transparent;
+      &:before {
+        color: @rouge-crealead;
+      }
+    }
+  }
+  > ul.menu > li > a{
+    text-align: center;
+    @media (min-width: @screen-sm){
+      min-height: 70px;
+    }
+    &.active-trail{
+      background-color: @rouge-crealead;
+      color: white;
+    }
+  }
+}

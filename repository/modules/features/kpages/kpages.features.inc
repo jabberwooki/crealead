@@ -8,6 +8,15 @@
  * Implements hook_ctools_plugin_api().
  */
 function kpages_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "boxes" && $api == "box") {
+    return array("version" => "1");
+  }
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -19,11 +28,11 @@ function kpages_ctools_plugin_api($module = NULL, $api = NULL) {
 function kpages_node_info() {
   $items = array(
     'page' => array(
-      'name' => t('Basic page'),
+      'name' => t('Page de base'),
       'base' => 'node_content',
-      'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
+      'description' => t('Utilisez les <em>pages de base</em> pour votre contenu statique, tel que la page \'Qui sommes-nous\'.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titre'),
       'help' => '',
     ),
   );

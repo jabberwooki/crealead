@@ -7103,3 +7103,15 @@ table .checkbox input[type="checkbox"] {
 .alert-danger a {
   color: #843534;
 }
+
+/* Mises en page provisoire, à supprimer au moment de l'intégration */
+.view-achievements .carousel-inner {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.view-achievements .carousel-control {
+  width: 5%;
+}
+.view-achievements div.field.field-name-title > div > div {
+  font-weight: bold;
+}

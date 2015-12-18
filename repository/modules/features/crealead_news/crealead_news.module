@@ -1,0 +1,76 @@
+<?php
+/**
+ * @file
+ * Code for the Actualités feature.
+ */
+
+include_once 'crealead_news.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_sorting_date']['#disabled'] = TRUE;
+  $form['#groups']['group_crealead_settings']->weight = 1000;
+
+  // If user is not allowed, field_news_kind and field_related_themes removed.
+  global $user;
+  $current_user_roles = $user->roles;
+  $crealead_news_allowed_roles = array('administrateur','webmaster','référent');
+  $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
+  if (empty($current_user_allowed_roles) & $user->uid != 1) {
+    $form['field_news_kind']['#access'] = FALSE;
+    $form['field_landing_pages']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function crealead_news_node_presave($node) {
+  if ($node->type == 'news') {
+    if (!empty($node->field_news_date['und'])) {
+      $node->field_sorting_date['und'][0]['value'] = $node->field_news_date['und'][0]['value'];
+    }
+    else {
+      $node->field_sorting_date['und'][0]['value'] = $node->created;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_news_views_pre_render(&$view) {
+
+  if ($view->name == 'news' && $view->current_display == 'page_news_list') {
+
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+
+    $nids_to_skip = array();
+
+    // Fetch nid of node displayed in Zoom block and store it in $nids_to_skip array.
+    $zoom_actu_result = views_get_view_result('news','nid_zoom_actu');
+    if (!empty($zoom_actu_result)) {
+      $nids_to_skip[] = $zoom_actu_result[0]->nid;
+    }
+
+    // Fetch nids of nodes displayed in Actus 2 3 block and store them in $nids_to_skip array.
+    $news_2_3_result = views_get_view_result('news','nids_2_3');
+    if (!empty($news_2_3_result)) {
+      foreach ($news_2_3_result as $news) {
+        $nids_to_skip[] = $news->nid;
+      }
+    }
+
+    // If a nid contained in news list exists in $nids_to_skip array, we get rid of it.
+    foreach ($view->result as $key=>$result) {
+      if (in_array($result->nid, $nids_to_skip)) {
+        unset($view->result[$key]);
+      }
+    }
+  }
+}

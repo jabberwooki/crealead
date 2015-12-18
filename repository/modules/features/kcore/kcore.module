@@ -7,6 +7,35 @@
 include_once 'kcore.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function kcore_menu() {
+  $items = array();
+  $items['admin/config/crealead'] = array(
+    'title' => t('Paramétrages Crealead'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'file' => 'kcore.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kcore_permission() {
+  return array(
+    'administer crealead settings' => array(
+      'title' => t('Administer Crealead settings'),
+      'description' => t('Administer various settings for Crealead site.'),
+    ),
+  );
+}
+
+/**
  * Implements hook_menu_alter().
  * Thanks to pfournier, creator of module Empty Front Page (https://www.drupal.org/project/empty_front_page)
  */
@@ -17,4 +46,189 @@ function kcore_menu_alter(&$items) {
 function empty_front_page_callback() {
 	drupal_set_title('');
 	return array();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  // Shows Referent select field to following roles only : administrateur, webmaster, referent.
+  global $user;
+  $allowed_roles = array('administrateur','webmaster','référent');
+  $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+
+  if ($user->uid != 1 && empty($user_allowed_roles)) {
+	$form['field_user_referent']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_email_registration_name().
+ */
+function kcore_email_registration_name($edit, $account) {
+  return $edit['field_user_firstname']['und'][0]['value'] . ' ' . $edit['field_user_lastname']['und'][0]['value'];
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function kcore_block_info() {
+  $blocks = array();
+  $blocks['crealead_coes_number'] = array(
+    'info' => t('Crealead : Nombre d\'entrepreneurs'),
+  );
+  $blocks['crealead_refs_number'] = array(
+    'info' => t('Crealead : Nombre de référents'),
+  );
+  $blocks['crealead_speakers_number'] = array(
+    'info' => t('Crealead : Nombre d\'intervenants'),
+  );
+  $blocks['crealead_meetings_number'] = array(
+    'info' => t('Crealead : Nombre de rencontres'),
+  );
+  $blocks['crealead_sponsors'] = array(
+    'info' => t('Crealead : Sponsors'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kcore_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'crealead_coes_number' :
+      $coes_number_display = variable_get('coes_number', 1);
+
+      if ($coes_number_display == 1) {
+        $number = crealead_users_number('entrepreneur');
+      }
+      else {
+        $number = variable_get('coes_number_value', '100');
+      }
+
+      $content = '<div id="coes-number" class="number coes-number">' . $number . '</div>';
+      $content .= '<div id="coes-text" class="text coes-text">Co-entrepreneurs <br><span class="under-key-data">et autant de compétences complémentaires</span></div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_refs_number' :
+      $refs_number_display = variable_get('refs_number', 1);
+
+      if ($refs_number_display == 1) {
+        $number = crealead_users_number('referent');
+      }
+      else {
+        $number = variable_get('refs_number_value', '100');
+      }
+
+      $content = '<div id="refs-number" class="number refs-number">' . $number . '</div>';
+      $content .= '<div id="refs-text" class="text refs-text">Salariés<br><span class="under-key-data">d’une équipe support pour
+accompagner et gérer</span></div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_speakers_number' :
+      $number = variable_get('speakers_number_value', '10');
+
+      $content = '<div id="speakers-number" class="number speakers-number">' . $number . '</div>';
+      $content .= '<div id="speakers-text" class="text speakers-text">Intervenants<br><span class="under-key-data">en formations, animations et
+prestations.</span></div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_meetings_number' :
+      $number = variable_get('meetings_number_value', '10');
+
+      $content = '<div id="meetings-number" class="number meetings-number">' . $number . '</div>';
+      $content .= '<div id="meetings-text" class="text meetings-text">Rencontres par an <br><span  class="under-key-data">organisées pour échanger et
+travailler ensemble.</span></div>';
+      $block['content'] = $content;
+      break;
+
+    case 'crealead_sponsors' :
+      $block['subject'] = '';
+
+      $sponsors = array(
+        'caisse-epargne' => array(
+          'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
+          'logo-file' => 'ca-lr_263x57.png'
+        ),
+        'l-europe-s-engage' => array(
+          'url' => '',
+          'logo-file' => 'l-europe-s-engage_160x100.png'
+        ),
+        'ue-fse' => array(
+          'url' => '',
+          'logo-file' => 'ue-fse_100x100.jpg'
+        ),
+        'prefecture' => array(
+          'url' => '',
+          'logo-file' => 'prefecture_78x100.jpg'
+        ),
+        'region-lr' => array(
+          'url' => 'http://www.laregion.fr/',
+          'logo-file' => 'region-lr_131x63.jpg'
+        ),
+//        'montpellier-agglo' => array(
+//          'url' => 'http://data.montpellier-agglo.com/',
+//          'logo-file' => 'montpellier-agglo_45x63.png'
+//        ),
+        'cd34' => array(
+          'url' => 'http://www.herault.fr/',
+          'logo-file' => 'CD34_134x63.png'
+        ),
+      );
+
+      $path = drupal_get_path('module', 'kcore') . '/sponsors-logos/';
+      $content = '<div id="crealead-sponsor">';
+      foreach ($sponsors as $name=>$sponsor) {
+        $content .= '<span id="' . $name . '">';
+        $img = theme('image', array('path' => $path . $sponsor['logo-file']));
+        if ($sponsor['url'] != '') {
+          $logo = l($img,$sponsor['url'], array('html' => TRUE));
+        }
+        else {
+          $logo = $img;
+        }
+        $content .= $logo;
+        $content .= '</span>';
+      }
+      $content .= '</div>';
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Helper functions.
+ */
+
+/**
+ * Returns the number of active user belonging to role given as paramater.
+ * Il no role is passed on, returns the total number of active users.
+ *
+ * @param $role
+ *   A role machine name (ex. Référent role's machine name is 'referent').
+ *
+ * @return
+ *   The number of users.
+ */
+function crealead_users_number($role=null) {
+  $query = db_select('users_roles', 'ur')->fields('ur', array('uid'));
+  if (isset($role)) {
+    $role = user_role_load_by_name($role);
+    $query->condition('ur.rid', $role->rid);
+  }
+  else {
+    $query->distinct();
+  }
+  $result = $query->execute()->fetchCol();
+
+  return count($result);
 }

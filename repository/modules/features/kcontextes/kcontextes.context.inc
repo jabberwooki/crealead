@@ -23,7 +23,24 @@ function kcontextes_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'kcore-crealead_sponsors' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_sponsors',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
@@ -45,7 +62,42 @@ function kcontextes_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+        'kcore-crealead_coes_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_coes_number',
+          'region' => 'content_header',
+          'weight' => '-10',
+        ),
+        'kcore-crealead_refs_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_refs_number',
+          'region' => 'content_header',
+          'weight' => '-9',
+        ),
+        'kcore-crealead_speakers_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_speakers_number',
+          'region' => 'content_header',
+          'weight' => '-8',
+        ),
+        'kcore-crealead_meetings_number' => array(
+          'module' => 'kcore',
+          'delta' => 'crealead_meetings_number',
+          'region' => 'content_header',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Diaporama feature.
+ */
+
+include_once 'diaporama.features.inc';

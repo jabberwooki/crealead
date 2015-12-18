@@ -1,0 +1,131 @@
+.page-reunions-information{
+  background: url(../images/bg_grey.png) repeat-x 0 30px;
+  .page-header{
+    margin-bottom: 0;
+  }
+
+  ul.coche-rouge{
+    font-size: 0.8em;
+    > li{
+      margin-top: 20px;
+      font-weight: bold;
+      &:before{
+        display: none;
+      }
+      li{
+        font-weight: normal;
+      }
+    }
+  }
+}
+.title-info-meeting{
+  font-weight: 700;
+}
+/* Page de présentation de la réunion d'info et des prochaines dates **************************************************/
+.view-info-meetings{
+  .view-header{
+    background-color: @gris-clair-crealead;
+    padding: 20px;
+    margin-top: -20px;
+  }
+  .view-content{
+
+    .title-table-meeting{
+      /*margin-left: 3%*/
+    }
+    table{
+      margin: 0 0 20px 0;
+      th{
+        .quick();
+        text-transform: uppercase;
+        color: @rouge-crealead;
+        background-color: @gris-clair-crealead;
+        border-bottom: 3px solid white;
+      }
+      tr{
+        border-bottom: 3px solid white;
+        background-color: @gris-clair-crealead;
+        td{
+          a{
+            display: inline-block;
+            background-color: @rouge-crealead;
+            padding: 6px 12px;
+            border-radius: 4px;
+            color: #FFF;
+            font-weight: bold;
+            float: right;
+            text-align: center;
+            &:before{
+              .glyphicon();
+              font-size: 1em;
+              content: "\e834"; /* icon arrow right */
+              color: white;
+            }
+          }
+          &.views-field-field-info-meeting-date{
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  .view-footer{
+
+    font-size: 1.2em;
+    p.rtecenter:before{
+      /*.glyphicon();
+      font-size: 3em;
+      content: "\e835"; /!* icon arrow down *!/
+      display: block;
+      width: 50px;
+      margin: 0 auto*/
+    }
+  }
+}
+/* Formulaire d'inscription *******************************************************************************************/
+#registration-form{
+  .form-type-radios{
+    label{
+      float: left;
+    }
+    div.form-radios{
+      float: left;
+      .form-type-radio{
+        float: left;
+        margin-top: 0;
+        margin-right: 15px;
+        input[type=radio]{
+          position: inherit;
+          float: left;
+          margin-left: 25px;
+        }
+        label{
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  fieldset{
+    clear: both;
+  }
+}
+.node-type-info-meeting{
+  a.field-group-format-title{
+    font-size: 0.8em;
+    &:before{
+      .glyphicon();
+      content: "\e834";
+    }
+  }
+  h3.label-above:before{
+    .glyphicon();
+    content: "\e835";
+  }
+}
+
+/* Page d'après l'inscription *****************************************************************************************/
+body.page-registration.not-logged-in{
+  .field-name-field-attendee{
+    display: none;
+  }
+}

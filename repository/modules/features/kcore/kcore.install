@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: chris
+ * Date: 02/12/15
+ * Time: 20:22
+ */
+
+/**
+ * Activate view_unpublished module.
+ */
+function kcore_update_7001() {
+  module_enable(array('view_unpublished'));
+}
+
+/**
+ * Activate site_map module.
+ */
+function kcore_update_7002() {
+  module_enable(array('site_map'));
+}

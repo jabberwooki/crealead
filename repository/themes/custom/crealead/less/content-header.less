@@ -1,0 +1,45 @@
+.full_content-header{
+  &.container-header-logged-in{
+    margin-top: 40px;
+  }
+  margin-top: 60px;
+  padding: 0;
+}
+.bg-gray-crealead-icons{
+  background: @gris-clair-crealead url(../images/motif_1.png);
+}
+.content-header{
+  &.container-header-logged-in{
+    margin-top: 40px;
+  }
+  &.container-header-second{
+    margin-top: 0;
+  }
+  margin-top: 60px;
+  padding: 20px 0;
+
+  .region-content-header{
+    .row-eq-height();
+  }
+}
+/* Chiffres clés de page d'accueil ************************************************************************************/
+.region-content-header{
+  .number, .text{
+    text-align: center;
+    .source();
+    font-weight: 700;
+
+  }
+  .number{
+    color: @rouge-crealead;
+    font-size: 4em;
+  }
+  .text {
+    font-size: 1.2em;
+    .quick();
+    .under-key-data{
+      .source();
+      font-weight: normal;
+    }
+  }
+}

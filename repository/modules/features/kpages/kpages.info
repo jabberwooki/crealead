@@ -4,26 +4,50 @@ core = 7.x
 package = App
 version = 7.x-1.0
 project = kpages
-
+dependencies[] = atom_reference
+dependencies[] = boxes
+dependencies[] = crealead_multimedia
+dependencies[] = crealead_news
 dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = field_group
 dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text
-
+features[box][] = crealead_link_advantages
+features[ctools][] = boxes:box:1
+features[ctools][] = ds:ds:1
+features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
+features[ds_field_settings][] = node|page|full
+features[ds_layout_settings][] = node|page|full
+features[fe_block_settings][] = boxes-crealead_link_advantages
 features[features_api][] = api:2
-
-features[field_base][] = body
+features[field_group][] = group_col8|node|page|full
+features[field_group][] = group_row|node|page|full
 features[field_instance][] = node-page-body
-
+features[field_instance][] = node-page-field_files
+features[field_instance][] = node-page-field_galleries
+features[field_instance][] = node-page-field_videos
 features[node][] = page
-
+features[user_permission][] = create page content
+features[user_permission][] = delete any page content
+features[user_permission][] = delete own page content
+features[user_permission][] = edit any page content
+features[user_permission][] = edit own page content
+features[variable][] = ds_extras_hide_page_title
+features[variable][] = field_bundle_settings_node__page
 features[variable][] = language_content_type_page
 features[variable][] = menu_options_page
 features[variable][] = menu_parent_page
 features[variable][] = node_options_page
 features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
-
-project path = profiles/kstarter/modules/features
+features[variable][] = pathauto_node_page_pattern
+features_exclude[field_base][body] = body
+features_exclude[field_base][field_files] = field_files
+features_exclude[field_base][field_galleries] = field_galleries
+features_exclude[field_base][field_videos] = field_videos
+project path = profiles/crealead/modules/features

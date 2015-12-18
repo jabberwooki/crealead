@@ -90,18 +90,25 @@ dependencies[] = kcore
 dependencies[] = kseo
 dependencies[] = kpages
 dependencies[] = kedition
-dependencies[] = kcontextes
+;dependencies[] = kcontextes
 
 ;--- Optional -----------------------------------------------------------------
 ; (Activate corresponding inclusions in file drupal-org.make)
-;dependencies[] = kwstatsgoogle   ;Web statistics - Google
+dependencies[] = kwstatsgoogle
 ;dependencies[] = kwstatspiwik    ;Web statistics - Piwik
 
 ;--- Themes -------------------------------------------------------------------
 ; (Activate corresponding inclusions in file drupal-org.make)
-;dependencies[] = kbootstrap
+dependencies[] = kbootstrap
 
-
+;=== Crealead features ========================================================
+;dependencies[] = crealead_multimedia
+;dependencies[] = crealead_news
+;dependencies[] = crealead_info_meetings
+;dependencies[] = crealead_profiles
+;dependencies[] = crealead_brands
+;dependencies[] = crealead_articles
+;dependencies[] = crealead_social
 
 
 

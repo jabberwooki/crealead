@@ -1,0 +1,162 @@
+<?php
+/**
+ * @file
+ * Code for the Réunions d'infos feature.
+ */
+
+include_once 'crealead_info_meetings.features.inc';
+
+/**
+ * Implements hook_permission().
+ */
+function crealead_info_meetings_permission() {
+  return array(
+    'administer info meetings' => array(
+      'title' => t('Administer information meetings'),
+      'description' => t('See list of information meetings and perform administration tasks.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  // Form fields re-ordering
+  $form['who_is_registering']['#weight'] = -10;
+  $form['user']['#weight'] = -9;
+  $form['count']['#weight'] = -8;
+
+  $form['field_registrant_title']['#weight'] =
+  $form['field_registrant_title']['#weight'] = 0;
+  $form['field_registrant_firstname']['#weight'] = 1;
+  $form['field_registrant_lastname']['#weight'] = 2;
+  $form['field_registrant_phone']['#weight'] = 4;
+  $form['field_registrant_activity_domain']['#weight'] = 5;
+  $form['field_registrant_status']['#weight'] = 6;
+
+  $form['state']['#weight'] = 10;
+
+  // Field attendee hidden to anonymous user.
+  if (!user_is_logged_in()) {
+    unset($form['field_attendee']);
+  }
+}
+
+function crealead_info_meetings_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  // Current node being shown, if any.
+  $node = menu_get_object();
+
+  if ($node && $node->type == 'info_meeting') {
+
+    $tabs =& $data['tabs'][0]['output'];
+
+    // If the formatter 'registration form' has been chosen for the event's
+    // 'full content' view mode, then no need to show the 'register' tab
+    // since the registration form is already showing on the 'view' tab.
+    $field_info = field_info_instance('node', 'field_info_meeting_registration', 'info_meeting');
+    if ($field_info['display']['full']['type'] == 'registration_form') {
+      foreach ($tabs as $tab_index => &$tab) {
+        if ($tab['#link']['path'] == 'node/%/register') {
+
+          unset($tabs[$tab_index]);
+
+          // Since we're unsetting one tab, update the count so if there's
+          // only one tab, the tab bar won't show.
+          $data['tabs'][0]['count']--;
+
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function crealead_info_meetings_menu_alter(&$items) {
+  $items['node/%entity_object/registrations']['page callback'] = 'crealead_registration_list';
+  //$items['node/%entity_object/registrations/list']['page callback'] = 'crealead_registration_list';
+}
+
+/**
+ * Callback fucntion for above hoo_menu_alter().
+ *
+ * @return bool|void
+ */
+function crealead_registration_list(){
+  return views_embed_view('crealead_registrations','registrations_list');
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function crealead_info_meetings_entity_view_alter(&$build, $type) {
+  if ($type == 'registration') {
+    $build['field_attendee'][0]['#markup'] = ($build['field_attendee']['#items'][0]['value'] == 1) ? 'oui' : 'non';
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_info_meetings_views_pre_render(&$view) {
+  if (($view->name == 'crealead_registrations' || $view->name == 'info_meetings') && $view->current_display == 'registrations_list') {
+    foreach ($view->result as $result) {
+      $result->field_field_attendee[0]['rendered']['#markup'] = ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : '';
+    }
+  }
+}
+
+/**
+ * Implements hook_action_info().
+ *
+ * Declares additional VBO actions for registration entities.
+ */
+function crealead_info_meetings_action_info() {
+  return array(
+    'crealead_check_registrants_as_absent' => array(
+      'type' => 'registration',
+      'label' => 'Marquer comme absent',
+      'configurable' => FALSE,
+    ),
+    'crealead_check_registrants_as_present' => array(
+      'type' => 'registration',
+      'label' => 'Marquer comme présent',
+      'configurable' => FALSE,
+    ),
+  );
+}
+
+/**
+ * Callback function for VBO action on registrations. Mark a registrant as present.
+ *
+ * @param $entity
+ * @param $context
+ */
+function crealead_check_registrants_as_present(&$entity, $context) {
+  crealead_field_attendee_value_alter($entity->registration_id, 1);
+}
+
+/**
+ * Callback function for VBO action on registrations. Mark a registrant as absent.
+ *
+ * @param $entity
+ * @param $context
+ */
+function crealead_check_registrants_as_absent(&$entity, $context) {
+  crealead_field_attendee_value_alter($entity->registration_id, 0);
+}
+
+/**
+ * Helper function for VBO callback actions.
+ *
+ * @param integer $entity_id ID of the entity to alter.
+ * @param integer $value Value to be given to field_attendee (1 to mark as present, 0 to mark as absent).
+ */
+function crealead_field_attendee_value_alter($entity_id, $value) {
+  $wrapper = entity_metadata_wrapper('registration', $entity_id);
+  $wrapper->field_attendee = $value;
+  $wrapper->save();
+}
