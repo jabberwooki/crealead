@@ -47,6 +47,7 @@ features[ds_layout_settings][] = taxonomy_term|themes|full
 features[entityform_type][] = contact
 features[fe_block_settings][] = crealead_brands-crealead_brands_contacts_list
 features[fe_block_settings][] = crealead_brands-crealead_brands_number
+features[fe_block_settings][] = ds_extras-content_header_brand
 features[fe_block_settings][] = kcore-crealead_coes_number
 features[fe_block_settings][] = kcore-crealead_refs_number
 features[fe_block_settings][] = views-95647445be58aeee85b64e09d38af300

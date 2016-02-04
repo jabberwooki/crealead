@@ -27,6 +27,18 @@ function crealead_info_meetings_user_default_permissions() {
     'module' => 'default_image_ft',
   );
 
+  // Exported permission: 'administer info meetings'.
+  $permissions['administer info meetings'] = array(
+    'name' => 'administer info meetings',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'crealead_info_meetings',
+  );
+
   // Exported permission: 'administer info_meeting_registration registration'.
   $permissions['administer info_meeting_registration registration'] = array(
     'name' => 'administer info_meeting_registration registration',

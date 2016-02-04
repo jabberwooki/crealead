@@ -66,6 +66,33 @@ function crealead_brands_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['ds_extras-content_header_brand'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'content_header_brand',
+    'module' => 'ds_extras',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['kcore-crealead_coes_number'] = array(
     'cache' => 1,
     'css_class' => 'col-md-3',

@@ -206,7 +206,7 @@ function crealead_brands_entity_view_alter(&$build, $type) {
   }
 
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
-    if (!isset($build['field_brand_email'])) {
+    if (empty($build['#node']->field_brand_email)) {
       unset($build['field_contact_form']);
     }
   }

@@ -209,3 +209,20 @@ function crealead_profiles_block_view_alter(&$data, $block) {
 function crealead_profiles_block_view_entrepreneurs_block_coe_reco_alter(&$data, $block) {
   //dpm($data);
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_profiles_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  // if logged user who creates new user is referent, this new user's role must have 'entrepreneur' as default role.
+  if (in_array('référent', $user->roles)) {
+    $form_roles = $form['account']['roles'];
+    $entrepreneur_rid = user_role_load_by_name('entrepreneur')->rid;
+    $entrepreneur_role = array(
+      $entrepreneur_rid => array(
+        '#default_value' => TRUE,
+      ));
+    $form['account']['roles'] = $form_roles + $entrepreneur_role;
+  }
+}
