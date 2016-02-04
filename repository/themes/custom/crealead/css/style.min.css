@@ -1794,7 +1794,7 @@ body.node-type-brand .main-container.main-container-with-header{margin-top:-45px
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs{border:0}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a{font-family:Quicksand,sans-serif;display:block;color:#fff;background-color:#000;font-weight:700;text-transform:uppercase;padding:12px 20px}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a:hover{background-color:#999}
-body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive a{background-color:#bf0e38}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_item.active a,body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive.active a{background-color:#bf0e38}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups{float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
