@@ -169,14 +169,14 @@ travailler ensemble.</span></div>';
           'url' => '',
           'logo-file' => 'prefecture_78x100.jpg'
         ),
-        'region-lr' => array(
-          'url' => 'http://www.laregion.fr/',
-          'logo-file' => 'region-lr_131x63.jpg'
+        'region-lrmp' => array(
+          'url' => 'http://www.regionlrmp.fr/',
+          'logo-file' => 'region-lrmp_100x100.png'
         ),
-//        'montpellier-agglo' => array(
-//          'url' => 'http://data.montpellier-agglo.com/',
-//          'logo-file' => 'montpellier-agglo_45x63.png'
-//        ),
+        'montpellier-metropole' => array(
+          'url' => 'http://www.montpellier3m.fr/',
+          'logo-file' => 'montpellier-metropole_100x100.png'
+        ),
         'cd34' => array(
           'url' => 'http://www.herault.fr/',
           'logo-file' => 'CD34_134x63.png'
