@@ -1917,7 +1917,7 @@ function crealead_brands_field_default_field_instances() {
     'bundle' => 'brand',
     'default_value' => array(
       0 => array(
-        'target_id' => 1,
+        'target_id' => 2,
       ),
     ),
     'deleted' => 0,
@@ -1955,6 +1955,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_contact_form',
     'label' => 'Formulaire de contact',
