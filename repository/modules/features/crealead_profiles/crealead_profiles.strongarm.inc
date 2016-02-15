@@ -13,20 +13,6 @@ function crealead_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'coe_default_logo';
-  $strongarm->value = 46;
-  $export['coe_default_logo'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'coe_default_picture';
-  $strongarm->value = 47;
-  $export['coe_default_picture'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'default_image_ft_state';
   $strongarm->value = array(
     'node' => array(
