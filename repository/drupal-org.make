@@ -217,7 +217,7 @@ includes[contextes] = makefiles/contextes.make
 includes[development] = makefiles/development.make
 
 ;--- Optional -----------------------------------------------------------------
-;includes[webstats_google] = makefiles/wstatsgoogle.make
+includes[webstats_google] = makefiles/wstatsgoogle.make
 ;includes[webstats_piwik] = makefiles/wstatspiwik.make
 
 ;=== Themes ===================================================================
