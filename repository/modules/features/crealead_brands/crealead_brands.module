@@ -29,12 +29,12 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
 
   // 2 - Brand's author profile validation
-  $brand_coe_profile_validated = 0;
+  $brand_author_profile_validated = 0;
   if (isset($form['field_brand_coes']['und'][0]['#entity']->item_id)) {
-    $brand_coe_uid = $form['field_brand_coes']['und'][0]['#entity']->field_brand_coe['und'][0]['target_id'];
-    $brand_coe_profile = profile2_load_by_user($brand_coe_uid, 'coe_page');
-    if ($brand_coe_profile) {
-      $brand_coe_profile_validated = $brand_coe_profile->field_coe_pub_status['und'][0]['value'];
+    $brand_author_uid = $form['uid']['#value'];
+    $brand_author_profile = profile2_load_by_user($brand_author_uid, 'coe_page');
+    if ($brand_author_profile) {
+      $brand_author_profile_validated = $brand_author_profile->field_coe_pub_status['und'][0]['value'];
     }
   }
 
@@ -56,7 +56,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     // 2 - Publication options fieldset access conditionally set to false. Required conditions to publish brand are :
     // - The brand must be validated
     // - The brand's author must have a validated coe profile
-    if (!$brand_coe_profile_validated || !$brand_validated) {
+    if (!$brand_author_profile_validated || !$brand_validated) {
       $form['options']['status']['#attributes'] = array('disabled' => TRUE);
       $form['options']['status']['#title'] =
         'Vous ne pouvez pas publier cette marque. ' .
@@ -70,7 +70,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   else {
     // They cannot publish brands if corresponding coe profile is not yet validated
     // or brand itself is not validated.
-    if (!$brand_coe_profile_validated || !$brand_validated) {
+    if (!$brand_author_profile_validated || !$brand_validated) {
       $form['options']['status']['#attributes'] = array('disabled' => TRUE);
       $form['options']['status']['#title'] =
         'Vous ne pouvez pas publier cette marque. ' .
@@ -145,7 +145,9 @@ function crealead_brands_node_presave($node) {
     }
 
     // -- Email to referent handling -- //
-    if ($node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
+    // NOTE ! Il brand has been validated by referent before coe sends them a validation request,
+    // brand will never get a field_saving_type value. So, it must be tested first.
+    if (!empty($node->field_saving_type['und']) && $node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
       crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
       $node->field_email_sent['und'][0]['value'] = 1;
     }
