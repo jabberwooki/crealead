@@ -1742,14 +1742,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Champ: Profil : Statut */
-  $handler->display->display_options['fields']['field_coe_status']['id'] = 'field_coe_status';
-  $handler->display->display_options['fields']['field_coe_status']['table'] = 'field_data_field_coe_status';
-  $handler->display->display_options['fields']['field_coe_status']['field'] = 'field_coe_status';
-  $handler->display->display_options['fields']['field_coe_status']['relationship'] = 'profile';
-  $handler->display->display_options['fields']['field_coe_status']['label'] = '';
-  $handler->display->display_options['fields']['field_coe_status']['element_label_colon'] = FALSE;
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

@@ -82,6 +82,9 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   unset($form['options']['promote']);
   unset($form['options']['sticky']);
 
+  // Fields temporarily removed from backoffice
+  $form['field_landing_pages']['#access'] = FALSE;
+
   // Handling of fields involved into validation workflow
   // 1 - field_saving_type
   // If field field_saving_type equals 1, validation request email has been sent. The field has to be hidden.
