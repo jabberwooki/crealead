@@ -145,6 +145,9 @@ projects[field_slideshow][version] = "1.82"
 projects[filefield_sources][subdir] = contrib
 projects[filefield_sources][version] = "1.10"
 
+projects[imagecache_actions][subdir] = contrib
+projects[imagecache_actions][version] = "1.6"
+
 ;projects[migrate][subdir] = contrib
 ;projects[migrate][version] = "7.x-2.7"
 

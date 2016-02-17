@@ -122,6 +122,11 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_brand_phone' => array(
       'formatter_settings' => array(
         'ft' => array(

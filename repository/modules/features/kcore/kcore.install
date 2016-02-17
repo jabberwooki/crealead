@@ -19,3 +19,10 @@ function kcore_update_7001() {
 function kcore_update_7002() {
   module_enable(array('site_map'));
 }
+
+/**
+ * Activate imagecache_actions module.
+ */
+function kcore_update_7003() {
+  module_enable(array('imagecache_canvasactions'));
+}
