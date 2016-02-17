@@ -1,3 +1,7 @@
+Crealead 1.0.2 - 16/02/2016
+---------------------------
+Hotfix : Correction du ticket #39 : Dépublication des marques.
+
 Crealead 1.0.1 - 11/02/2016
 ---------------------------
 Hotfix : Mise à jour des logos financeurs.
