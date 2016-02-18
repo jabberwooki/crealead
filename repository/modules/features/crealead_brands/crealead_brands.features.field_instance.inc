@@ -617,7 +617,15 @@ function crealead_brands_field_default_field_instances() {
     'bundle' => 'field_brand_coes',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>',
     'display' => array(
       'brand_list_coe' => array(
         'label' => 'above',
@@ -639,6 +647,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_competencies',
     'label' => 'Compétences',
@@ -2526,6 +2535,15 @@ function crealead_brands_field_default_field_instances() {
   t('Formulaire de contact');
   t('Groupe(s) métier');
   t('Identifiant de la marque');
+  t('Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>');
   t('Indiquez la ville et/ou le pays.');
   t('Liens réseaux sociaux');
   t('Localisation');
