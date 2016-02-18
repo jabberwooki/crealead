@@ -2294,8 +2294,18 @@ function crealead_brands_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+        ),
+        'type' => 'colorbox_field_formatter_linked',
         'weight' => 0,
       ),
       'default' => array(
@@ -2378,7 +2388,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',

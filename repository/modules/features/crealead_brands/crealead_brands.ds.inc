@@ -203,6 +203,11 @@ function crealead_brands_ds_field_settings_info() {
         'class' => 'client-name',
       ),
     ),
+    'field_client_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|client|block'] = $ds_fieldsetting;
 
@@ -587,15 +592,15 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_client_logo',
-        1 => 'title',
-        2 => 'field_client_location',
+        0 => 'field_client_location',
+        1 => 'field_client_logo',
+        2 => 'title',
       ),
     ),
     'fields' => array(
+      'field_client_location' => 'ds_content',
       'field_client_logo' => 'ds_content',
       'title' => 'ds_content',
-      'field_client_location' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
