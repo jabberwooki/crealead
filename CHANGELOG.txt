@@ -1,3 +1,7 @@
+Crealead 1.04 - 20/02/2016
+--------------------------
+Hotfix : Brand publication mechanism altered.
+
 Crealead 1.0.3 - 17/02/2016
 ---------------------------
 Hotfix : Previous hotfix correction updated.
