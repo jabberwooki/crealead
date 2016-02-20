@@ -153,10 +153,8 @@ function crealead_brands_node_presave($node) {
       $node->field_email_sent['und'][0]['value'] = 1;
     }
 
-    // -- Brand publication handing -- //
-    //if ($node)
-    dpm($node);
-    if ($node->original->field_brand_validated['und'][0]['value'] == 0 && $node->field_brand_validated['und'][0]['value'] == 1) {
+    // -- Brand publication handling -- //
+    if (isset($node->original) && $node->original->field_brand_validated['und'][0]['value'] == 0 && $node->field_brand_validated['und'][0]['value'] == 1) {
       $node->status = 1;
     }
   }
