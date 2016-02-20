@@ -28,15 +28,15 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   $allowed_roles = array('administrateur','webmaster','référent');
   $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
 
-  // 2 - Brand's author profile validation
-  $brand_author_profile_validated = 0;
-  if (isset($form['field_brand_coes']['und'][0]['#entity']->item_id)) {
-    $brand_author_uid = $form['uid']['#value'];
-    $brand_author_profile = profile2_load_by_user($brand_author_uid, 'coe_page');
-    if ($brand_author_profile) {
-      $brand_author_profile_validated = $brand_author_profile->field_coe_pub_status['und'][0]['value'];
-    }
-  }
+  // 2 - Brand's author profile validation (NO LONGER TESTED)
+//  $brand_author_profile_validated = 0;
+//  if (isset($form['field_brand_coes']['und'][0]['#entity']->item_id)) {
+//    $brand_author_uid = $form['uid']['#value'];
+//    $brand_author_profile = profile2_load_by_user($brand_author_uid, 'coe_page');
+//    if ($brand_author_profile) {
+//      $brand_author_profile_validated = $brand_author_profile->field_coe_pub_status['und'][0]['value'];
+//    }
+//  }
 
   // 3 - Brand validation
   $brand_validated = 0;
@@ -53,14 +53,13 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     $form['field_brand_validated']['und'][0]['#attributes'] = array('disabled' => TRUE);
     $form['field_brand_validated']['und'][1]['#attributes'] = array('disabled' => TRUE);
 
-    // 2 - Publication options fieldset access conditionally set to false. Required conditions to publish brand are :
-    // - The brand must be validated
-    // - The brand's author must have a validated coe profile
-    if (!$brand_author_profile_validated || !$brand_validated) {
+    // 2 - Publication options fieldset access is conditionally set to false.
+    // The required conditions to publish brand is : the brand must be validated.
+    if (!$brand_validated) {
       $form['options']['status']['#attributes'] = array('disabled' => TRUE);
       $form['options']['status']['#title'] =
         'Vous ne pouvez pas publier cette marque. ' .
-        'Celle-ci, ou votre profil entrepreneur, n\'a pas encore été validée par votre référent.';
+        'Celle-ci n\'a pas encore été validée par votre référent.';
     }
 
     // 3 - Main brand option systematically removed from brand type.
@@ -68,13 +67,12 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   }
   // And now what about allowed users.
   else {
-    // They cannot publish brands if corresponding coe profile is not yet validated
-    // or brand itself is not validated.
-    if (!$brand_author_profile_validated || !$brand_validated) {
+    // They cannot publish brands if they are not validated (by themselves or other allowed users).
+    if (!$brand_validated) {
       $form['options']['status']['#attributes'] = array('disabled' => TRUE);
       $form['options']['status']['#title'] =
         'Vous ne pouvez pas publier cette marque. ' .
-        'Celle-ci, ou le profil entrepreneur de son créateur, n\'a pas encore été validée.';
+        'Celle-ci n\'a pas encore été validée.';
     }
   }
 
@@ -153,6 +151,13 @@ function crealead_brands_node_presave($node) {
     if (!empty($node->field_saving_type['und']) && $node->field_saving_type['und'][0]['value'] == 1 && $node->field_email_sent['und'][0]['value'] == 0) {
       crealead_send_brand_mail_to_referent($node->uid, $node->nid, $node->title);
       $node->field_email_sent['und'][0]['value'] = 1;
+    }
+
+    // -- Brand publication handing -- //
+    //if ($node)
+    dpm($node);
+    if ($node->original->field_brand_validated['und'][0]['value'] == 0 && $node->field_brand_validated['und'][0]['value'] == 1) {
+      $node->status = 1;
     }
   }
 }
@@ -405,6 +410,17 @@ function crealead_brands_views_pre_render(&$view) {
       'type' => 'file',
       'group' => JS_THEME,
     ));
-  }
 
+    foreach ($view->result as $coe) {
+      // Il coe profile is not published, it must be not clickable in brand's "Entrepreneurs" tab.
+      $coe_profile = entity_metadata_wrapper('profile2', $coe->profile_users_pid);
+      $profile_is_published = $coe_profile->field_coe_pub_status->value();
+      if (!$profile_is_published) {
+        // Coe picture made not clickable.
+        unset($coe->field_field_coe_photo[0]['rendered']['#path']);
+        // Coe name made not clickable.
+        $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
+      }
+    }
+  }
 }
