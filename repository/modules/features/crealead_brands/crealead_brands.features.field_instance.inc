@@ -881,7 +881,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1518,7 +1518,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1602,7 +1602,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1611,6 +1611,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 18,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_tags',
     'label' => 'Mots-clés',
