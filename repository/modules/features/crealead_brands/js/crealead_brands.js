@@ -1,8 +1,13 @@
 /**
  * Created by chris on 14/10/15.
  */
-
+jQuery(function($){
+  if ($(".node-type-brand .group-brand-tabs").length) {
+    $(".node-type-brand .group-brand-tabs > li:first").addClass("active");
+  }
+});
 (function ($) {
+
   Drupal.behaviors.brands = {
     attach: function (context, settings) {
 
@@ -16,4 +21,5 @@
       });
     }
   };
+
 }(jQuery));

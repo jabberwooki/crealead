@@ -890,7 +890,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1527,7 +1527,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1611,7 +1611,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1620,6 +1620,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 18,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_tags',
     'label' => 'Mots-clés',
