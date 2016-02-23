@@ -1,3 +1,7 @@
+Crealead 1.0.6 - 23/02/16
+-------------------------
+Hotfix: Fixes bug in brand full view when coes are not filled, but their competencies are.
+
 Crealead 1.0.5 - 20/02/2016
 ---------------------------
 Hotfix: Fixes bug in previous hotfix.
