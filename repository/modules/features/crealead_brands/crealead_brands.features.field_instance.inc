@@ -617,7 +617,15 @@ function crealead_brands_field_default_field_instances() {
     'bundle' => 'field_brand_coes',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>',
     'display' => array(
       'brand_list_coe' => array(
         'label' => 'above',
@@ -639,6 +647,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_competencies',
     'label' => 'Compétences',
@@ -1234,7 +1243,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'brand_logo',
         ),
         'type' => 'image',
         'weight' => 7,
@@ -1834,9 +1843,8 @@ function crealead_brands_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -1918,7 +1926,7 @@ function crealead_brands_field_default_field_instances() {
     'bundle' => 'brand',
     'default_value' => array(
       0 => array(
-        'target_id' => 1,
+        'target_id' => 2,
       ),
     ),
     'deleted' => 0,
@@ -1956,6 +1964,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_contact_form',
     'label' => 'Formulaire de contact',
@@ -2295,8 +2304,18 @@ function crealead_brands_field_default_field_instances() {
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+        ),
+        'type' => 'colorbox_field_formatter_linked',
         'weight' => 0,
       ),
       'default' => array(
@@ -2379,7 +2398,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',
@@ -2517,6 +2536,15 @@ function crealead_brands_field_default_field_instances() {
   t('Formulaire de contact');
   t('Groupe(s) métier');
   t('Identifiant de la marque');
+  t('Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>');
   t('Indiquez la ville et/ou le pays.');
   t('Liens réseaux sociaux');
   t('Localisation');

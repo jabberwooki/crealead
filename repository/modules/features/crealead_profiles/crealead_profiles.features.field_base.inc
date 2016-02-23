@@ -218,7 +218,7 @@ function crealead_profiles_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Contrat CAPE',
+        1 => 'Titulaire d\'un CAPE',
         2 => 'Salarié',
       ),
       'allowed_values_function' => '',
@@ -296,7 +296,7 @@ function crealead_profiles_field_default_field_bases() {
         1 => 'oui',
       ),
       'allowed_values_function' => '',
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'list_text',

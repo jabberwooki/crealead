@@ -1,3 +1,23 @@
+Crealead 1.0.5 - 20/02/2016
+---------------------------
+Hotfix: Fixes bug in previous hotfix.
+
+Crealead 1.0.4 - 20/02/2016
+--------------------------
+Hotfix : Brand publication mechanism altered.
+
+Crealead 1.0.3 - 17/02/2016
+---------------------------
+Hotfix : Previous hotfix correction updated.
+
+Crealead 1.0.2 - 16/02/2016
+---------------------------
+Hotfix : Correction du ticket #39 : Dépublication des marques.
+
+Crealead 1.0.1 - 11/02/2016
+---------------------------
+Hotfix : Mise à jour des logos financeurs.
+
 Crealead 1.0 - 18/12/2015
 -------------------------
 Première version.

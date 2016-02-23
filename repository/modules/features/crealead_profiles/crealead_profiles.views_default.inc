@@ -488,7 +488,6 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
-  $handler->display->display_options['fields']['field_competencies']['label'] = 'Compétences et spécialités';
   $handler->display->display_options['fields']['field_competencies']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_competencies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_competencies']['type'] = 'taxonomy_term_reference_plain';
@@ -1560,7 +1559,7 @@ function crealead_profiles_views_default_views() {
     t('Expression clé'),
     t('Marque'),
     t('Fiche entrepreneur'),
-    t('Compétences et spécialités'),
+    t('Compétences'),
     t('Référence client'),
     t('Pages thématiques'),
     t('Compétences d\'un secteur d\'activité'),

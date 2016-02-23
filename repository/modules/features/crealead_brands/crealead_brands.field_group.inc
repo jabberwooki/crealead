@@ -44,13 +44,11 @@ function crealead_brands_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'brand';
   $field_group->mode = 'full';
-  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Articles',
     'weight' => '29',
-    'children' => array(
-      0 => 'articles_brand_articles',
-    ),
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
       'formatter' => '',
@@ -75,8 +73,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Blog',
     'weight' => '28',
     'children' => array(
-      0 => 'news_brand_news',
-      1 => 'articles_brand_articles',
+      0 => 'articles_brand_articles',
+      1 => 'news_brand_news',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -154,9 +152,8 @@ function crealead_brands_field_group_info() {
     'weight' => '24',
     'children' => array(
       0 => 'body',
-      1 => 'field_business_groups',
-      2 => 'field_brand_solutions',
-      3 => 'field_brand_tags',
+      1 => 'field_brand_solutions',
+      2 => 'field_brand_tags',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -182,12 +179,12 @@ function crealead_brands_field_group_info() {
     'label' => 'Onglets',
     'weight' => '4',
     'children' => array(
-      0 => 'group_brand_infos_tab',
-      1 => 'group_brans_coes_tab',
+      0 => 'group_brand_achiev_tab',
+      1 => 'group_brand_blog_tab',
       2 => 'group_brand_clients_tab',
-      3 => 'group_brand_blog_tab',
-      4 => 'group_brand_contact_tab',
-      5 => 'group_brand_achiev_tab',
+      3 => 'group_brand_contact_tab',
+      4 => 'group_brand_infos_tab',
+      5 => 'group_brans_coes_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -340,8 +337,8 @@ function crealead_brands_field_group_info() {
     'label' => 'group coordonnées',
     'weight' => '35',
     'children' => array(
-      0 => 'field_brand_phone',
-      1 => 'field_brand_email',
+      0 => 'field_brand_email',
+      1 => 'field_brand_phone',
       2 => 'field_brand_website',
     ),
     'format_type' => 'div',
@@ -436,9 +433,9 @@ function crealead_brands_field_group_info() {
     'label' => 'group row 1',
     'weight' => '0',
     'children' => array(
-      0 => 'group_col_1_3',
-      1 => 'group_col_2_6',
-      2 => 'group_col3_3',
+      0 => 'group_col3_3',
+      1 => 'group_col_1_3',
+      2 => 'group_col_2_6',
     ),
     'format_type' => 'div',
     'format_settings' => array(
