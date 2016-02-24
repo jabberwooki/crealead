@@ -95,7 +95,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_brand_articles' => array(
           'full' => array(
-            'weight' => '44',
+            'weight' => '43',
             'visible' => TRUE,
           ),
           'block' => array(

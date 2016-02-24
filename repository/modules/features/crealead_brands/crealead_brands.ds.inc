@@ -115,6 +115,13 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_brand_email' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Courriel ',
+        ),
+      ),
+    ),
     'field_brand_phone' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -122,10 +129,17 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_brand_email' => array(
+    'field_brand_solutions' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'Courriel ',
+          'lb' => 'Solutions ',
+        ),
+      ),
+    ),
+    'field_brand_tags' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Mots clés ',
         ),
       ),
     ),
@@ -141,20 +155,6 @@ function crealead_brands_ds_field_settings_info() {
         'ft' => array(
           'lb' => 'Secteur d\'activité ',
           'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'field_brand_solutions' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Solutions ',
-        ),
-      ),
-    ),
-    'field_brand_tags' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Mots clés ',
         ),
       ),
     ),
@@ -473,8 +473,8 @@ function crealead_brands_ds_layout_settings_info() {
         23 => 'field_brand_baseline',
         24 => 'field_business_sector',
         25 => 'group_contact',
-        26 => 'field_social_links',
-        27 => 'field_brand_phone',
+        26 => 'field_brand_phone',
+        27 => 'field_social_links',
         28 => 'field_brand_email',
         29 => 'field_brand_website',
       ),
@@ -495,10 +495,8 @@ function crealead_brands_ds_layout_settings_info() {
         18 => 'group_brand_achiev_tab',
         19 => 'group_brand_blog_tab',
         20 => 'group_brand_contact_tab',
-        30 => 'group_col1_actu',
-        31 => 'news_brand_news',
-        32 => 'group_col_2_articles',
-        33 => 'articles_brand_articles',
+        30 => 'news_brand_news',
+        31 => 'articles_brand_articles',
       ),
     ),
     'fields' => array(
@@ -528,13 +526,11 @@ function crealead_brands_ds_layout_settings_info() {
       'field_brand_baseline' => 'content_header_brand',
       'field_business_sector' => 'content_header_brand',
       'group_contact' => 'content_header_brand',
-      'field_social_links' => 'content_header_brand',
       'field_brand_phone' => 'content_header_brand',
+      'field_social_links' => 'content_header_brand',
       'field_brand_email' => 'content_header_brand',
       'field_brand_website' => 'content_header_brand',
-      'group_col1_actu' => 'central',
       'news_brand_news' => 'central',
-      'group_col_2_articles' => 'central',
       'articles_brand_articles' => 'central',
     ),
     'classes' => array(),
