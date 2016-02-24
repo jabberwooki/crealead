@@ -1,3 +1,13 @@
+Crealead 1.0.7 - 24/02/16
+-------------------------
+Hotfix:
+- Previous hotfix simplified after field_brand_coe (in field_brand_coes) made required.
+- Strongarm variables brand_default_logo, coe_default_logo and coe_default_picture removed from features.
+
+Crealead 1.0.6 - 23/02/16
+-------------------------
+Hotfix: Fixes bug in brand full view when coes are not filled, but their competencies are.
+
 Crealead 1.0.5 - 20/02/2016
 ---------------------------
 Hotfix: Fixes bug in previous hotfix.
