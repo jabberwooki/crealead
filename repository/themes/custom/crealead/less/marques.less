@@ -187,6 +187,9 @@
 }
 /* page d'une marque **************************************************************************************************/
 body.node-type-brand{
+  .field-name-field-business-groups{
+    display: none;
+  }
   .content-header > .container > .row{
     border: 1px solid @gris-fonce-crealead;
     background-color: white;
@@ -473,8 +476,62 @@ body.node-type-brand{
     }
 
   }
+
   /* Onglet blog *******************************************************************************/
-    .view-articles .field-name-field-landing-pages{
-      .category();
+    #bootstrap-fieldgroup-nav-item--blog {
+      .view-articles .field-name-field-landing-pages {
+        .category();
+
+      }
+      .view-id-articles{
+        .field-name-field-image{
+          margin-bottom: -20px;
+        }
+        h4.h4-title-article-in-brand {
+        margin-top: 40px;
+          text-align: left;
+          a {
+            color: @rouge-crealead;
+            &:hover {
+              text-decoration: none;
+              color: #000;
+            }
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .view-news{
+        .views-row{
+          margin-bottom:20px;
+          padding-bottom:20px;
+          background: url(../images/red-news-line.gif) no-repeat 50% 100%;
+
+          .field-name-field-news-type{
+            .category();
+          }
+          h4.h4-title-news-in-brand a{
+            color: @rouge-crealead;
+            &:hover{
+              text-decoration: none;
+              color: #000;
+            }
+          }
+          .field-name-field-image{
+            height: 200px;
+            overflow: hidden;
+            text-align: center;
+            img{
+              max-height: 200px;
+            }
+          }
+
+        }
+
+      }
     }
+  /* Onglet contact ***************************************************************************************************/
+  .radio input[type="radio"]{
+    margin-left: 0;
+  }
 }

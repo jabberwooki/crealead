@@ -1776,6 +1776,7 @@ h3.home-news-title a:hover{text-decoration:none;color:#999}
 #views-bootstrap-grid-1 .col-lg-3 h3{font-family:Quicksand,sans-serif;margin-top:5px}
 #views-bootstrap-grid-1 .col-lg-3 h3>a{font-size:.7em;font-weight:700;display:block;text-align:center}
 #views-bootstrap-grid-1 .col-lg-3 .field-name-field-brand-baseline{margin-bottom:20px;text-align:center}
+body.node-type-brand .field-name-field-business-groups{display:none}
 body.node-type-brand .content-header>.container>.row{border:1px solid #999;background-color:#fff;margin-bottom:30px}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand{width:100%}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .top-brand-col-2-3{min-height:100px}
@@ -1798,7 +1799,7 @@ body.node-type-brand .main-container.main-container-with-header .group-brand-tab
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_item.active a,body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive.active a{background-color:#bf0e38}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:first-child a{border-radius:6px 0 0 6px}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:last-child a{border-radius:0 6px 6px 0}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups{float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups{display:none;float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-item{margin-bottom:5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags{clear:right;float:right;width:275px;padding:15px 20px;margin-left:20px}
@@ -1830,16 +1831,27 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-contr
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.left,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.right{background-image:none}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title{text-align:left}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title h3{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:0;font-size:1.4em;font-weight:700}
-.node-type-info-meeting a.field-group-format-title,.page-reunions-information ul.coche-rouge{font-size:.8em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .slide-counter{font-family:Quicksand,sans-serif;font-weight:700;margin:15px 0}
 @media (min-width:992px){body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-field-achievement-photos{padding-left:75px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-body{padding-right:75px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .slide-counter{margin-left:75px}
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-slideshow-pager{margin-top:10px}
-body.node-type-brand .view-articles .field-name-field-landing-pages{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-articles .field-name-field-landing-pages{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles .field-name-field-image{margin-bottom:-20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand{margin-top:40px;text-align:left}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a{color:#bf0e38;margin-top:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover{text-decoration:none;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row{margin-bottom:20px;padding-bottom:20px;background:url(../images/red-news-line.gif) 50% 100% no-repeat}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-news-type{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a{color:#bf0e38}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image{height:200px;overflow:hidden;text-align:center}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image img{max-height:200px}
+body.node-type-brand .radio input[type=radio]{margin-left:0}
 .page-reunions-information{background:url(../images/bg_grey.png) 0 30px repeat-x}
 .page-reunions-information .page-header{margin-bottom:0}
+.page-reunions-information ul.coche-rouge{font-size:.8em}
 .page-reunions-information ul.coche-rouge>li{margin-top:20px;font-weight:700}
 .page-reunions-information ul.coche-rouge>li:before{display:none}
 .page-reunions-information ul.coche-rouge>li li{font-weight:400}
@@ -1856,6 +1868,7 @@ body.node-type-brand .view-articles .field-name-field-landing-pages{position:abs
 #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
 #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
 #registration-form fieldset{clear:both}
+.node-type-info-meeting a.field-group-format-title{font-size:.8em}
 .node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
