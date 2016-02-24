@@ -115,6 +115,18 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_brand_email' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Courriel ',
+        ),
+      ),
+    ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_brand_phone' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -122,10 +134,17 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_brand_email' => array(
+    'field_brand_solutions' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'Courriel ',
+          'lb' => 'Solutions ',
+        ),
+      ),
+    ),
+    'field_brand_tags' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Mots clés ',
         ),
       ),
     ),
@@ -141,20 +160,6 @@ function crealead_brands_ds_field_settings_info() {
         'ft' => array(
           'lb' => 'Secteur d\'activité ',
           'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'field_brand_solutions' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Solutions ',
-        ),
-      ),
-    ),
-    'field_brand_tags' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Mots clés ',
         ),
       ),
     ),
@@ -196,6 +201,11 @@ function crealead_brands_ds_field_settings_info() {
         'link' => '1',
         'wrapper' => 'div',
         'class' => 'client-name',
+      ),
+    ),
+    'field_client_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
