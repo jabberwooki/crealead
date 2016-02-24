@@ -563,7 +563,7 @@ function crealead_brands_field_default_field_instances() {
   // 'field_collection_item-field_brand_coes-field_brand_coe'
   $field_instances['field_collection_item-field_brand_coes-field_brand_coe'] = array(
     'bundle' => 'field_brand_coes',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -587,10 +587,11 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_brand_coe',
     'label' => 'Entrepreneur',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
