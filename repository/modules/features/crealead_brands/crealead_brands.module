@@ -329,18 +329,7 @@ function crealead_brand_contacts_list() {
     foreach ($fc_coes as $fc_item_id) {
       $wrapper = entity_metadata_wrapper('field_collection_item', $fc_item_id['value']);
       $fc_item = $wrapper->value();
-
-      // The expected situation is : both field_brand_coe and field_competencies fields in field collection field_brand_coes are filled in.
-      // But coe field is not compulsory and users may, by mistake, enter value in field_competencies only
-      // that would lead to a white page bug with the following error message :
-      //
-      //  Notice : Undefined index: und dans crealead_brand_contacts_list()
-      // (ligne 342 dans /home/ubuntu/dev/crealead/repository/modules/features/crealead_brands/crealead_brands.module).
-      //
-      // So, we must test if field_brand_coe is filled in.
-      if (!empty($fc_item->field_brand_coe)) {
         $allowed_uids[] = $fc_item->field_brand_coe['und'][0]['target_id'];
-      }
     }
   }
 
@@ -422,11 +411,12 @@ function crealead_brands_views_pre_render(&$view) {
 
     // Handling of coes in "Entrepreneurs" tab.
     foreach ($view->result as $key=>$coe) {
-      // If coe profile pid not null (at least one coe is attached to brand) but is not published, it must be not clickable in brand's "Entrepreneurs" tab.
+      // If coe profile pid not null
       if (isset($coe->profile_users_pid)) {
         $coe_profile = entity_metadata_wrapper('profile2', $coe->profile_users_pid);
         $profile_is_published = $coe_profile->field_coe_pub_status->value();
 
+        // but it's not published, it must be not clickable in brand's "Entrepreneurs" tab.
         if (!$profile_is_published) {
           // Coe picture made not clickable.
           unset($coe->field_field_coe_photo[0]['rendered']['#path']);
@@ -434,14 +424,7 @@ function crealead_brands_views_pre_render(&$view) {
           $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
         }
       }
-      // The expected situation is : both field_brand_coe and field_competencies fields in field collection field_brand_coes are filled in.
-      // But coe field is not compulsory and users may, by mistake, enter value in field_competencies only
-      // that would lead to a white page bug with the following error message :
-      //
-      // EntityMetadataWrapperException : Unknown data property field_coe_pub_status. dans EntityStructureWrapper->getPropertyInfo()
-      // (ligne 335 dans /var/www/vhosts/crealead.com/httpdocs/builds/15-12-18--17-35-47/sites/all/modules/contrib/entity/includes/entity.wrapper.inc).
-      //
-      // So, if coe profile pid is null, the best to do is to remove the field collection item from view.
+      // And if coe profile pid is null, the best to do is to remove the field collection item from view.
       else {
         unset($view->result[$key]);
       }
