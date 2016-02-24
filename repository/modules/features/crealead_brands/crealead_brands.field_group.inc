@@ -27,10 +27,9 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Réalisations',
       'instance_settings' => array(
         'classes' => 'group-brand-achiev-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -73,8 +72,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Blog',
     'weight' => '28',
     'children' => array(
-      0 => 'articles_brand_articles',
-      1 => 'news_brand_news',
+      0 => 'group_col1_actu',
+      1 => 'group_col_2_articles',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -337,8 +336,8 @@ function crealead_brands_field_group_info() {
     'label' => 'group coordonnées',
     'weight' => '35',
     'children' => array(
-      0 => 'field_brand_email',
-      1 => 'field_brand_phone',
+      0 => 'field_brand_phone',
+      1 => 'field_brand_email',
       2 => 'field_brand_website',
     ),
     'format_type' => 'div',

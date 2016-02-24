@@ -1843,8 +1843,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'full' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
       'teaser' => array(
