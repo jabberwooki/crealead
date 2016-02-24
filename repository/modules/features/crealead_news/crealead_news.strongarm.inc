@@ -96,6 +96,12 @@ function crealead_news_strongarm() {
       'news_2_3' => array(
         'custom_settings' => TRUE,
       ),
+      'news_brand' => array(
+        'custom_settings' => TRUE,
+      ),
+      'brand_articles' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

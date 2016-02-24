@@ -49,6 +49,15 @@ function crealead_news_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 30,
       ),
+      'news_brand' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -154,6 +163,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -232,6 +247,16 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 28,
+      ),
+      'news_brand' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -337,6 +362,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 24,
       ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -398,6 +429,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
+      ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -489,6 +526,19 @@ function crealead_news_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 32,
       ),
+      'news_brand' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'news_short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'date',
@@ -568,6 +618,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -631,6 +687,13 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 30,
+      ),
+      'news_brand' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -697,6 +760,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -760,6 +829,13 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 31,
+      ),
+      'news_brand' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -827,6 +903,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'hidden',
