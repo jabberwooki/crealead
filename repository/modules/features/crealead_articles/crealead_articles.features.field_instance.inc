@@ -26,6 +26,15 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
       ),
+      'brand_articles' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -115,6 +124,13 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'brand_articles' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -163,6 +179,12 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'brand_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -214,6 +236,16 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(
           'image_link' => 'content',
           'image_style' => 'image_temoignage_accueil',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'brand_articles' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -302,6 +334,13 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'brand_articles' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',

@@ -46,6 +46,15 @@ function crealead_articles_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'brand_articles' => array(
+        'custom_settings' => TRUE,
+      ),
+      'news_2_3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'zoom_news' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

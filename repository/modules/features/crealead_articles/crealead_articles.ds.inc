@@ -60,6 +60,27 @@ function crealead_articles_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|article|brand_articles';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'article';
+  $ds_fieldsetting->view_mode = 'brand_articles';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => 'h4-title-article-in-brand',
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|article|brand_articles'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|article|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'article';
@@ -142,6 +163,42 @@ function crealead_articles_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|article|brand_articles';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'article';
+  $ds_layout->view_mode = 'brand_articles';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_image',
+        1 => 'title',
+        2 => 'body',
+        3 => 'field_article_kind',
+        4 => 'field_landing_pages',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'central',
+      'title' => 'central',
+      'body' => 'central',
+      'field_article_kind' => 'central',
+      'field_landing_pages' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|article|brand_articles'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|article|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'article';
@@ -211,6 +268,24 @@ function crealead_articles_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|article|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function crealead_articles_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'brand_articles';
+  $ds_view_mode->label = 'articles de marque';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['brand_articles'] = $ds_view_mode;
 
   return $export;
 }
