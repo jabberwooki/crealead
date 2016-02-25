@@ -198,11 +198,6 @@ function crealead_brands_ds_field_settings_info() {
         'class' => 'client-name',
       ),
     ),
-    'field_client_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|client|block'] = $ds_fieldsetting;
 
@@ -214,7 +209,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -593,13 +588,11 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_client_location',
-        1 => 'field_client_logo',
-        2 => 'title',
+        0 => 'field_client_logo',
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'field_client_location' => 'ds_content',
       'field_client_logo' => 'ds_content',
       'title' => 'ds_content',
     ),
@@ -621,25 +614,30 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'client';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'bootstrap_9_3';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'field_client_logo',
-        1 => 'title',
-        2 => 'field_client_type',
-        3 => 'body',
+      'left' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+      'right' => array(
+        2 => 'field_client_logo',
+        3 => 'field_client_location',
+        4 => 'field_client_type',
       ),
     ),
     'fields' => array(
-      'field_client_logo' => 'ds_content',
-      'title' => 'ds_content',
-      'field_client_type' => 'ds_content',
-      'body' => 'ds_content',
+      'title' => 'left',
+      'body' => 'left',
+      'field_client_logo' => 'right',
+      'field_client_location' => 'right',
+      'field_client_type' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
