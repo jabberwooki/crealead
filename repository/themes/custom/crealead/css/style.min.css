@@ -1804,29 +1804,29 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-item{margin-bottom:5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags{clear:right;float:right;width:275px;padding:15px 20px;margin-left:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-label{margin:5px 0 15px;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client,body.node-type-brand .col-lg-4{margin-top:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-items{clear:both}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-item{margin-bottom:5px;float:left;margin-right:5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-item a{font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-item{margin-bottom:20px}
-body.node-type-brand .col-lg-4{margin-top:20px}
 body.node-type-brand .col-lg-4>div{border:1px solid #999}
 body.node-type-brand .col-lg-4>div .views-field-field-coe-photo{float:left;margin-right:10px}
 body.node-type-brand .col-lg-4>div .views-field-field-brand-coe a{font-family:Quicksand,sans-serif;font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-coe-status{font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-competencies:after{content:'';display:block;clear:left}
-@media (min-width:992px){body.node-type-brand .view-display-id-brand_clients .view-filters{float:left;width:225px}
+@media (min-width:992px){body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .view-filters{float:left;width:225px}
 }
-body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
-body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
-body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a:hover{background-color:#dcdcdc;text-decoration:none}
-body.node-type-brand .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a.active{background-color:#dcdcdc;color:#bf0e38}
-body.node-type-brand .view-content .field-name-field-client-logo{border:1px solid #999;padding:2px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a:hover{background-color:#dcdcdc;text-decoration:none}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a.active{background-color:#dcdcdc;color:#bf0e38}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo{border:1px solid #999;padding:2px}
 .view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
-body.node-type-brand .view-content .field-name-field-client-logo .field-items{display:table;width:100%}
-body.node-type-brand .view-content .field-name-field-client-logo .field-items .field-item{display:table-cell;text-align:center;vertical-align:middle;height:120px}
-body.node-type-brand .view-content .field-name-title{text-align:center}
-body.node-type-brand .view-content .field-name-title a{color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo .field-items{display:table;width:100%}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo .field-items .field-item{display:table-cell;text-align:center;vertical-align:middle;height:120px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title{text-align:center}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title a{color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control{width:5%}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.left,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.right{background-image:none}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title{text-align:left}
