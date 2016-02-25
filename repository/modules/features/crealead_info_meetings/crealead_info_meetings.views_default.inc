@@ -110,7 +110,7 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['content'] = 'Nombre total d\'inscriptions : @total';
-  /* Relation: Registration : Registration to Nœud */
+  /* Relation: Inscription : Registration to Nœud */
   $handler->display->display_options['relationships']['registration_related_node']['id'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_related_node']['table'] = 'registration';
   $handler->display->display_options['relationships']['registration_related_node']['field'] = 'registration_related_node';
@@ -121,7 +121,7 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['relationship'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
-  /* Champ: Bulk operations : Registration */
+  /* Champ: Bulk operations : Inscription */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'registration';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -207,50 +207,50 @@ function crealead_info_meetings_views_default_views() {
       ),
     ),
   );
-  /* Champ: Registration : Registration ID */
+  /* Champ: Inscription : Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
   $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['label'] = '';
   $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
-  /* Champ: Registration : Date de création */
+  /* Champ: Inscription : Date de création */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Champ: Registration : Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
-  /* Champ: Registration : Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
-  /* Champ: Registration : Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Champ: Registration : Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Champ: Registration : Lien d'affichage */
+  /* Champ: Inscription : Lien d'affichage */
   $handler->display->display_options['fields']['view_registration']['id'] = 'view_registration';
   $handler->display->display_options['fields']['view_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['view_registration']['field'] = 'view_registration';
   $handler->display->display_options['fields']['view_registration']['label'] = 'Actions';
-  /* Champ: Registration : Lien de modification */
+  /* Champ: Inscription : Lien de modification */
   $handler->display->display_options['fields']['edit_registration']['id'] = 'edit_registration';
   $handler->display->display_options['fields']['edit_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['edit_registration']['field'] = 'edit_registration';
-  /* Champ: Registration : Lien de suppression */
+  /* Champ: Inscription : Lien de suppression */
   $handler->display->display_options['fields']['delete_registration']['id'] = 'delete_registration';
   $handler->display->display_options['fields']['delete_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['delete_registration']['field'] = 'delete_registration';
-  /* Champ: Registration : Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
@@ -450,7 +450,7 @@ Téléphone : 04-67-06-96-72';
 ';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Registration : Nœud to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
@@ -468,7 +468,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Champ: Registration : Slots consumed */
+  /* Champ: Inscription : Slots consumed */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'registration';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -532,7 +532,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['open']['operator'] = '<=';
   $handler->display->display_options['filters']['open']['value']['value'] = 'now';
   $handler->display->display_options['filters']['open']['value']['type'] = 'offset';
-  /* Critère de filtrage: Registration Settings : Date de fermeture */
+  /* Critère de filtrage: Registration Settings : Date de clôture */
   $handler->display->display_options['filters']['close']['id'] = 'close';
   $handler->display->display_options['filters']['close']['table'] = 'registration_entity';
   $handler->display->display_options['filters']['close']['field'] = 'close';
@@ -587,8 +587,8 @@ Téléphone : 04-67-06-96-72';
       'empty_column' => 0,
     ),
     'field_info_meeting_date' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -657,7 +657,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Registration : Nœud to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
@@ -687,13 +687,13 @@ Téléphone : 04-67-06-96-72';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Champ: Registration : Registration ID */
+  /* Champ: Inscription : Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
   $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['registration_id']['label'] = 'N°';
-  /* Champ: Registration : Date de création */
+  /* Champ: Inscription : Date de création */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -701,35 +701,35 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['created']['label'] = 'Date d\'inscription';
   $handler->display->display_options['fields']['created']['date_format'] = 'info_meeting_medium';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Champ: Registration : Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['relationship'] = 'registration_rel';
-  /* Champ: Registration : Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
-  /* Champ: Registration : Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Champ: Registration : Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Champ: Registration : Domaine d'activité de votre projet */
+  /* Champ: Inscription : Domaine d'activité de votre projet */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
-  /* Champ: Registration : Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
@@ -740,7 +740,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
-  /* Critère de tri: Registration : Registration ID */
+  /* Critère de tri: Inscription : Registration ID */
   $handler->display->display_options['sorts']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['sorts']['registration_id']['table'] = 'registration';
   $handler->display->display_options['sorts']['registration_id']['field'] = 'registration_id';
