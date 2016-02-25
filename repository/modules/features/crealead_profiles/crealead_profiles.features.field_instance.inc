@@ -28,7 +28,7 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'page' => array(
         'label' => 'above',
@@ -118,7 +118,7 @@ function crealead_profiles_field_default_field_instances() {
           'image_style' => 'photo_utilisateur',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'page' => array(
         'label' => 'hidden',
@@ -250,9 +250,8 @@ function crealead_profiles_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'page' => array(
@@ -300,11 +299,11 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 8,
       ),
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'page' => array(
         'label' => 'above',
@@ -357,7 +356,7 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'page' => array(
         'label' => 'above',
@@ -493,7 +492,7 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'page' => array(
         'label' => 'above',
