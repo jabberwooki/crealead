@@ -3,7 +3,7 @@
  */
 jQuery(function($){
   // fait en sorte que les actualités des marques aient la meme hauteur
-  $('.group-col1-actu .view-id-news .views-row').matchHeight();
+  $('.group-brand-news .view-id-news .views-row').matchHeight();
 
   // fait en sorte que le premier item du menu de la marque soit actif
   if ($(".node-type-brand .group-brand-tabs").length) {
