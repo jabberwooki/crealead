@@ -2219,7 +2219,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2233,7 +2233,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2306,19 +2306,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'display' => array(
       'block' => array(
         'label' => 'above',
-        'module' => 'colorbox_field_formatter',
-        'settings' => array(
-          'colorbox_field_formatter_anchor' => '',
-          'colorbox_field_formatter_class' => '',
-          'colorbox_field_formatter_height' => 500,
-          'colorbox_field_formatter_iframe' => 0,
-          'colorbox_field_formatter_link' => '',
-          'colorbox_field_formatter_link_type' => 'content',
-          'colorbox_field_formatter_style' => 'colorbox-load',
-          'colorbox_field_formatter_width' => 500,
-        ),
-        'type' => 'colorbox_field_formatter_linked',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -2328,10 +2318,11 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_plain',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2424,7 +2415,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2485,7 +2476,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 15,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2499,7 +2490,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',

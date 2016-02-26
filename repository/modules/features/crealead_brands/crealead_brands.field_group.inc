@@ -62,6 +62,38 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_articles|node|brand|full';
+  $field_group->group_name = 'group_brand_articles';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_blog_tab';
+  $field_group->data = array(
+    'label' => 'Articles',
+    'weight' => '42',
+    'children' => array(
+      0 => 'articles_brand_articles',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Articles',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-articles field-group-div col-md-4',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_brand_articles|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_blog_tab|node|brand|full';
   $field_group->group_name = 'group_brand_blog_tab';
   $field_group->entity_type = 'node';
@@ -72,8 +104,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Blog',
     'weight' => '28',
     'children' => array(
-      0 => 'articles_brand_articles',
-      1 => 'news_brand_news',
+      0 => 'group_brand_news',
+      1 => 'group_brand_articles',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -164,6 +196,38 @@ function crealead_brands_field_group_info() {
     ),
   );
   $export['group_brand_infos_tab|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_news|node|brand|full';
+  $field_group->group_name = 'group_brand_news';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_blog_tab';
+  $field_group->data = array(
+    'label' => 'Actualités',
+    'weight' => '41',
+    'children' => array(
+      0 => 'news_brand_news',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Actualités',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-news field-group-div col-md-8',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_brand_news|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -336,8 +400,8 @@ function crealead_brands_field_group_info() {
     'label' => 'group coordonnées',
     'weight' => '35',
     'children' => array(
-      0 => 'field_brand_email',
-      1 => 'field_brand_phone',
+      0 => 'field_brand_phone',
+      1 => 'field_brand_email',
       2 => 'field_brand_website',
     ),
     'format_type' => 'div',

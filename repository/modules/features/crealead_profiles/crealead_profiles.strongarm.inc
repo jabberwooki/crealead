@@ -315,7 +315,7 @@ function crealead_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '3',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'brand_coe' => array(
