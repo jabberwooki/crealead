@@ -22,7 +22,7 @@ function crealead_brands_default_rules_configuration() {
         { "mail" : {
             "to" : "[entityform:field-contact-brand-email]",
             "subject" : "[entityform:field-contact-subject]",
-            "message" : "[entityform:field-contact-name]\\r\\n[entityform:field-contact-email]\\r\\n[entityform:field-contact-phone]\\r\\n\\r\\n[entityform:field-contact-body]\\r\\n",
+            "message" : "Une personne a rempli votre formulaire de contact sur le site Crealead.\\r\\nElle souhaite vous poser une question\\/prendre contact avec vous. \\r\\n\\r\\n\\r\\nSes coordonn\\u00e9es :\\r\\n\\r\\n[entityform:field-contact-name]\\r\\n[entityform:field-contact-email]\\r\\n[entityform:field-contact-phone]\\r\\n\\r\\nSon message :\\r\\n\\r\\n[entityform:field-contact-body]\\r\\n",
             "language" : [ "" ]
           }
         }
