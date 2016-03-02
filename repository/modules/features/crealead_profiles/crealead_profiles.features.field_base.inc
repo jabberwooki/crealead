@@ -249,7 +249,7 @@ function crealead_profiles_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',

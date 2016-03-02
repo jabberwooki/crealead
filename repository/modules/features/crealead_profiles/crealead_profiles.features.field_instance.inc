@@ -290,7 +290,15 @@ function crealead_profiles_field_default_field_instances() {
     'bundle' => 'coe_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -319,6 +327,7 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_competencies',
     'label' => 'Compétences et spécialités',
@@ -694,6 +703,15 @@ function crealead_profiles_field_default_field_instances() {
   t('Centres d\'intérêt');
   t('Compétences et spécialités');
   t('Email envoyé');
+  t('Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>');
   t('Photo');
   t('Pourquoi je sors du lot');
   t('Résumé');
