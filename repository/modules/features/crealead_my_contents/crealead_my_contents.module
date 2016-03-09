@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Code for the Mes contenus feature.
+ */
+
+include_once 'crealead_my_contents.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_my_contents_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-my-contents-page') {
+    // Rebuild the "Type" exposed field so that it displays only
+    // the content types the current user has created.
+    global $user;
+    $options = $form['type']['#options'];
+    $all = array_slice($options,0,1);
+
+    $user_node_types = db_select('node', 'n')
+      ->fields('n', array('type'))
+      ->condition('n.uid', $user->uid)
+      ->distinct()
+      ->execute()
+      ->fetchAllKeyed(0,0);
+
+    foreach ($options as $key=>$option) {
+      if (!in_array($key, $user_node_types)) {
+        unset($options[$key]);
+      }
+    }
+
+    $form['type']['#options'] = array_merge($all,$options);
+  }
+}
+
+///**
+// * Implements hook_form_alter().
+// */
+//function crealead_my_contents_form_alter(&$form, &$form_state, $form_id) {
+//  dpm($form);
+//}
