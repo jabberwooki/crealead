@@ -109,6 +109,7 @@ dependencies[] = kbootstrap
 ;dependencies[] = crealead_brands
 ;dependencies[] = crealead_articles
 ;dependencies[] = crealead_social
+;dependencies[] = crealead_my_contents
 
 
 
