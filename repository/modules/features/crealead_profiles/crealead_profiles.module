@@ -104,6 +104,21 @@ function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
     default:
       break;
   }
+  $form['#after_build'][] = 'crealead_profiles_after_build';
+}
+
+/*
+ * Things to do after profile2 form has been build (we are sure everything is there)
+ * and just before rendering.
+ */
+function crealead_profiles_after_build($form, &$form_state) {
+  // A kind of hack.
+  // Remove the roleassign field displayed in profile2 form to users belonging to referent and/or webmaster roles.
+  // Impossible to understand why this field is present for these roles.
+  if (isset($form['account']['roleassign_roles'])) {
+    unset($form['account']['roleassign_roles']);
+  }
+  return $form;
 }
 
 /**
