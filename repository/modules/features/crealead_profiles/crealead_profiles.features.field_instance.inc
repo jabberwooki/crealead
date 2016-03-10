@@ -118,7 +118,7 @@ function crealead_profiles_field_default_field_instances() {
           'image_style' => 'photo_utilisateur',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'page' => array(
         'label' => 'hidden',
@@ -250,9 +250,10 @@ function crealead_profiles_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'type' => 'list_default',
+        'weight' => 3,
       ),
       'page' => array(
         'label' => 'above',
@@ -311,7 +312,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'page' => array(
         'label' => 'above',

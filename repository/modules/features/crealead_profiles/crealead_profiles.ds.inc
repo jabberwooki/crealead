@@ -45,13 +45,9 @@ function crealead_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_interests' => array(
+    'field_coe_status' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Centres d\'intérêt :',
-          'lb-el' => 'h4',
-          'lb-cl' => 'h4-user',
           'lb-col' => TRUE,
         ),
       ),
@@ -61,6 +57,17 @@ function crealead_profiles_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'lb' => 'Pourquoi je sors du lot :',
+          'lb-el' => 'h4',
+          'lb-cl' => 'h4-user',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_interests' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Centres d\'intérêt :',
           'lb-el' => 'h4',
           'lb-cl' => 'h4-user',
           'lb-col' => TRUE,
@@ -122,16 +129,18 @@ function crealead_profiles_ds_layout_settings_info() {
         0 => 'field_biography',
         1 => 'field_interests',
         2 => 'field_distinct_features',
+        3 => 'field_coe_status',
       ),
       'right' => array(
-        3 => 'field_coe_photo',
-        4 => 'field_competencies',
+        4 => 'field_coe_photo',
+        5 => 'field_competencies',
       ),
     ),
     'fields' => array(
       'field_biography' => 'left',
       'field_interests' => 'left',
       'field_distinct_features' => 'left',
+      'field_coe_status' => 'left',
       'field_coe_photo' => 'right',
       'field_competencies' => 'right',
     ),
