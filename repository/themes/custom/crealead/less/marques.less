@@ -163,7 +163,7 @@
           margin: 0 auto;
           img {
             max-height: 150px;
-            max-width: 92%;
+            max-width: 255px;
           }
         }
 
@@ -385,7 +385,11 @@ body.node-type-brand {
   /* page des clients  ou références *************************************************************/
   #bootstrap-fieldgroup-nav-item--rfrences-client {
     margin-top: 20px;
-
+    #views-bootstrap-grid-1{
+      @media (min-width: @screen-md) {
+        margin-left: 250px;
+      }
+    }
     .view-display-id-brand_clients {
       @media (min-width: @screen-md) {
         .view-filters {
