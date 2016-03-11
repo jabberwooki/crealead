@@ -891,7 +891,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 48,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1528,7 +1528,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 49,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1612,7 +1612,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 47,
       ),
       'teaser' => array(
         'label' => 'above',

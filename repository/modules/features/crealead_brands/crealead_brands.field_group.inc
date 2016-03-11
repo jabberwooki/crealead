@@ -104,8 +104,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Blog',
     'weight' => '28',
     'children' => array(
-      0 => 'group_brand_news',
-      1 => 'group_brand_articles',
+      0 => 'group_brand_articles',
+      1 => 'group_brand_news',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -172,6 +172,71 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_infos_1|node|brand|full';
+  $field_group->group_name = 'group_brand_infos_1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_infos_tab';
+  $field_group->data = array(
+    'label' => 'Infos 1',
+    'weight' => '45',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_brand_solutions',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Infos 1',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-infos-1 field-group-div col-md-9',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_brand_infos_1|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_infos_2|node|brand|full';
+  $field_group->group_name = 'group_brand_infos_2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_infos_tab';
+  $field_group->data = array(
+    'label' => 'Infos 2',
+    'weight' => '46',
+    'children' => array(
+      0 => 'field_brand_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Infos 2',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-infos-2 field-group-div col-md-3',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_brand_infos_2|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_infos_tab|node|brand|full';
   $field_group->group_name = 'group_brand_infos_tab';
   $field_group->entity_type = 'node';
@@ -182,9 +247,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Informations générales',
     'weight' => '24',
     'children' => array(
-      0 => 'body',
-      1 => 'field_brand_solutions',
-      2 => 'field_brand_tags',
+      0 => 'group_brand_infos_1',
+      1 => 'group_brand_infos_2',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -400,8 +464,8 @@ function crealead_brands_field_group_info() {
     'label' => 'group coordonnées',
     'weight' => '35',
     'children' => array(
-      0 => 'field_brand_phone',
-      1 => 'field_brand_email',
+      0 => 'field_brand_email',
+      1 => 'field_brand_phone',
       2 => 'field_brand_website',
     ),
     'format_type' => 'div',
