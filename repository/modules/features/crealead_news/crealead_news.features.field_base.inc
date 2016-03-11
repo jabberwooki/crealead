@@ -84,6 +84,7 @@ function crealead_news_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
+      'profile2_private' => FALSE,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -222,7 +223,7 @@ function crealead_news_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_1',
+          'display_name' => 'entityreference_3',
           'view_name' => 'brands',
         ),
       ),

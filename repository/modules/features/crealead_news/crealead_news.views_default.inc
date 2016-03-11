@@ -35,7 +35,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -82,7 +82,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -342,7 +342,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tout -';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
@@ -611,7 +611,7 @@ function crealead_news_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Éléments par page'),
-    t('- Tout -'),
+    t('Tout'),
     t('Décalage'),
     t('« premier'),
     t('‹ précédent'),
@@ -630,7 +630,6 @@ function crealead_news_views_default_views() {
     t('<a id="news-home-more" href="/actualites">Voir toutes les actualités</a>'),
     t('Actus d\'une marque'),
     t('Entité Contenu réferencée par field_related_brands'),
-    t('Tout'),
     t('Actus d\'une thématique'),
     t('terme à partir de field_landing_pages'),
     t('Bloc zoom actu'),

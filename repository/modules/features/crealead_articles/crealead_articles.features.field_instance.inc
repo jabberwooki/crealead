@@ -208,6 +208,7 @@ function crealead_articles_field_default_field_instances() {
         'weight' => 17,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_article_related_brands',
     'label' => 'Marque(s) concernée(s)',
