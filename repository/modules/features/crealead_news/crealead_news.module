@@ -22,6 +22,34 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
     $form['field_news_kind']['#access'] = FALSE;
     $form['field_landing_pages']['#access'] = FALSE;
   }
+
+  // Related brands list handling ----------------------------------------------
+  // The news create/edit form always contains a user id.
+  // If news is being created, user id is the current user id.
+  // If news is being modified, user id is the news author id.
+  // In either cases, we must seek for brands the concerned user belongs to.
+  $query = db_select('field_data_field_brand_coe', 'coe');
+  $query->fields('coe', array('entity_id', 'field_brand_coe_target_id'));
+  $query->join('field_data_field_brand_coes', 'coes', 'coes.field_brand_coes_value=coe.entity_id');
+  $query->fields('coes', array('entity_id'));
+  $query->condition('field_brand_coe_target_id', $form['uid']['#value']);
+  $news_brands = $query->execute()->fetchAllKeyed(2, 2);
+  //dpm($news_brands);
+
+  $brand_options = $form['field_related_brands']['und']['#options'];
+  foreach ($brand_options as $key => $brand) {
+    if (!in_array($key, $news_brands)) {
+      unset($brand_options[$key]);
+    }
+  }
+  $form['field_related_brands']['und']['#options'] = $brand_options;
+
+  // Then, if news is being modified and current user is not news author,
+  // we must display a disabled brand list, unless current used is allowed to.
+  if (isset($form['nid']['#value']) && $user->uid != $form['uid']['#value'] && empty($current_user_allowed_roles) & $user->uid != 1) {
+      $form['field_related_brands']['#disabled'] = TRUE;
+  }
+  // End of Related brands list handling ---------------------------------------
 }
 
 /**
