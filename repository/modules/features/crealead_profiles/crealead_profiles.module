@@ -230,14 +230,17 @@ function crealead_profiles_block_view_entrepreneurs_block_coe_reco_alter(&$data,
  */
 function crealead_profiles_form_user_register_form_alter(&$form, &$form_state, $form_id) {
   global $user;
-  // if logged user who creates new user is referent, this new user's role must have 'entrepreneur' as default role.
+
+  // If logged user who creates new user has referent role, this new user's role must have 'entrepreneur' as default role.
+  // But assignable roles checkboxes field is not yet available. Must be handled after build.
   if (in_array('référent', $user->roles)) {
-    $form_roles = $form['account']['roles'];
-    $entrepreneur_rid = user_role_load_by_name('entrepreneur')->rid;
-    $entrepreneur_role = array(
-      $entrepreneur_rid => array(
-        '#default_value' => TRUE,
-      ));
-    $form['account']['roles'] = $form_roles + $entrepreneur_role;
+    $form['#after_build'][] = 'crealead_assignable_roles';
   }
+}
+
+function crealead_assignable_roles(&$form, &$form_state) {
+  $entrepreneur_rid = user_role_load_by_name('entrepreneur')->rid;
+  $form['account']['roleassign_roles'][$entrepreneur_rid]['#checked'] = TRUE;
+
+  return $form;
 }
