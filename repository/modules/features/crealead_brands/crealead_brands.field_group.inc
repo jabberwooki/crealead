@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function crealead_brands_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -33,7 +33,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_achiev_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_achiev_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -57,7 +57,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_articles_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_articles_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -89,7 +89,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_brand_articles|node|brand|full'] = $field_group;
+  $field_groups['group_brand_articles|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -116,7 +116,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_blog_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_blog_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -141,7 +141,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_clients_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_clients_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -167,7 +167,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_contact_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_contact_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -200,7 +200,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_brand_infos_1|node|brand|full'] = $field_group;
+  $field_groups['group_brand_infos_1|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -232,7 +232,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_brand_infos_2|node|brand|full'] = $field_group;
+  $field_groups['group_brand_infos_2|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -259,7 +259,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_infos_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brand_infos_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -291,7 +291,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_brand_news|node|brand|full'] = $field_group;
+  $field_groups['group_brand_news|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -325,7 +325,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brand_tabs|node|brand|full'] = $field_group;
+  $field_groups['group_brand_tabs|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -351,7 +351,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_brans_coes_tab|node|brand|full'] = $field_group;
+  $field_groups['group_brans_coes_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -384,7 +384,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_col3_3|node|brand|full'] = $field_group;
+  $field_groups['group_col3_3|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -416,7 +416,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_col_1_3|node|brand|full'] = $field_group;
+  $field_groups['group_col_1_3|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -449,7 +449,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_col_2_6|node|brand|full'] = $field_group;
+  $field_groups['group_col_2_6|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -483,7 +483,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_contact|node|brand|full'] = $field_group;
+  $field_groups['group_contact|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -512,7 +512,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_crealead_fields|node|brand|form'] = $field_group;
+  $field_groups['group_crealead_fields|node|brand|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -545,7 +545,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_css_effect_3|node|brand|block'] = $field_group;
+  $field_groups['group_css_effect_3|node|brand|block'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -579,7 +579,7 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_row_1|node|brand|full'] = $field_group;
+  $field_groups['group_row_1|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -605,7 +605,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_articles_tab|taxonomy_term|themes|full'] = $field_group;
+  $field_groups['group_theme_articles_tab|taxonomy_term|themes|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -632,7 +632,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_blog_tab|taxonomy_term|themes|full'] = $field_group;
+  $field_groups['group_theme_blog_tab|taxonomy_term|themes|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -658,7 +658,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_brands_tab|taxonomy_term|themes|default'] = $field_group;
+  $field_groups['group_theme_brands_tab|taxonomy_term|themes|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -684,7 +684,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_brands_tab|taxonomy_term|themes|full'] = $field_group;
+  $field_groups['group_theme_brands_tab|taxonomy_term|themes|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -710,7 +710,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_news_tab|taxonomy_term|themes|default'] = $field_group;
+  $field_groups['group_theme_news_tab|taxonomy_term|themes|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -736,7 +736,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_news_tab|taxonomy_term|themes|full'] = $field_group;
+  $field_groups['group_theme_news_tab|taxonomy_term|themes|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -766,7 +766,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_tabs|taxonomy_term|themes|default'] = $field_group;
+  $field_groups['group_theme_tabs|taxonomy_term|themes|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -796,7 +796,7 @@ function crealead_brands_field_group_info() {
       ),
     ),
   );
-  $export['group_theme_tabs|taxonomy_term|themes|full'] = $field_group;
+  $field_groups['group_theme_tabs|taxonomy_term|themes|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -829,7 +829,30 @@ function crealead_brands_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_title_hook|node|brand|full'] = $field_group;
+  $field_groups['group_title_hook|node|brand|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Actualités');
+  t('Articles');
+  t('Blog');
+  t('Champs Crealead');
+  t('Contact');
+  t('Entrepreneurs');
+  t('Informations générales');
+  t('Infos 1');
+  t('Infos 2');
+  t('Marques associées');
+  t('Onglets');
+  t('Réalisations');
+  t('Références client');
+  t('group col1-3');
+  t('group col2-6');
+  t('group col3-3');
+  t('group coordonnées');
+  t('group css effect 3');
+  t('group row 1');
+  t('group titre et accroche');
+
+  return $field_groups;
 }

@@ -10,7 +10,7 @@
 function crealead_brands_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_brand_achievements'
+  // Exported field_base: 'field_brand_achievements'.
   $field_bases['field_brand_achievements'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -45,7 +45,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_brand_baseline'
+  // Exported field_base: 'field_brand_baseline'.
   $field_bases['field_brand_baseline'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -67,7 +67,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_brand_coe'
+  // Exported field_base: 'field_brand_coe'.
   $field_bases['field_brand_coe'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -102,7 +102,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_brand_coes'
+  // Exported field_base: 'field_brand_coes'.
   $field_bases['field_brand_coes'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -125,7 +125,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_brand_email'
+  // Exported field_base: 'field_brand_email'.
   $field_bases['field_brand_email'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -142,7 +142,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_brand_logo'
+  // Exported field_base: 'field_brand_logo'.
   $field_bases['field_brand_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -165,7 +165,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_brand_nid'
+  // Exported field_base: 'field_brand_nid'.
   $field_bases['field_brand_nid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -187,7 +187,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_brand_phone'
+  // Exported field_base: 'field_brand_phone'.
   $field_bases['field_brand_phone'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -205,7 +205,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'phone',
   );
 
-  // Exported field_base: 'field_brand_references'
+  // Exported field_base: 'field_brand_references'.
   $field_bases['field_brand_references'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -241,7 +241,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_brand_search'
+  // Exported field_base: 'field_brand_search'.
   $field_bases['field_brand_search'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -262,7 +262,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_brand_solutions'
+  // Exported field_base: 'field_brand_solutions'.
   $field_bases['field_brand_solutions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -283,7 +283,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_brand_tags'
+  // Exported field_base: 'field_brand_tags'.
   $field_bases['field_brand_tags'] = array(
     'active' => 1,
     'cardinality' => 10,
@@ -310,7 +310,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_brand_type'
+  // Exported field_base: 'field_brand_type'.
   $field_bases['field_brand_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -337,7 +337,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_brand_validated'
+  // Exported field_base: 'field_brand_validated'.
   $field_bases['field_brand_validated'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -363,7 +363,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_brand_website'
+  // Exported field_base: 'field_brand_website'.
   $field_bases['field_brand_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -393,7 +393,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_business_sector'
+  // Exported field_base: 'field_business_sector'.
   $field_bases['field_business_sector'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -420,7 +420,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_contact_body'
+  // Exported field_base: 'field_contact_body'.
   $field_bases['field_contact_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -441,7 +441,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_contact_brand_email'
+  // Exported field_base: 'field_contact_brand_email'.
   $field_bases['field_contact_brand_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -463,7 +463,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_brand_name'
+  // Exported field_base: 'field_contact_brand_name'.
   $field_bases['field_contact_brand_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -485,7 +485,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_email'
+  // Exported field_base: 'field_contact_email'.
   $field_bases['field_contact_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -502,7 +502,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_contact_form'
+  // Exported field_base: 'field_contact_form'.
   $field_bases['field_contact_form'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -536,7 +536,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_contact_name'
+  // Exported field_base: 'field_contact_name'.
   $field_bases['field_contact_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -558,7 +558,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_phone'
+  // Exported field_base: 'field_contact_phone'.
   $field_bases['field_contact_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -576,7 +576,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'phone',
   );
 
-  // Exported field_base: 'field_contact_subject'
+  // Exported field_base: 'field_contact_subject'.
   $field_bases['field_contact_subject'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -598,7 +598,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_type'
+  // Exported field_base: 'field_contact_type'.
   $field_bases['field_contact_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -624,7 +624,7 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_social_links'
+  // Exported field_base: 'field_social_links'.
   $field_bases['field_social_links'] = array(
     'active' => 1,
     'cardinality' => -1,
