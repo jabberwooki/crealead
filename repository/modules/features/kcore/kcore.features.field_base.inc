@@ -10,7 +10,7 @@
 function kcore_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_user_firstname'
+  // Exported field_base: 'field_user_firstname'.
   $field_bases['field_user_firstname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function kcore_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_user_lastname'
+  // Exported field_base: 'field_user_lastname'.
   $field_bases['field_user_lastname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -52,7 +52,7 @@ function kcore_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_user_referent'
+  // Exported field_base: 'field_user_referent'.
   $field_bases['field_user_referent'] = array(
     'active' => 1,
     'cardinality' => 1,

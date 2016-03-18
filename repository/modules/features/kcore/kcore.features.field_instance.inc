@@ -10,7 +10,7 @@
 function kcore_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_user_firstname'
+  // Exported field_instance: 'user-user-field_user_firstname'.
   $field_instances['user-user-field_user_firstname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -94,7 +94,7 @@ function kcore_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_user_lastname'
+  // Exported field_instance: 'user-user-field_user_lastname'.
   $field_instances['user-user-field_user_lastname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -178,7 +178,7 @@ function kcore_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_user_referent'
+  // Exported field_instance: 'user-user-field_user_referent'.
   $field_instances['user-user-field_user_referent'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
