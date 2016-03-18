@@ -10,7 +10,7 @@
 function crealead_info_meetings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-info_meeting-body'
+  // Exported field_instance: 'node-info_meeting-body'.
   $field_instances['node-info_meeting-body'] = array(
     'bundle' => 'info_meeting',
     'default_value' => array(
@@ -117,7 +117,7 @@ function crealead_info_meetings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-info_meeting-field_info_meeting_date'
+  // Exported field_instance: 'node-info_meeting-field_info_meeting_date'.
   $field_instances['node-info_meeting-field_info_meeting_date'] = array(
     'bundle' => 'info_meeting',
     'deleted' => 0,
@@ -132,6 +132,7 @@ function crealead_info_meetings_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -145,6 +146,7 @@ function crealead_info_meetings_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -158,6 +160,7 @@ function crealead_info_meetings_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -196,7 +199,7 @@ function crealead_info_meetings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-info_meeting-field_info_meeting_map'
+  // Exported field_instance: 'node-info_meeting-field_info_meeting_map'.
   $field_instances['node-info_meeting-field_info_meeting_map'] = array(
     'bundle' => 'info_meeting',
     'default_value' => array(
@@ -286,7 +289,7 @@ function crealead_info_meetings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-info_meeting-field_info_meeting_photo'
+  // Exported field_instance: 'node-info_meeting-field_info_meeting_photo'.
   $field_instances['node-info_meeting-field_info_meeting_photo'] = array(
     'bundle' => 'info_meeting',
     'deleted' => 0,
@@ -372,7 +375,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-info_meeting-field_info_meeting_registration'
+  // 'node-info_meeting-field_info_meeting_registration'.
   $field_instances['node-info_meeting-field_info_meeting_registration'] = array(
     'bundle' => 'info_meeting',
     'default_value' => array(
@@ -449,7 +452,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_attendee'
+  // 'registration-info_meeting_registration-field_attendee'.
   $field_instances['registration-info_meeting_registration-field_attendee'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => array(
@@ -494,7 +497,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_firstname'
+  // 'registration-info_meeting_registration-field_registrant_firstname'.
   $field_instances['registration-info_meeting_registration-field_registrant_firstname'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,
@@ -567,7 +570,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_lastname'
+  // 'registration-info_meeting_registration-field_registrant_lastname'.
   $field_instances['registration-info_meeting_registration-field_registrant_lastname'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,
@@ -640,7 +643,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_phone'
+  // 'registration-info_meeting_registration-field_registrant_phone'.
   $field_instances['registration-info_meeting_registration-field_registrant_phone'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,
@@ -684,7 +687,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_project_domain'
+  // 'registration-info_meeting_registration-field_registrant_project_domain'.
   $field_instances['registration-info_meeting_registration-field_registrant_project_domain'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,
@@ -757,7 +760,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_status'
+  // 'registration-info_meeting_registration-field_registrant_status'.
   $field_instances['registration-info_meeting_registration-field_registrant_status'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,
@@ -796,7 +799,7 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-info_meeting_registration-field_registrant_title'
+  // 'registration-info_meeting_registration-field_registrant_title'.
   $field_instances['registration-info_meeting_registration-field_registrant_title'] = array(
     'bundle' => 'info_meeting_registration',
     'default_value' => NULL,

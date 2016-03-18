@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function crealead_info_meetings_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function crealead_info_meetings_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_plan_photo|node|info_meeting|full'] = $field_group;
+  $field_groups['group_plan_photo|node|info_meeting|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -73,7 +73,7 @@ function crealead_info_meetings_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_program|node|info_meeting|full'] = $field_group;
+  $field_groups['group_program|node|info_meeting|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -103,7 +103,7 @@ function crealead_info_meetings_field_group_info() {
       ),
     ),
   );
-  $export['group_registrant_infos|registration|info_meeting_registration|form'] = $field_group;
+  $field_groups['group_registrant_infos|registration|info_meeting_registration|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -133,7 +133,7 @@ function crealead_info_meetings_field_group_info() {
       ),
     ),
   );
-  $export['group_registrant_infos|registration|info_meeting_registration|full'] = $field_group;
+  $field_groups['group_registrant_infos|registration|info_meeting_registration|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -161,7 +161,7 @@ function crealead_info_meetings_field_group_info() {
       ),
     ),
   );
-  $export['group_registrant_other_infos|registration|info_meeting_registration|form'] = $field_group;
+  $field_groups['group_registrant_other_infos|registration|info_meeting_registration|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -188,7 +188,14 @@ function crealead_info_meetings_field_group_info() {
       ),
     ),
   );
-  $export['group_registrant_other_infos|registration|info_meeting_registration|full'] = $field_group;
+  $field_groups['group_registrant_other_infos|registration|info_meeting_registration|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Autres informations');
+  t('Voir le plan et la photo du bâtiment');
+  t('Voir le programme');
+  t('Vos informations');
+
+  return $field_groups;
 }

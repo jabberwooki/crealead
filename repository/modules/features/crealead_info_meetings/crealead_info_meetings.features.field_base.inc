@@ -10,7 +10,7 @@
 function crealead_info_meetings_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_attendee'
+  // Exported field_base: 'field_attendee'.
   $field_bases['field_attendee'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -35,7 +35,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_info_meeting_date'
+  // Exported field_base: 'field_info_meeting_date'.
   $field_bases['field_info_meeting_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -64,7 +64,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'date',
   );
 
-  // Exported field_base: 'field_info_meeting_map'
+  // Exported field_base: 'field_info_meeting_map'.
   $field_bases['field_info_meeting_map'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -83,7 +83,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_info_meeting_photo'
+  // Exported field_base: 'field_info_meeting_photo'.
   $field_bases['field_info_meeting_photo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -105,7 +105,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_info_meeting_registration'
+  // Exported field_base: 'field_info_meeting_registration'.
   $field_bases['field_info_meeting_registration'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -124,7 +124,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'registration',
   );
 
-  // Exported field_base: 'field_registrant_firstname'
+  // Exported field_base: 'field_registrant_firstname'.
   $field_bases['field_registrant_firstname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -145,7 +145,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_registrant_lastname'
+  // Exported field_base: 'field_registrant_lastname'.
   $field_bases['field_registrant_lastname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -166,7 +166,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_registrant_phone'
+  // Exported field_base: 'field_registrant_phone'.
   $field_bases['field_registrant_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -183,7 +183,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'phone',
   );
 
-  // Exported field_base: 'field_registrant_project_domain'
+  // Exported field_base: 'field_registrant_project_domain'.
   $field_bases['field_registrant_project_domain'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -204,7 +204,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_registrant_status'
+  // Exported field_base: 'field_registrant_status'.
   $field_bases['field_registrant_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -230,7 +230,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_registrant_title'
+  // Exported field_base: 'field_registrant_title'.
   $field_bases['field_registrant_title'] = array(
     'active' => 1,
     'cardinality' => 1,
