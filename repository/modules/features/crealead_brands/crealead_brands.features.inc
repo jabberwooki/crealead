@@ -94,9 +94,17 @@ function crealead_brands_image_default_styles() {
 
   // Exported image style: brand_logo.
   $styles['brand_logo'] = array(
-    'label' => 'Logo marque',
+    'label' => 'Logo',
     'effects' => array(
-      4 => NULL,
+      1 => array(
+        'name' => 'canvasactions_aspect',
+        'data' => array(
+          'portrait' => 'height_150',
+          'landscape' => 'width_260',
+          'ratio_adjustment' => 1,
+        ),
+        'weight' => 1,
+      ),
     ),
   );
 
