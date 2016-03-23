@@ -44,7 +44,6 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'administer info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -92,6 +91,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'create info_meeting_registration registration other anonymous',
     'roles' => array(
       'anonymous user' => 'anonymous user',
+      'pôle gestion' => 'pôle gestion',
     ),
     'module' => 'registration',
   );

@@ -181,8 +181,10 @@ function crealead_field_attendee_value_alter($entity_id, $value) {
 }
 
 /**
- * Implements hook_conditional_fields_default_fields().
+ * Implements hook_registration_status_alter().
  */
-function crealead_info_meetings_conditional_fields_default_fields() {
-
+function crealead_info_meetings_registration_status_alter(&$status, &$context) {
+  if (user_is_logged_in()) {
+    $status = TRUE;
+  }
 }
