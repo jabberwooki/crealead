@@ -1145,10 +1145,11 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 13,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_coes',
     'label' => 'Co-entrepreneurs',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
