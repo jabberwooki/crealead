@@ -11,7 +11,7 @@ include_once 'crealead_brands.features.inc';
  */
 function crealead_brands_init() {
   $node = menu_get_object();
-  if (!empty($node) && $node->type == 'brand' && arg(2) != 'edit') {
+  if ((!empty($node) && $node->type == 'brand' && arg(2) != 'edit') || (arg(1) == 'add' && arg(2) == 'brand')) {
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
     drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
   }
@@ -98,6 +98,12 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
 
   // Stuff that has to be done after form build.
   $form['#after_build'][] = 'crealead_brands_after_build';
+
+  // If brand creation
+  if (!isset($form['nid']['#value'])) {
+    $params = array('name' => $form['#node']->name, 'uid' => $form['#node']->uid);
+    drupal_add_js(array('crealead_brands_default_coe' => $params), 'setting');
+  }
 }
 
 function crealead_brands_after_build($form, &$form_state) {
