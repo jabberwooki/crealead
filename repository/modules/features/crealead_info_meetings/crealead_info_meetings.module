@@ -7,6 +7,12 @@
 include_once 'crealead_info_meetings.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function crealead_info_meetings_init() {
+}
+
+/**
  * Implements hook_permission().
  */
 function crealead_info_meetings_permission() {
@@ -22,20 +28,26 @@ function crealead_info_meetings_permission() {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
+
   // Form fields re-ordering
   $form['who_is_registering']['#weight'] = -10;
   $form['user']['#weight'] = -9;
   $form['count']['#weight'] = -8;
 
-  $form['field_registrant_title']['#weight'] =
+  //$form['field_registrant_title']['#weight'] =
   $form['field_registrant_title']['#weight'] = 0;
   $form['field_registrant_firstname']['#weight'] = 1;
   $form['field_registrant_lastname']['#weight'] = 2;
   $form['field_registrant_phone']['#weight'] = 4;
-  $form['field_registrant_activity_domain']['#weight'] = 5;
+  $form['field_registrant_project_domain']['#weight'] = 5;
   $form['field_registrant_status']['#weight'] = 6;
+  $form['#groups']['group_dependent_infos']->weight = 7;
+  $form['field_beneficiary_number']['#weight'] = 10;
+  $form['field_unemployment_date']['#weight'] = 11;
+  $form['field_other_specify']['#weight'] = 12;
 
-  $form['state']['#weight'] = 10;
+  $form['state']['#weight'] = 100;
 
   // Field attendee hidden to anonymous user.
   if (!user_is_logged_in()) {
@@ -93,8 +105,15 @@ function crealead_registration_list(){
  * Implements hook_entity_view_alter().
  */
 function crealead_info_meetings_entity_view_alter(&$build, $type) {
-  if ($type == 'registration') {
+  if ($type == 'registration' && $build['#view_mode'] != 'full') {
     $build['field_attendee'][0]['#markup'] = ($build['field_attendee']['#items'][0]['value'] == 1) ? 'oui' : 'non';
+  }
+  if ($type == 'registration' && $build['#view_mode'] == 'full') {
+    $meeting_id = $build['#entity']->entity_id;
+    $info_meeting = entity_metadata_wrapper('node', $meeting_id);
+    $date_timestamp = $info_meeting->field_info_meeting_date->value->value();
+    $date = format_date($date_timestamp, 'long');
+    $build['info_meeting_date'][0]['#markup'] = $date;
   }
 }
 
@@ -159,4 +178,11 @@ function crealead_field_attendee_value_alter($entity_id, $value) {
   $wrapper = entity_metadata_wrapper('registration', $entity_id);
   $wrapper->field_attendee = $value;
   $wrapper->save();
+}
+
+/**
+ * Implements hook_conditional_fields_default_fields().
+ */
+function crealead_info_meetings_conditional_fields_default_fields() {
+
 }
