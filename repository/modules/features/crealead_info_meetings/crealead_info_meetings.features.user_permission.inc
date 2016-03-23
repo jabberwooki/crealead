@@ -44,6 +44,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'administer info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -55,6 +56,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'administer own info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -66,6 +68,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'create info_meeting content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -77,6 +80,7 @@ function crealead_info_meetings_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'anonymous user' => 'anonymous user',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -104,6 +108,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'delete any info_meeting content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -114,6 +119,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'delete any info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -154,6 +160,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'edit any info_meeting content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -193,6 +200,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'update any info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
@@ -213,6 +221,7 @@ function crealead_info_meetings_user_default_permissions() {
     'name' => 'view info_meeting_registration registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),

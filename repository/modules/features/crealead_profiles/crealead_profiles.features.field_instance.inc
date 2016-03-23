@@ -10,7 +10,7 @@
 function crealead_profiles_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'profile2-coe_page-field_biography'
+  // Exported field_instance: 'profile2-coe_page-field_biography'.
   $field_instances['profile2-coe_page-field_biography'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -94,7 +94,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_photo'
+  // Exported field_instance: 'profile2-coe_page-field_coe_photo'.
   $field_instances['profile2-coe_page-field_coe_photo'] = array(
     'bundle' => 'coe_page',
     'deleted' => 0,
@@ -179,7 +179,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_pub_status'
+  // Exported field_instance: 'profile2-coe_page-field_coe_pub_status'.
   $field_instances['profile2-coe_page-field_coe_pub_status'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -231,7 +231,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_status'
+  // Exported field_instance: 'profile2-coe_page-field_coe_status'.
   $field_instances['profile2-coe_page-field_coe_status'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -286,7 +286,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_competencies'
+  // Exported field_instance: 'profile2-coe_page-field_competencies'.
   $field_instances['profile2-coe_page-field_competencies'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -348,7 +348,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_distinct_features'
+  // Exported field_instance: 'profile2-coe_page-field_distinct_features'.
   $field_instances['profile2-coe_page-field_distinct_features'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -432,7 +432,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_email_sent'
+  // Exported field_instance: 'profile2-coe_page-field_email_sent'.
   $field_instances['profile2-coe_page-field_email_sent'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -484,7 +484,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_interests'
+  // Exported field_instance: 'profile2-coe_page-field_interests'.
   $field_instances['profile2-coe_page-field_interests'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -568,7 +568,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_saving_type'
+  // Exported field_instance: 'profile2-coe_page-field_saving_type'.
   $field_instances['profile2-coe_page-field_saving_type'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -620,7 +620,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-themes-field_term_summary'
+  // Exported field_instance: 'taxonomy_term-themes-field_term_summary'.
   $field_instances['taxonomy_term-themes-field_term_summary'] = array(
     'bundle' => 'themes',
     'default_value' => NULL,

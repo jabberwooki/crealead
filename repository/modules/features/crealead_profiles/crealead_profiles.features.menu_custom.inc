@@ -27,6 +27,5 @@ function crealead_profiles_menu_default_menu_custom() {
   t('Secteurs d\'activité');
   t('Thématiques');
 
-
   return $menus;
 }

@@ -17,7 +17,6 @@ function crealead_profiles_uuid_features_default_terms() {
     'weight' => 4,
     'uuid' => '22c4b38c-0df9-4697-8f56-1c7171ad86d6',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'RH Gestion Qualité',
@@ -33,7 +32,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '2a16e571-35dc-4854-8ccf-4037d23c11b5',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Particuliers',
@@ -42,7 +40,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '484573af-ad55-42ad-8e22-7d84f8312a07',
     'vocabulary_machine_name' => 'client_types',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Informatique Internet Télécom',
@@ -52,7 +49,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 2,
     'uuid' => '4bcbd360-8cac-4b48-b156-99bc51cdeecb',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Institutionnels',
@@ -61,7 +57,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '53abc942-d1fe-4a0d-a0e0-c3d5c42d976a',
     'vocabulary_machine_name' => 'client_types',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Associations',
@@ -70,7 +65,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '5a977f02-0f91-4bea-9483-7340398faa59',
     'vocabulary_machine_name' => 'client_types',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'TPE/PME',
@@ -79,7 +73,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '76d10360-b359-46c9-89f8-6ac9c23bf28e',
     'vocabulary_machine_name' => 'client_types',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Grandes entreprises',
@@ -88,7 +81,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 0,
     'uuid' => '774d2ffb-8140-4eec-8330-787f6eb93a04',
     'vocabulary_machine_name' => 'client_types',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Marketing Communication Vente',
@@ -98,7 +90,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 1,
     'uuid' => '968c624e-18fa-42dd-8fa0-b8c1336bfec2',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Environnement Eco-Construction Structure-Bois',
@@ -107,7 +98,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 3,
     'uuid' => '9bd98d14-1229-4def-b367-f937ac900e73',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Aménagement Décoration',
@@ -116,7 +106,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 5,
     'uuid' => 'b8a926d4-c201-4e69-8648-ab19de4886f6',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Rénovation Entretien',
@@ -125,7 +114,6 @@ Les Experts sont les entrepreneurs de Crealead exerçant une activité de presta
     'weight' => 6,
     'uuid' => 'ff0742c7-b826-4473-b08e-69b6d6e785f4',
     'vocabulary_machine_name' => 'business_sectors',
-    'metatags' => array(),
   );
   return $terms;
 }
