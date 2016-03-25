@@ -226,3 +226,10 @@ function crealead_update_7002() {
 function crealead_update_7003() {
   module_enable(array('crealead_my_contents'));
 }
+
+/**
+ * Activate feature crealead_trainings.
+ */
+function crealead_update_7004() {
+  module_enable(array('crealead_trainings'));
+}
