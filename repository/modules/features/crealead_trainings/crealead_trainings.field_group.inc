@@ -21,7 +21,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Caractéristiques',
-    'weight' => '0',
+    'weight' => '2',
     'children' => array(
       0 => 'field_training_duration',
       1 => 'field_training_attendees_number',
@@ -32,7 +32,7 @@ function crealead_trainings_field_group_info() {
       'label' => 'Caractéristiques',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-training-data field-group-div',
+        'classes' => 'group-training-data field-group-div col-md-12',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
