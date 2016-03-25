@@ -553,6 +553,35 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|brand|logo';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'brand';
+  $ds_layout->view_mode = 'logo';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_brand_logo',
+      ),
+    ),
+    'fields' => array(
+      'field_brand_logo' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|brand|logo'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|brand|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'brand';
@@ -695,6 +724,24 @@ function crealead_brands_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['taxonomy_term|themes|full'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function crealead_brands_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'logo';
+  $ds_view_mode->label = 'Logo';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['logo'] = $ds_view_mode;
 
   return $export;
 }

@@ -46,6 +46,21 @@ function crealead_brands_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'logo' => array(
+        'custom_settings' => TRUE,
+      ),
+      'brand_articles' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_2_3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_brand' => array(
+        'custom_settings' => FALSE,
+      ),
+      'zoom_news' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -76,6 +91,7 @@ function crealead_brands_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'logo' => NULL,
         ),
         'news_brand_news' => array(
           'full' => array(
@@ -86,12 +102,21 @@ function crealead_brands_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_entity_view_1' => array(
           'full' => array(
             'weight' => '11',
             'visible' => TRUE,
           ),
+          'logo' => NULL,
         ),
         'articles_brand_articles' => array(
           'full' => array(
@@ -102,12 +127,21 @@ function crealead_brands_strongarm() {
             'weight' => '25',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brand_contact_submissions_entity_view_1' => array(
           'full' => array(
             'weight' => '5',
             'visible' => TRUE,
           ),
+          'logo' => NULL,
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
@@ -116,6 +150,14 @@ function crealead_brands_strongarm() {
           ),
           'block' => array(
             'weight' => '23',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
@@ -295,6 +337,27 @@ function crealead_brands_strongarm() {
   $strongarm->name = 'pathauto_node_client_pattern';
   $strongarm->value = 'references/[node:title]';
   $export['pathauto_node_client_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_achievement_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_achievement_types_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_brand_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_brand_tags_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_business_sectors_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_business_sectors_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
