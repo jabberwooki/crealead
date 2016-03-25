@@ -30,6 +30,28 @@ function crealead_trainings_ds_field_settings_info() {
   );
   $export['node|training|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|training|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'training';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['node|training|teaser'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -128,6 +150,45 @@ function crealead_trainings_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|training|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'title',
+        1 => 'field_training_type',
+        2 => 'field_training_theme',
+        3 => 'field_training_duration',
+        4 => 'field_training_price',
+        5 => 'field_training_aims',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'central',
+      'field_training_type' => 'central',
+      'field_training_theme' => 'central',
+      'field_training_duration' => 'central',
+      'field_training_price' => 'central',
+      'field_training_aims' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|training|teaser'] = $ds_layout;
 
   return $export;
 }
