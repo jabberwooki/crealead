@@ -154,7 +154,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'field_contact_form',
       1 => 'brand_contacts',
@@ -312,6 +312,7 @@ function crealead_brands_field_group_info() {
       3 => 'group_brand_contact_tab',
       4 => 'group_brand_infos_tab',
       5 => 'group_brans_coes_tab',
+      6 => 'group_brand_trainings_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(

@@ -120,7 +120,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_brand_articles' => array(
           'full' => array(
-            'weight' => '43',
+            'weight' => '53',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -159,6 +159,12 @@ function crealead_brands_strongarm() {
           'logo' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+        ),
+        'trainings_entity_view_1' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
       ),
