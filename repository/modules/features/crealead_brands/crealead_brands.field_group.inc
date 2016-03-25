@@ -331,6 +331,32 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_trainings_tab|node|brand|full';
+  $field_group->group_name = 'group_brand_trainings_tab';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Formations et produits',
+    'weight' => '29',
+    'children' => array(
+      0 => 'trainings_entity_view_1',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_trainings_tab|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brans_coes_tab|node|brand|full';
   $field_group->group_name = 'group_brans_coes_tab';
   $field_group->entity_type = 'node';
@@ -840,6 +866,7 @@ function crealead_brands_field_group_info() {
   t('Champs Crealead');
   t('Contact');
   t('Entrepreneurs');
+  t('Formations et produits');
   t('Informations générales');
   t('Infos 1');
   t('Infos 2');

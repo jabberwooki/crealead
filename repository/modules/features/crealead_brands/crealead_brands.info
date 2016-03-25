@@ -91,6 +91,7 @@ features[field_group][] = group_brand_infos_2|node|brand|full
 features[field_group][] = group_brand_infos_tab|node|brand|full
 features[field_group][] = group_brand_news|node|brand|full
 features[field_group][] = group_brand_tabs|node|brand|full
+features[field_group][] = group_brand_trainings_tab|node|brand|full
 features[field_group][] = group_brans_coes_tab|node|brand|full
 features[field_group][] = group_col3_3|node|brand|full
 features[field_group][] = group_col_1_3|node|brand|full
