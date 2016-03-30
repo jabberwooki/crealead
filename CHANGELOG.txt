@@ -1,3 +1,16 @@
+Crealead 2.0 - 30/03/2016
+-------------------------
+Major update of Drupal (from 7.37 to 7.43) core + 32 contrib modules +  Adminimal theme.
+Completes #18: entrepreneur role checked by default in 'Assignable roles' field if connected user has role referent.
+V2: Story 'Rentrer les données complètes des candidats' done.
+V2: US 'Mettre l'entrepreneur créateur de la fiche marque comme entrepreneur par défaut' done.
+Missing setting added: field_brand_coes field made compulsory.
+Permissions for role 'Pole emploi' added.
+V2: US 'Inscriptions réunions d'infos après coup' done.
+Closes reopened ticket #56: Brand news are now sorted by field_sorting_date.
+Asterisk (*) added to email field in subscription form and View/Edit tabs removed from subscription full view for anonymous users.
+Administer menus and menus items permission added to webmaster role.
+
 Crealead 1.0.7 - 24/02/16
 -------------------------
 Hotfix:
