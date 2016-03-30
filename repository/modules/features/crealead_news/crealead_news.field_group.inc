@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function crealead_news_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_all|node|news|news_2_3'] = $field_group;
+  $field_groups['group_all|node|news|news_2_3'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -78,7 +78,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_col8|node|news|full'] = $field_group;
+  $field_groups['group_col8|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -105,7 +105,7 @@ function crealead_news_field_group_info() {
       ),
     ),
   );
-  $export['group_crealead_settings|node|news|form'] = $field_group;
+  $field_groups['group_crealead_settings|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -138,7 +138,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_img_cat|node|news|teaser'] = $field_group;
+  $field_groups['group_img_cat|node|news|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -171,7 +171,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_img_title_cat|node|news|full'] = $field_group;
+  $field_groups['group_img_title_cat|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -204,7 +204,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_img_type|node|news|block'] = $field_group;
+  $field_groups['group_img_type|node|news|block'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -237,7 +237,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_img_type|node|news|news_2_3'] = $field_group;
+  $field_groups['group_img_type|node|news|news_2_3'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -274,7 +274,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_md_4|node|news|news_brand'] = $field_group;
+  $field_groups['group_md_4|node|news|news_brand'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -306,7 +306,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_row|node|news|full'] = $field_group;
+  $field_groups['group_row|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -341,7 +341,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_textes|node|news|news_2_3'] = $field_group;
+  $field_groups['group_textes|node|news|news_2_3'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -374,7 +374,7 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_title_cat|node|news|full'] = $field_group;
+  $field_groups['group_title_cat|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -408,7 +408,21 @@ function crealead_news_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_zoom_news|node|news|zoom_news'] = $field_group;
+  $field_groups['group_zoom_news|node|news|zoom_news'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Paramètres Crealead');
+  t('group col-8');
+  t('group image type');
+  t('group img titre cat');
+  t('group md-4');
+  t('group row');
+  t('group textes');
+  t('group titre catégorie');
+  t('group tous');
+  t('group zoom actu');
+  t('groupe image catégorie');
+
+  return $field_groups;
 }

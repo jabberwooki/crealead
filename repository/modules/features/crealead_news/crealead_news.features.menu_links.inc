@@ -10,7 +10,7 @@
 function crealead_news_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_actualits:actualites
+  // Exported menu link: main-menu_actualits:actualites.
   $menu_links['main-menu_actualits:actualites'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'actualites',
@@ -30,10 +30,10 @@ function crealead_news_menu_default_menu_links() {
     'weight' => 20,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Actualités');
-
 
   return $menu_links;
 }
