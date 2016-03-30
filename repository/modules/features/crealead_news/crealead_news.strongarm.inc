@@ -96,6 +96,12 @@ function crealead_news_strongarm() {
       'news_2_3' => array(
         'custom_settings' => TRUE,
       ),
+      'news_brand' => array(
+        'custom_settings' => TRUE,
+      ),
+      'brand_articles' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -176,6 +182,34 @@ function crealead_news_strongarm() {
   $strongarm->name = 'pathauto_node_news_pattern';
   $strongarm->value = 'actualites/[node:title]';
   $export['pathauto_node_news_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_news_authors_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_news_authors_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_news_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_news_types_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_scald_authors_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_scald_authors_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_sectors_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_sectors_pattern'] = $strongarm;
 
   return $export;
 }

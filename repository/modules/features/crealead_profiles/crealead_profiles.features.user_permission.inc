@@ -94,6 +94,7 @@ function crealead_profiles_user_default_permissions() {
     'name' => 'edit own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
     ),
     'module' => 'profile2',
   );
@@ -134,6 +135,7 @@ function crealead_profiles_user_default_permissions() {
     'name' => 'view own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
     ),
     'module' => 'profile2',
   );

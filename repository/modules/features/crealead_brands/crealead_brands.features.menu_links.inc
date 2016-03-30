@@ -10,7 +10,7 @@
 function crealead_brands_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_thmatiques:thematiques
+  // Exported menu link: main-menu_thmatiques:thematiques.
   $menu_links['main-menu_thmatiques:thematiques'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'thematiques',
@@ -30,10 +30,10 @@ function crealead_brands_menu_default_menu_links() {
     'weight' => 40,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Thématiques');
-
 
   return $menu_links;
 }

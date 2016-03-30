@@ -122,11 +122,6 @@ function crealead_brands_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_brand_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
     'field_brand_phone' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -203,11 +198,6 @@ function crealead_brands_ds_field_settings_info() {
         'class' => 'client-name',
       ),
     ),
-    'field_client_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|client|block'] = $ds_fieldsetting;
 
@@ -219,7 +209,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -467,47 +457,51 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->layout = 'bootstrap_12';
   $ds_layout->settings = array(
     'regions' => array(
-      'central' => array(
-        0 => 'field_brand_coes',
-        1 => 'field_brand_references',
-        6 => 'group_brand_tabs',
-        7 => 'field_contact_form',
-        8 => 'brand_contacts',
-        10 => 'field_business_groups',
-        11 => 'body',
-        12 => 'news_brand_news',
-        13 => 'field_brand_solutions',
-        14 => 'field_brand_tags',
-        15 => 'articles_brand_articles',
-        16 => 'field_brand_achievements',
-        17 => 'group_brand_infos_tab',
-        18 => 'group_brans_coes_tab',
-        19 => 'group_brand_clients_tab',
-        20 => 'group_brand_achiev_tab',
-        21 => 'group_brand_blog_tab',
-        22 => 'group_brand_contact_tab',
-      ),
       'content_header_brand' => array(
-        2 => 'group_row_1',
+        0 => 'group_row_1',
         3 => 'group_col_1_3',
         4 => 'group_col_2_6',
         5 => 'group_col3_3',
         9 => 'field_brand_logo',
-        23 => 'group_title_hook',
-        24 => 'title',
-        25 => 'field_brand_baseline',
-        26 => 'group_contact',
-        27 => 'field_business_sector',
-        28 => 'field_brand_phone',
-        29 => 'field_social_links',
-        30 => 'field_brand_email',
-        31 => 'field_brand_website',
+        18 => 'group_title_hook',
+        19 => 'title',
+        20 => 'field_brand_baseline',
+        21 => 'field_business_sector',
+        22 => 'group_contact',
+        23 => 'field_social_links',
+        24 => 'field_brand_phone',
+        25 => 'field_brand_email',
+        26 => 'field_brand_website',
+      ),
+      'central' => array(
+        1 => 'field_brand_references',
+        2 => 'field_brand_coes',
+        6 => 'group_brand_tabs',
+        7 => 'field_contact_form',
+        8 => 'brand_contacts',
+        10 => 'field_business_groups',
+        11 => 'field_brand_achievements',
+        12 => 'group_brand_infos_tab',
+        13 => 'group_brans_coes_tab',
+        14 => 'group_brand_clients_tab',
+        15 => 'group_brand_achiev_tab',
+        16 => 'group_brand_blog_tab',
+        17 => 'group_brand_contact_tab',
+        27 => 'group_brand_news',
+        28 => 'news_brand_news',
+        29 => 'group_brand_articles',
+        30 => 'articles_brand_articles',
+        31 => 'group_brand_infos_1',
+        32 => 'group_brand_infos_2',
+        33 => 'field_brand_tags',
+        34 => 'body',
+        35 => 'field_brand_solutions',
       ),
     ),
     'fields' => array(
-      'field_brand_coes' => 'central',
-      'field_brand_references' => 'central',
       'group_row_1' => 'content_header_brand',
+      'field_brand_references' => 'central',
+      'field_brand_coes' => 'central',
       'group_col_1_3' => 'content_header_brand',
       'group_col_2_6' => 'content_header_brand',
       'group_col3_3' => 'content_header_brand',
@@ -516,11 +510,6 @@ function crealead_brands_ds_layout_settings_info() {
       'brand_contacts' => 'central',
       'field_brand_logo' => 'content_header_brand',
       'field_business_groups' => 'central',
-      'body' => 'central',
-      'news_brand_news' => 'central',
-      'field_brand_solutions' => 'central',
-      'field_brand_tags' => 'central',
-      'articles_brand_articles' => 'central',
       'field_brand_achievements' => 'central',
       'group_brand_infos_tab' => 'central',
       'group_brans_coes_tab' => 'central',
@@ -531,12 +520,21 @@ function crealead_brands_ds_layout_settings_info() {
       'group_title_hook' => 'content_header_brand',
       'title' => 'content_header_brand',
       'field_brand_baseline' => 'content_header_brand',
-      'group_contact' => 'content_header_brand',
       'field_business_sector' => 'content_header_brand',
-      'field_brand_phone' => 'content_header_brand',
+      'group_contact' => 'content_header_brand',
       'field_social_links' => 'content_header_brand',
+      'field_brand_phone' => 'content_header_brand',
       'field_brand_email' => 'content_header_brand',
       'field_brand_website' => 'content_header_brand',
+      'group_brand_news' => 'central',
+      'news_brand_news' => 'central',
+      'group_brand_articles' => 'central',
+      'articles_brand_articles' => 'central',
+      'group_brand_infos_1' => 'central',
+      'group_brand_infos_2' => 'central',
+      'field_brand_tags' => 'central',
+      'body' => 'central',
+      'field_brand_solutions' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -547,6 +545,7 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '1',
     'page_option_title' => '',
   );
@@ -596,13 +595,11 @@ function crealead_brands_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_client_logo',
         1 => 'title',
-        2 => 'field_client_location',
       ),
     ),
     'fields' => array(
       'field_client_logo' => 'ds_content',
       'title' => 'ds_content',
-      'field_client_location' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -622,25 +619,30 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'client';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'bootstrap_9_3';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'field_client_logo',
-        1 => 'title',
-        2 => 'field_client_type',
-        3 => 'body',
+      'left' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+      'right' => array(
+        2 => 'field_client_logo',
+        3 => 'field_client_location',
+        4 => 'field_client_type',
       ),
     ),
     'fields' => array(
-      'field_client_logo' => 'ds_content',
-      'title' => 'ds_content',
-      'field_client_type' => 'ds_content',
-      'body' => 'ds_content',
+      'title' => 'left',
+      'body' => 'left',
+      'field_client_logo' => 'right',
+      'field_client_location' => 'right',
+      'field_client_type' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

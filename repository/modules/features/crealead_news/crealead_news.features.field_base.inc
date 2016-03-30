@@ -10,7 +10,7 @@
 function crealead_news_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -33,7 +33,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_coentrepreneurs'
+  // Exported field_base: 'field_coentrepreneurs'.
   $field_bases['field_coentrepreneurs'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -68,7 +68,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -91,7 +91,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_news_author'
+  // Exported field_base: 'field_news_author'.
   $field_bases['field_news_author'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -117,7 +117,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_news_date'
+  // Exported field_base: 'field_news_date'.
   $field_bases['field_news_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -146,7 +146,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_news_kind'
+  // Exported field_base: 'field_news_kind'.
   $field_bases['field_news_kind'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -173,7 +173,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_news_type'
+  // Exported field_base: 'field_news_type'.
   $field_bases['field_news_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -199,7 +199,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_related_brands'
+  // Exported field_base: 'field_related_brands'.
   $field_bases['field_related_brands'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -223,7 +223,7 @@ function crealead_news_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_1',
+          'display_name' => 'entityreference_3',
           'view_name' => 'brands',
         ),
       ),
@@ -234,7 +234,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_sector'
+  // Exported field_base: 'field_sector'.
   $field_bases['field_sector'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -260,7 +260,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sorting_date'
+  // Exported field_base: 'field_sorting_date'.
   $field_bases['field_sorting_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -289,7 +289,7 @@ function crealead_news_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'scald_author_url'
+  // Exported field_base: 'scald_author_url'.
   $field_bases['scald_author_url'] = array(
     'active' => 1,
     'cardinality' => 1,

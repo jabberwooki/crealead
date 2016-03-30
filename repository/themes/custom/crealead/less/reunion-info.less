@@ -83,32 +83,7 @@
   }
 }
 /* Formulaire d'inscription *******************************************************************************************/
-#registration-form{
-  .form-type-radios{
-    label{
-      float: left;
-    }
-    div.form-radios{
-      float: left;
-      .form-type-radio{
-        float: left;
-        margin-top: 0;
-        margin-right: 15px;
-        input[type=radio]{
-          position: inherit;
-          float: left;
-          margin-left: 25px;
-        }
-        label{
-          padding-left: 5px;
-        }
-      }
-    }
-  }
-  fieldset{
-    clear: both;
-  }
-}
+
 .node-type-info-meeting{
   a.field-group-format-title{
     font-size: 0.8em;
@@ -121,6 +96,40 @@
     .glyphicon();
     content: "\e835";
   }
+  #registration-form{
+    .form-type-radios{
+      label{
+        float: left;
+      }
+      div.form-radios{
+        float: left;
+        .form-type-radio{
+          float: left;
+          margin-top: 0;
+          margin-right: 15px;
+          input[type=radio]{
+            position: inherit;
+            float: left;
+            margin-left: 25px;
+          }
+          label{
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    fieldset{
+      clear: both;
+    }
+    #edit-field-registrant-gender-und .radio:first-child{
+      display: none;
+
+    }
+    .field-name-field-registrant-how{
+      clear: left;
+    }
+  }
+
 }
 
 /* Page d'après l'inscription *****************************************************************************************/

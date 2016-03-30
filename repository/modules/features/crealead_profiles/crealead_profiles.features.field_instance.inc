@@ -10,7 +10,7 @@
 function crealead_profiles_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'profile2-coe_page-field_biography'
+  // Exported field_instance: 'profile2-coe_page-field_biography'.
   $field_instances['profile2-coe_page-field_biography'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -28,14 +28,14 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'page' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -94,7 +94,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_photo'
+  // Exported field_instance: 'profile2-coe_page-field_coe_photo'.
   $field_instances['profile2-coe_page-field_coe_photo'] = array(
     'bundle' => 'coe_page',
     'deleted' => 0,
@@ -118,7 +118,7 @@ function crealead_profiles_field_default_field_instances() {
           'image_style' => 'photo_utilisateur',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'page' => array(
         'label' => 'hidden',
@@ -179,7 +179,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_pub_status'
+  // Exported field_instance: 'profile2-coe_page-field_coe_pub_status'.
   $field_instances['profile2-coe_page-field_coe_pub_status'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -200,13 +200,13 @@ function crealead_profiles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'page' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -231,7 +231,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_coe_status'
+  // Exported field_instance: 'profile2-coe_page-field_coe_status'.
   $field_instances['profile2-coe_page-field_coe_status'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -253,14 +253,14 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'page' => array(
         'label' => 'above',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -269,6 +269,7 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_coe_status',
     'label' => 'Statut',
@@ -285,12 +286,20 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_competencies'
+  // Exported field_instance: 'profile2-coe_page-field_competencies'.
   $field_instances['profile2-coe_page-field_competencies'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -299,18 +308,18 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 8,
       ),
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'page' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -319,6 +328,7 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_competencies',
     'label' => 'Compétences et spécialités',
@@ -338,7 +348,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_distinct_features'
+  // Exported field_instance: 'profile2-coe_page-field_distinct_features'.
   $field_instances['profile2-coe_page-field_distinct_features'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -356,14 +366,14 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'page' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -422,7 +432,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_email_sent'
+  // Exported field_instance: 'profile2-coe_page-field_email_sent'.
   $field_instances['profile2-coe_page-field_email_sent'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -443,13 +453,13 @@ function crealead_profiles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'page' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -474,7 +484,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_interests'
+  // Exported field_instance: 'profile2-coe_page-field_interests'.
   $field_instances['profile2-coe_page-field_interests'] = array(
     'bundle' => 'coe_page',
     'default_value' => NULL,
@@ -492,14 +502,14 @@ function crealead_profiles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'page' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -558,7 +568,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-coe_page-field_saving_type'
+  // Exported field_instance: 'profile2-coe_page-field_saving_type'.
   $field_instances['profile2-coe_page-field_saving_type'] = array(
     'bundle' => 'coe_page',
     'default_value' => array(
@@ -579,13 +589,13 @@ function crealead_profiles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'page' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -610,7 +620,7 @@ function crealead_profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-themes-field_term_summary'
+  // Exported field_instance: 'taxonomy_term-themes-field_term_summary'.
   $field_instances['taxonomy_term-themes-field_term_summary'] = array(
     'bundle' => 'themes',
     'default_value' => NULL,
@@ -694,6 +704,15 @@ function crealead_profiles_field_default_field_instances() {
   t('Centres d\'intérêt');
   t('Compétences et spécialités');
   t('Email envoyé');
+  t('Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>');
   t('Photo');
   t('Pourquoi je sors du lot');
   t('Résumé');

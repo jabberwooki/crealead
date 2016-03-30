@@ -16,11 +16,11 @@ function crealead_profiles_strongarm() {
   $strongarm->name = 'default_image_ft_state';
   $strongarm->value = array(
     'node' => array(
-      'info_meeting' => array(
-        'field_info_meeting_photo' => 'info_meetings_default_image',
-      ),
       'brand' => array(
         'field_brand_logo' => 'brand_default_logo',
+      ),
+      'info_meeting' => array(
+        'field_info_meeting_photo' => 'info_meetings_default_image',
       ),
     ),
     'profile2' => array(
@@ -315,7 +315,7 @@ function crealead_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '3',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'brand_coe' => array(

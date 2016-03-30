@@ -92,6 +92,38 @@ function crealead_brands_default_entityform_type() {
 function crealead_brands_image_default_styles() {
   $styles = array();
 
+  // Exported image style: brand_logo.
+  $styles['brand_logo'] = array(
+    'label' => 'Logo',
+    'effects' => array(
+      1 => array(
+        'name' => 'canvasactions_aspect',
+        'data' => array(
+          'portrait' => 'height_150',
+          'landscape' => 'width_260',
+          'ratio_adjustment' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: height_150.
+  $styles['height_150'] = array(
+    'label' => 'Hauteur 150',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 150,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: realisation.
   $styles['realisation'] = array(
     'label' => 'realisation (540/400)',
@@ -116,6 +148,22 @@ function crealead_brands_image_default_styles() {
         'data' => array(
           'width' => 50,
           'height' => 50,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: width_260.
+  $styles['width_260'] = array(
+    'label' => 'Largeur 260',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 260,
+          'height' => '',
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),

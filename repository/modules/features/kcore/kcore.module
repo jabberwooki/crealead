@@ -232,3 +232,9 @@ function crealead_users_number($role=null) {
 
   return count($result);
 }
+
+function kcore_admin_menu_output_alter(&$content) {
+  if (isset($content['menu']['admin/index'])) {
+    unset($content['menu']['admin/index']);
+  }
+}

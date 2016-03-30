@@ -16,6 +16,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -29,6 +30,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -60,6 +62,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -416,6 +419,8 @@ function kcore_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'anonymous user' => 'anonymous user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'menu',
   );
@@ -453,6 +458,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -676,6 +682,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -1078,6 +1085,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -1091,6 +1099,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -1132,6 +1141,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -1144,6 +1154,7 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',

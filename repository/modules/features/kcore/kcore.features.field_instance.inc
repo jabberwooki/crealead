@@ -10,7 +10,7 @@
 function kcore_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_user_firstname'
+  // Exported field_instance: 'user-user-field_user_firstname'.
   $field_instances['user-user-field_user_firstname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -26,7 +26,9 @@ function kcore_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -39,7 +41,9 @@ function kcore_field_default_field_instances() {
       'referent_fullname' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -94,7 +98,7 @@ function kcore_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_user_lastname'
+  // Exported field_instance: 'user-user-field_user_lastname'.
   $field_instances['user-user-field_user_lastname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -110,7 +114,9 @@ function kcore_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -123,7 +129,9 @@ function kcore_field_default_field_instances() {
       'referent_fullname' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -178,7 +186,7 @@ function kcore_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_user_referent'
+  // Exported field_instance: 'user-user-field_user_referent'.
   $field_instances['user-user-field_user_referent'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -195,6 +203,7 @@ function kcore_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'links' => 0,
           'view_mode' => 'default',
         ),
@@ -211,6 +220,7 @@ function kcore_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',

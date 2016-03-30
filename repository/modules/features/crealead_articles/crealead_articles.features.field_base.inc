@@ -62,7 +62,7 @@ function crealead_articles_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_2',
+          'display_name' => 'entityreference_4',
           'view_name' => 'brands',
         ),
       ),

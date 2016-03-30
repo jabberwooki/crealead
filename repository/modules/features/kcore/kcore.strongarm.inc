@@ -119,19 +119,26 @@ function kcore_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'password_policy_warning_body';
-  $strongarm->value = '!username,
+  $strongarm->value = '[user:name],
 
-Your password at !site will expire in less than !days_left day(s).
+Your password at [site:name] will expire in less than [password-policy:days-left] day(s).
 
-Please go to !edit_uri to change your password.';
+Please go to [password-policy:password-edit-url] to change your password.';
   $export['password_policy_warning_body'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'password_policy_warning_subject';
-  $strongarm->value = 'Password expiration warning for !username at !site';
+  $strongarm->value = 'Password expiration warning for [user:name] at [site:name]';
   $export['password_policy_warning_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_business_groups_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_business_groups_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -261,7 +268,7 @@ Please go to !edit_uri to change your password.';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_html_sendtoprinter';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_html_sendtoprinter'] = $strongarm;
 
   $strongarm = new stdClass();

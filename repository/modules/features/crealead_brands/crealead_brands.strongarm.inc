@@ -79,7 +79,7 @@ function crealead_brands_strongarm() {
         ),
         'news_brand_news' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '42',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -95,7 +95,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_brand_articles' => array(
           'full' => array(
-            'weight' => '11',
+            'weight' => '43',
             'visible' => TRUE,
           ),
           'block' => array(

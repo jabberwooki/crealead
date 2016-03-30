@@ -10,7 +10,7 @@
 function crealead_profiles_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_achievement_photos'
+  // Exported field_base: 'field_achievement_photos'.
   $field_bases['field_achievement_photos'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -33,7 +33,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_biography'
+  // Exported field_base: 'field_biography'.
   $field_bases['field_biography'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -54,7 +54,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_business_groups'
+  // Exported field_base: 'field_business_groups'.
   $field_bases['field_business_groups'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -81,7 +81,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_client_location'
+  // Exported field_base: 'field_client_location'.
   $field_bases['field_client_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -103,7 +103,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_client_logo'
+  // Exported field_base: 'field_client_logo'.
   $field_bases['field_client_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -126,7 +126,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_client_type'
+  // Exported field_base: 'field_client_type'.
   $field_bases['field_client_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -153,7 +153,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_coe_photo'
+  // Exported field_base: 'field_coe_photo'.
   $field_bases['field_coe_photo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -176,7 +176,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_coe_pub_status'
+  // Exported field_base: 'field_coe_pub_status'.
   $field_bases['field_coe_pub_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -202,7 +202,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_coe_status'
+  // Exported field_base: 'field_coe_status'.
   $field_bases['field_coe_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -218,7 +218,7 @@ function crealead_profiles_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Contrat CAPE',
+        1 => 'Titulaire d\'un CAPE',
         2 => 'Salarié',
       ),
       'allowed_values_function' => '',
@@ -228,7 +228,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_competencies'
+  // Exported field_base: 'field_competencies'.
   $field_bases['field_competencies'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -249,13 +249,13 @@ function crealead_profiles_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_distinct_features'
+  // Exported field_base: 'field_distinct_features'.
   $field_bases['field_distinct_features'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -276,7 +276,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_email_sent'
+  // Exported field_base: 'field_email_sent'.
   $field_bases['field_email_sent'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -296,13 +296,13 @@ function crealead_profiles_field_default_field_bases() {
         1 => 'oui',
       ),
       'allowed_values_function' => '',
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_interests'
+  // Exported field_base: 'field_interests'.
   $field_bases['field_interests'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -323,7 +323,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_landing_pages'
+  // Exported field_base: 'field_landing_pages'.
   $field_bases['field_landing_pages'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -350,7 +350,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_saving_type'
+  // Exported field_base: 'field_saving_type'.
   $field_bases['field_saving_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -376,7 +376,7 @@ function crealead_profiles_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_term_summary'
+  // Exported field_base: 'field_term_summary'.
   $field_bases['field_term_summary'] = array(
     'active' => 1,
     'cardinality' => 1,

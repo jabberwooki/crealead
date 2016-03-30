@@ -10,7 +10,7 @@
 function crealead_brands_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-contact-field_brand_nid'
+  // Exported field_instance: 'entityform-contact-field_brand_nid'.
   $field_instances['entityform-contact-field_brand_nid'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -80,7 +80,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_body'
+  // Exported field_instance: 'entityform-contact-field_contact_body'.
   $field_instances['entityform-contact-field_contact_body'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -152,7 +152,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_brand_email'
+  // Exported field_instance: 'entityform-contact-field_contact_brand_email'.
   $field_instances['entityform-contact-field_contact_brand_email'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -222,7 +222,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_brand_name'
+  // Exported field_instance: 'entityform-contact-field_contact_brand_name'.
   $field_instances['entityform-contact-field_contact_brand_name'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -294,7 +294,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_email'
+  // Exported field_instance: 'entityform-contact-field_contact_email'.
   $field_instances['entityform-contact-field_contact_email'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -334,7 +334,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_name'
+  // Exported field_instance: 'entityform-contact-field_contact_name'.
   $field_instances['entityform-contact-field_contact_name'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -406,7 +406,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_phone'
+  // Exported field_instance: 'entityform-contact-field_contact_phone'.
   $field_instances['entityform-contact-field_contact_phone'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -449,7 +449,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_subject'
+  // Exported field_instance: 'entityform-contact-field_contact_subject'.
   $field_instances['entityform-contact-field_contact_subject'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -521,7 +521,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact-field_contact_type'
+  // Exported field_instance: 'entityform-contact-field_contact_type'.
   $field_instances['entityform-contact-field_contact_type'] = array(
     'bundle' => 'contact',
     'default_value' => NULL,
@@ -560,7 +560,7 @@ function crealead_brands_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_brand_coes-field_brand_coe'
+  // 'field_collection_item-field_brand_coes-field_brand_coe'.
   $field_instances['field_collection_item-field_brand_coes-field_brand_coe'] = array(
     'bundle' => 'field_brand_coes',
     'default_value' => NULL,
@@ -613,12 +613,20 @@ function crealead_brands_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_brand_coes-field_competencies'
+  // 'field_collection_item-field_brand_coes-field_competencies'.
   $field_instances['field_collection_item-field_brand_coes-field_competencies'] = array(
     'bundle' => 'field_brand_coes',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>',
     'display' => array(
       'brand_list_coe' => array(
         'label' => 'above',
@@ -640,6 +648,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_competencies',
     'label' => 'Compétences',
@@ -659,7 +668,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-achievement-body'
+  // Exported field_instance: 'node-achievement-body'.
   $field_instances['node-achievement-body'] = array(
     'bundle' => 'achievement',
     'default_value' => NULL,
@@ -749,7 +758,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-achievement-field_achievement_photos'
+  // Exported field_instance: 'node-achievement-field_achievement_photos'.
   $field_instances['node-achievement-field_achievement_photos'] = array(
     'bundle' => 'achievement',
     'deleted' => 0,
@@ -857,7 +866,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-body'
+  // Exported field_instance: 'node-brand-body'.
   $field_instances['node-brand-body'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -882,7 +891,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 48,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -943,7 +952,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_achievements'
+  // Exported field_instance: 'node-brand-field_brand_achievements'.
   $field_instances['node-brand-field_brand_achievements'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1006,7 +1015,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_baseline'
+  // Exported field_instance: 'node-brand-field_brand_baseline'.
   $field_instances['node-brand-field_brand_baseline'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1092,7 +1101,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_coes'
+  // Exported field_instance: 'node-brand-field_brand_coes'.
   $field_instances['node-brand-field_brand_coes'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1136,10 +1145,11 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 13,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_coes',
     'label' => 'Co-entrepreneurs',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1152,7 +1162,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_email'
+  // Exported field_instance: 'node-brand-field_brand_email'.
   $field_instances['node-brand-field_brand_email'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1204,7 +1214,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_logo'
+  // Exported field_instance: 'node-brand-field_brand_logo'.
   $field_instances['node-brand-field_brand_logo'] = array(
     'bundle' => 'brand',
     'deleted' => 0,
@@ -1235,7 +1245,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'brand_logo',
         ),
         'type' => 'image',
         'weight' => 7,
@@ -1293,7 +1303,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_phone'
+  // Exported field_instance: 'node-brand-field_brand_phone'.
   $field_instances['node-brand-field_brand_phone'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1348,7 +1358,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_references'
+  // Exported field_instance: 'node-brand-field_brand_references'.
   $field_instances['node-brand-field_brand_references'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1411,7 +1421,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_search'
+  // Exported field_instance: 'node-brand-field_brand_search'.
   $field_instances['node-brand-field_brand_search'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1494,7 +1504,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_solutions'
+  // Exported field_instance: 'node-brand-field_brand_solutions'.
   $field_instances['node-brand-field_brand_solutions'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1519,7 +1529,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 49,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1578,7 +1588,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_tags'
+  // Exported field_instance: 'node-brand-field_brand_tags'.
   $field_instances['node-brand-field_brand_tags'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1603,7 +1613,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 47,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1612,6 +1622,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 18,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_tags',
     'label' => 'Mots-clés',
@@ -1631,7 +1642,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_type'
+  // Exported field_instance: 'node-brand-field_brand_type'.
   $field_instances['node-brand-field_brand_type'] = array(
     'bundle' => 'brand',
     'default_value' => array(
@@ -1684,7 +1695,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_validated'
+  // Exported field_instance: 'node-brand-field_brand_validated'.
   $field_instances['node-brand-field_brand_validated'] = array(
     'bundle' => 'brand',
     'default_value' => array(
@@ -1737,7 +1748,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_brand_website'
+  // Exported field_instance: 'node-brand-field_brand_website'.
   $field_instances['node-brand-field_brand_website'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1812,7 +1823,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_business_groups'
+  // Exported field_instance: 'node-brand-field_business_groups'.
   $field_instances['node-brand-field_business_groups'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1862,7 +1873,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_business_sector'
+  // Exported field_instance: 'node-brand-field_business_sector'.
   $field_instances['node-brand-field_business_sector'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -1913,12 +1924,12 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_contact_form'
+  // Exported field_instance: 'node-brand-field_contact_form'.
   $field_instances['node-brand-field_contact_form'] = array(
     'bundle' => 'brand',
     'default_value' => array(
       0 => array(
-        'target_id' => 1,
+        'target_id' => 2,
       ),
     ),
     'deleted' => 0,
@@ -1956,6 +1967,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_contact_form',
     'label' => 'Formulaire de contact',
@@ -1972,7 +1984,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_email_sent'
+  // Exported field_instance: 'node-brand-field_email_sent'.
   $field_instances['node-brand-field_email_sent'] = array(
     'bundle' => 'brand',
     'default_value' => array(
@@ -2025,7 +2037,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_landing_pages'
+  // Exported field_instance: 'node-brand-field_landing_pages'.
   $field_instances['node-brand-field_landing_pages'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -2074,7 +2086,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_saving_type'
+  // Exported field_instance: 'node-brand-field_saving_type'.
   $field_instances['node-brand-field_saving_type'] = array(
     'bundle' => 'brand',
     'default_value' => array(
@@ -2127,7 +2139,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-brand-field_social_links'
+  // Exported field_instance: 'node-brand-field_social_links'.
   $field_instances['node-brand-field_social_links'] = array(
     'bundle' => 'brand',
     'default_value' => NULL,
@@ -2197,7 +2209,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-client-body'
+  // Exported field_instance: 'node-client-body'.
   $field_instances['node-client-body'] = array(
     'bundle' => 'client',
     'default_value' => NULL,
@@ -2208,7 +2220,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2222,7 +2234,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2286,7 +2298,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-client-field_client_location'
+  // Exported field_instance: 'node-client-field_client_location'.
   $field_instances['node-client-field_client_location'] = array(
     'bundle' => 'client',
     'default_value' => NULL,
@@ -2297,7 +2309,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -2307,10 +2319,11 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_plain',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2369,7 +2382,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-client-field_client_logo'
+  // Exported field_instance: 'node-client-field_client_logo'.
   $field_instances['node-client-field_client_logo'] = array(
     'bundle' => 'client',
     'deleted' => 0,
@@ -2379,7 +2392,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',
@@ -2403,7 +2416,7 @@ function crealead_brands_field_default_field_instances() {
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2453,7 +2466,7 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-client-field_client_type'
+  // Exported field_instance: 'node-client-field_client_type'.
   $field_instances['node-client-field_client_type'] = array(
     'bundle' => 'client',
     'default_value' => NULL,
@@ -2464,7 +2477,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 15,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2478,7 +2491,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2517,6 +2530,15 @@ function crealead_brands_field_default_field_instances() {
   t('Formulaire de contact');
   t('Groupe(s) métier');
   t('Identifiant de la marque');
+  t('Il s\'agit de mots-clés.<br />
+<ul>
+<li>
+Vous pouvez saisir au maximum 5 termes ou expressions, séparés par des virgules. Par exemple "<em><b>conseil en communication, direction artistique</b></em>" ou encore "<em><b>photographie, design d\'espaces, architecture d\'intérieur, scénographie</b></em>").<br />
+</li>
+<li>
+Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà connus du site et contenant ces lettres vous sera proposée. Vérifiez que le mot ou l\'expression que vous êtes en train de saisir n\'existe pas déjà.
+</li>
+</ul>');
   t('Indiquez la ville et/ou le pays.');
   t('Liens réseaux sociaux');
   t('Localisation');

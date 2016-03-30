@@ -10,7 +10,7 @@
 function kcore_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_accueil:<front>
+  // Exported menu link: main-menu_accueil:<front>.
   $menu_links['main-menu_accueil:<front>'] = array(
     'menu_name' => 'main-menu',
     'link_path' => '<front>',
@@ -30,7 +30,7 @@ function kcore_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-footer-menu_plan-du-site:sitemap
+  // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
     'menu_name' => 'menu-footer-menu',
     'link_path' => 'sitemap',
@@ -47,14 +47,14 @@ function kcore_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -50,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Accueil');
   t('Plan du site');
-
 
   return $menu_links;
 }
