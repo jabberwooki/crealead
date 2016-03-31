@@ -55,7 +55,7 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
 /**
  * Implements hook_node_presave().
  */
-function crealead_news_node_presave($node) {dpm($node);
+function crealead_news_node_presave($node) {
   if ($node->type == 'news') {
     if (!empty($node->field_news_date['und'])) {
       $node->field_sorting_date['und'][0]['value'] = $node->field_news_date['und'][0]['value'];
