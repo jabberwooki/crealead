@@ -126,7 +126,7 @@ projects[entityform][version] = "2.0-rc1"
 
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
-projects[references_dialog][patch][] = "https://www.drupal.org/files/issues/entityreference_1836106_48.patch"
+projects[entityreference][patch][] = "https://www.drupal.org/files/issues/entityreference_1836106_48.patch"
 
 projects[entityreference_views_formatter][subdir] = contrib
 projects[entityreference_views_formatter][version] = "1.x-dev"
