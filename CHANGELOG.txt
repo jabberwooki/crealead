@@ -1,3 +1,7 @@
+Crealead 2.0.2 - 31/03/2016
+---------------------------
+Hotfix : Forgotten dpm() removed from crealead_news.module file.
+
 Crealead 2.0.1 - 31/03/2016
 ---------------------------
 Registration fatal error class patch commented.
