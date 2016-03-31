@@ -1,3 +1,9 @@
+Crealead 2.0.1 - 31/03/2016
+---------------------------
+Registration fatal error class patch commented.
+Upgraded contrib module entityreference needed a patch (see https://www.drupal.org/node/1836106#comment-10531886).
+Missing contrib modules declarations added (field_formatter_settings, field_formatter_class).
+
 Crealead 2.0 - 30/03/2016
 -------------------------
 Major update of Drupal (from 7.37 to 7.43) core + 32 contrib modules +  Adminimal theme.
