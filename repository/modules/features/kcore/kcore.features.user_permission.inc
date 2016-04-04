@@ -419,6 +419,8 @@ function kcore_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'anonymous user' => 'anonymous user',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'menu',
   );

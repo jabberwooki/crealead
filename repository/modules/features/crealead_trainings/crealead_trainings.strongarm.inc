@@ -1,69 +1,35 @@
 <?php
 /**
  * @file
- * crealead_news.strongarm.inc
+ * crealead_trainings.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function crealead_news_strongarm() {
+function crealead_trainings_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_news_long';
-  $strongarm->value = 'l d F Y';
-  $export['date_format_news_long'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_news_medium';
-  $strongarm->value = 'd F Y';
-  $export['date_format_news_medium'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_news_short';
-  $strongarm->value = 'd/m/Y';
-  $export['date_format_news_short'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_region_blocks';
+  $strongarm->name = 'ds_extras_view_modes_training';
   $strongarm->value = array(
-    'content_header' => array(
-      'title' => 'content header',
-      'info' => 'node_news_full',
-    ),
-    'content_header_brand' => array(
-      'title' => 'content header marque',
-      'info' => 'node_brand_full',
-    ),
+    0 => 'default',
+    1 => 'teaser',
   );
-  $export['ds_extras_region_blocks'] = $strongarm;
+  $export['ds_extras_view_modes_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_region_to_block';
-  $strongarm->value = 1;
-  $export['ds_extras_region_to_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__news';
+  $strongarm->name = 'field_bundle_settings_node__training';
   $strongarm->value = array(
     'view_modes' => array(
-      'full' => array(
+      'teaser' => array(
         'custom_settings' => TRUE,
       ),
-      'teaser' => array(
+      'full' => array(
         'custom_settings' => TRUE,
       ),
       'rss' => array(
@@ -78,138 +44,138 @@ function crealead_news_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-      'revision' => array(
-        'custom_settings' => FALSE,
-      ),
-      'block' => array(
-        'custom_settings' => TRUE,
-      ),
-      'zoom_news' => array(
-        'custom_settings' => TRUE,
-      ),
       'print' => array(
         'custom_settings' => FALSE,
       ),
-      'news_2_3' => array(
-        'custom_settings' => TRUE,
-      ),
-      'news_brand' => array(
-        'custom_settings' => TRUE,
+      'token' => array(
+        'custom_settings' => FALSE,
       ),
       'brand_articles' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_2_3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_brand' => array(
+        'custom_settings' => FALSE,
+      ),
+      'zoom_news' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '15',
         ),
       ),
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__news'] = $strongarm;
+  $export['field_bundle_settings_node__training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_news';
+  $strongarm->name = 'language_content_type_training';
   $strongarm->value = '0';
-  $export['language_content_type_news'] = $strongarm;
+  $export['language_content_type_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_news';
+  $strongarm->name = 'menu_options_training';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_news'] = $strongarm;
+  $export['menu_options_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_news';
+  $strongarm->name = 'menu_parent_training';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_news'] = $strongarm;
+  $export['menu_parent_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_news';
+  $strongarm->name = 'node_options_training';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_news'] = $strongarm;
+  $export['node_options_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_news';
+  $strongarm->name = 'node_preview_training';
   $strongarm->value = '1';
-  $export['node_preview_news'] = $strongarm;
+  $export['node_preview_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_news';
+  $strongarm->name = 'node_submitted_training';
   $strongarm->value = 0;
-  $export['node_submitted_news'] = $strongarm;
+  $export['node_submitted_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_news';
+  $strongarm->name = 'pathauto_node_training_pattern';
+  $strongarm->value = 'formations/[node:title]';
+  $export['pathauto_node_training_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_themes_pattern';
   $strongarm->value = '';
-  $export['page_title_type_news'] = $strongarm;
+  $export['pathauto_taxonomy_term_themes_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_news_pattern';
-  $strongarm->value = 'actualites/[node:title]';
-  $export['pathauto_node_news_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_news_authors_pattern';
+  $strongarm->name = 'pathauto_taxonomy_term_training_type_pattern';
   $strongarm->value = '';
-  $export['pathauto_taxonomy_term_news_authors_pattern'] = $strongarm;
+  $export['pathauto_taxonomy_term_training_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_news_types_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_news_types_pattern'] = $strongarm;
+  $strongarm->name = 'print_html_display_comment_training';
+  $strongarm->value = 0;
+  $export['print_html_display_comment_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_scald_authors_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_scald_authors_pattern'] = $strongarm;
+  $strongarm->name = 'print_html_display_training';
+  $strongarm->value = 1;
+  $export['print_html_display_training'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_sectors_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_sectors_pattern'] = $strongarm;
+  $strongarm->name = 'print_html_display_urllist_training';
+  $strongarm->value = 0;
+  $export['print_html_display_urllist_training'] = $strongarm;
 
   return $export;
 }

@@ -10,7 +10,7 @@
 function crealead_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -21,6 +21,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 120,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -29,14 +30,18 @@ function crealead_news_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 39,
       ),
@@ -44,6 +49,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 300,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -53,6 +59,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -62,6 +69,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -126,7 +134,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_coentrepreneurs'
+  // Exported field_instance: 'node-news-field_coentrepreneurs'.
   $field_instances['node-news-field_coentrepreneurs'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -143,6 +151,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -152,6 +161,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -202,7 +212,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_image'
+  // Exported field_instance: 'node-news-field_image'.
   $field_instances['node-news-field_image'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -212,6 +222,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'carre_large',
         ),
@@ -222,6 +233,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -232,6 +244,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => 'large_bandeau',
         ),
@@ -242,6 +255,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'large',
         ),
@@ -252,6 +266,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => '',
         ),
@@ -262,6 +277,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'carre_large',
         ),
@@ -272,6 +288,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'zoom_actu',
         ),
@@ -330,7 +347,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_landing_pages'
+  // Exported field_instance: 'node-news-field_landing_pages'.
   $field_instances['node-news-field_landing_pages'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -346,7 +363,9 @@ function crealead_news_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 10,
       ),
@@ -397,7 +416,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_author'
+  // Exported field_instance: 'node-news-field_news_author'.
   $field_instances['node-news-field_news_author'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -413,14 +432,18 @@ function crealead_news_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 38,
       ),
@@ -468,7 +491,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_date'
+  // Exported field_instance: 'node-news-field_news_date'.
   $field_instances['node-news-field_news_date'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -478,11 +501,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'news_short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -491,11 +516,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -504,11 +531,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'news_long',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 35,
@@ -517,11 +546,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'news_medium',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 32,
@@ -530,11 +561,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'news_short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -543,11 +576,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'news_medium',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 22,
@@ -586,7 +621,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_kind'
+  // Exported field_instance: 'node-news-field_news_kind'.
   $field_instances['node-news-field_news_kind'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -602,7 +637,9 @@ function crealead_news_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'list_default',
         'weight' => 8,
       ),
@@ -653,7 +690,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_type'
+  // Exported field_instance: 'node-news-field_news_type'.
   $field_instances['node-news-field_news_type'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -663,49 +700,63 @@ function crealead_news_field_default_field_instances() {
       'block' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 6,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 30,
       ),
       'news_brand' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
       'zoom_news' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),
@@ -726,7 +777,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_brands'
+  // Exported field_instance: 'node-news-field_related_brands'.
   $field_instances['node-news-field_related_brands'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -743,6 +794,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -796,7 +848,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_sector'
+  // Exported field_instance: 'node-news-field_sector'.
   $field_instances['node-news-field_sector'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -806,42 +858,54 @@ function crealead_news_field_default_field_instances() {
       'block' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 36,
       ),
       'news_2_3' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 31,
       ),
       'news_brand' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
       ),
@@ -868,7 +932,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_sorting_date'
+  // Exported field_instance: 'node-news-field_sorting_date'.
   $field_instances['node-news-field_sorting_date'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -884,11 +948,13 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'field_formatter_class' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -951,7 +1017,7 @@ function crealead_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-scald_authors-scald_author_url'
+  // Exported field_instance: 'taxonomy_term-scald_authors-scald_author_url'.
   $field_instances['taxonomy_term-scald_authors-scald_author_url'] = array(
     'bundle' => 'scald_authors',
     'default_value' => NULL,
@@ -961,7 +1027,9 @@ function crealead_news_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),

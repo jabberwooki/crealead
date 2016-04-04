@@ -4,11 +4,6 @@
 jQuery(function($){
   // fait en sorte que les actualités des marques aient la meme hauteur
   //$('.group-brand-news .view-id-news .views-row').matchHeight();
-
-  // fait en sorte que le premier item du menu de la marque soit actif
-  if ($(".node-type-brand .group-brand-tabs").length) {
-    $(".node-type-brand .group-brand-tabs > li:first").addClass("active");
-  }
 });
 (function ($) {
 
@@ -29,6 +24,12 @@ jQuery(function($){
       if (settings.crealead_brands_default_coe) {
         var coeValue = settings.crealead_brands_default_coe.name + ' (' + settings.crealead_brands_default_coe.uid + ')';
         $("#edit-field-brand-coes-und-0-field-brand-coe-und-0-target-id").val(coeValue);
+      }
+
+      // fait en sorte que le premier item du menu de la marque soit actif
+      if ($(".node-type-brand .group-brand-tabs").length) {
+        console.log('code de yvan');
+        $(".node-type-brand .group-brand-tabs > li:first").addClass("active");
       }
     }
   };

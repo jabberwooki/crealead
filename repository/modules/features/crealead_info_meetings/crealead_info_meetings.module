@@ -49,9 +49,12 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
 
   $form['state']['#weight'] = 100;
 
-  // Field attendee hidden to anonymous user.
+  // If anonymous user
   if (!user_is_logged_in()) {
+    // field attendee is hidden
     unset($form['field_attendee']);
+    // field email is made required visually (char *  close to label).
+    $form['anon_mail']['#required'] = 1;
   }
 }
 
@@ -81,6 +84,9 @@ function crealead_info_meetings_menu_local_tasks_alter(&$data, $router_item, $ro
         }
       }
     }
+  }
+  elseif (!user_is_logged_in() && $root_path == 'registration/%') {
+    unset($data['tabs']);
   }
 }
 
