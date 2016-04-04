@@ -116,10 +116,13 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 10,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => 'pull-left',
+        ),
+        'type' => 'text_default',
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -296,7 +299,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -383,7 +386,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -560,7 +563,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -740,7 +743,7 @@ function crealead_trainings_field_default_field_instances() {
           'view_mode' => 'logo',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 1,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',

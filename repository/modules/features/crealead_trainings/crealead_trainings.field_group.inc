@@ -47,6 +47,71 @@ function crealead_trainings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_training_header_center|node|training|full';
+  $field_group->group_name = 'group_training_header_center';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_training_header';
+  $field_group->data = array(
+    'label' => 'En-tête centre',
+    'weight' => '31',
+    'children' => array(
+      0 => 'field_introduction',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'En-tête centre',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-training-header-center field-group-div col-md-7',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_training_header_center|node|training|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_training_header_left|node|training|full';
+  $field_group->group_name = 'group_training_header_left';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_training_header';
+  $field_group->data = array(
+    'label' => 'En-tête gauche',
+    'weight' => '30',
+    'children' => array(
+      0 => 'field_training_related_brands',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'En-tête gauche',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-training-header-left field-group-div col-md-3',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_training_header_left|node|training|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_training_header|node|training|full';
   $field_group->group_name = 'group_training_header';
   $field_group->entity_type = 'node';
@@ -57,9 +122,9 @@ function crealead_trainings_field_group_info() {
     'label' => 'En-tête',
     'weight' => '0',
     'children' => array(
-      0 => 'field_training_related_brands',
-      1 => 'training_contact',
-      2 => 'title',
+      0 => 'group_training_header_left',
+      1 => 'group_training_header_right',
+      2 => 'group_training_header_center',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -154,6 +219,8 @@ function crealead_trainings_field_group_info() {
   t('Colonne droite');
   t('Colonne gauche');
   t('En-tête');
+  t('En-tête centre');
+  t('En-tête gauche');
 
   return $field_groups;
 }
