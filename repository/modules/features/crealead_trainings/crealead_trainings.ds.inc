@@ -18,14 +18,202 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'training_contact' => array(
-      'weight' => '8',
+      'weight' => '3',
       'label' => 'above',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'field_formatter_class' => '',
+      ),
     ),
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-left',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_type' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label pull-left',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_duration' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_attendees_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_price' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_public' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_requirements' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_aims' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_theme' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label pull-left',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_related_brands' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pull-left',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_teachers' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|training|full'] = $ds_fieldsetting;
@@ -95,50 +283,53 @@ function crealead_trainings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'training';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'bootstrap_6_6_stacked';
+  $ds_layout->layout = 'bootstrap_12';
   $ds_layout->settings = array(
     'regions' => array(
-      'top' => array(
-        0 => 'field_training_related_brands',
-        1 => 'title',
+      'central' => array(
+        0 => 'group_training_header',
+        1 => 'field_training_related_brands',
         2 => 'group_training_data',
         3 => 'field_training_duration',
-        5 => 'field_training_attendees_number',
-        6 => 'field_training_price',
-      ),
-      'left' => array(
         4 => 'field_training_type',
-        7 => 'field_training_theme',
-        8 => 'field_training_public',
-        9 => 'field_training_requirements',
-        10 => 'field_training_aims',
-        11 => 'training_contact',
-      ),
-      'right' => array(
-        12 => 'body',
+        5 => 'title',
+        6 => 'training_contact',
+        7 => 'field_training_attendees_number',
+        8 => 'field_training_theme',
+        9 => 'field_training_public',
+        10 => 'field_training_price',
+        11 => 'field_training_requirements',
+        12 => 'field_training_aims',
+        13 => 'field_training_method',
+        14 => 'group_training_left_col',
+        15 => 'body',
+        16 => 'field_training_teachers',
+        17 => 'group_training_right_col',
       ),
     ),
     'fields' => array(
-      'field_training_related_brands' => 'top',
-      'title' => 'top',
-      'group_training_data' => 'top',
-      'field_training_duration' => 'top',
-      'field_training_type' => 'left',
-      'field_training_attendees_number' => 'top',
-      'field_training_price' => 'top',
-      'field_training_theme' => 'left',
-      'field_training_public' => 'left',
-      'field_training_requirements' => 'left',
-      'field_training_aims' => 'left',
-      'training_contact' => 'left',
-      'body' => 'right',
+      'group_training_header' => 'central',
+      'field_training_related_brands' => 'central',
+      'group_training_data' => 'central',
+      'field_training_duration' => 'central',
+      'field_training_type' => 'central',
+      'title' => 'central',
+      'training_contact' => 'central',
+      'field_training_attendees_number' => 'central',
+      'field_training_theme' => 'central',
+      'field_training_public' => 'central',
+      'field_training_price' => 'central',
+      'field_training_requirements' => 'central',
+      'field_training_aims' => 'central',
+      'field_training_method' => 'central',
+      'group_training_left_col' => 'central',
+      'body' => 'central',
+      'field_training_teachers' => 'central',
+      'group_training_right_col' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'top' => 'div',
-      'left' => 'div',
-      'right' => 'div',
-      'bottom' => 'div',
+      'central' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

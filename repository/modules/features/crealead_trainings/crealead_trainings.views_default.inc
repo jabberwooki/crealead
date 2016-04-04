@@ -72,7 +72,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Type de formation */
+  /* Field: Content: Type */
   $handler->display->display_options['fields']['field_training_type']['id'] = 'field_training_type';
   $handler->display->display_options['fields']['field_training_type']['table'] = 'field_data_field_training_type';
   $handler->display->display_options['fields']['field_training_type']['field'] = 'field_training_type';
