@@ -81,7 +81,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   unset($form['options']['sticky']);
 
   // Fields temporarily removed from backoffice
-  $form['field_landing_pages']['#access'] = FALSE;
+  //$form['field_landing_pages']['#access'] = FALSE;
 
   // Handling of fields involved into validation workflow
   // 1 - field_saving_type
