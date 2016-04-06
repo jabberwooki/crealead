@@ -68,6 +68,12 @@ function crealead_trainings_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'landing_page_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'logo' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

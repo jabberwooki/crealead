@@ -138,6 +138,45 @@ function crealead_trainings_views_default_views() {
     0 => 'brand',
   );
   $handler->display->display_options['argument_mode'] = 'none';
+
+  /* Display: Formations d'une thématique */
+  $handler = $view->new_display('entity_view', 'Formations d\'une thématique', 'landing_page_trainings');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Nos formations et produits';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Nos formations et produits</h3>';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Thématique (field_training_theme) */
+  $handler->display->display_options['arguments']['field_training_theme_tid']['id'] = 'field_training_theme_tid';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['table'] = 'field_data_field_training_theme';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['field'] = 'field_training_theme_tid';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_training_theme_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'themes',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
+  $handler->display->display_options['show_title'] = 0;
   $translatables['trainings'] = array(
     t('Master'),
     t('Formations'),
@@ -161,6 +200,9 @@ function crealead_trainings_views_default_views() {
     t('Tarif'),
     t('Objectifs'),
     t('Tout'),
+    t('Formations d\'une thématique'),
+    t('Nos formations et produits'),
+    t('<h3>Nos formations et produits</h3>'),
   );
   $export['trainings'] = $view;
 
