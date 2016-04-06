@@ -693,37 +693,48 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'themes';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->layout = 'bootstrap_6_6_bricks';
   $ds_layout->settings = array(
     'regions' => array(
-      'central' => array(
-        0 => 'description',
-        1 => 'group_theme_tabs',
-        2 => 'group_theme_brands_tab',
-        3 => 'group_theme_blog_tab',
-        4 => 'brands_entity_view_1',
-        5 => 'news_theme_news',
-        6 => 'articles_theme_articles',
+      'topleft' => array(
+        0 => 'title',
+        1 => 'description',
+      ),
+      'topright' => array(
+        2 => 'brands_entity_view_1',
+        3 => 'trainings_landing_page_trainings',
+      ),
+      'bottomleft' => array(
+        4 => 'news_theme_news',
+      ),
+      'bottomright' => array(
+        5 => 'articles_theme_articles',
       ),
     ),
     'fields' => array(
-      'description' => 'central',
-      'group_theme_tabs' => 'central',
-      'group_theme_brands_tab' => 'central',
-      'group_theme_blog_tab' => 'central',
-      'brands_entity_view_1' => 'central',
-      'news_theme_news' => 'central',
-      'articles_theme_articles' => 'central',
+      'title' => 'topleft',
+      'description' => 'topleft',
+      'brands_entity_view_1' => 'topright',
+      'trainings_landing_page_trainings' => 'topright',
+      'news_theme_news' => 'bottomleft',
+      'articles_theme_articles' => 'bottomright',
     ),
     'classes' => array(),
     'wrappers' => array(
+      'top' => 'div',
+      'topleft' => 'div',
+      'topright' => 'div',
       'central' => 'div',
+      'bottomleft' => 'div',
+      'bottomright' => 'div',
+      'bottom' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );

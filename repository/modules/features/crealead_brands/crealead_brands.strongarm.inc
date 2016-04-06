@@ -61,6 +61,9 @@ function crealead_brands_strongarm() {
       'zoom_news' => array(
         'custom_settings' => FALSE,
       ),
+      'landing_page_block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -92,6 +95,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'logo' => NULL,
+          'landing_page_block' => NULL,
         ),
         'news_brand_news' => array(
           'full' => array(
@@ -110,6 +114,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'landing_page_block' => array(
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
         ),
         'articles_entity_view_1' => array(
           'full' => array(
@@ -117,6 +125,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'logo' => NULL,
+          'landing_page_block' => NULL,
         ),
         'articles_brand_articles' => array(
           'full' => array(
@@ -135,6 +144,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'landing_page_block' => array(
+            'weight' => '26',
+            'visible' => FALSE,
+          ),
         ),
         'brand_contact_submissions_entity_view_1' => array(
           'full' => array(
@@ -142,6 +155,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'logo' => NULL,
+          'landing_page_block' => NULL,
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
@@ -160,11 +174,23 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'landing_page_block' => array(
+            'weight' => '24',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_entity_view_1' => array(
           'full' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'landing_page_block' => array(
+            'weight' => '25',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -220,7 +246,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '0',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
@@ -230,7 +256,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '10',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -250,7 +276,7 @@ function crealead_brands_strongarm() {
         ),
         'news_theme_news' => array(
           'full' => array(
-            'weight' => '20',
+            'weight' => '4',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -264,7 +290,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_theme_articles' => array(
           'full' => array(
-            'weight' => '21',
+            'weight' => '5',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -273,6 +299,12 @@ function crealead_brands_strongarm() {
           ),
           'default' => array(
             'weight' => '11',
+            'visible' => TRUE,
+          ),
+        ),
+        'trainings_landing_page_trainings' => array(
+          'full' => array(
+            'weight' => '3',
             'visible' => TRUE,
           ),
         ),

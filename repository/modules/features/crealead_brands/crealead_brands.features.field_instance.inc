@@ -938,6 +938,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'text_default',
         'weight' => 48,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'logo' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1037,6 +1043,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'entityreference_views_formatter',
         'weight' => 13,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1107,6 +1119,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'text_default',
         'weight' => 34,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1213,6 +1231,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'field_collection_views_view',
         'weight' => 0,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1273,6 +1297,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'email_default',
         'weight' => 37,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1343,6 +1373,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'image',
         'weight' => 7,
+      ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => 'content',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'logo' => array(
         'label' => 'hidden',
@@ -1440,6 +1481,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'phone',
         'weight' => 36,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1508,6 +1555,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'entityreference_views_formatter',
         'weight' => 0,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1572,6 +1625,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1667,6 +1726,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'text_default',
         'weight' => 49,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1761,6 +1826,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'taxonomy_term_reference_link',
         'weight' => 47,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1826,6 +1897,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1887,6 +1964,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1946,6 +2029,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'link_default',
         'weight' => 38,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2032,6 +2121,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2091,6 +2186,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 35,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2160,6 +2261,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'entityreference_entity_view',
         'weight' => 4,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2222,6 +2329,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 20,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2278,6 +2391,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2340,6 +2459,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
       'logo' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2401,6 +2526,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'socialfield_formatter',
         'weight' => 36,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'logo' => array(
         'label' => 'above',
