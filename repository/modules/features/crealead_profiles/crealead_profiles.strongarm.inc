@@ -16,11 +16,11 @@ function crealead_profiles_strongarm() {
   $strongarm->name = 'default_image_ft_state';
   $strongarm->value = array(
     'node' => array(
-      'brand' => array(
-        'field_brand_logo' => 'brand_default_logo',
-      ),
       'info_meeting' => array(
         'field_info_meeting_photo' => 'info_meetings_default_image',
+      ),
+      'brand' => array(
+        'field_brand_logo' => 'brand_default_logo',
       ),
     ),
     'profile2' => array(
@@ -422,6 +422,27 @@ function crealead_profiles_strongarm() {
   $strongarm->name = 'node_submitted_client';
   $strongarm->value = 0;
   $export['node_submitted_client'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_client_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_client_types_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_competencies_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_competencies_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_entrepreneur_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_entrepreneur_tags_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
