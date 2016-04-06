@@ -41,26 +41,26 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Champ: Contenu : Titre */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Critère de tri: Contenu : Date de publication */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Critère de filtrage: Contenu : Publié */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Critère de filtrage: Contenu : Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -84,12 +84,12 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'brand_articles';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Entity Reference : Entité référencée */
+  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_article_related_brands_target_id']['id'] = 'field_article_related_brands_target_id';
   $handler->display->display_options['relationships']['field_article_related_brands_target_id']['table'] = 'field_data_field_article_related_brands';
   $handler->display->display_options['relationships']['field_article_related_brands_target_id']['field'] = 'field_article_related_brands_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtre contextuel: Contenu : Marque(s) concernée(s) (field_article_related_brands) */
+  /* Contextual filter: Content: Marque(s) concernée(s) (field_article_related_brands) */
   $handler->display->display_options['arguments']['field_article_related_brands_target_id']['id'] = 'field_article_related_brands_target_id';
   $handler->display->display_options['arguments']['field_article_related_brands_target_id']['table'] = 'field_data_field_article_related_brands';
   $handler->display->display_options['arguments']['field_article_related_brands_target_id']['field'] = 'field_article_related_brands_target_id';
@@ -108,24 +108,35 @@ function crealead_articles_views_default_views() {
   /* Display: Articles d'une thématique */
   $handler = $view->new_display('entity_view', 'Articles d\'une thématique', 'theme_articles');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = 'false';
+  $handler->display->display_options['style_options']['navigation'] = 1;
+  $handler->display->display_options['style_options']['indicators'] = 1;
+  $handler->display->display_options['style_options']['pause'] = 0;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'landing_page_block';
   $handler->display->display_options['row_options']['alternating'] = 0;
   $handler->display->display_options['row_options']['grouping'] = 0;
   $handler->display->display_options['row_options']['advanced'] = 0;
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'landing_page_block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Articles</h3>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Contenu : Thématique(s) concernée(s) (field_landing_pages) */
+  /* Relationship: Content: Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtre contextuel: Terme de taxonomie : Identifiant (ID) du terme */
+  /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -158,21 +169,21 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Critère de filtrage: Contenu : Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-  /* Critère de filtrage: Contenu : Nature de l&#039;article (field_article_kind) */
+  /* Filter criterion: Content: Nature de l&#039;article (field_article_kind) */
   $handler->display->display_options['filters']['field_article_kind_value']['id'] = 'field_article_kind_value';
   $handler->display->display_options['filters']['field_article_kind_value']['table'] = 'field_data_field_article_kind';
   $handler->display->display_options['filters']['field_article_kind_value']['field'] = 'field_article_kind_value';
@@ -204,21 +215,21 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Critère de filtrage: Contenu : Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-  /* Critère de filtrage: Contenu : Promu en page d'accueil */
+  /* Filter criterion: Content: Promoted to front page */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -239,9 +250,11 @@ function crealead_articles_views_default_views() {
     t('suivant ›'),
     t('dernier »'),
     t('Articles d\'une marque'),
-    t('Entité Contenu réferencée par field_article_related_brands'),
+    t('more'),
+    t('Content entity referenced from field_article_related_brands'),
     t('Articles d\'une thématique'),
-    t('terme à partir de field_landing_pages'),
+    t('<h3>Articles</h3>'),
+    t('term from field_landing_pages'),
     t('Articles Crealed'),
     t('Témoignages accueil'),
     t('Témoignages'),

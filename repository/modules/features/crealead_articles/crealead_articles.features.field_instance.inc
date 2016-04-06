@@ -10,7 +10,7 @@
 function crealead_articles_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-article-body'
+  // Exported field_instance: 'node-article-body'.
   $field_instances['node-article-body'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -21,6 +21,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -30,6 +31,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -38,21 +40,36 @@ function crealead_articles_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 150,
+        ),
+        'type' => 'text_summary_or_trimmed',
         'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 300,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -111,7 +128,7 @@ function crealead_articles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_article_kind'
+  // Exported field_instance: 'node-article-field_article_kind'.
   $field_instances['node-article-field_article_kind'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -127,14 +144,18 @@ function crealead_articles_field_default_field_instances() {
       'brand_articles' => array(
         'label' => 'hidden',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'list_default',
         'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'list_default',
         'weight' => 1,
       ),
@@ -143,6 +164,12 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -167,7 +194,7 @@ function crealead_articles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_article_related_brands'
+  // Exported field_instance: 'node-article-field_article_related_brands'.
   $field_instances['node-article-field_article_related_brands'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -190,6 +217,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -200,6 +228,12 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -225,7 +259,7 @@ function crealead_articles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_image'
+  // Exported field_instance: 'node-article-field_image'.
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
     'deleted' => 0,
@@ -235,6 +269,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'image_temoignage_accueil',
         ),
@@ -245,6 +280,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => '',
         ),
@@ -255,6 +291,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -265,16 +302,24 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => 'large_bandeau',
         ),
         'type' => 'image',
         'weight' => 0,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'carre_large',
         ),
@@ -323,7 +368,7 @@ function crealead_articles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_landing_pages'
+  // Exported field_instance: 'node-article-field_landing_pages'.
   $field_instances['node-article-field_landing_pages'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -339,14 +384,18 @@ function crealead_articles_field_default_field_instances() {
       'brand_articles' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
@@ -356,10 +405,18 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
