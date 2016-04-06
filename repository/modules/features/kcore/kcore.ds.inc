@@ -21,5 +21,14 @@ function kcore_ds_view_modes_info() {
   );
   $export['block'] = $ds_view_mode;
 
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'landing_page_block';
+  $ds_view_mode->label = 'Bloc page thématique';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['landing_page_block'] = $ds_view_mode;
+
   return $export;
 }
