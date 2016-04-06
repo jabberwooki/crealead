@@ -45,6 +45,16 @@ function crealead_news_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 39,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 150,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'news_2_3' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -167,6 +177,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 40,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -250,6 +266,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 30,
+      ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -375,6 +397,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -446,6 +474,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 38,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -541,6 +575,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 35,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -649,6 +689,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 20,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -723,6 +769,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 6,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -806,6 +858,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -881,6 +939,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 36,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'news_2_3' => array(
         'label' => 'inline',
@@ -964,6 +1028,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'news_2_3' => array(
         'label' => 'above',
