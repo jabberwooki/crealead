@@ -72,6 +72,7 @@ features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[ds_field_settings][] = taxonomy_term|themes|full
 features[ds_view_modes][] = block
 features[ds_view_modes][] = landing_page_block
 features[fe_block_settings][] = kcore-crealead_meetings_number
