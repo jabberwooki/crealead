@@ -3,3 +3,22 @@
  * @file
  * Drupal needs this blank file.
  */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function kseo_preprocess_html(&$variables) {
+  // Corrige un pb d'incompatibilité entre les modules metatags et page_title. Explications :
+  // Si un <title> custom a été créé pour le node courant, si on ne fait rien il ne sera pas affiché.
+  // (La raison supposée est que page_title passe après et décide du motif après le hook_preprocess_html.)
+  // Donc on contourne le problème en passant par la variable supplémentaire $metatags_head_title
+  // que l'on transmet au fichier html.tpl.php en la rajoutant au tableau $variables.
+  // Puis dans ce fichier, on teste si la variable $metatags_head_title existe, auquel cas on l'utilise.
+  // (Voir repository/themes/custom/crealead/templates/html.tpl.php).
+  $node = menu_get_object();
+  if (isset($node->metatags['fr']['title'])) {
+    $variables['metatags_head_title'] = $node->metatags['fr']['title']['value'];
+    // Le code ci-dessous ne servirait à rien puisque le module page_title a le dernier mot.
+    // $variables['head_title'] = $node->metatags['fr']['title']['value'];
+  }
+}
