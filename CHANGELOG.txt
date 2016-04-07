@@ -1,3 +1,7 @@
+Hotfix head_title_conflict - 07/04/2016
+---------------------------------------
+Resolves conflict between Metatags Page Title modules for <title> tag value.
+
 Crealead 2.0.2 - 31/03/2016
 ---------------------------
 Hotfix : Forgotten dpm() removed from crealead_news.module file.
