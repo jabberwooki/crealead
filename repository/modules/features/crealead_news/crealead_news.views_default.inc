@@ -322,6 +322,13 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Content: Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Actus d'une marque */
   $handler = $view->new_display('entity_view', 'Actus d\'une marque', 'brand_news');
