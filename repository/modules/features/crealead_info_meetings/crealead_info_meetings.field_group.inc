@@ -362,7 +362,9 @@ function crealead_info_meetings_field_group_info() {
     'children' => array(
       0 => 'field_registrant_project_domain',
       1 => 'field_registrant_status',
-      2 => 'group_dependent_infos',
+      2 => 'field_beneficiary_number',
+      3 => 'field_unemployment_date',
+      4 => 'field_other_specify',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

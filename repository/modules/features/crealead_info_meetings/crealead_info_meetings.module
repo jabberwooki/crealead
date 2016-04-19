@@ -10,6 +10,19 @@ include_once 'crealead_info_meetings.features.inc';
  * Implements hook_init().
  */
 function crealead_info_meetings_init() {
+  $node = menu_get_object();
+  if (isset($node) && $node->type = "info_meeting") {
+    // We catch the first 3 letters of each term from registrant_statuses vocabulary,
+    // to be used in the STATUT checkboxes jquery reorganisation.
+    // (see repository/modules/features/crealead_info_meetings/js/crealead_info_meetings.js)
+    $params = array();
+    $voc = taxonomy_vocabulary_machine_name_load('registrant_statuses');
+    $tree = taxonomy_get_tree($voc->vid);
+    foreach ($tree as $term) {
+      $params[$term->tid] = substr(strtolower(transliteration_get($term->name)),0,3);
+    }
+    drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
+  }
 }
 
 /**
@@ -27,7 +40,7 @@ function crealead_info_meetings_permission() {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {dpm($form);
   drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
 
   // Form fields re-ordering
@@ -42,12 +55,15 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
   $form['field_registrant_phone']['#weight'] = 4;
   $form['field_registrant_project_domain']['#weight'] = 5;
   $form['field_registrant_status']['#weight'] = 6;
-  $form['#groups']['group_dependent_infos']->weight = 7;
   $form['field_beneficiary_number']['#weight'] = 10;
   $form['field_unemployment_date']['#weight'] = 11;
   $form['field_other_specify']['#weight'] = 12;
 
   $form['state']['#weight'] = 100;
+
+  // Field STATUT description not displayed by Drupal (why ?), so here is a trick.
+  $form['field_registrant_status']['#suffix'] =
+    '<div class="description">' . $form['field_registrant_status']['und']['#description'] . '</div>';
 
   // If anonymous user
   if (!user_is_logged_in()) {
