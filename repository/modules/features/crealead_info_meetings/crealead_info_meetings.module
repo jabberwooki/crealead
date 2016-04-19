@@ -40,7 +40,7 @@ function crealead_info_meetings_permission() {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {dpm($form);
+function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
 
   // Form fields re-ordering
