@@ -2816,6 +2816,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_client_logo',
     'label' => 'Logo',
@@ -2823,6 +2824,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
+      'default_image_ft_source_var' => 'default_client_logo',
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -2836,7 +2838,15 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'image',
       'settings' => array(
         'filefield_sources' => array(
-          'filefield_sources' => array(),
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
           'source_attach' => array(
             'absolute' => 0,
             'attach_mode' => 'move',
@@ -2847,6 +2857,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           ),
           'source_reference' => array(
             'autocomplete' => 0,
+            'search_all_fields' => 0,
           ),
         ),
         'preview_image_style' => 'thumbnail',

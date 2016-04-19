@@ -103,7 +103,6 @@ features[user_permission][] = edit terms in competencies
 features[user_permission][] = edit terms in entrepreneur_tags
 features[user_permission][] = view any coe_page profile
 features[user_permission][] = view own coe_page profile
-features[variable][] = default_image_ft_state
 features[variable][] = field_bundle_settings_node__achievement
 features[variable][] = field_bundle_settings_node__client
 features[variable][] = field_bundle_settings_profile2__coe_page

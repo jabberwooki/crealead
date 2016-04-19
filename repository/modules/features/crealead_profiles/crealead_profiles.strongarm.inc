@@ -13,27 +13,6 @@ function crealead_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'default_image_ft_state';
-  $strongarm->value = array(
-    'node' => array(
-      'brand' => array(
-        'field_brand_logo' => 'brand_default_logo',
-      ),
-      'info_meeting' => array(
-        'field_info_meeting_photo' => 'info_meetings_default_image',
-      ),
-    ),
-    'profile2' => array(
-      'coe_page' => array(
-        'field_coe_photo' => 'coe_default_picture',
-      ),
-    ),
-  );
-  $export['default_image_ft_state'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__achievement';
   $strongarm->value = array(
     'view_modes' => array(

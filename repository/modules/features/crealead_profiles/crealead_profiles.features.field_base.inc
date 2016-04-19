@@ -118,7 +118,7 @@ function crealead_profiles_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 52,
+      'default_image' => 0,
       'profile2_private' => FALSE,
       'uri_scheme' => 'public',
     ),
