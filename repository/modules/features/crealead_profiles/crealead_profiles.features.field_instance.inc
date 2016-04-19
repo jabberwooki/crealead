@@ -48,6 +48,7 @@ function crealead_profiles_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_biography',
     'label' => 'Biographie',
@@ -55,14 +56,18 @@ function crealead_profiles_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -75,7 +80,7 @@ function crealead_profiles_field_default_field_instances() {
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'linkit' => array(
@@ -401,6 +406,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_distinct_features',
     'label' => 'Pourquoi je sors du lot',
@@ -408,14 +414,18 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -428,7 +438,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'linkit' => array(
@@ -541,6 +551,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_interests',
     'label' => 'Centres d\'intérêt',
@@ -548,14 +559,18 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -568,7 +583,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'linkit' => array(

@@ -957,6 +957,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 12,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Description',
@@ -964,14 +965,18 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -984,7 +989,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'display_summary' => 0,
       'dnd_enabled' => 0,
@@ -1745,6 +1750,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 20,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_solutions',
     'label' => 'Solutions',
@@ -1752,14 +1758,18 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -1772,7 +1782,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'linkit' => array(
