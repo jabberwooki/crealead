@@ -844,13 +844,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Annuaire en cours de construction, merci pour votre compréhension...</h3>
-<p style="margin-bottom:20px;">Durant la finalisation de cette rubrique, merci de <a target="_blank" href="http://www.entrepreneurs-crealead.com/" target="_blank">consulter les fiches des co-entrepreneurs de Crealead sur le site www.entrepreneurs-crealead.com.</a></p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -885,6 +878,11 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_baseline']['field'] = 'field_brand_baseline';
   $handler->display->display_options['fields']['field_brand_baseline']['label'] = '';
   $handler->display->display_options['fields']['field_brand_baseline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1500,8 +1498,6 @@ function crealead_brands_views_default_views() {
     t('more'),
     t('Rechercher'),
     t('Show More'),
-    t('<h3>Annuaire en cours de construction, merci pour votre compréhension...</h3>
-<p style="margin-bottom:20px;">Durant la finalisation de cette rubrique, merci de <a target="_blank" href="http://www.entrepreneurs-crealead.com/" target="_blank">consulter les fiches des co-entrepreneurs de Crealead sur le site www.entrepreneurs-crealead.com.</a></p>'),
     t('Absence de résultat'),
     t('Aucun résultat ne correspond à vos critères de recherche.'),
     t('Cliquez sur un secteur d\'activité :'),
