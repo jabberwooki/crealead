@@ -26,3 +26,10 @@ function kcore_update_7002() {
 function kcore_update_7003() {
   module_enable(array('imagecache_canvasactions'));
 }
+
+/**
+ * Activate views_infinite_scroll module.
+ */
+function kcore_update_7004() {
+  module_enable(array('views_infinite_scroll'));
+}

@@ -15,6 +15,7 @@ dependencies[] = phone
 dependencies[] = rules
 dependencies[] = socialfield
 dependencies[] = taxonomy_display
+dependencies[] = views_infinite_scroll
 features[box][] = search_entrepreneur_intro
 features[context][] = achievement_page
 features[context][] = brand_page

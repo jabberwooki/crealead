@@ -213,6 +213,9 @@ projects[views_autocomplete_filters][version] = "1.2"
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.3"
 
+projects[views_infinite_scroll][subdir] = contrib
+projects[views_infinite_scroll][version] = "2.0"
+
 ;projects[views_slideshow][subdir] = contrib
 ;projects[views_slideshow][version] = "7.x-3.1"
 
