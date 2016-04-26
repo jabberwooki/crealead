@@ -65,6 +65,21 @@ function crealead_news_features_date_type_default() {
 function crealead_news_image_default_styles() {
   $styles = array();
 
+  // Exported image style: brand_news_335x200.
+  $styles['brand_news_335x200'] = array(
+    'label' => 'Actus marque (335x200)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 335,
+          'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: large_bandeau.
   $styles['large_bandeau'] = array(
     'label' => 'large bandeau (1920x430)',

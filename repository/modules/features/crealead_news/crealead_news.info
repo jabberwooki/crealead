@@ -82,6 +82,7 @@ features[field_instance][] = node-news-field_related_brands
 features[field_instance][] = node-news-field_sector
 features[field_instance][] = node-news-field_sorting_date
 features[field_instance][] = taxonomy_term-scald_authors-scald_author_url
+features[image][] = brand_news_335x200
 features[image][] = large_bandeau
 features[image][] = zoom_actu
 features[menu_links][] = main-menu_actualits:actualites

@@ -253,9 +253,9 @@ function crealead_news_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_news_type',
-      2 => 'field_image',
-      3 => 'field_news_date',
+      1 => 'field_image',
+      2 => 'field_news_date',
+      3 => 'field_news_type',
       4 => 'field_sector',
       5 => 'title',
     ),
