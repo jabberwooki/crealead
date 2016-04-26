@@ -155,6 +155,9 @@ projects[filefield_sources][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
+projects[manualcrop][subdir] = contrib
+projects[manualcrop][version] = "7.x-1.5"
+
 ;projects[migrate][subdir] = contrib
 ;projects[migrate][version] = "7.x-2.7"
 
