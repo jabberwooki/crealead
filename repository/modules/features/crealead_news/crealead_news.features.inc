@@ -69,6 +69,17 @@ function crealead_news_image_default_styles() {
   $styles['brand_news_335x200'] = array(
     'label' => 'Actus marque (335x200)',
     'effects' => array(
+      11 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 335,
+          'height' => 200,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'brand_news_335x200',
+        ),
+        'weight' => 0,
+      ),
       2 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
@@ -84,7 +95,18 @@ function crealead_news_image_default_styles() {
   $styles['large_bandeau'] = array(
     'label' => 'large bandeau (1920x430)',
     'effects' => array(
-      8 => array(
+      10 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 1920,
+          'height' => 430,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'large_bandeau',
+        ),
+        'weight' => 0,
+      ),
+      9 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1920,
@@ -99,7 +121,18 @@ function crealead_news_image_default_styles() {
   $styles['zoom_actu'] = array(
     'label' => 'Zoom actu (600*549)',
     'effects' => array(
-      7 => array(
+      6 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 600,
+          'height' => 549,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'zoom_actu',
+        ),
+        'weight' => 0,
+      ),
+      5 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 600,

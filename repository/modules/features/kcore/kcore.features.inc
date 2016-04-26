@@ -130,7 +130,18 @@ function kcore_image_default_styles() {
   $styles['carre_large'] = array(
     'label' => 'carré large (480x480)',
     'effects' => array(
-      6 => array(
+      4 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 480,
+          'height' => 480,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'carre_large',
+        ),
+        'weight' => 0,
+      ),
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 480,
