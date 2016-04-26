@@ -156,10 +156,10 @@ projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
 projects[manualcrop][subdir] = contrib
-projects[manualcrop][version] = "7.x-1.5"
+projects[manualcrop][version] = "1.5"
 
 ;projects[migrate][subdir] = contrib
-;projects[migrate][version] = "7.x-2.7"
+;projects[migrate][version] = "2.7"
 
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "7.x-2.5"
