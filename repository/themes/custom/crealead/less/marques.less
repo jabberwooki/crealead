@@ -1,7 +1,9 @@
 /* Bandeau de au dessus de la recherche *******************************************************************************/
 #boxes-box-search_entrepreneur_intro {
   background: url('../images/fond_entrepreneurs.jpg') no-repeat;
-  height: 250px;
+  @media (min-width: @screen-sm) {
+    height: 250px;
+  }
   margin: 0;
   padding: 20px;
   .boxes-box-content {
@@ -17,6 +19,9 @@
     h2 {
       color: white;
       text-align: center;
+      @media (max-width: @screen-sm) {
+        font-size: 1.5em;
+      }
     }
     p {
       font-size: 1.2em;
@@ -142,10 +147,14 @@
     width: 40%;
   }
 }
-
 /* Résultats **********************************************************************************************************/
 #views-bootstrap-grid-1 {
   .col-lg-3 {
+    @media (max-width: @screen-sm) {
+      div {
+        margin: 20px 0;
+      }
+    }
     h3.list-brand > a {
       .quick();
       margin-top: 5px;
