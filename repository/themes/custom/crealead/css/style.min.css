@@ -1744,6 +1744,8 @@ h3.home-news-title a:hover{text-decoration:none;color:#999}
 }
 #boxes-box-search_entrepreneur_intro .boxes-box-content h2{color:#fff;text-align:center}
 #boxes-box-search_entrepreneur_intro .boxes-box-content p{font-size:1.2em}
+#arrow-down-headband{background:url(../../../../modules/features/crealead_brands/img/arrows_up_down.png) 0 100% no-repeat;z-index:10}
+#arrow-down-headband.expanded{background:url(../../../../modules/features/crealead_brands/img/arrows_up_down.png) no-repeat}
 #views-exposed-form-brands-brands-list .radio+.radio{margin-top:0}
 #views-exposed-form-brands-brands-list #label-edit-field-business-sector-tid{font-family:Quicksand,sans-serif;text-transform:uppercase;font-weight:700;text-align:center;display:block;font-size:1.2em;margin:-5px 0 15px}
 #views-exposed-form-brands-brands-list .form-type-radio{float:left;margin-right:0}
