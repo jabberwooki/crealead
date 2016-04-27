@@ -1724,6 +1724,8 @@ body.node-type-news .field-name-body h3{font-family:Quicksand,sans-serif;color:#
 }
 .full_content-header{margin-top:60px;padding:0}
 .full_content-header.container-header-logged-in{margin-top:40px}
+@media (max-width:768px){.full_content-header{margin-top:-20px}
+}
 .bg-gray-crealead-icons{background:url(../images/motif_1.png) #ededed}
 .content-header{margin-top:60px;padding:20px 0}
 .content-header.container-header-logged-in{margin-top:40px}
