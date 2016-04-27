@@ -1764,26 +1764,46 @@ h3.home-news-title a:hover{text-decoration:none;color:#999}
 #views-exposed-form-brands-brands-list .form-type-radio label.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label:hover{color:#bf0e38}
 #views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all]{background:url(../images/bg_search/recherche_03.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all].input-checked,#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all]:hover{background:url(../images/bg_search/recherche_hover_03.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label{padding:0;min-width:0}
+#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all],#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all].input-checked,#views-exposed-form-brands-brands-list .form-type-radio label[for=edit-field-business-sector-tid-all]:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5{background:url(../images/bg_search/recherche_05.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5:hover{background:url(../images/bg_search/recherche_hover_05.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-2a16e571-35dc-4854-8ccf-4037d23c11b5:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2{background:url(../images/bg_search/recherche_07.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2:hover{background:url(../images/bg_search/recherche_hover_07.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-968c624e-18fa-42dd-8fa0-b8c1336bfec2:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb{background:url(../images/bg_search/recherche_09.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb:hover{background:url(../images/bg_search/recherche_hover_09.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-4bcbd360-8cac-4b48-b156-99bc51cdeecb:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73{background:url(../images/bg_search/recherche_05.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73:hover{background:url(../images/bg_search/recherche_hover_05.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-9bd98d14-1229-4def-b367-f937ac900e73:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6{background:url(../images/bg_search/recherche_13.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6:hover{background:url(../images/bg_search/recherche_hover_13.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-22c4b38c-0df9-4697-8f56-1c7171ad86d6:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6{background:url(../images/bg_search/recherche_15.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6:hover{background:url(../images/bg_search/recherche_hover_15.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-b8a926d4-c201-4e69-8648-ab19de4886f6:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4{background:url(../images/bg_search/recherche_17.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4:hover{background:url(../images/bg_search/recherche_hover_17.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-ff0742c7-b826-4473-b08e-69b6d6e785f4:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773{background:url(../images/bg_search/recherche_19.png) 50% 0 no-repeat}
 #views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773:hover{background:url(../images/bg_search/recherche_hover_19.png) 50% 0 no-repeat}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773.input-checked,#views-exposed-form-brands-brands-list .form-type-radio label#uuid-cd426be7-05fb-43d2-a9df-2d5483226773:hover{background:0 0}
+}
 #views-exposed-form-brands-brands-list .form-type-radio label:hover:before{background-color:#bf0e38;color:#FFF}
 #views-exposed-form-brands-brands-list input.form-radio{display:none}
 #views-exposed-form-brands-brands-list #edit-field-brand-search-value-wrapper,#views-exposed-form-brands-brands-list #edit-title-wrapper{float:left;width:40%}
-@media (max-width:768px){body.page-annuaire-entrepreneurs #views-bootstrap-grid-1 .col-lg-3{border-bottom:1px solid #bf0e38}
+@media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label,#views-exposed-form-brands-brands-list .form-type-radio label:hover:before{background:0 0}
+body.page-annuaire-entrepreneurs #views-bootstrap-grid-1 .col-lg-3{border-bottom:1px solid #bf0e38}
 body.page-annuaire-entrepreneurs #views-bootstrap-grid-1 .col-lg-3 div{margin:20px 0}
 }
 body.page-annuaire-entrepreneurs #views-bootstrap-grid-1 .col-lg-3 h3.list-brand>a{font-family:Quicksand,sans-serif;margin-top:5px;font-size:.8em;font-weight:700;display:block;text-align:center}
