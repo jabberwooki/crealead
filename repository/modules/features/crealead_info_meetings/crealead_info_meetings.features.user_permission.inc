@@ -90,6 +90,7 @@ function crealead_info_meetings_user_default_permissions() {
   $permissions['create info_meeting_registration registration other anonymous'] = array(
     'name' => 'create info_meeting_registration registration other anonymous',
     'roles' => array(
+      'administrateur' => 'administrateur',
       'anonymous user' => 'anonymous user',
       'pôle gestion' => 'pôle gestion',
     ),
