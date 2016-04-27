@@ -1749,7 +1749,7 @@ h3.home-news-title a:hover{text-decoration:none;color:#999}
 @media (min-width:1500px){#boxes-box-search_entrepreneur_intro .boxes-box-content{width:50%}
 }
 #boxes-box-search_entrepreneur_intro .boxes-box-content h2{color:#fff;text-align:center}
-@media (max-width:768px){#boxes-box-search_entrepreneur_intro .boxes-box-content h2{font-size:1.5em}
+@media (max-width:768px){#boxes-box-search_entrepreneur_intro .boxes-box-content h2{font-size:1.5em;margin:0}
 }
 #boxes-box-search_entrepreneur_intro .boxes-box-content p{font-size:1.2em}
 #arrow-down-headband{background:url(../../../../modules/features/crealead_brands/img/arrows_up_down.png) 0 100% no-repeat;z-index:10}
