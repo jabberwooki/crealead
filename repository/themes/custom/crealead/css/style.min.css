@@ -1434,6 +1434,8 @@ html.js input.form-autocomplete{background-image:none}
 body{position:relative;font-family:'Source Sans Pro',sans-serif}
 body.admin-expanded.admin-vertical.admin-nw .navbar,body.admin-expanded.admin-vertical.admin-sw .navbar{margin-left:260px}
 body.navbar-is-fixed-top{padding-top:64px!important}
+@media (max-width:768px){body.navbar-is-fixed-top{padding-top:0!important}
+}
 body.navbar-is-fixed-bottom{padding-bottom:64px!important}
 body.toolbar{padding-top:30px!important}
 body.toolbar .navbar-fixed-top{top:30px}
