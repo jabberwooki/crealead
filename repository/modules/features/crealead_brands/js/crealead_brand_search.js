@@ -41,12 +41,19 @@
       	$("#submission-widget").show();
         $("#views-exposed-form-brands-brands-list").submit();
       });
-	  // hide the headband after 3 s
-	  setTimeout(function(){
-		$('#boxes-box-search_entrepreneur_intro').slideUp(3000);
-	  }, 3000);
-
-      // Creation of an image to slide down and slide down introduction
+	  // check the referrer
+	  var referrer =  document.referrer;
+	  if(referrer.indexOf('annuaire-entrepreneurs') != -1) {
+		$('#boxes-box-search_entrepreneur_intro').slideUp(0);
+		console.log('oui');
+	  } else {
+		console.log('non');
+		setTimeout(function(){
+		  // hide the headband after 1.5 s
+		  $('#boxes-box-search_entrepreneur_intro').slideUp(1500);
+		}, 1500);
+	  }
+      // Creation of a div with arrow in background to slide down and slide up introduction
 	  $arrow_down = $('<div id="arrow-down-headband"></div>');
 	  $arrow_down.css({
 		'display' : 'block',
@@ -58,11 +65,11 @@
 	  });
 	  $arrow_down.insertAfter('#boxes-box-search_entrepreneur_intro');
 
-	  // show the headband after a click on the image
+	  // show the headband after a click on the div
 	  $arrow_down.click(function(){
-		$('#boxes-box-search_entrepreneur_intro').slideToggle(3000);
+		$('#boxes-box-search_entrepreneur_intro').slideToggle(1500);
 		setTimeout(function(){
-			$('#arrow-down-headband').toggleClass('expanded');}, 2500);
+			$('#arrow-down-headband').toggleClass('expanded');}, 1400);
 	  });
 
     }
