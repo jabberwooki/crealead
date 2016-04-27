@@ -10,7 +10,7 @@
     	// 1- Creation of div containing the form submission widget.
     	// 1.1 - A new div containing image widget is inserted right after the header div (containing search form).
     	featurePath = settings.creaelad_brands_search.brand_feature_path;
-      $("div.content-header").after('<div id="submission-widget"><img src="' + featurePath + '/img/clock.gif"></div>');
+      $("div.content-header").after('<div id="submission-widget"><img src="' + featurePath + '/img/clock.gif" alt=""></div>');
       
       // 1.2 - New div layout settings
     	$("#submission-widget").css('text-align','center');
@@ -41,7 +41,30 @@
       	$("#submission-widget").show();
         $("#views-exposed-form-brands-brands-list").submit();
       });
-      
+	  // hide the headband after 3 s
+	  setTimeout(function(){
+		$('#boxes-box-search_entrepreneur_intro').slideUp(3000);
+	  }, 3000);
+
+      // Creation of an image to slide down and slide down introduction
+	  $arrow_down = $('<div id="arrow-down-headband"></div>');
+	  $arrow_down.css({
+		'display' : 'block',
+		'width': '72px',
+		'height': '33px',
+		'position': 'absolute',
+		'cursor': 'pointer',
+		'left': '50%'
+	  });
+	  $arrow_down.insertAfter('#boxes-box-search_entrepreneur_intro');
+
+	  // show the headband after a click on the image
+	  $arrow_down.click(function(){
+		$('#boxes-box-search_entrepreneur_intro').slideToggle(3000);
+		setTimeout(function(){
+			$('#arrow-down-headband').toggleClass('expanded');}, 2500);
+	  });
+
     }
   };
 }(jQuery));
