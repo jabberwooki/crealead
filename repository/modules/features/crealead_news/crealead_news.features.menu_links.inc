@@ -23,7 +23,7 @@ function crealead_news_menu_default_menu_links() {
       'identifier' => 'main-menu_actualits:actualites',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
