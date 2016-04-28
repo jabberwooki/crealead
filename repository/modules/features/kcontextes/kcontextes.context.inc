@@ -26,6 +26,12 @@ function kcontextes_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu-menu-top' => array(
+          'module' => 'menu',
+          'delta' => 'menu-top',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
         'kcore-crealead_sponsors' => array(
           'module' => 'kcore',
           'delta' => 'crealead_sponsors',
