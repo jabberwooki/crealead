@@ -75,6 +75,11 @@
 ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?> white">
   <div class="container">
+    <div id="top-navigation" class="pull-right">
+      <?php if (!empty($page['navigation'])): ?>
+        <?php print render($page['navigation']); ?>
+      <?php endif; ?>
+    </div>
     <div class="navbar-header">
       <?php if ($logo): ?>
         <h1 id="h1-logo">
