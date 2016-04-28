@@ -50,10 +50,31 @@ function kcore_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: menu-top_contact:eform/submit/site-contact.
+  $menu_links['menu-top_contact:eform/submit/site-contact'] = array(
+    'menu_name' => 'menu-top',
+    'link_path' => 'eform/submit/site-contact',
+    'router_path' => 'eform/submit/%',
+    'link_title' => 'Contact',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-top_contact:eform/submit/site-contact',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 1,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Accueil');
+  t('Contact');
   t('Plan du site');
 
   return $menu_links;
