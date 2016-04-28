@@ -86,6 +86,7 @@ features[image][] = brand_news_335x200
 features[image][] = large_bandeau
 features[image][] = zoom_actu
 features[menu_links][] = main-menu_actualits:actualites
+features[menu_links][] = menu-top_actualits:actualites
 features[node][] = news
 features[taxonomy][] = news_authors
 features[taxonomy][] = news_types

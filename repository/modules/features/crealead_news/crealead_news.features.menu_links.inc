@@ -30,6 +30,26 @@ function crealead_news_menu_default_menu_links() {
     'weight' => 20,
     'customized' => 1,
   );
+  // Exported menu link: menu-top_actualits:actualites.
+  $menu_links['menu-top_actualits:actualites'] = array(
+    'menu_name' => 'menu-top',
+    'link_path' => 'actualites',
+    'router_path' => 'actualites',
+    'link_title' => 'Actualités',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-top_actualits:actualites',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
