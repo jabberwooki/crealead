@@ -7,6 +7,8 @@
 include_once 'crealead_trainings.features.inc';
 
 function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings.js');
+
   global $user;
   $current_user_roles = $user->roles;
   $crealead_trainings_allowed_roles = array('administrateur','webmaster','référent');

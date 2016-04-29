@@ -31,6 +31,27 @@ function crealead_trainings_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_scheduled_sessions'.
+  $field_bases['field_scheduled_sessions'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_scheduled_sessions',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_training_aims'.
   $field_bases['field_training_aims'] = array(
     'active' => 1,
