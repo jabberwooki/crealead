@@ -1,0 +1,43 @@
+.page-taxonomy-term{
+  .col-sm-6{
+    .view-content{
+      .carousel-inner{
+        width: 86%;
+        display: block;
+        margin: 0 auto;
+        height: 80px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        .field-name-field-brand-logo img{
+          max-height: 80px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .carousel-indicators{
+        bottom: -35px;
+        height: 20px;
+        display: inline-block;
+        li{
+          border: 1px solid @bleu-clair-crealead;
+          width: 14px;
+          height: 14px;
+          &.active{
+            border: 1px solid @rouge-crealead;
+            /*
+            background-color: @rouge-crealead;
+            */
+            width: 12px;
+            height: 12px;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+      .carousel-control{
+        background-image: none;
+        width: 20px;
+      }
+    }
+  }
+}
