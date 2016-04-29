@@ -181,7 +181,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 17,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -271,7 +271,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -392,7 +392,7 @@ function crealead_news_field_default_field_instances() {
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -419,7 +419,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 23,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -446,6 +446,7 @@ function crealead_news_field_default_field_instances() {
         'weight' => 17,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
     'label' => 'Thématique(s) concernée(s)',
@@ -497,7 +498,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 15,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -598,7 +599,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 18,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -711,7 +712,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 21,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -792,7 +793,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 16,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -880,7 +881,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 22,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -962,7 +963,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 19,
       ),
       'news_2_3' => array(
         'label' => 'inline',
@@ -1051,7 +1052,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 20,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -1153,6 +1154,7 @@ function crealead_news_field_default_field_instances() {
   t('Date de tri');
   t('Homepage of the Author');
   t('Image');
+  t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
   t('Nature de l\'actualité');
   t('Secteur');
