@@ -254,6 +254,52 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+
+  /* Display: Réalisations d'une thématique */
+  $handler = $view->new_display('entity_view', 'Réalisations d\'une thématique', 'theme_realisations');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '0';
+  $handler->display->display_options['style_options']['navigation'] = 1;
+  $handler->display->display_options['style_options']['indicators'] = 1;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Nos réalisations</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Thématique(s) concernée(s) (field_landing_pages) */
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['label'] = 'terme à partir de field_landing_pages';
+  $handler->display->display_options['relationships']['field_landing_pages_tid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Thématique(s) concernée(s) (field_landing_pages) */
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_landing_pages_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'themes',
+  );
   $translatables['achievements'] = array(
     t('Master'),
     t('Réalisations'),
@@ -274,6 +320,9 @@ function crealead_brands_views_default_views() {
     t('Liste des réalisations'),
     t('author'),
     t('(créé par [name])'),
+    t('Réalisations d\'une thématique'),
+    t('<h3>Nos réalisations</h3>'),
+    t('terme à partir de field_landing_pages'),
   );
   $export['achievements'] = $view;
 

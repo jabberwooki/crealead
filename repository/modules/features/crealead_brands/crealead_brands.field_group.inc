@@ -646,10 +646,7 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Blog',
     'weight' => '6',
-    'children' => array(
-      0 => 'news_theme_news',
-      1 => 'articles_theme_articles',
-    ),
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_accordion_item',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -699,9 +696,7 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Marques associées',
     'weight' => '5',
-    'children' => array(
-      0 => 'brands_entity_view_1',
-    ),
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
       'formatter' => '',
@@ -806,10 +801,10 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Onglets',
-    'weight' => '1',
+    'weight' => '8',
     'children' => array(
-      0 => 'group_theme_brands_tab',
-      1 => 'group_theme_blog_tab',
+      0 => 'group_theme_blog_tab',
+      1 => 'group_theme_brands_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(

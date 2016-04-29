@@ -734,6 +734,16 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -859,6 +869,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => 'content',
+          'image_style' => 'height_150',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -919,6 +940,64 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
+  // Exported field_instance: 'node-achievement-field_landing_pages'.
+  $field_instances['node-achievement-field_landing_pages'] = array(
+    'bundle' => 'achievement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des marques qui sont spécialisées dans les dîtes thématiques. Merci de cocher une thématique que si elle fait partie de votre coeur de métier.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_landing_pages',
+    'label' => 'Thématique(s) concernée(s)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-brand-body'.
   $field_instances['node-brand-body'] = array(
     'bundle' => 'brand',
@@ -954,7 +1033,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 15,
       ),
       'logo' => array(
         'label' => 'hidden',
@@ -1138,10 +1217,22 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 34,
       ),
       'landing_page_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
+        'label' => 'hidden',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_image_style' => '',
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+          'field_formatter_class' => '',
+        ),
+        'type' => 'colorbox_field_formatter_linked',
+        'weight' => 2,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1397,7 +1488,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'height_150',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -2403,7 +2494,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des marques qui sont spécialisées dans les dîtes thématiques. Merci de cocher une thématique que si elle fait partie de votre coeur de métier.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -2445,6 +2536,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 19,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
     'label' => 'Pages thématiques',
@@ -2982,6 +3074,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
 </li>
 </ul>');
   t('Indiquez la ville et/ou le pays.');
+  t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des marques qui sont spécialisées dans les dîtes thématiques. Merci de cocher une thématique que si elle fait partie de votre coeur de métier.');
   t('Liens réseaux sociaux');
   t('Localisation');
   t('Logo');
@@ -2997,6 +3090,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Site web');
   t('Solutions');
   t('Sujet de votre message');
+  t('Thématique(s) concernée(s)');
   t('Type de client');
   t('Type de marque');
   t('Type de sauvegarde');
