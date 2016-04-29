@@ -1197,7 +1197,7 @@ function crealead_trainings_field_default_field_instances() {
     'bundle' => 'training',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1407,6 +1407,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Durée');
   t('Formateur(s)');
   t('Introduction');
+  t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
   t('Méthode');
   t('Méthodes d\'évaluation');
