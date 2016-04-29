@@ -398,7 +398,7 @@ function crealead_articles_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des articles spécifiques à ces dîtes thématiques. Merci de cocher une thématique que si c\'est un sujet important de votre article.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -446,6 +446,7 @@ function crealead_articles_field_default_field_instances() {
         'weight' => 2,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
     'label' => 'Thématique(s) concernée(s)',
@@ -466,6 +467,7 @@ function crealead_articles_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Corps');
   t('Image');
+  t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des articles spécifiques à ces dîtes thématiques. Merci de cocher une thématique que si c\'est un sujet important de votre article.');
   t('Marque(s) concernée(s)');
   t('Nature de l\'article');
   t('Thématique(s) concernée(s)');
