@@ -114,10 +114,11 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['field_training_price']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Objectifs */
+  /* Field: Content: Objectifs pédagogiques */
   $handler->display->display_options['fields']['field_training_aims']['id'] = 'field_training_aims';
   $handler->display->display_options['fields']['field_training_aims']['table'] = 'field_data_field_training_aims';
   $handler->display->display_options['fields']['field_training_aims']['field'] = 'field_training_aims';
+  $handler->display->display_options['fields']['field_training_aims']['label'] = 'Objectifs';
   $handler->display->display_options['fields']['field_training_aims']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_training_aims']['settings'] = array(
     'field_formatter_class' => '',
