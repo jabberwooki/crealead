@@ -304,13 +304,13 @@ function crealead_brands_strongarm() {
         ),
         'trainings_landing_page_trainings' => array(
           'full' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
           ),
         ),
         'achievements_theme_realisations' => array(
           'full' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => TRUE,
           ),
         ),

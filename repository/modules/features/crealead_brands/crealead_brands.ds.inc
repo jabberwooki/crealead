@@ -703,8 +703,8 @@ function crealead_brands_ds_layout_settings_info() {
       ),
       'right' => array(
         3 => 'brands_entity_view_1',
-        4 => 'trainings_landing_page_trainings',
-        5 => 'achievements_theme_realisations',
+        4 => 'achievements_theme_realisations',
+        5 => 'trainings_landing_page_trainings',
       ),
     ),
     'fields' => array(
@@ -712,8 +712,8 @@ function crealead_brands_ds_layout_settings_info() {
       'news_theme_news' => 'left',
       'articles_theme_articles' => 'left',
       'brands_entity_view_1' => 'right',
-      'trainings_landing_page_trainings' => 'right',
       'achievements_theme_realisations' => 'right',
+      'trainings_landing_page_trainings' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
