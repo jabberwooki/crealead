@@ -69,8 +69,18 @@ function crealead_news_image_default_styles() {
   $styles['brand_news_335x200'] = array(
     'label' => 'Actus marque (335x200)',
     'effects' => array(
-      11 => NULL,
-      2 => array(
+      19 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 335,
+          'height' => 200,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'brand_news_335x200',
+        ),
+        'weight' => 0,
+      ),
+      18 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 335,
