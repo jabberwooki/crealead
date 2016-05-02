@@ -252,7 +252,7 @@ function crealead_brands_strongarm() {
         ),
         'brands_entity_view_1' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => TRUE,
           ),
           'full' => array(
@@ -280,7 +280,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'default' => array(
-            'weight' => '10',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -298,7 +298,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '11',
+            'weight' => '3',
             'visible' => TRUE,
           ),
         ),
@@ -307,10 +307,18 @@ function crealead_brands_strongarm() {
             'weight' => '5',
             'visible' => TRUE,
           ),
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
         ),
         'achievements_theme_realisations' => array(
           'full' => array(
             'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '6',
             'visible' => TRUE,
           ),
         ),
