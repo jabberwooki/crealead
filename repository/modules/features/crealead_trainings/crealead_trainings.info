@@ -35,6 +35,7 @@ features[field_base][] = field_training_validation
 features[field_group][] = group_training_data|node|training|full
 features[field_group][] = group_training_header_center|node|training|full
 features[field_group][] = group_training_header_left|node|training|full
+features[field_group][] = group_training_header_right|node|training|full
 features[field_group][] = group_training_header|node|training|full
 features[field_group][] = group_training_left_col|node|training|full
 features[field_group][] = group_training_right_col|node|training|full
