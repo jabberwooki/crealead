@@ -172,7 +172,7 @@ function crealead_news_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_news_date' => array(
+    'field_image' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
@@ -353,6 +353,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|default'] = $ds_layout;
 
@@ -493,6 +494,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|news_brand'] = $ds_layout;
 

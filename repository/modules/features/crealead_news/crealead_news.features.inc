@@ -85,8 +85,18 @@ function crealead_news_image_default_styles() {
   $styles['large_bandeau'] = array(
     'label' => 'large bandeau (1920x430)',
     'effects' => array(
-      10 => NULL,
-      9 => array(
+      17 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 1920,
+          'height' => 430,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'large_bandeau',
+        ),
+        'weight' => 0,
+      ),
+      16 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1920,
@@ -101,8 +111,18 @@ function crealead_news_image_default_styles() {
   $styles['zoom_actu'] = array(
     'label' => 'Zoom actu (600*549)',
     'effects' => array(
-      6 => NULL,
-      5 => array(
+      15 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 600,
+          'height' => 549,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'zoom_actu',
+        ),
+        'weight' => 0,
+      ),
+      14 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 600,
