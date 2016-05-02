@@ -382,6 +382,7 @@ function crealead_articles_field_default_field_instances() {
         'manualcrop_styles_list' => array(
           'carre_large' => 'carre_large',
           'image_temoignage_accueil' => 'image_temoignage_accueil',
+          'large_bandeau' => 'large_bandeau',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,

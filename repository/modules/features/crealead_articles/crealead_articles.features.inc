@@ -39,8 +39,18 @@ function crealead_articles_image_default_styles() {
   $styles['image_temoignage_accueil'] = array(
     'label' => 'Temoignage Accueil',
     'effects' => array(
-      13 => NULL,
-      12 => array(
+      21 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 540,
+          'height' => 256,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'image_temoignage_accueil',
+        ),
+        'weight' => 0,
+      ),
+      20 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 540,
