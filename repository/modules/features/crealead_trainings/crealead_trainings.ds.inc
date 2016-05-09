@@ -273,7 +273,7 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -440,20 +440,20 @@ function crealead_trainings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'title',
-        1 => 'field_training_type',
-        2 => 'field_training_theme',
-        3 => 'field_training_duration',
-        4 => 'field_training_price',
+        0 => 'field_training_type',
+        1 => 'title',
+        2 => 'field_training_price',
+        3 => 'field_training_theme',
+        4 => 'field_training_duration',
         5 => 'field_training_aims',
       ),
     ),
     'fields' => array(
-      'title' => 'central',
       'field_training_type' => 'central',
+      'title' => 'central',
+      'field_training_price' => 'central',
       'field_training_theme' => 'central',
       'field_training_duration' => 'central',
-      'field_training_price' => 'central',
       'field_training_aims' => 'central',
     ),
     'classes' => array(),

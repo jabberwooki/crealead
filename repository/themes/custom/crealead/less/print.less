@@ -1,14 +1,44 @@
 @media print{
-  .navbar{
-    display: none;
+  body{
+    padding: 0;
+    margin:0;
+    .slicknav_menu{
+      display: none;
+    }
+    /**{
+      display: block;
+      border: 1px solid black;
+      margin:0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      height: auto  !important;
+    }*/
+    #skip-link{
+      display: none;
+    }
+    #navbar{
+      display: none;
+    }
+    > .main-container {
+      &:before{
+        display: none !important;
+      }
+      margin:0 !important;
+      padding: 0 !important;
+
+    }
+
+    .under-footer{
+      display: none;
+    }
+    a[href]:after {
+      content: none !important;
+    }
+    .training-email-label{
+      font-weight: bold;
+    }
+   
   }
-  .under-footer{
-    display: none;
-  }
-  a[href]:after {
-    content: none !important;
-  }
-  .training-email-label{
-    font-weight: bold;
-  }
+
+
 }
