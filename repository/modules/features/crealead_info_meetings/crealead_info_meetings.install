@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 10/05/16
+ * Time: 10:00
+ */
+
+/**
+ * Activate view_unpublished module.
+ */
+function crealead_info_meetings_update_7001() {
+  $query = db_select('menu_links', 'ml')
+    ->fields('ml', array('mlid','module'));
+  $or = db_or();
+  $or->condition('ml.link_path', 'admin/reunions-information-inscriptions');
+  $or->condition('ml.link_path', 'admin/info_meetings_registrations');
+  $query->condition($or);
+
+  $result = $query->execute()->fetchAll();
+  foreach ($result as $link) {
+    if ($link->module == 'menu') {
+      menu_link_delete($link->mlid);
+    }
+  }
+  }
+}

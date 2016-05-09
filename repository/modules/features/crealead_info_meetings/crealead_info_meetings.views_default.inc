@@ -707,6 +707,12 @@ Téléphone : 04-67-06-96-72';
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['path'] = 'admin/info_meetings_registrations';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Réunions d\'information';
+  $handler->display->display_options['menu']['weight'] = '100';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['info_meetings'] = array(
     t('Master'),
     t('Les réunions d\'information'),

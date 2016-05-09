@@ -94,7 +94,6 @@ features[field_instance][] = registration-info_meeting_registration-field_regist
 features[field_instance][] = registration-info_meeting_registration-field_registrant_title
 features[field_instance][] = registration-info_meeting_registration-field_unemployment_date
 features[menu_custom][] = management
-features[menu_links][] = management_inscriptions-aux-runions-dinformation:admin/info_meetings_registrations
 features[node][] = info_meeting
 features[registration_type][] = info_meeting_registration
 features[taxonomy][] = registrant_statuses
