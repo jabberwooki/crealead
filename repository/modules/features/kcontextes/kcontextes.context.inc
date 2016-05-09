@@ -71,12 +71,6 @@ function kcontextes_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'user-login' => array(
-          'module' => 'user',
-          'delta' => 'login',
-          'region' => 'navigation',
-          'weight' => '-10',
-        ),
         'kcore-crealead_coes_number' => array(
           'module' => 'kcore',
           'delta' => 'crealead_coes_number',
@@ -100,6 +94,12 @@ function kcontextes_context_default_contexts() {
           'delta' => 'crealead_meetings_number',
           'region' => 'content_header',
           'weight' => '-7',
+        ),
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'footer',
+          'weight' => '10',
         ),
       ),
     ),
