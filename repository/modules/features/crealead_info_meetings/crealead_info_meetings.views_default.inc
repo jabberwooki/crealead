@@ -487,6 +487,9 @@ Téléphone : 04-67-06-96-72';
   $handler = $view->new_display('page', 'Inscriptions', 'registrations_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Inscriptions aux réunions d\'information';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer info meetings';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -703,7 +706,7 @@ Téléphone : 04-67-06-96-72';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['path'] = 'admin/reunions-information-inscriptions';
+  $handler->display->display_options['path'] = 'admin/info_meetings_registrations';
   $translatables['info_meetings'] = array(
     t('Master'),
     t('Les réunions d\'information'),
