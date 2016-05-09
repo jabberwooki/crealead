@@ -187,6 +187,7 @@
 <div class="under-footer">
   <footer class="footer container">
     <?php print render($page['footer']); ?>
+    <!--
     <?php if (!empty($secondary_nav) || !empty($page['navigation'])): ?>
       <div class="navbar-collapse collapse">
         <nav role="navigation">
@@ -199,5 +200,6 @@
         </nav>
       </div>
     <?php endif; ?>
+    -->
   </footer>
 </div>
