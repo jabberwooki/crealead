@@ -6,6 +6,9 @@
 
   Drupal.behaviors.brand_search = {
     attach: function (context, settings) {
+			// Activity sectors tooltip removal.
+			$(".form-type-radios").removeAttr("title");
+      
     	// Handling of brand search launch when an Activity Sector picto is clicked.
     	// 1- Creation of div containing the form submission widget.
     	// 1.1 - A new div containing image widget is inserted right after the header div (containing search form).
@@ -45,9 +48,9 @@
 	  var referrer =  document.referrer;
 	  if(referrer.indexOf('annuaire-entrepreneurs') != -1) {
 		$('#boxes-box-search_entrepreneur_intro').slideUp(0);
-		console.log('oui');
+		//console.log('oui');
 	  } else {
-		console.log('non');
+		//console.log('non');
 		setTimeout(function(){
 		  // hide the headband after 1.5 s
 		  $('#boxes-box-search_entrepreneur_intro').slideUp(1500);
