@@ -219,8 +219,8 @@ function crealead_news_field_group_info() {
     'label' => 'group image type',
     'weight' => '27',
     'children' => array(
-      0 => 'field_news_type',
-      1 => 'field_image',
+      0 => 'field_image',
+      1 => 'field_news_type',
     ),
     'format_type' => 'div',
     'format_settings' => array(
