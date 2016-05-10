@@ -10,6 +10,8 @@
  * Activate view_unpublished module.
  */
 function crealead_info_meetings_update_7001() {
+  // Removes 'Inscription aux réunions d'info' menu link created via menu module.
+  // This link is now created by view and placed at admin menu top level.
   $query = db_select('menu_links', 'ml')
     ->fields('ml', array('mlid','module'));
   $or = db_or();
@@ -22,6 +24,5 @@ function crealead_info_meetings_update_7001() {
     if ($link->module == 'menu') {
       menu_link_delete($link->mlid);
     }
-  }
   }
 }
