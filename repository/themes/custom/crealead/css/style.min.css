@@ -1720,9 +1720,11 @@ body.node-type-news .field-name-body h3{font-family:Quicksand,sans-serif;color:#
 .third-effect>a{display:table-cell;vertical-align:middle}
 .third-effect>a>img{max-width:300px}
 .third-effect .mask{opacity:0;overflow:visible;box-sizing:border-box;transition:all .4s ease-in-out}
-@media (min-width:992px){#block-views-news-block-news-focus .grow img,#block-views-news-block-news-focus .pic{width:255px;height:255px}
+@media (min-width:992px){#block-views-news-block-news-focus .pic{width:255px;height:255px}
+#block-views-news-block-news-focus .grow img{width:255px;height:255px;max-height:none}
 #block-views-news-block-news-focus .grow img:hover{width:300px;height:300px}
-#block-views-articles-testimonials-front .grow img,#block-views-articles-testimonials-front .pic{width:540px;height:256px}
+#block-views-articles-testimonials-front .pic{width:540px;height:256px}
+#block-views-articles-testimonials-front .grow img{width:540px;height:256px;max-height:none}
 #block-views-articles-testimonials-front .grow img:hover{width:633px;height:300px}
 .view-css-effect{box-shadow:0 0 5px #aaa}
 .third-effect{width:262px;height:180px}
