@@ -11,10 +11,19 @@ include_once 'crealead_info_meetings.features.inc';
  */
 function crealead_info_meetings_init() {
   $node = menu_get_object();
-  if (isset($node) && $node->type == "info_meeting") {
+  if ((isset($node) && $node->type == "info_meeting") || (arg(0) == 'registration' && ((null!== arg(1) && is_int((int)arg(1)) && arg(1) != 0) || (null !== arg(2) && arg(2) == 'edit')))) {
     // We catch the first 3 letters of each term from registrant_statuses vocabulary,
     // to be used in the STATUT checkboxes jquery reorganisation.
     // (see repository/modules/features/crealead_info_meetings/js/crealead_info_meetings.js)
+    $display = 'create-form'; // case 1: we are in the info meeting full view mode which displays the registration creation form
+    if (arg(0) == 'registration' && null!== arg(1) && is_int((int)arg(1)) && arg(1) != 0) {
+      $display = 'full-mode'; // case 2: we are in the registration full view mode
+    }
+    if (arg(0) == 'registration' && null !== arg(2) && arg(2) == 'edit') {
+      $display = 'edit-form'; // case 3: we are in the registration edit form
+    }
+    drupal_add_js(array('crealead_registration_display' => $display), 'setting');
+    
     $params = array();
     $voc = taxonomy_vocabulary_machine_name_load('registrant_statuses');
     $tree = taxonomy_get_tree($voc->vid);
@@ -22,6 +31,7 @@ function crealead_info_meetings_init() {
       $params[$term->tid] = substr(strtolower(transliteration_get($term->name)),0,3);
     }
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
+    drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
   }
 }
 
@@ -41,8 +51,6 @@ function crealead_info_meetings_permission() {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
-  drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
-
   // Form fields re-ordering
   $form['who_is_registering']['#weight'] = -10;
   $form['user']['#weight'] = -9;
