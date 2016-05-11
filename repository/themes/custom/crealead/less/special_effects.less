@@ -17,8 +17,6 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-
-
 /* Cas des actus sur la page d'accueil quand le navigateur est grand (>992px) *****************************************/
 #block-views-news-block-news-focus{
   @media (min-width: @screen-md){
@@ -29,6 +27,7 @@
     .grow img {
       width: 255px;
       height: 255px;
+      max-height: none;
       &:hover{
         width: 300px;
         height: 300px;
@@ -46,6 +45,7 @@
     .grow img {
       width: 540px;
       height: 256px;
+      max-height: none;
       &:hover{
         width: 633px;
         height: 300px;
