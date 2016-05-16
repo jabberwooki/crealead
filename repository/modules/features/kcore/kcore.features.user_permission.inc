@@ -20,6 +20,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'admin_menu',
   );
@@ -33,6 +34,7 @@ function kcore_user_default_permissions() {
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'system',
   );
@@ -65,6 +67,7 @@ function kcore_user_default_permissions() {
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'node',
   );
@@ -77,6 +80,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'contextual',
   );
@@ -98,6 +102,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'draggableviews',
   );
@@ -686,6 +691,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'user',
   );
@@ -791,6 +797,7 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'metatag',
   );
@@ -964,6 +971,7 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'page_title',
   );
@@ -1089,6 +1097,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'filter',
   );
@@ -1103,6 +1112,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'filter',
   );
@@ -1144,6 +1154,7 @@ function kcore_user_default_permissions() {
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'node',
   );
@@ -1158,6 +1169,7 @@ function kcore_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'system',
   );
