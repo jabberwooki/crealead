@@ -18,6 +18,7 @@ function crealead_multimedia_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'scald_dnd_library',
   );
@@ -144,6 +145,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'scald',
   );
@@ -186,6 +188,7 @@ function crealead_multimedia_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'scald',
   );
@@ -218,6 +221,7 @@ function crealead_multimedia_user_default_permissions() {
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'scald',
   );
@@ -225,7 +229,9 @@ function crealead_multimedia_user_default_permissions() {
   // Exported permission: 'fetch own atom'.
   $permissions['fetch own atom'] = array(
     'name' => 'fetch own atom',
-    'roles' => array(),
+    'roles' => array(
+      'éditeur gazette' => 'éditeur gazette',
+    ),
     'module' => 'scald',
   );
 
@@ -257,6 +263,7 @@ function crealead_multimedia_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'scald',
   );
