@@ -24,7 +24,8 @@ function crealead_gazette_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_gazette_date_envoi',
+      2 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(

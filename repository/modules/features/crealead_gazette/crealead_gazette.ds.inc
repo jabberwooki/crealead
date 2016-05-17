@@ -29,6 +29,13 @@ function crealead_gazette_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
+    'field_gazette_date_envoi' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Envoyée le ',
+        ),
+      ),
+    ),
   );
   $export['node|gazette|teaser'] = $ds_fieldsetting;
 
@@ -70,6 +77,41 @@ function crealead_gazette_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|gazette|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'gazette';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'title',
+        1 => 'field_gazette_date_envoi',
+        2 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'central',
+      'field_gazette_date_envoi' => 'central',
+      'body' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['node|gazette|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|gazette|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'gazette';
@@ -80,12 +122,14 @@ function crealead_gazette_ds_layout_settings_info() {
       'central' => array(
         0 => 'group_gazette_teaser',
         1 => 'title',
-        2 => 'body',
+        2 => 'field_gazette_date_envoi',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'group_gazette_teaser' => 'central',
       'title' => 'central',
+      'field_gazette_date_envoi' => 'central',
       'body' => 'central',
     ),
     'classes' => array(),
