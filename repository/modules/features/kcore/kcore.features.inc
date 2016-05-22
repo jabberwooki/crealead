@@ -27,6 +27,62 @@ function kcore_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_default_entityform_type().
+ */
+function kcore_default_entityform_type() {
+  $items = array();
+  $items['site_contact'] = entity_import('entityform_type', '{
+    "type" : "site_contact",
+    "label" : "Nous contacter",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "full_html" },
+      "submit_button_text" : "Envoyer",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "full_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : {
+        "1" : "1",
+        "2" : "2",
+        "14479344" : 0,
+        "103860121" : 0,
+        "191976793" : 0,
+        "7178059" : 0,
+        "31497918" : 0,
+        "231346920" : 0,
+        "193262079" : 0
+      },
+      "resubmit_action" : "new",
+      "redirect_path" : "",
+      "instruction_pre" : {
+        "value" : "\\u003Cp\\u003EPour tout renseignement sur l\\u0027adh\\u00e9sion \\u00e0 la coop\\u00e9rative, vous pouvez vous inscrire \\u00e0 une \\u003Ca href=\\u0022\\/reunions-information\\u0022\\u003Er\\u00e9union d\\u0027information\\u003C\\/a\\u003E.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EPour tout autre demande, vous pouvez utiliser le formulaire ci-dessous.\\u003C\\/p\\u003E\\r\\n",
+        "format" : "full_html"
+      }
+    },
+    "weight" : "0",
+    "rdf_mapping" : [],
+    "paths" : { "submit" : {
+        "source" : "eform\\/submit\\/site-contact",
+        "alias" : "page-contact",
+        "language" : "und"
+      }
+    }
+  }');
+  return $items;
+}
+
+/**
  * Implements hook_features_date_format_default().
  */
 function kcore_features_date_format_default() {
@@ -130,7 +186,18 @@ function kcore_image_default_styles() {
   $styles['carre_large'] = array(
     'label' => 'carré large (480x480)',
     'effects' => array(
-      6 => array(
+      4 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 480,
+          'height' => 480,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'carre_large',
+        ),
+        'weight' => 0,
+      ),
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 480,

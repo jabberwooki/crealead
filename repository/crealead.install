@@ -226,3 +226,17 @@ function crealead_update_7002() {
 function crealead_update_7003() {
   module_enable(array('crealead_my_contents'));
 }
+
+/**
+ * Activate feature crealead_trainings.
+ */
+function crealead_update_7004() {
+  module_enable(array('crealead_trainings'));
+}
+
+/**
+ * Activate field_formatter_settings and field_formatter_class module.
+ */
+function crealead_update_7005() {
+  module_enable(array('field_formatter_settings','field_formatter_class'));
+}

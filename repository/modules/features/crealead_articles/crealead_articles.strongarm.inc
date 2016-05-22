@@ -55,6 +55,15 @@ function crealead_articles_strongarm() {
       'zoom_news' => array(
         'custom_settings' => FALSE,
       ),
+      'landing_page_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'logo' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_brand' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

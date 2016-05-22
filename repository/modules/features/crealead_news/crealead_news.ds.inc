@@ -122,6 +122,11 @@ function crealead_news_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_news_date' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -132,6 +137,7 @@ function crealead_news_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -148,6 +154,7 @@ function crealead_news_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -172,7 +179,7 @@ function crealead_news_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_news_date' => array(
+    'field_image' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
@@ -353,6 +360,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|default'] = $ds_layout;
 
@@ -424,11 +432,11 @@ function crealead_news_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_all',
         1 => 'group_img_type',
-        2 => 'field_image',
-        3 => 'group_textes',
+        2 => 'group_textes',
+        3 => 'field_image',
         4 => 'title',
-        5 => 'body',
-        6 => 'field_news_type',
+        5 => 'field_news_type',
+        6 => 'body',
         7 => 'field_sector',
         8 => 'field_news_date',
       ),
@@ -436,11 +444,11 @@ function crealead_news_ds_layout_settings_info() {
     'fields' => array(
       'group_all' => 'ds_content',
       'group_img_type' => 'ds_content',
-      'field_image' => 'ds_content',
       'group_textes' => 'ds_content',
+      'field_image' => 'ds_content',
       'title' => 'ds_content',
-      'body' => 'ds_content',
       'field_news_type' => 'ds_content',
+      'body' => 'ds_content',
       'field_sector' => 'ds_content',
       'field_news_date' => 'ds_content',
     ),
@@ -453,6 +461,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|news_2_3'] = $ds_layout;
 
@@ -493,6 +502,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|news_brand'] = $ds_layout;
 

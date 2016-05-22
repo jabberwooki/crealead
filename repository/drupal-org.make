@@ -126,6 +126,7 @@ projects[entityform][version] = "2.0-rc1"
 
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = "1.1"
+projects[entityreference][patch][] = "https://www.drupal.org/files/issues/entityreference_1836106_48.patch"
 
 projects[entityreference_views_formatter][subdir] = contrib
 projects[entityreference_views_formatter][version] = "1.x-dev"
@@ -139,6 +140,12 @@ projects[field_collection][version] = "1.0-beta11"
 projects[field_collection_views][subdir] = contrib
 projects[field_collection_views][version] = "1.0-beta3"
 
+projects[field_formatter_class][subdir] = contrib
+projects[field_formatter_class][version] = "1.1"
+
+projects[field_formatter_settings][subdir] = contrib
+projects[field_formatter_settings][version] = "1.1"
+
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][version] = "1.82"
 
@@ -148,8 +155,11 @@ projects[filefield_sources][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
+projects[manualcrop][subdir] = contrib
+projects[manualcrop][version] = "1.5"
+
 ;projects[migrate][subdir] = contrib
-;projects[migrate][version] = "7.x-2.7"
+;projects[migrate][version] = "2.7"
 
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "7.x-2.5"
@@ -206,6 +216,9 @@ projects[views_autocomplete_filters][version] = "1.2"
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.3"
 
+projects[views_infinite_scroll][subdir] = contrib
+projects[views_infinite_scroll][version] = "2.0"
+
 ;projects[views_slideshow][subdir] = contrib
 ;projects[views_slideshow][version] = "7.x-3.1"
 
@@ -256,4 +269,4 @@ projects[filefield_sources_scald][version] = "1.1"
 projects[registration][subdir] = contrib
 projects[registration][version] = "1.6"
 projects[registration][patch][] = "https://www.drupal.org/files/registration-Add-views-filters-for-open-date-and-close-date-1949466-1.patch"
-projects[registration][patch][] = https://www.drupal.org/files/issues/registration_fatal_error_class-2546836-6.patch
+;projects[registration][patch][] = https://www.drupal.org/files/issues/registration_fatal_error_class-2546836-6.patch

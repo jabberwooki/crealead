@@ -1,3 +1,86 @@
+Crealead 2.1 - 22/05/2016
+-------------------------
+ * crealead_core and crealead_info_meetings up: Permission to administer registrations et registration settings added to role 'Pole gestion'.
+ * crealead_info_meetings up: Closes #73: Improvement of additionnal info positionning in registration create/edit forms as well as in registration full view mode.
+ * crealead_news up: Date field range set to -10/+3 years instead -3/+3.
+ * crealead_trainings up: 'Sessions programmées' field label shows up even if field is empty.
+ * crealead_trainings up: Closes #77 : Tarif label set inline in teaser view mode.
+ * crealead_brands up : Closes #75: Activity sectors tooltip removed from brands search exposed filters.
+ * crealead_info_meetings up: Wrong comment of function crealead_info_meetings_update_7001() rewritten.
+ * crealead_info_meetings up: bugfix in the new .install file.
+ * crealead_info_meetings up: admin/info_meetings_registrations menu link removed from Management menu. View registration_list (Réunions d'information > Inscriptions) updated: Menu entry created.
+ * crealead_info_meetings up : Admin menu link 'Inscriptions aux réunions d'information' re-created.
+ * Custom theme up: Non bootstrap based footer display altered: secondary menu and navigation region hidden.
+ * kcontextes up: user login block settings (no title) added.
+ * kcontextes up: Closes #76: login form moved from navigation region to footer region on front page.
+ * crealead_trainings up: Thematique field removed form right column in training full view mode.
+ * crealead_brands up: Lost effects (aspect switcher) for Logo image style re-created.
+ * crealead_trainings up: css class names added to some fields as required by css integration.
+ * crealead_trainings up: Missing group_training_header_right re-added to feature.
+ * crealead_brands up: DS settings for themes vocabulary altered.
+ * crealead_trainings up: css classes added to various field for css integration.
+ * crealead_articles up: Manual crop settings re-exported.
+ * crealead_news up: Lost manual crop settings for image style brand_news_335x200 re-exported.
+ * crealead_news up: Image styles manual cropping re-set.
+ * crealead_trainings up: 'Tarif' Field type re-exported as text_long.
+ * Feature crealead_view_trainings up : js added to obtain same height in training header.
+ * crealead_trainings up: missing field bases, field instances and ds settings added.
+ * crealead_trainings up: Additional site building (new fields, field descriptions...) as requested in Trello card (https://trello.com/c/PWsBCQd5/43-publier-ma-fiche-formation) done.
+ * kcore up: New rule created to send email to webmaster when site contact form is submitted.
+ * crealead_news up: Top menu link 'Actualités' added.
+ * kcore up: Site contact entityform created.
+ * kcontextes up: New top menu block placed in navigation region for context all.
+ * Custom theme up: page.tpl.php file updated to display region navigation at the top of page.
+ * crealead_news up: Main menu link 'Actualités' hidden.
+ * Feature kedition up to allow headings from h3.
+ * crealead_brand_search.js up to add arrow to hide and show headband.
+ * crealead_info_meetings up: Closes #67: Register other people permission added to role administrateur.
+ * crealead_news up: field_image minimum resolution set to 1920 width (for news node header image) and to 549 height (for Zoom image).
+ * crealead_articles up: manual crop settings applied on article's image field (field_image) and on used image styles.
+ * crealead_news up: manual crop settings applied on news image field (field_image).
+ * imgAreaSelect jQuery plugin version 0.9.11-rc.1 replaced by version 0.9.10.
+ * crealead_news and kcore up: manualcrop settings applied on all image styles used by the news feature.
+ * crealead_news up: new image style 'brand_news_335x200' added.
+ * crealead_articles, crealead_brands, crealead_info_meetings and crealead_profiles up: All image fields updated due to manualcrop module activation.
+ * kcore up: manualcrop contrib module added and activated.
+ * crealead_brands up: Fourth part of story 'Améliorer la recherche des coes': Link to old site coes list removed.
+ * crealead_brands up: Third part of story 'Améliorer la recherche des coes': Handling of brands list random display.
+ * crealead_brands up: Second part of story 'Améliorer la recherche des coes': Infinite scroll behavior added.
+ * crealead_brands up: First part of story 'Améliorer la recherche des coes': form submission handling when activity picto clicked.
+ * crealead_info_meetings up: Fixes quit stupid bug in crealead_brands_init() which caused redirection to an 'empty' info_meeting page.
+ * crealead_brands and crealead_profiles up: default image fields settings altered.
+ * crealead_my_contents up: #63 - Exposed filter 'Statut' has now the additional option 'Tout'.
+ * crealead_brands and crealead_profiles up: #43 - Long text fields in brands and profiles now accept Full HTML format.
+ * crealead_info_meetings up: forgotten dpm() debug code removed from .module file.
+ * crealead_info_meetings up: US 'Rentrer les données complètes des candidats' completed as requested in https://trello.com/c/4izVmiGm/110-rentrer-les-donnees-completes-des-candidats.
+ * crealead_news up: Fixes #65: Coes can non longer publish news on front (missing filter added to view's block).
+ * kcore up: display suite full view mode (Page d'un terme de taxonomie) updated as theme landing page.
+ * crealead_brands up: landing_page_block view mode created and entity_view_1 (marques d'une thématique) updated.
+ * kcore up: landing_page_block display suite view mode added.
+ * crealead_news up: landing_page_block created and theme_news view updated.
+ * crealead_articles up: landing_page_block created and theme_articles view updated.
+ * crealead_profiles up: pathauto taxonomy terms patterns updated by features module.
+ * crealead_trainings up: landing_page_trainings view and landing_page_block view mode created.
+ * crealead_brands up: re-displaying of field_landing_pages field in brand add/edit form.
+ * Install profile up: contrib module page_title patched (see https://www.drupal.org/node/2516726#comment-10737032).
+ * crealead_trainings up: full view mode reorganized.
+ * crealaed_trainings up: new requested fields added and training full view refurbished.
+ * Customisation of field.tpl.php: field labels are followed by space + colon if French language.
+ * Install profile up: Missing contrib modules declarations (field_formatter_settings, field_formatter_class) added in .make file.
+ * Install profile up: Fixes wrong patch declaration in previous commit (projects[entityreference][patch][] =... instead of projects[references_dialog][patch][] =...
+ * Install profile up: Entityreference patch added to fix error 'Call to undefined function entityreference_get_behavior_handlers() in entityreference_schema()' (See https://www.drupal.org/node/1836106#comment-10531886).
+ * Install profile up: Registration fatal error class patch commented.
+ * crealead_trainings up: views_bootstrap dependency removed by features modules.
+ * crealead_brands up: missing field group for 'Formations et produits' tab added.
+ * crealead_training up: missing teaser view mode added.
+ * Install profile up: contrib module field_formatter_class added.
+ * crealead_brands up: New tab 'Formations et produits' added.
+ * crealead_trainings up: trainings view created and teaser view mode set up.
+ * crealead_trainings up: Full view mode updated.
+ * crealead_brands up: V2: New display mode logo created to be used in training full view.
+ * V2: crealead_trainings feature created.
+
+
 Hotfix head_title_conflict - 07/04/2016
 ---------------------------------------
 Resolves conflict between Metatags Page Title modules for <title> tag value.

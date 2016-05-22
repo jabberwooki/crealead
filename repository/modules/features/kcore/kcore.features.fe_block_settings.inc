@@ -120,5 +120,32 @@ function kcore_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['menu-menu-top'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-top',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   return $export;
 }

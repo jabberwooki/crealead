@@ -45,6 +45,16 @@ function crealead_news_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 39,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 150,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'news_2_3' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -167,6 +177,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 40,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -251,6 +267,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'image',
         'weight' => 30,
       ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'news_2_3' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -268,7 +290,7 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => '',
+          'image_style' => 'brand_news_335x200',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -308,7 +330,7 @@ function crealead_news_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '1920x549',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -339,6 +361,24 @@ function crealead_news_field_default_field_instances() {
             'search_all_fields' => 0,
           ),
         ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(
+          'brand_news_335x200' => 'brand_news_335x200',
+          'carre_large' => 'carre_large',
+          'large' => 'large',
+          'large_bandeau' => 'large_bandeau',
+          'zoom_actu' => 'zoom_actu',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -352,7 +392,7 @@ function crealead_news_field_default_field_instances() {
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -374,6 +414,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -400,6 +446,7 @@ function crealead_news_field_default_field_instances() {
         'weight' => 17,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_landing_pages',
     'label' => 'Thématique(s) concernée(s)',
@@ -446,6 +493,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 38,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -542,6 +595,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 35,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'news_2_3' => array(
         'label' => 'hidden',
         'module' => 'date',
@@ -594,6 +653,7 @@ function crealead_news_field_default_field_instances() {
         'weight' => 1,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_news_date',
     'label' => 'Date de l\'événement',
@@ -613,8 +673,9 @@ function crealead_news_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
       'weight' => 8,
@@ -648,6 +709,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -723,6 +790,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 6,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -806,6 +879,12 @@ function crealead_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'news_2_3' => array(
         'label' => 'above',
         'settings' => array(),
@@ -881,6 +960,12 @@ function crealead_news_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 36,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'news_2_3' => array(
         'label' => 'inline',
@@ -964,6 +1049,12 @@ function crealead_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -1065,6 +1156,7 @@ function crealead_news_field_default_field_instances() {
   t('Date de tri');
   t('Homepage of the Author');
   t('Image');
+  t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
   t('Nature de l\'actualité');
   t('Secteur');

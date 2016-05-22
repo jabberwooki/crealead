@@ -96,7 +96,7 @@ function crealead_brands_image_default_styles() {
   $styles['brand_logo'] = array(
     'label' => 'Logo',
     'effects' => array(
-      1 => array(
+      22 => array(
         'name' => 'canvasactions_aspect',
         'data' => array(
           'portrait' => 'height_150',

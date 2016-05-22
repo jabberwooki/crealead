@@ -15,6 +15,11 @@ function crealead_brands_init() {
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
     drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
   }
+  elseif (arg(0) == 'annuaire-entrepreneurs' && sizeof(arg()) == 1) {
+    $params = array('brand_feature_path' => drupal_get_path('module', 'crealead_brands'));
+    drupal_add_js(array('creaelad_brands_search' => $params), 'setting');
+    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brand_search.js');
+  }
 }
 
 /**
@@ -81,7 +86,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   unset($form['options']['sticky']);
 
   // Fields temporarily removed from backoffice
-  $form['field_landing_pages']['#access'] = FALSE;
+  //$form['field_landing_pages']['#access'] = FALSE;
 
   // Handling of fields involved into validation workflow
   // 1 - field_saving_type
@@ -165,7 +170,6 @@ function crealead_brands_node_presave($node) {
     }
   }
 }
-
 
 /**
  * Implements hook_node_grants_alter().
@@ -434,6 +438,21 @@ function crealead_brands_views_pre_render(&$view) {
       else {
         unset($view->result[$key]);
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_brands_views_query_alter(&$view, &$query) {
+  if ($view->name == 'brands' && $view->current_display == 'brands_list') {
+    // Display brands in random order if at least one of the 3 criteria is used.
+    // Otherwise display brands alphabetically.
+    if ($view->exposed_raw_input['field_business_sector_tid'] != 'All'
+      || $view->exposed_raw_input['field_brand_search_value'] != ''
+      || $view->exposed_raw_input['title'] != '') {
+      $query->orderby[0]['field'] = 'rand_';
     }
   }
 }

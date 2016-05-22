@@ -42,7 +42,7 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'ds';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -322,6 +322,13 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Content: Nature de l&#039;actualité (field_news_kind) */
+  $handler->display->display_options['filters']['field_news_kind_value']['id'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['table'] = 'field_data_field_news_kind';
+  $handler->display->display_options['filters']['field_news_kind_value']['field'] = 'field_news_kind_value';
+  $handler->display->display_options['filters']['field_news_kind_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Actus d'une marque */
   $handler = $view->new_display('entity_view', 'Actus d\'une marque', 'brand_news');
@@ -401,6 +408,27 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['title'] = 'Actualités';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = 'false';
+  $handler->display->display_options['style_options']['navigation'] = 1;
+  $handler->display->display_options['style_options']['indicators'] = 1;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'landing_page_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Actualités</h3>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
@@ -638,6 +666,7 @@ function crealead_news_views_default_views() {
     t('Actus d\'une marque'),
     t('Content entity referenced from field_related_brands'),
     t('Actus d\'une thématique'),
+    t('<h3>Actualités</h3>'),
     t('term from field_landing_pages'),
     t('Bloc zoom actu'),
     t('Bloc actu 2 et 3'),

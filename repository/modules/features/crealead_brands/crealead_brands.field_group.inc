@@ -154,7 +154,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'field_contact_form',
       1 => 'brand_contacts',
@@ -312,6 +312,7 @@ function crealead_brands_field_group_info() {
       3 => 'group_brand_contact_tab',
       4 => 'group_brand_infos_tab',
       5 => 'group_brans_coes_tab',
+      6 => 'group_brand_trainings_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -326,6 +327,32 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_brand_tabs|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_trainings_tab|node|brand|full';
+  $field_group->group_name = 'group_brand_trainings_tab';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Formations et produits',
+    'weight' => '29',
+    'children' => array(
+      0 => 'trainings_entity_view_1',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_trainings_tab|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -619,10 +646,7 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Blog',
     'weight' => '6',
-    'children' => array(
-      0 => 'news_theme_news',
-      1 => 'articles_theme_articles',
-    ),
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_accordion_item',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -672,9 +696,7 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Marques associées',
     'weight' => '5',
-    'children' => array(
-      0 => 'brands_entity_view_1',
-    ),
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
       'formatter' => '',
@@ -779,10 +801,10 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Onglets',
-    'weight' => '1',
+    'weight' => '8',
     'children' => array(
-      0 => 'group_theme_brands_tab',
-      1 => 'group_theme_blog_tab',
+      0 => 'group_theme_blog_tab',
+      1 => 'group_theme_brands_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -839,6 +861,7 @@ function crealead_brands_field_group_info() {
   t('Champs Crealead');
   t('Contact');
   t('Entrepreneurs');
+  t('Formations et produits');
   t('Informations générales');
   t('Infos 1');
   t('Infos 2');

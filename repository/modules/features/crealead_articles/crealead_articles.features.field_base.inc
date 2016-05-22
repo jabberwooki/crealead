@@ -10,7 +10,7 @@
 function crealead_articles_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_article_kind'
+  // Exported field_base: 'field_article_kind'.
   $field_bases['field_article_kind'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -38,7 +38,7 @@ function crealead_articles_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_article_related_brands'
+  // Exported field_base: 'field_article_related_brands'.
   $field_bases['field_article_related_brands'] = array(
     'active' => 1,
     'cardinality' => -1,

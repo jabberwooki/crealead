@@ -526,6 +526,7 @@ function kcore_user_default_permissions() {
     'name' => 'administer registration',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'registration',
