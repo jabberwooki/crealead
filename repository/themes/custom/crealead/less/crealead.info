@@ -46,5 +46,8 @@ scripts[] = 'bootstrap/js/scrollspy.js'
 scripts[] = 'bootstrap/js/tab.js'
 scripts[] = 'bootstrap/js/transition.js'
 
+scripts[] = 'smartmenus/jquery.smartmenus.js'
+scripts[] = 'smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js'
+
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''
