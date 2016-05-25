@@ -4,7 +4,7 @@ core = 7.x
 ;=== Contrib theme ============================================================
 projects[bootstrap][type] = theme
 projects[bootstrap][subdir] = contrib
-projects[bootstrap][version] = "3.0"
+projects[bootstrap][version] = "3.5"
 
 ;=== Contrib modules ==========================================================
 projects[bootstrap_fieldgroup][subdir] = contrib
