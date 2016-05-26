@@ -447,12 +447,13 @@ function crealead_brands_views_pre_render(&$view) {
  */
 function crealead_brands_views_query_alter(&$view, &$query) {
   if ($view->name == 'brands' && $view->current_display == 'brands_list') {
-    // Display brands in random order if at least one of the 3 criteria is used.
-    // Otherwise display brands alphabetically.
+    // Brands are sorted on title, then randomly (using Views random seed module)
+    // if none of the 3 search criteria are used.
+    // In that case, brands are sorted on title only (random criterion is removed).
     if ($view->exposed_raw_input['field_business_sector_tid'] != 'All'
       || $view->exposed_raw_input['field_brand_search_value'] != ''
       || $view->exposed_raw_input['title'] != '') {
-      $query->orderby[0]['field'] = 'rand_';
+      unset($query->orderby[0]);
     }
   }
 }

@@ -932,6 +932,12 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1899,7 +1905,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences */
+  /* Field: Field: Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
