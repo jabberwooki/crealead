@@ -1,3 +1,9 @@
+
+Crealead 2.1.1 - / 2016-05-26
+-----------------------------
+Bugfix: Contrib module views_random_seed used to remove brand random search duplicates.
+
+
 Crealead 2.1 - 22/05/2016
 -------------------------
  * crealead_core and crealead_info_meetings up: Permission to administer registrations et registration settings added to role 'Pole gestion'.
