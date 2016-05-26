@@ -1,4 +1,8 @@
 
+Crealead 2.1.3 - / 2016-05-26
+-----------------------------
+Info meetings list now ordered on Date of meeting instead of Date of publication.
+
 Crealead 2.1.2 - / 2016-05-26
 -----------------------------
 Previous 2.1.1 hotfix was a mistake and had no effect because bug fix was made on develop branch
