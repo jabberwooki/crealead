@@ -1,4 +1,10 @@
 
+Crealead 2.1.2 - / 2016-05-26
+-----------------------------
+Previous 2.1.1 hotfix was a mistake and had no effect because bug fix was made on develop branch
+before creating the hotfix branch. Consequently, the hotfix branch doesn't contain changed files.
+This current new release now contains changes.
+
 Crealead 2.1.1 - / 2016-05-26
 -----------------------------
 Bugfix: Contrib module views_random_seed used to remove brand random search duplicates.
