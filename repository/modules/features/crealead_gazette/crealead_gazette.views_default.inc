@@ -22,7 +22,7 @@ function crealead_gazette_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Gazettes interne de Crealead';
+  $handler->display->display_options['title'] = 'Gazettes internes de Crealead';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -81,7 +81,7 @@ function crealead_gazette_views_default_views() {
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/gazettes';
   $translatables['gazettes'] = array(
     t('Master'),
-    t('Gazettes interne de Crealead'),
+    t('Gazettes internes de Crealead'),
     t('more'),
     t('Apply'),
     t('Reset'),

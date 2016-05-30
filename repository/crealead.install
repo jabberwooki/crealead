@@ -240,3 +240,10 @@ function crealead_update_7004() {
 function crealead_update_7005() {
   module_enable(array('field_formatter_settings','field_formatter_class'));
 }
+
+/**
+ * Activate feature crealead_gazette.
+ */
+function crealead_update_7006() {
+  module_enable(array('crealead_gazette'));
+}
