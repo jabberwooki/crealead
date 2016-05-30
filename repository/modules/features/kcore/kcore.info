@@ -246,6 +246,7 @@ features[user_role][] = pôle gestion
 features[user_role][] = rédacteur
 features[user_role][] = référent
 features[user_role][] = webmaster
+features[user_role][] = éditeur gazette
 features[variable][] = clean_url
 features[variable][] = cron_safe_threshold
 features[variable][] = date_default_timezone

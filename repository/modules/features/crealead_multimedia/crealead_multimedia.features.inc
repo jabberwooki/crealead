@@ -18,54 +18,6 @@ function crealead_multimedia_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function crealead_multimedia_scald_default_context_types() {
   $contexts = array();
-  $contexts['debug-file'] = array(
-    'player' => array(
-      'file' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'file' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-  );
-  $contexts['debug-gallery'] = array(
-    'player' => array(
-      'gallery' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'gallery' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-  );
-  $contexts['debug-image'] = array(
-    'player' => array(
-      'image' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'image' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-  );
-  $contexts['debug-video'] = array(
-    'player' => array(
-      'video' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'video' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-  );
   $contexts['deleted-file'] = array(
     'player' => array(
       'file' => array(

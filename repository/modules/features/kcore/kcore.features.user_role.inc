@@ -13,7 +13,7 @@ function kcore_user_default_roles() {
   // Exported role: administrateur.
   $roles['administrateur'] = array(
     'name' => 'administrateur',
-    'weight' => 7,
+    'weight' => 9,
     'machine_name' => '',
   );
 
@@ -34,14 +34,14 @@ function kcore_user_default_roles() {
   // Exported role: pôle gestion.
   $roles['pôle gestion'] = array(
     'name' => 'pôle gestion',
-    'weight' => 6,
+    'weight' => 7,
     'machine_name' => 'pole_gestion',
   );
 
   // Exported role: rédacteur.
   $roles['rédacteur'] = array(
     'name' => 'rédacteur',
-    'weight' => 5,
+    'weight' => 6,
     'machine_name' => 'redactor',
   );
 
@@ -55,8 +55,15 @@ function kcore_user_default_roles() {
   // Exported role: webmaster.
   $roles['webmaster'] = array(
     'name' => 'webmaster',
-    'weight' => 6,
+    'weight' => 8,
     'machine_name' => '',
+  );
+
+  // Exported role: éditeur gazette.
+  $roles['éditeur gazette'] = array(
+    'name' => 'éditeur gazette',
+    'weight' => 5,
+    'machine_name' => 'editeur_gazette',
   );
 
   return $roles;

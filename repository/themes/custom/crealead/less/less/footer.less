@@ -1,0 +1,47 @@
+.under-footer{
+  background: @gris-clair-crealead url('../images/bg_footer.png') repeat-x;
+  #crealead-sponsor{
+    img{
+      margin-right: 20px;
+    }
+  }
+  @media (max-width: @screen-md){
+    background-image: none;
+  }
+  #crealead-sponsor{
+    display: table;
+    margin: 0 auto;
+    > span{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .menu.nav{
+    display: table;
+    margin: 25px auto;
+    li{
+      float: left;
+      a{
+        color: white;
+        display: block;
+        .source();
+        text-transform: uppercase;
+        border-right: 2px solid white;
+        font-weight: bold;
+        margin: 0;
+        padding: 0 15px;
+        font-size: 0.8em;
+        &:hover{
+          background-color: transparent;
+          color: @rouge-crealead;
+        }
+      }
+      &.last{
+        a{
+          border-right: 0;
+        }
+
+      }
+    }
+  }
+}
