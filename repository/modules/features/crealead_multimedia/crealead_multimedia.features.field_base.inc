@@ -10,7 +10,7 @@
 function crealead_multimedia_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_files'
+  // Exported field_base: 'field_files'.
   $field_bases['field_files'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -29,7 +29,7 @@ function crealead_multimedia_field_default_field_bases() {
     'type' => 'atom_reference',
   );
 
-  // Exported field_base: 'field_galleries'
+  // Exported field_base: 'field_galleries'.
   $field_bases['field_galleries'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -48,7 +48,7 @@ function crealead_multimedia_field_default_field_bases() {
     'type' => 'atom_reference',
   );
 
-  // Exported field_base: 'field_videos'
+  // Exported field_base: 'field_videos'.
   $field_bases['field_videos'] = array(
     'active' => 1,
     'cardinality' => 1,
