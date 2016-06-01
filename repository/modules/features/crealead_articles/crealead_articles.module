@@ -48,4 +48,8 @@ function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $f
   }
   // End of Related brands list handling ---------------------------------------
 
+  // Hugly hack to remove no longer wanted field_article_kind options
+  // (Cannot be deleted because already used).
+  unset($form['field_article_kind']['und']['#options'][2]);
+  unset($form['field_article_kind']['und']['#options'][3]);
 }
