@@ -50,6 +50,11 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
       $form['field_related_brands']['#disabled'] = TRUE;
   }
   // End of Related brands list handling ---------------------------------------
+
+  // Hugly hack to remove no longer wanted options of field_news_kind
+  // (They cannot be simply deleted because already used).
+  unset($form['field_news_kind']['und']['#options'][2]);
+  unset($form['field_news_kind']['und']['#options'][3]);
 }
 
 /**
