@@ -618,21 +618,24 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_sectorbrands_news_articles';
   $field_group->data = array(
-    'label' => 'Articles',
+    'label' => 'Articles de fond',
     'weight' => '6',
-    'children' => array(),
+    'children' => array(
+      0 => 'articles_sector_brand_articles',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Articles de fond',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-articles field-group-div col-md-6',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-sectorbrands-articles field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_sectorbrands_articles|taxonomy_term|sector_brands|full'] = $field_group;
@@ -1042,6 +1045,7 @@ function crealead_brands_field_group_info() {
   t('Actualités');
   t('Actualités et articles');
   t('Articles');
+  t('Articles de fond');
   t('Blog');
   t('Champs Crealead');
   t('Contact');

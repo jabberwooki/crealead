@@ -258,6 +258,12 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'articles_sector_brand_articles' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );
