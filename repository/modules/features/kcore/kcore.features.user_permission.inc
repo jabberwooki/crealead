@@ -260,6 +260,16 @@ function kcore_user_default_permissions() {
     'module' => 'user_settings_access',
   );
 
+  // Exported permission: 'administer all default images'.
+  $permissions['administer all default images'] = array(
+    'name' => 'administer all default images',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'default_image_ft',
+  );
+
   // Exported permission: 'administer block classes'.
   $permissions['administer block classes'] = array(
     'name' => 'administer block classes',
@@ -327,6 +337,13 @@ function kcore_user_default_permissions() {
   // Exported permission: 'administer default image node:brand:field_brand_logo'.
   $permissions['administer default image node:brand:field_brand_logo'] = array(
     'name' => 'administer default image node:brand:field_brand_logo',
+    'roles' => array(),
+    'module' => 'default_image_ft',
+  );
+
+  // Exported permission: 'administer default image node:client:field_client_logo'.
+  $permissions['administer default image node:client:field_client_logo'] = array(
+    'name' => 'administer default image node:client:field_client_logo',
     'roles' => array(),
     'module' => 'default_image_ft',
   );
