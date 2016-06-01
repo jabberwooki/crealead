@@ -611,6 +611,186 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_articles|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_articles';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_news_articles';
+  $field_group->data = array(
+    'label' => 'Articles',
+    'weight' => '5',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-articles field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_articles|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_brands_prods';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Marques et produits',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_sectorbrands_brands',
+      1 => 'group_sectorbrands_products',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-brands-prods field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_brands|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_brands';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_brands_prods';
+  $field_group->data = array(
+    'label' => 'Marques',
+    'weight' => '3',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-brands field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_brands|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_news_articles|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_news_articles';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Actualités et articles',
+    'weight' => '3',
+    'children' => array(
+      0 => 'group_sectorbrands_news',
+      1 => 'group_sectorbrands_articles',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-news-articles field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_news_articles|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_news|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_news';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_news_articles';
+  $field_group->data = array(
+    'label' => 'Actualités',
+    'weight' => '4',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-news field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_news|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_products|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_products';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_brands_prods';
+  $field_group->data = array(
+    'label' => 'Produits et formations',
+    'weight' => '4',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-sectorbrands-products field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_sectorbrands_products|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_theme_articles_tab|taxonomy_term|themes|full';
   $field_group->group_name = 'group_theme_articles_tab';
   $field_group->entity_type = 'taxonomy_term';
@@ -856,6 +1036,7 @@ function crealead_brands_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Actualités');
+  t('Actualités et articles');
   t('Articles');
   t('Blog');
   t('Champs Crealead');
@@ -865,8 +1046,11 @@ function crealead_brands_field_group_info() {
   t('Informations générales');
   t('Infos 1');
   t('Infos 2');
+  t('Marques');
   t('Marques associées');
+  t('Marques et produits');
   t('Onglets');
+  t('Produits et formations');
   t('Réalisations');
   t('Références client');
   t('group col1-3');

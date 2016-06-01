@@ -38,6 +38,13 @@ function crealead_brands_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'add terms in sector_brands'.
+  $permissions['add terms in sector_brands'] = array(
+    'name' => 'add terms in sector_brands',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'create achievement content'.
   $permissions['create achievement content'] = array(
     'name' => 'create achievement content',
@@ -187,6 +194,13 @@ function crealead_brands_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in sector_brands'.
+  $permissions['delete terms in sector_brands'] = array(
+    'name' => 'delete terms in sector_brands',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any achievement content'.
   $permissions['edit any achievement content'] = array(
     'name' => 'edit any achievement content',
@@ -294,6 +308,13 @@ function crealead_brands_user_default_permissions() {
       'administrateur' => 'administrateur',
       'webmaster' => 'webmaster',
     ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in sector_brands'.
+  $permissions['edit terms in sector_brands'] = array(
+    'name' => 'edit terms in sector_brands',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 

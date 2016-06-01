@@ -55,5 +55,28 @@ function crealead_brands_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'sector_brands' => array(
+      'name' => 'Marques sectorielles',
+      'machine_name' => 'sector_brands',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
   );
 }

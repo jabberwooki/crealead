@@ -903,7 +903,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Aucun résultat ne correspond à vos critères de recherche.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Logo */
+  /* Field: Field: Logo */
   $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
   $handler->display->display_options['fields']['field_brand_logo']['table'] = 'field_data_field_brand_logo';
   $handler->display->display_options['fields']['field_brand_logo']['field'] = 'field_brand_logo';
@@ -1292,7 +1292,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Logo */
+  /* Field: Field: Logo */
   $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
   $handler->display->display_options['fields']['field_brand_logo']['table'] = 'field_data_field_brand_logo';
   $handler->display->display_options['fields']['field_brand_logo']['field'] = 'field_brand_logo';
@@ -1905,7 +1905,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences et spécialités */
+  /* Field: Field: Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -1956,6 +1956,63 @@ function crealead_brands_views_default_views() {
     t('more'),
   );
   $export['field_collection_coes'] = $view;
+
+  $view = new view();
+  $view->name = 'sector_brands';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Marques sectorielles';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Les marques sectorielles';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['table'] = 'field_data_field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['field'] = 'field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_brand_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_brand_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_brand_logo']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+    'field_formatter_class' => '',
+  );
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'sector_brands' => 'sector_brands',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'marques-sectorielles';
+  $translatables['sector_brands'] = array(
+    t('Master'),
+    t('Les marques sectorielles'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Page'),
+  );
+  $export['sector_brands'] = $view;
 
   $view = new view();
   $view->name = 'themes';

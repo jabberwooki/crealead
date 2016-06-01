@@ -201,6 +201,59 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__sector_brands';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'path' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '3',
+        ),
+        'name' => array(
+          'weight' => '0',
+        ),
+        'description' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_taxonomy_term__themes';
   $strongarm->value = array(
     'view_modes' => array(
