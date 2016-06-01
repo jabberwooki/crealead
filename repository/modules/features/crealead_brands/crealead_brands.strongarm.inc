@@ -246,6 +246,18 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'news_entity_view_1' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+        ),
+        'news_sector_brand_news' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );
