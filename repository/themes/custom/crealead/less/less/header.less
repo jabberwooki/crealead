@@ -48,6 +48,31 @@ header#navbar nav{
     a:hover{
       background-color: @noir-crealead;
     }
+    @media (min-width: @screen-lg){
+      > li {
+        > a, a{
+          width: 260px;
+          white-space: normal;
+          border-bottom: 1px solid black;
+          margin-bottom: 15px;
+          padding-bottom: 15px
+        }
+      }
+      li.last > a{
+        border-bottom: 0;
+      }
+    }
+    @media (max-width: @screen-lg){
+      > li {
+        > a, a{
+          width: 100%;
+          white-space: normal;
+          border-bottom: 1px solid black;
+          margin-bottom: 10px;
+          padding-bottom: 10px
+        }
+      }
+    }
 
   }
   > ul.menu:first-child > li.first > a{
@@ -123,6 +148,45 @@ header#navbar nav{
           }
         }
       }
+    }
+  }
+}
+/* Menu smartphone ****************************************************************************************************/
+@media (max-width: @screen-lg){
+  #top-navigation{
+    &.pull-right{
+      float: none !important;
+    }
+    margin-top: -80px;
+    #block-menu-menu-top{
+      ul.menu{
+        > li {
+          float: left;
+          margin: 0;
+          a{
+            padding: 0 15px 0 0;
+            &:before{
+              margin: 0;
+            }
+          }
+
+        }
+      
+      }
+    }
+  }
+  .navbar-default .navbar-toggle.sub-arrow{
+    background-color: transparent;
+    border: 0;
+    margin-top: -10px;
+    &:hover{
+      border: 0;
+      background-color: transparent;
+    }
+    &:before{
+      .glyphicon();
+      content: "\e835";
+      color: darkgrey;
     }
   }
 }
