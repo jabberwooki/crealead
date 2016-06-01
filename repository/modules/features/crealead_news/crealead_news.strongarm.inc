@@ -108,6 +108,9 @@ function crealead_news_strongarm() {
       'logo' => array(
         'custom_settings' => FALSE,
       ),
+      'sector_brand_block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

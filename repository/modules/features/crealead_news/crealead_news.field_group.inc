@@ -110,6 +110,39 @@ function crealead_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_img_cat|node|news|sector_brand_block';
+  $field_group->group_name = 'group_img_cat';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'sector_brand_block';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'groupe image catégorie',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_image',
+      1 => 'field_news_type',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'groupe image catégorie',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-img-cat field-group-div position-relative',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_img_cat|node|news|sector_brand_block'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_img_cat|node|news|teaser';
   $field_group->group_name = 'group_img_cat';
   $field_group->entity_type = 'node';
