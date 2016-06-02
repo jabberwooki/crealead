@@ -74,20 +74,23 @@ function crealead_trainings_strongarm() {
       'logo' => array(
         'custom_settings' => FALSE,
       ),
+      'sector_brand_block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '18',
+          'weight' => '19',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
       ),
       'display' => array(),

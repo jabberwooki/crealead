@@ -2215,6 +2215,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 6,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_type',
     'label' => 'Type de marque',

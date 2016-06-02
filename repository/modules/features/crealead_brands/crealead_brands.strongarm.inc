@@ -304,6 +304,12 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'trainings_sector_brand_trainings' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

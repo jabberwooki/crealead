@@ -328,7 +328,6 @@ function crealead_brands_field_default_field_bases() {
       'allowed_values' => array(
         1 => 'commerciale',
         2 => 'collective',
-        3 => 'grande marque',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

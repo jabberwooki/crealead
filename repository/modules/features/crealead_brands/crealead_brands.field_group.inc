@@ -815,19 +815,22 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Produits et formations',
     'weight' => '4',
-    'children' => array(),
+    'children' => array(
+      0 => 'trainings_sector_brand_trainings',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Produits et formations',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-products field-group-div col-md-3',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-sectorbrands-products field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_sectorbrands_products|taxonomy_term|sector_brands|full'] = $field_group;

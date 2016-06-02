@@ -89,10 +89,11 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Thématique */
+  /* Field: Content: Thématique(s) concernée(s) */
   $handler->display->display_options['fields']['field_training_theme']['id'] = 'field_training_theme';
   $handler->display->display_options['fields']['field_training_theme']['table'] = 'field_data_field_training_theme';
   $handler->display->display_options['fields']['field_training_theme']['field'] = 'field_training_theme';
+  $handler->display->display_options['fields']['field_training_theme']['label'] = 'Thématique';
   $handler->display->display_options['fields']['field_training_theme']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_training_theme']['settings'] = array(
     'field_formatter_class' => '',
@@ -162,7 +163,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Nos formations et produits</h3>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Thématique (field_training_theme) */
+  /* Contextual filter: Content: Thématique(s) concernée(s) (field_training_theme) */
   $handler->display->display_options['arguments']['field_training_theme_tid']['id'] = 'field_training_theme_tid';
   $handler->display->display_options['arguments']['field_training_theme_tid']['table'] = 'field_data_field_training_theme';
   $handler->display->display_options['arguments']['field_training_theme_tid']['field'] = 'field_training_theme_tid';
@@ -175,6 +176,65 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['entity_type'] = 'taxonomy_term';
   $handler->display->display_options['bundles'] = array(
     0 => 'themes',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
+  $handler->display->display_options['show_title'] = 0;
+
+  /* Display: Formations d'une marque sectorielle */
+  $handler = $view->new_display('entity_view', 'Formations d\'une marque sectorielle', 'sector_brand_trainings');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Produits et formations';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'pagerer';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Produits<br />et formations</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['label'] = 'terme à partir de field_related_sector_brands';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'sector_brands',
   );
   $handler->display->display_options['argument_mode'] = 'none';
   $handler->display->display_options['show_title'] = 0;
@@ -204,6 +264,12 @@ function crealead_trainings_views_default_views() {
     t('Formations d\'une thématique'),
     t('Nos formations et produits'),
     t('<h3>Nos formations et produits</h3>'),
+    t('Formations d\'une marque sectorielle'),
+    t('Produits et formations'),
+    t('Éléments par page'),
+    t('Décalage'),
+    t('<h3>Produits<br />et formations</h3>'),
+    t('terme à partir de field_related_sector_brands'),
   );
   $export['trainings'] = $view;
 
