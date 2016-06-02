@@ -264,6 +264,12 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'achievements_sector_brand_achievs' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

@@ -744,6 +744,16 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
       ),
+      'sector_brand_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 100,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -803,7 +813,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -880,6 +890,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'image',
         'weight' => 0,
       ),
+      'sector_brand_block' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => 'content',
+          'image_style' => 'achievements_280x210',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -936,7 +957,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -974,6 +995,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -994,7 +1021,74 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-achievement-field_related_sector_brands'.
+  $field_instances['node-achievement-field_related_sector_brands'] = array(
+    'bundle' => 'achievement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_sector_brands',
+    'label' => 'Marque(s) sectorielle(s) concernée(s)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
     ),
   );
 
@@ -3172,6 +3266,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Logo');
   t('Marque contactée');
   t('Marque validée');
+  t('Marque(s) sectorielle(s) concernée(s)');
   t('Mots-clés');
   t('Pages thématiques');
   t('Photos');

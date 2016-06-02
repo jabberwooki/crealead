@@ -92,6 +92,22 @@ function crealead_brands_default_entityform_type() {
 function crealead_brands_image_default_styles() {
   $styles = array();
 
+  // Exported image style: achievements_280x210.
+  $styles['achievements_280x210'] = array(
+    'label' => 'Réalisations (280x210)',
+    'effects' => array(
+      23 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 280,
+          'height' => 210,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: brand_logo.
   $styles['brand_logo'] = array(
     'label' => 'Logo',

@@ -46,20 +46,41 @@ function crealead_profiles_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'landing_page_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'logo' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sector_brand_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'brand_articles' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_2_3' => array(
+        'custom_settings' => FALSE,
+      ),
+      'news_brand' => array(
+        'custom_settings' => FALSE,
+      ),
+      'zoom_news' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
