@@ -193,6 +193,9 @@ function crealead_brands_block_info() {
   $blocks['crealead_brands_contacts_list'] = array(
     'info' => t('Crealead : Liste des contacts email'),
   );
+  $blocks['crealead_sector_brand_nav'] = array(
+    'info' => t('Crealead : Menu de navigation de marque sectorielle'),
+  );
 
   return $blocks;
 }
@@ -221,6 +224,27 @@ function crealead_brands_block_view($delta = '') {
 
     case 'crealead_brands_contacts_list' :
       $block['content'] = crealead_brand_contacts_list();
+      break;
+
+    case 'crealead_sector_brand_nav':
+      $current_path = current_path();
+      $path_alias = drupal_get_path_alias($current_path);
+      $links = array(
+        'link1' => array('title' => 'Introduction', 'href' => '/' . $path_alias . '#introduction'),
+        'link2' => array('title' => 'Marques et produits', 'href' => '/' . $path_alias . '#brands-products'),
+        'link3' => array('title' => 'Réalisations', 'href' => '/' . $path_alias . '#achievements'),
+        'link4' => array('title' => 'Actualités et articles de fond', 'href' => '#news_articles'),
+      );
+      $attributes = array('class' => 'nav navbar-nav');
+
+      $content = '<ul class="nav navbar-nav">';
+      $content .= '<li class="item1 first"><a href="#introduction">Introduction</a>';
+      $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
+      $content .= '<li class="item3"><a href="#achievements">Réalisations</a>';
+      $content .= '<li class="item4 last"><a href="#news-articles">Actualités et articles de fond</a>';
+      $content .= '</ul>';
+
+      $block['content'] = $content; //theme('links', array('links' => $links, 'attributes' => $attributes));
       break;
   }
 

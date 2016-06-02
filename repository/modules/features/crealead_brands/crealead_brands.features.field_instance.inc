@@ -3355,6 +3355,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -3368,14 +3379,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'field_formatter_class' => '',
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',

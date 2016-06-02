@@ -619,7 +619,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Réalisations',
-    'weight' => '4',
+    'weight' => '2',
     'children' => array(
       0 => 'achievements_sector_brand_achievs',
     ),
@@ -627,7 +627,7 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Réalisations',
       'instance_settings' => array(
-        'id' => '',
+        'id' => 'achievements',
         'classes' => 'group-sectorbrands-achievments field-group-div col-md-12',
         'description' => '',
         'show_label' => '1',
@@ -683,7 +683,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Marques et produits',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'group_sectorbrands_brands',
       1 => 'group_sectorbrands_products',
@@ -692,7 +692,7 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Marques et produits',
       'instance_settings' => array(
-        'id' => '',
+        'id' => 'brands-products',
         'classes' => 'group-sectorbrands-brands-prods field-group-div',
         'description' => '',
         'show_label' => '0',
@@ -749,7 +749,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités et articles',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'group_sectorbrands_news',
       1 => 'group_sectorbrands_articles',
@@ -758,7 +758,7 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Actualités et articles',
       'instance_settings' => array(
-        'id' => '',
+        'id' => 'news-articles',
         'classes' => 'group-sectorbrands-news-articles field-group-div',
         'description' => '',
         'show_label' => '0',

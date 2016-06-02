@@ -1671,7 +1671,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'pagerer';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2158,7 +2158,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences et spécialités */
+  /* Field: Field: Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -2254,6 +2254,40 @@ function crealead_brands_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'marques-sectorielles';
+
+  /* Display: En-tête de marque sectorielle */
+  $handler = $view->new_display('block', 'En-tête de marque sectorielle', 'sector_brand_header');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['table'] = 'field_data_field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['field'] = 'field_brand_logo';
+  $handler->display->display_options['fields']['field_brand_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_brand_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_brand_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_brand_logo']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+    'field_formatter_class' => 'pull-left',
+  );
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $translatables['sector_brands'] = array(
     t('Master'),
     t('Les marques sectorielles'),
@@ -2264,6 +2298,8 @@ function crealead_brands_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Page'),
+    t('En-tête de marque sectorielle'),
+    t('Tout'),
   );
   $export['sector_brands'] = $view;
 

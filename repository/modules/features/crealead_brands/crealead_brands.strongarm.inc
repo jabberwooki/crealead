@@ -264,6 +264,10 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'block' => array(
             'weight' => '1',
             'visible' => TRUE,
           ),
@@ -273,15 +277,32 @@ function crealead_brands_strongarm() {
             'weight' => '5',
             'visible' => TRUE,
           ),
+          'block' => NULL,
         ),
         'news_sector_brand_news' => array(
           'full' => array(
             'weight' => '5',
             'visible' => TRUE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'articles_sector_brand_articles' => array(
           'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
             'weight' => '10',
             'visible' => TRUE,
           ),
@@ -291,9 +312,25 @@ function crealead_brands_strongarm() {
             'weight' => '3',
             'visible' => TRUE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'brands_sector_brand_brands' => array(
           'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
             'weight' => '10',
             'visible' => TRUE,
           ),
@@ -303,9 +340,25 @@ function crealead_brands_strongarm() {
             'weight' => '9',
             'visible' => TRUE,
           ),
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
         ),
         'trainings_sector_brand_trainings' => array(
           'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
             'weight' => '10',
             'visible' => TRUE,
           ),
