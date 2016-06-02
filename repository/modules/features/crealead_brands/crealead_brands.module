@@ -52,7 +52,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   // Then, what about non allowed users. They cannot do 3 distinct tasks:
   // 1 - validate brands,
   // 2 - publish brand nodes, unless brand has been validated by referent,
-  // 3 - create main brands.
+  // 4 - link their brand to any sector brands.
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     // 1 - Brand validation radio buttons systematically disabled.
     $form['field_brand_validated']['und'][0]['#attributes'] = array('disabled' => TRUE);
@@ -68,7 +68,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     }
 
     // 3 - Main brand option systematically removed from brand type.
-    unset($form['field_brand_type']['und']['#options'][3]);
+    $form['field_related_sector_brands']['#access'] = FALSE;
   }
   // And now what about allowed users.
   else {

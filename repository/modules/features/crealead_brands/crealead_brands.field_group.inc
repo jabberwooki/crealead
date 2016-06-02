@@ -523,7 +523,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'field_brand_search',
       1 => 'field_contact_form',
@@ -628,7 +628,7 @@ function crealead_brands_field_group_info() {
       'label' => 'Réalisations',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-sectorbrands-achievments field-group-div',
+        'classes' => 'group-sectorbrands-achievments field-group-div col-md-12',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -690,16 +690,17 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Marques et produits',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-brands-prods field-group-div',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-sectorbrands-brands-prods field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full'] = $field_group;
@@ -716,19 +717,23 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'Marques',
     'weight' => '3',
-    'children' => array(),
+    'children' => array(
+      0 => 'brands_sector_brand_brands',
+      1 => 'brands_sector_brand_brands_form',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Marques',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-brands field-group-div col-md-9',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => 'group-sectorbrands-brands field-group-div',
-        'id' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_sectorbrands_brands|taxonomy_term|sector_brands|full'] = $field_group;
