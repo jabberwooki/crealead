@@ -109,6 +109,10 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     $params = array('name' => $form['#node']->name, 'uid' => $form['#node']->uid);
     drupal_add_js(array('crealead_brands_default_coe' => $params), 'setting');
   }
+
+  // Hugly hack to remove no longer wanted field_brand_type option 'grande marque'
+  // (For unknown reasons, its manual deletion causes saving bug in views admin).
+  unset($form['field_brand_type']['und']['#options'][3]);
 }
 
 function crealead_brands_after_build($form, &$form_state) {
