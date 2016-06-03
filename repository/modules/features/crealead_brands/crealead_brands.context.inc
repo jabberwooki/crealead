@@ -118,5 +118,46 @@ function crealead_brands_context_default_contexts() {
   t('Marques');
   $export['brand_search'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'sector_brand_page';
+  $context->description = '';
+  $context->tag = 'Marques';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'sector_brands' => 'sector_brands',
+      ),
+      'options' => array(
+        'term_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'crealead_brands-crealead_sector_brand_nav' => array(
+          'module' => 'crealead_brands',
+          'delta' => 'crealead_sector_brand_nav',
+          'region' => 'sector_brands_navigation',
+          'weight' => '-8',
+        ),
+        'views-29915912ebf83f96383359d243203eb4' => array(
+          'module' => 'views',
+          'delta' => '29915912ebf83f96383359d243203eb4',
+          'region' => 'sector_brands_header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Marques');
+  $export['sector_brand_page'] = $context;
+
   return $export;
 }
