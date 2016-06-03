@@ -59,16 +59,11 @@ function crealead_brands_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h4',
         'class' => '',
         'ft' => array(),
         'field_formatter_class' => '',
-      ),
-    ),
-    'field_achievement_photos' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
       ),
     ),
   );
@@ -200,7 +195,7 @@ function crealead_brands_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h4',
         'class' => '',
         'ft' => array(),

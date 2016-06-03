@@ -198,10 +198,12 @@ function crealead_news_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'body' => array(
       'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
         'ft' => array(),
+        'field_formatter_class' => '',
       ),
     ),
     'field_sector' => array(
