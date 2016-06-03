@@ -83,6 +83,23 @@ function kcore_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pagerer.preset.pagerer_mini';
+  $strongarm->value = array(
+    'left_pane' => array(
+      'theme_name' => 'none',
+    ),
+    'center_pane' => array(
+      'theme_name' => 'pagerer_mini',
+    ),
+    'right_pane' => array(
+      'theme_name' => 'none',
+    ),
+  );
+  $export['pagerer.preset.pagerer_mini'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'password_policy_admin';
   $strongarm->value = 0;
   $export['password_policy_admin'] = $strongarm;

@@ -259,6 +259,7 @@ features[variable][] = date_format_short
 features[variable][] = ds_extras_field_template
 features[variable][] = file_public_path
 features[variable][] = node_admin_theme
+features[variable][] = pagerer.preset.pagerer_mini
 features[variable][] = password_policy_admin
 features[variable][] = password_policy_begin
 features[variable][] = password_policy_block
