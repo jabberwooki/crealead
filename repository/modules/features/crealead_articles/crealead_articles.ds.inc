@@ -233,6 +233,43 @@ function crealead_articles_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|article|sector_brand_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'article';
+  $ds_layout->view_mode = 'sector_brand_block';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'body',
+        1 => 'field_article_kind',
+        2 => 'field_article_related_brands',
+        3 => 'field_landing_pages',
+        4 => 'field_image',
+        5 => 'field_related_sector_brands',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'ds_content',
+      'field_article_kind' => 'ds_content',
+      'field_article_related_brands' => 'ds_content',
+      'field_landing_pages' => 'ds_content',
+      'field_image' => 'ds_content',
+      'field_related_sector_brands' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|article|sector_brand_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|article|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'article';
