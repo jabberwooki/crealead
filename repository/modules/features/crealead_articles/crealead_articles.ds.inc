@@ -101,6 +101,33 @@ function crealead_articles_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|article|sector_brand_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'article';
+  $ds_fieldsetting->view_mode = 'sector_brand_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|article|sector_brand_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|article|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'article';
