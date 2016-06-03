@@ -73,7 +73,7 @@ function crealead_articles_field_default_field_instances() {
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -185,7 +185,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -256,7 +256,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -342,7 +342,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -470,7 +470,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -543,7 +543,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',

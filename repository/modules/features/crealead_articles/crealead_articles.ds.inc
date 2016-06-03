@@ -118,11 +118,6 @@ function crealead_articles_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|article|sector_brand_block'] = $ds_fieldsetting;
 
@@ -268,13 +263,13 @@ function crealead_articles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'body',
-        1 => 'title',
+        0 => 'title',
+        1 => 'body',
       ),
     ),
     'fields' => array(
-      'body' => 'ds_content',
       'title' => 'ds_content',
+      'body' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
