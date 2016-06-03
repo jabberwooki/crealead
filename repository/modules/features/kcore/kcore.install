@@ -47,3 +47,10 @@ function kcore_update_7005() {
 function kcore_update_7006() {
   module_enable(array('views_random_seed'));
 }
+
+/**
+ * Activate pagerer module.
+ */
+function kcore_update_7007() {
+  module_enable(array('pagerer'));
+}

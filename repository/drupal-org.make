@@ -162,10 +162,13 @@ projects[manualcrop][version] = "1.5"
 ;projects[migrate][version] = "2.7"
 
 ;projects[migrate_extras][subdir] = contrib
-;projects[migrate_extras][version] = "7.x-2.5"
+;projects[migrate_extras][version] = "2.5"
 
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"
+
+projects[pagerer][subdir] = contrib
+projects[pagerer][version] = "1.1"
 
 projects[phone][subdir] = contrib
 projects[phone][version] = "1.0-beta1"
@@ -220,10 +223,10 @@ projects[views_infinite_scroll][subdir] = contrib
 projects[views_infinite_scroll][version] = "2.0"
 
 projects[views_random_seed][subdir] = contrib
-projects[views_random_seed][version] = "7.x-1.2"
+projects[views_random_seed][version] = "1.2"
 
 ;projects[views_slideshow][subdir] = contrib
-;projects[views_slideshow][version] = "7.x-3.1"
+;projects[views_slideshow][version] = "3.1"
 
 projects[views_ui_basic][subdir] = contrib
 projects[views_ui_basic][version] = "1.3"
