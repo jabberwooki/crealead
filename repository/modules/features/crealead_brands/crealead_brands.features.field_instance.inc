@@ -739,7 +739,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
-          'trim_length' => 600,
+          'trim_length' => 150,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
@@ -885,7 +885,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'height_150',
+          'image_style' => 'achievements_280x210',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -993,7 +993,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 15,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1055,12 +1055,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'landing_page_block' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'sector_brand_block' => array(
         'label' => 'above',

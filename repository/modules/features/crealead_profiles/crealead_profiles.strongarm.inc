@@ -47,7 +47,7 @@ function crealead_profiles_strongarm() {
         'custom_settings' => FALSE,
       ),
       'landing_page_block' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'logo' => array(
         'custom_settings' => FALSE,
