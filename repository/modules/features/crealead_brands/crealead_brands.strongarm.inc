@@ -119,7 +119,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '27',
+            'weight' => '28',
             'visible' => FALSE,
           ),
           'sector_brand_block' => array(
@@ -154,7 +154,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '26',
+            'weight' => '27',
             'visible' => FALSE,
           ),
           'sector_brand_block' => array(
@@ -189,7 +189,7 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '24',
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'sector_brand_block' => array(
@@ -207,7 +207,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'landing_page_block' => array(
-            'weight' => '25',
+            'weight' => '26',
             'visible' => FALSE,
           ),
           'sector_brand_block' => array(

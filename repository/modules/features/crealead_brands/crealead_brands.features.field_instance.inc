@@ -1127,7 +1127,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'logo' => array(
         'label' => 'hidden',
@@ -1243,7 +1243,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1324,20 +1324,11 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
-        'module' => 'colorbox_field_formatter',
+        'module' => 'text',
         'settings' => array(
-          'colorbox_field_formatter_anchor' => '',
-          'colorbox_field_formatter_class' => '',
-          'colorbox_field_formatter_height' => 500,
-          'colorbox_field_formatter_iframe' => 0,
-          'colorbox_field_formatter_image_style' => '',
-          'colorbox_field_formatter_link' => '',
-          'colorbox_field_formatter_link_type' => 'content',
-          'colorbox_field_formatter_style' => 'colorbox-load',
-          'colorbox_field_formatter_width' => 500,
           'field_formatter_class' => '',
         ),
-        'type' => 'colorbox_field_formatter_linked',
+        'type' => 'text_plain',
         'weight' => 2,
       ),
       'logo' => array(
@@ -1458,7 +1449,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1531,7 +1522,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1615,7 +1606,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'height_150',
+          'image_style' => 'brand_logo',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -1743,7 +1734,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1823,7 +1814,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'logo' => array(
         'label' => 'above',
@@ -1900,7 +1891,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2006,7 +1997,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2117,7 +2108,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2194,7 +2185,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2268,7 +2259,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 36,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2340,7 +2331,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2437,7 +2428,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2509,7 +2500,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2589,7 +2580,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2663,7 +2654,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 38,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2732,7 +2723,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2802,7 +2793,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2876,7 +2867,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 37,
       ),
       'logo' => array(
         'label' => 'above',
@@ -2950,7 +2941,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 32,
       ),
       'logo' => array(
         'label' => 'above',
