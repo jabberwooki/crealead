@@ -2055,7 +2055,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .node-type-training .field-name-title h2{margin-top:0}
 .node-type-training .group-training-data .col-md-3 .label-above{font-weight:700;font-family:'Source Sans Pro',sans-serif}
 .node-type-training .group-training-right-col .label-above{font-family:'Source Sans Pro',sans-serif}
-.page-taxonomy-term .col-sm-6 .view-content .carousel-inner{width:86%;display:block;margin:0 auto 40px;height:80px;overflow:hidden}
+.page-taxonomy-term .col-sm-6 .view-content .carousel-inner{width:86%;display:block;margin:0 auto 40px;overflow:hidden}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-inner .field-name-field-brand-logo img{max-height:80px;display:block;margin:0 auto}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-indicators{bottom:-35px;height:20px;display:inline-block}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-indicators li{border:1px solid #009aa0;width:14px;height:14px}
