@@ -144,7 +144,19 @@ function crealead_trainings_views_default_views() {
   /* Display: Formations d'une thématique */
   $handler = $view->new_display('entity_view', 'Formations d\'une thématique', 'landing_page_trainings');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Nos formations et produits';
+  $handler->display->display_options['title'] = 'Produits et formations';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'pagerer';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -262,12 +274,11 @@ function crealead_trainings_views_default_views() {
     t('Objectifs'),
     t('Tout'),
     t('Formations d\'une thématique'),
-    t('Nos formations et produits'),
-    t('<h3>Nos formations et produits</h3>'),
-    t('Formations d\'une marque sectorielle'),
     t('Produits et formations'),
     t('Éléments par page'),
     t('Décalage'),
+    t('<h3>Nos formations et produits</h3>'),
+    t('Formations d\'une marque sectorielle'),
     t('<h3>Produits<br />et formations</h3>'),
     t('terme à partir de field_related_sector_brands'),
   );
