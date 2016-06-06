@@ -265,6 +265,21 @@ function crealead_brands_ds_field_settings_info() {
   );
   $export['node|client|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|themes|landing_page_block';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'themes';
+  $ds_fieldsetting->view_mode = 'landing_page_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['taxonomy_term|themes|landing_page_block'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -865,21 +880,17 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'description',
-        1 => 'news_theme_news',
-        2 => 'articles_theme_articles',
+        0 => 'news_theme_news',
+        1 => 'articles_theme_articles',
       ),
       'right' => array(
-        3 => 'brands_entity_view_1',
-        4 => 'achievements_theme_realisations',
-        5 => 'trainings_landing_page_trainings',
+        2 => 'achievements_theme_realisations',
+        3 => 'trainings_landing_page_trainings',
       ),
     ),
     'fields' => array(
-      'description' => 'left',
       'news_theme_news' => 'left',
       'articles_theme_articles' => 'left',
-      'brands_entity_view_1' => 'right',
       'achievements_theme_realisations' => 'right',
       'trainings_landing_page_trainings' => 'right',
     ),
@@ -894,10 +905,48 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
-    'hide_page_title' => '0',
+    'hide_page_title' => '1',
     'page_option_title' => '',
   );
   $export['taxonomy_term|themes|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|themes|landing_page_block';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'themes';
+  $ds_layout->view_mode = 'landing_page_block';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'title',
+        1 => 'field_term_summary',
+        2 => 'description',
+      ),
+      'right' => array(
+        3 => 'brands_entity_view_1',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'left',
+      'field_term_summary' => 'left',
+      'description' => 'left',
+      'brands_entity_view_1' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|themes|landing_page_block'] = $ds_layout;
 
   return $export;
 }

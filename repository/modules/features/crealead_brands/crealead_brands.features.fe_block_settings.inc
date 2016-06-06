@@ -228,5 +228,29 @@ function crealead_brands_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-themes-theme_page_header'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'delta' => 'themes-theme_page_header',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   return $export;
 }

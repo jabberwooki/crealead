@@ -159,5 +159,40 @@ function crealead_brands_context_default_contexts() {
   t('Marques');
   $export['sector_brand_page'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'theme_page';
+  $context->description = '';
+  $context->tag = 'Thématiques';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'themes' => 'themes',
+      ),
+      'options' => array(
+        'term_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-themes-theme_page_header' => array(
+          'module' => 'views',
+          'delta' => 'themes-theme_page_header',
+          'region' => 'content_header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Thématiques');
+  $export['theme_page'] = $context;
+
   return $export;
 }

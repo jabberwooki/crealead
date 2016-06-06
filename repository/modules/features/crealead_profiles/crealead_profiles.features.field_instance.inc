@@ -696,10 +696,19 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 0,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 6,
+      ),
+      'landing_page_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'taxonomy_term',
