@@ -2153,7 +2153,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences */
+  /* Field: Field: Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
