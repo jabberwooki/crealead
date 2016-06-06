@@ -18,7 +18,7 @@ function kcore_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -51,6 +51,7 @@ function kcore_ds_view_modes_info() {
   $ds_view_mode->label = 'Bloc page thématique';
   $ds_view_mode->entities = array(
     'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
   );
   $export['landing_page_block'] = $ds_view_mode;
 
