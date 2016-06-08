@@ -731,13 +731,6 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'taxonomy_menu_vocab_parent_sector_brands';
-  $strongarm->value = '915';
-  $export['taxonomy_menu_vocab_parent_sector_brands'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_menu_voc_name_sector_brands';
   $strongarm->value = FALSE;
   $export['taxonomy_menu_voc_name_sector_brands'] = $strongarm;

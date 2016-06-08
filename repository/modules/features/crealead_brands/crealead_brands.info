@@ -255,7 +255,6 @@ features[variable][] = taxonomy_menu_hide_empty_terms_sector_brands
 features[variable][] = taxonomy_menu_sync_sector_brands
 features[variable][] = taxonomy_menu_voc_name_sector_brands
 features[variable][] = taxonomy_menu_vocab_menu_sector_brands
-features[variable][] = taxonomy_menu_vocab_parent_sector_brands
 features[views_view][] = achievements
 features[views_view][] = brand_contact_submissions
 features[views_view][] = brands
