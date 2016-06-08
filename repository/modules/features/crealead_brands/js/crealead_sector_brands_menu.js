@@ -6,8 +6,7 @@
   Drupal.behaviors.sector_brands = {
     attach: function (context, settings) {
       // Make the main menu item "Les marques sectorielles" not clickable.
-      $("#navbar ul.menu li.last > a").click(function(e){
-        console.log("cliqué");
+      $("ul.menu.navbar-nav > li.last > a").click(function(e){
         e.preventDefault();
       });
     }
