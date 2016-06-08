@@ -700,5 +700,47 @@ function crealead_brands_strongarm() {
   );
   $export['socialfield_services'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_expanded_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_expanded_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_hide_empty_terms_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_hide_empty_terms_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_sync_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_sync_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_vocab_menu_sector_brands';
+  $strongarm->value = 'main-menu';
+  $export['taxonomy_menu_vocab_menu_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_vocab_parent_sector_brands';
+  $strongarm->value = '915';
+  $export['taxonomy_menu_vocab_parent_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_voc_name_sector_brands';
+  $strongarm->value = FALSE;
+  $export['taxonomy_menu_voc_name_sector_brands'] = $strongarm;
+
   return $export;
 }
