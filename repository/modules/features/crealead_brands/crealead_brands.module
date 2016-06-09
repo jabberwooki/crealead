@@ -486,3 +486,62 @@ function crealead_brands_views_query_alter(&$view, &$query) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, $form_id) {
+  // We must display only sector brands the parent brand(s) of the current achievement is (are) related to.
+  // First, we get the parent brands.
+  $parent_brands = crealead_achievements_get_parent_brands($form['nid']['#value']);
+
+  // If any parent brands exist, we get the sector brands of each parent brand.
+  if (!empty($parent_brands)) {
+    $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+    // If any parent sector brands exist
+    if (!empty($parent_sector_brands)) {
+      // We have to clean the sector brand field options array by keeping only the parent sector brands.
+      $form['field_related_sector_brands']['und']['#options'] =
+        crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
+  }
+  // otherwise we remove the related sector brands field from display.
+  else {
+    $form['field_related_sector_brands']['#access'] = FALSE;
+  }
+}
+
+function crealead_achievements_get_parent_brands($achiev_id) {
+  if (!isset($achiev_id)) return array();
+
+  $query = db_select('field_data_field_brand_achievements', 'fba');
+  $query->fields('fba', array('entity_id'));
+  $query->condition('field_brand_achievements_target_id', $achiev_id);
+
+  return $query->execute()->fetchAllKeyed(0,0);
+}
+
+function crealead_brands_get_parent_sector_brands($brands) {
+  $parent_sector_brands = array();
+  foreach ($brands as $brand_id) {
+    $query = db_select('field_data_field_related_sector_brands', 'frsb');
+    $query->fields('frsb', array('field_related_sector_brands_tid'));
+    $query->condition('entity_id', $brand_id);
+    $parent_sector_brands += $query->execute()->fetchAllKeyed(0, 0);
+  }
+  return $parent_sector_brands;
+}
+
+function crealead_clean_sector_brands_options($sector_brands_options, $parent_sector_brands) {
+  foreach ($sector_brands_options as $key=>$sector_brand) {
+    if (!in_array($key, $parent_sector_brands)) {
+      unset($sector_brands_options[$key]);
+    }
+  }
+  return $sector_brands_options;
+}
