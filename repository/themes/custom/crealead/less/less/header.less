@@ -17,10 +17,20 @@ header#navbar nav{
   > ul.menu{
     margin: 0 0 0 5px;
     @media (min-width: @screen-lg){
-      margin: 0 0 0 40px;
+      margin: 0 0 0 20px;
+    }
+    > li.last{
+      margin-left: 5px;
+      border: 1px solid @rouge-crealead;
+      > a{
+        color: @rouge-crealead;
+        &:hover{
+          background-color: @bleu-clair-crealead;
+          color: white;
+        }
+      }
     }
   }
-
   ul.menu a{
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
@@ -123,6 +133,7 @@ header#navbar nav{
       color: white;
     }
   }
+  
 }
 /* Menu secondaire ****************************************************************************************************/
 #block-menu-menu-top{
