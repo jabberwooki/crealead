@@ -115,7 +115,7 @@
   </div>
 
   <?php if (!empty($page['sector_brands_navigation'])): ?>
-  <div id="">
+  <div id="sector_brands_navigation">
     <div class="container">
       <div class="row">
         <?php print render($page['sector_brands_navigation']); ?>
