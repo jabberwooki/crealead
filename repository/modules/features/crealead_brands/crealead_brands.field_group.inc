@@ -577,6 +577,39 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_css_effect_3|node|brand|sector_brand_block';
+  $field_group->group_name = 'group_css_effect_3';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'sector_brand_block';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group css effect 3',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_brand_logo',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group css effect 3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-css-effect-3 field-group-div view-css-effect third-effect',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_css_effect_3|node|brand|sector_brand_block'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_row_1|node|brand|full';
   $field_group->group_name = 'group_row_1';
   $field_group->entity_type = 'node';

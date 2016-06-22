@@ -15,6 +15,11 @@
   margin-top: 80px;
   height: 240px;
   overflow: hidden;
+  position: relative;
+  &.sector-brands-desc-open{
+    height:auto;
+    padding-bottom:30px;
+  }
   .views-field-field-brand-logo{
     img{
       max-height: 180px;
@@ -31,12 +36,36 @@
       .source();
       color: @rouge-crealead;
     }
+    &.sector-brands-desc-open{
+      height: auto;
+    }
   }
 }
-
 body.not-logged-in {
   .region-sector-brands-header{
     margin-top: 20px;
+  }
+}
+/* bouton open-close **************************************************************************************************/
+#open-close-sector-brand {
+  display: block;
+  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 100%;
+  z-index: 10;
+  position: static;
+  &.sector-brands-desc-open{
+    background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 0;
+    margin-top: -33px;
+    position: relative;
+    z-index: 3;
+  }
+}
+/* main container *****************************************************************************************************/
+.main-container.main-container-sector-brands{
+  margin-top: 0;
+  padding-top: 0;
+  h3{
+    .source();
+    color: @rouge-crealead;
   }
 }
 

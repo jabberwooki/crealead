@@ -218,15 +218,29 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'sector_brand_block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h4',
-        'class' => '',
-        'ft' => array(),
+        'wrapper' => 'h3',
+        'class' => 'mask',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'info',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
         'field_formatter_class' => '',
+      ),
+    ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
       ),
     ),
   );
@@ -752,12 +766,14 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_brand_logo',
-        1 => 'title',
-        2 => 'field_brand_baseline',
+        0 => 'group_css_effect_3',
+        1 => 'field_brand_logo',
+        2 => 'title',
+        3 => 'field_brand_baseline',
       ),
     ),
     'fields' => array(
+      'group_css_effect_3' => 'ds_content',
       'field_brand_logo' => 'ds_content',
       'title' => 'ds_content',
       'field_brand_baseline' => 'ds_content',
