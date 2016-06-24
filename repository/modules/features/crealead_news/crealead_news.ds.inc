@@ -228,6 +228,11 @@ function crealead_news_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_sector' => array(
       'formatter_settings' => array(
         'ft' => array(

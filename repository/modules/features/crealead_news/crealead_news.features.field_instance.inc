@@ -79,7 +79,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'line-bottom-red',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
