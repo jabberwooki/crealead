@@ -120,6 +120,7 @@ features[field_group][] = group_col_1_3|node|brand|full
 features[field_group][] = group_col_2_6|node|brand|full
 features[field_group][] = group_contact|node|brand|full
 features[field_group][] = group_crealead_fields|node|brand|form
+features[field_group][] = group_css_effect_3|node|achievement|sector_brand_block
 features[field_group][] = group_css_effect_3|node|brand|block
 features[field_group][] = group_css_effect_3|node|brand|sector_brand_block
 features[field_group][] = group_row_1|node|brand|full
