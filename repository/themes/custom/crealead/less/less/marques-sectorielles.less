@@ -86,12 +86,7 @@ body.not-logged-in {
   }
   .view-display-id-sector_brand_trainings{
     h3{
-      color: white;
-      text-transform: uppercase;
-      background-color: @bleu-clair-crealead;
-      padding: 20px;
-      line-height: 1.3em;
-      margin-bottom: 0;
+      .title-blue-bg();
     }
     .view-content{
       background-color: @gris-clair-crealead;
@@ -124,21 +119,9 @@ body.not-logged-in {
       padding-top: 35px;
       border-top: 1px solid @gris-fonce-crealead;
     }
-    .view-news .position-relative {
-      position: relative;
-      .field-type-taxonomy-term-reference {
-        position: absolute;
-        top: 10px;
-        left: 5px;
-        background-color: @rouge-crealead;
-        padding: 5px 10px;
-        color: #fff;
-        .quick();
-        text-transform: uppercase;
-        display: table;
-        font-weight: 700;
-        font-size: .8em;
-      }
+    .view-news .position-relative .field-type-taxonomy-term-reference{
+      .cartouche-rouge();
+      .position-cartouche-rouge();
     }
   }
 
