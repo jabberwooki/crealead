@@ -2075,13 +2075,25 @@ body.front #block-views-articles-testimonials-front .field-name-body h3,body.fro
 .view-id-gazettes .col-md-4>div h3 a{display:block}
 #sector_brands_navigation{background-color:#009aa0}
 #sector_brands_navigation #block-crealead-brands-crealead-sector-brand-nav a{color:#fff;text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700}
-#introduction.sector-brands-header .views-field-description h3,.main-container.main-container-sector-brands h3{font-family:'Source Sans Pro',sans-serif;color:#bf0e38}
 #introduction.sector-brands-header{margin-top:80px;height:240px;overflow:hidden;position:relative}
 #introduction.sector-brands-header.sector-brands-desc-open{height:auto;padding-bottom:30px}
 #introduction.sector-brands-header .views-field-field-brand-logo img{max-height:180px;max-width:180px;margin:10px 25px 30px 0;float:left}
 #introduction.sector-brands-header .views-field-description{margin-top:20px;height:200px;overflow:hidden}
+#introduction.sector-brands-header .views-field-description h3{font-family:'Source Sans Pro',sans-serif;color:#bf0e38}
 #introduction.sector-brands-header .views-field-description.sector-brands-desc-open{height:auto}
 body.not-logged-in .region-sector-brands-header{margin-top:20px}
 #open-close-sector-brand{display:block;background:url(../../../../../modules/features/crealead_brands/img/arrows_up_down.png) 50% 100% no-repeat;z-index:10;position:static}
 #open-close-sector-brand.sector-brands-desc-open{background:url(../../../../../modules/features/crealead_brands/img/arrows_up_down.png) 50% 0 no-repeat;margin-top:-33px;position:relative;z-index:3}
+.title-3-sect-brand{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700}
 .main-container.main-container-sector-brands{margin-top:0;padding-top:0}
+.main-container.main-container-sector-brands h3{font-family:'Source Sans Pro',sans-serif;color:#bf0e38}
+@media (min-width:992px){.main-container.main-container-sector-brands .third-effect .mask{margin-top:5px}
+}
+.main-container.main-container-sector-brands .group-sectorbrands-brands h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700}
+.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings h3{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1em;margin-bottom:0}
+.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content{background-color:#ededed;padding:20px}
+.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a{display:block;color:#1d1e19;font-size:.8em;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #009aa0}
+.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a:hover{color:#bf0e38}
+.main-container.main-container-sector-brands #achievements h3,.main-container.main-container-sector-brands .group-sectorbrands-news>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;padding-top:35px;border-top:1px solid #999}
+.main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative{position:relative}
+.main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative .field-type-taxonomy-term-reference{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
