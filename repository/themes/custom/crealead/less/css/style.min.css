@@ -2119,3 +2119,6 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a:hover{color:#bf0e38}
 .main-container.main-container-sector-brands #achievements h3,.main-container.main-container-sector-brands .group-sectorbrands-news>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;padding-top:35px;border-top:1px solid #999}
 .main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative .field-type-taxonomy-term-reference{background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;position:absolute;top:10px;left:5px}
+.main-container.main-container-sector-brands .group-sectorbrands-articles{background-color:#ededed;padding-bottom:20px}
+.main-container.main-container-sector-brands .group-sectorbrands-articles>h3{color:#009aa0;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #000}
+.main-container.main-container-sector-brands .group-sectorbrands-articles h4>a{color:#009aa0}
