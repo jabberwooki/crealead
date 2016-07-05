@@ -53,7 +53,7 @@ function crealead_news_field_default_field_instances() {
           'trim_length' => 150,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -79,7 +79,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'line-bottom-red',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -191,7 +191,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -292,7 +292,7 @@ function crealead_news_field_default_field_instances() {
           'image_style' => 'carre_large',
         ),
         'type' => 'image',
-        'weight' => 15,
+        'weight' => 1,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -451,7 +451,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -536,7 +536,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -643,7 +643,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -773,7 +773,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -864,7 +864,7 @@ function crealead_news_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 17,
+        'weight' => 2,
       ),
       'news_2_3' => array(
         'label' => 'hidden',
@@ -961,7 +961,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -1040,7 +1040,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'news_2_3' => array(
         'label' => 'above',
@@ -1128,7 +1128,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'news_2_3' => array(
         'label' => 'inline',
@@ -1226,7 +1226,7 @@ function crealead_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'news_2_3' => array(
         'label' => 'above',

@@ -66,6 +66,7 @@ features[field_base][] = scald_author_url
 features[field_group][] = group_all|node|news|news_2_3
 features[field_group][] = group_col8|node|news|full
 features[field_group][] = group_crealead_settings|node|news|form
+features[field_group][] = group_img_cat|node|news|landing_page_block
 features[field_group][] = group_img_cat|node|news|sector_brand_block
 features[field_group][] = group_img_cat|node|news|teaser
 features[field_group][] = group_img_title_cat|node|news|full

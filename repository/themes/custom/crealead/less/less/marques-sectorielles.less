@@ -15,6 +15,12 @@
   margin-top: 80px;
   height: 240px;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 30px;
+  &.sector-brands-desc-open{
+    height:auto;
+    padding-bottom:30px;
+  }
   .views-field-field-brand-logo{
     img{
       max-height: 180px;
@@ -31,12 +37,109 @@
       .source();
       color: @rouge-crealead;
     }
+    &.sector-brands-desc-open{
+      height: auto;
+    }
   }
 }
-
 body.not-logged-in {
   .region-sector-brands-header{
     margin-top: 20px;
   }
 }
+
+/* bouton open-close **************************************************************************************************/
+#open-close-sector-brand {
+  display: block;
+  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 100%;
+  z-index: 10;
+  position: static;
+  &.sector-brands-desc-open{
+    background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 0;
+    margin-top: -33px;
+    position: relative;
+    z-index: 3;
+  }
+}
+/* main container *****************************************************************************************************/
+.title-3-sect-brand{
+  text-transform: uppercase;
+  .quick();
+  font-weight: bold;
+}
+.main-container.main-container-sector-brands {
+  margin-top: 0;
+  padding-top: 0;
+  h3 {
+    .source();
+    color: @rouge-crealead;
+  }
+  @media (min-width: @screen-md) {
+    .third-effect .mask {
+      margin-top: 5px;
+    }
+  }
+  .group-sectorbrands-brands{
+    h3{
+      .title-3-sect-brand();
+    }
+  }
+  .view-display-id-sector_brand_trainings{
+    h3{
+      .title-blue-bg();
+    }
+    .view-content{
+      background-color: @gris-clair-crealead;
+      padding: 20px;
+      h4{
+        a{
+          display: block;
+          color: @noir-crealead;
+          font-size: 0.8em;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid @bleu-clair-crealead;
+          &:hover{
+            color: @rouge-crealead;
+          }
+        }
+      }
+    }
+  }
+  #achievements{
+    h3{
+      .title-3-sect-brand();
+      padding-top: 35px;
+      border-top: 1px solid @gris-fonce-crealead;
+    }
+    padding-bottom: 20px;
+    border-bottom: 1px solid @gris-fonce-crealead;
+  }
+  .group-sectorbrands-news{
+    > h3{
+      .title-3-sect-brand();
+      padding-top: 35px;
+    }
+    .view-news .position-relative .field-type-taxonomy-term-reference{
+      .cartouche-rouge();
+      .position-cartouche-rouge();
+    }
+  }
+  .group-sectorbrands-articles{
+    background-color: @gris-clair-crealead;
+    padding-bottom: 20px;
+    margin-top: 80px;
+    > h3 {
+      color: @bleu-clair-crealead;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
+    }
+    h4 > a {
+      color: @bleu-clair-crealead;
+    }
+  }
+}
+
+
 
