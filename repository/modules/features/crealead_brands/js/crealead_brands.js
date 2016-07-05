@@ -15,10 +15,10 @@ jQuery(function($){
       var currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
 
-      //$('#views-bootstrap-carousel-1').on('slid.bs.carousel', function() {
-      //  currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
-      //  $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
-      //});
+      $('#views-bootstrap-carousel-1').on('slid.bs.carousel', function() {
+       currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
+       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
+      });
 
       // Default coe while creating brand
       if (settings.crealead_brands_default_coe) {
@@ -28,9 +28,9 @@ jQuery(function($){
 
       // fait en sorte que le premier item du menu de la marque soit actif
       if ($(".node-type-brand .group-brand-tabs").length) {
-        console.log('code de yvan');
+        //console.log('code de yvan');
         $(".node-type-brand .group-brand-tabs > li:first").addClass("active");
       }
     }
   };
-}(jQuery));
+}(jQuery))
