@@ -1,3 +1,7 @@
+Crealead 2.1.5 / 2016-07-05
+---------------------------
+Hotfix: Slide counter failure in brand's Achievements tab fixed.
+
 Crealead 2.1.4 - 2016-05-30
 ---------------------------
 Special release to deploy Gazette feature in production.
