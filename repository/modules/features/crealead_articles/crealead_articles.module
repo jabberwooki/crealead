@@ -10,7 +10,6 @@ include_once 'crealead_articles.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $form_id) {
-dpm($form);
   // If user is not allowed, field_news_kind and field_related_themes removed.
   global $user;
   $current_user_roles = $user->roles;
