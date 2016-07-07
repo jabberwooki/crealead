@@ -246,7 +246,7 @@ function kcore_strongarm() {
     ),
     193262079 => array(
       'weight' => '0',
-      'public_pid' => 0,
+      'public_pid' => '1',
     ),
     31497918 => array(
       'weight' => '0',
