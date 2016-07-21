@@ -29,16 +29,6 @@ function crealead_trainings_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
-    'field_achievement_photos' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|achievement|landing_page_block'] = $ds_fieldsetting;
 
@@ -399,6 +389,9 @@ function crealead_trainings_ds_layout_settings_info() {
       'field_achievement_photos' => 'left',
       'title' => 'right',
       'body' => 'right',
+    ),
+    'limit' => array(
+      'field_achievement_photos' => '1',
     ),
     'classes' => array(),
     'wrappers' => array(
