@@ -90,15 +90,26 @@
 
     }
   }
-  /* toutes les titres ************************************************************************************************/
+  /* tous les titres ************************************************************************************************/
   .view-header > h3{
     .title-red-landing();
   }
-  /* News *************************************************************************************************************/
-  .field-name-field-news-type {
-    .cartouche-rouge();
-    .position-cartouche-rouge();
+  .field-item h3{
+    .text-normal();
+    margin-top: 0;
   }
+  /* News *************************************************************************************************************/
+    .field-name-field-news-type {
+      .cartouche-rouge();
+      .position-cartouche-rouge();
+    }
+  .view-display-id-theme_news{
+    .right-col{
+      height: 223px;
+      overflow: hidden;
+    }
+  }
+
   /* Formations *******************************************************************************************************/
   .view-id-trainings{
     h3{
@@ -122,15 +133,49 @@
     }
   }
   /* Articles *********************************************************************************************************/
-  .view-id-articles .col-sm-12{
-    padding: 0 20px;
-    background-color: @gris-clair-crealead;
-    h4{
-      margin: 20px 0 0 0;
+  .view-id-articles{
+    .row{
+      height: 220px;
+      overflow: hidden;
+      background-color: @gris-clair-crealead;
+      border-bottom: 10px solid @gris-clair-crealead;
     }
-    .field-name-title, .field-name-body{
-      padding: 10px;
+    .col-sm-12{
+      padding: 0 20px;
+      background-color: @gris-clair-crealead;
+      h4{
+        margin: 20px 0 0 0;
+      }
+      .field-name-title, .field-name-body{
+        padding: 10px;
+      }
     }
   }
+  /* Réalisations *****************************************************************************************************/
+  .view-achievements{
+    .field-name-field-achievement-photos{
+      > .field-items{
+        height: 224px;
+        width: 100%;
+        padding: 0 5%;
+        background-color: @gris-clair-crealead;
+        overflow: hidden;
+        display: table;
+        > .field-item{
+          display: table-cell;
+          vertical-align: middle;
+          img{
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .right-col{
+      height: 223px;
+      overflow: hidden;
+    }
+  }
+
 
 }
