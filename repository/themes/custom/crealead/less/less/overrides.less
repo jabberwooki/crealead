@@ -677,7 +677,10 @@ td.radio {
 .views-exposed-form .views-exposed-widget .btn {
   margin-top: 1.8em;
 }
-
+// Radio and checkbox
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"]{
+  margin-left: 0;
+}
 // Radio and checkbox in table fixes
 table {
   .radio input[type="radio"],
@@ -685,7 +688,6 @@ table {
     max-width: inherit;
   }
 }
-
 // Exposed filters
 .form-horizontal .form-group label {
   position: relative;
