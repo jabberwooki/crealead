@@ -20,7 +20,7 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     $form['field_news_kind']['#access'] = FALSE;
-    $form['field_landing_pages']['#access'] = FALSE;
+    //$form['field_landing_pages']['#access'] = FALSE;
   }
 
   // Related brands list handling ----------------------------------------------
