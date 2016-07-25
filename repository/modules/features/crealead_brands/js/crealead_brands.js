@@ -11,14 +11,16 @@ jQuery(function($){
     attach: function (context, settings) {
 
       // Achievements carousel counter
-      var totalItems = $('.view-display-id-brand_achievements .carousel-inner .item').length;
+      var totalItems = $('.view-display-id-brand_achievements .carousel-inner .item').length;console.log('total = ' + totalItems);
       var currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
 
-      $('#views-bootstrap-carousel-1').on('slid.bs.carousel', function() {
-       currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
-       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
-      });
+      if (totalItems > 0) {
+        $('#views-bootstrap-carousel-1').on('slid.bs.carousel', function () {
+          currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
+          $('.slide-counter').html('' + currentIndex + '/' + totalItems + '');
+        });
+      }
 
       // Default coe while creating brand
       if (settings.crealead_brands_default_coe) {
