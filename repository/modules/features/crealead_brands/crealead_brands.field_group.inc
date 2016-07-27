@@ -685,7 +685,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Réalisations',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'achievements_sector_brand_achievs',
     ),
@@ -693,8 +693,8 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Réalisations',
       'instance_settings' => array(
-        'id' => 'achievements',
-        'classes' => 'group-sectorbrands-achievments field-group-div col-md-12',
+        'id' => '',
+        'classes' => 'group-sectorbrands-achievments field-group-div clearfix',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -758,8 +758,8 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Marques et produits',
       'instance_settings' => array(
-        'id' => 'brands-products',
-        'classes' => 'group-sectorbrands-brands-prods field-group-div',
+        'id' => '',
+        'classes' => 'group-sectorbrands-brands-prods field-group-div clearfix',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -815,7 +815,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités et articles',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'group_sectorbrands_news',
       1 => 'group_sectorbrands_articles',
@@ -824,8 +824,8 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Actualités et articles',
       'instance_settings' => array(
-        'id' => 'news-articles',
-        'classes' => 'group-sectorbrands-news-articles field-group-div',
+        'id' => '',
+        'classes' => 'group-sectorbrands-news-articles field-group-div clearfix',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

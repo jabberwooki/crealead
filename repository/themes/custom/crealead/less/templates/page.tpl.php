@@ -126,6 +126,7 @@
 </header>
 
 <?php if (!empty($page['sector_brands_header'])): ?>
+  <a name="intro" id="intro"></a>
   <div id="introduction" class="sector-brands-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in' ?>">
     <div class="container">
       <div class="row">

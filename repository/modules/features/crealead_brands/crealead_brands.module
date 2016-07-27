@@ -239,7 +239,7 @@ function crealead_brands_block_view($delta = '') {
       $attributes = array('class' => 'nav navbar-nav');
 
       $content = '<ul class="nav navbar-nav">';
-      $content .= '<li class="item1 first"><a href="#introduction">Introduction</a>';
+      $content .= '<li class="item1 first"><a href="#intro">Introduction</a>';
       $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
       $content .= '<li class="item3"><a href="#achievements">Réalisations</a>';
       $content .= '<li class="item4 last"><a href="#news-articles">Actualités et articles de fond</a>';
