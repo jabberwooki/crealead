@@ -70,6 +70,11 @@ body.not-logged-in {
 .main-container.main-container-sector-brands {
   margin-top: 0;
   padding-top: 0;
+  .group-sectorbrands-news{
+    h3{
+      .text-normal();
+    }
+  }
   h3 {
     .source();
     color: @rouge-crealead;
@@ -112,6 +117,13 @@ body.not-logged-in {
       padding-top: 35px;
       border-top: 1px solid @gris-fonce-crealead;
     }
+    .field-name-body {
+      height: 80px;
+      overflow: hidden;
+      h3, h4{
+        .text-normal();
+      }
+    }
     padding-bottom: 20px;
     border-bottom: 1px solid @gris-fonce-crealead;
   }
@@ -138,6 +150,10 @@ body.not-logged-in {
     h4 > a {
       color: @bleu-clair-crealead;
     }
+  }
+  a#intro, a#brands-products, a#achievements, a#news-articles{
+    margin-top: -160px;
+    float:right;
   }
 }
 
