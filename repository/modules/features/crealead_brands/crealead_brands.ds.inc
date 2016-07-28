@@ -322,6 +322,52 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|sector_brands|full';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'sector_brands';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'achievements_anchor' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'brands_products_anchor' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'news_articles_anchor' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['taxonomy_term|sector_brands|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'taxonomy_term|themes|landing_page_block';
   $ds_fieldsetting->entity_type = 'taxonomy_term';
   $ds_fieldsetting->bundle = 'themes';
@@ -346,6 +392,25 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'achievements_anchor';
+  $ds_field->label = 'Ancre Réalisations';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="achievements" name="achievements"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['achievements_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'brand_contacts';
   $ds_field->label = 'Prises de contact';
   $ds_field->field_type = 6;
@@ -358,6 +423,44 @@ function crealead_brands_ds_custom_fields_info() {
     'block_render' => '2',
   );
   $export['brand_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'brands_products_anchor';
+  $ds_field->label = 'Ancre Marques et Produits';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="brands-products" name="brands-products"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['brands_products_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'news_articles_anchor';
+  $ds_field->label = 'Ancre Actus et Articles';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="news-articles" name="news-articles"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['news_articles_anchor'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -920,35 +1023,41 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_sectorbrands_brands_prods',
-        1 => 'group_sectorbrands_achievments',
-        2 => 'group_sectorbrands_brands',
-        3 => 'group_sectorbrands_news_articles',
-        4 => 'achievements_sector_brand_achievs',
-        5 => 'group_sectorbrands_news',
+        0 => 'brands_products_anchor',
+        1 => 'group_sectorbrands_brands_prods',
+        2 => 'achievements_anchor',
+        3 => 'achievements_sector_brand_achievs',
+        4 => 'group_sectorbrands_brands',
+        5 => 'group_sectorbrands_achievments',
         6 => 'group_sectorbrands_products',
-        7 => 'news_sector_brand_news',
-        8 => 'group_sectorbrands_articles',
-        9 => 'brands_sector_brand_brands_form',
-        10 => 'trainings_sector_brand_trainings',
-        11 => 'articles_sector_brand_articles',
-        12 => 'brands_sector_brand_brands',
+        7 => 'group_sectorbrands_news',
+        8 => 'news_articles_anchor',
+        9 => 'news_sector_brand_news',
+        10 => 'group_sectorbrands_news_articles',
+        11 => 'group_sectorbrands_articles',
+        12 => 'brands_sector_brand_brands_form',
+        13 => 'trainings_sector_brand_trainings',
+        14 => 'brands_sector_brand_brands',
+        15 => 'articles_sector_brand_articles',
       ),
     ),
     'fields' => array(
+      'brands_products_anchor' => 'ds_content',
       'group_sectorbrands_brands_prods' => 'ds_content',
-      'group_sectorbrands_achievments' => 'ds_content',
-      'group_sectorbrands_brands' => 'ds_content',
-      'group_sectorbrands_news_articles' => 'ds_content',
+      'achievements_anchor' => 'ds_content',
       'achievements_sector_brand_achievs' => 'ds_content',
-      'group_sectorbrands_news' => 'ds_content',
+      'group_sectorbrands_brands' => 'ds_content',
+      'group_sectorbrands_achievments' => 'ds_content',
       'group_sectorbrands_products' => 'ds_content',
+      'group_sectorbrands_news' => 'ds_content',
+      'news_articles_anchor' => 'ds_content',
       'news_sector_brand_news' => 'ds_content',
+      'group_sectorbrands_news_articles' => 'ds_content',
       'group_sectorbrands_articles' => 'ds_content',
       'brands_sector_brand_brands_form' => 'ds_content',
       'trainings_sector_brand_trainings' => 'ds_content',
-      'articles_sector_brand_articles' => 'ds_content',
       'brands_sector_brand_brands' => 'ds_content',
+      'articles_sector_brand_articles' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

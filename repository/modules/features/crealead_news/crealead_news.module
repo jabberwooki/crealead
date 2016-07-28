@@ -20,7 +20,7 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     $form['field_news_kind']['#access'] = FALSE;
-    $form['field_landing_pages']['#access'] = FALSE;
+    //$form['field_landing_pages']['#access'] = FALSE;
   }
 
   // Related brands list handling ----------------------------------------------
@@ -77,7 +77,9 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   }
   // otherwise we remove the related sector brands field from display.
   else {
-    $form['field_related_sector_brands']['#access'] = FALSE;
+    if (!isset($form['#node']->field_news_kind) || empty($form['#node']->field_news_kind) || $form['#node']->field_news_kind['und'][0]['value'] != 1) {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
   }
 }
 

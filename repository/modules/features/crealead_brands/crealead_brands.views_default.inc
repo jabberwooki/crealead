@@ -1295,7 +1295,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>No co-entrepreneurs</h3>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Nos co-entrepreneurs</h3>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Thématique(s) concernée(s) (field_landing_pages) */
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
@@ -1810,7 +1810,7 @@ function crealead_brands_views_default_views() {
     t('User entity referenced from field_brand_coe'),
     t('Marques d\'une thématique'),
     t('Marques associées'),
-    t('<h3>No co-entrepreneurs</h3>'),
+    t('<h3>Nos co-entrepreneurs</h3>'),
     t('term from field_landing_pages'),
     t('Grandes marques'),
     t('Les grandes marques de Crealead'),

@@ -264,7 +264,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '0',
+            'weight' => '8',
             'visible' => FALSE,
           ),
           'block' => array(
