@@ -346,6 +346,25 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'achievements_anchor';
+  $ds_field->label = 'Ancre Réalisations';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="achievements" name="achievements"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['achievements_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'brand_contacts';
   $ds_field->label = 'Prises de contact';
   $ds_field->field_type = 6;
@@ -358,6 +377,44 @@ function crealead_brands_ds_custom_fields_info() {
     'block_render' => '2',
   );
   $export['brand_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'brands_products_anchor';
+  $ds_field->label = 'Ancre Marques et Produits';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="brands-products" name="brands-products"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['brands_products_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'news_articles_anchor';
+  $ds_field->label = 'Ancre Actus et Articles';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="news-articles" name="news-articles"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['news_articles_anchor'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
