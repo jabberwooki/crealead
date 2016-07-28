@@ -66,11 +66,12 @@ body.not-logged-in {
   text-transform: uppercase;
   .quick();
   font-weight: bold;
+  color: @rouge-crealead;
 }
 .main-container.main-container-sector-brands {
   margin-top: 0;
   padding-top: 0;
-  .group-sectorbrands-news{
+  .group-sectorbrands-news .field-name-body{
     h3{
       .text-normal();
     }
@@ -111,8 +112,8 @@ body.not-logged-in {
       }
     }
   }
-  #achievements{
-    h3{
+  .group-sectorbrands-achievments{
+     > h3{
       .title-3-sect-brand();
       padding-top: 35px;
       border-top: 1px solid @gris-fonce-crealead;
@@ -152,7 +153,7 @@ body.not-logged-in {
     }
   }
   a#intro, a#brands-products, a#achievements, a#news-articles{
-    margin-top: -160px;
+    margin-top: -200px;
     float:right;
   }
 }
