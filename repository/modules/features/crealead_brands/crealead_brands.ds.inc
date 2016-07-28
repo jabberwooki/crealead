@@ -322,6 +322,52 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|sector_brands|full';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'sector_brands';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'achievements_anchor' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'brands_products_anchor' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'news_articles_anchor' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['taxonomy_term|sector_brands|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'taxonomy_term|themes|landing_page_block';
   $ds_fieldsetting->entity_type = 'taxonomy_term';
   $ds_fieldsetting->bundle = 'themes';
