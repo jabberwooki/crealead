@@ -331,7 +331,7 @@ Non|Non publié',
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Statut';
@@ -343,6 +343,7 @@ Non|Non publié',
     14479344 => 0,
     103860121 => 0,
     191976793 => 0,
+    259028912 => 0,
     7178059 => 0,
     31497918 => 0,
     231346920 => 0,
