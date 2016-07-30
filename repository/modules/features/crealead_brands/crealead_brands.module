@@ -241,7 +241,7 @@ function crealead_brands_block_view($delta = '') {
       $current_sector_brand = menu_get_object('taxonomy_term', 2);
 
       $content = '<ul class="nav navbar-nav">';
-      $content .= '<li class="item1 first"><a href="#intro">Introduction</a>';
+      $content .= '<li class="item1 first"><a href="#">Introduction</a>';
 
       $brands = views_get_view_result('brands', 'sector_brand_brands', $current_sector_brand->tid);
       if (!empty($brands)) {

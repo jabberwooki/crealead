@@ -1645,7 +1645,7 @@ img{max-width:100%;max-height:100%}
 .main-container.main-container-logged-in{margin-top:40px}
 .main-container.main-container-with-header{margin-top:-20px}
 body.front .main-container.main-container-with-header{margin-top:0}
-.text-normal{font-size:1em;font-weight:400;text-transform:none;color:#333}
+.text-normal{font-size:1em;font-weight:400;text-transform:none;color:#333!important}
 h2.block-title,h2.page-header,h3{font-family:Quicksand,sans-serif}
 h2.block-title,h2.page-header{color:#bf0e38;font-weight:700;text-transform:uppercase;font-size:1.6em}
 h2.page-header{font-size:1.8em}
@@ -1736,7 +1736,7 @@ header#navbar nav>ul.menu>li>a{min-height:70px}
 header#navbar nav>ul.menu>li>a.active-trail{background-color:#bf0e38;color:#fff}
 #block-menu-menu-top{margin-top:25px}
 #block-menu-menu-top ul.menu.nav>li{margin:0;padding:0}
-#block-menu-menu-top ul.menu.nav>li>a{padding:5px 5px 5px 20px;color:#000}
+#block-menu-menu-top ul.menu.nav>li>a{padding:5px 5px 5px 20px;height:30px;color:#000}
 #block-menu-menu-top ul.menu.nav>li>a:before{position:relative;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-transform:none;color:#777;content:"\e834"}
 #block-menu-menu-top ul.menu.nav>li>a.active-trail,#block-menu-menu-top ul.menu.nav>li>a.active-trail:before,#block-menu-menu-top ul.menu.nav>li>a:hover:before{color:#bf0e38}
 @media (max-width:1200px){#top-navigation{margin-top:-80px}
@@ -1788,6 +1788,7 @@ body.page-actualites .view-news .red-title{margin-top:5px;line-height:.8em}
 body.page-actualites .view-news .red-title a{color:#bf0e38!important;text-decoration:none!important;font-family:Quicksand,sans-serif;font-size:.7em;font-weight:700}
 body.page-actualites .view-news .red-title a:hover{text-decoration:underline}
 body.page-actualites .view-news .group-textes{padding:10px}
+body.page-actualites .view-news .group-textes h3,body.page-actualites .view-news .group-textes h4{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
 body.node-type-news #block-ds-extras-content-header .group-title-cat{height:430px}
 body.node-type-news #block-ds-extras-content-header .group-title-cat .field-name-field-news-type{margin-top:250px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;margin-left:-10px}
 body.node-type-news #block-ds-extras-content-header .group-title-cat .field-name-title h2{color:#fff;background:rgba(0,0,0,.7);display:inline;box-shadow:10px 0 0 rgba(0,0,0,.7),-10px 0 0 rgba(0,0,0,.7);line-height:1.3em;font-size:3em;padding-top:3px;padding-bottom:3px}
@@ -2086,7 +2087,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .page-taxonomy-term .view-mode-landing_page_block .carousel-inner .view-mode-landing_page_block>.row .right-col h4{margin-bottom:0}
 .page-taxonomy-term .view-mode-landing_page_block .carousel-inner .view-mode-landing_page_block>.row .right-col .field-name-field-brand-baseline{color:#000}
 .page-taxonomy-term .view-header>h3{color:#bf0e38}
-.page-taxonomy-term .field-item h3{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333;margin-top:0}
+.page-taxonomy-term .field-item h3{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important;margin-top:0}
 .page-taxonomy-term .field-name-field-news-type{background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;position:absolute;top:10px;left:5px}
 .page-taxonomy-term .view-display-id-theme_news .right-col{height:223px;overflow:hidden}
 .page-taxonomy-term .view-id-trainings h3{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1.3em;margin-bottom:0}
@@ -2109,7 +2110,7 @@ body .under-footer{display:none}
 body a[href]:after{content:none!important}
 body .training-email-label{font-weight:700}
 }
-body.front #block-views-articles-testimonials-front .field-name-body h3,body.front #block-views-articles-testimonials-front .field-name-body h4,body.front #block-views-articles-testimonials-front .field-name-body h5,body.front #block-views-news-block-news-focus .field-name-body h3,body.front #block-views-news-block-news-focus .field-name-body h4,body.front #block-views-news-block-news-focus .field-name-body h5{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333}
+body.front #block-views-articles-testimonials-front .field-name-body h3,body.front #block-views-articles-testimonials-front .field-name-body h4,body.front #block-views-articles-testimonials-front .field-name-body h5,body.front #block-views-news-block-news-focus .field-name-body h3,body.front #block-views-news-block-news-focus .field-name-body h4,body.front #block-views-news-block-news-focus .field-name-body h5{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
 .view-id-gazettes .col-md-4>div{border:1px solid #333;padding:10px 20px;height:269px;overflow:hidden;margin:0 0 20px}
 .view-id-gazettes .col-md-4>div h3 a{display:block}
 #sector_brands_navigation{background-color:#009aa0}
@@ -2123,20 +2124,24 @@ body.front #block-views-articles-testimonials-front .field-name-body h3,body.fro
 body.not-logged-in .region-sector-brands-header{margin-top:20px}
 #open-close-sector-brand{display:block;background:url(../../../../../modules/features/crealead_brands/img/arrows_up_down.png) 50% 100% no-repeat;z-index:10;position:static}
 #open-close-sector-brand.sector-brands-desc-open{background:url(../../../../../modules/features/crealead_brands/img/arrows_up_down.png) 50% 0 no-repeat;margin-top:-33px;position:relative;z-index:3}
-.title-3-sect-brand{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700}
+.title-3-sect-brand{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38}
 .main-container.main-container-sector-brands{margin-top:0;padding-top:0}
+.main-container.main-container-sector-brands .group-sectorbrands-news .field-name-body h3{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
 .main-container.main-container-sector-brands h3{font-family:'Source Sans Pro',sans-serif;color:#bf0e38}
 @media (min-width:992px){.main-container.main-container-sector-brands .third-effect .mask{margin-top:5px}
 }
-.main-container.main-container-sector-brands .group-sectorbrands-brands h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700}
+.main-container.main-container-sector-brands .group-sectorbrands-brands h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings h3{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1.3em;margin-bottom:0}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content{background-color:#ededed;padding:20px}
-.main-container.main-container-sector-brands #achievements h3,.main-container.main-container-sector-brands .group-sectorbrands-news>h3{padding-top:35px;font-family:Quicksand,sans-serif;font-weight:700;text-transform:uppercase}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a{display:block;color:#1d1e19;font-size:.8em;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #009aa0}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a:hover{color:#bf0e38}
-.main-container.main-container-sector-brands #achievements{padding-bottom:20px;border-bottom:1px solid #999}
-.main-container.main-container-sector-brands #achievements h3{border-top:1px solid #999}
+.main-container.main-container-sector-brands .group-sectorbrands-achievments{padding-bottom:20px;border-bottom:1px solid #999}
+.main-container.main-container-sector-brands .group-sectorbrands-achievments>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38;padding-top:35px;border-top:1px solid #999}
+.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body{height:80px;overflow:hidden}
+.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h3,.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h4{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
+.main-container.main-container-sector-brands .group-sectorbrands-news>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38;padding-top:35px}
 .main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative .field-type-taxonomy-term-reference{background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;position:absolute;top:10px;left:5px}
 .main-container.main-container-sector-brands .group-sectorbrands-articles{background-color:#ededed;padding-bottom:20px;margin-top:80px}
 .main-container.main-container-sector-brands .group-sectorbrands-articles>h3{color:#009aa0;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #000}
 .main-container.main-container-sector-brands .group-sectorbrands-articles h4>a{color:#009aa0}
+.main-container.main-container-sector-brands a#achievements,.main-container.main-container-sector-brands a#brands-products,.main-container.main-container-sector-brands a#intro,.main-container.main-container-sector-brands a#news-articles{margin-top:-200px;float:right}
