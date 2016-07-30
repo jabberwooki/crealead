@@ -41,6 +41,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'sector_brand_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -101,7 +107,7 @@ function crealead_trainings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -135,6 +141,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -194,7 +206,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -224,6 +236,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 4,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -291,6 +309,64 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training-field_related_sector_brands'.
+  $field_instances['node-training-field_related_sector_brands'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_sector_brands',
+    'label' => 'Marque(s) sectorielle(s) concernée(s)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-training-field_scheduled_sessions'.
   $field_instances['node-training-field_scheduled_sessions'] = array(
     'bundle' => 'training',
@@ -321,6 +397,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -380,7 +462,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -410,6 +492,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 6,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -476,7 +564,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -506,6 +594,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 2,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -569,7 +663,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -599,6 +693,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 1,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -665,7 +765,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -695,6 +795,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 7,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -758,7 +864,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -792,6 +898,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -854,7 +966,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -884,6 +996,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 4,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -947,7 +1065,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -980,6 +1098,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 31,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1035,6 +1159,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 5,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1098,7 +1228,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1128,6 +1258,12 @@ function crealead_trainings_field_default_field_instances() {
         'weight' => 8,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1191,7 +1327,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1223,6 +1359,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
@@ -1236,7 +1378,7 @@ function crealead_trainings_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_training_theme',
-    'label' => 'Thématique',
+    'label' => 'Thématique(s) concernée(s)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1246,7 +1388,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1281,6 +1423,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -1304,7 +1452,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1338,6 +1486,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1397,7 +1551,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1409,6 +1563,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Introduction');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
+  t('Marque(s) sectorielle(s) concernée(s)');
   t('Méthode');
   t('Méthodes d\'évaluation');
   t('Nombre de participants');
@@ -1418,7 +1573,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Public visé');
   t('Sessions programmées');
   t('Tarif');
-  t('Thématique');
+  t('Thématique(s) concernée(s)');
   t('Type');
   t('Validation');
   t('Vous pouvez préciser si cette formation peut être prise en charge par les OPCA, ou autre mode de financement.');

@@ -20,6 +20,7 @@ function crealead_brands_init() {
     drupal_add_js(array('creaelad_brands_search' => $params), 'setting');
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brand_search.js');
   }
+  drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }
 
 /**
@@ -52,7 +53,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   // Then, what about non allowed users. They cannot do 3 distinct tasks:
   // 1 - validate brands,
   // 2 - publish brand nodes, unless brand has been validated by referent,
-  // 3 - create main brands.
+  // 4 - link their brand to any sector brands.
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     // 1 - Brand validation radio buttons systematically disabled.
     $form['field_brand_validated']['und'][0]['#attributes'] = array('disabled' => TRUE);
@@ -68,7 +69,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     }
 
     // 3 - Main brand option systematically removed from brand type.
-    unset($form['field_brand_type']['und']['#options'][3]);
+    $form['field_related_sector_brands']['#access'] = FALSE;
   }
   // And now what about allowed users.
   else {
@@ -109,6 +110,10 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     $params = array('name' => $form['#node']->name, 'uid' => $form['#node']->uid);
     drupal_add_js(array('crealead_brands_default_coe' => $params), 'setting');
   }
+
+  // Hugly hack to remove no longer wanted field_brand_type option 'grande marque'
+  // (For unknown reasons, its manual deletion causes saving bug in views admin).
+  unset($form['field_brand_type']['und']['#options'][3]);
 }
 
 function crealead_brands_after_build($form, &$form_state) {
@@ -189,6 +194,9 @@ function crealead_brands_block_info() {
   $blocks['crealead_brands_contacts_list'] = array(
     'info' => t('Crealead : Liste des contacts email'),
   );
+  $blocks['crealead_sector_brand_nav'] = array(
+    'info' => t('Crealead : Menu de navigation de marque sectorielle'),
+  );
 
   return $blocks;
 }
@@ -217,6 +225,43 @@ function crealead_brands_block_view($delta = '') {
 
     case 'crealead_brands_contacts_list' :
       $block['content'] = crealead_brand_contacts_list();
+      break;
+
+    case 'crealead_sector_brand_nav':
+      $current_path = current_path();
+      $path_alias = drupal_get_path_alias($current_path);
+      $links = array(
+        'link1' => array('title' => 'Introduction', 'href' => '/' . $path_alias . '#introduction'),
+        'link2' => array('title' => 'Marques et produits', 'href' => '/' . $path_alias . '#brands-products'),
+        'link3' => array('title' => 'Réalisations', 'href' => '/' . $path_alias . '#achievements'),
+        'link4' => array('title' => 'Actualités et articles de fond', 'href' => '#news_articles'),
+      );
+      $attributes = array('class' => 'nav navbar-nav');
+
+      $current_sector_brand = menu_get_object('taxonomy_term', 2);
+
+      $content = '<ul class="nav navbar-nav">';
+      $content .= '<li class="item1 first"><a href="#">Introduction</a>';
+
+      $brands = views_get_view_result('brands', 'sector_brand_brands', $current_sector_brand->tid);
+      if (!empty($brands)) {
+        $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
+      }
+
+      $achievements = views_get_view_result('achievements','sector_brand_achievs',$current_sector_brand->tid);
+      if (!empty($achievements)) {
+        $content .= '<li class="item3"><a href="#achievements">Réalisations</a>';
+      }
+
+      $news = views_get_view_result('news','sector_brand_news',$current_sector_brand->tid);
+      $articles = views_get_view_result('articles','sector_brand_articles',$current_sector_brand->tid);
+      if (!empty($news) || !empty($articles)) {
+        $content .= '<li class="item4 last"><a href="#news-articles">Actualités et articles de fond</a>';
+      }
+
+      $content .= '</ul>';
+
+      $block['content'] = $content; //theme('links', array('links' => $links, 'attributes' => $attributes));
       break;
   }
 
@@ -456,4 +501,63 @@ function crealead_brands_views_query_alter(&$view, &$query) {
       unset($query->orderby[0]);
     }
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, $form_id) {
+  // We must display only sector brands the parent brand(s) of the current achievement is (are) related to.
+  // First, we get the parent brands.
+  $parent_brands = crealead_achievements_get_parent_brands($form['nid']['#value']);
+
+  // If any parent brands exist, we get the sector brands of each parent brand.
+  if (!empty($parent_brands)) {
+    $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+    // If any parent sector brands exist
+    if (!empty($parent_sector_brands)) {
+      // We have to clean the sector brand field options array by keeping only the parent sector brands.
+      $form['field_related_sector_brands']['und']['#options'] =
+        crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
+  }
+  // otherwise we remove the related sector brands field from display.
+  else {
+    $form['field_related_sector_brands']['#access'] = FALSE;
+  }
+}
+
+function crealead_achievements_get_parent_brands($achiev_id) {
+  if (!isset($achiev_id)) return array();
+
+  $query = db_select('field_data_field_brand_achievements', 'fba');
+  $query->fields('fba', array('entity_id'));
+  $query->condition('field_brand_achievements_target_id', $achiev_id);
+
+  return $query->execute()->fetchAllKeyed(0,0);
+}
+
+function crealead_brands_get_parent_sector_brands($brands) {
+  $parent_sector_brands = array();
+  foreach ($brands as $brand_id) {
+    $query = db_select('field_data_field_related_sector_brands', 'frsb');
+    $query->fields('frsb', array('field_related_sector_brands_tid'));
+    $query->condition('entity_id', $brand_id);
+    $parent_sector_brands += $query->execute()->fetchAllKeyed(0, 0);
+  }
+  return $parent_sector_brands;
+}
+
+function crealead_clean_sector_brands_options($sector_brands_options, $parent_sector_brands) {
+  foreach ($sector_brands_options as $key=>$sector_brand) {
+    if (!in_array($key, $parent_sector_brands)) {
+      unset($sector_brands_options[$key]);
+    }
+  }
+  return $sector_brands_options;
 }

@@ -17,10 +17,20 @@ header#navbar nav{
   > ul.menu{
     margin: 0 0 0 5px;
     @media (min-width: @screen-lg){
-      margin: 0 0 0 40px;
+      margin: 0 0 0 20px;
+    }
+    > li.last{
+      margin-left: 5px;
+      border: 1px solid @rouge-crealead;
+      > a{
+        color: @rouge-crealead;
+        &:hover{
+          background-color: @bleu-clair-crealead;
+          color: white;
+        }
+      }
     }
   }
-
   ul.menu a{
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
@@ -47,6 +57,31 @@ header#navbar nav{
     background-color: white;
     a:hover{
       background-color: @noir-crealead;
+    }
+    @media (min-width: @screen-lg){
+      > li {
+        > a, a{
+          width: 260px;
+          white-space: normal;
+          border-bottom: 1px solid black;
+          margin-bottom: 15px;
+          padding-bottom: 15px
+        }
+      }
+      li.last > a{
+        border-bottom: 0;
+      }
+    }
+    @media (max-width: @screen-lg){
+      > li {
+        > a, a{
+          width: 100%;
+          white-space: normal;
+          border-bottom: 1px solid black;
+          margin-bottom: 10px;
+          padding-bottom: 10px
+        }
+      }
     }
 
   }
@@ -98,6 +133,7 @@ header#navbar nav{
       color: white;
     }
   }
+  
 }
 /* Menu secondaire ****************************************************************************************************/
 #block-menu-menu-top{
@@ -108,6 +144,7 @@ header#navbar nav{
       padding: 0;
       > a{
         padding: 5px 5px 5px 20px;
+        height: 30px;/* pour régler le pb avec certaines version de chrome */
         color: #000;
         &:before{
           .glyphicon();
@@ -123,6 +160,45 @@ header#navbar nav{
           }
         }
       }
+    }
+  }
+}
+/* Menu smartphone ****************************************************************************************************/
+@media (max-width: @screen-lg){
+  #top-navigation{
+    &.pull-right{
+      float: none !important;
+    }
+    margin-top: -80px;
+    #block-menu-menu-top{
+      ul.menu{
+        > li {
+          float: left;
+          margin: 0;
+          a{
+            padding: 0 15px 0 0;
+            &:before{
+              margin: 0;
+            }
+          }
+
+        }
+      
+      }
+    }
+  }
+  .navbar-default .navbar-toggle.sub-arrow{
+    background-color: transparent;
+    border: 0;
+    margin-top: -10px;
+    &:hover{
+      border: 0;
+      background-color: transparent;
+    }
+    &:before{
+      .glyphicon();
+      content: "\e835";
+      color: darkgrey;
     }
   }
 }

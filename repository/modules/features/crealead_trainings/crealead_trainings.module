@@ -18,7 +18,6 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
   // The training create/edit form always contains a user id.
   // If training is being created, user id is the current user id.
   // If training is being modified, user id is the training author id.
-  // If training is being modified, user id is the training author id.
   // In either cases, we must seek for brands the concerned user belongs to.
   $query = db_select('field_data_field_brand_coe', 'coe');
   $query->fields('coe', array('entity_id', 'field_brand_coe_target_id'));
@@ -41,6 +40,30 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
     $form['field_training_related_brands']['#disabled'] = TRUE;
   }
   // End of Related brands list handling ---------------------------------------
+
+  // We must display only sector brands the parent brand(s) of the current training is (are) related to.
+  // First, we get the parent brands.
+  $parent_brands = crealead_trainings_get_parent_brands($form['nid']['#value']);
+
+  // If any parent brands exist, we get the sector brands of each parent brand.
+  if (!empty($parent_brands)) {
+    $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+    // If any parent sector brands exist
+    if (!empty($parent_sector_brands)) {
+      // We have to clean the sector brand field options array by keeping only the parent sector brands.
+      $form['field_related_sector_brands']['und']['#options'] =
+        crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
+  }
+  // otherwise we remove the related sector brands field from display.
+  else {
+    $form['field_related_sector_brands']['#access'] = FALSE;
+  }
 }
 
 /**
@@ -83,5 +106,15 @@ function crealead_trainings_node_presave($node) {
       );
     }
   }
+}
+
+function crealead_trainings_get_parent_brands($training_id) {
+  if (!isset($training_id)) return array();
+
+  $query = db_select('field_data_field_training_related_brands', 'ftrb');
+  $query->fields('ftrb', array('field_training_related_brands_target_id'));
+  $query->condition('entity_id', $training_id);
+
+  return $query->execute()->fetchAllKeyed(0,0);
 }
 

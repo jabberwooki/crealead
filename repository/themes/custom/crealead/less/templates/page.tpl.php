@@ -113,7 +113,29 @@
       </div>
     <?php endif; ?>
   </div>
+
+  <?php if (!empty($page['sector_brands_navigation'])): ?>
+  <div id="sector_brands_navigation">
+    <div class="container">
+      <div class="row">
+        <?php print render($page['sector_brands_navigation']); ?>
+      </div>
+    </div>
+  </div>
+  <?php endif; ?>
 </header>
+
+<?php if (!empty($page['sector_brands_header'])): ?>
+  <a name="intro" id="intro"></a>
+  <div id="introduction" class="sector-brands-header bg-gray-crealead-icons <?php if ($logged_in) echo 'container-header-logged-in' ?>">
+    <div class="container">
+      <div class="row">
+        <?php print render($page['sector_brands_header']); ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+
 <?php if (!empty($page['full_content_header'])): ?>
   <div class="full_content-header <?php if ($logged_in) echo 'container-header-logged-in' ?>">
     <div class="row">

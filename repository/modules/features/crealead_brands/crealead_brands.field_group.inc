@@ -523,7 +523,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'field_brand_search',
       1 => 'field_contact_form',
@@ -540,6 +540,39 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_crealead_fields|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_css_effect_3|node|achievement|sector_brand_block';
+  $field_group->group_name = 'group_css_effect_3';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'achievement';
+  $field_group->mode = 'sector_brand_block';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group css effect 3',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_achievement_photos',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group css effect 3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-css-effect-3 field-group-div view-css-effect third-effect',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_css_effect_3|node|achievement|sector_brand_block'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -577,6 +610,39 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_css_effect_3|node|brand|sector_brand_block';
+  $field_group->group_name = 'group_css_effect_3';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'sector_brand_block';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group css effect 3',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_brand_logo',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group css effect 3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-css-effect-3 field-group-div view-css-effect third-effect',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_css_effect_3|node|brand|sector_brand_block'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_row_1|node|brand|full';
   $field_group->group_name = 'group_row_1';
   $field_group->entity_type = 'node';
@@ -607,6 +673,233 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_row_1|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_achievments|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_achievments';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Réalisations',
+    'weight' => '3',
+    'children' => array(
+      0 => 'achievements_sector_brand_achievs',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Réalisations',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-achievments field-group-div clearfix',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_achievments|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_articles|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_articles';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_news_articles';
+  $field_group->data = array(
+    'label' => 'Articles de fond',
+    'weight' => '6',
+    'children' => array(
+      0 => 'articles_sector_brand_articles',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Articles de fond',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-articles field-group-div col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_articles|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_brands_prods';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Marques et produits',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_sectorbrands_brands',
+      1 => 'group_sectorbrands_products',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Marques et produits',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-brands-prods field-group-div clearfix',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_brands|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_brands';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_brands_prods';
+  $field_group->data = array(
+    'label' => 'Marques',
+    'weight' => '3',
+    'children' => array(
+      0 => 'brands_sector_brand_brands',
+      1 => 'brands_sector_brand_brands_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Marques',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-brands field-group-div col-md-9',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_brands|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_news_articles|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_news_articles';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Actualités et articles',
+    'weight' => '5',
+    'children' => array(
+      0 => 'group_sectorbrands_news',
+      1 => 'group_sectorbrands_articles',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Actualités et articles',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-news-articles field-group-div clearfix',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_news_articles|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_news|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_news';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_news_articles';
+  $field_group->data = array(
+    'label' => 'Actualités',
+    'weight' => '4',
+    'children' => array(
+      0 => 'news_sector_brand_news',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Actualités',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-news field-group-div col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_news|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sectorbrands_products|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_sectorbrands_products';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_sectorbrands_brands_prods';
+  $field_group->data = array(
+    'label' => 'Produits et formations',
+    'weight' => '4',
+    'children' => array(
+      0 => 'trainings_sector_brand_trainings',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Produits et formations',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sectorbrands-products field-group-div col-md-3',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sectorbrands_products|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -856,7 +1149,9 @@ function crealead_brands_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Actualités');
+  t('Actualités et articles');
   t('Articles');
+  t('Articles de fond');
   t('Blog');
   t('Champs Crealead');
   t('Contact');
@@ -865,8 +1160,11 @@ function crealead_brands_field_group_info() {
   t('Informations générales');
   t('Infos 1');
   t('Infos 2');
+  t('Marques');
   t('Marques associées');
+  t('Marques et produits');
   t('Onglets');
+  t('Produits et formations');
   t('Réalisations');
   t('Références client');
   t('group col1-3');

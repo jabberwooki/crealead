@@ -170,6 +170,12 @@ function kedition_ckeditor_profile_defaults() {
         'theme_config_js' => 'f',
         'js_conf' => 'CKEDITOR.config.format_tags = \'h3;h4;h5;h6;p;div\';',
         'loadPlugins' => array(
+          'dndck4' => array(
+            'name' => 'dndck4',
+            'desc' => 'Scald Drag and Drop integration - CKEditor 4 widgets',
+            'path' => '%base_path%sites/all/modules/contrib/scald/modules/fields/mee/plugins/dndck4/',
+            'buttons' => array(),
+          ),
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',

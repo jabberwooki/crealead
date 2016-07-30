@@ -64,20 +64,23 @@ function crealead_brands_strongarm() {
       'landing_page_block' => array(
         'custom_settings' => TRUE,
       ),
+      'sector_brand_block' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '19',
+          'weight' => '20',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '20',
+          'weight' => '21',
         ),
         'redirect' => array(
-          'weight' => '21',
+          'weight' => '22',
         ),
       ),
       'display' => array(
@@ -96,6 +99,7 @@ function crealead_brands_strongarm() {
           ),
           'logo' => NULL,
           'landing_page_block' => NULL,
+          'sector_brand_block' => NULL,
         ),
         'news_brand_news' => array(
           'full' => array(
@@ -115,7 +119,11 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '27',
+            'weight' => '28',
+            'visible' => FALSE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '24',
             'visible' => FALSE,
           ),
         ),
@@ -126,6 +134,7 @@ function crealead_brands_strongarm() {
           ),
           'logo' => NULL,
           'landing_page_block' => NULL,
+          'sector_brand_block' => NULL,
         ),
         'articles_brand_articles' => array(
           'full' => array(
@@ -145,7 +154,11 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '26',
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '25',
             'visible' => FALSE,
           ),
         ),
@@ -156,6 +169,7 @@ function crealead_brands_strongarm() {
           ),
           'logo' => NULL,
           'landing_page_block' => NULL,
+          'sector_brand_block' => NULL,
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
@@ -175,7 +189,11 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'landing_page_block' => array(
-            'weight' => '24',
+            'weight' => '25',
+            'visible' => FALSE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '26',
             'visible' => FALSE,
           ),
         ),
@@ -189,7 +207,11 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'landing_page_block' => array(
-            'weight' => '25',
+            'weight' => '26',
+            'visible' => FALSE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '27',
             'visible' => FALSE,
           ),
         ),
@@ -197,6 +219,154 @@ function crealead_brands_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__brand'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__sector_brands';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'path' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '3',
+        ),
+        'name' => array(
+          'weight' => '0',
+        ),
+        'description' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+          'block' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+        'news_entity_view_1' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'block' => NULL,
+        ),
+        'news_sector_brand_news' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'articles_sector_brand_articles' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'achievements_sector_brand_achievs' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_sector_brand_brands' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_sector_brand_brands_form' => array(
+          'full' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+        ),
+        'trainings_sector_brand_trainings' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__sector_brands'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -215,6 +385,9 @@ function crealead_brands_strongarm() {
       ),
       'token' => array(
         'custom_settings' => FALSE,
+      ),
+      'landing_page_block' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -246,7 +419,11 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '0',
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'landing_page_block' => array(
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
@@ -256,12 +433,16 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '3',
-            'visible' => TRUE,
+            'weight' => '4',
+            'visible' => FALSE,
           ),
           'block' => array(
             'weight' => '3',
             'visible' => FALSE,
+          ),
+          'landing_page_block' => array(
+            'weight' => '3',
+            'visible' => TRUE,
           ),
         ),
         'news_entity_view_1' => array(
@@ -273,10 +454,14 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'landing_page_block' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'news_theme_news' => array(
           'full' => array(
-            'weight' => '1',
+            'weight' => '0',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -287,10 +472,14 @@ function crealead_brands_strongarm() {
             'weight' => '2',
             'visible' => FALSE,
           ),
+          'landing_page_block' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
         ),
         'articles_theme_articles' => array(
           'full' => array(
-            'weight' => '2',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -301,25 +490,37 @@ function crealead_brands_strongarm() {
             'weight' => '3',
             'visible' => TRUE,
           ),
+          'landing_page_block' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_landing_page_trainings' => array(
           'full' => array(
-            'weight' => '5',
+            'weight' => '3',
             'visible' => TRUE,
           ),
           'default' => array(
             'weight' => '5',
             'visible' => TRUE,
           ),
+          'landing_page_block' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
         ),
         'achievements_theme_realisations' => array(
           'full' => array(
-            'weight' => '4',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'default' => array(
             'weight' => '6',
             'visible' => TRUE,
+          ),
+          'landing_page_block' => array(
+            'weight' => '9',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -498,6 +699,41 @@ function crealead_brands_strongarm() {
     ),
   );
   $export['socialfield_services'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_expanded_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_expanded_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_hide_empty_terms_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_hide_empty_terms_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_sync_sector_brands';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_sync_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_vocab_menu_sector_brands';
+  $strongarm->value = 'main-menu';
+  $export['taxonomy_menu_vocab_menu_sector_brands'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_voc_name_sector_brands';
+  $strongarm->value = FALSE;
+  $export['taxonomy_menu_voc_name_sector_brands'] = $strongarm;
 
   return $export;
 }

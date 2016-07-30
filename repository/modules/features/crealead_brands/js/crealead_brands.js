@@ -11,14 +11,16 @@ jQuery(function($){
     attach: function (context, settings) {
 
       // Achievements carousel counter
-      var totalItems = $('.view-display-id-brand_achievements .carousel-inner .item').length;
+      var totalItems = $('.view-display-id-brand_achievements .carousel-inner .item').length;console.log('total = ' + totalItems);
       var currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
 
-      $('#views-bootstrap-carousel-1').on('slid.bs.carousel', function() {
-       currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
-       $('.slide-counter').html(''+currentIndex+'/'+totalItems+'');
-      });
+      if (totalItems > 0) {
+        $('#views-bootstrap-carousel-1').on('slid.bs.carousel', function () {
+          currentIndex = $('.view-display-id-brand_achievements .carousel-inner .item.active').index() + 1;
+          $('.slide-counter').html('' + currentIndex + '/' + totalItems + '');
+        });
+      }
 
       // Default coe while creating brand
       if (settings.crealead_brands_default_coe) {
@@ -26,10 +28,19 @@ jQuery(function($){
         $("#edit-field-brand-coes-und-0-field-brand-coe-und-0-target-id").val(coeValue);
       }
 
-      // fait en sorte que le premier item du menu de la marque soit actif
+      // first menu brand item activated by default 
       if ($(".node-type-brand .group-brand-tabs").length) {
         //console.log('code de yvan');
         $(".node-type-brand .group-brand-tabs > li:first").addClass("active");
+      }
+      // Manage titles for small screens
+      if ($('.group-brand-tabs > li').length) {
+        $context_brand_tab = $('.group-brand-tabs');
+        var id_anchor = '';
+        $('>li > a',$context_brand_tab).each(function(index){
+          id_anchor = $(this).attr('href');
+          $('<h3 class="subtitle-brand">' +$(this).text()+ '</h3>').prependTo(id_anchor);
+        });
       }
     }
   };

@@ -5,6 +5,14 @@
   left: 5px;
   .cartouche-rouge();
 }
+.position-relative{
+  position: relative;
+}
+.position-cartouche-rouge {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
 .cartouche-rouge{
   background-color: @rouge-crealead;
   padding: 5px 10px;
@@ -122,6 +130,10 @@ body.page-actualites {
     }
     .group-textes {
       padding: 10px;
+      h3, h4{
+        .text-normal();
+
+      }
     }
   }
 }

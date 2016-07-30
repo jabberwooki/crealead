@@ -10,7 +10,6 @@ include_once 'crealead_articles.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $form_id) {
-
   // If user is not allowed, field_news_kind and field_related_themes removed.
   global $user;
   $current_user_roles = $user->roles;
@@ -18,7 +17,7 @@ function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $f
   $current_user_allowed_roles = array_intersect($crealead_news_allowed_roles, $current_user_roles);
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     $form['field_article_kind']['#access'] = FALSE;
-    $form['field_landing_pages']['#access'] = FALSE;
+    //$form['field_landing_pages']['#access'] = FALSE;
   }
 
   // Related brands list handling ----------------------------------------------
@@ -48,4 +47,42 @@ function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $f
   }
   // End of Related brands list handling ---------------------------------------
 
+  // Hugly hack to remove no longer wanted field_article_kind options
+  // (Cannot be deleted because already used).
+  unset($form['field_article_kind']['und']['#options'][2]);
+  unset($form['field_article_kind']['und']['#options'][3]);
+
+  // We must display only sector brands the parent brand(s) of the current article is (are) related to.
+  // First, we get the parent brands.
+  $parent_brands = crealead_articles_get_parent_brands($form['nid']['#value']);
+
+  // If any parent brands exist, we get the sector brands of each parent brand.
+  if (!empty($parent_brands)) {
+    $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+    // If any parent sector brands exist
+    if (!empty($parent_sector_brands)) {
+      // We have to clean the sector brand field options array by keeping only the parent sector brands.
+      $form['field_related_sector_brands']['und']['#options'] =
+        crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
+  }
+  // otherwise we remove the related sector brands field from display.
+  else {
+    $form['field_related_sector_brands']['#access'] = FALSE;
+  }
+}
+
+function crealead_articles_get_parent_brands($article_id) {
+  if (!isset($article_id)) return array();
+
+  $query = db_select('field_data_field_article_related_brands', 'farb');
+  $query->fields('farb', array('field_article_related_brands_target_id'));
+  $query->condition('entity_id', $article_id);
+
+  return $query->execute()->fetchAllKeyed(0,0);
 }

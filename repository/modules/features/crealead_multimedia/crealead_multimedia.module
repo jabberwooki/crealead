@@ -17,3 +17,105 @@ function crealead_multimedia_entity_load($entities, $type) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_multimedia_form_scald_atom_add_form_source_alter(&$form, &$form_state, $form_id) {
+  // Flickr Album direct access handling.
+  // 1 - Upload of required js and css files.
+  drupal_add_js(drupal_get_path('module','crealead_multimedia') . '/js/crealead_multimedia.js');
+  drupal_add_css(drupal_get_path('module','crealead_multimedia') . '/css/crealead_multimedia.css');
+
+  // 2 - We get the url the user is coming from to be able to go back to this url at the end of process.
+  $parts = explode($_SERVER['HTTP_HOST'], $_SERVER['HTTP_REFERER']);
+  $initial_url = $parts[1];
+  user_cookie_save(array('flickr_import_initial_url' => $initial_url));
+
+  // 3 - Flickr Crealead web site album direct url
+  // TODO: admin page to set the Flickr user set id.
+  $flickr_album_url = '/atoms/flickr/search/userset/72157668004728492';
+  
+  $form['source']['#default_value'] = 'scald_flickr';
+
+  // 4 - Creation of a second "Continuer" button.
+  // The first one is used to local image files upload.
+  // The second one is an hyperlink disguised up in button and used to get images from the Flickr Crealead album.
+  $suffix = '<a id="edit-flickr-next" target="_parent" href="' . $flickr_album_url . '">Continuer</a>';
+  $form['buttons']['next']['#suffix'] = $suffix;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_multimedia_form_scald_flickr_search_userset_form_alter(&$form, &$form_state, $form_id) {
+  // We display only Flickr album images not yet imported into Scald.
+  if (isset($form['results'])) {
+    foreach ($form['results']['images'] as $flickr_id => $data) {
+      if (scald_flickr_already_imported($flickr_id)) {
+        unset($form['results']['images'][$flickr_id]);
+      }
+    }
+    // If eventually no image remains, Select all checkbox and Submit button are removed.
+    if (!count($form['results']['images'])) {
+      unset($form['results']['select_all']);
+      unset($form['results']['import']);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_multimedia_form_scald_atom_add_form_options_alter(&$form, &$form_state, $form_id) {
+  // Initial url added as final destination to redirect user to its initial page.
+  $destination = $_COOKIE['Drupal_visitor_flickr_import_initial_url'];
+  $form['#action'] .= '?destination=' . $destination;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function crealead_multimedia_theme_registry_alter(&$theme_registry) {
+  // Flickr album search result page custom template declaration.
+  $theme_registry['scald_flickr_search_results_table']['theme_path'] = drupal_get_path('module','crealead_multimedia');
+  $theme_registry['scald_flickr_search_results_table']['function'] = 'crealead_multimedia_sclad_flickr_results_table';
+}
+
+function crealead_multimedia_sclad_flickr_results_table($variables) {
+  $flickr_import_pager = scald_flickr_import_page_count();
+
+  // Generate pager.
+  pager_default_initialize($flickr_import_pager['total'], $flickr_import_pager['per_page']);
+
+  $form = $variables['form'];
+  $header = array(t('Import'), t('Title'), t('Thumbnail'), t('ID'));
+  $rows = array();
+
+  // Custom code : handles empty result set case.
+  if (!count(element_children($form['images']))) {
+    $output = '<p>Il n\'y a aucune nouvelle image à importer.</p>';
+    $output .= 'Retour au <a href="' . $_COOKIE['Drupal_visitor_flickr_import_initial_url'] . '">formulaire</a>.';
+    return $output;
+  } // End of custom code.
+
+  foreach (element_children($form['images']) as $key) {
+    $rows[] = array(
+      'data' => array(
+        drupal_render($form['images'][$key]['import']),
+        drupal_render($form['images'][$key]['title']),
+        drupal_render($form['images'][$key]['thumbnail']),
+        drupal_render($form['images'][$key]['id']),
+      ),
+    );
+  }
+  $images_output = theme('table', array(
+      'header' => $header,
+      'rows' => $rows,
+      'attributes' => array('id' => 'scald-flickr-images'),
+    )
+  );
+  $images_output .= theme('pager');
+  $output = drupal_render($form['select_all']) . $images_output . drupal_render($form['import']);
+  return $output;
+}

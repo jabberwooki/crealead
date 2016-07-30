@@ -29,12 +29,12 @@ function crealead_my_contents_form_views_exposed_form_alter(&$form, &$form_state
         unset($options[$key]);
       }
     }
-
     $form['type']['#options'] = array_merge($all,$options);
 
     // Rebuild the "Statut" exposed field.
     $form['status']['#options'][1] = 'Publié';
     $form['status']['#options'][0] = 'Non publié';
+
   }
 }
 

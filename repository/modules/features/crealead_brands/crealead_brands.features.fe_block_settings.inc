@@ -66,6 +66,33 @@ function crealead_brands_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['crealead_brands-crealead_sector_brand_nav'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'crealead_sector_brand_nav',
+    'module' => 'crealead_brands',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['ds_extras-content_header_brand'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -147,11 +174,65 @@ function crealead_brands_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-29915912ebf83f96383359d243203eb4'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => '29915912ebf83f96383359d243203eb4',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-95647445be58aeee85b64e09d38af300'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => 0,
     'delta' => '95647445be58aeee85b64e09d38af300',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-themes-theme_page_header'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'themes-theme_page_header',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',

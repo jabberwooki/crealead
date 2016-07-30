@@ -1,0 +1,13 @@
+#edit-flickr-next {
+  padding: 6px 10px;
+  margin-right: 1em;
+  font-family: "Lucida Grande",Verdana,sans-serif;
+  background: #000;
+  border: none;
+  color: #fff;
+  font-size: 1.077em;
+}
+
+#edit-flickr-next:hover {
+  text-decoration: none;
+}

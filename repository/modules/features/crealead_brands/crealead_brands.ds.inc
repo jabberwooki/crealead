@@ -49,6 +49,42 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|achievement|sector_brand_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'achievement';
+  $ds_fieldsetting->view_mode = 'sector_brand_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => 'mask',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'info',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'field_achievement_photos' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+  );
+  $export['node|achievement|sector_brand_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|brand|block';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'brand';
@@ -163,6 +199,69 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|brand|landing_page_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'brand';
+  $ds_fieldsetting->view_mode = 'landing_page_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|brand|landing_page_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|brand|sector_brand_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'brand';
+  $ds_fieldsetting->view_mode = 'sector_brand_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h3',
+        'class' => 'mask',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'info',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+  );
+  $export['node|brand|sector_brand_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|brand|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'brand';
@@ -221,6 +320,67 @@ function crealead_brands_ds_field_settings_info() {
   );
   $export['node|client|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|sector_brands|full';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'sector_brands';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'achievements_anchor' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'brands_products_anchor' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'news_articles_anchor' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'lb-col' => TRUE,
+        ),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['taxonomy_term|sector_brands|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|themes|landing_page_block';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'themes';
+  $ds_fieldsetting->view_mode = 'landing_page_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['taxonomy_term|themes|landing_page_block'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -229,6 +389,25 @@ function crealead_brands_ds_field_settings_info() {
  */
 function crealead_brands_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'achievements_anchor';
+  $ds_field->label = 'Ancre Réalisations';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="achievements" name="achievements"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['achievements_anchor'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -244,6 +423,44 @@ function crealead_brands_ds_custom_fields_info() {
     'block_render' => '2',
   );
   $export['brand_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'brands_products_anchor';
+  $ds_field->label = 'Ancre Marques et Produits';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="brands-products" name="brands-products"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['brands_products_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'news_articles_anchor';
+  $ds_field->label = 'Ancre Actus et Articles';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p><a id="news-articles" name="news-articles"></a></p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['news_articles_anchor'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -414,6 +631,44 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|achievement|sector_brand_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'achievement';
+  $ds_layout->view_mode = 'sector_brand_block';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_css_effect_3',
+        1 => 'field_achievement_photos',
+        2 => 'title',
+        3 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'group_css_effect_3' => 'ds_content',
+      'field_achievement_photos' => 'ds_content',
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_achievement_photos' => '1',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|achievement|sector_brand_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|brand|block';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'brand';
@@ -557,6 +812,42 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|brand|landing_page_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'brand';
+  $ds_layout->view_mode = 'landing_page_block';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_brand_logo',
+      ),
+      'right' => array(
+        1 => 'title',
+        2 => 'field_brand_baseline',
+      ),
+    ),
+    'fields' => array(
+      'field_brand_logo' => 'left',
+      'title' => 'right',
+      'field_brand_baseline' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|brand|landing_page_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|brand|logo';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'brand';
@@ -583,6 +874,41 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|brand|logo'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|brand|sector_brand_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'brand';
+  $ds_layout->view_mode = 'sector_brand_block';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'group_css_effect_3',
+        1 => 'field_brand_logo',
+        2 => 'title',
+        3 => 'field_brand_baseline',
+      ),
+    ),
+    'fields' => array(
+      'group_css_effect_3' => 'ds_content',
+      'field_brand_logo' => 'ds_content',
+      'title' => 'ds_content',
+      'field_brand_baseline' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|brand|sector_brand_block'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -689,6 +1015,67 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|sector_brands|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'sector_brands';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'brands_products_anchor',
+        1 => 'group_sectorbrands_brands_prods',
+        2 => 'achievements_anchor',
+        3 => 'achievements_sector_brand_achievs',
+        4 => 'group_sectorbrands_brands',
+        5 => 'group_sectorbrands_achievments',
+        6 => 'group_sectorbrands_products',
+        7 => 'group_sectorbrands_news',
+        8 => 'news_articles_anchor',
+        9 => 'news_sector_brand_news',
+        10 => 'group_sectorbrands_news_articles',
+        11 => 'group_sectorbrands_articles',
+        12 => 'brands_sector_brand_brands_form',
+        13 => 'trainings_sector_brand_trainings',
+        14 => 'brands_sector_brand_brands',
+        15 => 'articles_sector_brand_articles',
+      ),
+    ),
+    'fields' => array(
+      'brands_products_anchor' => 'ds_content',
+      'group_sectorbrands_brands_prods' => 'ds_content',
+      'achievements_anchor' => 'ds_content',
+      'achievements_sector_brand_achievs' => 'ds_content',
+      'group_sectorbrands_brands' => 'ds_content',
+      'group_sectorbrands_achievments' => 'ds_content',
+      'group_sectorbrands_products' => 'ds_content',
+      'group_sectorbrands_news' => 'ds_content',
+      'news_articles_anchor' => 'ds_content',
+      'news_sector_brand_news' => 'ds_content',
+      'group_sectorbrands_news_articles' => 'ds_content',
+      'group_sectorbrands_articles' => 'ds_content',
+      'brands_sector_brand_brands_form' => 'ds_content',
+      'trainings_sector_brand_trainings' => 'ds_content',
+      'brands_sector_brand_brands' => 'ds_content',
+      'articles_sector_brand_articles' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['taxonomy_term|sector_brands|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'taxonomy_term|themes|full';
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'themes';
@@ -697,21 +1084,17 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'description',
-        1 => 'news_theme_news',
-        2 => 'articles_theme_articles',
+        0 => 'news_theme_news',
+        1 => 'articles_theme_articles',
       ),
       'right' => array(
-        3 => 'brands_entity_view_1',
-        4 => 'achievements_theme_realisations',
-        5 => 'trainings_landing_page_trainings',
+        2 => 'achievements_theme_realisations',
+        3 => 'trainings_landing_page_trainings',
       ),
     ),
     'fields' => array(
-      'description' => 'left',
       'news_theme_news' => 'left',
       'articles_theme_articles' => 'left',
-      'brands_entity_view_1' => 'right',
       'achievements_theme_realisations' => 'right',
       'trainings_landing_page_trainings' => 'right',
     ),
@@ -726,10 +1109,48 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
-    'hide_page_title' => '0',
+    'hide_page_title' => '1',
     'page_option_title' => '',
   );
   $export['taxonomy_term|themes|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|themes|landing_page_block';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'themes';
+  $ds_layout->view_mode = 'landing_page_block';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'title',
+        1 => 'field_term_summary',
+        2 => 'description',
+      ),
+      'right' => array(
+        3 => 'brands_entity_view_1',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'left',
+      'field_term_summary' => 'left',
+      'description' => 'left',
+      'brands_entity_view_1' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|themes|landing_page_block'] = $ds_layout;
 
   return $export;
 }
@@ -748,6 +1169,15 @@ function crealead_brands_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['logo'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'sector_brand_block';
+  $ds_view_mode->label = 'Bloc page marque sectorielle';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['sector_brand_block'] = $ds_view_mode;
 
   return $export;
 }
