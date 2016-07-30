@@ -43,7 +43,7 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 
   // We must display only sector brands the parent brand(s) of the current training is (are) related to.
   // First, we get the parent brands.
-  $parent_brands = crealead_trainings_get_parent_brands($form['nid']['#value']);dpm($parent_brands);
+  $parent_brands = crealead_trainings_get_parent_brands($form['nid']['#value']);
 
   // If any parent brands exist, we get the sector brands of each parent brand.
   if (!empty($parent_brands)) {
