@@ -1,3 +1,35 @@
+Crealead 2.2 - 2016-07-30
+-------------------------
+ * crealead_multimedia up: News image styles and Scald contextes created to allow Scald users to chose format of images drag&dropped from Scald library to body fields.
+ * kedition up: Scald Drag and Drop integration plugin activated in ckeditor Full profile.
+ * crealead_news up: news/sector_brand_news block display format changed from unformatted to bootstrap grid to make pagerer show up at the bottom (instead on right, hidden by articles block).
+ * crealead_brands up: Ajax enabled in brands/sector_brand_brands block display.
+ * crealead_my_contents up: 'Statut' exposed filter default value re-set  to 1 (= display all published content).
+ * Custom theme up: 'Non defined index #title' bug fixed in crealead_form_element_label() hook.
+ * crealead_trainings up: Removal of forgotten dpm().
+ * kcore up: IMCE thumbnails formats fixed for user-1 profile.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * link to anchor #intro modify to #.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_brands up: Missing DS layout settings for sector brand page added.
+ * crealead_brands up: missing DS anchor fields for sector brand page navigation added.
+ * crealead_brands up: Typo 'No Co-entrepreneurs' fixed.
+ * crealead_brands up: sector brand page navigation menu recoded to make links to appear only when corresponding blocks are not empty.
+ * crealead_brands up: reorganisation of inner anchor navigation in sector brand page.
+ * crealead_brands up: Non FullHTML fields in brand creation form bugfix: crealead.js script altered to stop counting achievement slides while creating brand.
+ * crealead_articles and crealead_brands up: hook_..._form_alter() function altered to allow any authenticated user to link their news and article contents to theme (landing) pages.
+ * crealead_news up: function crealead_news_form_news_node_form_alter() altered to allow Crealead tagged news to be linked to any sector brands.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Feature crealead_trainings up : display of images in achievements list in thematic (landing pages) put to only 1.
+ * Custom theme up: bootstrap_form_element() function overriden to fix the missing ckeckboxes bug occuring after Drupal Bootstrap theme upgrade from 3.0 to 3.5
+ * kcore up: IMCE Thumbnails for User-A profile redefined.
+ * kcore up: IMCE User-1 profile granted to administrateur role.
+ * kcore up: IMCE Thumbnails formats redefined.
+
 Crealead 2.1.5 / 2016-07-05
 ---------------------------
 Hotfix: Slide counter failure in brand's Achievements tab fixed.
