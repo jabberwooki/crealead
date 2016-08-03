@@ -78,7 +78,6 @@ h2,h3{page-break-after:avoid}
 .glyphicon-th-large:before{content:"\e010"}
 .glyphicon-th:before{content:"\e011"}
 .glyphicon-th-list:before{content:"\e012"}
-.glyphicon-ok:before{content:"\e013"}
 .glyphicon-remove:before{content:"\e014"}
 .glyphicon-zoom-in:before{content:"\e015"}
 .glyphicon-zoom-out:before{content:"\e016"}
@@ -1695,6 +1694,7 @@ ul.coche-rouge li:before{position:relative;top:1px;font-family:fontello;font-sty
 .plus-open-h3-a>h3>span>a:after{content:"\e83e";margin-left:10px}
 .icon-linkedin:before{content:"\e85d";color:#1884BB}
 .icon-viadeo:before{content:"\e85e";color:#F4982B}
+.glyphicon-ok:before{content:"\e850";color:#FFF}
 .private-file{float:left;margin-right:20px}
 .private-file a:before{position:relative;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;text-transform:none;color:#777;content:"\e83b";margin-right:5px}
 #h1-logo{margin:0;padding:0}
