@@ -123,13 +123,13 @@ function kcore_strongarm() {
           'name' => 'Rectangle petit',
           'dimensions' => '570x300',
           'prefix' => '',
-          'suffix' => '_750x560',
+          'suffix' => '_570x300',
         ),
         4 => array(
           'name' => 'Rectangle moyen',
-          'dimensions' => '1140x300',
+          'dimensions' => '750x560',
           'prefix' => '',
-          'suffix' => '_1140x300',
+          'suffix' => '_750x560',
         ),
         5 => array(
           'name' => 'Rectangle grand',

@@ -303,6 +303,8 @@ function crealead_brands_views_default_views() {
 
   /* Display: Réalisations d'une marque sectorielle */
   $handler = $view->new_display('entity_view', 'Réalisations d\'une marque sectorielle', 'sector_brand_achievs');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'pagerer';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
