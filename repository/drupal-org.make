@@ -149,6 +149,9 @@ projects[field_formatter_settings][version] = "1.1"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][version] = "1.82"
 
+projects[filedepot][subdir] = contrib
+projects[filedepot][version] = "1.3"
+
 projects[filefield_sources][subdir] = contrib
 projects[filefield_sources][version] = "1.10"
 
