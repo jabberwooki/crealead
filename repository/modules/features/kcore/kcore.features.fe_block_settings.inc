@@ -93,6 +93,33 @@ function kcore_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['menu-menu-coe-area'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-coe-area',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-footer-menu'] = array(
     'cache' => -1,
     'css_class' => '',
