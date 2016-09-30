@@ -249,7 +249,7 @@ function crealead_update_7006() {
 }
 
 /**
- * Activate feature crealead_gazette.
+ * Activate feature crealead_documents.
  */
 function crealead_update_7007() {
   module_enable(array('crealead_documents'));
