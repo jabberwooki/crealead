@@ -248,6 +248,7 @@ features[user_permission][] = view own unpublished content
 features[user_permission][] = view the administration theme
 features[user_role][] = administrateur
 features[user_role][] = canditat
+features[user_role][] = certif LR
 features[user_role][] = entrepreneur
 features[user_role][] = pôle gestion
 features[user_role][] = rédacteur
