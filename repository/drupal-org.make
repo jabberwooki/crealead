@@ -19,7 +19,7 @@ projects[entity][subdir] = contrib
 projects[entity][version] = "1.6"
 
 projects[features][subdir] = contrib
-projects[features][version] = "2.7"
+projects[features][version] = "2.10"
 
 projects[features_extra][subdir] = contrib
 projects[features_extra][version] = "1.0"
@@ -82,7 +82,7 @@ projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.0-alpha4"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.13"
+projects[views][version] = "3.14"
 
 ;=== Modules - optional =======================================================
 ;projects[bean][subdir] = contrib
@@ -186,8 +186,8 @@ projects[print][subdir] = contrib
 projects[print][version] = "2.0"
 
 projects[references_dialog][subdir] = contrib
-projects[references_dialog][version] = "1.0-beta1"
-projects[references_dialog][patch][] = "https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-5.patch.patch"
+projects[references_dialog][version] = "1.0-beta2"
+; projects[references_dialog][patch][] = "https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-5.patch.patch"
 
 projects[service_links][subdir] = contrib
 projects[socialfield][version] = "2.3"
