@@ -210,12 +210,7 @@ function crealead_info_meetings_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'registrations_list');
   $handler->display->display_options['path'] = 'registrations-list';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Statistiques des inscriptions';
-  $handler->display->display_options['menu']['weight'] = '30';
-  $handler->display->display_options['menu']['name'] = 'management';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  
   $translatables['crealead_registrations'] = array(
     t('Master'),
     t('Inscriptions'),
