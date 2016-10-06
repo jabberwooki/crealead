@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Code for the Documents feature.
+ */
+
+include_once 'crealead_documents.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_documents_init() {
+  if (substr($_GET['q'], 0, 9) == 'filedepot') {
+    drupal_add_css(drupal_get_path('module','crealead_documents') . '/css/crealead_documents.css');
+    drupal_add_js(drupal_get_path('module','crealead_documents') . '/js/crealead_documents.js');
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function crealead_documents_menu_alter(&$items) {
+  $items['filedepot']['title'] = 'Documents'; // Replacement of "Filedepot" page title.
+
+  $filedepot_alias = array('source' => 'filedepot', 'alias' => 'espace-co-entrepreneur/documents');
+  path_save($filedepot_alias);
+}

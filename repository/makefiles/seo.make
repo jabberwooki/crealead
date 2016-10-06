@@ -22,4 +22,4 @@ projects[transliteration][subdir] = contrib
 projects[transliteration][version] = "3.2"
 
 projects[xmlsitemap][subdir] = contrib
-projects[xmlsitemap][version] = "2.2"
+projects[xmlsitemap][version] = "2.3"

@@ -1,3 +1,18 @@
+Crealead 3.0 - 2016-10-06
+-------------------------
+ * Feature /crealead_info_meetings up to delete menu item 'Statistiques des inscriptions'.
+ * Feature crealead_info_meetings up to add filters and fields to view admin/info_meetings_registrations.
+ * Security updates -  core: 7.43 -> 7.50, features : 2.7 -> 2.10, views : 3.13 -> 3.14, xmlsitemap : 2.2 -> 2.3, google_analytics : 2.1 -> 2.3
+ * Install profile up: Typo in previously added hook crealead_update_7007() fixed (crealead_gazette replaced by crealead_documents).
+ * Install profile up: crealead_documents feature added.
+ * crealead_documents up: permissions and strongarm settings added.
+ * kcore up: New role 'certif LR' created.
+ * crealead_documents up: Entrepreneur area's menu link to filedepot added.
+ * crealead_gazette up: Entrepreneur area menu link to gazettes view added.
+ * kcore up: New menu 'Espace co-entrepreneurs' and corresponding context created.
+ * Feature crealead_documents created.
+ * LESS and CSS up.
+
 Crealead 2.2 - 2016-07-30
 -------------------------
  * crealead_multimedia up: News image styles and Scald contextes created to allow Scald users to chose format of images drag&dropped from Scald library to body fields.

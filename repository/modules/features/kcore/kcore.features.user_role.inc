@@ -13,7 +13,7 @@ function kcore_user_default_roles() {
   // Exported role: administrateur.
   $roles['administrateur'] = array(
     'name' => 'administrateur',
-    'weight' => 9,
+    'weight' => 10,
     'machine_name' => '',
   );
 
@@ -22,6 +22,13 @@ function kcore_user_default_roles() {
     'name' => 'canditat',
     'weight' => 2,
     'machine_name' => 'canditate',
+  );
+
+  // Exported role: certif LR.
+  $roles['certif LR'] = array(
+    'name' => 'certif LR',
+    'weight' => 7,
+    'machine_name' => 'certif_lr',
   );
 
   // Exported role: entrepreneur.
@@ -34,7 +41,7 @@ function kcore_user_default_roles() {
   // Exported role: pôle gestion.
   $roles['pôle gestion'] = array(
     'name' => 'pôle gestion',
-    'weight' => 7,
+    'weight' => 8,
     'machine_name' => 'pole_gestion',
   );
 
@@ -55,7 +62,7 @@ function kcore_user_default_roles() {
   // Exported role: webmaster.
   $roles['webmaster'] = array(
     'name' => 'webmaster',
-    'weight' => 8,
+    'weight' => 9,
     'machine_name' => '',
   );
 

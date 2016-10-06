@@ -112,6 +112,8 @@ dependencies[] = crealead_social
 dependencies[] = crealead_my_contents
 dependencies[] = crealead_trainings
 dependencies[] = crealead_gazette
+dependencies[] = crealead_documents
+
 
 
 

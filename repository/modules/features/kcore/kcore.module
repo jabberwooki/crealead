@@ -7,6 +7,15 @@
 include_once 'kcore.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function kcore_init() {
+  if (in_array(substr($_GET['q'], 0, 22), array('espace-co-entrepreneur','filedepot'))) {
+    drupal_add_js(drupal_get_path('module','kcore') . '/js/kcore.js');
+  }
+}
+
+/**
  * Implements hook_menu().
  */
 function kcore_menu() {
