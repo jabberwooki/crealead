@@ -108,7 +108,8 @@ function crealead_news_views_pre_render(&$view) {
       'type' => 'file',
       'group' => JS_THEME,
     ));
-
+    drupal_add_js(drupal_get_path('module','crealead_news') . '/js/search-news.js');
+    
     $nids_to_skip = array();
 
     // Fetch nid of node displayed in Zoom block and store it in $nids_to_skip array.
