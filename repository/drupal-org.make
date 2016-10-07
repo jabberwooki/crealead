@@ -91,6 +91,9 @@ projects[views][version] = "3.14"
 projects[better_exposed_filters][subdir] = contrib
 projects[better_exposed_filters][version] = "3.2"
 
+projects[views_data_export][subdir] = contrib
+projects[views_data_export][version] = "3.1"
+
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.3"
 
