@@ -23,8 +23,8 @@ function kcore_field_group_info() {
     'label' => 'Compte',
     'weight' => '7',
     'children' => array(
-      0 => 'field_user_lastname',
-      1 => 'field_user_firstname',
+      0 => 'field_user_firstname',
+      1 => 'field_user_lastname',
       2 => 'field_user_referent',
       3 => 'masquerade',
       4 => 'summary',
@@ -53,8 +53,8 @@ function kcore_field_group_info() {
     'label' => 'Barre d\'onglets Bootstrap',
     'weight' => '0',
     'children' => array(
-      0 => 'group_user_account',
-      1 => 'group_user_profile',
+      0 => 'group_user_profile',
+      1 => 'group_user_account',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
