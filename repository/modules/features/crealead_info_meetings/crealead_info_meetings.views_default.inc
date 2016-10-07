@@ -210,7 +210,6 @@ function crealead_info_meetings_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'registrations_list');
   $handler->display->display_options['path'] = 'registrations-list';
-  
   $translatables['crealead_registrations'] = array(
     t('Master'),
     t('Inscriptions'),
@@ -733,29 +732,507 @@ Téléphone : 04-67-06-96-72';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator_id'] = 'field_info_meeting_date_value_op';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator'] = 'field_info_meeting_date_value_op';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['identifier'] = 'field_info_meeting_date_value';
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
+  $handler->display->display_options['path'] = 'admin/info_meetings_registrations';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Réunions d\'information';
+  $handler->display->display_options['menu']['weight'] = '100';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Stats */
+  $handler = $view->new_display('page', 'Stats', 'registrations_stats');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Statistiques réunions';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer info meetings';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Options avancées',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_attendee_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_registrant_city_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_registrant_how_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_info_meeting_date_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 1,
+        'any_label' => 'dd-mm-yy',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_info_meeting_date_value_1' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'path' => 'path',
+    'field_info_meeting_date' => 'field_info_meeting_date',
+    'registration_id' => 'registration_id',
+    'field_registrant_lastname' => 'field_registrant_lastname',
+    'field_registrant_firstname' => 'field_registrant_lastname',
+    'anon_mail' => 'anon_mail',
+    'field_registrant_status' => 'field_registrant_status',
+    'field_registrant_project_domain' => 'field_registrant_project_domain',
+    'field_registrant_city' => 'field_registrant_city',
+    'field_registrant_how' => 'field_registrant_how',
+    'field_attendee' => 'field_attendee',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_info_meeting_date';
+  $handler->display->display_options['style_options']['info'] = array(
+    'path' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_info_meeting_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'registration_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_lastname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'field_registrant_firstname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'anon_mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_status' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_project_domain' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_city' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_how' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_attendee' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['summary'] = 'Prochaines réunions';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Entête: Global : Résumé des résultats */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '<h3>Total des inscriptions :  @total</h3>';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Inscription : Nœud to Registration */
+  $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
+  $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
+  $handler->display->display_options['relationships']['registration_rel']['label'] = 'Inscriptions';
+  $handler->display->display_options['relationships']['registration_rel']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Chemin */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Champ: Contenu : Date */
+  $handler->display->display_options['fields']['field_info_meeting_date']['id'] = 'field_info_meeting_date';
+  $handler->display->display_options['fields']['field_info_meeting_date']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
+  $handler->display->display_options['fields']['field_info_meeting_date']['label'] = 'Date réunion';
+  $handler->display->display_options['fields']['field_info_meeting_date']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_info_meeting_date']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_info_meeting_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_info_meeting_date']['settings'] = array(
+    'format_type' => 'news_short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Champ: Inscription : Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['registration_id']['label'] = 'N°';
+  $handler->display->display_options['fields']['registration_id']['exclude'] = TRUE;
+  /* Champ: Inscription : Nom */
+  $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['relationship'] = 'registration_rel';
+  /* Champ: Inscription : Prénom */
+  $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
+  /* Champ: Inscription : Anonymous e-mail */
+  $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
+  $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
+  /* Champ: Inscription : Statut */
+  $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Champ: Inscription : Projet d'activité */
+  $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
+  /* Champ: Inscription : Ville */
+  $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
+  $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
+  /* Champ: Inscription : Présent à la réunion */
+  $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
+  $handler->display->display_options['fields']['field_attendee']['empty'] = 'non';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
+  /* Critère de tri: Inscription : Registration ID */
+  $handler->display->display_options['sorts']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['sorts']['registration_id']['table'] = 'registration';
+  $handler->display->display_options['sorts']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['sorts']['registration_id']['relationship'] = 'registration_rel';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Critère de filtrage: Contenu : Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'info_meeting' => 'info_meeting',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Critère de filtrage: Inscription : Présent à la réunion (field_attendee) */
   $handler->display->display_options['filters']['field_attendee_value']['id'] = 'field_attendee_value';
   $handler->display->display_options['filters']['field_attendee_value']['table'] = 'field_data_field_attendee';
@@ -842,13 +1319,157 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_dependent'] = 0;
-  $handler->display->display_options['path'] = 'admin/info_meetings_registrations';
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator_id'] = 'field_info_meeting_date_value_op';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['label'] = 'Après le';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator'] = 'field_info_meeting_date_value_op';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['identifier'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['default_date'] = '1 year ago';
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['id'] = 'field_info_meeting_date_value_1';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['field'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['operator_id'] = 'field_info_meeting_date_value_1_op';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['label'] = 'Avant le';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['operator'] = 'field_info_meeting_date_value_1_op';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['identifier'] = 'field_info_meeting_date_value_1';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['path'] = 'admin/info_meetings_registrations_stats';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Réunions d\'information';
+  $handler->display->display_options['menu']['title'] = 'Statistiques réunions';
   $handler->display->display_options['menu']['weight'] = '100';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'registration_export');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relation: Inscription : Nœud to Registration */
+  $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
+  $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
+  $handler->display->display_options['relationships']['registration_rel']['label'] = 'inscriptions';
+  /* Relation: Registration Settings : Nœud to Registration Settings */
+  $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
+  $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
+  $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Date */
+  $handler->display->display_options['fields']['field_info_meeting_date_1']['id'] = 'field_info_meeting_date_1';
+  $handler->display->display_options['fields']['field_info_meeting_date_1']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['fields']['field_info_meeting_date_1']['field'] = 'field_info_meeting_date';
+  $handler->display->display_options['fields']['field_info_meeting_date_1']['label'] = 'Date réunion';
+  $handler->display->display_options['fields']['field_info_meeting_date_1']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Champ: Inscription : Nom */
+  $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
+  $handler->display->display_options['fields']['field_registrant_lastname']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_lastname']['label'] = '';
+  $handler->display->display_options['fields']['field_registrant_lastname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_registrant_lastname']['element_label_colon'] = FALSE;
+  /* Champ: Inscription : Prénom */
+  $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
+  $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_firstname']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_registrant_firstname']['alter']['text'] = '[field_registrant_lastname] [field_registrant_firstname]';
+  /* Champ: Inscription : Anonymous e-mail */
+  $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
+  $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
+  $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
+  /* Champ: Inscription : Statut */
+  $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
+  $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_registrant_status']['delta_offset'] = '0';
+  /* Champ: Inscription : Projet d'activité */
+  $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
+  /* Champ: Inscription : Ville */
+  $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
+  $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
+  $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
+  $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
+  /* Champ: Inscription : Présent à la réunion */
+  $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
+  $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['sorts']['field_info_meeting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['path'] = 'info_meetings_registrations_stats/csv';
+  $handler->display->display_options['displays'] = array(
+    'registrations_stats' => 'registrations_stats',
+    'default' => 0,
+    'info_meetings_list' => 0,
+    'registrations_list' => 0,
+  );
   $translatables['info_meetings'] = array(
     t('Master'),
     t('Les réunions d\'information'),
@@ -941,9 +1562,21 @@ Téléphone : 04-67-06-96-72'),
     t('Ville'),
     t('Prescripteur'),
     t('Présent'),
+    t('Stats'),
+    t('Statistiques réunions'),
+    t('Options avancées'),
+    t('dd-mm-yy'),
+    t('Date réunion'),
+    t('non'),
     t('Ville (ex : mont|sete|sète)'),
     t('La barre verticale "|" signifie "ou".'),
     t('Ex : bouche|connaiss|ami|col|relation|perso'),
+    t('Après le'),
+    t('Avant le'),
+    t('Data export'),
+    t('inscriptions'),
+    t('[field_registrant_lastname] [field_registrant_firstname]'),
+    t('Présent à la réunion'),
   );
   $export['info_meetings'] = $view;
 
