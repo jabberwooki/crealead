@@ -1719,7 +1719,7 @@ header#navbar nav ul>li a br{display:none}
 }
 header#navbar nav ul.dropdown-menu{background-color:#fff}
 header#navbar nav ul.dropdown-menu a:hover{background-color:#1d1e19}
-@media (min-width:1200px){header#navbar nav ul.dropdown-menu>li a,header#navbar nav ul.dropdown-menu>li>a{width:260px;white-space:normal;border-bottom:1px solid #000;margin-bottom:15px;padding-bottom:15px}
+@media (min-width:1200px){header#navbar nav ul.dropdown-menu>li a,header#navbar nav ul.dropdown-menu>li>a{width:260px;white-space:normal;border-bottom:1px solid #000;margin:0;padding-bottom:10px;padding-top:10px}
 header#navbar nav ul.dropdown-menu li.last>a{border-bottom:0}
 }
 @media (max-width:1200px){header#navbar nav ul.dropdown-menu>li a,header#navbar nav ul.dropdown-menu>li>a{width:100%;white-space:normal;border-bottom:1px solid #000;margin-bottom:10px;padding-bottom:10px}
