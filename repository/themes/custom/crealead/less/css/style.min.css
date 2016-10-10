@@ -2001,6 +2001,15 @@ body.node-type-brand .subtitle-brand{display:none}
 @media (max-width:992px){body.node-type-brand .group-brand-tabs>ul{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 body.node-type-brand .subtitle-brand{display:block;background-color:#1d1e19;color:#fff;padding:10px;text-transform:uppercase;clear:both}
 }
+body.node-type-brand #block-system-main ul.group-brand-tabs li:before{display:none}
+@media print{body.node-type-brand .content-header{margin:-70px 0 0}
+body.node-type-brand .content-header .row{margin-bottom:0!important;border:0!important}
+body.node-type-brand .content-header .row-eq-height{border:1px solid #000;display:table;padding-bottom:20px}
+body.node-type-brand .content-header .row-eq-height>div{display:table-cell;vertical-align:top}
+body.node-type-brand .content-header .row-eq-height>div.group-col-1-3,body.node-type-brand .content-header .row-eq-height>div.group-col3-3{padding-top:20px}
+body.node-type-brand h3,body.node-type-brand h4{page-break-after:avoid}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog,body.node-type-brand #bootstrap-fieldgroup-nav-item--contact,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations,body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client,body.node-type-brand .alert-block,body.node-type-brand .col-md-3 .field-name-field-brand-tags,body.node-type-brand .tabs--primary{display:none}
+}
 .view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
 .page-reunions-information{background:url(../images/bg_grey.png) 0 30px repeat-x}
 .page-reunions-information .page-header{margin-bottom:0}

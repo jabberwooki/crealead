@@ -684,5 +684,55 @@ body.node-type-brand {
       clear: both;
     }
   }
-  
+  #block-system-main{
+    ul.group-brand-tabs{
+      li{
+        &:before{
+          display: none;
+        }
+      }
+    }
+
+  }
+  @media print{
+
+    .content-header{
+      margin: -70px 0 0 0;
+      .row{
+        margin-bottom: 0 !important;
+
+        border: 0 !important;
+      }
+      .row-eq-height{
+        border: 1px solid black;
+        display: table;
+        > div{
+          display: table-cell;
+          vertical-align: top;
+          &.group-col-1-3{
+            padding-top: 20px;
+          }
+          &.group-col3-3{
+            padding-top: 20px;
+          }
+        }
+        padding-bottom: 20px;
+      }
+    }
+    h3,h4{
+      page-break-after: avoid;
+    }
+    .tabs--primary, .alert-block, #bootstrap-fieldgroup-nav-item--rfrences-client,#bootstrap-fieldgroup-nav-item--ralisations,
+    #bootstrap-fieldgroup-nav-item--blog, #bootstrap-fieldgroup-nav-item--formations-et-produits,
+    #bootstrap-fieldgroup-nav-item--contact{
+      display: none;
+    }
+    .col-md-3{
+      .field-name-field-brand-tags{
+        display: none;
+      }
+    }
+
+  }
 }
+
