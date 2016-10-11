@@ -1282,6 +1282,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['description'] = 'La barre verticale "|" signifie "ou".';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['operator'] = 'field_registrant_city_value_op';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['identifier'] = 'field_registrant_city_value';
+  $handler->display->display_options['filters']['field_registrant_city_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1313,6 +1314,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['description'] = 'Ex : bouche|connaiss|ami|col|relation|perso';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['operator'] = 'field_registrant_how_value_op';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['identifier'] = 'field_registrant_how_value';
+  $handler->display->display_options['filters']['field_registrant_how_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1342,6 +1344,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['label'] = 'Après le';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator'] = 'field_info_meeting_date_value_op';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['identifier'] = 'field_info_meeting_date_value';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1367,6 +1370,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['label'] = 'Avant le';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['operator'] = 'field_info_meeting_date_value_1_op';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['identifier'] = 'field_info_meeting_date_value_1';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1381,6 +1385,32 @@ Téléphone : 04-67-06-96-72';
     193262079 => 0,
   );
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['form_type'] = 'date_popup';
+  /* Critère de filtrage: Inscription : Domaine d&#039;activité (field_registrant_dom_activite) */
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['id'] = 'field_registrant_dom_activite_tid';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['table'] = 'field_data_field_registrant_dom_activite';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['field'] = 'field_registrant_dom_activite_tid';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['relationship'] = 'registration_rel';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['operator_id'] = 'field_registrant_dom_activite_tid_op';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['label'] = 'Domaine d\'activité';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['operator'] = 'field_registrant_dom_activite_tid_op';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['identifier'] = 'field_registrant_dom_activite_tid';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['vocabulary'] = 'domaine_activite';
   $handler->display->display_options['path'] = 'admin/info_meetings_registrations_stats';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Statistiques réunions';
