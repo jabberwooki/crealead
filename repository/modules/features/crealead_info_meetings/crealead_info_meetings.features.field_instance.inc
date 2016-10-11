@@ -600,7 +600,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -820,6 +820,39 @@ function crealead_info_meetings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-info_meeting_registration-field_registrant_dom_activite'.
+  $field_instances['registration-info_meeting_registration-field_registrant_dom_activite'] = array(
+    'bundle' => 'info_meeting_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'registration',
+    'field_name' => 'field_registrant_dom_activite',
+    'label' => 'Domaine d\'activité',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -1326,7 +1359,7 @@ function crealead_info_meetings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1442,7 +1475,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1455,6 +1488,7 @@ function crealead_info_meetings_field_default_field_instances() {
   t('Date de naissance');
   t('Depuis quelle date');
   t('Descriptif');
+  t('Domaine d\'activité');
   t('Format jj/mm/aaaa');
   t('Formulaire d\'inscription');
   t('Nom');

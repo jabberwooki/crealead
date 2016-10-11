@@ -1030,6 +1030,7 @@ Téléphone : 04-67-06-96-72';
     'field_registrant_firstname' => 'field_registrant_lastname',
     'anon_mail' => 'anon_mail',
     'field_registrant_status' => 'field_registrant_status',
+    'field_registrant_dom_activite' => 'field_registrant_dom_activite',
     'field_registrant_project_domain' => 'field_registrant_project_domain',
     'field_registrant_city' => 'field_registrant_city',
     'field_registrant_how' => 'field_registrant_how',
@@ -1078,6 +1079,13 @@ Téléphone : 04-67-06-96-72';
       'empty_column' => 0,
     ),
     'field_registrant_status' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_registrant_dom_activite' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1182,12 +1190,17 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Champ: Inscription : Domaine d'activité */
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['type'] = 'taxonomy_term_reference_plain';
   /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
   /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
@@ -1435,12 +1448,16 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_registrant_status']['delta_offset'] = '0';
+  /* Champ: Inscription : Domaine d'activité */
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
+  $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
   /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
   /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
@@ -1567,6 +1584,7 @@ Téléphone : 04-67-06-96-72'),
     t('Options avancées'),
     t('dd-mm-yy'),
     t('Date réunion'),
+    t('Projet d\'activité'),
     t('non'),
     t('Ville (ex : mont|sete|sète)'),
     t('La barre verticale "|" signifie "ou".'),

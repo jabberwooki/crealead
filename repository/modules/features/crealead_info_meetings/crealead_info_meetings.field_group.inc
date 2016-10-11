@@ -18,15 +18,11 @@ function crealead_info_meetings_field_group_info() {
   $field_group->entity_type = 'registration';
   $field_group->bundle = 'info_meeting_registration';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_registrant_other_infos';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Infos dépendantes',
     'weight' => '5',
-    'children' => array(
-      0 => 'field_beneficiary_number',
-      1 => 'field_unemployment_date',
-      2 => 'field_other_specify',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Infos dépendantes',
@@ -287,11 +283,11 @@ function crealead_info_meetings_field_group_info() {
     'label' => 'Informations facultatives',
     'weight' => '3',
     'children' => array(
-      0 => 'field_registrant_postal_code',
+      0 => 'field_registrant_birthday',
       1 => 'field_registrant_city',
-      2 => 'field_registrant_birthday',
-      3 => 'field_registrant_gender',
-      4 => 'field_registrant_how',
+      2 => 'field_registrant_gender',
+      3 => 'field_registrant_how',
+      4 => 'field_registrant_postal_code',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -363,8 +359,9 @@ function crealead_info_meetings_field_group_info() {
       0 => 'field_registrant_project_domain',
       1 => 'field_registrant_status',
       2 => 'field_beneficiary_number',
-      3 => 'field_unemployment_date',
-      4 => 'field_other_specify',
+      3 => 'field_other_specify',
+      4 => 'field_unemployment_date',
+      5 => 'field_registrant_dom_activite',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
