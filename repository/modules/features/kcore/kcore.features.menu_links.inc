@@ -30,6 +30,27 @@ function kcore_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs.
+  $menu_links['main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'annuaire-entrepreneurs',
+    'router_path' => 'annuaire-entrepreneurs',
+    'link_title' => 'Découvrez l\'offre des<br>co-entrepreneurs',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs',
+      'html' => 1,
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => 10,
+    'customized' => 1,
+  );
   // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -75,6 +96,7 @@ function kcore_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Accueil');
   t('Contact');
+  t('Découvrez l\'offre des<br>co-entrepreneurs');
   t('Plan du site');
 
   return $menu_links;
