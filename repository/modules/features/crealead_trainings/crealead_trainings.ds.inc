@@ -327,7 +327,7 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -335,7 +335,6 @@ function crealead_trainings_ds_field_settings_info() {
         'wrapper' => 'h3',
         'class' => '',
         'ft' => array(),
-        'field_formatter_class' => '',
       ),
     ),
   );
@@ -562,15 +561,17 @@ function crealead_trainings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_training_type',
-        1 => 'title',
-        2 => 'field_training_price',
-        3 => 'field_training_theme',
-        4 => 'field_training_duration',
-        5 => 'field_training_aims',
+        0 => 'group_wrapper_teaser',
+        1 => 'field_training_type',
+        2 => 'title',
+        3 => 'field_training_price',
+        4 => 'field_training_theme',
+        5 => 'field_training_duration',
+        6 => 'field_training_aims',
       ),
     ),
     'fields' => array(
+      'group_wrapper_teaser' => 'central',
       'field_training_type' => 'central',
       'title' => 'central',
       'field_training_price' => 'central',
