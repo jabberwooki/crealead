@@ -29,7 +29,7 @@ function crealead_trainings_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 1,
     'customized' => 1,
-    'parent_identifier' => 'main-menu_dcouvrez-loffrebrdes-co-entrepreneurs:annuaire-entrepreneurs',
+    'parent_identifier' => 'main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs',
   );
 
   // Translatables
