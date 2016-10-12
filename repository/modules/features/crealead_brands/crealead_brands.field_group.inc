@@ -685,7 +685,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Réalisations',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'achievements_sector_brand_achievs',
     ),
@@ -749,7 +749,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Marques et produits',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'group_sectorbrands_brands',
       1 => 'group_sectorbrands_products',
@@ -815,7 +815,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités et articles',
-    'weight' => '5',
+    'weight' => '1',
     'children' => array(
       0 => 'group_sectorbrands_news',
       1 => 'group_sectorbrands_articles',
