@@ -121,7 +121,6 @@ features[menu_custom][] = menu-coe-area
 features[menu_custom][] = menu-footer-menu
 features[menu_custom][] = menu-top
 features[menu_links][] = main-menu_accueil:<front>
-features[menu_links][] = main-menu_dcouvrez-loffrebrdes-co-entrepreneurs:annuaire-entrepreneurs
 features[menu_links][] = menu-footer-menu_plan-du-site:sitemap
 features[menu_links][] = menu-top_contact:eform/submit/site-contact
 features[rules_config][] = rules_rules_site_contact_email
