@@ -51,7 +51,7 @@ function crealead_brands_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 1,
-    'parent_identifier' => 'main-menu_dcouvrez-loffrebrdes-co-entrepreneurs:annuaire-entrepreneurs',
+    'parent_identifier' => 'main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs',
   );
   // Exported menu link: main-menu_thmatiques:thematiques.
   $menu_links['main-menu_thmatiques:thematiques'] = array(
