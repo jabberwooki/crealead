@@ -1906,6 +1906,7 @@ h3.home-news-title a:hover{text-decoration:none;color:#999}
 #views-exposed-form-brands-brands-list input.form-radio{display:none}
 #views-exposed-form-brands-brands-list #edit-submit-brands{margin-left:10px}
 #views-exposed-form-brands-brands-list #edit-field-brand-search-value-wrapper,#views-exposed-form-brands-brands-list #edit-title-wrapper{float:left;width:40%}
+body.page-annuaire-entrepreneurs #views-bootstrap-grid-1{margin-top:20px}
 @media (max-width:768px){#views-exposed-form-brands-brands-list .form-type-radio label,#views-exposed-form-brands-brands-list .form-type-radio label:hover:before{background:0 0}
 #views-exposed-form-brands-brands-list #edit-field-brand-search-value-wrapper,#views-exposed-form-brands-brands-list #edit-title-wrapper{margin-left:20px}
 body.page-annuaire-entrepreneurs #views-bootstrap-grid-1 .col-lg-3{border-bottom:1px solid #bf0e38}
