@@ -332,7 +332,7 @@ function crealead_trainings_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h2',
+        'wrapper' => 'h3',
         'class' => '',
         'ft' => array(),
         'field_formatter_class' => '',
