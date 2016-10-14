@@ -241,9 +241,13 @@ function crealead_articles_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 16,
       ),
       'landing_page_block' => array(
