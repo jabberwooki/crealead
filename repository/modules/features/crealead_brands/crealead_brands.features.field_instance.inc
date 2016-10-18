@@ -1094,7 +1094,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Le contenu du champ Descripton ci-dessus sera utilisé dans la recherche des marques.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -1408,7 +1408,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Le contenu des champs Nom et Compétences ci-dessus sera utilisé dans la recherche des marques.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -1964,7 +1964,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Le contenu du champ Solutions ci-dessus sera utilisé dans la recherche des marques.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -2075,7 +2075,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Le contenu du champ Mots-clés ci-dessus sera utilisé dans la recherche des marques.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -3459,6 +3459,10 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
 </li>
 </ul>');
   t('Indiquez la ville et/ou le pays.');
+  t('Le contenu des champs Nom et Compétences ci-dessus sera utilisé dans la recherche des marques.');
+  t('Le contenu du champ Descripton ci-dessus sera utilisé dans la recherche des marques.');
+  t('Le contenu du champ Mots-clés ci-dessus sera utilisé dans la recherche des marques.');
+  t('Le contenu du champ Solutions ci-dessus sera utilisé dans la recherche des marques.');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des marques qui sont spécialisées dans les dîtes thématiques. Merci de cocher une thématique que si elle fait partie de votre coeur de métier.');
   t('Liens réseaux sociaux');
   t('Localisation');

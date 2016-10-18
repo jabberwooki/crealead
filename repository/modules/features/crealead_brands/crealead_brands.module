@@ -132,7 +132,9 @@ function crealead_brands_node_presave($node) {
     // --- Technical field_brand_search field handling --- //
     $coe_names = '';
     $coe_competencies = '';
+    $brand_description = '';
     $brand_solutions = '';
+    $brand_tags = '';
     // Fetch all coes names and competencies linked to current brand.
     foreach($node->field_brand_coes['und'] as $fc_item) {
       $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
@@ -143,15 +145,31 @@ function crealead_brands_node_presave($node) {
         $coe_competencies .= $competency['name'] . ' ';
       }
     }
+
+    // Check whether Description field has content.
+    if (isset($node->body['und'][0]['value'])) {
+//      $brand_description = strip_tags($node->body['und'][0]['value']);
+      $brand_description = trim( preg_replace( '/\s+/', ' ', strip_tags($node->body['und'][0]['value'])) );
+    }
+
     // Check whether Solutions field has content.
     if (isset($node->field_brand_solutions['und'][0]['value'])) {
       $brand_solutions = $node->field_brand_solutions['und'][0]['value'];
     }
 
-    // Store names, competencies and solutions into field_brand_search technical field.
+    // Check whether Mots-clés field has content.
+    if (isset($node->field_brand_tags)) {
+      foreach ($node->field_brand_tags['und'] as $tag) {
+        $brand_tags .= $tag['name'] . ' ';
+      }
+    }
+
+    // Store names, competencies, solutions and tags into field_brand_search technical field.
     $search_data = $coe_names
       . $coe_competencies
-      . $brand_solutions;
+      . $brand_description
+      . $brand_solutions
+      . $brand_tags;
     $search_array = array('value' => $search_data, 'format' => 'plain_text');
 
     if (!isset($node->field_brand_search['und'][0])) {

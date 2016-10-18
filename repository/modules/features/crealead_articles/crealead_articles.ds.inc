@@ -91,7 +91,7 @@ function crealead_articles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'sld_group_image',
     ),
-    'field_image' => array(
+    'field_article_related_brands' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
@@ -252,14 +252,16 @@ function crealead_articles_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'field_image',
-        1 => 'body',
-        2 => 'service_links_displays_group',
+        1 => 'service_links_displays_group',
+        2 => 'body',
+        3 => 'field_article_related_brands',
       ),
     ),
     'fields' => array(
       'field_image' => 'central',
-      'body' => 'central',
       'service_links_displays_group' => 'central',
+      'body' => 'central',
+      'field_article_related_brands' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -270,6 +272,7 @@ function crealead_articles_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
