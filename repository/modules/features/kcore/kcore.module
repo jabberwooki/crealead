@@ -10,7 +10,11 @@ include_once 'kcore.features.inc';
  * Implements hook_init().
  */
 function kcore_init() {
-    drupal_add_js(drupal_get_path('module','kcore') . '/js/kcore.js');
+  drupal_add_js(drupal_get_path('module','kcore') . '/js/kcore.js');
+  // add a specific css for the admin theme
+  if (arg(0)=="admin") {
+    drupal_add_css(drupal_get_path('module', 'kcore') . '/css/admin.css', array('weight' => CSS_THEME));
+  }
 }
 
 /**
