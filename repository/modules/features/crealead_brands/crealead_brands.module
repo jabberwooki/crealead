@@ -387,7 +387,7 @@ function crealead_main_brands_number() {
  *
  * Users allowed to view current brand's email contacts list are :
  * - superadmin (uid=1)
- * - users with role administrator, webmaster and referent
+ * - users with role administrator, webmaster, pole gestion and referent
  * - all coes attached to current brand
  *
  * @return string
@@ -406,7 +406,7 @@ function crealead_brand_contacts_list() {
     }
   }
 
-  $allowed_roles = array('administrateur', 'webmaster', 'référent');
+  $allowed_roles = array('administrateur', 'webmaster', 'référent', 'pôle gestion');
   global $user;
 
   $output = '';
