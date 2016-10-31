@@ -15,7 +15,8 @@ function crealead_documents_user_default_permissions() {
     'name' => 'access filedepot',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'authenticated user' => 'authenticated user',
+      'certif LR' => 'certif LR',
+      'référent' => 'référent',
     ),
     'module' => 'filedepot',
   );
