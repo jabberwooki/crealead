@@ -579,3 +579,10 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
   }
   return $sector_brands_options;
 }
+
+function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['info_text'] = array(
+    '#markup' => '<p class="info-text">Décrivez le client en utilisant sa propre communication officielle. Ne décrivez pas ce que vous avez réalisé pour lui.</p>',
+    '#weight' => -10,
+  );
+}
