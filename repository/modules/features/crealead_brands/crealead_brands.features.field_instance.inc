@@ -1832,9 +1832,10 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 14,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_references',
-    'label' => 'Références',
+    'label' => 'Clients',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -3438,6 +3439,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   // Translatables
   // Included for use with string extractors like potx.
   t('Champ de recherche');
+  t('Clients');
   t('Co-entrepreneurs');
   t('Compétences');
   t('Courriel');
@@ -3474,7 +3476,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Photos');
   t('Phrase d\'accroche');
   t('Réalisations');
-  t('Références');
   t('Secteur d\'activité');
   t('Site web');
   t('Solutions');
