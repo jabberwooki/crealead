@@ -1070,6 +1070,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -1078,7 +1079,9 @@ function crealead_brands_views_default_views() {
     14479344 => 0,
     103860121 => 0,
     191976793 => 0,
+    259028912 => 0,
     7178059 => 0,
+    157297110 => 0,
     31497918 => 0,
     231346920 => 0,
     193262079 => 0,
@@ -1800,6 +1803,7 @@ function crealead_brands_views_default_views() {
     t('Cliquez sur un secteur d\'activité :'),
     t('Mots-clés'),
     t('Marque'),
+    t('Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Marques d\'un coe'),
     t('Élément de collection de champs provenant de field_brand_coes'),
     t('auteur'),
@@ -2150,7 +2154,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Champ: Champ : Compétences */
+  /* Champ: Champ : Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

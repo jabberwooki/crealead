@@ -406,6 +406,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous ne vous souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -676,6 +677,7 @@ function crealead_trainings_views_default_views() {
     t('Identifiant universel unique (UUID)'),
     t('Domaine'),
     t('Marque'),
+    t('Vous ne vous souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Co-entrepreneur'),
     t('Catalogue test'),
     t('Coe'),
