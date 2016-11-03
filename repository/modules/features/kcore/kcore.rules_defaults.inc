@@ -25,7 +25,7 @@ function kcore_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "contact@crealead.com",
+            "to" : "contact@crealead.com;christophe.espiau@laposte.net",
             "subject" : "CONTACT SITE WEB CREALEAD -  [entityform:field-contact-subject]",
             "message" : "Une demande vient d\\u0027\\u00eatre post\\u00e9e via le formulaire de contact du site web.\\r\\n\\r\\nNom : [entityform:field-contact-name]\\r\\nAdresse email : [entityform:field-contact-email]\\r\\nT\\u00e9l\\u00e9phone : [entityform:field-contact-phone]\\r\\n\\r\\nMessage :\\r\\n[entityform:field-contact-body]\\r\\n\\r\\nVoir la demande sur le site web : [entityform:url]",
             "language" : [ "" ]
