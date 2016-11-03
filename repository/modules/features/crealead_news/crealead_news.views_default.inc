@@ -368,13 +368,6 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'news_brand';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Pied de page: Global : Zone de texte */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'Lien création actu';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relation: Entity Reference : Entité référencée */
   $handler->display->display_options['relationships']['field_related_brands_target_id']['id'] = 'field_related_brands_target_id';
@@ -737,7 +730,6 @@ function crealead_news_views_default_views() {
     t('toutes les actus'),
     t('<a id="news-home-more" href="/actualites">Voir toutes les actualités</a>'),
     t('Actus d\'une marque'),
-    t('Lien création actu'),
     t('Entité Contenu réferencée par field_related_brands'),
     t('Actus d\'une thématique'),
     t('<h3>Actualités</h3>'),
