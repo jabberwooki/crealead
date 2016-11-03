@@ -49,6 +49,13 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   if (isset($form['nid']['#value']) && $user->uid != $form['uid']['#value'] && empty($current_user_allowed_roles) & $user->uid != 1) {
       $form['field_related_brands']['#disabled'] = TRUE;
   }
+
+  // If news is being created from a brand page,
+  // we must catch the brand nid from url
+  // and check the corresponding brand in field_related_brands field.
+  if (!isset($form['nid']['#value']) && NULL != arg(3)) {
+    $form['field_related_brands']['und']['#default_value'] = array(arg(3));
+  }
   // End of Related brands list handling ---------------------------------------
 
   // Hugly hack to remove no longer wanted options of field_news_kind
@@ -130,6 +137,27 @@ function crealead_news_views_pre_render(&$view) {
     foreach ($view->result as $key=>$result) {
       if (in_array($result->nid, $nids_to_skip)) {
         unset($view->result[$key]);
+      }
+    }
+  }
+  elseif ($view->name == 'news' && $view->current_display == 'brand_news') {
+    // Link 'Ajouter une actualité' must be added to block only for coes attached to the current brand.
+    $current_brand = $view->current_entity;
+    $wrapper = entity_metadata_wrapper('node', $current_brand);
+    $brand_coes = $wrapper->field_brand_coes->value();
+
+    global $user;
+    foreach ($brand_coes as $brand_coe) {
+      if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
+        continue;
+      }
+      else {
+        $view->footer['area']->options['content'] = l(
+          'Ajouter une actualité',
+          '/node/add/news/' . $current_brand->nid,
+          array('query' => array('destination' => current_path()))
+        );
+        break;
       }
     }
   }
