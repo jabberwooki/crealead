@@ -299,6 +299,26 @@ function crealead_trainings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|training|list';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'training';
+  $ds_fieldsetting->view_mode = 'list';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_training_related_brands' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|training|list'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|training|sector_brand_block';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'training';
@@ -521,6 +541,49 @@ function crealead_trainings_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|training|landing_page_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training|list';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training';
+  $ds_layout->view_mode = 'list';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'group_wrapper_teaser',
+        1 => 'title',
+        2 => 'field_training_price',
+        3 => 'field_training_theme',
+        4 => 'field_training_duration',
+        5 => 'field_training_aims',
+        6 => 'field_training_teachers',
+        7 => 'field_training_related_brands',
+      ),
+    ),
+    'fields' => array(
+      'group_wrapper_teaser' => 'central',
+      'title' => 'central',
+      'field_training_price' => 'central',
+      'field_training_theme' => 'central',
+      'field_training_duration' => 'central',
+      'field_training_aims' => 'central',
+      'field_training_teachers' => 'central',
+      'field_training_related_brands' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|training|list'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

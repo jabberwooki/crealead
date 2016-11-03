@@ -41,6 +41,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'sector_brand_block' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -142,6 +148,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -241,6 +253,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -337,6 +355,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -397,6 +421,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -494,6 +524,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -555,6 +591,16 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'list' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 100,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 5,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -564,7 +610,9 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 6,
       ),
@@ -654,6 +702,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -751,6 +805,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -822,6 +882,15 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'list' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -831,7 +900,9 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 5,
       ),
@@ -921,6 +992,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1021,6 +1098,15 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1030,7 +1116,9 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -1120,6 +1208,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1223,6 +1317,17 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'links' => 1,
+          'view_mode' => 'logo',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 7,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1283,6 +1388,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1383,6 +1494,16 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'list' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 100,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 6,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1479,6 +1600,15 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'list' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1488,7 +1618,9 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
       ),
@@ -1541,6 +1673,12 @@ function crealead_trainings_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'list' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1550,7 +1688,9 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
@@ -1602,6 +1742,12 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'sector_brand_block' => array(
         'label' => 'above',

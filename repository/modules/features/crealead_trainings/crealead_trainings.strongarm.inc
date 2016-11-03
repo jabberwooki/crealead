@@ -77,6 +77,9 @@ function crealead_trainings_strongarm() {
       'sector_brand_block' => array(
         'custom_settings' => TRUE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
