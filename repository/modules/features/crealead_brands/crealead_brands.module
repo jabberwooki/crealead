@@ -133,55 +133,59 @@ function crealead_brands_after_build($form, &$form_state) {
  */
 function crealead_brands_node_presave($node) {
   if ($node->type == 'brand') {
+    $referer = request_uri();
     // --- Technical field_brand_search field handling --- //
-    $coe_names = '';
-    $coe_competencies = '';
-    $brand_description = '';
-    $brand_solutions = '';
-    $brand_tags = '';
-    // Fetch all coes names and competencies linked to current brand.
-    foreach($node->field_brand_coes['und'] as $fc_item) {
-      $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
-      $coe = user_load($coe_id);
-      $coe_names .= $coe->name . ' ';
+    if ($referer != '/node/add/client') {
+      $coe_names = '';
+      $coe_competencies = '';
+      $brand_description = '';
+      $brand_solutions = '';
+      $brand_tags = '';
+      // Fetch all coes names and competencies linked to current brand.
+      foreach ($node->field_brand_coes['und'] as $fc_item) {
+        $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
+        $coe = user_load($coe_id);
+        $coe_names .= $coe->name . ' ';
 
-      foreach ($fc_item['field_competencies']['und'] as $competency) {
-        $coe_competencies .= $competency['name'] . ' ';
+        foreach ($fc_item['field_competencies']['und'] as $competency) {
+          $coe_competencies .= $competency['name'] . ' ';
+        }
       }
-    }
 
-    // Check whether Description field has content.
-    if (isset($node->body['und'][0]['value'])) {
+      // Check whether Description field has content.
+      if (isset($node->body['und'][0]['value'])) {
 //      $brand_description = strip_tags($node->body['und'][0]['value']);
-      $brand_description = trim( preg_replace( '/\s+/', ' ', strip_tags($node->body['und'][0]['value'])) );
-    }
+        $brand_description = trim(preg_replace('/\s+/', ' ', strip_tags($node->body['und'][0]['value'])));
+      }
 
-    // Check whether Solutions field has content.
-    if (isset($node->field_brand_solutions['und'][0]['value'])) {
-      $brand_solutions = $node->field_brand_solutions['und'][0]['value'];
-    }
+      // Check whether Solutions field has content.
+      if (isset($node->field_brand_solutions['und'][0]['value'])) {
+        $brand_solutions = $node->field_brand_solutions['und'][0]['value'];
+      }
 
-    // Check whether Mots-clés field has content.
-    if (!empty($node->field_brand_tags)) {
-      foreach ($node->field_brand_tags['und'] as $tag) {
-        $brand_tags .= $tag['name'] . ' ';
+      // Check whether Mots-clés field has content.
+      if (!empty($node->field_brand_tags)) {
+        foreach ($node->field_brand_tags['und'] as $tag) {
+          $brand_tags .= $tag['name'] . ' ';
+        }
+      }
+
+      // Store names, competencies, solutions and tags into field_brand_search technical field.
+      $search_data = $coe_names
+        . $coe_competencies
+        . $brand_description
+        . $brand_solutions
+        . $brand_tags;
+      $search_array = array('value' => $search_data, 'format' => 'plain_text');
+
+      if (!isset($node->field_brand_search['und'][0])) {
+        $node->field_brand_search['und'][] = $search_array;
+      }
+      else {
+        $node->field_brand_search['und'][0] = $search_array;
       }
     }
-
-    // Store names, competencies, solutions and tags into field_brand_search technical field.
-    $search_data = $coe_names
-      . $coe_competencies
-      . $brand_description
-      . $brand_solutions
-      . $brand_tags;
-    $search_array = array('value' => $search_data, 'format' => 'plain_text');
-
-    if (!isset($node->field_brand_search['und'][0])) {
-      $node->field_brand_search['und'][] = $search_array;
-    }
-    else {
-      $node->field_brand_search['und'][0] = $search_array;
-    }
+    // ---  End of Technical field_brand_search field handling --- //
 
     // -- Email to referent handling -- //
     // NOTE ! Il brand has been validated by referent before coe sends them a validation request,
@@ -585,8 +589,65 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
 }
 
 function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form_id) {
+  // Seek brands belonging to current user.
+  $query = db_select('node','n')
+    ->fields('n', array('nid','title'))
+    ->condition('n.status', 1)
+    ->condition('n.type', 'brand')
+    ->condition('n.uid', $form['uid']);
+  $result = $query->execute()->fetchAll();
+
+  $options = array();
+  foreach ($result as $item) {
+    $options[$item->nid] = $item->title;
+  }
+
+  // Add form field info_text
   $form['info_text'] = array(
     '#markup' => '<p class="info-text">Décrivez le client en utilisant sa propre communication officielle. Ne décrivez pas ce que vous avez réalisé pour lui.</p>',
-    '#weight' => -10,
   );
+
+  // Add form field related_brands
+  $form['related_brands'] = array(
+    '#type' => 'checkboxes',
+    '#title' => 'Rattacher ce client aux marques suivantes',
+    '#options' => $options,
+  );
+
+  // Reorder form fields
+  $form['info_text']['#weight'] = -1;
+  $form['field_client_logo']['#weight'] = 1;
+  $form['field_client_type']['#weight'] = 2;
+  $form['related_brands']['#weight'] = 3;
+  $form['body']['#weight'] = 4;
+  $form['field_client_location']['#weight'] = 5;
+
+  // Add custom submit handler.
+  $form['actions']['submit']['#submit'][] = 'crealead_client_submit';
+}
+
+/**
+ * Custom submit handler.
+ *
+ * Add newly created Client as reference client to selected brands.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function crealead_client_submit($form, $form_state) {
+  // Nid of freshly created Client node.
+  $new_client_id = $form_state['nid'];
+
+  // Selected brands
+  // Function array_filter() returns values different from zero.
+  $checked_brands_ids = array_filter($form_state['values']['related_brands']);
+
+  // For each selected brand, we link the freshly created Client.
+  foreach ($checked_brands_ids as $brand_id) {
+    $wrapper = entity_metadata_wrapper('node', $brand_id);
+    $clients = $wrapper->field_brand_references->raw();
+    array_push($clients, $new_client_id);
+    $wrapper->field_brand_references->set($clients);
+    $wrapper->save();
+  }
 }
