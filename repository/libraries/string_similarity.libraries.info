@@ -1,0 +1,5 @@
+name = String Similarity
+machine name = string_similarity
+description = Calculate the similarity index between two strings, by Marius Ciotlos (http://www.phpclasses.org/package/3750-PHP-Calculate-the-similarity-of-two-text-strings.html).
+version = 1.0
+files[php][] = letter_pair_similarity.php
