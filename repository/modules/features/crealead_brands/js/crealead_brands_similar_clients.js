@@ -32,7 +32,7 @@
       $('form.node-client-form label:gt(0)').css('color','#ccc');
       $('form.node-client-form input:gt(0)').prop('disabled', true);
       $('#edit-field-client-type select').prop('disabled', true);
-      $('#edit-body textarea').prop('disabled', true);
+      // $('#edit-body textarea').prop('disabled', true);
 
       $("#edit-title").focus(function() {
         $('#similarity-wrapper').show();
@@ -59,6 +59,8 @@
               // We show instructions only if ajax request return clients names.
               if (data.indexOf('no-result') === -1) {
                 $('#similarity-instructions').show();
+
+                // Handles click on a Client name from the similar clients list.
                 $('#similar-clients-list a').click(function () {
                   if ($('#edit-related-brands input[type="checkbox"]:checked').length) {
                     var clientId = $(this).attr('name');
@@ -80,7 +82,7 @@
         }
       });
 
-      // Handles click on a Client name from the similar clients list.
+      // Handles click on 'Continuer à créer ...' link.
       $('.new-client-link').click(function() {
         $('form.node-client-form label:gt(0)').css('color','inherit');
         $('form.node-client-form input:gt(0)').prop('disabled', false);
