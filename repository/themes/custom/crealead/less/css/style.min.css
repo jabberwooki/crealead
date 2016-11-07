@@ -2081,6 +2081,9 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--blog,body.node-type-brand #
 body.page-user .user-skills{float:left;margin:5px 5px 5px 0;font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
 .node-type-training .group-training-data .col-md-3,.node-type-training .group-training-data .field-name-field-training-attendees-number,.node-type-training .group-training-data .field-name-field-training-duration{border-right:1px solid #000}
 body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
+.page-espace-co-entrepreneur-trombinoscope .views-field-field-coe-photo{height:150px;overflow:hidden;width:100%;display:table}
+.page-espace-co-entrepreneur-trombinoscope .views-field-field-coe-photo>.field-content{display:table-cell;vertical-align:middle}
+.page-espace-co-entrepreneur-trombinoscope .views-field-field-user-firstname,.page-espace-co-entrepreneur-trombinoscope .views-field-field-user-lastname{text-align:center}
 .node-type-training .field-name-field-brand-logo img{margin-right:20px}
 @media screen{.node-type-training .training-email-label{display:none}
 .node-type-training .training-email-address a{text-indent:-6000px;display:block;background:url(../images/contact-crealead.png) no-repeat;width:175px;height:31px;z-index:10;margin-top:25px}
