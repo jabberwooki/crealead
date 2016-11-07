@@ -162,7 +162,7 @@ function crealead_brands_node_presave($node) {
   if ($node->type == 'brand') {
     $referer = request_uri();
     // --- Technical field_brand_search field handling --- //
-    if ($referer != '/node/add/client' && !strstr($referer, 'crealead_brands_link_registered_client')) {
+    if ($referer != '/node/add/client' && !strstr($referer, 'crealead_brands_link_registered_client') && $referer != '/node/add/achievement') {
       $coe_names = '';
       $coe_competencies = '';
       $brand_description = '';
@@ -583,6 +583,29 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
   else {
     $form['field_related_sector_brands']['#access'] = FALSE;
   }
+
+  // Add form field related_brands
+  // Seek brands belonging to current user.
+  $query = db_select('node','n')
+    ->fields('n', array('nid','title'))
+    ->condition('n.status', 1)
+    ->condition('n.type', 'brand')
+    ->condition('n.uid', $form['uid']);
+  $result = $query->execute()->fetchAll();
+
+  $options = array();
+  foreach ($result as $item) {
+    $options[$item->nid] = $item->title;
+  }
+
+  $form['related_brands'] = array(
+    '#type' => 'checkboxes',
+    '#title' => 'Rattacher le client à l\'une des marques suivantes',
+    '#options' => $options,
+  );
+
+  // Add custom submit handler.
+  $form['actions']['submit']['#submit'][] = 'crealead_achievement_submit';
 }
 
 function crealead_achievements_get_parent_brands($achiev_id) {
@@ -774,4 +797,26 @@ function crealead_brands_link_registered_client() {
   ));
 
   drupal_goto('/node/' . $brand_nid);
+}
+
+function crealead_achievement_submit($form, $form_state) {
+  // Nid of freshly created Achievement node.
+  $new_achiev_id = $form_state['nid'];
+
+  // Selected brands handling.
+  // $form_state['values']['related_brands'] doesn't exist if new client is being created
+  // from the brand's page, via popup.
+  // Function array_filter() returns values different from zero.
+  if (isset($form_state['values']['related_brands'])) {
+    $checked_brands_ids = array_filter($form_state['values']['related_brands']);
+
+    // For each selected brand, we link the freshly created Client.
+    foreach ($checked_brands_ids as $brand_id) {
+      $wrapper = entity_metadata_wrapper('node', $brand_id);
+      $clients = $wrapper->field_brand_achievements->raw();
+      array_push($clients, $new_achiev_id);
+      $wrapper->field_brand_achievements->set($clients);
+      $wrapper->save();
+    }
+  }
 }
