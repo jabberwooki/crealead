@@ -20,7 +20,34 @@ function crealead_brands_init() {
     drupal_add_js(array('creaelad_brands_search' => $params), 'setting');
     drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brand_search.js');
   }
+  elseif (request_uri() == '/node/add/client') {
+    drupal_add_js(array('crealead_similar_clients' => array('ajaxUrl' => url('ajax/similar_clients'))), 'setting');
+    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands_similar_clients');
+    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands_clients.css');
+  }
+
   drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_sector_brands_menu.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_brands_menu() {
+  $items['ajax/similar_clients'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_brands_similar_clients',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'delivery callback' => 'crealead_brands_similar_clients_list',
+  );
+  $items['crealead_brands_link_registered_client'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_brands_link_registered_client',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
 }
 
 /**
@@ -135,7 +162,7 @@ function crealead_brands_node_presave($node) {
   if ($node->type == 'brand') {
     $referer = request_uri();
     // --- Technical field_brand_search field handling --- //
-    if ($referer != '/node/add/client') {
+    if ($referer != '/node/add/client' && !strstr($referer, 'crealead_brands_link_registered_client')) {
       $coe_names = '';
       $coe_competencies = '';
       $brand_description = '';
@@ -588,6 +615,13 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
   return $sector_brands_options;
 }
 
+/**
+ * Implements hook_form_FORM_ID_form_alter().
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
 function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form_id) {
   // Seek brands belonging to current user.
   $query = db_select('node','n')
@@ -607,18 +641,21 @@ function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form
     '#markup' => '<p class="info-text">Décrivez le client en utilisant sa propre communication officielle. Ne décrivez pas ce que vous avez réalisé pour lui.</p>',
   );
 
-  // Add form field related_brands
-  $form['related_brands'] = array(
-    '#type' => 'checkboxes',
-    '#title' => 'Rattacher ce client aux marques suivantes',
-    '#options' => $options,
-  );
+  // Add form field related_brands (but not when new client is created from brand page via popup).
+  if (!isset($_GET['render'])) {
+    $form['related_brands'] = array(
+      '#type' => 'checkboxes',
+      '#title' => 'Rattacher le client à l\'une des marques suivantes',
+      '#options' => $options,
+    );
+
+    $form['related_brands']['#weight'] = 1;
+  }
 
   // Reorder form fields
   $form['info_text']['#weight'] = -1;
-  $form['field_client_logo']['#weight'] = 1;
-  $form['field_client_type']['#weight'] = 2;
-  $form['related_brands']['#weight'] = 3;
+  $form['field_client_logo']['#weight'] = 2;
+  $form['field_client_type']['#weight'] = 3;
   $form['body']['#weight'] = 4;
   $form['field_client_location']['#weight'] = 5;
 
@@ -638,16 +675,103 @@ function crealead_client_submit($form, $form_state) {
   // Nid of freshly created Client node.
   $new_client_id = $form_state['nid'];
 
-  // Selected brands
+  // Selected brands handling.
+  // $form_state['values']['related_brands'] doesn't exist if new client is being created
+  // from the brand's page, via popup.
   // Function array_filter() returns values different from zero.
-  $checked_brands_ids = array_filter($form_state['values']['related_brands']);
+  if (isset($form_state['values']['related_brands'])) {
+    $checked_brands_ids = array_filter($form_state['values']['related_brands']);
 
-  // For each selected brand, we link the freshly created Client.
-  foreach ($checked_brands_ids as $brand_id) {
-    $wrapper = entity_metadata_wrapper('node', $brand_id);
-    $clients = $wrapper->field_brand_references->raw();
-    array_push($clients, $new_client_id);
-    $wrapper->field_brand_references->set($clients);
-    $wrapper->save();
+    // For each selected brand, we link the freshly created Client.
+    foreach ($checked_brands_ids as $brand_id) {
+      $wrapper = entity_metadata_wrapper('node', $brand_id);
+      $clients = $wrapper->field_brand_references->raw();
+      array_push($clients, $new_client_id);
+      $wrapper->field_brand_references->set($clients);
+      $wrapper->save();
+    }
   }
+}
+
+/**
+ * Return both Client name (passed on by GET request during ajax call) and similar registered Client names.
+ * Callback function for 'ajax/similar_clients' menu item.
+ *
+ * @return array Array containing 1) the Client name and 2) a child array containing registered Client names.
+ *
+ * @see crealead_brands_menu().
+ */
+function crealead_brands_similar_clients() {
+  watchdog('similar_clients', 'dans crealead_brands_similar_clients : ' . $_GET['clientName']);
+  $library = libraries_load('string_similarity');
+
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
+    ->condition('n.status', 1)
+    ->condition('n.type', 'client');
+  $similar_client_names = $query->execute()->fetchAllKeyed(0, 1);
+
+  return array('new_client_name' => $_GET['clientName'], 'similar_client_names' => $similar_client_names);
+}
+
+/**
+ * Return an HTML unordered list of sufficiently similar Client clickable names.
+ * Delivery callback function for 'ajax/similar_clients' menu item.
+ * @param array $comparison_data
+ */
+function crealead_brands_similar_clients_list(array $comparison_data) {
+
+  $similar_client_names = $comparison_data['similar_client_names'];
+  $new_client_name = $comparison_data['new_client_name'];
+  watchdog('similar_clients', 'dans crealead_brands_similar_clients_list : nombre de clients = ' . count($similar_client_names));
+
+  $similar_clients_list = '';
+  foreach ($similar_client_names as $client_id => $client_name) {
+    $comparison = new LetterPairSimilarity;
+    $value = $comparison->compareStrings($client_name, $new_client_name);
+    if ($value >= 0.25) {
+      $similar_clients_list .= '<li>'
+        . '<a class="registered-client" name="' . $client_id .'">'
+        . $client_name
+        . '</a>'
+        . ' ('
+        . number_format(round($value, 2), 2)
+        .')</li>';
+    }
+  }
+
+  if ($similar_clients_list == '') {
+    print '<p class="no-result">Pas de client avec un nom identique ou proche.<br />Vous pouvez continuer à saisir ce nouveau client.</p>';
+  }
+  else {
+    print '<ul>' . $similar_clients_list . '</ul>';
+  }
+}
+
+/**
+ * Links an already registered Client to the selected brand.
+ * Callback function for 'crealead_brands_link_registered_client' menu item
+ *
+ * @see crealead_brands_menu().
+ */
+function crealead_brands_link_registered_client() {
+  $brand_nid = arg(1);
+  $client_nid = arg(2);
+
+  $brand_wrapper = entity_metadata_wrapper('node', $brand_nid);
+  $brand_name = $brand_wrapper->title->value();
+  $clients = $brand_wrapper->field_brand_references->raw();
+  array_push($clients, $client_nid);
+  $brand_wrapper->field_brand_references->set($clients);
+  $brand_wrapper->save();
+
+  $client_wrapper = entity_metadata_wrapper('node', $client_nid);
+  $client_name = $client_wrapper->title->value();
+
+  drupal_set_message(
+    t('Le client <b>@client_name</b> a bien été ajouté à la marque <b>@brand_name</b>',
+    array('@client_name' => $client_name, '@brand_name' => $brand_name)
+  ));
+
+  drupal_goto('/node/' . $brand_nid);
 }
