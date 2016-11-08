@@ -1361,6 +1361,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .carousel-control{position:absolute;top:0;left:0;bottom:0;width:15%;opacity:.5;filter:alpha(opacity=50);font-size:20px;background-color:rgba(0,0,0,0)}
 .carousel-control.left{background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)}
 .carousel-control.right{left:auto;right:0;background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.left,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.right,html.js input.form-autocomplete{background-image:none}
 .carousel-control:focus,.carousel-control:hover{outline:0;color:#fff;text-decoration:none;opacity:.9;filter:alpha(opacity=90)}
 .carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next,.carousel-control .icon-prev{position:absolute;top:50%;margin-top:-10px;z-index:5;display:inline-block}
 .carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{left:50%;margin-left:-10px}
@@ -1450,7 +1451,6 @@ td.visible-print,th.visible-print{display:table-cell!important}
 }
 html.overlay-open .navbar-fixed-top{z-index:400}
 html.js fieldset.collapsed{border-left-width:1px;border-right-width:1px;height:auto}
-html.js input.form-autocomplete{background-image:none}
 html.js .autocomplete-throbber{background-position:100% 2px;background-repeat:no-repeat;display:inline-block;height:15px;margin:2px 0 0 2px;width:15px}
 html.js .autocomplete-throbber.throbbing{background-position:100% -18px}
 body{position:relative}
@@ -1681,7 +1681,7 @@ div.service-links a{float:left;margin-right:10px}
 .glyphicon,.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px;color:#777;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;text-transform:none}
 .glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{position:relative;top:1px}
 .glyphicon-h3-a>h3>span>a:hover:before{text-decoration:none}
-#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{top:1px;font-style:normal;text-decoration:inherit;line-height:1em;text-align:center;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{top:1px;text-decoration:inherit;line-height:1em;font-style:normal;text-align:center;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 [class*=" iconafter-"]:after{position:relative;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-transform:none;color:#777}
 .icon-facebook:before{content:"\e85f";color:#154EA8}
 .icon-twitter:before{content:"\e860";color:#0C93FC}
@@ -1950,6 +1950,8 @@ body.node-type-brand .main-container.main-container-with-header .group-brand-tab
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_item.active a,body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive.active a{background-color:#bf0e38}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:first-child a{border-radius:6px 0 0 6px}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:last-child a{border-radius:0 6px 6px 0}
+body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-footer a,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-footer a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;float:right;text-align:center}
+body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-footer a:before,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-footer a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups{display:none;float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-item{margin-bottom:5px}
@@ -1982,7 +1984,6 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-conte
 body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title{text-align:center}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title a{color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control{width:5%}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.left,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.right{background-image:none}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title{text-align:left}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title h3{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:0;font-size:1.4em;font-weight:700}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .slide-counter{font-family:Quicksand,sans-serif;font-weight:700;margin:15px 0}
