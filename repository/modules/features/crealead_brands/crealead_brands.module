@@ -22,7 +22,7 @@ function crealead_brands_init() {
   }
   elseif (request_uri() == '/node/add/client') {
     drupal_add_js(array('crealead_similar_clients' => array('ajaxUrl' => url('ajax/similar_clients'))), 'setting');
-    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands_similar_clients');
+    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands_similar_clients.js');
     drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands_clients.css');
   }
 
