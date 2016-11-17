@@ -51,6 +51,27 @@ function kcore_menu_default_menu_links() {
     'weight' => 10,
     'customized' => 1,
   );
+  // Exported menu link: management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table.
+  $menu_links['management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/structure/entityform_types/manage/site_contact/submissions/autofields_table',
+    'router_path' => 'admin/structure/entityform_types/manage/%/submissions',
+    'link_title' => 'Listing des contacts',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -30,
+    'customized' => 1,
+    'parent_identifier' => 'management_administration:admin',
+  );
   // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -97,6 +118,7 @@ function kcore_menu_default_menu_links() {
   t('Accueil');
   t('Contact');
   t('Découvrez l\'offre des<br>co-entrepreneurs');
+  t('Listing des contacts');
   t('Plan du site');
 
   return $menu_links;
