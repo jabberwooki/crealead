@@ -110,7 +110,7 @@ function crealead_articles_views_pre_render(&$view) {
         continue;
       }
       else {
-        $view->footer['area']->options['content'] = l(
+        $view->header['area']->options['content'] = l(
           'Ajouter un article',
           '/node/add/article/' . $current_brand->nid,
           array('query' => array('destination' => current_path()))

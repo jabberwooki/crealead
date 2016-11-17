@@ -145,14 +145,14 @@ function crealead_news_views_pre_render(&$view) {
     $current_brand = $view->current_entity;
     $wrapper = entity_metadata_wrapper('node', $current_brand);
     $brand_coes = $wrapper->field_brand_coes->value();
-
+dpm($view);
     global $user;
     foreach ($brand_coes as $brand_coe) {
       if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
         continue;
       }
       else {
-        $view->footer['area']->options['content'] = l(
+        $view->header['area']->options['content'] = l(
           'Ajouter une actualité',
           '/node/add/news/' . $current_brand->nid,
           array('query' => array('destination' => current_path()))
