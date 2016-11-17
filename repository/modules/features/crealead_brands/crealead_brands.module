@@ -672,11 +672,11 @@ function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form
       '#options' => $options,
     );
 
-    $form['related_brands']['#weight'] = 1;
+    $form['related_brands']['#weight'] = -1;
   }
 
   // Reorder form fields
-  $form['info_text']['#weight'] = -1;
+  $form['info_text']['#weight'] = -10;
   $form['field_client_logo']['#weight'] = 2;
   $form['field_client_type']['#weight'] = 3;
   $form['body']['#weight'] = 4;
@@ -757,9 +757,10 @@ function crealead_brands_similar_clients_list(array $comparison_data) {
         . '<a class="registered-client" name="' . $client_id .'">'
         . $client_name
         . '</a>'
-        . ' ('
-        . number_format(round($value, 2), 2)
-        .')</li>';
+//        . ' ('
+//        . number_format(round($value, 2), 2)
+//        .')'
+        . '</li>';
     }
   }
 
@@ -767,7 +768,8 @@ function crealead_brands_similar_clients_list(array $comparison_data) {
     print '<p class="no-result">Pas de client avec un nom identique ou proche.<br />Vous pouvez continuer à saisir ce nouveau client.</p>';
   }
   else {
-    print '<ul>' . $similar_clients_list . '</ul>';
+    print '<p class="question">S\'agit-il d\'un de ces clients ?</p>' .
+    '<ul>' . $similar_clients_list . '</ul>';
   }
 }
 
@@ -820,3 +822,4 @@ function crealead_achievement_submit($form, $form_state) {
     }
   }
 }
+

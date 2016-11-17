@@ -20,17 +20,40 @@
 #similar-clients-check-link {
     margin: 1em 0;
 }
+p.question {
+    font-weight: bold;
+}
+
 #similar-clients-list a {
     cursor: pointer;
 }
-#similarity-instructions {
-    margin-top: 1em;
+#similarity-yes-no {
+    margin-top: 2em;
 }
-#similarity-instructions ol {
+#similarity-yes-no a,
+#similarity-continue a {
+    cursor: pointer;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+    padding: 6px 10px;
+    margin: 0 1em;
+    font-size: 110%;
+    color: white;
+}
+a.yes {
+    background-color: #0a6700;
+}
+a.no {
+    background-color: #b73939;
+}
+a.continue {
+    background-color: #4d8f46;
+}
+/*#similarity-instructions ol {*/
 
-}
-#similarity-instructions ol li {
-}
+/*}*/
+/*#similarity-instructions ol li {*/
+/*}*/
 
 a.new-client-link {
 }

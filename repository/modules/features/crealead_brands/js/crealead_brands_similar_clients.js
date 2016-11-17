@@ -4,6 +4,7 @@
 
 (function ($) {
   Drupal.behaviors.crealeadSimilarClients = {
+    /////////////////////////////////// INITIAL HTML CODE PROCESSING ///////////////////////////////////////////////////
     attach: function (context, settings) {
       // Creates the HTML zone dedicated to Client similarity processing.
       $("#edit-title").parent().append(
@@ -11,35 +12,50 @@
             '<div id="similar-clients-check-link"><a>Vérifier si ce client n\'existe pas déjà</a></div>' +
             '<div id="similar-clients-list" class="clearfix"></div>' +
             '<div id="similar-clients-list-error-msg"></div>' +
+            '<div id="similarity-yes-no">' +
+            '<a class="yes">OUI</a> <a class="no">NON</a>' +
+            '</div>' +
             '<div id="similarity-instructions">' +
-              '<p>' +
-                'Vous pouvez :' +
-              '</p>' +
-              '<ol>' +
-                '<li>Rattacher un des clients existants à l\'une de vos marques en :</li>' +
-                  '- cochant cette marque ci-dessous,<br />' +
-                  '- puis en cliquant sur le nom du client dans la liste.' +
-                '</li>' +
-                '<li><a href="#" class="new-client-link">Continuer à créer ce nouveau client</a></li>' +
-                '<li><a href="/">Revenir à la page d\'accueil</a></li>' +
-              '</ol>' +
+            '<p>Cliquez sur le nom du client voulu dans la liste ci-dessus et il sera automatiquement rattaché aux marques sélectionnées.</p>' +
+            '</div>' +
+            '<div id="similarity-continue">' +
+            '<a class="continue">CONTINUER</a>' +
             '</div>' +
           '</div>'
         );
 
       // Handles display/hiding of HTML elements on first arrival.
+      $('#similarity-yes-no').hide();
+      $('#similarity-continue').hide();
       $('#similarity-instructions').hide();
-      $('form.node-client-form label:gt(0)').css('color','#ccc');
-      $('form.node-client-form input:gt(0)').prop('disabled', true);
-      $('#edit-field-client-type select').prop('disabled', true);
-      // $('#edit-body textarea').prop('disabled', true);
+      $('.form-item-title label').css('color', '#ccc');
+      $('.form-item-title input').prop('disabled', true);
+      hideClientFullForm();
 
+      ///////////////////////////////// USER ACTIONS PROCESSING ////////////////////////////////////////////////////////
+
+      // Handles the unicity of Brand names checkbox field.
+      $('#edit-related-brands input[type="checkbox"]').on('change', function() {
+        $('#edit-related-brands input[type="checkbox"]').not(this).prop('checked', false);
+        $('#similar-clients-list-error-msg').html('');
+      });
+
+      // Handles Similarity info area.
       $("#edit-title").focus(function() {
         $('#similarity-wrapper').show();
         $("#similar-clients-check-link a").show();
         $('#similar-clients-list').html('');
+        $('#similarity-yes-no').hide();
+        $('#similarity-continue').hide();
         $('#similarity-instructions').hide();
+        hideClientFullForm();
       });
+
+      // Enables title field when brand name is clicked.
+      $('#edit-related-brands input').click(function () {
+        $('.form-item-title label').css('color', 'inherit');
+        $('.form-item-title input').prop('disabled', false);
+      })
 
       // Launches the Client name similarity checking
       $("#similar-clients-check-link a").click(function () {
@@ -56,12 +72,14 @@
             success: function(data) {
               $('#similar-clients-list').html(data);
               $("#similar-clients-check-link a").hide();
+
               // We show instructions only if ajax request return clients names.
               if (data.indexOf('no-result') === -1) {
-                $('#similarity-instructions').show();
+                $('#similarity-yes-no').show();
 
                 // Handles click on a Client name from the similar clients list.
                 $('#similar-clients-list a').click(function () {
+                  console.log('toto');
                   if ($('#edit-related-brands input[type="checkbox"]:checked').length) {
                     var clientId = $(this).attr('name');
                     $('#edit-related-brands input[type="checkbox"]').each(function () {
@@ -75,27 +93,55 @@
                   }
                 });
               }
-              $('#edit-related-brands').parent().find('label').css('color','inherit');
-              $('#edit-related-brands').find('input[type="checkbox"]').prop('disabled', false);
+              else {
+                $('#similarity-continue').show();
+
+                $('#similarity-continue').click(function () {
+                  $(this).hide();
+                  showClientFullForm();
+                });
+              }
             }
           });
         }
       });
 
-      // Handles click on 'Continuer à créer ...' link.
-      $('.new-client-link').click(function() {
-        $('form.node-client-form label:gt(0)').css('color','inherit');
-        $('form.node-client-form input:gt(0)').prop('disabled', false);
-        $('#edit-field-client-type select').prop('disabled', false);
-        $('#edit-body textarea').prop('disabled', false);
-        $('#similarity-wrapper').hide();
+      // Handles click on NO button.
+      $('#similarity-yes-no a.no').click(function () {
+        $(this).hide();
+        $('#similarity-yes-no a.yes').hide();
+        showClientFullForm();
       });
 
-      // Handles the unicity of Brand names checkbox field.
-      $('#edit-related-brands input[type="checkbox"]').on('change', function() {
-        $('#edit-related-brands input[type="checkbox"]').not(this).prop('checked', false);
-        $('#similar-clients-list-error-msg').html('');
+      // Handles click on YES button.
+      $('#similarity-yes-no a.yes').click(function () {
+        $(this).hide();
+        $('#similarity-yes-no a.no').hide();
+        $('#similarity-instructions').show();
       });
+
+      function showClientFullForm() {
+        $('#similar-clients-list').html('');
+        $('form.node-client-form input, select').each(function () {
+          var elementId = $(this).attr('id');
+          if (elementId && elementId != 'edit-title' && elementId.indexOf('edit-related-brands-') === -1) {
+            $(this).parents('.form-wrapper').show();
+          }
+        });
+        $('#edit-body').show();
+        $('.vertical-tabs').show();
+      }
+
+      function hideClientFullForm() {
+        $('form.node-client-form input, select').each(function () {
+          var elementId = $(this).attr('id');
+          if (elementId && elementId != 'edit-title' && elementId.indexOf('edit-related-brands-') === -1) {
+            $(this).parents('.form-wrapper').hide();
+          }
+        });
+        $('#edit-body').hide();
+        $('.vertical-tabs').hide();
+      }
     }
   };
 }(jQuery));
