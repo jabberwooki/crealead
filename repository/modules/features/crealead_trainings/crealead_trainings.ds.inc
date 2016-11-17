@@ -308,10 +308,12 @@ function crealead_trainings_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_training_related_brands' => array(
       'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h3',
+        'class' => '',
         'ft' => array(),
+        'field_formatter_class' => '',
       ),
     ),
   );

@@ -887,8 +887,9 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
+          'trim_length' => 100,
         ),
-        'type' => 'text_default',
+        'type' => 'text_trimmed',
         'weight' => 4,
       ),
       'sector_brand_block' => array(
@@ -1103,8 +1104,9 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
+          'trim_length' => 100,
         ),
-        'type' => 'text_default',
+        'type' => 'text_trimmed',
         'weight' => 2,
       ),
       'sector_brand_block' => array(
