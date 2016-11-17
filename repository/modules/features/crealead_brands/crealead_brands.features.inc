@@ -215,7 +215,7 @@ function crealead_brands_node_info() {
       'base' => 'node_content',
       'description' => t('Une référence client.'),
       'has_title' => '1',
-      'title_label' => t('Nom'),
+      'title_label' => t('Nom du client'),
       'help' => '',
     ),
   );
