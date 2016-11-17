@@ -403,6 +403,26 @@ body.node-type-brand {
       }
 
     }
+    .view-display-id-brand_articles, .view-display-id-brand_news{
+      .view-header{
+        clear: both;
+        a{
+          display: inline-block;
+          background-color: @rouge-crealead;
+          padding: 6px 12px;
+          border-radius: 4px;
+          color: #FFF;
+          font-weight: bold;
+          text-align: center;
+          &:before{
+            .glyphicon();
+            font-size: 1em;
+            content: "\e834"; /* icon arrow right */
+            color: white;
+          }
+        }
+      }
+    }
   }
   /* Page des infos générales ********************************************************/
   #bootstrap-fieldgroup-nav-item--informations-gnrales {
