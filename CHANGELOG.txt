@@ -1,3 +1,91 @@
+Crealead 3.1 / 2016-11-18
+=========================
+V2 - Sprint 5 release
+
+ * kcore up: Entityform permissions added for 'Pole gestion' and 'Webmaster' roles.
+ * kcore up: New link's 'Listing des contacts' weight altered.
+ * kcore up: New link 'Liste des contacts' added.
+ * crealead_articles and crealead_news up: New links 'Ajouter une actu (un article)' moved from footer to header of correspondings view blocks in brand's Blog tab.
+ * crealead_trainings up: All rich text fields truncated to 100 chars.
+ * crealead_brands up: Title field label changed to 'Nom du client'.
+ * crealead_brands up: New client add form ergonomy recoded.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_brands up: Fixes 404 error on staging server: javascript file for client similarity checking wrongly named crealead_brands_similar_clients (without .js extension) in drupal_add_js() loading.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * crealead_brands up: When created from /node/add/achievement, the new achievement is directly linkable to user brands.
+ * kbootstrap up: jQuery version changed from 1.5 to 1.7 to remove ajax call bug in Client name similary checking.
+ * crealead_brands up: Client name similarity checking mechanism implemented.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Install profile up: PHP library for string similarity added.
+ * crealead_brands up: Title altered in view's display brands/client_brands.
+ * crealead_brands up: When created from /node/add/client, the new client is linked to brands selected in add form.
+ * crealead_news up: Sorting criterion field_sorting_date DESC added.
+ * FEATURES MODULE BUG FIXING.
+ * crealead_articles up: New link 'Ajouter un article' added at the bottom of articles block in brands Blog tab.
+ * crealead_news up: New link 'Ajouter une actualité' re-added at the bottom of news block in brands Blog tab, after broken views debug.
+ * Revert "crealead_news up: New link 'Ajouter une actualité' added at the bottom of news block in brands Blog tab."
+ * crealead_news up: New link 'Ajouter une actualité' added at the bottom of news block in brands Blog tab.
+ * crealead_profiles up: missing Trombinoscope view's relation label 'Utilisateur' added.
+ * crealead_profile up: Permission added to view 'Trombinoscope'.
+ * crealead_profiles up: Trombinoscope page and menu link created.
+ * crealead_brands up: Business sectors field can no longer be altered by non allowed users after brand validation.
+ * crealead_trainings and crealead_brands up: Info text 'une lettre suffit' added to brand search field.
+ * crealead_trainings up: Fields 'Formateur' and 'Marque (logo)' added to training items in trainings catalog.
+ * kcore up: New DS view mode 'list' created.
+ * kcore up: Rules Rule 'Email de contact du site' altered. Email sent to contact@crealed.com + christophe.espiau@laposte.net to track web site contacts.
+ * crealead_brands up: Info text added at top of Client add/edit form.
+ * crealead_brands up: 'References' label changed into 'Clients' in add/edit form.
+ * crealead_documents up: permissions altered: Access Filedepot permission removed from authenticated user and  added to referent and Certif LR roles.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * crealead_brands up: 'Pole gestion' role now can see coes contacts list.
+ * crealead_brands up: Business sectors field cardinality limited to 3.
+ * Feature kcore up to add admin custom css.
+ * LESS and CSS modified to hide text too long in 2 an 3 firsts news.
+ * CSS added for admin theme.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * Custom theme up: Facebook tracking code added in html.tpl.php
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * LESS and CSS up.
+ * crealead_articles up: Related brands names added to ds full mode."
+ * crealead_news up: Related brand names added to news ds full mode.
+ * kcore up: User login block added to 'Espace co-entrepreneurs'.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * crealead_brands up: Brands search mechanism altered: Fields body and field_brand_tags added, and corresponding info added in field descriptions.
+ * LESS and CSS up.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * Feature crealead_trainings to add a wrapper in teaser view mode.
+ * LESS and CSS up.
+ * crealead_brands up: Sector brand taxonomy page reorganised: News and Articles moved to page top.
+ * crealead_trainings up: Display mode teaser altered: Training title changed from h2 to h3.
+ * kcore up: Missing main menu item 'Découvrez...' added.
+ * crealead_trainings up: View display trainings/list_page updated.
+ * crealead_trainings up : New fields Domaine and Cibles added. New view display trainins/list_page with exposed filters added.
+ * kcore up: Main menu item Découvrez... word wrap altered.
+ * crealead_brands up: Main menu item 'Nos prestataires...' added.
+ * kcore up: Main menu item 'Découvrez ...' and its jquery non clickable behavior added.
+ * Feature crealead_info_meetings up to add taxonomy vocabulary domaine_activite as filter.
+ * Feature crealead_info_meetings up to add taxonomy vocabulary domaine_activite.
+ * LESS and CSS up to improve brands print layout.
+ * LESS and CSS up.
+ * feature kpages up to add social links to basic page content type.
+ * Feature crealead_social up to add social links to basic page content type
+ * Feature crealead_info_meetings up to translate email courriel???
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_info_meetings feature up to activate views_data_export
+ * drupal-org.make up to add views_data_export module
+ * Feature crealead_info_meetings to add view stats and csv export.
+ * Feature kcore up to change short date format (hours and minutes removed).
+ * Feature crealead_news up to show results under the waterline.
+ * Merge tag 'v3.0' into develop
+
 Crealead 3.0 - 2016-10-06
 -------------------------
  * Feature /crealead_info_meetings up to delete menu item 'Statistiques des inscriptions'.
