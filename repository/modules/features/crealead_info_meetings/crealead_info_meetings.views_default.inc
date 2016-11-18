@@ -428,11 +428,13 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_info_meeting_date']['settings'] = array(
-    'format_type' => 'medium',
+    'format_type' => 'news_long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
   );
   /* Field: Global: Math expression */
   $handler->display->display_options['fields']['expression']['id'] = 'expression';
