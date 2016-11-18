@@ -794,6 +794,8 @@ function kcore_user_default_permissions() {
     'name' => 'edit any entityform',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'entityform',
   );
@@ -1140,6 +1142,9 @@ function kcore_user_default_permissions() {
     'name' => 'view any entityform',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'entityform',
   );

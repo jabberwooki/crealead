@@ -283,7 +283,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_landing_pages_tid']['id'] = 'field_landing_pages_tid';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['table'] = 'field_data_field_landing_pages';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['field'] = 'field_landing_pages_tid';
-  $handler->display->display_options['relationships']['field_landing_pages_tid']['label'] = 'terme à partir de field_landing_pages';
   $handler->display->display_options['relationships']['field_landing_pages_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Thématique(s) concernée(s) (field_landing_pages) */
@@ -314,6 +313,10 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
@@ -333,7 +336,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
-  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['label'] = 'terme à partir de field_related_sector_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -372,15 +374,15 @@ function crealead_brands_views_default_views() {
     t('(créé par [name])'),
     t('Réalisations d\'une thématique'),
     t('<h3>Nos réalisations</h3>'),
-    t('terme à partir de field_landing_pages'),
+    t('term from field_landing_pages'),
     t('Réalisations d\'une marque sectorielle'),
     t('Éléments par page'),
     t('Décalage'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('terme à partir de field_related_sector_brands'),
+    t('« premier'),
+    t('‹ précédent'),
+    t('suivant ›'),
+    t('dernier »'),
+    t('term from field_related_sector_brands'),
   );
   $export['achievements'] = $view;
 
@@ -1070,6 +1072,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -1078,7 +1081,9 @@ function crealead_brands_views_default_views() {
     14479344 => 0,
     103860121 => 0,
     191976793 => 0,
+    259028912 => 0,
     7178059 => 0,
+    157297110 => 0,
     31497918 => 0,
     231346920 => 0,
     193262079 => 0,
@@ -1173,7 +1178,7 @@ function crealead_brands_views_default_views() {
   /* Display: Marques d'un client */
   $handler = $view->new_display('block', 'Marques d\'un client', 'client_brands');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Entrepreneurs ayant travaillé pour cette référence';
+  $handler->display->display_options['title'] = 'Entrepreneurs ayant travaillé pour ce client';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '4';
@@ -1669,7 +1674,6 @@ function crealead_brands_views_default_views() {
     'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required'] = 'Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats';
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'pagerer';
@@ -1680,6 +1684,10 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
@@ -1709,7 +1717,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
-  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['label'] = 'terme à partir de field_related_sector_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -1799,13 +1806,14 @@ function crealead_brands_views_default_views() {
     t('Cliquez sur un secteur d\'activité :'),
     t('Mots-clés'),
     t('Marque'),
+    t('Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Marques d\'un coe'),
     t('field collection item from field_brand_coes'),
     t('author'),
     t('Name'),
     t('Uid'),
     t('Marques d\'un client'),
-    t('Entrepreneurs ayant travaillé pour cette référence'),
+    t('Entrepreneurs ayant travaillé pour ce client'),
     t('Content entity referenced from field_brand_references'),
     t('Marques d\'une actu'),
     t('Marque à afficher dans le formulaire de création/modification d\'une actu.'),
@@ -1823,13 +1831,8 @@ function crealead_brands_views_default_views() {
     t('Marque à afficher dans le formulaire de création/modification d\'une formation.'),
     t('Marques d\'une marque sectorielle'),
     t('Les marques'),
-    t('Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
     t('Aucune marque ne correspond à vos critères de recherche.'),
-    t('terme à partir de field_related_sector_brands'),
+    t('term from field_related_sector_brands'),
   );
   $export['brands'] = $view;
 
@@ -2155,7 +2158,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences et spécialités */
+  /* Field: Field: Compétences */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
@@ -2221,10 +2224,14 @@ function crealead_brands_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Les marques sectorielles';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -2288,13 +2295,14 @@ function crealead_brands_views_default_views() {
   $translatables['sector_brands'] = array(
     t('Master'),
     t('Les marques sectorielles'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
     t('Asc'),
     t('Desc'),
     t('Page'),
+    t('more'),
     t('En-tête de marque sectorielle'),
     t('Tout'),
   );

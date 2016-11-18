@@ -25,3 +25,9 @@ function crealead_info_meetings_update_7001() {
     }
   }
 }
+/**
+ * Activate views_data_export module.
+ */
+function crealead_info_meetings_update_7002() {
+  module_enable(array('views_data_export'));
+}

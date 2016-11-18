@@ -29,6 +29,14 @@ function kpages_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'service_links_displays_group' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'sld_group_image',
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|page|full'] = $ds_fieldsetting;
 
@@ -53,16 +61,18 @@ function kpages_ds_layout_settings_info() {
       'central' => array(
         0 => 'group_row',
         1 => 'title',
-        2 => 'body',
-        3 => 'field_files',
-        4 => 'field_galleries',
-        5 => 'field_videos',
-        6 => 'group_col8',
+        2 => 'service_links_displays_group',
+        3 => 'body',
+        4 => 'field_files',
+        5 => 'field_galleries',
+        6 => 'field_videos',
+        7 => 'group_col8',
       ),
     ),
     'fields' => array(
       'group_row' => 'central',
       'title' => 'central',
+      'service_links_displays_group' => 'central',
       'body' => 'central',
       'field_files' => 'central',
       'field_galleries' => 'central',
@@ -78,6 +88,7 @@ function kpages_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '1',
     'page_option_title' => '',
   );

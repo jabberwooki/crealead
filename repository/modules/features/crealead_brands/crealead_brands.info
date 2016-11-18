@@ -193,6 +193,7 @@ features[image][] = realisation
 features[image][] = thumbnail_50x50
 features[image][] = width_260
 features[menu_links][] = main-menu_les-marquesbr-sectorielles:marques-sectorielles
+features[menu_links][] = main-menu_nos-prestatairesbret-artisans:annuaire-entrepreneurs
 features[menu_links][] = main-menu_thmatiques:thematiques
 features[node][] = achievement
 features[node][] = brand

@@ -57,11 +57,12 @@ function crealead_news_field_group_info() {
     'weight' => '34',
     'children' => array(
       0 => 'body',
-      1 => 'field_news_author',
-      2 => 'field_coentrepreneurs',
+      1 => 'field_coentrepreneurs',
+      2 => 'field_news_author',
       3 => 'field_news_date',
       4 => 'field_sector',
-      5 => 'service_links_displays_group',
+      5 => 'field_related_brands',
+      6 => 'service_links_displays_group',
     ),
     'format_type' => 'div',
     'format_settings' => array(

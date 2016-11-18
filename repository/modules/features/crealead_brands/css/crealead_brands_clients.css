@@ -1,0 +1,59 @@
+#similarity-wrapper {
+    font-size: 1.1em;
+}
+#similarity-wrapper .alert-msg {
+    color: red;
+}
+#similar-clients-check-link a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    /*font-weight: bold;*/
+    /*border: 1px solid red;*/
+    background: #4d8f46;
+    /*display: block;*/
+    /*float: left;*/
+    padding: 6px 10px;
+    /*margin: 1em 0;*/
+    font-family: "Lucida Grande",Verdana,sans-serif;
+}
+#similar-clients-check-link {
+    margin: 1em 0;
+}
+p.question {
+    font-weight: bold;
+}
+
+#similar-clients-list a {
+    cursor: pointer;
+}
+#similarity-yes-no {
+    margin-top: 2em;
+}
+#similarity-yes-no a,
+#similarity-continue a {
+    cursor: pointer;
+    text-decoration: none;
+    /*border: 1px solid black;*/
+    padding: 6px 10px;
+    margin: 0 1em;
+    font-size: 110%;
+    color: white;
+}
+a.yes {
+    background-color: #0a6700;
+}
+a.no {
+    background-color: #b73939;
+}
+a.continue {
+    background-color: #4d8f46;
+}
+/*#similarity-instructions ol {*/
+
+/*}*/
+/*#similarity-instructions ol li {*/
+/*}*/
+
+a.new-client-link {
+}

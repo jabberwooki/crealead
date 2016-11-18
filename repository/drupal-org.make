@@ -19,7 +19,7 @@ projects[entity][subdir] = contrib
 projects[entity][version] = "1.6"
 
 projects[features][subdir] = contrib
-projects[features][version] = "2.10"
+projects[features][version] = "2.7"
 
 projects[features_extra][subdir] = contrib
 projects[features_extra][version] = "1.0"
@@ -90,6 +90,9 @@ projects[views][version] = "3.14"
 
 projects[better_exposed_filters][subdir] = contrib
 projects[better_exposed_filters][version] = "3.2"
+
+projects[views_data_export][subdir] = contrib
+projects[views_data_export][version] = "3.1"
 
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.3"

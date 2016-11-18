@@ -29,18 +29,21 @@ function crealead_social_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_category_vocs';
   $strongarm->value = array(
-    3 => 0,
-    10 => 0,
-    7 => 0,
-    8 => 0,
-    14 => 0,
     5 => 0,
-    9 => 0,
-    6 => 0,
+    8 => 0,
     12 => 0,
+    7 => 0,
+    17 => 0,
+    9 => 0,
+    15 => 0,
     4 => 0,
-    11 => 0,
+    10 => 0,
+    6 => 0,
     13 => 0,
+    16 => 0,
+    3 => 0,
+    11 => 0,
+    14 => 0,
   );
   $export['service_links_category_vocs'] = $strongarm;
 
@@ -132,7 +135,14 @@ function crealead_social_strongarm() {
     'diff_standard' => 0,
     'print' => 0,
     'token' => 0,
+    'brand_articles' => 0,
+    'logo' => 0,
+    'sector_brand_block' => 0,
+    'news_2_3' => 0,
+    'news_brand' => 0,
+    'zoom_news' => 0,
     'block' => 0,
+    'landing_page_block' => 0,
     'revision' => 0,
   );
   $export['service_links_link_view_modes'] = $strongarm;
@@ -151,9 +161,13 @@ function crealead_social_strongarm() {
   $strongarm->value = array(
     'news' => 'news',
     'article' => 'article',
+    'page' => 'page',
     'client' => 0,
+    'diapositive' => 0,
+    'filedepot_folder' => 0,
+    'training' => 0,
+    'gazette' => 0,
     'brand' => 0,
-    'page' => 0,
     'achievement' => 0,
     'info_meeting' => 0,
   );
@@ -172,7 +186,14 @@ function crealead_social_strongarm() {
     'diff_standard' => 0,
     'print' => 0,
     'token' => 0,
+    'brand_articles' => 0,
+    'logo' => 0,
+    'sector_brand_block' => 0,
+    'news_2_3' => 0,
+    'news_brand' => 0,
+    'zoom_news' => 0,
     'block' => 0,
+    'landing_page_block' => 0,
     'revision' => 0,
   );
   $export['service_links_node_view_modes'] = $strongarm;

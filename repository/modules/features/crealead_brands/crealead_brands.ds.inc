@@ -328,7 +328,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'achievements_anchor' => array(
-      'weight' => '2',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -340,7 +340,7 @@ function crealead_brands_ds_field_settings_info() {
       ),
     ),
     'brands_products_anchor' => array(
-      'weight' => '0',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -352,7 +352,7 @@ function crealead_brands_ds_field_settings_info() {
       ),
     ),
     'news_articles_anchor' => array(
-      'weight' => '4',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1023,41 +1023,41 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'brands_products_anchor',
-        1 => 'group_sectorbrands_brands_prods',
-        2 => 'achievements_anchor',
-        3 => 'achievements_sector_brand_achievs',
+        0 => 'news_articles_anchor',
+        1 => 'group_sectorbrands_news_articles',
+        2 => 'brands_products_anchor',
+        3 => 'group_sectorbrands_brands_prods',
         4 => 'group_sectorbrands_brands',
-        5 => 'group_sectorbrands_achievments',
+        5 => 'achievements_sector_brand_achievs',
         6 => 'group_sectorbrands_products',
-        7 => 'group_sectorbrands_news',
-        8 => 'news_articles_anchor',
+        7 => 'achievements_anchor',
+        8 => 'group_sectorbrands_news',
         9 => 'news_sector_brand_news',
-        10 => 'group_sectorbrands_news_articles',
+        10 => 'group_sectorbrands_achievments',
         11 => 'group_sectorbrands_articles',
         12 => 'brands_sector_brand_brands_form',
-        13 => 'trainings_sector_brand_trainings',
+        13 => 'articles_sector_brand_articles',
         14 => 'brands_sector_brand_brands',
-        15 => 'articles_sector_brand_articles',
+        15 => 'trainings_sector_brand_trainings',
       ),
     ),
     'fields' => array(
+      'news_articles_anchor' => 'ds_content',
+      'group_sectorbrands_news_articles' => 'ds_content',
       'brands_products_anchor' => 'ds_content',
       'group_sectorbrands_brands_prods' => 'ds_content',
-      'achievements_anchor' => 'ds_content',
-      'achievements_sector_brand_achievs' => 'ds_content',
       'group_sectorbrands_brands' => 'ds_content',
-      'group_sectorbrands_achievments' => 'ds_content',
+      'achievements_sector_brand_achievs' => 'ds_content',
       'group_sectorbrands_products' => 'ds_content',
+      'achievements_anchor' => 'ds_content',
       'group_sectorbrands_news' => 'ds_content',
-      'news_articles_anchor' => 'ds_content',
       'news_sector_brand_news' => 'ds_content',
-      'group_sectorbrands_news_articles' => 'ds_content',
+      'group_sectorbrands_achievments' => 'ds_content',
       'group_sectorbrands_articles' => 'ds_content',
       'brands_sector_brand_brands_form' => 'ds_content',
-      'trainings_sector_brand_trainings' => 'ds_content',
-      'brands_sector_brand_brands' => 'ds_content',
       'articles_sector_brand_articles' => 'ds_content',
+      'brands_sector_brand_brands' => 'ds_content',
+      'trainings_sector_brand_trainings' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

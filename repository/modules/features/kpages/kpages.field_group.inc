@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function kpages_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -28,6 +28,7 @@ function kpages_field_group_info() {
       2 => 'field_galleries',
       3 => 'field_videos',
       4 => 'title',
+      5 => 'service_links_displays_group',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -44,7 +45,7 @@ function kpages_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_col8|node|page|full'] = $field_group;
+  $field_groups['group_col8|node|page|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -76,7 +77,12 @@ function kpages_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_row|node|page|full'] = $field_group;
+  $field_groups['group_row|node|page|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('group col8');
+  t('group row');
+
+  return $field_groups;
 }

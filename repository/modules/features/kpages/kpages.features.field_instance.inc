@@ -10,7 +10,7 @@
 function kpages_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -29,7 +29,7 @@ function kpages_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -93,7 +93,7 @@ function kpages_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_files'
+  // Exported field_instance: 'node-page-field_files'.
   $field_instances['node-page-field_files'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -118,7 +118,7 @@ function kpages_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'file_representation',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -152,7 +152,7 @@ function kpages_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_galleries'
+  // Exported field_instance: 'node-page-field_galleries'.
   $field_instances['node-page-field_galleries'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -177,7 +177,7 @@ function kpages_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'sdl_editor_representation',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -211,7 +211,7 @@ function kpages_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_videos'
+  // Exported field_instance: 'node-page-field_videos'.
   $field_instances['node-page-field_videos'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -236,7 +236,7 @@ function kpages_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'sdl_editor_representation',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

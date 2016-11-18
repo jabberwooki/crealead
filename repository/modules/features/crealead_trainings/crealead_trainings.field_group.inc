@@ -247,6 +247,81 @@ function crealead_trainings_field_group_info() {
   );
   $field_groups['group_training_right_col|node|training|full'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_teaser|node|training|list';
+  $field_group->group_name = 'group_wrapper_teaser';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'list';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group wrapper teaser',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_training_duration',
+      1 => 'field_training_aims',
+      2 => 'field_training_theme',
+      3 => 'field_training_related_brands',
+      4 => 'field_training_teachers',
+      5 => 'field_training_price',
+      6 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group wrapper teaser',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-wrapper-teaser field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_wrapper_teaser|node|training|list'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_teaser|node|training|teaser';
+  $field_group->group_name = 'group_wrapper_teaser';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group wrapper teaser',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_training_aims',
+      1 => 'field_training_duration',
+      2 => 'field_training_price',
+      3 => 'field_training_theme',
+      4 => 'field_training_type',
+      5 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'group wrapper teaser',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-wrapper-teaser field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_wrapper_teaser|node|training|teaser'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Caractéristiques');
@@ -256,6 +331,7 @@ function crealead_trainings_field_group_info() {
   t('En-tête centre');
   t('En-tête droit');
   t('En-tête gauche');
+  t('group wrapper teaser');
 
   return $field_groups;
 }

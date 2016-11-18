@@ -32,6 +32,12 @@ function kcore_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

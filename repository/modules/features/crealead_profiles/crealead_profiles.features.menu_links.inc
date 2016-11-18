@@ -10,17 +10,17 @@
 function crealead_profiles_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_entrepreneurs:entrepreneurs
-  $menu_links['main-menu_entrepreneurs:entrepreneurs'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'entrepreneurs',
-    'router_path' => 'entrepreneurs',
-    'link_title' => 'Entrepreneurs',
+  // Exported menu link: menu-coe-area_trombinoscope:espace-co-entrepreneur/trombinoscope.
+  $menu_links['menu-coe-area_trombinoscope:espace-co-entrepreneur/trombinoscope'] = array(
+    'menu_name' => 'menu-coe-area',
+    'link_path' => 'espace-co-entrepreneur/trombinoscope',
+    'router_path' => 'espace-co-entrepreneur/trombinoscope',
+    'link_title' => 'Trombinoscope',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'main-menu_entrepreneurs:entrepreneurs',
+      'identifier' => 'menu-coe-area_trombinoscope:espace-co-entrepreneur/trombinoscope',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -30,10 +30,10 @@ function crealead_profiles_menu_default_menu_links() {
     'weight' => 2,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
-  t('Entrepreneurs');
-
+  t('Trombinoscope');
 
   return $menu_links;
 }

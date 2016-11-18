@@ -88,6 +88,11 @@ function crealead_news_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_related_brands' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|news|full'] = $ds_fieldsetting;
 
@@ -442,11 +447,12 @@ function crealead_news_ds_layout_settings_info() {
         10 => 'field_news_author',
         11 => 'body',
         12 => 'field_coentrepreneurs',
+        13 => 'field_related_brands',
       ),
       'content_header' => array(
         1 => 'field_news_type',
-        2 => 'group_img_title_cat',
-        3 => 'title',
+        2 => 'title',
+        3 => 'group_img_title_cat',
         4 => 'field_image',
         5 => 'group_title_cat',
       ),
@@ -454,8 +460,8 @@ function crealead_news_ds_layout_settings_info() {
     'fields' => array(
       'group_row' => 'central',
       'field_news_type' => 'content_header',
-      'group_img_title_cat' => 'content_header',
       'title' => 'content_header',
+      'group_img_title_cat' => 'content_header',
       'field_image' => 'content_header',
       'group_title_cat' => 'content_header',
       'group_col8' => 'central',
@@ -465,6 +471,7 @@ function crealead_news_ds_layout_settings_info() {
       'field_news_author' => 'central',
       'body' => 'central',
       'field_coentrepreneurs' => 'central',
+      'field_related_brands' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -475,6 +482,7 @@ function crealead_news_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
