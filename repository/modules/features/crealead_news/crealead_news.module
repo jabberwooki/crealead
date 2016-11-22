@@ -145,7 +145,7 @@ function crealead_news_views_pre_render(&$view) {
     $current_brand = $view->current_entity;
     $wrapper = entity_metadata_wrapper('node', $current_brand);
     $brand_coes = $wrapper->field_brand_coes->value();
-dpm($view);
+
     global $user;
     foreach ($brand_coes as $brand_coe) {
       if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
