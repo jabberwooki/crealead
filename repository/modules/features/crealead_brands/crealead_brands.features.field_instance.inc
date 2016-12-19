@@ -875,8 +875,19 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'full' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'colorbox',
+        'settings' => array(
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => '',
+          'colorbox_node_style_first' => '',
+          'field_formatter_class' => '',
+        ),
+        'type' => 'colorbox',
         'weight' => 0,
       ),
       'landing_page_block' => array(

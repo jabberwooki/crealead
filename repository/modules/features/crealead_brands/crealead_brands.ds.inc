@@ -605,14 +605,14 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'title',
-        1 => 'field_achievement_photos',
+        0 => 'field_achievement_photos',
+        1 => 'title',
         2 => 'body',
       ),
     ),
     'fields' => array(
-      'title' => 'central',
       'field_achievement_photos' => 'central',
+      'title' => 'central',
       'body' => 'central',
     ),
     'classes' => array(),
@@ -624,6 +624,7 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
