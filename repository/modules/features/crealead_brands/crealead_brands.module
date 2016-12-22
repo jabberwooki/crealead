@@ -331,7 +331,9 @@ function crealead_brands_block_view($delta = '') {
  * Implements hook_entity_view().
  */
 function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
-  //dpm($entity);
+  if ($type == 'taxonomy_term' && $entity->vocabulary_machine_name == 'certifications_labels' && $view_mode == 'logo') {
+    $entity->name = '';
+  }
 }
 
 /**

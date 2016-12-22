@@ -124,6 +124,22 @@ function crealead_brands_image_default_styles() {
     ),
   );
 
+  // Exported image style: certif_label_logo.
+  $styles['certif_label_logo'] = array(
+    'label' => 'Logo certif/label',
+    'effects' => array(
+      28 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 50,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: height_150.
   $styles['height_150'] = array(
     'label' => 'Hauteur 150',

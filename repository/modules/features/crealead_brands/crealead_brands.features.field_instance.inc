@@ -2498,10 +2498,15 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'weight' => 22,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'taxonomy_term_reference_view_mode' => 'logo',
+          'use_content_language' => 1,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 35,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -3361,6 +3366,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'logo' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => 'content',
+          'image_style' => 'certif_label_logo',
         ),
         'type' => 'image',
         'weight' => 0,

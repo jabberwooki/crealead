@@ -1306,7 +1306,8 @@ function crealead_brands_field_group_info() {
     'weight' => '32',
     'children' => array(
       0 => 'field_brand_baseline',
-      1 => 'title',
+      1 => 'field_certifications_labels',
+      2 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
