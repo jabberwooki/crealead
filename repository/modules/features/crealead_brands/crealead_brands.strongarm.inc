@@ -71,16 +71,16 @@ function crealead_brands_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '20',
-        ),
-        'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
           'weight' => '21',
         ),
-        'redirect' => array(
+        'title' => array(
+          'weight' => '2',
+        ),
+        'path' => array(
           'weight' => '22',
+        ),
+        'redirect' => array(
+          'weight' => '23',
         ),
       ),
       'display' => array(

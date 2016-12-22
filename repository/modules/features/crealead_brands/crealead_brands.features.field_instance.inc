@@ -1209,7 +1209,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -1292,7 +1292,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1410,7 +1410,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1491,7 +1491,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1565,7 +1565,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 14,
+      'weight' => 6,
     ),
   );
 
@@ -1703,7 +1703,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1780,7 +1780,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
-      'weight' => 13,
+      'weight' => 5,
     ),
   );
 
@@ -1864,7 +1864,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -2078,7 +2078,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 10,
     ),
   );
 
@@ -2154,7 +2154,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 17,
+      'weight' => 11,
     ),
   );
 
@@ -2228,7 +2228,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -2398,79 +2398,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance: 'node-brand-field_business_groups'.
-  $field_instances['node-brand-field_business_groups'] = array(
-    'bundle' => 'brand',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'landing_page_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'logo' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'sector_brand_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_business_groups',
-    'label' => 'Groupe(s) métier',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -2543,7 +2471,77 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-brand-field_certifications_labels'.
+  $field_instances['node-brand-field_certifications_labels'] = array(
+    'bundle' => 'brand',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Vous êtes concerné par un de ces labels, contactez votre référent.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 22,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'logo' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_certifications_labels',
+    'label' => 'Certifications et labels',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
@@ -2696,7 +2694,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -2766,7 +2764,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -2775,7 +2773,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Vous souhaitez apparaître dans une marque sectorielle, contactez votre référent.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -2836,7 +2834,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -2909,7 +2907,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -2999,7 +2997,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'socialfield',
       'settings' => array(),
       'type' => 'socialfield_widget',
-      'weight' => 16,
+      'weight' => 8,
     ),
   );
 
@@ -3349,6 +3347,88 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-certifications_labels-field_cl_logo'.
+  $field_instances['taxonomy_term-certifications_labels-field_cl_logo'] = array(
+    'bundle' => 'certifications_labels',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_cl_logo',
+    'label' => 'Logo',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'certifs_labels_logos',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-sector_brands-field_brand_logo'.
   $field_instances['taxonomy_term-sector_brands-field_brand_logo'] = array(
     'bundle' => 'sector_brands',
@@ -3449,6 +3529,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Certifications et labels');
   t('Champ de recherche');
   t('Clients');
   t('Co-entrepreneurs');
@@ -3460,7 +3541,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Email envoyé');
   t('Entrepreneur');
   t('Formulaire de contact');
-  t('Groupe(s) métier');
   t('Identifiant de la marque');
   t('Il s\'agit de mots-clés.<br />
 <ul>
@@ -3500,7 +3580,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Votre message');
   t('Votre nom');
   t('Votre numéro de téléphone');
+  t('Vous souhaitez apparaître dans une marque sectorielle, contactez votre référent.');
   t('Vous voulez');
+  t('Vous êtes concerné par un de ces labels, contactez votre référent.');
 
   return $field_instances;
 }

@@ -38,6 +38,33 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_achievements|node|brand|form';
+  $field_group->group_name = 'group_brand_achievements';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Réalisations',
+    'weight' => '30',
+    'children' => array(
+      0 => 'field_brand_achievements',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-brand-achievements field-group-htab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_achievements|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_articles_tab|node|brand|full';
   $field_group->group_name = 'group_brand_articles_tab';
   $field_group->entity_type = 'node';
@@ -142,6 +169,60 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_brand_clients_tab|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_clients|node|brand|form';
+  $field_group->group_name = 'group_brand_clients';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Clients',
+    'weight' => '29',
+    'children' => array(
+      0 => 'field_brand_references',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-brand-clients field-group-htab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_clients|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_coes|node|brand|form';
+  $field_group->group_name = 'group_brand_coes';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Entrepreneurs',
+    'weight' => '28',
+    'children' => array(
+      0 => 'field_brand_coes',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-brand-coes field-group-htab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_coes|node|brand|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -264,6 +345,43 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_main|node|brand|form';
+  $field_group->group_name = 'group_brand_main';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Informations Générales',
+    'weight' => '26',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_brand_baseline',
+      2 => 'field_brand_email',
+      3 => 'field_brand_logo',
+      4 => 'field_brand_phone',
+      5 => 'field_brand_solutions',
+      6 => 'field_brand_tags',
+      7 => 'field_brand_type',
+      8 => 'field_brand_website',
+      9 => 'field_social_links',
+      10 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-brand-main field-group-htab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_brand_main|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_news|node|brand|full';
   $field_group->group_name = 'group_brand_news';
   $field_group->entity_type = 'node';
@@ -292,6 +410,67 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_brand_news|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_ordering|node|brand|form';
+  $field_group->group_name = 'group_brand_ordering';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Classement',
+    'weight' => '27',
+    'children' => array(
+      0 => 'field_business_sector',
+      1 => 'field_landing_pages',
+      2 => 'field_related_sector_brands',
+      3 => 'field_certifications_labels',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-brand-ordering field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_brand_ordering|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_tabs|node|brand|form';
+  $field_group->group_name = 'group_brand_tabs';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Onglets marque',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_brand_main',
+      1 => 'group_brand_ordering',
+      2 => 'group_brand_coes',
+      3 => 'group_brand_clients',
+      4 => 'group_brand_achievements',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-brand-tabs field-group-htabs',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_brand_tabs|node|brand|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -523,7 +702,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '23',
+    'weight' => '24',
     'children' => array(
       0 => 'field_brand_search',
       1 => 'field_contact_form',
@@ -1154,9 +1333,12 @@ function crealead_brands_field_group_info() {
   t('Articles de fond');
   t('Blog');
   t('Champs Crealead');
+  t('Classement');
+  t('Clients');
   t('Contact');
   t('Entrepreneurs');
   t('Formations et produits');
+  t('Informations Générales');
   t('Informations générales');
   t('Infos 1');
   t('Infos 2');
@@ -1164,6 +1346,7 @@ function crealead_brands_field_group_info() {
   t('Marques associées');
   t('Marques et produits');
   t('Onglets');
+  t('Onglets marque');
   t('Produits et formations');
   t('Réalisations');
   t('Références client');
