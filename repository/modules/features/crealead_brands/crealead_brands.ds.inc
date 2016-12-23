@@ -168,11 +168,6 @@ function crealead_brands_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
-    'field_brand_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|brand|certifications_labels_block'] = $ds_fieldsetting;
 

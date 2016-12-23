@@ -67,6 +67,12 @@ function crealead_profiles_strongarm() {
       'zoom_news' => array(
         'custom_settings' => FALSE,
       ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
