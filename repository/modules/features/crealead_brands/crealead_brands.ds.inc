@@ -1232,12 +1232,14 @@ function crealead_brands_ds_layout_settings_info() {
       ),
       'right' => array(
         2 => 'achievements_entity_view_1',
+        3 => 'trainings_entity_view_2',
       ),
     ),
     'fields' => array(
       'news_entity_view_1' => 'left',
       'articles_entity_view_1' => 'left',
       'achievements_entity_view_1' => 'right',
+      'trainings_entity_view_2' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(

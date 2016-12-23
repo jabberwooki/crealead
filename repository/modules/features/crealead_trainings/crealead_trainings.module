@@ -41,9 +41,10 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
   }
   // End of Related brands list handling ---------------------------------------
 
-  // We must display only sector brands the parent brand(s) of the current training is (are) related to.
+  // We must display only sector brands and certifications/labels the parent brand(s) of the current training is (are) related to.
   // First, we get the parent brands.
   $parent_brands = crealead_trainings_get_parent_brands($form['nid']['#value']);
+  $parent_certifs_labels = crealead_brands_get_parent_certifs_labels($parent_brands);
 
   // If any parent brands exist, we get the sector brands of each parent brand.
   if (!empty($parent_brands)) {
@@ -59,10 +60,21 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
     else {
       $form['field_related_sector_brands']['#access'] = FALSE;
     }
+
+    // If any certif/label exists
+    if (!empty($parent_certifs_labels)) {
+      // We have to clean the certifications/labels field options array by keeping only the parent ones.
+      $form['field_related_certifs_labels']['und']['#options'] =
+        crealead_clean_certifs_labels_options($form['field_related_certifs_labels']['und']['#options'], $parent_certifs_labels);
+    }
+    else {
+      $form['field_related_certifs_labels']['#access'] = FALSE;
+    }
   }
   // otherwise we remove the related sector brands field from display.
   else {
     $form['field_related_sector_brands']['#access'] = FALSE;
+    $form['field_related_certifs_labels']['#access'] = FALSE;
   }
 }
 
