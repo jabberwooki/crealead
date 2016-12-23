@@ -67,20 +67,26 @@ function crealead_articles_strongarm() {
       'sector_brand_block' => array(
         'custom_settings' => TRUE,
       ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),

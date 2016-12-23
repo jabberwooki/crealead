@@ -342,9 +342,6 @@ function crealead_brands_block_view($delta = '') {
  * Implements hook_entity_view().
  */
 function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
-  if ($type == 'taxonomy_term' && $entity->vocabulary_machine_name == 'certifications_labels' && $view_mode == 'logo') {
-    $entity->name = '';
-  }
 }
 
 /**
@@ -648,6 +645,17 @@ function crealead_brands_get_parent_sector_brands($brands) {
   return $parent_sector_brands;
 }
 
+function crealead_brands_get_parent_certifs_labels($brands) {
+  $parent_certifs_labels = array();
+  foreach ($brands as $brand_id) {
+    $query = db_select('field_data_field_certifications_labels', 'fcl');
+    $query->fields('fcl', array('field_certifications_labels_tid'));
+    $query->condition('entity_id', $brand_id);
+    $parent_certifs_labels += $query->execute()->fetchAllKeyed(0, 0);
+  }
+  return $parent_certifs_labels;
+}
+
 function crealead_clean_sector_brands_options($sector_brands_options, $parent_sector_brands) {
   foreach ($sector_brands_options as $key=>$sector_brand) {
     if (!in_array($key, $parent_sector_brands)) {
@@ -655,6 +663,15 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
     }
   }
   return $sector_brands_options;
+}
+
+function crealead_clean_certifs_labels_options($certifs_labels_options, $parent_certifs_labels) {
+  foreach ($certifs_labels_options as $key=>$certif_label) {
+    if (!in_array($key, $parent_certifs_labels)) {
+      unset($certifs_labels_options[$key]);
+    }
+  }
+  return $certifs_labels_options;
 }
 
 /**

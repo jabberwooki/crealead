@@ -37,6 +37,16 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'trim_length' => 150,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -70,7 +80,7 @@ function crealead_articles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
-          'trim_length' => 200,
+          'trim_length' => 150,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
@@ -134,7 +144,7 @@ function crealead_articles_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -159,6 +169,12 @@ function crealead_articles_field_default_field_instances() {
         ),
         'type' => 'list_default',
         'weight' => 3,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'default' => array(
         'label' => 'above',
@@ -229,6 +245,12 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'default' => array(
         'label' => 'above',
@@ -313,6 +335,12 @@ function crealead_articles_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -423,7 +451,7 @@ function crealead_articles_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -448,6 +476,12 @@ function crealead_articles_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -503,6 +537,82 @@ function crealead_articles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_related_certifs_labels'.
+  $field_instances['node-article-field_related_certifs_labels'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Pour pouvoir être utilisés, une certification et/ou un label doivent être prouvés.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'brand_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_certifs_labels',
+    'label' => 'Certification(s) ou label(s) concerné(s)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_related_sector_brands'.
   $field_instances['node-article-field_related_sector_brands'] = array(
     'bundle' => 'article',
@@ -521,6 +631,12 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'default' => array(
         'label' => 'above',
@@ -575,12 +691,14 @@ function crealead_articles_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Certification(s) ou label(s) concerné(s)');
   t('Corps');
   t('Image');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des articles spécifiques à ces dîtes thématiques. Merci de cocher une thématique que si c\'est un sujet important de votre article.');
   t('Marque(s) concernée(s)');
   t('Marque(s) sectorielle(s) concernée(s)');
   t('Nature de l\'article');
+  t('Pour pouvoir être utilisés, une certification et/ou un label doivent être prouvés.');
   t('Thématique(s) concernée(s)');
 
   return $field_instances;
