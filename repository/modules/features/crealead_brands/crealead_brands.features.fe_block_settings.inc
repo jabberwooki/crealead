@@ -231,6 +231,7 @@ function crealead_brands_default_fe_block_settings() {
   $export['views-a9d1bce2799af23ab6d7797d64f8f737'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'a9d1bce2799af23ab6d7797d64f8f737',
     'module' => 'views',
     'node_types' => array(),
@@ -250,6 +251,8 @@ function crealead_brands_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-themes-theme_page_header'] = array(

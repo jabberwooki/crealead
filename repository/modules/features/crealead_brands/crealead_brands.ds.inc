@@ -354,10 +354,10 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'certifications_labels';
   $ds_fieldsetting->view_mode = 'certifications_labels_block';
   $ds_fieldsetting->settings = array(
-    'field_cl_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
   );
   $export['taxonomy_term|certifications_labels|certifications_labels_block'] = $ds_fieldsetting;
@@ -1102,14 +1102,16 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_cl_logo',
-        1 => 'description',
+        0 => 'title',
+        1 => 'field_cl_logo',
+        2 => 'description',
       ),
       'right' => array(
-        2 => 'brands_cl_brands',
+        3 => 'brands_cl_brands',
       ),
     ),
     'fields' => array(
+      'title' => 'left',
       'field_cl_logo' => 'left',
       'description' => 'left',
       'brands_cl_brands' => 'right',
@@ -1169,10 +1171,12 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'articles_entity_view_1',
+        0 => 'news_entity_view_1',
+        1 => 'articles_entity_view_1',
       ),
     ),
     'fields' => array(
+      'news_entity_view_1' => 'left',
       'articles_entity_view_1' => 'left',
     ),
     'classes' => array(),
@@ -1186,7 +1190,7 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
-    'hide_page_title' => '0',
+    'hide_page_title' => '1',
     'page_option_title' => '',
   );
   $export['taxonomy_term|certifications_labels|full'] = $ds_layout;

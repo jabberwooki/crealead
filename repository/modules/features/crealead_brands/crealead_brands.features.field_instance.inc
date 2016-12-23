@@ -3508,7 +3508,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'image_style' => 'certif_label_logo',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'above',
@@ -3525,7 +3525,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'logo' => array(
         'label' => 'hidden',
