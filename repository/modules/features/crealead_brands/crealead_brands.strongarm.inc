@@ -67,6 +67,12 @@ function crealead_brands_strongarm() {
       'sector_brand_block' => array(
         'custom_settings' => TRUE,
       ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -100,6 +106,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'news_brand_news' => array(
           'full' => array(
@@ -126,6 +133,10 @@ function crealead_brands_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_entity_view_1' => array(
           'full' => array(
@@ -135,6 +146,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'articles_brand_articles' => array(
           'full' => array(
@@ -161,6 +173,10 @@ function crealead_brands_strongarm() {
             'weight' => '25',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brand_contact_submissions_entity_view_1' => array(
           'full' => array(
@@ -170,6 +186,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
@@ -196,6 +213,10 @@ function crealead_brands_strongarm() {
             'weight' => '26',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_entity_view_1' => array(
           'full' => array(
@@ -212,6 +233,10 @@ function crealead_brands_strongarm() {
           ),
           'sector_brand_block' => array(
             'weight' => '27',
+            'visible' => FALSE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),

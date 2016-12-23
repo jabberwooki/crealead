@@ -121,6 +121,41 @@ function crealead_brands_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'certifs_labels_page';
+  $context->description = '';
+  $context->tag = 'Certifications et labels';
+  $context->conditions = array(
+    'taxonomy_term' => array(
+      'values' => array(
+        'certifications_labels' => 'certifications_labels',
+      ),
+      'options' => array(
+        'term_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-a9d1bce2799af23ab6d7797d64f8f737' => array(
+          'module' => 'views',
+          'delta' => 'a9d1bce2799af23ab6d7797d64f8f737',
+          'region' => 'content_header',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Certifications et labels');
+  $export['certifs_labels_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'sector_brand_page';
   $context->description = '';
   $context->tag = 'Marques';

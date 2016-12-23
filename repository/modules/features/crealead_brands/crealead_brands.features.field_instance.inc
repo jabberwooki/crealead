@@ -1113,6 +1113,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 26,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1226,6 +1232,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 20,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -1311,6 +1323,15 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'above',
@@ -1427,6 +1448,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 27,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'field_collection',
@@ -1508,6 +1535,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 30,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'email',
@@ -1585,6 +1618,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         ),
         'type' => 'image',
         'weight' => 1,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => 'content',
+          'image_style' => 'brand_logo',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -1720,6 +1764,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 31,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'phone',
@@ -1796,6 +1846,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 28,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'default' => array(
         'label' => 'above',
@@ -1880,6 +1936,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 19,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -1983,6 +2045,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 34,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'default' => array(
         'label' => 'above',
@@ -2095,6 +2163,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 32,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -2175,6 +2249,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -2249,6 +2329,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -2317,6 +2403,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 29,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
@@ -2415,6 +2507,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 35,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -2487,6 +2585,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'default' => array(
         'label' => 'above',
@@ -2562,6 +2666,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'description' => '',
     'display' => array(
       'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'certifications_labels_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2647,6 +2757,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -2715,6 +2831,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 33,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'default' => array(
         'label' => 'above',
@@ -2785,6 +2907,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'default' => array(
         'label' => 'above',
@@ -2860,6 +2988,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'type' => 'hidden',
         'weight' => 18,
       ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -2928,6 +3062,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'default' => array(
         'label' => 'above',
@@ -3359,6 +3499,17 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => 'certif_label_logo',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -3368,6 +3519,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'image_style' => '',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'logo' => array(

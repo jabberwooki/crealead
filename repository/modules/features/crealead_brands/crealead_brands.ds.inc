@@ -129,6 +129,33 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|brand|certifications_labels_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'brand';
+  $ds_fieldsetting->view_mode = 'certifications_labels_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+    'field_brand_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|brand|certifications_labels_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|brand|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'brand';
@@ -319,6 +346,21 @@ function crealead_brands_ds_field_settings_info() {
     ),
   );
   $export['node|client|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|certifications_labels|certifications_labels_block';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'certifications_labels';
+  $ds_fieldsetting->view_mode = 'certifications_labels_block';
+  $ds_fieldsetting->settings = array(
+    'field_cl_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['taxonomy_term|certifications_labels|certifications_labels_block'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -706,6 +748,42 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|brand|certifications_labels_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'brand';
+  $ds_layout->view_mode = 'certifications_labels_block';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+        1 => 'field_brand_baseline',
+      ),
+      'left' => array(
+        2 => 'field_brand_logo',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'field_brand_baseline' => 'right',
+      'field_brand_logo' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|brand|certifications_labels_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|brand|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'brand';
@@ -1016,6 +1094,105 @@ function crealead_brands_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|certifications_labels|certifications_labels_block';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'certifications_labels';
+  $ds_layout->view_mode = 'certifications_labels_block';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_cl_logo',
+        1 => 'description',
+      ),
+      'right' => array(
+        2 => 'brands_cl_brands',
+      ),
+    ),
+    'fields' => array(
+      'field_cl_logo' => 'left',
+      'description' => 'left',
+      'brands_cl_brands' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|certifications_labels|certifications_labels_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|certifications_labels|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'certifications_labels';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'description',
+        1 => 'field_cl_logo',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'central',
+      'field_cl_logo' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|certifications_labels|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|certifications_labels|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'certifications_labels';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'articles_entity_view_1',
+      ),
+    ),
+    'fields' => array(
+      'articles_entity_view_1' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['taxonomy_term|certifications_labels|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'taxonomy_term|sector_brands|full';
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'sector_brands';
@@ -1161,6 +1338,16 @@ function crealead_brands_ds_layout_settings_info() {
  */
 function crealead_brands_ds_view_modes_info() {
   $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'certifications_labels_block';
+  $ds_view_mode->label = 'Bloc page certifications labels';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $export['certifications_labels_block'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
