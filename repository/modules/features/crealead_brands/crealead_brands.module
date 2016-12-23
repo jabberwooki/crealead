@@ -178,12 +178,14 @@ function crealead_brands_node_presave($node) {
 
       // Fetch all coes names and competencies linked to current brand.
       foreach ($node->field_brand_coes['und'] as $fc_item) {
-        $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
-        $coe = user_load($coe_id);
-        $coe_names .= $coe->name . ' ';
+        if (isset($fc_item['field_brand_coe'])) {
+          $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
+          $coe = user_load($coe_id);
+          $coe_names .= $coe->name . ' ';
 
-        foreach ($fc_item['field_competencies']['und'] as $competency) {
-          $coe_competencies .= $competency['name'] . ' ';
+          foreach ($fc_item['field_competencies']['und'] as $competency) {
+            $coe_competencies .= $competency['name'] . ' ';
+          }
         }
       }
 
@@ -576,13 +578,14 @@ function crealead_brands_views_query_alter(&$view, &$query) {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, $form_id) {
-  // We must display only sector brands the parent brand(s) of the current achievement is (are) related to.
+  // We must display only sector brands and certif/labels the parent brand(s) of the current achievement is related to.
   // First, we get the parent brands.
   $parent_brands = crealead_achievements_get_parent_brands($form['nid']['#value']);
 
   // If any parent brands exist, we get the sector brands of each parent brand.
   if (!empty($parent_brands)) {
     $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+    $parent_certifs_labels = crealead_brands_get_parent_certifs_labels($parent_brands);
 
     // If any parent sector brands exist
     if (!empty($parent_sector_brands)) {
@@ -594,10 +597,21 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
     else {
       $form['field_related_sector_brands']['#access'] = FALSE;
     }
+
+    // If any certif/label exists
+    if (!empty($parent_certifs_labels)) {
+      // We have to clean the certifications/labels field options array by keeping only the parent ones.
+      $form['field_related_certifs_labels']['und']['#options'] =
+        crealead_clean_certifs_labels_options($form['field_related_certifs_labels']['und']['#options'], $parent_certifs_labels);
+    }
+    else {
+      $form['field_related_certifs_labels']['#access'] = FALSE;
+    }
   }
   // otherwise we remove the related sector brands field from display.
   else {
     $form['field_related_sector_brands']['#access'] = FALSE;
+    $form['field_related_certifs_labels']['#access'] = FALSE;
   }
 
   // Add form field related_brands
@@ -616,10 +630,11 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
 
   $form['related_brands'] = array(
     '#type' => 'checkboxes',
-    '#title' => 'Rattacher le client à l\'une des marques suivantes',
+    '#title' => 'Rattacher la réalisation à l\'une des marques suivantes',
     '#options' => $options,
+    '#default_value' => array_keys($parent_brands),
   );
-
+  
   // Add custom submit handler.
   $form['actions']['submit']['#submit'][] = 'crealead_achievement_submit';
 }
