@@ -248,6 +248,134 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__certifications_labels';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'logo' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'landing_page_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'path' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '3',
+        ),
+        'name' => array(
+          'weight' => '0',
+        ),
+        'description' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_cl_brands' => array(
+          'certifications_labels_block' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+        ),
+        'articles_entity_view_1' => array(
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'news_entity_view_1' => array(
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'achievements_entity_view_1' => array(
+          'full' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'trainings_entity_view_2' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__certifications_labels'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_taxonomy_term__sector_brands';
   $strongarm->value = array(
     'view_modes' => array(

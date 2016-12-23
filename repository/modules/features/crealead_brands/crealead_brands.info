@@ -269,6 +269,7 @@ features[user_permission][] = view any unpublished brand content
 features[user_permission][] = view any unpublished client content
 features[user_permission][] = view services
 features[variable][] = field_bundle_settings_node__brand
+features[variable][] = field_bundle_settings_taxonomy_term__certifications_labels
 features[variable][] = field_bundle_settings_taxonomy_term__sector_brands
 features[variable][] = field_bundle_settings_taxonomy_term__themes
 features[variable][] = language_content_type_brand
