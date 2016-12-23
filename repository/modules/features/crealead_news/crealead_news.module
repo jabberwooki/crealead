@@ -34,7 +34,6 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   $query->fields('coes', array('entity_id'));
   $query->condition('field_brand_coe_target_id', $form['uid']['#value']);
   $news_brands = $query->execute()->fetchAllKeyed(2, 2);
-  //dpm($news_brands);
 
   $brand_options = $form['field_related_brands']['und']['#options'];
   foreach ($brand_options as $key => $brand) {
@@ -63,13 +62,14 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
   unset($form['field_news_kind']['und']['#options'][2]);
   unset($form['field_news_kind']['und']['#options'][3]);
 
-  // We must display only sector brands the parent brand(s) of the current news is (are) related to.
+  // We must display only sector brands and certifications/labels the parent brand(s) of the current news is related to.
   // First, we get the parent brands.
   $parent_brands = crealead_news_get_parent_brands($form['nid']['#value']);
 
-  // If any parent brands exist, we get the sector brands of each parent brand.
+  // If any parent brands exist, we get the sector brands and certifs/labels of each parent brand.
   if (!empty($parent_brands)) {
     $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+    $parent_certifs_labels = crealead_brands_get_parent_certifs_labels($parent_brands);
 
     // If any parent sector brands exist
     if (!empty($parent_sector_brands)) {
@@ -81,12 +81,24 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
     else {
       $form['field_related_sector_brands']['#access'] = FALSE;
     }
+
+    // If any certif/label exists
+    if (!empty($parent_certifs_labels)) {
+      // We have to clean the certifications/labels field options array by keeping only the parent ones.
+      $form['field_related_certifs_labels']['und']['#options'] =
+        crealead_clean_certifs_labels_options($form['field_related_certifs_labels']['und']['#options'], $parent_certifs_labels);
+    }
+    else {
+      $form['field_related_certifs_labels']['#access'] = FALSE;
+    }
   }
-  // otherwise we remove the related sector brands field from display.
+  // otherwise we remove the related sector brands and certifs/label fields from display.
   else {
     if (!isset($form['#node']->field_news_kind) || empty($form['#node']->field_news_kind) || $form['#node']->field_news_kind['und'][0]['value'] != 1) {
-      $form['field_related_sector_brands']['#access'] = FALSE;
+      //
     }
+    $form['field_related_sector_brands']['#access'] = FALSE;
+    $form['field_related_certifs_labels']['#access'] = FALSE;
   }
 }
 

@@ -722,6 +722,65 @@ function crealead_news_views_default_views() {
     0 => 'sector_brands',
   );
   $handler->display->display_options['argument_mode'] = 'none';
+
+  /* Display: Actus d'une certif/label */
+  $handler = $view->new_display('entity_view', 'Actus d\'une certif/label', 'entity_view_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Actualités';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = 'false';
+  $handler->display->display_options['style_options']['navigation'] = 1;
+  $handler->display->display_options['style_options']['indicators'] = 1;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'certifications_labels_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_sorting_date|field_sorting_date_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'certifications_labels_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Actualités</h3>';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Certification(s) ou label(s) concerné(s) (field_related_certifs_labels) */
+  $handler->display->display_options['relationships']['field_related_certifs_labels_tid']['id'] = 'field_related_certifs_labels_tid';
+  $handler->display->display_options['relationships']['field_related_certifs_labels_tid']['table'] = 'field_data_field_related_certifs_labels';
+  $handler->display->display_options['relationships']['field_related_certifs_labels_tid']['field'] = 'field_related_certifs_labels_tid';
+  $handler->display->display_options['relationships']['field_related_certifs_labels_tid']['label'] = 'terme à partir de field_related_certifs_labels';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date de tri (field_sorting_date) */
+  $handler->display->display_options['sorts']['field_sorting_date_value']['id'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['table'] = 'field_data_field_sorting_date';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['field'] = 'field_sorting_date_value';
+  $handler->display->display_options['sorts']['field_sorting_date_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_certifs_labels_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'certifications_labels',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
   $translatables['news'] = array(
     t('Master'),
     t('Tri des actualités'),
@@ -764,6 +823,8 @@ function crealead_news_views_default_views() {
     t('Nids actu 2 et 3'),
     t('Actus d\'une marque sectorielle'),
     t('term from field_related_sector_brands'),
+    t('Actus d\'une certif/label'),
+    t('terme à partir de field_related_certifs_labels'),
   );
   $export['news'] = $view;
 

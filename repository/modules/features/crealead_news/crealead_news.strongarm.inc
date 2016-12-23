@@ -111,20 +111,26 @@ function crealead_news_strongarm() {
       'sector_brand_block' => array(
         'custom_settings' => TRUE,
       ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
