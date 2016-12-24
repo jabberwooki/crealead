@@ -78,6 +78,13 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['field_training_type']['id'] = 'field_training_type';
