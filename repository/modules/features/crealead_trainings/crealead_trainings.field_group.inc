@@ -13,6 +13,33 @@ function crealead_trainings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_crealead_fields|node|training|form';
+  $field_group->group_name = 'group_crealead_fields';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Champs Crealead',
+    'weight' => '26',
+    'children' => array(
+      0 => 'field_training_search',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-crealead-fields field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_crealead_fields|node|training|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_training_data|node|training|full';
   $field_group->group_name = 'group_training_data';
   $field_group->entity_type = 'node';
@@ -325,6 +352,7 @@ function crealead_trainings_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Caractéristiques');
+  t('Champs Crealead');
   t('Colonne droite');
   t('Colonne gauche');
   t('En-tête');
