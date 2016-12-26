@@ -413,7 +413,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous ne vous souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -464,6 +463,34 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['name']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['name']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Champ de recherche (field_training_search) */
+  $handler->display->display_options['filters']['field_training_search_value']['id'] = 'field_training_search_value';
+  $handler->display->display_options['filters']['field_training_search_value']['table'] = 'field_data_field_training_search';
+  $handler->display->display_options['filters']['field_training_search_value']['field'] = 'field_training_search_value';
+  $handler->display->display_options['filters']['field_training_search_value']['operator'] = 'word';
+  $handler->display->display_options['filters']['field_training_search_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['operator_id'] = 'field_training_search_value_op';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['label'] = 'Mots-clés';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['operator'] = 'field_training_search_value_op';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['identifier'] = 'field_training_search_value';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'formations';
 
   /* Display: Catalogue test */
@@ -747,8 +774,8 @@ function crealead_trainings_views_default_views() {
     t('Identifiant universel unique (UUID)'),
     t('Domaine'),
     t('Marque'),
-    t('Vous ne vous souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Co-entrepreneur'),
+    t('Mots-clés'),
     t('Catalogue test'),
     t('Coe'),
     t('Name'),

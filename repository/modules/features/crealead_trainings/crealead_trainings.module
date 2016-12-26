@@ -145,8 +145,6 @@ function crealead_trainings_node_presave($node) {
     $training_public = '';
     $training_aims = '';
 
-    dpm($node);
-
     $training_content = strip_tags($node->body['und'][0]['value']) . ' ';
 
     if (!empty($node->field_training_public['und'])) {
@@ -207,5 +205,14 @@ function crealead_trainings_views_pre_render(&$view) {
         break;
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
+    $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
   }
 }
