@@ -184,6 +184,9 @@ function crealead_trainings_get_parent_brands($training_id) {
  * Implements hook_views_pre_render().
  */
 function crealead_trainings_views_pre_render(&$view) {
+  if ($view->name == 'trainings' && $view->current_display == 'list_page') {
+    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_view_trainings.js');
+  }
   // If brand's training tab
   if ($view->name == 'trainings' && $view->current_display == 'entity_view_1') {
     // Link 'Ajouter une formation' must be added to block only for coes attached to the current brand.
