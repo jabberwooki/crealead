@@ -1,0 +1,16 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 09/01/17
+ * Time: 16:10
+ */
+
+function crealead_brands_update_7001() {
+  // Deletion of unused field_business_groups (brands).
+  if (field_info_field('field_business_groups')) {
+    field_delete_field('field_business_groups');
+    $batch_size = 99999;
+    field_purge_batch($batch_size);
+  }
+}
