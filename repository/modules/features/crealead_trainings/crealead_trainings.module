@@ -141,23 +141,21 @@ function crealead_trainings_node_presave($node) {
     }
 
     // --- Technical field_training_search field handling --- //
-    $training_content = '';
     $training_public = '';
     $training_aims = '';
 
+    $title = $node->title . ' ';
     $training_content = strip_tags($node->body['und'][0]['value']) . ' ';
 
     if (!empty($node->field_training_public['und'])) {
-      $training_public = strip_tags($node->field_training_public['und'][0]['value']);
+      $training_public .= strip_tags($node->field_training_public['und'][0]['value']);
     }
     if (!empty($node->field_training_aims['und'])) {
       $training_aims = strip_tags($node->field_training_aims['und'][0]['value']);
     }
 
     // Store training content, public and objectives into field_training_search technical field.
-    $search_data = $training_content
-      .= $training_public
-      .= $training_aims;
+    $search_data =  $title . $training_content . $training_public . $training_aims;
 
     $search_array = array('value' => $search_data, 'format' => 'plain_text');
     if (!isset($node->field_training_search['und'][0])) {
