@@ -2681,7 +2681,8 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'brand',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Vous êtes concerné par un de ces labels, contactez votre référent.',
+    'description' => 'Vous êtes concerné par un de ces labels, contactez votre référent.
+Le label doit être prouvé.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -3859,7 +3860,8 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Votre numéro de téléphone');
   t('Vous souhaitez apparaître dans une marque sectorielle, contactez votre référent.');
   t('Vous voulez');
-  t('Vous êtes concerné par un de ces labels, contactez votre référent.');
+  t('Vous êtes concerné par un de ces labels, contactez votre référent.
+Le label doit être prouvé.');
 
   return $field_instances;
 }
