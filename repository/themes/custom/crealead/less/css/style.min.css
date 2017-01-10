@@ -1930,7 +1930,7 @@ body.node-type-brand .field-name-field-business-groups{display:none}
 body.node-type-brand .content-header>.container>.row{border:1px solid #999;background-color:#fff;margin-bottom:30px}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand{width:100%}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .top-brand-col-2-3{min-height:100px}
-body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-title-hook .field-name-field-cl-logo{float:left;margin-right:10px}
+body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-title-hook .field-name-field-cl-logo{float:left;margin:0 10px 10px 0}
 @media (min-width:992px){body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-1-3{display:table-cell;vertical-align:middle;border-right:1px solid #999;padding-top:20px;padding-bottom:5px}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-1-3 .field-name-field-brand-logo>div{display:table;width:100%}
 body.node-type-brand .content-header>.container>.row #block-ds-extras-content-header-brand .group-row-1 .group-col-1-3 .field-name-field-brand-logo>div>div{display:table-cell;height:150px;vertical-align:middle;text-align:center}
