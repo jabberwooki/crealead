@@ -369,6 +369,12 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['uuid']['relationship'] = 'term_node_tid';
   $handler->display->display_options['fields']['uuid']['label'] = 'Identifiant universel unique (UUID)';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
