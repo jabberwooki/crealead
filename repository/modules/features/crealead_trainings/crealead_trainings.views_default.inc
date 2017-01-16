@@ -67,6 +67,10 @@ function crealead_trainings_views_default_views() {
 
   /* Display: Formations d'une marque */
   $handler = $view->new_display('entity_view', 'Formations d\'une marque', 'entity_view_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '3';
@@ -774,6 +778,7 @@ function crealead_trainings_views_default_views() {
     t('dernier »'),
     t('Formations d\'une marque'),
     t('more'),
+    t('Show More'),
     t('Thématique'),
     t('Durée'),
     t('Tarif'),
