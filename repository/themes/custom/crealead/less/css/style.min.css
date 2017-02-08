@@ -2103,6 +2103,8 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
 .page-taxonomy-term .carousel-control .icon-next:before,.page-taxonomy-term .carousel-control .icon-prev:before{color:red}
 .page-taxonomy-term .carousel-inner{margin-bottom:80px}
+.page-taxonomy-term .carousel-inner .node-brand .row>left-col{background-color:#fff}
+.page-taxonomy-term .carousel-inner .node-brand .row>right-col{background-color:#dadada}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-inner{width:86%;display:block;margin-left:auto;margin-right:auto;overflow:hidden}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-inner .field-name-field-brand-logo img{max-height:80px;display:block;margin:0 auto}
 .page-taxonomy-term .col-sm-6 .view-content .carousel-indicators{bottom:-55px;height:20px;display:inline-block}
