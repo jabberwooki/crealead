@@ -89,7 +89,7 @@ projects[views][version] = "3.14"
 ;projects[bean][version] = ""
 
 projects[better_exposed_filters][subdir] = contrib
-projects[better_exposed_filters][version] = "3.4"
+projects[better_exposed_filters][version] = "3.2"
 
 projects[views_data_export][subdir] = contrib
 projects[views_data_export][version] = "3.1"
