@@ -31,6 +31,15 @@ function crealead_brands_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'add terms in certifications_labels'.
+  $permissions['add terms in certifications_labels'] = array(
+    'name' => 'add terms in certifications_labels',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'add terms in client_types'.
   $permissions['add terms in client_types'] = array(
     'name' => 'add terms in client_types',
@@ -184,6 +193,15 @@ function crealead_brands_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in certifications_labels'.
+  $permissions['delete terms in certifications_labels'] = array(
+    'name' => 'delete terms in certifications_labels',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in client_types'.
   $permissions['delete terms in client_types'] = array(
     'name' => 'delete terms in client_types',
@@ -297,6 +315,15 @@ function crealead_brands_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in certifications_labels'.
+  $permissions['edit terms in certifications_labels'] = array(
+    'name' => 'edit terms in certifications_labels',
+    'roles' => array(
+      'administrateur' => 'administrateur',
     ),
     'module' => 'taxonomy',
   );

@@ -67,20 +67,26 @@ function crealead_brands_strongarm() {
       'sector_brand_block' => array(
         'custom_settings' => TRUE,
       ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '20',
-        ),
-        'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
           'weight' => '21',
         ),
-        'redirect' => array(
+        'title' => array(
+          'weight' => '2',
+        ),
+        'path' => array(
           'weight' => '22',
+        ),
+        'redirect' => array(
+          'weight' => '23',
         ),
       ),
       'display' => array(
@@ -100,6 +106,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'news_brand_news' => array(
           'full' => array(
@@ -126,6 +133,10 @@ function crealead_brands_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_entity_view_1' => array(
           'full' => array(
@@ -135,6 +146,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'articles_brand_articles' => array(
           'full' => array(
@@ -161,6 +173,10 @@ function crealead_brands_strongarm() {
             'weight' => '25',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brand_contact_submissions_entity_view_1' => array(
           'full' => array(
@@ -170,6 +186,7 @@ function crealead_brands_strongarm() {
           'logo' => NULL,
           'landing_page_block' => NULL,
           'sector_brand_block' => NULL,
+          'certifications_labels_block' => NULL,
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
@@ -196,6 +213,10 @@ function crealead_brands_strongarm() {
             'weight' => '26',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_entity_view_1' => array(
           'full' => array(
@@ -214,11 +235,143 @@ function crealead_brands_strongarm() {
             'weight' => '27',
             'visible' => FALSE,
           ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
   );
   $export['field_bundle_settings_node__brand'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__certifications_labels';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'logo' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'landing_page_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'certifications_labels_block' => array(
+        'custom_settings' => TRUE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'path' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '3',
+        ),
+        'name' => array(
+          'weight' => '0',
+        ),
+        'description' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_cl_brands' => array(
+          'certifications_labels_block' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+        ),
+        'articles_entity_view_1' => array(
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'news_entity_view_1' => array(
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'certifications_labels_block' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'logo' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'achievements_entity_view_1' => array(
+          'full' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'logo' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'trainings_entity_view_2' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__certifications_labels'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

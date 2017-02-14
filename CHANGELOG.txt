@@ -1,3 +1,52 @@
+Crealead 3.2 / 2017-02-14
+=========================
+V2 - Sprint 6 release
+
+ * Better Exposed Filters downgraded : 7.x-3.4 -> 7.x-3.2.
+ * core up : 7.50 -> 7.54 - Better Exposed Filters up : 7.x-3.2 -> 7.x-3.4. Module features not updated because it causes problem and security gap is less critical.
+ * CSS up to modify admin theme adminimal when a user create a brand and want to register to label or sectorial brand.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Feature trainings up to add infinite scroll.
+ * match-actu-height.js up to be called after each xhr - cf infinite scroll.
+ * crealead_trainings up: Full training list as well as Search result list are displayed using a random order.
+ * crealead_trainings up: Item number per page changed from 10 to 12 in trainings catalog.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Feature crealead_trainings up to add infinite scroll.
+ * crealead_brands up: crealead_brands_update_7001() hook comment altered to give correct info.
+ * crealead_trainings up: Certifications and labels names added as searchable words in training's 'Mots-clés' search field.
+ * crealead_brands up: 'Le label doit être prouvé' sentence added to field_certifications_labels field info text.
+ * crealead_brands up: Field field_business_groups removed.
+ * crealead_trainings up: Field title added to training search data.
+ * Feature news up to add infinite scroll.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_trainings.module up to add js matchHeight behaviour.
+ * LESS and CSS up.
+ * crealead_trainings up: Seach field 'Mots-clés' added to trainings catalog search form.
+ * crealead_training up: New technical field field_training_search created and corresponding custom handling code.
+ * crealead_trainings up: Link 'Ajouter une formation' added to 'Formations et Produits' brand's tab.
+ * crealead_brands up: <none> setting added to block title 'Entete page certif labels'.
+ * crealead_brands up: Missing strongarm variables added.
+ * crealead_brand and crealead_trainings up: training to certif/label linking mechanism created.
+ * crealead_brands up : Field labels removed in brand's certifications_labels_block view mode (displayed in Certif/label term page).
+ * crealead_brands up : Display bug fixing: Certif/label title removed from display in brand page.
+ * crealead_brands up: achievement to certif/label linking mechanism created.
+ * crealead_news up: news to certif/label linking mechanism created.
+ * crealead_brands up: Certif/label term page (full mode) updated.
+ * crealead_brands up: article to certif/label linking mechanism created.
+ * crealead_brands up: Certif and Label page creation (Part 1: Header).
+ * crealead_brands up: Permissions on certifications_labels vocabulary added to admin role.
+ * crealead_brands up: Certifications and labels names added to Brand search.
+ * crealead_brands up: Certifications and labels logos show up in brand page.
+ * crealead_brands up: New field field_certifications_labels created. Ergonomy improved for fields field_related_sector_brands and field_certifications_labels in brand's add/edit form.
+ * crealead_profiles up: Brand field field_business_groups deleted.
+ * crealead_brands up: Achievement full mode view fixed (missing field_achievement_photos).
+ * crealead_news up: dpm() function removed.
+ * crealead_info_meetings up: Date format altered.
+
 Crealead 3.1 / 2016-11-18
 =========================
 V2 - Sprint 5 release

@@ -44,6 +44,28 @@ function crealead_trainings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|training|certifications_labels_block';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'training';
+  $ds_fieldsetting->view_mode = 'certifications_labels_block';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['node|training|certifications_labels_block'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|training|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'training';
@@ -440,6 +462,35 @@ function crealead_trainings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training|certifications_labels_block';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training';
+  $ds_layout->view_mode = 'certifications_labels_block';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|training|certifications_labels_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|training|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'training';
@@ -449,54 +500,54 @@ function crealead_trainings_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'group_training_header',
-        1 => 'group_training_data',
-        2 => 'field_training_duration',
+        1 => 'field_training_duration',
+        2 => 'group_training_data',
         3 => 'field_training_attendees_number',
         4 => 'field_training_type',
-        5 => 'field_training_price',
-        6 => 'title',
-        7 => 'field_introduction',
-        8 => 'field_scheduled_sessions',
+        5 => 'title',
+        6 => 'field_training_price',
+        7 => 'field_scheduled_sessions',
+        8 => 'field_introduction',
         9 => 'field_training_public',
         10 => 'field_training_requirements',
         11 => 'field_training_aims',
-        12 => 'group_training_left_col',
-        13 => 'field_training_method',
+        12 => 'field_training_method',
+        13 => 'group_training_left_col',
         14 => 'body',
         15 => 'field_training_teachers',
-        16 => 'group_training_right_col',
-        17 => 'field_training_validation',
+        16 => 'field_training_validation',
+        17 => 'group_training_right_col',
         18 => 'field_assessment_methods',
         19 => 'group_training_header_left',
-        20 => 'field_training_related_brands',
-        21 => 'training_contact',
+        20 => 'training_contact',
+        21 => 'field_training_related_brands',
         22 => 'group_training_header_center',
         23 => 'group_training_header_right',
       ),
     ),
     'fields' => array(
       'group_training_header' => 'central',
-      'group_training_data' => 'central',
       'field_training_duration' => 'central',
+      'group_training_data' => 'central',
       'field_training_attendees_number' => 'central',
       'field_training_type' => 'central',
-      'field_training_price' => 'central',
       'title' => 'central',
-      'field_introduction' => 'central',
+      'field_training_price' => 'central',
       'field_scheduled_sessions' => 'central',
+      'field_introduction' => 'central',
       'field_training_public' => 'central',
       'field_training_requirements' => 'central',
       'field_training_aims' => 'central',
-      'group_training_left_col' => 'central',
       'field_training_method' => 'central',
+      'group_training_left_col' => 'central',
       'body' => 'central',
       'field_training_teachers' => 'central',
-      'group_training_right_col' => 'central',
       'field_training_validation' => 'central',
+      'group_training_right_col' => 'central',
       'field_assessment_methods' => 'central',
       'group_training_header_left' => 'central',
-      'field_training_related_brands' => 'central',
       'training_contact' => 'central',
+      'field_training_related_brands' => 'central',
       'group_training_header_center' => 'central',
       'group_training_header_right' => 'central',
     ),

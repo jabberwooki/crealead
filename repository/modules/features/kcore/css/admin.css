@@ -1,3 +1,9 @@
 .form-item-metatags-fr-keywords-value, .form-item-metatags-fr-abstract-value{
     display: none !important;
 }
+.style-checkboxes input[type=checkbox]:disabled{
+    background-color: darkgrey !important;
+}
+.form-disabled div.description{
+    color: orangered !important;
+}

@@ -56,7 +56,6 @@ features[fe_block_settings][] = views-achievements-block_achiev_pics
 features[features_api][] = api:2
 features[field_base][] = field_achievement_photos
 features[field_base][] = field_biography
-features[field_base][] = field_business_groups
 features[field_base][] = field_client_location
 features[field_base][] = field_client_logo
 features[field_base][] = field_client_type

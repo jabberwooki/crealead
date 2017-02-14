@@ -72,6 +72,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
 //  }
 
   // 3 - Brand validation
+  unset($form['field_brand_validated']['und']['#options']['_none']);
   $brand_validated = 0;
   if (isset($form['#node']->field_brand_validated['und'][0]['value'])) {
     $brand_validated = $form['#node']->field_brand_validated['und'][0]['value'];
@@ -80,8 +81,9 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   // Then, what about non allowed users. They cannot do 4 distinct tasks:
   // 1 - validate brands,
   // 2 - publish brand nodes, unless brand has been validated by referent,
-  // 3 - change business sectors after brand is validated.
-  // 4 - link their brand to any sector brands.
+  // 3 - change business sectors after brand is validated,
+  // 4 - link their brand to any sector brands,
+  // 5 - link their brand to any certification/label.
   if (empty($current_user_allowed_roles) & $user->uid != 1) {
     // 1 - Brand validation radio buttons systematically disabled.
     $form['field_brand_validated']['und'][0]['#attributes'] = array('disabled' => TRUE);
@@ -99,8 +101,11 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
     else {
       $form['field_business_sector']['#disabled'] = TRUE;
     }
-    // 4 - Main brand option systematically removed from brand type.
-    $form['field_related_sector_brands']['#access'] = FALSE;
+    // 4 - Sector brands field disabled.
+    $form['field_related_sector_brands']['und']['#attributes'] = array('disabled' => TRUE);
+
+    // 5 - Certifications/labels field disabled.
+    $form['field_certifications_labels']['und']['#attributes'] = array('disabled' => TRUE);
   }
   // And now what about allowed users.
   else {
@@ -122,6 +127,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
 
   // Handling of fields involved into validation workflow
   // 1 - field_saving_type
+  unset($form['field_saving_type']['und']['#options']['_none']);
   // If field field_saving_type equals 1, validation request email has been sent. The field has to be hidden.
   if (isset($form['#node']->field_saving_type['und'][0]['value']) && $form['#node']->field_saving_type['und'][0]['value'] == 1) {
     $form['field_saving_type']['#access'] = FALSE;
@@ -168,14 +174,18 @@ function crealead_brands_node_presave($node) {
       $brand_description = '';
       $brand_solutions = '';
       $brand_tags = '';
+      $brand_certifs_labels = '';
+
       // Fetch all coes names and competencies linked to current brand.
       foreach ($node->field_brand_coes['und'] as $fc_item) {
-        $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
-        $coe = user_load($coe_id);
-        $coe_names .= $coe->name . ' ';
+        if (isset($fc_item['field_brand_coe'])) {
+          $coe_id = $fc_item['field_brand_coe']['und'][0]['target_id'];
+          $coe = user_load($coe_id);
+          $coe_names .= $coe->name . ' ';
 
-        foreach ($fc_item['field_competencies']['und'] as $competency) {
-          $coe_competencies .= $competency['name'] . ' ';
+          foreach ($fc_item['field_competencies']['und'] as $competency) {
+            $coe_competencies .= $competency['name'] . ' ';
+          }
         }
       }
 
@@ -197,12 +207,21 @@ function crealead_brands_node_presave($node) {
         }
       }
 
+      // Check whether Certifications and Labels field has content.
+      if (!empty($node->field_certifications_labels['und'])) {
+        foreach ($node->field_certifications_labels['und'] as $certif_label_tid) {
+          $term = taxonomy_term_load($certif_label_tid['tid']);
+          $brand_certifs_labels .= $term->name . ' ';
+        }
+      }
+
       // Store names, competencies, solutions and tags into field_brand_search technical field.
       $search_data = $coe_names
         . $coe_competencies
         . $brand_description
         . $brand_solutions
-        . $brand_tags;
+        . $brand_tags
+        . $brand_certifs_labels;
       $search_array = array('value' => $search_data, 'format' => 'plain_text');
 
       if (!isset($node->field_brand_search['und'][0])) {
@@ -325,7 +344,9 @@ function crealead_brands_block_view($delta = '') {
  * Implements hook_entity_view().
  */
 function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
-  //dpm($entity);
+  if ($type == 'taxonomy_term' && $entity->vocabulary_machine_name == 'certifications_labels' && $view_mode == 'logo') {
+    $entity->name = '';
+  }
 }
 
 /**
@@ -560,13 +581,14 @@ function crealead_brands_views_query_alter(&$view, &$query) {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, $form_id) {
-  // We must display only sector brands the parent brand(s) of the current achievement is (are) related to.
+  // We must display only sector brands and certif/labels the parent brand(s) of the current achievement is related to.
   // First, we get the parent brands.
   $parent_brands = crealead_achievements_get_parent_brands($form['nid']['#value']);
 
   // If any parent brands exist, we get the sector brands of each parent brand.
   if (!empty($parent_brands)) {
     $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+    $parent_certifs_labels = crealead_brands_get_parent_certifs_labels($parent_brands);
 
     // If any parent sector brands exist
     if (!empty($parent_sector_brands)) {
@@ -578,10 +600,21 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
     else {
       $form['field_related_sector_brands']['#access'] = FALSE;
     }
+
+    // If any certif/label exists
+    if (!empty($parent_certifs_labels)) {
+      // We have to clean the certifications/labels field options array by keeping only the parent ones.
+      $form['field_related_certifs_labels']['und']['#options'] =
+        crealead_clean_certifs_labels_options($form['field_related_certifs_labels']['und']['#options'], $parent_certifs_labels);
+    }
+    else {
+      $form['field_related_certifs_labels']['#access'] = FALSE;
+    }
   }
   // otherwise we remove the related sector brands field from display.
   else {
     $form['field_related_sector_brands']['#access'] = FALSE;
+    $form['field_related_certifs_labels']['#access'] = FALSE;
   }
 
   // Add form field related_brands
@@ -600,10 +633,11 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
 
   $form['related_brands'] = array(
     '#type' => 'checkboxes',
-    '#title' => 'Rattacher le client à l\'une des marques suivantes',
+    '#title' => 'Rattacher la réalisation à l\'une des marques suivantes',
     '#options' => $options,
+    '#default_value' => array_keys($parent_brands),
   );
-
+  
   // Add custom submit handler.
   $form['actions']['submit']['#submit'][] = 'crealead_achievement_submit';
 }
@@ -629,6 +663,17 @@ function crealead_brands_get_parent_sector_brands($brands) {
   return $parent_sector_brands;
 }
 
+function crealead_brands_get_parent_certifs_labels($brands) {
+  $parent_certifs_labels = array();
+  foreach ($brands as $brand_id) {
+    $query = db_select('field_data_field_certifications_labels', 'fcl');
+    $query->fields('fcl', array('field_certifications_labels_tid'));
+    $query->condition('entity_id', $brand_id);
+    $parent_certifs_labels += $query->execute()->fetchAllKeyed(0, 0);
+  }
+  return $parent_certifs_labels;
+}
+
 function crealead_clean_sector_brands_options($sector_brands_options, $parent_sector_brands) {
   foreach ($sector_brands_options as $key=>$sector_brand) {
     if (!in_array($key, $parent_sector_brands)) {
@@ -636,6 +681,15 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
     }
   }
   return $sector_brands_options;
+}
+
+function crealead_clean_certifs_labels_options($certifs_labels_options, $parent_certifs_labels) {
+  foreach ($certifs_labels_options as $key=>$certif_label) {
+    if (!in_array($key, $parent_certifs_labels)) {
+      unset($certifs_labels_options[$key]);
+    }
+  }
+  return $certifs_labels_options;
 }
 
 /**
