@@ -254,3 +254,10 @@ function crealead_update_7006() {
 function crealead_update_7007() {
   module_enable(array('crealead_documents'));
 }
+
+/**
+ * Activate feature crealead_geolocations.
+ */
+function crealead_update_7008() {
+  module_enable(array('crealead_geoolocations'));
+}
