@@ -252,18 +252,33 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Content: Title */
+  /* Field: Nid marque */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_brand_coes_node';
+  $handler->display->display_options['fields']['nid']['ui_name'] = 'Nid marque';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Marque */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_brand_coes_node';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Marque';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Secteur d'activité */
   $handler->display->display_options['fields']['field_business_sector']['id'] = 'field_business_sector';
   $handler->display->display_options['fields']['field_business_sector']['table'] = 'field_data_field_business_sector';
