@@ -1,0 +1,23 @@
+.view-users-geolocation .view-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
+}
+.view-users-geolocation .view-header .city {
+    font-weight: bold;
+    font-size: 120%;
+}
+.view-users-geolocation .view-header .cp {
+    font-size: 120%;
+}
+.view-users-geolocation h3 {
+    font-size: 150% !important;
+}
+.view-users-geolocation .views-row {
+    padding-left: 20px;
+}
+.view-users-geolocation .views-row-even {
+    margin-top: 10px;
+}
+.view-users-geolocation .views-field-title {
+    font-size: 120%;
+}

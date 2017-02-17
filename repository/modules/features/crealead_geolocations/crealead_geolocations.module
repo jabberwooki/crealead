@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Code for the Géolocalisations feature.
+ */
+
+include_once 'crealead_geolocations.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_geolocations_init() {
+  $current_path = current_path();
+  if ($current_path == 'espace-co-entrepreneur/localisation-entrepreneurs') {
+    drupal_add_css(drupal_get_path('module','crealead_geolocations') . '/css/crealead_geolocations.css');
+  }
+}
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_geolocations_views_query_alter(&$view, &$query) {
+  if ($view->current_display == 'coes_per_point') {
+    $query->where[1]['conditions'][] = array(
+      'field' => 'getlocations_fields.latitude',
+      'value' => $view->args[0],
+      'operator' => '=',
+    );
+    $query->where[1]['conditions'][] = array(
+      'field' => 'getlocations_fields.longitude',
+      'value' => $view->args[1],
+      'operator' => '=',
+    );
+  }
+}

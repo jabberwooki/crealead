@@ -282,3 +282,22 @@ projects[registration][subdir] = contrib
 projects[registration][version] = "1.6"
 projects[registration][patch][] = "https://www.drupal.org/files/registration-Add-views-filters-for-open-date-and-close-date-1949466-1.patch"
 ;projects[registration][patch][] = https://www.drupal.org/files/issues/registration_fatal_error_class-2546836-6.patch
+
+;--- Geolocation --------------------------------------------------------------
+projects[getlocations][subdir] = contrib
+projects[getlocations][version] = "1.17"
+
+;projects[geofield][subdir] = contrib
+;projects[geofield][version] = "2.3"
+
+;projects[geocoder][subdir] = contrib
+;projects[geocoder][version] = "1.3"
+
+;projects[geophp][subdir] = contrib
+;projects[geophp][version] = "1.7"
+
+projects[addressfield][subdir] = contrib
+projects[addressfield][version] = "1.2"
+
+projects[views_field_view][subdir] = contrib
+projects[views_field_view][version] = "1.2"
