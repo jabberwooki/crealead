@@ -118,6 +118,11 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['title'] = 'Localisation des co-entrepreneurs';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'getlocations';
   $handler->display->display_options['style_options']['node_map_marker'] = 'gray';
