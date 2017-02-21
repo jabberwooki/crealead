@@ -90,6 +90,10 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 
   // Stuff that has to be done after form build.
   $form['#after_build'][] = 'crealead_trainings_after_build';
+
+  // Hide scheduled sessions field (handled now by sessions view).
+  $form['field_scheduled_sessions']['#access'] = FALSE;
+
 }
 
 function crealead_trainings_after_build($form, &$form_state) {
@@ -115,6 +119,29 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
     else {
       unset($build['training_contact']);
     }
+
+    // From now on, sessions field value is provided by sessions view display.
+    $sessions_markup = '';
+    $trainings_view = views_get_view('trainings');
+    $trainings_view->set_display('sessions_count');
+    $trainings_view->pre_execute();
+    $sessions_number = trim(strip_tags($trainings_view->render('sessions_count')));
+
+    if ($sessions_number == 0) {
+      $sessions_markup = 'Nous contacter.';
+    }
+    else {
+      $trainings_view = views_get_view('trainings');
+      $trainings_view->set_display('next_sessions');
+      $trainings_view->pre_execute();
+      $sessions_markup = $trainings_view->render('next_sessions');
+
+      if ($sessions_number > 3 ) {
+        $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
+        $sessions_markup .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
+      }
+    }
+    $build['field_scheduled_sessions'][0]['#markup'] = $sessions_markup;
   }
 }
 
@@ -133,12 +160,12 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
 function crealead_trainings_node_presave($node) {
   if ($node->type == 'training') {
     // Force field label to be displayed when field is empty.
-    if (empty($node->field_scheduled_sessions['und'])) {
-      $node->field_scheduled_sessions['und'][] = array(
-        'value' => '<p></p>',
-        'format' => 'full_html',
-      );
-    }
+//    if (empty($node->field_scheduled_sessions['und'])) {
+//      $node->field_scheduled_sessions['und'][] = array(
+//        'value' => '<p></p>',
+//        'format' => 'full_html',
+//      );
+//    }
 
     // --- Technical field_training_search field handling --- //
     $training_public = '';
@@ -215,6 +242,19 @@ function crealead_trainings_views_pre_render(&$view) {
         break;
       }
     }
+  }
+  // Training session dates sorting (Sorting setting in Views produce wrong result).
+  elseif ($view->name == 'trainings' && $view->current_display == 'training_sessions') {
+    $sessions = array();
+    foreach ($view->result as $session) {
+      $sessions[$session->field_field_session_dates[0]['raw']['value']] = $session;
+    };
+    // We sort the $sessions array by keys which are strings representing dates in ISO format.
+    ksort($sessions);
+    $view->result = $sessions;
+  }
+  elseif ($view->name == 'trainings' && $view->current_display == 'all_sessions') {
+    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
   }
 }
 

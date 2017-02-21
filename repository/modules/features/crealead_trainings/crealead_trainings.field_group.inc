@@ -50,8 +50,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'Caractéristiques',
     'weight' => '1',
     'children' => array(
-      0 => 'field_training_attendees_number',
-      1 => 'field_training_duration',
+      0 => 'field_training_duration',
+      1 => 'field_training_attendees_number',
       2 => 'field_scheduled_sessions',
       3 => 'field_training_price',
     ),
@@ -183,9 +183,9 @@ function crealead_trainings_field_group_info() {
     'label' => 'En-tête',
     'weight' => '0',
     'children' => array(
-      0 => 'group_training_header_center',
-      1 => 'group_training_header_left',
-      2 => 'group_training_header_right',
+      0 => 'group_training_header_left',
+      1 => 'group_training_header_right',
+      2 => 'group_training_header_center',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -249,13 +249,13 @@ function crealead_trainings_field_group_info() {
     'label' => 'Colonne droite',
     'weight' => '9',
     'children' => array(
-      0 => 'field_training_aims',
-      1 => 'field_training_public',
-      2 => 'field_training_requirements',
+      0 => 'field_training_public',
+      1 => 'field_training_requirements',
+      2 => 'field_training_aims',
       3 => 'field_training_method',
       4 => 'field_training_teachers',
-      5 => 'field_assessment_methods',
-      6 => 'field_training_validation',
+      5 => 'field_training_validation',
+      6 => 'field_assessment_methods',
     ),
     'format_type' => 'div',
     'format_settings' => array(

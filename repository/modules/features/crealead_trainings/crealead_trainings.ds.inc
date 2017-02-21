@@ -462,6 +462,43 @@ function crealead_trainings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training_session|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training_session';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_related_training',
+        1 => 'field_session_dates',
+        2 => 'field_session_place',
+        3 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_related_training' => 'central',
+      'field_session_dates' => 'central',
+      'field_session_place' => 'central',
+      'body' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|training_session|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|training|certifications_labels_block';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'training';
