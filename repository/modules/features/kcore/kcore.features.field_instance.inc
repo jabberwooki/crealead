@@ -511,6 +511,10 @@ function kcore_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
           'field_formatter_class' => '',
           'link' => FALSE,
         ),

@@ -106,6 +106,9 @@ projects[colorbox][version] = "2.10"
 projects[colorbox_field_formatter][subdir] = contrib
 projects[colorbox_field_formatter][version] = "1.2"
 
+projects[colorbox_node][subdir] = contrib
+projects[colorbox_node][version] = "3.5"
+
 projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][version] = "3.0-alpha2"
 

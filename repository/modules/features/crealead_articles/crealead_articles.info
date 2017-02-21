@@ -5,6 +5,7 @@ version = 7.x-1.0
 project = crealead_articles
 dependencies[] = crealead_profiles
 dependencies[] = field_group
+dependencies[] = image
 dependencies[] = taxonomy
 features[context][] = testimonials_home
 features[ctools][] = context:context:3
