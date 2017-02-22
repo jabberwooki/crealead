@@ -141,6 +141,16 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
         $sessions_markup .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
       }
     }
+    global $user;
+
+    if ($user->uid == $build['#node']->uid) {
+      $new_session_link = l(
+        'Créer une session',
+        '/node/add/training-session/' . $build['#node']->nid,
+        array('query' => array('destination' => current_path()))
+      );
+      $sessions_markup .= '<div class="new-session-link">' . $new_session_link . '</div>';
+    }
     $build['field_scheduled_sessions'][0]['#markup'] = $sessions_markup;
   }
 }
@@ -264,5 +274,17 @@ function crealead_trainings_views_pre_render(&$view) {
 function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
     $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_trainings_form_training_session_node_form_alter(&$form, &$form_state, $form_id) {
+  // If session is being created from a training page,
+  // we must catch the training nid from url
+  // and select the corresponding training in field_related_training field.
+  if (!isset($form['nid']['#value']) && NULL != arg(3)) {
+    $form['field_related_training']['und']['#default_value'] = array(arg(3));
   }
 }
