@@ -115,6 +115,9 @@ projects[conditional_fields][version] = "3.0-alpha2"
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
 
+projects[date_multiselect][subdir] = contrib
+projects[date_multiselect][version] = "1.0"
+
 projects[default_image_ft][subdir] = contrib
 projects[default_image_ft][version] = "1.5"
 
