@@ -197,6 +197,13 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>Nos formations et produits</h3>';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Thématique(s) concernée(s) (field_training_theme) */
   $handler->display->display_options['arguments']['field_training_theme_tid']['id'] = 'field_training_theme_tid';
@@ -258,6 +265,13 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
