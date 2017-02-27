@@ -48,6 +48,7 @@ features[ds_field_settings][] = node|client|full
 features[ds_field_settings][] = taxonomy_term|certifications_labels|certifications_labels_block
 features[ds_field_settings][] = taxonomy_term|sector_brands|full
 features[ds_field_settings][] = taxonomy_term|themes|landing_page_block
+features[ds_fields][] = achievement_brand
 features[ds_fields][] = achievements_anchor
 features[ds_fields][] = brand_contacts
 features[ds_fields][] = brands_products_anchor

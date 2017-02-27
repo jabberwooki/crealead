@@ -461,6 +461,24 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'achievement_brand';
+  $ds_field->label = 'Marque';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'achievement|full';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'nom de la marque',
+      'format' => 'plain_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['achievement_brand'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'achievements_anchor';
   $ds_field->label = 'Ancre Réalisations';
   $ds_field->field_type = 5;
