@@ -370,6 +370,23 @@ function crealead_brands_entity_view_alter(&$build, $type) {
       unset($build['field_contact_form']);
     }
   }
+
+  if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'achievement' && $build['#view_mode'] == 'full') {
+    // if achievement full node, there is no info about parent brand.
+    // Brand knows achievements, achievements don't know their parent brand.
+    $query = db_select('field_data_field_brand_achievements', 'fba');
+    $query->addField('fba','entity_id');
+    $query->condition('fba.field_brand_achievements_target_id', $build['#node']->nid);
+    $brand_nid = $query->execute()->fetchField();
+    $brand = node_load($brand_nid);
+    
+    if ($brand) {
+      $build['achievement_brand'][0]['#markup'] = l($brand->title, '/node/' . $brand_nid);
+    }
+    else {
+      unset($build['achievement_brand']);
+    }
+  }
 }
 
 /**

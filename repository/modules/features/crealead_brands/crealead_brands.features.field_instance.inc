@@ -742,7 +742,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -857,9 +857,12 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -982,7 +985,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'field_formatter_class' => '',
         ),
         'type' => 'colorbox',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -1098,7 +1101,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1168,7 +1171,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1238,7 +1241,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',

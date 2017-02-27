@@ -61,6 +61,11 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'achievement';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'achievement_brand' => array(
+      'weight' => '4',
+      'label' => 'inline',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -703,15 +708,19 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_achievement_photos',
-        1 => 'title',
+        0 => 'title',
+        1 => 'field_achievement_photos',
         2 => 'body',
+        3 => 'field_achiev_authors',
+        4 => 'achievement_brand',
       ),
     ),
     'fields' => array(
-      'field_achievement_photos' => 'central',
       'title' => 'central',
+      'field_achievement_photos' => 'central',
       'body' => 'central',
+      'field_achiev_authors' => 'central',
+      'achievement_brand' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
