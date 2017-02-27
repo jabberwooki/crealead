@@ -203,7 +203,14 @@ function crealead_brands_node_presave($node) {
       // Check whether Mots-clés field has content.
       if (!empty($node->field_brand_tags)) {
         foreach ($node->field_brand_tags['und'] as $tag) {
-          $brand_tags .= $tag['name'] . ' ';
+          // Two possibilities to reach this presave code :
+          // - when a brand create/edit form is submitted
+          // - when an achievment create/edit form is submitted
+          // In second case, brand is saved as well (to link achiev being savec to selected brand when created from Content/Add page.
+          // But in that case, field_brand_tags fiels contains only tids not names. So we must test before adding to keywords.
+          if (isset($tag['name'])) {
+            $brand_tags .= $tag['name'] . ' ';
+          }
         }
       }
 
