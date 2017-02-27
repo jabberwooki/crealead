@@ -71,6 +71,11 @@ function crealead_brands_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_achievement_photos' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|achievement|full'] = $ds_fieldsetting;
 
