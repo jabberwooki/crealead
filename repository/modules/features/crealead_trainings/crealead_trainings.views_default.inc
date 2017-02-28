@@ -402,16 +402,11 @@ function crealead_trainings_views_default_views() {
     'training' => 'training',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Taxonomy term: Taxonomy term UUID */
-  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
-  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
-  $handler->display->display_options['filters']['uuid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['filters']['uuid']['value'] = '9f2f5f9a-ed19-44bb-8e59-9ae9bc685162';
   /* Filter criterion: Content: Domaine (field_training_domain) */
   $handler->display->display_options['filters']['field_training_domain_tid']['id'] = 'field_training_domain_tid';
   $handler->display->display_options['filters']['field_training_domain_tid']['table'] = 'field_data_field_training_domain';
   $handler->display->display_options['filters']['field_training_domain_tid']['field'] = 'field_training_domain_tid';
+  $handler->display->display_options['filters']['field_training_domain_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_training_domain_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_training_domain_tid']['expose']['operator_id'] = 'field_training_domain_tid_op';
   $handler->display->display_options['filters']['field_training_domain_tid']['expose']['label'] = 'Domaine';
@@ -433,12 +428,38 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_domain_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_training_domain_tid']['vocabulary'] = 'training_domains';
   $handler->display->display_options['filters']['field_training_domain_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Type (field_training_type) */
+  $handler->display->display_options['filters']['field_training_type_tid']['id'] = 'field_training_type_tid';
+  $handler->display->display_options['filters']['field_training_type_tid']['table'] = 'field_data_field_training_type';
+  $handler->display->display_options['filters']['field_training_type_tid']['field'] = 'field_training_type_tid';
+  $handler->display->display_options['filters']['field_training_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_training_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_training_type_tid']['expose']['operator_id'] = 'field_training_type_tid_op';
+  $handler->display->display_options['filters']['field_training_type_tid']['expose']['label'] = 'Type d\'action';
+  $handler->display->display_options['filters']['field_training_type_tid']['expose']['operator'] = 'field_training_type_tid_op';
+  $handler->display->display_options['filters']['field_training_type_tid']['expose']['identifier'] = 'field_training_type_tid';
+  $handler->display->display_options['filters']['field_training_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_training_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_training_type_tid']['vocabulary'] = 'training_type';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['relationship'] = 'field_training_related_brands_target_id';
   $handler->display->display_options['filters']['title']['operator'] = 'word';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
@@ -469,6 +490,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['relationship'] = 'uid';
   $handler->display->display_options['filters']['name']['operator'] = 'word';
+  $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['label'] = 'Co-entrepreneur';
@@ -497,6 +519,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_search_value']['table'] = 'field_data_field_training_search';
   $handler->display->display_options['filters']['field_training_search_value']['field'] = 'field_training_search_value';
   $handler->display->display_options['filters']['field_training_search_value']['operator'] = 'word';
+  $handler->display->display_options['filters']['field_training_search_value']['group'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['operator_id'] = 'field_training_search_value_op';
   $handler->display->display_options['filters']['field_training_search_value']['expose']['label'] = 'Mots-clés';
@@ -520,6 +543,14 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Affichage dans le catalogue ? (field_training_catalog) */
+  $handler->display->display_options['filters']['field_training_catalog_value']['id'] = 'field_training_catalog_value';
+  $handler->display->display_options['filters']['field_training_catalog_value']['table'] = 'field_data_field_training_catalog';
+  $handler->display->display_options['filters']['field_training_catalog_value']['field'] = 'field_training_catalog_value';
+  $handler->display->display_options['filters']['field_training_catalog_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_training_catalog_value']['group'] = 1;
   $handler->display->display_options['path'] = 'formations';
 
   /* Display: Catalogue test */
@@ -1091,6 +1122,7 @@ function crealead_trainings_views_default_views() {
     t('Type'),
     t('Identifiant universel unique (UUID)'),
     t('Domaine'),
+    t('Type d\'action'),
     t('Marque'),
     t('Co-entrepreneur'),
     t('Mots-clés'),
