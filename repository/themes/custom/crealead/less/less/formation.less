@@ -46,8 +46,54 @@
       .source();
     }
   }
+  .training-sessions{
+    .new-session-link > a{
+      .red-button-link();
+      color: white;
+      margin-top: 15px;
+    }
+    a.colorbox-node{
+      &:before{
+        .glyphicon();
+        content: '\e807';
+      }
+    }
+    .session-list-link > a {
+      &:before{
+        .glyphicon();
+        content: '\e834';
+      }
+    }
+  }
 }
-
+.field-name-field-session-dates {
+  .field-label{
+    float: none;
+  }
+  .field-items > .field-item{
+    display: block;
+    &:before{
+      .glyphicon();
+      content: '\e834';
+    }
+  }
+}
+.page-formations-toutes-les-sessions{
+  .view-id-trainings{
+    h3{
+      > a {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+  }
+  a.colorbox-node{
+    &:before{
+      .glyphicon();
+      content: '\e834';
+    }
+  }
+}
 /* page de formation **************************************************************************************************/
 .page-formations{
   #views-bootstrap-grid-1{
