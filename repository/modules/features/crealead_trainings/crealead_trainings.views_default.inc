@@ -428,31 +428,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_domain_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_training_domain_tid']['vocabulary'] = 'training_domains';
   $handler->display->display_options['filters']['field_training_domain_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Type (field_training_type) */
-  $handler->display->display_options['filters']['field_training_type_tid']['id'] = 'field_training_type_tid';
-  $handler->display->display_options['filters']['field_training_type_tid']['table'] = 'field_data_field_training_type';
-  $handler->display->display_options['filters']['field_training_type_tid']['field'] = 'field_training_type_tid';
-  $handler->display->display_options['filters']['field_training_type_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_training_type_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_training_type_tid']['expose']['operator_id'] = 'field_training_type_tid_op';
-  $handler->display->display_options['filters']['field_training_type_tid']['expose']['label'] = 'Type d\'action';
-  $handler->display->display_options['filters']['field_training_type_tid']['expose']['operator'] = 'field_training_type_tid_op';
-  $handler->display->display_options['filters']['field_training_type_tid']['expose']['identifier'] = 'field_training_type_tid';
-  $handler->display->display_options['filters']['field_training_type_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
-  );
-  $handler->display->display_options['filters']['field_training_type_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_training_type_tid']['vocabulary'] = 'training_type';
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -1122,7 +1097,6 @@ function crealead_trainings_views_default_views() {
     t('Type'),
     t('Identifiant universel unique (UUID)'),
     t('Domaine'),
-    t('Type d\'action'),
     t('Marque'),
     t('Co-entrepreneur'),
     t('Mots-clés'),
