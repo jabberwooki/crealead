@@ -54,8 +54,12 @@
     }
     a.colorbox-node{
       &:before{
-        .glyphicon();
-        content: '\e807';
+        content:"Début le ";
+      }
+      &:after{
+        content:" voir le détail";
+        color: #000;
+        text-decoration: underline;
       }
     }
     .session-list-link > a {
