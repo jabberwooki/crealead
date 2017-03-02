@@ -39,6 +39,14 @@ function crealead_trainings_node_info() {
       'title_label' => t('Intitulé'),
       'help' => '',
     ),
+    'training_session' => array(
+      'name' => t('Session de formation'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Intitulé'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;

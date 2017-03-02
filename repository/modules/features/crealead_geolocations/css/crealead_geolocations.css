@@ -1,0 +1,29 @@
+.view-users-geolocation .view-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
+}
+.view-users-geolocation .view-header .city-cp {
+    /*white-space: nowrap;*/
+}
+.view-users-geolocation .view-header h3.city {
+    /*font-weight: bold;*/
+    margin-top: 0;
+    margin-right: 10px;
+    margin: 0 10px 0 0;
+}
+.view-users-geolocation .view-header .cp {
+    font-size: 120%;
+}
+.view-users-geolocation .view-header .coes-number {
+    clear: left;
+}
+.view-users-geolocation .views-row {
+    /*padding-left: 20px;*/
+}
+.view-users-geolocation .views-row-even {
+    margin-top: 10px;
+}
+.view-users-geolocation .views-field-name h4 {
+    font-style: italic;
+    color: #aaa;
+}

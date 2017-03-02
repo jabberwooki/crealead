@@ -54,3 +54,10 @@ function kcore_update_7006() {
 function kcore_update_7007() {
   module_enable(array('pagerer'));
 }
+
+/**
+ * Activate colorbox_node module.
+ */
+function kcore_update_7008() {
+  module_enable(array('colorbox_node'));
+}

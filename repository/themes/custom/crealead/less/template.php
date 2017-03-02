@@ -213,3 +213,28 @@ function crealead_form_element(&$variables) {
   // Render the form element build array.
   return drupal_render($build);
 }
+
+function crealead_preprocess_views_view_fields(&$vars) {
+  if ($vars['view']->current_display == 'coes_per_point') {
+    // On récupère la valeur (0 ou 1) du statut de publication du coe.
+    $profil_pub_status = strip_tags($vars['fields']['field_coe_pub_status']->content);
+    // Si égal à 0, on retire le lien http sur son nom.
+    if (!$profil_pub_status) {
+      $vars['fields']['name']->content = strip_tags($vars['fields']['name']->content, '<h4>');
+    }
+    // Puis on retire le champ Statut de publication de l'affichage.
+    unset($vars['fields']['field_coe_pub_status']);
+  }
+}
+
+function crealead_preprocess_views_view(&$vars) {
+  if ($vars['view']->current_display == 'coes_per_point') {
+    $header = $vars['header'];
+    $parts = explode('<p class="coes-number">', $header);
+    $part1 = $parts[1];
+    if ($part1{0} == '1') {
+      $part1 = str_replace('s</p>','</p>', $part1);
+      $vars['header'] = $parts[0] . '<p class="coes-number">' . $part1;
+    }
+  }
+}

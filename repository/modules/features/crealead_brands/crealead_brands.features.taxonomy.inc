@@ -78,6 +78,29 @@ function crealead_brands_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'scald_authors' => array(
+      'name' => 'Authors',
+      'machine_name' => 'scald_authors',
+      'description' => 'Scald authors vocabulary',
+      'hierarchy' => 0,
+      'module' => 'scald',
+      'weight' => -5,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'sector_brands' => array(
       'name' => 'Marques sectorielles',
       'machine_name' => 'sector_brands',

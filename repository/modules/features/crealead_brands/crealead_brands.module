@@ -203,7 +203,14 @@ function crealead_brands_node_presave($node) {
       // Check whether Mots-clés field has content.
       if (!empty($node->field_brand_tags)) {
         foreach ($node->field_brand_tags['und'] as $tag) {
-          $brand_tags .= $tag['name'] . ' ';
+          // Two possibilities to reach this presave code :
+          // - when a brand create/edit form is submitted
+          // - when an achievment create/edit form is submitted
+          // In second case, brand is saved as well (to link achiev being savec to selected brand when created from Content/Add page.
+          // But in that case, field_brand_tags fiels contains only tids not names. So we must test before adding to keywords.
+          if (isset($tag['name'])) {
+            $brand_tags .= $tag['name'] . ' ';
+          }
         }
       }
 
@@ -361,6 +368,23 @@ function crealead_brands_entity_view_alter(&$build, $type) {
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
     if (empty($build['#node']->field_brand_email)) {
       unset($build['field_contact_form']);
+    }
+  }
+
+  if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'achievement' && $build['#view_mode'] == 'full') {
+    // if achievement full node, there is no info about parent brand.
+    // Brand knows achievements, achievements don't know their parent brand.
+    $query = db_select('field_data_field_brand_achievements', 'fba');
+    $query->addField('fba','entity_id');
+    $query->condition('fba.field_brand_achievements_target_id', $build['#node']->nid);
+    $brand_nid = $query->execute()->fetchField();
+    $brand = node_load($brand_nid);
+    
+    if ($brand) {
+      $build['achievement_brand'][0]['#markup'] = l($brand->title, '/node/' . $brand_nid);
+    }
+    else {
+      unset($build['achievement_brand']);
     }
   }
 }

@@ -61,10 +61,20 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'achievement';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'achievement_brand' => array(
+      'weight' => '4',
+      'label' => 'inline',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'field_achievement_photos' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|achievement|full'] = $ds_fieldsetting;
@@ -451,6 +461,24 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'achievement_brand';
+  $ds_field->label = 'Marque';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'achievement|full';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'nom de la marque',
+      'format' => 'plain_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['achievement_brand'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'achievements_anchor';
   $ds_field->label = 'Ancre Réalisations';
   $ds_field->field_type = 5;
@@ -703,15 +731,19 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'field_achievement_photos',
-        1 => 'title',
+        0 => 'title',
+        1 => 'field_achievement_photos',
         2 => 'body',
+        3 => 'field_achiev_authors',
+        4 => 'achievement_brand',
       ),
     ),
     'fields' => array(
-      'field_achievement_photos' => 'central',
       'title' => 'central',
+      'field_achievement_photos' => 'central',
       'body' => 'central',
+      'field_achiev_authors' => 'central',
+      'achievement_brand' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
