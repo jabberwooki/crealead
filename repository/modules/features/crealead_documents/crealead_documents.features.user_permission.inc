@@ -16,7 +16,12 @@ function crealead_documents_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'certif LR' => 'certif LR',
+      'entrepreneur' => 'entrepreneur',
+      'pôle gestion' => 'pôle gestion',
+      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
+      'webmaster' => 'webmaster',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'filedepot',
   );
