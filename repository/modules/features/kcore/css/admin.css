@@ -7,3 +7,6 @@
 .form-disabled div.description{
     color: orangered !important;
 }
+.ui-state-highlight{
+    border: 1px solid red !important;
+}

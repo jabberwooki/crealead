@@ -729,7 +729,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 5,
+        'weight' => 23,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -922,6 +922,82 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training-field_training_catalog'.
+  $field_instances['node-training-field_training_catalog'] = array(
+    'bundle' => 'training',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_training_catalog',
+    'label' => 'Affichage dans le catalogue ?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-training-field_training_domain'.
   $field_instances['node-training-field_training_domain'] = array(
     'bundle' => 'training',
@@ -1047,7 +1123,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 4,
+        'weight' => 22,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1282,7 +1358,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 2,
+        'weight' => 20,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1520,7 +1596,7 @@ function crealead_trainings_field_default_field_instances() {
           'view_mode' => 'logo',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 7,
+        'weight' => 25,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1825,7 +1901,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 6,
+        'weight' => 24,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1939,7 +2015,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 21,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -2016,8 +2092,11 @@ function crealead_trainings_field_default_field_instances() {
       ),
       'list' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 18,
       ),
       'sector_brand_block' => array(
@@ -2488,6 +2567,7 @@ function crealead_trainings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Affichage dans le catalogue ?');
   t('Certification(s) ou label(s) concerné(s)');
   t('Champ de recherche');
   t('Cible(s)');
