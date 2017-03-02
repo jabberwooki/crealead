@@ -1,3 +1,7 @@
+Crealead 3.3.1 / 2017-03-02
+===========================
+Region LR-MP logo replaced by Occitanie logo.
+
 Crealead 3.3 / 2017-03-02
 =========================
  * crealead_documents up: Permissions settings updated: Use filedepot perm added from 'entrepreneur' to 'admin' roles.
