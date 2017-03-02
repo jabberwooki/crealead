@@ -1,3 +1,35 @@
+Crealead 3.3 / 2017-03-02
+=========================
+ * crealead_documents up: Permissions settings updated: Use filedepot perm added from 'entrepreneur' to 'admin' roles.
+ * crealead_trainings up: Sessions creation functionnality temporarily deactivated.
+ * crealead_geolocations up: Now filtered on role 'entrepreneur' and all geolocated coes are displayed, even those with no published brand.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Feature training up to delete type training search dropbox.
+ * LESS and CSS up.
+ * Feature trainings up to add field 'Affichage dans le catalogue ?' and to use it in training view.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * CSS up to modify admin theme adminimal (kcore/admin.css) for sessions dates selected.
+ * crealead_geolocations up: coes list per geo point updated: only published brands are displayed.
+ * crealead_brands up: Missing DS settings for field achievement_brand added.
+ * crealead_brands up: Slideshow format applied on Photos field form achievement full view mode.
+ * crealead_brands up: DS field code achievement_brand added to achievement full view mode.
+ * crealead_brands up: New field Authors added.
+ * crealead_brands up: Fixes bug discovered by chance in achievement content saving (see crealead_brands_.module comment at line 206).
+ * crealead_trainings up: random order applied on training blocks in sector brands and thematic pages.
+ * crealead_brands up: random order applied on achievement blocks in sector brands and thematic pages.
+ * crealead_brands up: random order applied on brand blocks in sector brands and thematic pages.
+ * crealead_articles up: random order applied on article blocks in sector brands and thematic pages.
+ * Install profile up: missing date_multiselect contrib module declaration added to .make file.
+ * crealead_trainings up: Link to new session form added to training full view mode.
+ * crealead_training up: training sessions created.
+ * crealead_articles, crealead_brands, crealead_news and kcore features updated after adding colorbox_node contrib module.
+ * crealead_geolocations up: Missing dependency to views_field_view contrib module added.
+ * Install profile up: new feature crealead_geolocations activation added to .info and .install files.
+ * crealead_geolocations up: 'Localisation des co-entrepreneurs' menu link added, links on coe name and brand name open in a new tab.
+ * Feature crealead_geolocations created.
+
 Crealead 3.2 / 2017-02-14
 =========================
 V2 - Sprint 6 release
