@@ -1,4 +1,4 @@
-Crealead 3.3.1 / 2017-03-15
+Crealead 3.3.2 / 2017-03-15
 ===========================
  * crealead_my_contents up: Exposed filter 'Statut' field default value set to 'All'.
 
