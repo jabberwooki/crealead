@@ -3,9 +3,18 @@
   left:0 !important;
   width: 15px !important;
   height: 20px !important;
+  &:before, &:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
   &:before {
-    .glyphicon();
-    content: "\e832";
-    color: @rouge-crealead;
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
   }
 }
