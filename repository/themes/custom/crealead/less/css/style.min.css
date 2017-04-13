@@ -2001,10 +2001,11 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-articles .field-
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles .field-name-field-image{margin-bottom:-20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand{margin-top:40px;text-align:left}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a{color:#bf0e38;margin-top:20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover{text-decoration:none;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row{margin-bottom:20px;padding-bottom:20px;background:url(../images/red-news-line.gif) 50% 100% no-repeat}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-news-type{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a{color:#bf0e38}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
 .view-info-meetings .view-content table tr td a:before,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a:before{top:1px;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image{height:200px;overflow:hidden;text-align:center}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image img{max-height:200px}
@@ -2040,7 +2041,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--blog,body.node-type-brand #
 .view-info-meetings .view-content table tr td a:before{position:relative;font-family:fontello;font-weight:400;display:inline-block;width:1em;margin-right:10px;text-transform:none;font-size:1em;color:#fff}
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
-.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
+.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
 .node-type-info-meeting #registration-form #edit-field-registrant-gender-und .radio:first-child,body.page-registration.not-logged-in .field-name-field-attendee{display:none}
@@ -2108,7 +2109,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .node-type-training .training-sessions .session-list-link>a:before{text-decoration:inherit;color:#777;content:'\e834'}
 .field-name-field-session-dates .field-label{float:none}
 .field-name-field-session-dates .field-items>.field-item{display:block}
-.field-name-field-session-dates .field-items>.field-item:before,.page-formations-toutes-les-sessions a.colorbox-node:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e834';position:relative}
+.field-name-field-session-dates .field-items>.field-item:before,.page-formations-toutes-les-sessions a.colorbox-node:before{top:1px;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;text-transform:none;line-height:1em;color:#777;content:'\e834';position:relative;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .field-name-field-session-dates .field-items>.field-item:before{margin-right:10px}
 .page-formations-toutes-les-sessions .view-id-trainings h3>a{float:left;margin-right:20px}
 .page-formations-toutes-les-sessions a.colorbox-node:before{margin-right:10px}
@@ -2195,3 +2196,5 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands .group-sectorbrands-articles>h3{color:#009aa0;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #000}
 .main-container.main-container-sector-brands .group-sectorbrands-articles h4>a{color:#009aa0}
 .main-container.main-container-sector-brands a#achievements,.main-container.main-container-sector-brands a#brands-products,.main-container.main-container-sector-brands a#intro,.main-container.main-container-sector-brands a#news-articles{margin-top:-200px;float:right}
+.getlocations_map_canvas div.gm-style>div>div>div>div>div>img[src*=mapcnt6]{top:0!important;left:0!important;width:15px!important;height:20px!important}
+.getlocations_map_canvas div.gm-style>div>div>div>div>div>img[src*=mapcnt6]:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e832";color:#bf0e38}
