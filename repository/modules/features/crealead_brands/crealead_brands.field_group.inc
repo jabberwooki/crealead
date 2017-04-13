@@ -734,7 +734,6 @@ function crealead_brands_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_achievement_photos',
-      1 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -800,7 +799,6 @@ function crealead_brands_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_brand_logo',
-      1 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
