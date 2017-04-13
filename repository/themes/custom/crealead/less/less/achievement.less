@@ -1,0 +1,39 @@
+.node-type-achievement{
+  .field-slideshow-controls{
+    display: table;
+    margin: 0 auto;
+    a.prev{
+      margin-right: 30px;
+      &:before{
+        .glyphicon();
+        content: "\e833";
+        color: @bleu-clair-crealead;
+      }
+    }
+    a.next{
+      &:after{
+        .glyphicon();
+        content: "\e834";
+        color: @bleu-clair-crealead;
+      }
+    }
+  }
+  .field-slideshow-pager{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    > a{
+      margin-right: 10px;
+      background: @bleu-clair-crealead;
+      border-radius: 10px;
+      color: white;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      text-align: center;
+      &.activeSlide{
+        background: black;
+      }
+    }
+  }
+}
