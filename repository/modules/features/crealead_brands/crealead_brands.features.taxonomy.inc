@@ -78,6 +78,29 @@ function crealead_brands_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'cl_categories' => array(
+      'name' => 'Catégories de certification/label',
+      'machine_name' => 'cl_categories',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'scald_authors' => array(
       'name' => 'Authors',
       'machine_name' => 'scald_authors',
