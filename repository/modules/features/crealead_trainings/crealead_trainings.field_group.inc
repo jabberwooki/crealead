@@ -21,7 +21,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '26',
+    'weight' => '25',
     'children' => array(
       0 => 'field_training_search',
     ),
