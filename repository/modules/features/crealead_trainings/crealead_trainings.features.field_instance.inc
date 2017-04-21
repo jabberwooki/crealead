@@ -1077,7 +1077,7 @@ function crealead_trainings_field_default_field_instances() {
         'leaves_only' => 0,
         'max_depth' => '',
         'parent_term_id' => '',
-        'select_parents' => 0,
+        'select_parents' => 1,
         'start_minimized' => 1,
         'token_display' => '',
         'track_list' => 0,
