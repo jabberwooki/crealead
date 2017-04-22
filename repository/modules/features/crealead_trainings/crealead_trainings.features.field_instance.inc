@@ -122,7 +122,7 @@ function crealead_trainings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -236,7 +236,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -610,7 +610,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -683,7 +683,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -804,7 +804,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -918,7 +918,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1083,7 +1083,7 @@ function crealead_trainings_field_default_field_instances() {
         'track_list' => 0,
       ),
       'type' => 'term_reference_tree',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1204,7 +1204,83 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_training_funding'.
+  $field_instances['node-training-field_training_funding'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_training_funding',
+    'label' => 'Dispositif de financement',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 7,
     ),
   );
 
@@ -1318,7 +1394,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1439,7 +1515,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1553,7 +1629,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1750,7 +1826,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1979,7 +2055,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -2140,7 +2216,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -2254,7 +2330,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -2580,6 +2656,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Commentaire');
   t('Contenu');
   t('Dates');
+  t('Dispositif de financement');
   t('Domaine');
   t('Durée');
   t('Formateur(s)');
