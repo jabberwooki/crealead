@@ -2200,6 +2200,7 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands .group-sectorbrands-articles>h3{color:#009aa0;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #000}
 .main-container.main-container-sector-brands .group-sectorbrands-articles h4>a{color:#009aa0}
 .main-container.main-container-sector-brands a#achievements,.main-container.main-container-sector-brands a#brands-products,.main-container.main-container-sector-brands a#intro,.main-container.main-container-sector-brands a#news-articles{margin-top:-200px;float:right}
+.getlocations_map_canvas div.gm-style>div>div>div>div>div>img[src*=mapcnt6]{max-height:none}
 .node-type-achievement .field-slideshow-controls{display:table;margin:0 auto}
 .node-type-achievement .field-slideshow-controls a.prev{margin-right:30px}
 .node-type-achievement .field-slideshow-controls a.next:after,.node-type-achievement .field-slideshow-controls a.prev:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#009aa0;text-align:center}
