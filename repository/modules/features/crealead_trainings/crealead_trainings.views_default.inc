@@ -518,6 +518,31 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Dispositif de financement (field_training_funding) */
+  $handler->display->display_options['filters']['field_training_funding_tid']['id'] = 'field_training_funding_tid';
+  $handler->display->display_options['filters']['field_training_funding_tid']['table'] = 'field_data_field_training_funding';
+  $handler->display->display_options['filters']['field_training_funding_tid']['field'] = 'field_training_funding_tid';
+  $handler->display->display_options['filters']['field_training_funding_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_training_funding_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['operator_id'] = 'field_training_funding_tid_op';
+  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['label'] = 'Dispositif de financement';
+  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['operator'] = 'field_training_funding_tid_op';
+  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['identifier'] = 'field_training_funding_tid';
+  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_training_funding_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_training_funding_tid']['vocabulary'] = 'funding_solutions';
   /* Filter criterion: Content: Affichage dans le catalogue ? (field_training_catalog) */
   $handler->display->display_options['filters']['field_training_catalog_value']['id'] = 'field_training_catalog_value';
   $handler->display->display_options['filters']['field_training_catalog_value']['table'] = 'field_data_field_training_catalog';
@@ -824,7 +849,9 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
+    'edit_node' => 'edit_node',
   );
+  $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -859,6 +886,12 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Formation (field_related_training) */
@@ -958,7 +991,9 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
+    'edit_node' => 'edit_node',
   );
+  $handler->display->display_options['row_options']['separator'] = ' - ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -1031,6 +1066,12 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Formation (field_related_training) */
@@ -1100,6 +1141,7 @@ function crealead_trainings_views_default_views() {
     t('Marque'),
     t('Co-entrepreneur'),
     t('Mots-clés'),
+    t('Dispositif de financement'),
     t('Catalogue test'),
     t('Coe'),
     t('Name'),

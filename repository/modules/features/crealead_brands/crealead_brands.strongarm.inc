@@ -276,19 +276,19 @@ function crealead_brands_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'name' => array(
           'weight' => '0',
         ),
         'description' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(

@@ -3707,6 +3707,59 @@ Le label doit être prouvé.',
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-certifications_labels-field_cl_category'.
+  $field_instances['taxonomy_term-certifications_labels-field_cl_category'] = array(
+    'bundle' => 'certifications_labels',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'logo' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_cl_category',
+    'label' => 'Catégorie',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-certifications_labels-field_cl_logo'.
   $field_instances['taxonomy_term-certifications_labels-field_cl_logo'] = array(
     'bundle' => 'certifications_labels',
@@ -3917,6 +3970,7 @@ Le label doit être prouvé.',
   // Translatables
   // Included for use with string extractors like potx.
   t('Auteurs');
+  t('Catégorie');
   t('Certification(s) ou label(s) concerné(s)');
   t('Certifications et labels');
   t('Champ de recherche');
