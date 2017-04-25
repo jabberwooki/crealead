@@ -281,6 +281,12 @@ function crealead_trainings_views_pre_render(&$view) {
   elseif ($view->name == 'trainings' && $view->current_display == 'all_sessions') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
   }
+  elseif ($view->name == 'trainings_calendar') {
+    foreach($view->result as $key=>$value) {
+      $delta = $value->field_data_field_session_dates_delta;
+      $view->result[$key]->node_title = substr($view->result[$key]->node_title, 0, 15) . '...' . '(J' . ($delta+1) . ')';
+    }
+  }
 }
 
 /**
