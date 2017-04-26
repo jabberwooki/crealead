@@ -2130,8 +2130,8 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 }
 .page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
 .page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
-.page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:1px solid grey}
-.page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:2em;border-bottom:1px solid #999}
+.page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:1px solid #999}
+.page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:2em}
 .page-certifications-et-labels .view-certifications-labels .views-row{clear:both;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bf0e38}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-name a{font-family:Quicksand,sans-serif;font-size:1.8em}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-description{font-size:1.2em;line-height:2em}
