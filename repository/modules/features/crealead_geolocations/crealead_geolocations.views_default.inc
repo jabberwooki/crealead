@@ -125,8 +125,8 @@ function crealead_geolocations_views_default_views() {
   );
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'getlocations';
-  $handler->display->display_options['style_options']['node_map_marker'] = 'gray';
-  $handler->display->display_options['style_options']['user_map_marker'] = 'gray';
+  $handler->display->display_options['style_options']['node_map_marker'] = 'crealead';
+  $handler->display->display_options['style_options']['user_map_marker'] = 'crealead';
   $handler->display->display_options['style_options']['controltype'] = 'default';
   $handler->display->display_options['style_options']['mtc'] = 'none';
   $handler->display->display_options['style_options']['scrollwheel'] = 0;
