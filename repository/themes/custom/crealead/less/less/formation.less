@@ -33,9 +33,15 @@
   .field-name-title h2{
     margin-top: 0;
   }
-  .group-training-data .col-md-3{
+  .group-training-data .col-md-3,.group-training-data .col-md-2{
     border-right: 1px solid black;
 
+    .label-above{
+      font-weight: bold;
+      .source();
+    }
+  }
+  .group-training-data .col-md-5{
     .label-above{
       font-weight: bold;
       .source();
@@ -52,7 +58,26 @@
       color: white;
       margin-top: 15px;
     }
+    .views-row{
+      .views-field-edit-node{
+        a{
+          color: #000;
+          text-decoration: underline;
+          padding-left: 20px;
+          &:before{
+            .glyphicon();
+            content: "\e862";
+            position: relative;
+            left: 6px;
+          }
+        }
+      }
+    }
     a.colorbox-node{
+      .date-display-single{
+        width:90px;
+        display: inline-block;
+      }
       &:before{
         content:"Début le ";
       }
@@ -60,6 +85,8 @@
         content:" voir le détail";
         color: #000;
         text-decoration: underline;
+        position: relative;
+        left: 10px;
       }
     }
     .session-list-link > a {
@@ -100,11 +127,50 @@
 }
 /* page de formation **************************************************************************************************/
 .page-formations{
+  .views-exposed-widget{
+    width: 210px;
+    &.views-submit-button{
+      width: 40px;
+    }
+    &.views-reset-button{
+      width: 40px;
+    }
+  }
   #edit-title{
-    width: 220px;
+    width: 190px;
+  }
+  .views-exposed-form {
+    #edit-submit-trainings,#edit-reset{
+      width: 30px;
+      height: 34px;
+      overflow: hidden;
+      &:before{
+        .glyphicon();
+        content: '\e831';
+        color: #FFFFFF;
+        font-size: 1.6em;
+        position: relative;
+        left: -8px;
+        top: -3px;
+      }
+    }
+    .views-reset-button{
+
+      #edit-reset{
+        &:before{
+          .glyphicon();
+          content: '\e832';
+          color: #888;
+          font-size: 1.8em;
+          position: relative;
+          top: -4px;
+        }
+      }
+    }
+
   }
   .form-item-title{
-    width: 220px;
+    width: 200px;
   }
   #views-bootstrap-grid-1{
     > .row{
@@ -127,6 +193,31 @@
             margin-top: 0;
           }
         }
+      }
+    }
+  }
+}
+
+.page-certifications-et-labels{
+  .view-certifications-labels{
+    .views-row{
+      clear: both;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid @rouge-crealead;
+      .views-field-name{
+        a{
+          .quick();
+          font-size: 2em;
+        }
+      }
+      .views-field-description{
+        font-size:1.2em;
+        line-height: 2em;
+      }
+      .views-field-field-cl-logo{
+        float: left;
+        margin-right: 20px;
       }
     }
   }
