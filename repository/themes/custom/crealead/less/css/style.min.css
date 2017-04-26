@@ -1636,7 +1636,7 @@ body.navbar-is-fixed-top.navbar-administration{padding-top:103px!important}
 body.navbar-is-fixed-top.navbar-administration.navbar-horizontal.navbar-tray-open{padding-top:143px!important}
 body.navbar-tray-open.navbar-vertical.navbar-fixed{margin-left:24rem}
 #navbar-administration.navbar-oriented .navbar-tray-vertical{width:24rem}
-img{max-width:100%;max-height:100%}
+img{max-width:100%}
 .position-absolute{position:absolute}
 .navbar-default.white{border-bottom:1px solid #bf0e38}
 @media screen and (min-width:992px){.row-eq-height{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
