@@ -1125,37 +1125,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '3';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'annuaire-entrepreneurs';
 
   /* Display: Marques d'un coe */
@@ -1948,8 +1917,6 @@ function crealead_brands_views_default_views() {
     t('Aucun résultat ne correspond à vos critères de recherche.'),
     t('Cliquez sur un secteur d\'activité :'),
     t('Mots-clés'),
-    t('Marque'),
-    t('Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Marques d\'un coe'),
     t('field collection item from field_brand_coes'),
     t('author'),
