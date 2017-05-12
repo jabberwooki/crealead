@@ -31,30 +31,51 @@ function crealead_trainings_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs',
   );
-  // Exported menu link: menu-coe-area_calendrier-des-formations:espace-co-entrepreneur/calendrier-formations/mois.
-  $menu_links['menu-coe-area_calendrier-des-formations:espace-co-entrepreneur/calendrier-formations/mois'] = array(
-    'menu_name' => 'menu-coe-area',
+  // Exported menu link: menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois.
+  $menu_links['menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois'] = array(
+    'menu_name' => 'menu-calendar-listing-switcher',
     'link_path' => 'espace-co-entrepreneur/calendrier-formations/mois',
     'router_path' => 'espace-co-entrepreneur/calendrier-formations/mois',
-    'link_title' => 'Calendrier des formations',
+    'link_title' => 'Calendrier',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-coe-area_calendrier-des-formations:espace-co-entrepreneur/calendrier-formations/mois',
+      'identifier' => 'menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 4,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-calendar-listing-switcher_liste:espace-co-entrepreneur/calendrier-formations/listing.
+  $menu_links['menu-calendar-listing-switcher_liste:espace-co-entrepreneur/calendrier-formations/listing'] = array(
+    'menu_name' => 'menu-calendar-listing-switcher',
+    'link_path' => 'espace-co-entrepreneur/calendrier-formations/listing',
+    'router_path' => 'espace-co-entrepreneur/calendrier-formations/listing',
+    'link_title' => 'Liste',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-calendar-listing-switcher_liste:espace-co-entrepreneur/calendrier-formations/listing',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
     'customized' => 1,
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Calendrier des formations');
+  t('Calendrier');
+  t('Liste');
   t('Nos formations');
 
   return $menu_links;
