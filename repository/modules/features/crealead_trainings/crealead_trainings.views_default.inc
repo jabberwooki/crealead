@@ -1601,9 +1601,9 @@ function crealead_trainings_views_default_views() {
   );
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/calendrier-formations/listing';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Mois';
+  $handler->display->display_options['menu']['title'] = 'Liste';
   $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'menu-trainings-calendar';
+  $handler->display->display_options['menu']['name'] = 'menu-calendar-listing-switcher';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
