@@ -30,6 +30,7 @@ features[ds_layout_settings][] = node|training|landing_page_block
 features[ds_layout_settings][] = node|training|list
 features[ds_layout_settings][] = node|training|sector_brand_block
 features[ds_layout_settings][] = node|training|teaser
+features[fe_block_settings][] = menu-menu-calendar-listing-switcher
 features[fe_block_settings][] = menu-menu-trainings-calendar
 features[features_api][] = api:2
 features[features_date_format][] = date_format_46

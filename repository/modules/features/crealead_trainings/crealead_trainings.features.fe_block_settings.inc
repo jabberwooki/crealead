@@ -12,6 +12,33 @@ function crealead_trainings_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['menu-menu-calendar-listing-switcher'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-calendar-listing-switcher',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-trainings-calendar'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -35,7 +62,7 @@ function crealead_trainings_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
