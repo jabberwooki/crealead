@@ -58,18 +58,7 @@ function crealead_trainings_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'menu-menu-trainings-calendar' => array(
-          'module' => 'menu',
-          'delta' => 'menu-trainings-calendar',
-          'region' => 'content',
-          'weight' => '-40',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables
