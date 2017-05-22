@@ -1,3 +1,7 @@
+Crealead 3.4.1 / 2017-05-22
+===========================
+Hotfix : Missing menu item 'Liste' in link menu-calendar-listing-switcher added.
+
 Crealead 3.4 / 2017-05-22
 =========================
  * crealead_geolocations up: coes marker changed to creandrea.png
