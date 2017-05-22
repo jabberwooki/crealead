@@ -307,3 +307,7 @@ projects[addressfield][version] = "1.2"
 
 projects[views_field_view][subdir] = contrib
 projects[views_field_view][version] = "1.2"
+
+;--- Calendars ----------------------------------------------------------------
+projects[calendar][subdir] = contrib
+projects[calendar][version] = "3.5"

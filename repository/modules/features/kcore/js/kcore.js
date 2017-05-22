@@ -13,6 +13,12 @@
 
       // Espace co-entrepreneur menu turned as bootstrap tabs.
       $('#block-menu-menu-coe-area ul').addClass('nav-tabs');
+
+      // Trainings Calendar Month/Week/Day/Year nav menu turned as bootstrap tabs.
+      $('#block-menu-menu-trainings-calendar ul').addClass('nav-tabs');
+
+      // Listing/Calendar switcher turned as bootstrap tabs.
+      $('#block-menu-menu-calendar-listing-switcher ul').addClass('nav-tabs');
     }
   };
 }(jQuery))

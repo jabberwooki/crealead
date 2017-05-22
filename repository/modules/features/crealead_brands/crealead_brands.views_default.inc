@@ -1125,37 +1125,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_brand_search_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Marque';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '3';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'annuaire-entrepreneurs';
 
   /* Display: Marques d'un coe */
@@ -1948,8 +1917,6 @@ function crealead_brands_views_default_views() {
     t('Aucun résultat ne correspond à vos critères de recherche.'),
     t('Cliquez sur un secteur d\'activité :'),
     t('Mots-clés'),
-    t('Marque'),
-    t('Vous vous ne souvenez plus exactement du libellé ? Une lettre suffit pour lancer la recherche.'),
     t('Marques d\'un coe'),
     t('field collection item from field_brand_coes'),
     t('author'),
@@ -2021,6 +1988,81 @@ function crealead_brands_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_cl_category',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Catégorie (field_cl_category) */
+  $handler->display->display_options['relationships']['field_cl_category_tid']['id'] = 'field_cl_category_tid';
+  $handler->display->display_options['relationships']['field_cl_category_tid']['table'] = 'field_data_field_cl_category';
+  $handler->display->display_options['relationships']['field_cl_category_tid']['field'] = 'field_cl_category_tid';
+  $handler->display->display_options['relationships']['field_cl_category_tid']['label'] = 'terme à partir de field_cl_category';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Catégorie */
+  $handler->display->display_options['fields']['field_cl_category']['id'] = 'field_cl_category';
+  $handler->display->display_options['fields']['field_cl_category']['table'] = 'field_data_field_cl_category';
+  $handler->display->display_options['fields']['field_cl_category']['field'] = 'field_cl_category';
+  $handler->display->display_options['fields']['field_cl_category']['label'] = '';
+  $handler->display->display_options['fields']['field_cl_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_cl_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cl_category']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'field_cl_category_tid';
+  $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Logo */
+  $handler->display->display_options['fields']['field_cl_logo']['id'] = 'field_cl_logo';
+  $handler->display->display_options['fields']['field_cl_logo']['table'] = 'field_data_field_cl_logo';
+  $handler->display->display_options['fields']['field_cl_logo']['field'] = 'field_cl_logo';
+  $handler->display->display_options['fields']['field_cl_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_cl_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cl_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_cl_logo']['settings'] = array(
+    'image_style' => 'certif_label_logo',
+    'image_link' => 'content',
+    'field_formatter_class' => '',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['relationship'] = 'field_cl_category_tid';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['path'] = 'certifications-et-labels';
 
   /* Display: Entête de page certifs labels */
@@ -2072,6 +2114,7 @@ function crealead_brands_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Page'),
+    t('terme à partir de field_cl_category'),
     t('Entête de page certifs labels'),
     t('Tout'),
   );
@@ -2399,7 +2442,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences */
+  /* Field: Field: Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

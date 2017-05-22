@@ -2,12 +2,12 @@
   .field-name-field-brand-logo img {
     margin-right: 20px;
   }
-  .training-email-label{
+  .training-email-label {
     @media screen {
       display: none;
     }
   }
-  .training-email-address a{
+  .training-email-address a {
     @media screen {
       text-indent: -6000px;
       display: block;
@@ -18,116 +18,375 @@
       margin-top: 25px;
     }
   }
-  .group-training-data{
+  .group-training-data {
     margin: 20px 0;
     border: 1px solid black;
     /*border-right: 0;*/
     padding-right: 0;
-    .field-name-field-training-duration, .field-name-field-training-attendees-number{
+    .field-name-field-training-duration, .field-name-field-training-attendees-number {
       border-right: 1px solid black;
     }
   }
-  .group-training-header-center .training-type{
+  .group-training-header-center .training-type {
     color: @orange-crealead;
   }
-  .field-name-title h2{
+  .field-name-title h2 {
     margin-top: 0;
   }
-  .group-training-data .col-md-3{
+  .group-training-data .col-md-3, .group-training-data .col-md-2 {
     border-right: 1px solid black;
 
-    .label-above{
+    .label-above {
       font-weight: bold;
       .source();
     }
   }
-  .group-training-right-col{
-    .label-above{
+  .group-training-data .col-md-5 {
+    .label-above {
+      font-weight: bold;
       .source();
     }
   }
-  .training-sessions{
-    .new-session-link > a{
+  .group-training-right-col {
+    .label-above {
+      .source();
+    }
+  }
+  .training-sessions {
+    .new-session-link > a {
       .red-button-link();
       color: white;
       margin-top: 15px;
     }
-    a.colorbox-node{
-      &:before{
-        content:"Début le ";
+    .views-row {
+      .views-field-edit-node {
+        a {
+          color: #000;
+          text-decoration: underline;
+          padding-left: 20px;
+          &:before {
+            .glyphicon();
+            content: "\e862";
+            position: relative;
+            left: 6px;
+          }
+        }
       }
-      &:after{
-        content:" voir le détail";
+    }
+    a.colorbox-node {
+      .date-display-single {
+        width: 90px;
+        display: inline-block;
+      }
+      &:before {
+        content: "Début le ";
+      }
+      &:after {
+        content: " voir le détail";
         color: #000;
         text-decoration: underline;
+        position: relative;
+        left: 10px;
       }
     }
     .session-list-link > a {
-      &:before{
+      &:before {
         .glyphicon();
         content: '\e834';
       }
     }
   }
 }
+
 .field-name-field-session-dates {
-  .field-label{
+  .field-label {
     float: none;
   }
-  .field-items > .field-item{
+  .field-items > .field-item {
     display: block;
-    &:before{
+    &:before {
       .glyphicon();
       content: '\e834';
     }
   }
 }
-.page-formations-toutes-les-sessions{
-  .view-id-trainings{
-    h3{
+
+.page-formations-toutes-les-sessions {
+  .view-id-trainings {
+    h3 {
       > a {
         float: left;
         margin-right: 20px;
       }
     }
   }
-  a.colorbox-node{
-    &:before{
+  a.colorbox-node {
+    &:before {
       .glyphicon();
       content: '\e834';
     }
   }
 }
+
 /* page de formation **************************************************************************************************/
-.page-formations{
-  #edit-title{
-    width: 220px;
+.page-formations {
+  .views-exposed-widget {
+    width: 210px;
+    &.views-submit-button {
+      width: 40px;
+    }
+    &.views-reset-button {
+      width: 40px;
+    }
   }
-  .form-item-title{
-    width: 220px;
+  #edit-title {
+    width: 190px;
   }
-  #views-bootstrap-grid-1{
-    > .row{
-      .group-wrapper-teaser{
+  .views-exposed-form {
+    #edit-submit-trainings, #edit-reset {
+      width: 30px;
+      height: 34px;
+      overflow: hidden;
+      &:before {
+        .glyphicon();
+        content: '\e831';
+        color: #FFFFFF;
+        font-size: 1.6em;
+        position: relative;
+        left: -8px;
+        top: -3px;
+      }
+    }
+    .views-reset-button {
+
+      #edit-reset {
+        &:before {
+          .glyphicon();
+          content: '\e832';
+          color: #888;
+          font-size: 1.8em;
+          position: relative;
+          top: -4px;
+        }
+      }
+    }
+
+  }
+  .form-item-title {
+    width: 200px;
+  }
+  #views-bootstrap-grid-1 {
+    > .row {
+      .group-wrapper-teaser {
         box-shadow: 0 0 5px #aaa;
-        @media screen and (min-width: @screen-md){
+        @media screen and (min-width: @screen-md) {
           min-height: 400px;
           overflow: hidden;
         }
         margin-top: 20px;
-        padding : 10px;
-        .field-name-field-training-type{
+        padding: 10px;
+        .field-name-field-training-type {
           /*border-top: 1px solid @rouge-crealead;*/
           padding-top: 15px;
 
         }
-        .field-item{
+        .field-item {
 
-          > h3{
+          > h3 {
             margin-top: 0;
           }
         }
       }
+    }
+  }
+}
+
+.page-certifications-et-labels {
+  .view-certifications-labels {
+    h3 {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 3px dotted @gris-fonce-crealead;
+      > a {
+        .quick();
+        font-size: 1.4em;
+      }
+    }
+
+    .views-row {
+      clear: both;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid @rouge-crealead;
+      &.views-row-last {
+        border: 0;
+      }
+      .views-field-name {
+        a {
+          .quick();
+          font-size: 1.8em;
+        }
+      }
+      .views-field-description {
+        font-size: 1.2em;
+        line-height: 2em;
+      }
+      .views-field-field-cl-logo {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+/* Calendrier interne *************************************************************************************************/
+.page-espace-co-entrepreneur-calendrier-formations {
+  #block-menu-menu-calendar-listing-switcher {
+    ul.nav-tabs {
+      > li.first {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+      > li.last {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e86c";
+          }
+        }
+      }
+    }
+  }
+  #block-menu-menu-trainings-calendar {
+    .nav-tabs {
+      border: 0;
+      > li.active {
+        border-bottom: 1px solid @rouge-crealead;
+        > a {
+          border: 0;
+        }
+      }
+      > li.first {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e86e";
+          }
+        }
+      }
+      > li:nth-child(2) {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e870";
+          }
+        }
+      }
+      > li:nth-child(3) {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\f0c8";
+          }
+        }
+      }
+      > li.last {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+    }
+  }
+  .date-nav {
+    ul.pager {
+      @media (min-width: @screen-md) {
+        li.date-prev {
+          position: absolute;
+          left: 25%;
+          right: auto !important;
+          background-color: transparent !important;
+        }
+
+        li.date-next {
+          position: absolute;
+          left: auto !important;
+          right: 25% !important;
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+  /* Liste *******************************************************************************************************/
+  .calendar-calendar {
+    div.calendar {
+      background-color: transparent !important;
+    }
+    .field-content {
+      a {
+        font-family: arial !important;
+        color: #000 !important;
+        &:before {
+          .glyphicon();
+          content: "\e850";
+          color: @rouge-crealead;
+          margin: 0 4px 0 0;
+        }
+      }
+    }
+  }
+
+  .view-id-trainings_calendar.view-display-id-listing {
+    .view-content {
+        .calendar-listing-day-wrapper {
+          display: table;
+          > div.views-row{
+            a {
+              position: relative;
+              .quick();
+              font-size: 1.3em;
+              display: block;
+              padding-top: 15px;
+              &:before{
+                .glyphicon();
+                content: "\f0c8";
+                position: absolute;
+                left: -30px;
+                top: 25px;
+                color: @bleu-clair-crealead;
+                font-size: 0.6em;
+              }
+            }
+          }
+          > h3 {
+            display: table-cell;
+            margin: 0 10px 20px 0;
+            padding: 20px;
+            @media (min-width: @screen-md) {
+              min-width: 210px;
+            }
+            &:before {
+              .glyphicon();
+              content: "\e834";
+            }
+          }
+          &:after {
+            content: "";
+            display: block;
+            clear: both;
+            border-bottom: 3px dotted @gris-fonce-crealead;
+            width: 60%;
+            margin: 25px auto;
+          }
+
+        }
+
     }
   }
 }

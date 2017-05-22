@@ -87,7 +87,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'sector_brand_block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -286,7 +286,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'sector_brand_block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -771,15 +771,15 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'group_css_effect_3',
-        1 => 'field_achievement_photos',
-        2 => 'title',
+        1 => 'title',
+        2 => 'field_achievement_photos',
         3 => 'body',
       ),
     ),
     'fields' => array(
       'group_css_effect_3' => 'ds_content',
-      'field_achievement_photos' => 'ds_content',
       'title' => 'ds_content',
+      'field_achievement_photos' => 'ds_content',
       'body' => 'ds_content',
     ),
     'limit' => array(
@@ -1053,15 +1053,15 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'group_css_effect_3',
-        1 => 'field_brand_logo',
-        2 => 'title',
+        1 => 'title',
+        2 => 'field_brand_logo',
         3 => 'field_brand_baseline',
       ),
     ),
     'fields' => array(
       'group_css_effect_3' => 'ds_content',
-      'field_brand_logo' => 'ds_content',
       'title' => 'ds_content',
+      'field_brand_logo' => 'ds_content',
       'field_brand_baseline' => 'ds_content',
     ),
     'classes' => array(),

@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function crealead_trainings_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -24,6 +27,37 @@ function crealead_trainings_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function crealead_trainings_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_features_date_format_default().
+ */
+function crealead_trainings_features_date_format_default() {
+  $fdf_config = array();
+
+  $fdf_config[] = array(
+    'dfid' => 46,
+    'format' => 'D d M',
+    'type' => 'custom',
+    'locked' => 0,
+  );
+  return $fdf_config;
+}
+
+/**
+ * Implements hook_features_date_type_default().
+ */
+function crealead_trainings_features_date_type_default() {
+  $fdt_config = array();
+
+  $fdt_config[] = array(
+    'is_new' => FALSE,
+    'module' => '',
+    'type' => 'calendar_listing',
+    'title' => 'Calendrier - Listing',
+    'locked' => 0,
+  );
+  return $fdt_config;
 }
 
 /**

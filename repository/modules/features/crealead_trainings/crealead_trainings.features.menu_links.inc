@@ -31,9 +31,30 @@ function crealead_trainings_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs',
   );
+  // Exported menu link: menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois.
+  $menu_links['menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois'] = array(
+    'menu_name' => 'menu-calendar-listing-switcher',
+    'link_path' => 'espace-co-entrepreneur/calendrier-formations/mois',
+    'router_path' => 'espace-co-entrepreneur/calendrier-formations/mois',
+    'link_title' => 'Calendrier',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-calendar-listing-switcher_calendrier:espace-co-entrepreneur/calendrier-formations/mois',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Calendrier');
   t('Nos formations');
 
   return $menu_links;

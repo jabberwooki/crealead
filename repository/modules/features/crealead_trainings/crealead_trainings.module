@@ -120,38 +120,49 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
       unset($build['training_contact']);
     }
 
-    // From now on, sessions field value is provided by sessions view display.
-//    $sessions_markup = '';
-//    $trainings_view = views_get_view('trainings');
-//    $trainings_view->set_display('sessions_count');
-//    $trainings_view->pre_execute();
-//    $sessions_number = trim(strip_tags($trainings_view->render('sessions_count')));
-//
-//    if ($sessions_number == 0) {
+    // From now on, sessions field value is the concatenation of data entered by user in add/edit form
+    // + content provided by the trainings/next_sessions view display.
+    $previous_sessions_markup = $build['field_scheduled_sessions'][0]['#markup'];
+    $sessions_list = '';
+    $sessions_user_links = '';
+
+    $trainings_view = views_get_view('trainings');
+    $trainings_view->set_display('sessions_count');
+    $trainings_view->pre_execute();
+    $sessions_number = trim(strip_tags($trainings_view->render('sessions_count')));
+
+//    if ($sessions_markup == '<p>Nous contacter</p>' && $sessions_number == 0) {
 //      $sessions_markup = 'Nous contacter.';
 //    }
-//    else {
-//      $trainings_view = views_get_view('trainings');
-//      $trainings_view->set_display('next_sessions');
-//      $trainings_view->pre_execute();
-//      $sessions_markup = $trainings_view->render('next_sessions');
-//
-//      if ($sessions_number > 3 ) {
-//        $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
-//        $sessions_markup .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
-//      }
-//    }
-//    global $user;
-//
-//    if ($user->uid == $build['#node']->uid) {
-//      $new_session_link = l(
-//        'Créer une session',
-//        '/node/add/training-session/' . $build['#node']->nid,
-//        array('query' => array('destination' => current_path()))
-//      );
-//      $sessions_markup .= '<div class="new-session-link">' . $new_session_link . '</div>';
-//    }
-//    $build['field_scheduled_sessions'][0]['#markup'] = $sessions_markup;
+    if ($sessions_number > 0) {
+      $trainings_view = views_get_view('trainings');
+      $trainings_view->set_display('next_sessions');
+      $trainings_view->pre_execute();
+      $sessions_list .= $trainings_view->render('next_sessions');
+
+      // At the moment we know that at least one training session exists,
+      // we can remove the mention "Nous contacter"
+      // which is the field_scheduled_sessions saved default value (see crealead_trainings_node_presave hook).
+      if (strstr($previous_sessions_markup, 'Nous contacter')) {
+        $previous_sessions_markup = '';
+      }
+
+      if ($sessions_number > 3 ) {
+        $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
+        $sessions_list .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
+      }
+    }
+    global $user;
+
+    if ($user->uid == $build['#node']->uid) {
+      $new_session_link = l(
+        'Créer une session',
+        '/node/add/training-session/' . $build['#node']->nid,
+        array('query' => array('destination' => current_path()))
+      );
+      $sessions_user_links .= '<div class="new-session-link">' . $new_session_link . '</div>';
+    }
+    $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
   }
 }
 
@@ -178,12 +189,16 @@ function crealead_trainings_node_presave($node) {
     }
 
     // --- Technical field_training_search field handling --- //
+    $training_intro = '';
     $training_public = '';
     $training_aims = '';
     $certifs_labels_names = '';
-
     $title = $node->title . ' ';
     $training_content = strip_tags($node->body['und'][0]['value']) . ' ';
+
+    if (!empty($node->field_introduction['und'])) {
+      $training_intro .= strip_tags($node->field_introduction['und'][0]['value']);
+    }
 
     if (!empty($node->field_training_public['und'])) {
       $training_public .= strip_tags($node->field_training_public['und'][0]['value']);
@@ -200,8 +215,8 @@ function crealead_trainings_node_presave($node) {
         $certifs_labels_names .= $term->name . ' ';
       }
     }
-    // Store training content, public and objectives into field_training_search technical field.
-    $search_data =  $title . $training_content . $training_public . $training_aims . $certifs_labels_names;
+    // Store training intro, content, public and objectives into field_training_search technical field.
+    $search_data =  $title . $training_intro . $training_content . $training_public . $training_aims . $certifs_labels_names;
 
     $search_array = array('value' => $search_data, 'format' => 'plain_text');
     if (!isset($node->field_training_search['und'][0])) {
@@ -265,6 +280,22 @@ function crealead_trainings_views_pre_render(&$view) {
   }
   elseif ($view->name == 'trainings' && $view->current_display == 'all_sessions') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
+  }
+  elseif ($view->name == 'trainings_calendar') {
+    foreach ($view->result as $key => $value) {
+      $delta = $value->field_data_field_session_dates_delta;
+      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
+      if ($view->current_display != 'listing') {
+        $ellipsis = ' ';
+        if (strlen($markup) > 20) {
+          $ellipsis = '... ';
+        }
+        $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(J' . ($delta + 1) . ')';
+      }
+      else {
+        $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = $markup . ' (J' . ($delta + 1) . ')';
+      }
+    }
   }
 }
 

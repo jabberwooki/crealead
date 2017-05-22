@@ -169,6 +169,7 @@ function crealead_brands_node_presave($node) {
     $referer = request_uri();
     // --- Technical field_brand_search field handling --- //
     if ($referer != '/node/add/client' && !strstr($referer, 'crealead_brands_link_registered_client') && $referer != '/node/add/achievement') {
+      $brand_name = $node->title . ' ';
       $coe_names = '';
       $coe_competencies = '';
       $brand_description = '';
@@ -222,8 +223,9 @@ function crealead_brands_node_presave($node) {
         }
       }
 
-      // Store names, competencies, solutions and tags into field_brand_search technical field.
-      $search_data = $coe_names
+      // Store brand name, coe names, competencies, solutions and tags into field_brand_search technical field.
+      $search_data = $brand_name
+        . $coe_names
         . $coe_competencies
         . $brand_description
         . $brand_solutions
@@ -595,7 +597,8 @@ function crealead_brands_views_query_alter(&$view, &$query) {
     // In that case, brands are sorted on title only (random criterion is removed).
     if ($view->exposed_raw_input['field_business_sector_tid'] != 'All'
       || $view->exposed_raw_input['field_brand_search_value'] != ''
-      || $view->exposed_raw_input['title'] != '') {
+//      || $view->exposed_raw_input['title'] != ''
+    ) {
       unset($query->orderby[0]);
     }
   }
@@ -900,4 +903,3 @@ function crealead_achievement_submit($form, $form_state) {
     }
   }
 }
-

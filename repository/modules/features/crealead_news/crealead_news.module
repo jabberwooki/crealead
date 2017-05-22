@@ -100,6 +100,9 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
     $form['field_related_sector_brands']['#access'] = FALSE;
     $form['field_related_certifs_labels']['#access'] = FALSE;
   }
+
+  // Summary is now in plain text. We must remove html tags for nodes saved prior to this modification.
+  $form['body']['und'][0]['summary']['#default_value'] = strip_tags($form['body']['und'][0]['summary']['#default_value']);
 }
 
 /**
@@ -183,4 +186,19 @@ function crealead_news_get_parent_brands($article_id) {
   $query->condition('entity_id', $article_id);
 
   return $query->execute()->fetchAllKeyed(0,0);
+}
+
+/**
+ * Implements hook_node_view().
+ *
+ * News node summary is now plain text.
+ * We must removed html tags for node summaries saved prior to this modification.
+ */
+function crealead_news_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'news'
+    && in_array($view_mode, array('block', 'news_2_3','teaser','sector_brand_block','landing_page_block','certifications_labels_block'))) {
+    if (isset($node->content['body']['#items'][0]['summary'])) {
+      $node->content['body'][0]['#markup'] = strip_tags($node->content['body'][0]['#markup']);
+    }
+  }
 }
