@@ -1,3 +1,53 @@
+Crealead 3.4 / 2017-05-22
+=========================
+ * crealead_geolocations up: coes marker changed to creandrea.png
+ * crealead_trainings up: Calendar menu (Month,Week,Day,Year) removed from display.
+ * crealead_trainings up: Best ellipsis handling for sessions titles displayed in calendar.
+ * LESS and CSS up.
+ * match-actu-height.js up.
+ * Feature crealead_news up to change ds in view display accroche.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Custom profile up: Custom template file created for trainings calendar listing view.
+ * LESS and CSS up.
+ * Fontello up.
+ * Install profile up: calendar module dependency uncommented.
+ * crealead_articles, crealead_news and kedition up: Summary field text format changed to plain text.
+ * crealead_geolocations up: New marker creadrop.png created and exported.
+ * crealead_trainings up: Trainings calendar menus blocks setting added.
+ * crealead_trainings up: Trainings calendar menu and Calendar/Listin switcher menus links reorganised.
+ * crealead_trainings up: Training sessions calendar's listing display added.
+ * crealead_brands up: Brand search form simplified with one unique search field (search includes now brand name as well).
+ * crealead_trainings up: Date filter added on next_sessions and all_sessions view displays.
+ * crealead_trainings up: Calendar menu links (month,week,day,year) updated.
+ * crealead_brands up: Certif and labels view page ordered by category name, then certif name.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_geolocations up: Crealead logo marker added.
+ * Feature crealead_trainings up to modify col width of blueprint informations.
+ * LESS and CSS up.
+ * fontello up.
+ * crealead_trainings up: trainings calendar created.
+ * LESS and CSS up.
+ * crealead_trainings up: New field field_training_funding added to training content type and added as exposed filter to trainings/list_page (catalog) view.
+ * crealead_trainings up: Link 'modifier' added to each session in training page and in all sessions page.
+ * crealead_trainings up: field_training_domain arity set to multiple and field_training_domain settings altered to auto-select domain term'sparents.
+ * crealead_trainings up: previously registered field_scheduled_sessions content kept and displayed in addition to the sessions content type data.
+ * crealead_trainings up: field_training_catalog moved up, just after field_related_brands.
+ * crealead_trainings up: Content of field_introduction added to keywords search.
+ * crealead_brands up: Certifications and labels view page created.
+ * LESS and CSS up.
+ * Feature crealead_brands up to change view mode in sectoriak brand and landing pages.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+
 Crealead 3.3.2 / 2017-03-15
 ===========================
  * crealead_my_contents up: Exposed filter 'Statut' field default value set to 'All'.
