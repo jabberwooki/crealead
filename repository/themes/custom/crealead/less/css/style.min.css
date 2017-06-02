@@ -391,7 +391,8 @@ blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child,ol ol,
 address,dl{margin-bottom:20px}
 ol,ul{margin-bottom:10px}
 .list-inline{margin-left:-5px}
-.list-inline>li{display:inline-block;padding-left:5px;padding-right:5px}
+.list-inline>li,.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
+.list-inline>li{display:inline-block;padding-right:5px}
 dd{margin-left:0}
 @media (min-width:768px){.dl-horizontal dt{float:left;width:160px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dl-horizontal dd{margin-left:180px}
@@ -2007,11 +2008,10 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-articles .field-
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles .field-name-field-image{margin-bottom:-20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand{margin-top:40px;text-align:left}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a{color:#bf0e38;margin-top:20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover{text-decoration:none;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row{margin-bottom:20px;padding-bottom:20px;background:url(../images/red-news-line.gif) 50% 100% no-repeat}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-news-type{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a{color:#bf0e38}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
 .view-info-meetings .view-content table tr td a:before,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a:before{top:1px;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image{height:200px;overflow:hidden;text-align:center}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image img{max-height:200px}
@@ -2048,14 +2048,13 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--blog,body.node-type-brand #
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
 .node-type-info-meeting a.field-group-format-title{font-size:.8em}
-.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;width:1em}
+.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
 .node-type-info-meeting #registration-form #edit-field-registrant-gender-und .radio:first-child,body.page-registration.not-logged-in .field-name-field-attendee{display:none}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios,.node-type-info-meeting #registration-form .form-type-radios label{float:left}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio{float:left;margin-top:0;margin-right:15px}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
-.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
 .node-type-info-meeting #registration-form fieldset{clear:both}
 .node-type-info-meeting #registration-form .field-name-field-registrant-how{clear:left}
 @media (min-width:992px){.view-display-id-block_home_slideshow{max-height:531px;overflow:hidden;position:relative}
@@ -2110,14 +2109,14 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .node-type-training .group-training-data .col-md-2 .label-above,.node-type-training .group-training-data .col-md-3 .label-above,.node-type-training .group-training-data .col-md-5 .label-above{font-weight:700;font-family:'Source Sans Pro',sans-serif}
 .node-type-training .group-training-right-col .label-above{font-family:'Source Sans Pro',sans-serif}
 .node-type-training .training-sessions .new-session-link>a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;color:#fff;margin-top:15px}
-.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px}
-.node-type-training .training-sessions .new-session-link>a:before{text-decoration:inherit;width:1em;content:"\e834";color:#fff}
+.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px}
+.node-type-training .training-sessions .new-session-link>a:before{text-decoration:inherit;content:"\e834";color:#fff}
 .node-type-training .training-sessions .views-row .views-field-edit-node a{color:#000;text-decoration:underline;padding-left:20px}
-.node-type-training .training-sessions .views-row .views-field-edit-node a:before{text-decoration:inherit;width:1em;color:#777;content:"\e862";left:6px}
-.node-type-training .training-sessions a.colorbox-node .date-display-single{width:90px;display:inline-block}
+.node-type-training .training-sessions .views-row .views-field-edit-node a:before{text-decoration:inherit;color:#777;content:"\e862";left:6px}
+.node-type-training .training-sessions a.colorbox-node .date-display-single{display:inline-block}
 .node-type-training .training-sessions a.colorbox-node:before{content:"Début le "}
 .node-type-training .training-sessions a.colorbox-node:after{content:" voir le détail";color:#000;text-decoration:underline;position:relative;left:10px}
-.node-type-training .training-sessions .session-list-link>a:before{text-decoration:inherit;width:1em;color:#777;content:'\e834'}
+.node-type-training .training-sessions .session-list-link>a:before{text-decoration:inherit;color:#777;content:'\e834'}
 .field-name-field-session-dates .field-label{float:none}
 .field-name-field-session-dates .field-items>.field-item{display:block}
 .field-name-field-session-dates .field-items>.field-item:before,.page-formations-toutes-les-sessions a.colorbox-node:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e834'}
