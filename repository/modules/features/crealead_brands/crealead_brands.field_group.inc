@@ -70,11 +70,13 @@ function crealead_brands_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'brand';
   $field_group->mode = 'full';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Articles',
     'weight' => '29',
-    'children' => array(),
+    'children' => array(
+      0 => 'articles_brand_articles',
+    ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
       'formatter' => '',
@@ -94,13 +96,11 @@ function crealead_brands_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'brand';
   $field_group->mode = 'full';
-  $field_group->parent_name = 'group_brand_blog_tab';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Articles',
     'weight' => '42',
-    'children' => array(
-      0 => 'articles_brand_articles',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Articles',
@@ -126,14 +126,11 @@ function crealead_brands_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'brand';
   $field_group->mode = 'full';
-  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Blog',
-    'weight' => '28',
-    'children' => array(
-      0 => 'group_brand_articles',
-      1 => 'group_brand_news',
-    ),
+    'weight' => '30',
+    'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
       'formatter' => '',
@@ -155,14 +152,14 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Références client',
+    'label' => 'Références',
     'weight' => '26',
     'children' => array(
       0 => 'field_brand_references',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Références client',
+      'label' => 'Références',
       'instance_settings' => array(
         'classes' => 'group-brand-clients-tab field-group-bootstrap_fieldgroup_nav_item',
       ),
@@ -235,7 +232,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '30',
+    'weight' => '32',
     'children' => array(
       0 => 'field_contact_form',
       1 => 'brand_contacts',
@@ -325,7 +322,7 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Informations générales',
+    'label' => 'Présentation',
     'weight' => '24',
     'children' => array(
       0 => 'group_brand_infos_1',
@@ -333,10 +330,9 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Présentation',
       'instance_settings' => array(
         'classes' => 'group-brand-infos-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -382,18 +378,41 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_news_tab|node|brand|full';
+  $field_group->group_name = 'group_brand_news_tab';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_tabs';
+  $field_group->data = array(
+    'label' => 'Actualités',
+    'weight' => '28',
+    'children' => array(
+      0 => 'news_brand_news',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'label' => 'Actualités',
+      'instance_settings' => array(
+        'classes' => 'group-brand-news-tab field-group-bootstrap_fieldgroup_nav_item',
+      ),
+    ),
+  );
+  $field_groups['group_brand_news_tab|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_news|node|brand|full';
   $field_group->group_name = 'group_brand_news';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'brand';
   $field_group->mode = 'full';
-  $field_group->parent_name = 'group_brand_blog_tab';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités',
     'weight' => '41',
-    'children' => array(
-      0 => 'news_brand_news',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Actualités',
@@ -486,12 +505,13 @@ function crealead_brands_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'group_brand_achiev_tab',
-      1 => 'group_brand_blog_tab',
+      1 => 'group_brand_articles_tab',
       2 => 'group_brand_clients_tab',
       3 => 'group_brand_contact_tab',
       4 => 'group_brand_infos_tab',
       5 => 'group_brans_coes_tab',
       6 => 'group_brand_trainings_tab',
+      7 => 'group_brand_news_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -518,7 +538,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Formations et produits',
-    'weight' => '29',
+    'weight' => '31',
     'children' => array(
       0 => 'trainings_entity_view_1',
     ),
@@ -543,17 +563,16 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Entrepreneurs',
+    'label' => 'Equipe',
     'weight' => '25',
     'children' => array(
       0 => 'field_brand_coes',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Equipe',
       'instance_settings' => array(
         'classes' => 'group-brans-coes-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -1336,9 +1355,9 @@ function crealead_brands_field_group_info() {
   t('Clients');
   t('Contact');
   t('Entrepreneurs');
+  t('Equipe');
   t('Formations et produits');
   t('Informations Générales');
-  t('Informations générales');
   t('Infos 1');
   t('Infos 2');
   t('Marques');
@@ -1347,8 +1366,9 @@ function crealead_brands_field_group_info() {
   t('Onglets');
   t('Onglets marque');
   t('Produits et formations');
+  t('Présentation');
   t('Réalisations');
-  t('Références client');
+  t('Références');
   t('group col1-3');
   t('group col2-6');
   t('group col3-3');

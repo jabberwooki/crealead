@@ -245,15 +245,13 @@ function crealead_articles_ds_layout_settings_info() {
         0 => 'field_image',
         1 => 'title',
         2 => 'body',
-        3 => 'field_article_kind',
-        4 => 'field_landing_pages',
+        3 => 'field_landing_pages',
       ),
     ),
     'fields' => array(
       'field_image' => 'central',
       'title' => 'central',
       'body' => 'central',
-      'field_article_kind' => 'central',
       'field_landing_pages' => 'central',
     ),
     'classes' => array(),
@@ -265,6 +263,7 @@ function crealead_articles_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|article|brand_articles'] = $ds_layout;
 

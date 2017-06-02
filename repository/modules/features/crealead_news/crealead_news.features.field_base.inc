@@ -138,6 +138,7 @@ function crealead_news_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'profile2_private' => FALSE,
       'timezone_db' => '',
       'todate' => '',
       'tz_handling' => 'none',

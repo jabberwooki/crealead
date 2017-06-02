@@ -32,7 +32,7 @@ function crealead_articles_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
-          'trim_length' => 600,
+          'trim_length' => 300,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
@@ -163,11 +163,8 @@ function crealead_articles_field_default_field_instances() {
       ),
       'brand_articles' => array(
         'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'list_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'certifications_labels_block' => array(
@@ -339,7 +336,7 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => '',
+          'image_style' => 'brand_news_335x200',
         ),
         'type' => 'image',
         'weight' => 0,

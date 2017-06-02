@@ -238,7 +238,7 @@ function crealead_news_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_image' => array(
+    'body' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
