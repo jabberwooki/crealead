@@ -261,3 +261,11 @@ function crealead_update_7007() {
 function crealead_update_7008() {
   module_enable(array('crealead_geoolocations'));
 }
+
+/**
+ * Activate feature crealead_newsflashes.
+ */
+function crealead_update_7009() {
+  module_enable(array('crealead_newsflashes'));
+}
+

@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Code for the Brèves feature.
+ */
+
+include_once 'crealead_newsflashes.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_state, $form_id) {dpm($form);
+  // Move "Champs Crealed" vertical tab to the bottom.
+  $form['#groups']['group_crealead_fields']->weight = 200;
+
+  // Stuff that has to be done after form build.
+  //$form['#after_build'][] = 'crealead_newsflashes_after_build';
+}
+
+function crealead_newsflashes_after_build($form, &$form_state) {
+  // Make the field field_sent readonly if user is not superadmin.
+  global $user;
+
+  if ($user->uid != 1) {
+    $form['field_sent']['#attributes']['readonly'] = 'readonly';
+  }
+
+  return $form;
+}

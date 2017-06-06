@@ -35,6 +35,7 @@ dependencies[] = field_group
 dependencies[] = filter
 dependencies[] = image
 dependencies[] = imce
+dependencies[] = kcore
 dependencies[] = linkit
 dependencies[] = locale
 dependencies[] = masquerade
