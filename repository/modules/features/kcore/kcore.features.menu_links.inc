@@ -72,6 +72,23 @@ function kcore_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'management_administration:admin',
   );
+  // Exported menu link: menu-coe-area_accueil:espace-co-entrepreneur/accueil.
+  $menu_links['menu-coe-area_accueil:espace-co-entrepreneur/accueil'] = array(
+    'menu_name' => 'menu-coe-area',
+    'link_path' => 'espace-co-entrepreneur/accueil',
+    'router_path' => 'espace-co-entrepreneur/accueil',
+    'link_title' => 'Accueil',
+    'options' => array(
+      'identifier' => 'menu-coe-area_accueil:espace-co-entrepreneur/accueil',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -10,
+    'customized' => 0,
+  );
   // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
     'menu_name' => 'menu-footer-menu',

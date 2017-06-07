@@ -125,6 +125,7 @@ features[menu_custom][] = menu-top
 features[menu_links][] = main-menu_accueil:<front>
 features[menu_links][] = main-menu_dcouvrez-loffre-desbrco-entrepreneurs:annuaire-entrepreneurs
 features[menu_links][] = management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table
+features[menu_links][] = menu-coe-area_accueil:espace-co-entrepreneur/accueil
 features[menu_links][] = menu-footer-menu_plan-du-site:sitemap
 features[menu_links][] = menu-top_contact:eform/submit/site-contact
 features[rules_config][] = rules_rules_site_contact_email
