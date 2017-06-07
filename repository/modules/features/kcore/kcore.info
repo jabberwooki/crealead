@@ -346,6 +346,7 @@ features[variable][] = user_picture_style
 features[variable][] = user_pictures
 features[variable][] = user_register
 features[variable][] = user_signatures
+features[views_view][] = coes_area_home
 features[views_view][] = users
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
