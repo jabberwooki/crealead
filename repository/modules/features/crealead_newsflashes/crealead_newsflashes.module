@@ -7,6 +7,68 @@
 include_once 'crealead_newsflashes.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+/**
+ * Implements hook_permission().
+ */
+function crealead_newsflashes_permission() {
+  return array(
+    'administer newsflashes' => array(
+      'title' => t('Administer newsflashes'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+/**
+ * Implements hook_menu().
+ */
+function crealead_newsflashes_menu() {
+//  $items['send-newsflashes-email'] = array(
+//    'type' => MENU_CALLBACK,
+//    'page callback' => 'crealead_newsflashes_send_mail',
+//    'access arguments' => array('administer newsflashes'),
+//    'access callback' => TRUE,
+//  );
+  $items['admin/config/crealead/newsflashes'] = array(
+    'title' => 'Brèves (envoi d\'emails)',
+    'description' => 'Paramétrage des envois de brèves par email.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_newsflashes_settings_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer newsflashes'),
+    'file' => 'crealead_newsflashes.admin.inc',
+  );
+  $items['admin/config/crealead/newsflashes/auto'] = array(
+    'title' => 'Paramétrage des envois automatiques',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  $items['admin/config/crealead/newsflashes/manual'] = array(
+    'title' => 'Envoi manuel',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_newsflashes_manual_sending_form'),
+    'access arguments' => array('administer newsflashes'),
+    'file' => 'crealead_newsflashes.admin.inc',
+  );
+  $items['admin/config/crealead/newsflashes/test'] = array(
+    'title' => 'Test',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_newsflashes_test_sending_form'),
+    'access arguments' => array('administer newsflashes'),
+    'file' => 'crealead_newsflashes.admin.inc',
+  );
+
+  return $items;
+}
+
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_state, $form_id) {
@@ -17,13 +79,85 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
   //$form['#after_build'][] = 'crealead_newsflashes_after_build';
 }
 
-function crealead_newsflashes_after_build($form, &$form_state) {
-  // Make the field field_sent readonly if user is not superadmin.
-  global $user;
+//function crealead_newsflashes_after_build($form, &$form_state) {
+//  // Make the field field_sent readonly if user is not superadmin.
+//  global $user;
+//
+//  if ($user->uid != 1) {
+//    $form['field_sent']['#attributes']['readonly'] = 'readonly';
+//  }
+//
+//  return $form;
+//}
 
-  if ($user->uid != 1) {
-    $form['field_sent']['#attributes']['readonly'] = 'readonly';
+//function crealead_newsflashes_send_mail() {
+//  crealead_send_latest_newsflashes();
+////  return 'envoyé';
+//}
+
+function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL) {
+  $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
+  dpm($newsflashes_details);
+
+  if($real_sending) {
+    $email_addresses = crealead_get_users_emails();
+
   }
+  else {
+    $email_addresses = $test_addresses;
 
-  return $form;
+  }
+  dpm($email_addresses);
+
+  // Email message building
+//  $to = $referent_email;
+//  $from = variable_get('site_mail');
+//  $mail_subject = '[Site web Crealead] Demande de validation d\'une marque';
+//  $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
+//    . ' a demandé la validation de sa marque ' . $brand_title . ' : http://' . $_SERVER['HTTP_HOST'] . '/node/' . $brand_nid;
+//  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+}
+
+function crealead_get_users_emails() {
+  $query = db_select('users', 'u');
+  $query->fields('u', array('uid','mail'));
+  $query->condition('u.status', 1);
+  return $query->execute()->fetchAllKeyed(0, 1);
+}
+
+function crealead_newsflashes_get_latest($with_details=FALSE) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'newsflash')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_sent_by_email', 'value', 'non')
+    ->fieldCondition('field_display_end_date','value', date('Y-m-d') . 'T00:00:00', '>=');
+
+  $result = $query->execute();
+
+  if (!isset($result['node'])) {
+    return null;
+  }
+  else {
+    if (!$with_details) {
+      return sizeof($result['node']);
+    }
+    else {
+      $newsflashes_nids = array_keys($result['node']);
+      $newsflashes_details = array();
+
+      foreach ($newsflashes_nids as $nid) {
+        $wrapper = entity_metadata_wrapper('node', $nid);
+        $newsflashes_details[] = array(
+          'nid' => $nid,
+          'title' => $wrapper->title->value(),
+          'created' => $wrapper->field_related_population->name->value(),
+          'author' => $wrapper->author->name->value(),
+        );
+      }
+
+      return $newsflashes_details;
+    }
+  }
 }
