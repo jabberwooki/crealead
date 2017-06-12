@@ -108,15 +108,15 @@ function crealead_articles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'article';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'service_links_displays_group' => array(
+    'author' => array(
       'weight' => '1',
+      'label' => 'inline',
+      'format' => 'author',
+    ),
+    'service_links_displays_group' => array(
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'sld_group_image',
-    ),
-    'field_article_related_brands' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
     ),
   );
   $export['node|article|full'] = $ds_fieldsetting;
@@ -309,13 +309,15 @@ function crealead_articles_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'field_image',
-        1 => 'service_links_displays_group',
-        2 => 'body',
-        3 => 'field_article_related_brands',
+        1 => 'author',
+        2 => 'service_links_displays_group',
+        3 => 'body',
+        4 => 'field_article_related_brands',
       ),
     ),
     'fields' => array(
       'field_image' => 'central',
+      'author' => 'central',
       'service_links_displays_group' => 'central',
       'body' => 'central',
       'field_article_related_brands' => 'central',

@@ -77,16 +77,16 @@ function crealead_articles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
       ),
       'display' => array(),
@@ -144,6 +144,13 @@ function crealead_articles_strongarm() {
   $strongarm->name = 'pathauto_node_article_pattern';
   $strongarm->value = 'articles/[node:title]';
   $export['pathauto_node_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_certifications_labels_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_certifications_labels_pattern'] = $strongarm;
 
   return $export;
 }

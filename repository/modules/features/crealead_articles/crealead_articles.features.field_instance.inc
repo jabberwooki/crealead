@@ -63,7 +63,7 @@ function crealead_articles_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -144,7 +144,7 @@ function crealead_articles_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -186,7 +186,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -275,7 +275,7 @@ function crealead_articles_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 16,
+        'weight' => 4,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -501,7 +501,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -539,6 +539,85 @@ function crealead_articles_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_news_author'.
+  $field_instances['node-article-field_news_author'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'brand_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_news_author',
+    'label' => 'Auteur',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -580,7 +659,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -656,7 +735,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -696,6 +775,7 @@ function crealead_articles_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Auteur');
   t('Certification(s) ou label(s) concerné(s)');
   t('Corps');
   t('Image');
