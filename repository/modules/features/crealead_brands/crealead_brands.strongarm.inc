@@ -240,6 +240,12 @@ function crealead_brands_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'events_calendar_entity_view_1' => array(
+          'full' => array(
+            'weight' => '43',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );
@@ -764,6 +770,20 @@ function crealead_brands_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_business_sectors_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_business_sectors_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_cl_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_cl_categories_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_sector_brands_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_sector_brands_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

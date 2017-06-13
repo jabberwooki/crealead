@@ -269,3 +269,9 @@ function crealead_update_7009() {
   module_enable(array('crealead_newsflashes'));
 }
 
+/**
+ * Activate feature crealead_events.
+ */
+function crealead_update_7010() {
+  module_enable(array('crealead_events'));
+}
