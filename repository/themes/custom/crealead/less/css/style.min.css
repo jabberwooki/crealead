@@ -2267,3 +2267,4 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-newsflash .field-name-field-attached-file .file>a{display:block}
 .node-type-newsflash .field-name-field-related-population a{margin:20px 0;display:block}
 .node-type-newsflash .field-name-field-related-population a:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e847";color:#999}
+.node-type-newsflash .print-link{display:none}
