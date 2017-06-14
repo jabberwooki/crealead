@@ -115,10 +115,4 @@ dependencies[] = crealead_gazette
 dependencies[] = crealead_documents
 dependencies[] = crealead_geolocations
 dependencies[] = crealead_newsflashes
-
-
-
-
-
-
-
+dependencies[] = crealead_events
