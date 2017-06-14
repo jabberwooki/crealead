@@ -1599,8 +1599,8 @@ a .glyphicon-spin{display:inline-block;text-decoration:none}
 td.checkbox,td.radio,th.checkbox,th.radio{display:table-cell}
 .views-display-settings .label{font-size:100%;color:#666}
 .views-display-settings .footer{padding:0;margin:4px 0 0}
+.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox],.radio input[type=radio],.radio-inline input[type=radio],body.node-type-brand .radio input[type=radio]{margin-left:0}
 .views-exposed-form .views-exposed-widget .btn{margin-top:1.8em}
-.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox],.radio input[type=radio],.radio-inline input[type=radio]{margin-left:0}
 table .checkbox input[type=checkbox],table .radio input[type=radio]{max-width:inherit}
 .form-horizontal .form-group label{position:relative;min-height:1px;margin-top:0;margin-bottom:0;padding-top:7px;padding-left:15px;padding-right:15px;text-align:right}
 @media (min-width:768px){.form-horizontal .form-group label{float:left;width:16.66666667%}
@@ -1695,7 +1695,7 @@ div.service-links a{float:left;margin-right:10px}
 .icon-doc:before{content:"\e804"}
 .icon-question:before{content:"\e805"}
 .icon-people:before{content:"\e806"}
-.icon-calendar:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before{content:"\e807"}
+.icon-calendar:before{content:"\e807"}
 .icon-radio:before{content:"\e808"}
 .icon-mail:before{content:"\e809"}
 .icon-person:before{content:"\e80A"}
@@ -2018,7 +2018,6 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .r
 body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-image{overflow:hidden;text-align:center}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-image img{max-height:200px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view .date-nav-wrapper .date-prev,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view .date-nav-wrapper .date-prev{right:auto;left:0}
-body.node-type-brand .radio input[type=radio]{margin-left:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;height:35px;overflow:hidden;margin-top:20px;margin-bottom:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a:before{position:relative;font-family:fontello;font-weight:400;display:inline-block;width:1em;margin-right:10px;text-transform:none;font-size:1em;color:#fff}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits .node-training .row{padding:20px}
@@ -2051,7 +2050,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
 .node-type-info-meeting a.field-group-format-title{font-size:.8em}
-.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
+.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
 .node-type-info-meeting #registration-form #edit-field-registrant-gender-und .radio:first-child,body.page-registration.not-logged-in .field-name-field-attendee{display:none}
@@ -2079,7 +2078,6 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler a:hover{text-decoration:none}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .button-action-diaporama{margin-bottom:40px}
 }
-.view-display-id-controlers_1 .controler a:hover,.view-display-id-controlers_2 .controler a:hover,.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
 @media (min-width:992px) and (max-width:1200px){.view-display-id-block_home_slideshow .view-display-id-controlers_1,.view-display-id-block_home_slideshow .view-display-id-controlers_2{top:100px}
 }
 @media (max-width:992px){#block-views-diaporama-block-home-slideshow{margin:30px}
@@ -2093,6 +2091,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .view-display-id-controlers_1 .controler.controler-selected a,.view-display-id-controlers_2 .controler.controler-selected a{color:#bf0e38}
 .view-display-id-controlers_1 .controler.first-controler,.view-display-id-controlers_2 .controler.first-controler{margin-top:20px}
 .view-display-id-controlers_1 .controler a,.view-display-id-controlers_2 .controler a{color:#fff}
+.view-display-id-controlers_1 .controler a:hover,.view-display-id-controlers_2 .controler a:hover{text-decoration:none}
 .view-display-id-controlers_1 .button-action-diaporama,.view-display-id-controlers_2 .button-action-diaporama{display:block;background-color:#bf0e38;width:70%;margin:20px auto 0;font-family:'Source Sans Pro',sans-serif;color:#fff;padding:10px;text-transform:uppercase;border-radius:4px;text-align:center;font-size:1.6em;font-weight:700;line-height:.7em}
 .view-display-id-controlers_1 .button-action-diaporama .sub-button-action-diaporama,.view-display-id-controlers_2 .button-action-diaporama .sub-button-action-diaporama{text-transform:lowercase;font-size:.6em}
 .view-display-id-controlers_1 .button-action-diaporama:hover,.view-display-id-controlers_2 .button-action-diaporama:hover{text-decoration:none;background-color:#a00c2f}
@@ -2148,6 +2147,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-description{font-size:1.2em;line-height:2em}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-field-cl-logo{float:left;margin-right:20px}
 .page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before{position:relative;font-family:fontello;margin-right:10px;color:#777;top:1px;font-size:1em;display:inline-block;font-style:normal;font-weight:400;speak:none;text-decoration:inherit;width:1em;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
+.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before{content:"\e807"}
 .page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before{content:"\e86c"}
 .page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active{border-bottom:1px solid #bf0e38}
 .page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active>a{border:0}
@@ -2250,10 +2250,10 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands a#achievements,.main-container.main-container-sector-brands a#brands-products,.main-container.main-container-sector-brands a#intro,.main-container.main-container-sector-brands a#news-articles{margin-top:-200px;float:right}
 .getlocations_map_canvas div.gm-style>div>div>div>div>div>img[src*=mapcnt6]{max-height:none}
 .node-type-achievement .field-slideshow-controls{display:table;margin:0 auto}
-.node-type-achievement .field-slideshow-controls a.next:after,.node-type-achievement .field-slideshow-controls a.prev:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#009aa0}
 .node-type-achievement .field-slideshow-controls a.prev{margin-right:30px}
-.node-type-achievement .field-slideshow-controls a.prev:before{margin-right:10px;content:"\e833"}
-.node-type-achievement .field-slideshow-controls a.next:after{margin-right:10px;content:"\e834"}
+.node-type-achievement .field-slideshow-controls a.next:after,.node-type-achievement .field-slideshow-controls a.prev:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#009aa0}
+.node-type-achievement .field-slideshow-controls a.prev:before{content:"\e833"}
+.node-type-achievement .field-slideshow-controls a.next:after{content:"\e834"}
 .node-type-achievement .field-slideshow-pager{display:table;margin-left:auto;margin-right:auto}
 .node-type-achievement .field-slideshow-pager>a{margin-right:10px;background:#009aa0;border-radius:10px;color:#fff;width:20px;height:20px;display:inline-block;text-align:center}
 .view-newsflashes .views-field-field-related-population:before,.view-newsflashes .views-field-title a:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;margin-right:10px}
@@ -2262,6 +2262,7 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .view-newsflashes .views-field-field-related-population:before{display:inline-block;content:"\e847";color:#999}
 .view-newsflashes .views-field-title a{display:block}
 .view-newsflashes .views-field-title a:before{display:inline-block;content:"\e83c";color:#bf0e38}
+.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
 .node-type-newsflash .field-name-field-attached-file:before,.node-type-newsflash .field-name-field-related-population a:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-newsflash .field-name-field-attached-file{position:relative;margin-top:20px;border:1px solid #999;padding:20px}
 .node-type-newsflash .field-name-field-attached-file:before{margin-right:10px;content:"\e83b";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
@@ -2270,3 +2271,10 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-newsflash .field-name-field-related-population a{margin:20px 0;display:block}
 .node-type-newsflash .field-name-field-related-population a:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e847";color:#999}
 .node-type-newsflash .print-link{display:none}
+.node-type-event .field-name-field-event-dates{float:left;width:42%;padding:20px;margin-right:2%;margin-bottom:30px;border:1px solid #999;position:relative}
+.node-type-event .field-name-field-event-dates:before,.node-type-event .field-name-field-event-locations:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;top:-10px;left:20px;display:block;background-color:#fff;color:#ff3f18}
+.node-type-event .field-name-field-event-dates:before{content:"\e807";width:30px;position:absolute;border-right:10px solid #fff;border-left:5px solid #fff}
+.node-type-event .field-name-field-event-locations{float:left;width:45%;padding:20px;border:1px solid #999;position:relative}
+.node-type-event .field-name-field-event-locations:before{content:"\e875";width:30px;position:absolute;border-right:10px solid #fff;border-left:5px solid #fff}
+.node-type-event .field-name-field-event-picture{clear:both;float:right;margin-left:20px}
+.node-type-event .field-name-body{clear:left}
