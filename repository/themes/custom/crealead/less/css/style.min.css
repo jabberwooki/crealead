@@ -1547,7 +1547,7 @@ ul li.collapsed,ul li.expanded,ul li.leaf{list-style:none}
 }
 .form-type-password-confirm .progress{background:0 0;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:4px;margin:-5px 0 0}
 .form-type-password-confirm .form-type-password{clear:left}
-.form-type-password-confirm .help-block,body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-items,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-header,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-header,body.node-type-news .field-name-body{clear:both}
+.form-type-password-confirm .help-block,body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups .field-items,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-header,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-header,body.node-type-news .field-name-body{clear:both}
 .form-type-password-confirm .form-control-feedback{right:15px}
 ul.pagination li>a.progress-disabled{float:left}
 .form-autocomplete .glyphicon{color:#777;font-size:120%}
@@ -1961,18 +1961,18 @@ body.node-type-brand .main-container.main-container-with-header .group-brand-tab
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_item.active a,body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li.field-group-bootstrap_fieldgroup_nav_itemactive.active a{background-color:#bf0e38}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:first-child a{border-radius:6px 0 0 6px}
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li:last-child a{border-radius:0 6px 6px 0}
-body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-header a,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden}
+body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-header a,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;height:35px;overflow:hidden;margin-top:20px;margin-bottom:0}
 body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_articles .view-header a:before,body.node-type-brand .main-container.main-container-with-header .view-display-id-brand_news .view-header a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups{display:none;float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-business-groups .field-item{margin-bottom:5px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags{clear:right;float:right;width:275px;padding:15px 20px;margin-left:20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-label{margin:5px 0 15px;color:#000}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-items{clear:both}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-item{margin-bottom:5px;float:left;margin-right:5px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-name-field-brand-tags .field-item a{font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--informations-gnrales .field-item{margin-bottom:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups{display:none;float:right;background-color:#ededed;width:275px;padding:15px 20px;margin-left:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups .field-item{margin-bottom:5px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags{clear:right;float:right;width:275px;padding:15px 20px;margin-left:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-label{margin:5px 0 15px;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-items{clear:both}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-item{margin-bottom:5px;float:left;margin-right:5px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-item a{font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-item{margin-bottom:20px}
 body.node-type-brand .col-lg-4{margin-top:20px}
 body.node-type-brand .col-lg-4>div{border:1px solid #999}
 body.node-type-brand .col-lg-4>div .field-name-field-training-type .field-item{font-style:italic}
@@ -1981,19 +1981,19 @@ body.node-type-brand .col-lg-4>div .views-field-field-coe-photo{float:left;margi
 body.node-type-brand .col-lg-4>div .views-field-field-brand-coe a{font-family:Quicksand,sans-serif;font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-coe-status{font-weight:700}
 body.node-type-brand .col-lg-4>div .views-field-field-competencies:after{content:'';display:block;clear:left}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client{margin-top:20px}
-@media (min-width:992px){body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client #views-bootstrap-grid-1{margin-left:250px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .view-filters{float:left;width:225px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences{margin-top:20px}
+@media (min-width:992px){body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences #views-bootstrap-grid-1{margin-left:250px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .view-filters{float:left;width:225px}
 }
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a:hover{background-color:#dcdcdc;text-decoration:none}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a.active{background-color:#dcdcdc;color:#bf0e38}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo{border:1px solid #999;padding:2px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo .field-items{display:table;width:100%}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-field-client-logo .field-items .field-item{display:table-cell;text-align:center;vertical-align:middle;height:120px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title{text-align:center}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client .view-content .field-name-title a{color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a:hover{background-color:#dcdcdc;text-decoration:none}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a.active{background-color:#dcdcdc;color:#bf0e38}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-content .field-name-field-client-logo{border:1px solid #999;padding:2px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-content .field-name-field-client-logo .field-items{display:table;width:100%}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-content .field-name-field-client-logo .field-items .field-item{display:table-cell;text-align:center;vertical-align:middle;height:120px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-content .field-name-title{text-align:center}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-content .field-name-title a{color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control{width:5%}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.left,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-control.right{background-image:none}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title{text-align:left}
@@ -2004,17 +2004,19 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-bod
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .slide-counter{margin-left:75px}
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-slideshow-pager{margin-top:10px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-articles .field-name-field-landing-pages{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles .field-name-field-image{margin-bottom:-20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand{margin-top:40px;text-align:left}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a{color:#bf0e38;margin-top:20px}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-id-articles h4.h4-title-article-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row{margin-bottom:20px;padding-bottom:20px;background:url(../images/red-news-line.gif) 50% 100% no-repeat}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-news-type{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row h4.h4-title-news-in-brand a{color:#bf0e38}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .field-name-field-landing-pages,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .field-name-field-landing-pages{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-id-articles .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-id-articles .field-name-field-image{margin-bottom:-20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-id-articles h4.h4-title-article-in-brand,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-id-articles h4.h4-title-article-in-brand{margin-top:40px;text-align:left}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-id-articles h4.h4-title-article-in-brand a,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-id-articles h4.h4-title-article-in-brand a{color:#bf0e38;margin-top:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row h4.h4-title-news-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-id-articles h4.h4-title-article-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row h4.h4-title-news-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row h4.h4-title-news-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-id-articles h4.h4-title-article-in-brand a:hover,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row h4.h4-title-news-in-brand a:hover{text-decoration:none;color:#000}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row{margin-bottom:20px;padding-bottom:20px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row div.node,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row div.node,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row div.node,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row div.node{padding:10px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-news-type,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-news-type,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-news-type,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-news-type{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;margin-left:5px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-landing-pages,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-landing-pages,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-landing-pages,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-landing-pages{position:absolute;top:10px;left:5px;background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;margin-left:10px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row h4.h4-title-news-in-brand a,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row h4.h4-title-news-in-brand a,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row h4.h4-title-news-in-brand a,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row h4.h4-title-news-in-brand a{color:#bf0e38}
 .view-info-meetings .view-content table tr td a:before,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a:before{top:1px;font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image{height:200px;overflow:hidden;text-align:center}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog .view-news .views-row .field-name-field-image img{max-height:200px}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-image,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-image{height:200px;overflow:hidden;text-align:center}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-articles .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits .view-news .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-articles .row .field-name-field-image img,body.node-type-brand #bootstrap-fieldgroup-nav-item--articles .view-news .row .field-name-field-image img{max-height:200px}
 body.node-type-brand .radio input[type=radio]{margin-left:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;height:35px;overflow:hidden;margin-top:20px;margin-bottom:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits div.view-header a:before{position:relative;font-family:fontello;font-weight:400;display:inline-block;width:1em;margin-right:10px;text-transform:none;font-size:1em;color:#fff}
@@ -2030,7 +2032,7 @@ body.node-type-brand .content-header .row-eq-height{border:1px solid #000;displa
 body.node-type-brand .content-header .row-eq-height>div{display:table-cell;vertical-align:top}
 body.node-type-brand .content-header .row-eq-height>div.group-col-1-3,body.node-type-brand .content-header .row-eq-height>div.group-col3-3{padding-top:20px}
 body.node-type-brand h3,body.node-type-brand h4{page-break-after:avoid}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--blog,body.node-type-brand #bootstrap-fieldgroup-nav-item--contact,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations,body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences-client,body.node-type-brand .alert-block,body.node-type-brand .col-md-3 .field-name-field-brand-tags,body.node-type-brand .tabs--primary{display:none}
+body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-brand #bootstrap-fieldgroup-nav-item--contact,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations-et-produits,body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations,body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences,body.node-type-brand .alert-block,body.node-type-brand .col-md-3 .field-name-field-brand-tags,body.node-type-brand .tabs--primary{display:none}
 }
 .view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
 .page-reunions-information{background:url(../images/bg_grey.png) 0 30px repeat-x}
