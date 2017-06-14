@@ -1,4 +1,11 @@
 .view-newsflashes{
+  .views-field-field-related-population{
+    &:before{
+      .glyphicon();
+      content: "\e847";
+      color: @gris-fonce-crealead;
+    }
+  }
   .views-field-title{
     a {
       display: block;
@@ -40,6 +47,15 @@
       > a{
         display: block;
       }
+    }
+  }
+  .field-name-field-related-population a{
+    margin: 20px 0;
+    display: block;
+    &:before{
+      .glyphicon();
+      content: "\e847";
+      color: @gris-fonce-crealead;
     }
   }
 }

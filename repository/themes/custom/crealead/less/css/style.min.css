@@ -391,8 +391,7 @@ blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child,ol ol,
 address,dl{margin-bottom:20px}
 ol,ul{margin-bottom:10px}
 .list-inline{margin-left:-5px}
-.list-inline>li,.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
-.list-inline>li{display:inline-block;padding-right:5px}
+.list-inline>li{display:inline-block;padding-left:5px;padding-right:5px}
 dd{margin-left:0}
 @media (min-width:768px){.dl-horizontal dt{float:left;width:160px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dl-horizontal dd{margin-left:180px}
@@ -1685,7 +1684,7 @@ div.service-links a{float:left;margin-right:10px}
 .glyphicon,.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px;color:#777;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;text-transform:none}
 .glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{position:relative;top:1px}
 .glyphicon-h3-a>h3>span>a:hover:before{text-decoration:none}
-#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{top:1px;text-decoration:inherit;line-height:1em;font-style:normal;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
+#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{text-decoration:inherit;line-height:1em;top:1px;font-style:normal;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
 [class*=" iconafter-"]:after{position:relative;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-transform:none;color:#777}
 .icon-facebook:before{content:"\e85f";color:#154EA8}
 .icon-twitter:before{content:"\e860";color:#0C93FC}
@@ -2057,6 +2056,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios,.node-type-info-meeting #registration-form .form-type-radios label{float:left}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio{float:left;margin-top:0;margin-right:15px}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
+.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
 .node-type-info-meeting #registration-form fieldset{clear:both}
 .node-type-info-meeting #registration-form .field-name-field-registrant-how{clear:left}
 @media (min-width:992px){.view-display-id-block_home_slideshow{max-height:531px;overflow:hidden;position:relative}
@@ -2077,6 +2077,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .controler a:hover{text-decoration:none}
 .view-display-id-block_home_slideshow .view-display-id-controlers_2 .button-action-diaporama{margin-bottom:40px}
 }
+.view-display-id-controlers_1 .controler a:hover,.view-display-id-controlers_2 .controler a:hover,.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
 @media (min-width:992px) and (max-width:1200px){.view-display-id-block_home_slideshow .view-display-id-controlers_1,.view-display-id-block_home_slideshow .view-display-id-controlers_2{top:100px}
 }
 @media (max-width:992px){#block-views-diaporama-block-home-slideshow{margin:30px}
@@ -2090,7 +2091,6 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 .view-display-id-controlers_1 .controler.controler-selected a,.view-display-id-controlers_2 .controler.controler-selected a{color:#bf0e38}
 .view-display-id-controlers_1 .controler.first-controler,.view-display-id-controlers_2 .controler.first-controler{margin-top:20px}
 .view-display-id-controlers_1 .controler a,.view-display-id-controlers_2 .controler a{color:#fff}
-.view-display-id-controlers_1 .controler a:hover,.view-display-id-controlers_2 .controler a:hover{text-decoration:none}
 .view-display-id-controlers_1 .button-action-diaporama,.view-display-id-controlers_2 .button-action-diaporama{display:block;background-color:#bf0e38;width:70%;margin:20px auto 0;font-family:'Source Sans Pro',sans-serif;color:#fff;padding:10px;text-transform:uppercase;border-radius:4px;text-align:center;font-size:1.6em;font-weight:700;line-height:.7em}
 .view-display-id-controlers_1 .button-action-diaporama .sub-button-action-diaporama,.view-display-id-controlers_2 .button-action-diaporama .sub-button-action-diaporama{text-transform:lowercase;font-size:.6em}
 .view-display-id-controlers_1 .button-action-diaporama:hover,.view-display-id-controlers_2 .button-action-diaporama:hover{text-decoration:none;background-color:#a00c2f}
@@ -2248,18 +2248,22 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands a#achievements,.main-container.main-container-sector-brands a#brands-products,.main-container.main-container-sector-brands a#intro,.main-container.main-container-sector-brands a#news-articles{margin-top:-200px;float:right}
 .getlocations_map_canvas div.gm-style>div>div>div>div>div>img[src*=mapcnt6]{max-height:none}
 .node-type-achievement .field-slideshow-controls{display:table;margin:0 auto}
+.node-type-achievement .field-slideshow-controls a.next:after,.node-type-achievement .field-slideshow-controls a.prev:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#009aa0}
 .node-type-achievement .field-slideshow-controls a.prev{margin-right:30px}
-.node-type-achievement .field-slideshow-controls a.next:after,.node-type-achievement .field-slideshow-controls a.prev:before{display:inline-block;width:1em;margin-right:10px;color:#009aa0;top:1px;text-decoration:inherit;position:relative;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-.node-type-achievement .field-slideshow-controls a.prev:before{content:"\e833"}
-.node-type-achievement .field-slideshow-controls a.next:after{content:"\e834"}
+.node-type-achievement .field-slideshow-controls a.prev:before{margin-right:10px;content:"\e833"}
+.node-type-achievement .field-slideshow-controls a.next:after{margin-right:10px;content:"\e834"}
 .node-type-achievement .field-slideshow-pager{display:table;margin-left:auto;margin-right:auto}
 .node-type-achievement .field-slideshow-pager>a{margin-right:10px;background:#009aa0;border-radius:10px;color:#fff;width:20px;height:20px;display:inline-block;text-align:center}
+.view-newsflashes .views-field-field-related-population:before,.view-newsflashes .views-field-title a:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;margin-right:10px}
 .node-type-achievement .field-slideshow-pager>a.activeSlide{background:#000}
 #ygtv1,#ygtv9{display:none}
+.view-newsflashes .views-field-field-related-population:before{display:inline-block;content:"\e847";color:#999}
 .view-newsflashes .views-field-title a{display:block}
-.view-newsflashes .views-field-title a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e83c";color:#bf0e38}
-.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
+.view-newsflashes .views-field-title a:before{display:inline-block;content:"\e83c";color:#bf0e38}
+.node-type-newsflash .field-name-field-attached-file:before,.node-type-newsflash .field-name-field-related-population a:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-newsflash .field-name-field-attached-file{position:relative;margin-top:20px;border:1px solid #999;padding:20px}
-.node-type-newsflash .field-name-field-attached-file:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e83b";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
+.node-type-newsflash .field-name-field-attached-file:before{margin-right:10px;content:"\e83b";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
 .node-type-newsflash .field-name-field-attached-file .file img{float:left;margin-right:15px}
 .node-type-newsflash .field-name-field-attached-file .file>a{display:block}
+.node-type-newsflash .field-name-field-related-population a{margin:20px 0;display:block}
+.node-type-newsflash .field-name-field-related-population a:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e847";color:#999}
