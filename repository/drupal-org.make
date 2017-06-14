@@ -85,6 +85,9 @@ projects[views][subdir] = contrib
 projects[views][version] = "3.14"
 
 ;=== Modules - optional =======================================================
+projects[autocomplete_deluxe][subdir] = contrib
+projects[autocomplete_deluxe][version] = "2.2"
+
 ;projects[bean][subdir] = contrib
 ;projects[bean][version] = ""
 

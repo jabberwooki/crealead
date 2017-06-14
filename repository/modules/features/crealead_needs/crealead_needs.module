@@ -1,0 +1,103 @@
+<?php
+/**
+ * @file
+ * Code for the Besoins feature.
+ */
+
+include_once 'crealead_needs.features.inc';
+
+define('SAME_NEED_LINK', '<a href="/">J\'ai le même besoin</a>');
+define('NO_LONGER_NEED_LINK', '<a href="/">Plus besoin</a>');
+/**
+ * Implements hook_init().
+ */
+function crealead_needs_init() {
+//  dpm(current_path());
+//  if (current_path() == 'node/add/need') {
+//
+//  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_needs_menu() {
+  $items['ajax/similar_need'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_needs_similar_need',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'delivery callback' => 'crealead_brands_similar_clients_list',
+  );
+}
+
+function crealead_needs_similar_need($user_id=null) {
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_needs') . '/js/crealead_needs.js');
+
+  $form['#validate'][] = 'crealead_needs_form_validate';
+}
+
+function crealead_needs_form_validate($form, &$form_state) {
+  /* Packaged need types are :
+   * interne           uuid = a21d1e9b-b97c-47a3-8405-b2a0c874aaec
+   * perso             uuid = e27640d8-6ea5-402f-9c08-a608e9218a34
+   * interne ou perso  uuid = afd19e4c-9ed1-4fb8-b654-0a43057fd401
+   * externe           uuid = a597bbeb-b323-40ca-8336-35b4be98cb3b
+   */
+
+  // 'Demandeur' and 'Demandeur externe' fields validation. Depends on chosen Type.
+  $selected_type = taxonomy_term_load($form_state['values']['field_need_type']['und'][0]['tid']);
+  $selected_type_uuid = $selected_type->uuid;
+
+  if ($selected_type_uuid == 'a597bbeb-b323-40ca-8336-35b4be98cb3b' && empty($form_state['values']['field_external_enquirer']['und'][0]['value'])) {
+    form_set_error('field_external_enquirer','Vous devez saisir le nom du demandeur externe');
+  }
+  elseif ($selected_type_uuid != 'a597bbeb-b323-40ca-8336-35b4be98cb3b' && empty($form_state['values']['field_enquirer']['und'][0]['target_id'])) {
+    form_set_error('field_enquirer','Vous devez saisir le nom du demandeur');
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_needs_views_pre_render(&$view) {
+  if ($view->name == 'needs' && $view->current_display == 'needs_list') {
+//    $same_need_link = '';
+//    $no_need_link = '';
+    foreach ($view->result as $key=>$item) {
+      $view->result[$key]->field_field_need_action[0]['rendered']['#markup'] = SAME_NEED_LINK;
+      global $user;
+      foreach ($item->field_field_other_enquirers as $enquirer) {
+        if ($enquirer['raw']['target_id'] == $user->uid) {
+          $view->result[$key]->field_field_need_action[0]['rendered']['#markup'] = NO_LONGER_NEED_LINK;
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_needs_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'need' && $view_mode == 'full') {
+    $node->content['field_need_action'][0]['#markup'] = SAME_NEED_LINK;
+    global $user;
+    if (isset($node->field_other_enquirers['und'])) {
+      foreach ($node->field_other_enquirers['und'] as $coe) {
+        if ($coe['target_id'] == $user->uid) {
+          $node->content['field_need_action'][0]['#markup'] = NO_LONGER_NEED_LINK;
+          break;
+        }
+      }
+    }
+  }
+}
