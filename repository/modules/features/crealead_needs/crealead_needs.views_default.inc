@@ -156,6 +156,15 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'need' => 'need',
   );
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['operator'] = '>=';
+  $handler->display->display_options['filters']['date_filter']['default_date'] = 'now';
+  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+    'field_data_field_display_end_date.field_display_end_date_value' => 'field_data_field_display_end_date.field_display_end_date_value',
+  );
 
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'needs_list');
