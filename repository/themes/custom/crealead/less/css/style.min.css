@@ -2271,10 +2271,10 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-newsflash .field-name-field-related-population a{margin:20px 0;display:block}
 .node-type-newsflash .field-name-field-related-population a:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e847";color:#999}
 .node-type-newsflash .print-link{display:none}
-.node-type-event .field-name-field-event-dates{float:left;width:42%;padding:20px;margin-right:2%;margin-bottom:30px;border:1px solid #999;position:relative}
+.node-type-event .field-name-field-event-dates{float:left;width:49%;padding:20px;margin-right:2%;margin-bottom:30px;border:1px solid #999;position:relative}
 .node-type-event .field-name-field-event-dates:before,.node-type-event .field-name-field-event-locations:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;top:-10px;left:20px;display:block;background-color:#fff;color:#ff3f18}
 .node-type-event .field-name-field-event-dates:before{content:"\e807";width:30px;position:absolute;border-right:10px solid #fff;border-left:5px solid #fff}
-.node-type-event .field-name-field-event-locations{float:left;width:45%;padding:20px;border:1px solid #999;position:relative}
+.node-type-event .field-name-field-event-locations{float:left;width:49%;padding:20px;border:1px solid #999;position:relative}
 .node-type-event .field-name-field-event-locations:before{content:"\e875";width:30px;position:absolute;border-right:10px solid #fff;border-left:5px solid #fff}
 .node-type-event .field-name-field-event-picture{clear:both;float:right;margin-left:20px}
 .node-type-event .field-name-body{clear:left}
