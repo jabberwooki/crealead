@@ -1676,6 +1676,7 @@ blockquote p:after{content:"\e856";margin-left:10px}
 #block-system-main ul li,ul.coche-rouge li{list-style:none;padding:0;margin:0}
 #block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e850";color:#bf0e38}
 #block-system-main ul.pager li:before,#block-system-main ul.pagination li:before,ul.coche-rouge.pager li:before,ul.coche-rouge.pagination li:before{display:none}
+.pagination li.active>span{padding:11px 19px}
 div.service-links{display:block;float:right;margin-top:0;padding:0 0 0 20px}
 div.service-links a{float:left;margin-right:10px}
 .node-type-page div.service-links{margin-top:-20px}
