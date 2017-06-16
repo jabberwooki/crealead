@@ -70,7 +70,6 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['fields']['field_related_population']['id'] = 'field_related_population';
   $handler->display->display_options['fields']['field_related_population']['table'] = 'field_data_field_related_population';
   $handler->display->display_options['fields']['field_related_population']['field'] = 'field_related_population';
-  $handler->display->display_options['fields']['field_related_population']['label'] = '';
   $handler->display->display_options['fields']['field_related_population']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_related_population']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_related_population']['settings'] = array(
@@ -80,22 +79,25 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Titre';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['label'] = 'Auteur';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['label'] = 'Date';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'news_short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
@@ -118,7 +120,7 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'newsflash' => 'newsflash',
   );
-  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
+  /* Filter criterion: Content: Date d&#039;expiration (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
@@ -127,6 +129,7 @@ function crealead_newsflashes_views_default_views() {
 
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'coes_area_block');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $translatables['newsflashes'] = array(
     t('Master'),
     t('Brèves'),
@@ -144,6 +147,10 @@ function crealead_newsflashes_views_default_views() {
     t('next ›'),
     t('last »'),
     t('auteur'),
+    t('Population concernée'),
+    t('Titre'),
+    t('Auteur'),
+    t('Date'),
     t('Bloc espace coes'),
   );
   $export['newsflashes'] = $view;

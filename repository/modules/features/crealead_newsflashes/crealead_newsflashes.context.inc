@@ -32,6 +32,12 @@ function crealead_newsflashes_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'views-needs-needs_list' => array(
+          'module' => 'views',
+          'delta' => 'needs-needs_list',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
