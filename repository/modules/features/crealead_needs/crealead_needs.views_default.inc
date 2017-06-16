@@ -130,6 +130,7 @@ function crealead_needs_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_other_enquirers']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_other_enquirers']['multi_type'] = 'ul';
   /* Field: Content: Action */
   $handler->display->display_options['fields']['field_need_action']['id'] = 'field_need_action';
   $handler->display->display_options['fields']['field_need_action']['table'] = 'field_data_field_need_action';
