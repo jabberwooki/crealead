@@ -36,15 +36,14 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_need_type' => 'field_need_type',
-    'title' => 'title',
-    'field_enquirer' => 'field_enquirer',
-    'field_external_enquirer' => 'field_enquirer',
     'created' => 'created',
+    'title' => 'title',
+    'field_other_enquirers' => 'field_other_enquirers',
+    'field_need_action' => 'field_need_action',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_need_type' => array(
+    'created' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -58,35 +57,18 @@ function crealead_needs_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_enquirer' => array(
+    'field_other_enquirers' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_need_action' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_external_enquirer' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'created' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Content: Type de besoin */
-  $handler->display->display_options['fields']['field_need_type']['id'] = 'field_need_type';
-  $handler->display->display_options['fields']['field_need_type']['table'] = 'field_data_field_need_type';
-  $handler->display->display_options['fields']['field_need_type']['field'] = 'field_need_type';
-  $handler->display->display_options['fields']['field_need_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_need_type']['settings'] = array(
-    'field_formatter_class' => '',
   );
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -95,29 +77,25 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Date';
   $handler->display->display_options['fields']['created']['date_format'] = 'news_short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Content: Client */
+  $handler->display->display_options['fields']['field_need_client']['id'] = 'field_need_client';
+  $handler->display->display_options['fields']['field_need_client']['table'] = 'field_data_field_need_client';
+  $handler->display->display_options['fields']['field_need_client']['field'] = 'field_need_client';
+  $handler->display->display_options['fields']['field_need_client']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_need_client']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Demandeur */
-  $handler->display->display_options['fields']['field_enquirer']['id'] = 'field_enquirer';
-  $handler->display->display_options['fields']['field_enquirer']['table'] = 'field_data_field_enquirer';
-  $handler->display->display_options['fields']['field_enquirer']['field'] = 'field_enquirer';
-  $handler->display->display_options['fields']['field_enquirer']['settings'] = array(
-    'link' => 0,
-    'colorbox_node_link' => 0,
-    'colorbox_node_width' => '600',
-    'colorbox_node_height' => '600',
-    'colorbox_node_classes' => '',
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Demandeur externe */
-  $handler->display->display_options['fields']['field_external_enquirer']['id'] = 'field_external_enquirer';
-  $handler->display->display_options['fields']['field_external_enquirer']['table'] = 'field_data_field_external_enquirer';
-  $handler->display->display_options['fields']['field_external_enquirer']['field'] = 'field_external_enquirer';
-  $handler->display->display_options['fields']['field_external_enquirer']['settings'] = array(
+  /* Field: Content: Personne concernée */
+  $handler->display->display_options['fields']['field_crealead_name']['id'] = 'field_crealead_name';
+  $handler->display->display_options['fields']['field_crealead_name']['table'] = 'field_data_field_crealead_name';
+  $handler->display->display_options['fields']['field_crealead_name']['field'] = 'field_crealead_name';
+  $handler->display->display_options['fields']['field_crealead_name']['settings'] = array(
     'field_formatter_class' => '',
   );
   /* Field: Content: Autres entrepreneurs avec le même besoin */
@@ -170,6 +148,13 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_display_end_date.field_display_end_date_value' => 'field_data_field_display_end_date.field_display_end_date_value',
   );
+  /* Filter criterion: Content: J&#039;ai trouvé une solution (field_solution_found) */
+  $handler->display->display_options['filters']['field_solution_found_value']['id'] = 'field_solution_found_value';
+  $handler->display->display_options['filters']['field_solution_found_value']['table'] = 'field_data_field_solution_found';
+  $handler->display->display_options['filters']['field_solution_found_value']['field'] = 'field_solution_found_value';
+  $handler->display->display_options['filters']['field_solution_found_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'needs_list');
@@ -190,11 +175,10 @@ function crealead_needs_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Type de besoin'),
     t('Date'),
+    t('Client'),
     t('Title'),
-    t('Demandeur'),
-    t('Demandeur externe'),
+    t('Personne concernée'),
     t('Avec le même besoin'),
     t('Action'),
     t('Bloc espace coes'),

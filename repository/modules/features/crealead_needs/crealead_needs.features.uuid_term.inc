@@ -33,6 +33,28 @@ function crealead_needs_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'Crealead Structure',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 2,
+    'uuid' => '7a01c453-5ac3-42a6-a374-ee9d26137a2f',
+    'vocabulary_machine_name' => 'need_clients',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Client externe',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 3,
+    'uuid' => '7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4',
+    'vocabulary_machine_name' => 'need_clients',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
     'name' => 'Pas d\'urgence',
     'description' => '',
     'format' => 'full_html',
@@ -88,6 +110,17 @@ function crealead_needs_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'Activité co-entrepreneur',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'b4346853-567b-448c-910d-0e79d75d4e99',
+    'vocabulary_machine_name' => 'need_clients',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
     'name' => 'Urgent (1 semaine)',
     'description' => '',
     'format' => 'full_html',
@@ -105,6 +138,17 @@ function crealead_needs_uuid_features_default_terms() {
     'weight' => 1,
     'uuid' => 'e27640d8-6ea5-402f-9c08-a608e9218a34',
     'vocabulary_machine_name' => 'need_types',
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Perso',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 1,
+    'uuid' => 'edcd12a6-b46d-416d-919b-c52d0acfa1df',
+    'vocabulary_machine_name' => 'need_clients',
     'path' => array(
       'pathauto' => 1,
     ),

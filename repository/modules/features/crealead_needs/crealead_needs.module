@@ -6,8 +6,8 @@
 
 include_once 'crealead_needs.features.inc';
 
-define('ADD_TO_NEED_TEXT', 'J\'ai le même besoin');
-define('REMOVE_FROM_NEED_TEXT', 'Plus besoin');
+define('ADD_TO_NEED_TEXT', 'Je m\'ajoute à ce besoin');
+define('REMOVE_FROM_NEED_TEXT', 'Je n\'ai plus ce besoin');
 
 /**
  * Implements hook_menu().
@@ -53,27 +53,32 @@ function crealead_needs_menu() {
 function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_js(drupal_get_path('module','crealead_needs') . '/js/crealead_needs.js');
 
+  /* Packaged need clients are :
+   * Activité co-entrepreneur   uuid = b4346853-567b-448c-910d-0e79d75d4e99
+   * Perso                      uuid = edcd12a6-b46d-416d-919b-c52d0acfa1df
+   * Crealead Structure         uuid = 7a01c453-5ac3-42a6-a374-ee9d26137a2f
+   * Client externe             uuid = 7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4
+   */
+  // So we build a $params array of client terms uuids keyed by client terms tid,
+  $need_clients_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('need_clients')->vid);
+  $params = array();
+  foreach ($need_clients_terms as $clients_term) {
+    $params[$clients_term->tid] = $clients_term->uuid;
+  }
+  // and we store it in the javascript crealead_needs_clients variable.
+  drupal_add_js(array('crealead_needs_clients' => $params), 'setting');
+
+  // We also pass on to javascript connected user infos
+  global $user;
+  drupal_add_js(array('crealead_needs_connected_user' => $user), 'setting');
+
+
+  // Here, we add a custom validation function.
   $form['#validate'][] = 'crealead_needs_form_validate';
 }
 
 function crealead_needs_form_validate($form, &$form_state) {
-  /* Packaged need types are :
-   * interne           uuid = a21d1e9b-b97c-47a3-8405-b2a0c874aaec
-   * perso             uuid = e27640d8-6ea5-402f-9c08-a608e9218a34
-   * interne ou perso  uuid = afd19e4c-9ed1-4fb8-b654-0a43057fd401
-   * externe           uuid = a597bbeb-b323-40ca-8336-35b4be98cb3b
-   */
-
-  // 'Demandeur' and 'Demandeur externe' fields validation. Depends on chosen Type.
-  $selected_type = taxonomy_term_load($form_state['values']['field_need_type']['und'][0]['tid']);
-  $selected_type_uuid = $selected_type->uuid;
-
-  if ($selected_type_uuid == 'a597bbeb-b323-40ca-8336-35b4be98cb3b' && empty($form_state['values']['field_external_enquirer']['und'][0]['value'])) {
-    form_set_error('field_external_enquirer','Vous devez saisir le nom du demandeur externe');
-  }
-  elseif ($selected_type_uuid != 'a597bbeb-b323-40ca-8336-35b4be98cb3b' && empty($form_state['values']['field_enquirer']['und'][0]['target_id'])) {
-    form_set_error('field_enquirer','Vous devez saisir le nom du demandeur');
-  }
+  // Pour l'instant, pas de demande de champ obligatoire à valider.
 }
 
 /**
