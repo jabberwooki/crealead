@@ -45,4 +45,8 @@ function crealead_events_form_event_node_form_alter(&$form, &$form_state, $form_
  */
 function crealead_events_node_view($node, $view_mode, $langcode) {
 //  dpm($node);
+  drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-event-date-location-height.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+  ));
 }

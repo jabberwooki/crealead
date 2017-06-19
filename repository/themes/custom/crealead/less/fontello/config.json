@@ -887,6 +887,42 @@
       "src": "fontawesome"
     },
     {
+      "uid": "0d08dbb1dd648a43bdea81b7e6c9e036",
+      "css": "location",
+      "code": 59509,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "a42b598e4298f3319b25a2702a02e7ff",
+      "css": "location-1",
+      "code": 59510,
+      "src": "entypo"
+    },
+    {
+      "uid": "13289e807e02b1d46f2fe10d81d6fba6",
+      "css": "location-outline",
+      "code": 59511,
+      "src": "typicons"
+    },
+    {
+      "uid": "gjt8ba5q0n3nn8ptw6324sflr8qoaeam",
+      "css": "location-2",
+      "code": 59512,
+      "src": "typicons"
+    },
+    {
+      "uid": "too2rspp5e6z6m0y6lconmv23uw3qlqo",
+      "css": "location-3",
+      "code": 59513,
+      "src": "modernpics"
+    },
+    {
+      "uid": "291e2e127efe7a6bc580af6d3ead3771",
+      "css": "location-4",
+      "code": 61489,
+      "src": "mfglabs"
+    },
+    {
       "uid": "71eb5394e96ba64106e09db1dc530ada",
       "css": "c-crealead",
       "code": 59461,

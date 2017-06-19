@@ -116,6 +116,12 @@
 .icon-th-list-1:before { content: '\e872'; } /* '' */
 .icon-list-1:before { content: '\e873'; } /* '' */
 .icon-clipboard:before { content: '\e874'; } /* '' */
+.icon-location:before { content: '\e875'; } /* '' */
+.icon-location-1:before { content: '\e876'; } /* '' */
+.icon-location-outline:before { content: '\e877'; } /* '' */
+.icon-location-2:before { content: '\e878'; } /* '' */
+.icon-location-3:before { content: '\e879'; } /* '' */
+.icon-location-4:before { content: '\f031'; } /* '' */
 .icon-blank:before { content: '\f0c8'; } /* '' */
 .icon-list-bullet:before { content: '\f0ca'; } /* '' */
 .icon-list-numbered:before { content: '\f0cb'; } /* '' */
