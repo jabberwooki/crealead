@@ -275,3 +275,10 @@ function crealead_update_7009() {
 function crealead_update_7010() {
   module_enable(array('crealead_events'));
 }
+
+/**
+ * Activate feature crealead_needs.
+ */
+function crealead_update_7011() {
+  module_enable(array('crealead_needs'));
+}
