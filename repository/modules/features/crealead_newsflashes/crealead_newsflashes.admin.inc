@@ -67,7 +67,6 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
 
 function crealead_newsflashes_manual_sending_form_submit($form, &$form_state) {
   crealead_send_latest_newsflashes(TRUE);
-  dpm('Sent!');
 }
 
 // TAB 3 - Test sending functions.
@@ -129,11 +128,8 @@ function crealead_newsflashes_test_sending_form_validate($form, &$form_state){
 }
 
 function crealead_newsflashes_test_sending_form_submit($form, &$form_state) {
-
   $test_addresses = crealead_newsflashes_get_emails_adresses($form_state['values']['emails']);
   crealead_send_latest_newsflashes(FALSE, $test_addresses);
-
-  drupal_set_message('<div class="message success">Email de test envoyé avec succès!</div>');
 }
 
 function crealead_newsflashes_get_emails_adresses($adresses_field) {
