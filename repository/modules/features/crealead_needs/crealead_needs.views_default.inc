@@ -70,6 +70,13 @@ function crealead_needs_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucun besoin.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -175,6 +182,7 @@ function crealead_needs_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Il n\'y a actuellement aucun besoin.'),
     t('Date'),
     t('Client'),
     t('Title'),
