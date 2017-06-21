@@ -13,7 +13,7 @@ function crealead_newsflashes_settings_form() {
     '#type' => 'fieldset',
     '#title' => t('Jours d\'envoi'),
   );
-  $form['crealead_newsflashes_emails']['sending_days'] = array(
+  $form['crealead_newsflashes_emails']['newsflashes_sending_days'] = array(
     '#type' => 'checkboxes',
     '#description' => 'Cocher le ou les jours ou vous souhaitez envoyer un email des dernières brèves à tous les utilisateurs.',
     '#options' => array(
@@ -25,6 +25,7 @@ function crealead_newsflashes_settings_form() {
       6 => 'samedi',
       7 => 'dimanche',
     ),
+    '#default_value' => variable_get('newsflashes_sending_days', array()),
   );
 
   return system_settings_form($form);
