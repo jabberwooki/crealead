@@ -10,6 +10,16 @@
 function crealead_newsflashes_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer newsflashes'.
+  $permissions['administer newsflashes'] = array(
+    'name' => 'administer newsflashes',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'crealead_newsflashes',
+  );
+
   // Exported permission: 'create newsflash content'.
   $permissions['create newsflash content'] = array(
     'name' => 'create newsflash content',

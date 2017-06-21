@@ -130,7 +130,7 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'newsflash' => 'newsflash',
   );
-  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
+  /* Filter criterion: Content: Date d&#039;expiration (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
