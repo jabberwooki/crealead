@@ -30,13 +30,26 @@ function kcore_preprocess_html(&$variables) {
  */
 function kcore_menu() {
   $items = array();
+
   $items['admin/config/crealead'] = array(
-    'title' => t('Paramétrages Crealead'),
+    'title' => 'Crealead',
+    'description' => 'Paramétrage des fonctionnalités Crealead.',
+    'position' => 'left',
+    'weight' => -10,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer crealead settings'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/crealead/key_figures'] = array(
+    'title' => 'Chiffres clés',
+    'description' => 'Réglage des chiffres clés Crealead.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('crealead_settings_form'),
     'access arguments' => array('administer crealead settings'),
-    'file' => 'kcore.admin.inc',
     'type' => MENU_NORMAL_ITEM,
+    'file' => 'kcore.admin.inc',
   );
 
   return $items;

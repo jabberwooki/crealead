@@ -27,19 +27,21 @@ function crealead_newsflashes_permission() {
  * Implements hook_menu().
  */
 function crealead_newsflashes_menu() {
+  // No longer used. Instead go to /admin/config/crealead/newsflashes/manual.
 //  $items['send-newsflashes-email'] = array(
 //    'type' => MENU_CALLBACK,
 //    'page callback' => 'crealead_newsflashes_send_mail',
 //    'access arguments' => array('administer newsflashes'),
 //    'access callback' => TRUE,
 //  );
+
   $items['admin/config/crealead/newsflashes'] = array(
-    'title' => 'Brèves (envoi d\'emails)',
+    'title' => 'Brèves',
     'description' => 'Paramétrage des envois de brèves par email.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('crealead_newsflashes_settings_form'),
-    'access callback' => 'user_access',
     'access arguments' => array('administer newsflashes'),
+    'type' => MENU_NORMAL_ITEM,
     'file' => 'crealead_newsflashes.admin.inc',
   );
   $items['admin/config/crealead/newsflashes/auto'] = array(
@@ -90,9 +92,9 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
 //  return $form;
 //}
 
+//// No longer used
 //function crealead_newsflashes_send_mail() {
 //  crealead_send_latest_newsflashes();
-////  return 'envoyé';
 //}
 
 function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL) {
