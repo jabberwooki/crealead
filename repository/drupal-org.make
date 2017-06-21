@@ -179,6 +179,9 @@ projects[manualcrop][version] = "1.5"
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "2.5"
 
+;projects[mimemail][subdir] = contrib
+;projects[mimemail][version] = "1.0"
+
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"
 

@@ -282,3 +282,10 @@ function crealead_update_7010() {
 function crealead_update_7011() {
   module_enable(array('crealead_needs'));
 }
+
+/**
+ * Activate mimemail contrib module.
+ */
+function crealead_update_7012() {
+  module_enable(array('mimemail'));
+}
