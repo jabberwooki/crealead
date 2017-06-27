@@ -50,19 +50,20 @@ function crealead_needs_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personne à contacter',
-    'weight' => '8',
+    'weight' => '5',
     'children' => array(
       0 => 'field__need_contact_name',
       1 => 'field_need_contact_details',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Personne à contacter',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-need-contact-infos field-group-fieldset',
         'id' => '',
+        'classes' => 'group-need-contact-infos field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_need_contact_infos|node|need|full'] = $field_group;
