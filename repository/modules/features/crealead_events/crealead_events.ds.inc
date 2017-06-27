@@ -53,9 +53,9 @@ function crealead_events_ds_layout_settings_info() {
       'central' => array(
         0 => 'field_event_related_brands',
         1 => 'title',
-        2 => 'field_event_type',
-        3 => 'field_event_dates',
-        4 => 'field_event_locations',
+        2 => 'field_event_dates',
+        3 => 'field_event_locations',
+        4 => 'field_event_type',
         5 => 'field_event_picture',
         6 => 'body',
       ),
@@ -63,9 +63,9 @@ function crealead_events_ds_layout_settings_info() {
     'fields' => array(
       'field_event_related_brands' => 'central',
       'title' => 'central',
-      'field_event_type' => 'central',
       'field_event_dates' => 'central',
       'field_event_locations' => 'central',
+      'field_event_type' => 'central',
       'field_event_picture' => 'central',
       'body' => 'central',
     ),
