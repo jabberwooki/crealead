@@ -1,4 +1,4 @@
-.view-newsflashes{
+.view-newsflashes, .view-id-needs{
   .views-field-field-related-population{
     &:before{
       .glyphicon();
@@ -11,7 +11,20 @@
       display: block;
       &:before{
         .glyphicon();
-        content: "\e83c";
+        content: "\e818";
+        color: @rouge-crealead;
+      }
+      &:hover:before{
+        text-decoration: none;
+      }
+    }
+  }
+  .views-field-field-need-action{
+    a {
+      display: block;
+      &:before{
+        .glyphicon();
+        content: "\e83e";
         color: @rouge-crealead;
       }
       &:hover:before{
