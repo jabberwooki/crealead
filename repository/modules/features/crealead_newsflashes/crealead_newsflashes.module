@@ -27,19 +27,21 @@ function crealead_newsflashes_permission() {
  * Implements hook_menu().
  */
 function crealead_newsflashes_menu() {
+  // No longer used. Instead go to /admin/config/crealead/newsflashes/manual.
 //  $items['send-newsflashes-email'] = array(
 //    'type' => MENU_CALLBACK,
 //    'page callback' => 'crealead_newsflashes_send_mail',
 //    'access arguments' => array('administer newsflashes'),
 //    'access callback' => TRUE,
 //  );
+
   $items['admin/config/crealead/newsflashes'] = array(
-    'title' => 'Brèves (envoi d\'emails)',
+    'title' => 'Brèves',
     'description' => 'Paramétrage des envois de brèves par email.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('crealead_newsflashes_settings_form'),
-    'access callback' => 'user_access',
     'access arguments' => array('administer newsflashes'),
+    'type' => MENU_NORMAL_ITEM,
     'file' => 'crealead_newsflashes.admin.inc',
   );
   $items['admin/config/crealead/newsflashes/auto'] = array(
@@ -90,33 +92,80 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
 //  return $form;
 //}
 
+//// No longer used
 //function crealead_newsflashes_send_mail() {
 //  crealead_send_latest_newsflashes();
-////  return 'envoyé';
 //}
 
 function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL) {
   $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
-  dpm($newsflashes_details);
 
   if($real_sending) {
     $email_addresses = crealead_get_users_emails();
-
+    // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
+    //$email_addresses = array('christophe.espiau@gmail.com');
+    $mail_subject = '[Site web Crealead] Dernières brèves';
   }
   else {
     $email_addresses = $test_addresses;
-
+    $mail_subject = '[Site web Crealead - TEST] Dernières brèves';
   }
-  dpm($email_addresses);
 
   // Email message building
-//  $to = $referent_email;
-//  $from = variable_get('site_mail');
-//  $mail_subject = '[Site web Crealead] Demande de validation d\'une marque';
-//  $mail_body = $user_wrapper->field_user_firstname->raw() . ' ' . $user_wrapper->field_user_lastname->raw()
-//    . ' a demandé la validation de sa marque ' . $brand_title . ' : http://' . $_SERVER['HTTP_HOST'] . '/node/' . $brand_nid;
-//  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+  $to = implode(';', $email_addresses);
+  $from = variable_get('site_mail');
+  $mail_body = '<div>Liste des dernières brèves publiées sur le site web de Crealead.</div>';
+  $host = $_SERVER['HTTP_HOST'];
+  foreach ($newsflashes_details as $item) {
+    $mail_body .= '<div class="nf_item">';
+    $mail_body .=
+      '<p class="nf_title">'
+      . '<span class="nf-population">' . $item['population'] . '</span>'
+      . ' - '
+      . '<a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a>'
+      . '</p>';
+  }
+  $mail_body .= '</div>';
 
+  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+  $type = 'success';
+  if (drupal_mail('crealead_newsflashes', 'latest_newsflashes_list', $to, language_default(), $params, $from)) {
+    if ($real_sending) {
+      $list_type = 'coes list';
+    }
+    else {
+      $list_type = 'test list';
+    }
+    $message = t('Latest newsflashes list successfully sent to %list.', array(
+      '%list' => $list_type,
+    ));
+
+    foreach ($newsflashes_details as $item) {
+      $nf_wrapper = entity_metadata_wrapper('node', $item['nid']);
+      $nf_wrapper->field_sent_by_email = 'oui';
+      $nf_wrapper->save();
+    }
+  }
+  else {
+    $message = t('Email message could not be sent to %list.', array(
+      '%list' => $list_type,
+    ));
+    $type = 'warning';
+  }
+  drupal_set_message('<div class="message ' . $type . '">' . $message . '</div>');
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_newsflashes_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'latest_newsflashes_list':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }
 
 function crealead_get_users_emails() {
@@ -152,12 +201,26 @@ function crealead_newsflashes_get_latest($with_details=FALSE) {
         $newsflashes_details[] = array(
           'nid' => $nid,
           'title' => $wrapper->title->value(),
-          'created' => $wrapper->field_related_population->name->value(),
+          'population' => $wrapper->field_related_population->name->value(),
           'author' => $wrapper->author->name->value(),
         );
       }
 
       return $newsflashes_details;
     }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function crealead_newsflashes_cron() {
+  // Determine the value of the current day (1=monday... 7=sunday).
+  $today = date('N');
+  // Fetch the sending days values that have been checked in the automatic sending admin page (/admin/config/crealead/newsflashes).
+  $sending_days = variable_get('newsflashes_sending_days', array());
+
+  if (in_array($today, $sending_days)) {
+    crealead_send_latest_newsflashes(TRUE);
   }
 }

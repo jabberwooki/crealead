@@ -85,6 +85,9 @@ projects[views][subdir] = contrib
 projects[views][version] = "3.14"
 
 ;=== Modules - optional =======================================================
+projects[autocomplete_deluxe][subdir] = contrib
+projects[autocomplete_deluxe][version] = "2.2"
+
 ;projects[bean][subdir] = contrib
 ;projects[bean][version] = ""
 
@@ -175,6 +178,9 @@ projects[manualcrop][version] = "1.5"
 
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "2.5"
+
+;projects[mimemail][subdir] = contrib
+;projects[mimemail][version] = "1.0"
 
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"

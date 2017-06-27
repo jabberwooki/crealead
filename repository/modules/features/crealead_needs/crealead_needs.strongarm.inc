@@ -1,25 +1,25 @@
 <?php
 /**
  * @file
- * crealead_events.strongarm.inc
+ * crealead_needs.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function crealead_events_strongarm() {
+function crealead_needs_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__event';
+  $strongarm->name = 'field_bundle_settings_node__need';
   $strongarm->value = array(
     'view_modes' => array(
-      'full' => array(
+      'teaser' => array(
         'custom_settings' => TRUE,
       ),
-      'teaser' => array(
+      'full' => array(
         'custom_settings' => TRUE,
       ),
       'rss' => array(
@@ -83,80 +83,108 @@ function crealead_events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '17',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '15',
         ),
       ),
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__event'] = $strongarm;
+  $export['field_bundle_settings_node__need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_event';
+  $strongarm->name = 'language_content_type_need';
   $strongarm->value = '0';
-  $export['language_content_type_event'] = $strongarm;
+  $export['language_content_type_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_event';
+  $strongarm->name = 'menu_options_need';
   $strongarm->value = array();
-  $export['menu_options_event'] = $strongarm;
+  $export['menu_options_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_event';
+  $strongarm->name = 'menu_parent_need';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_event'] = $strongarm;
+  $export['menu_parent_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_event';
+  $strongarm->name = 'mimemail_format';
+  $strongarm->value = 'full_html';
+  $export['mimemail_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mimemail_mail';
+  $strongarm->value = 'contact@crealead.com';
+  $export['mimemail_mail'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mimemail_name';
+  $strongarm->value = 'Crealead';
+  $export['mimemail_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_need';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_event'] = $strongarm;
+  $export['node_options_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_event';
+  $strongarm->name = 'node_preview_need';
   $strongarm->value = '1';
-  $export['node_preview_event'] = $strongarm;
+  $export['node_preview_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_event';
+  $strongarm->name = 'node_submitted_need';
   $strongarm->value = 0;
-  $export['node_submitted_event'] = $strongarm;
+  $export['node_submitted_need'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_event_pattern';
-  $strongarm->value = 'evenements/[node:title]';
-  $export['pathauto_node_event_pattern'] = $strongarm;
+  $strongarm->name = 'pathauto_node_need_pattern';
+  $strongarm->value = 'besoins/[node:title]';
+  $export['pathauto_node_need_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_event_types_pattern';
+  $strongarm->name = 'pathauto_taxonomy_term_expiration_types_pattern';
   $strongarm->value = '';
-  $export['pathauto_taxonomy_term_event_types_pattern'] = $strongarm;
+  $export['pathauto_taxonomy_term_expiration_types_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_need_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_need_types_pattern'] = $strongarm;
 
   return $export;
 }

@@ -1,3 +1,8 @@
+Crealead hotfix / 2017-06-21
+============================
+Hotfix :
+- articles_missing_html_format
+
 Crealead 3.4.1 / 2017-05-22
 ===========================
 Hotfix : Missing menu item 'Liste' in link menu-calendar-listing-switcher added.
