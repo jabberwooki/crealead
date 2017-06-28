@@ -139,6 +139,7 @@ features[variable][] = node_options_info_meeting
 features[variable][] = node_preview_info_meeting
 features[variable][] = node_submitted_info_meeting
 features[variable][] = pathauto_node_info_meeting_pattern
+features[variable][] = pathauto_taxonomy_term_domaine_activite_pattern
 features[variable][] = pathauto_taxonomy_term_registrant_statuses_pattern
 features[views_view][] = crealead_registrations
 features[views_view][] = info_meetings
