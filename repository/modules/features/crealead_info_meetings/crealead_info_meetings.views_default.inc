@@ -1527,7 +1527,11 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['attach_text'] = 'stats-inscriptions-reunions-infos.xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = 'stats-inscriptions_%timestamp-yyyy-%timestamp-mm-%timestamp-dd_%timestamp-hh-%timestamp-ii.xls';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Registration: Node to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
@@ -1668,6 +1672,10 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_attendee']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_attendee']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
