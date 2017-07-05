@@ -22,7 +22,7 @@ function crealead_needs_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Besoins';
+  $handler->display->display_options['title'] = 'Demandes';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -105,11 +105,11 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['fields']['field_crealead_name']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Autres entrepreneurs avec le même besoin */
+  /* Field: Content: Autres entrepreneurs avec la même demande */
   $handler->display->display_options['fields']['field_other_enquirers']['id'] = 'field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['table'] = 'field_data_field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['field'] = 'field_other_enquirers';
-  $handler->display->display_options['fields']['field_other_enquirers']['label'] = 'Avec le même besoin';
+  $handler->display->display_options['fields']['field_other_enquirers']['label'] = 'Avec la même demande';
   $handler->display->display_options['fields']['field_other_enquirers']['settings'] = array(
     'link' => 0,
     'colorbox_node_link' => 0,
@@ -168,7 +168,7 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $translatables['needs'] = array(
     t('Master'),
-    t('Besoins'),
+    t('Demandes'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -187,7 +187,7 @@ function crealead_needs_views_default_views() {
     t('Client'),
     t('Title'),
     t('Personne concernée'),
-    t('Avec le même besoin'),
+    t('Avec la même demande'),
     t('Action'),
     t('Bloc espace coes'),
   );

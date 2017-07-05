@@ -24,6 +24,14 @@ function crealead_needs_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_solution_found' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Solution trouvée pour répondre à cette demande',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
     'field_need_action' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -34,14 +42,6 @@ function crealead_needs_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_solution_found' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Solution trouvée pour répondre à ce besoin',
-          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -84,8 +84,8 @@ function crealead_needs_ds_layout_settings_info() {
         8 => 'field_crealead_name',
         9 => 'field_expiration_type',
         10 => 'field_display_end_date',
-        11 => 'field__need_contact_name',
-        12 => 'field_need_client',
+        11 => 'field_need_client',
+        12 => 'field__need_contact_name',
         13 => 'field_need_contact_details',
       ),
     ),
@@ -101,8 +101,8 @@ function crealead_needs_ds_layout_settings_info() {
       'field_crealead_name' => 'right',
       'field_expiration_type' => 'right',
       'field_display_end_date' => 'right',
-      'field__need_contact_name' => 'right',
       'field_need_client' => 'right',
+      'field__need_contact_name' => 'right',
       'field_need_contact_details' => 'right',
     ),
     'classes' => array(),

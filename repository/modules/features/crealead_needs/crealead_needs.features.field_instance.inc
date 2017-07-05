@@ -49,7 +49,7 @@ function crealead_needs_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Description du besoin',
+    'label' => 'Description de la demande',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -835,7 +835,7 @@ function crealead_needs_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_other_enquirers',
-    'label' => 'Autres entrepreneurs avec le même besoin',
+    'label' => 'Autres entrepreneurs avec la même demande',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -990,11 +990,11 @@ function crealead_needs_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Action');
-  t('Autres entrepreneurs avec le même besoin');
+  t('Autres entrepreneurs avec la même demande');
   t('Client');
   t('Coordonnées');
   t('Date d\'expiration');
-  t('Description du besoin');
+  t('Description de la demande');
   t('Echéance');
   t('Ici aussi, saisissez le début du prénom ou du nom. Vous pouvez entrer une ou plusieurs personnes en séparant les noms par une virgule.');
   t('J\'ai trouvé une solution');

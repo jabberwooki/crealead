@@ -32,7 +32,7 @@ function crealead_needs_views_api($module = NULL, $api = NULL) {
 function crealead_needs_node_info() {
   $items = array(
     'need' => array(
-      'name' => t('Besoin'),
+      'name' => t('Demande'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

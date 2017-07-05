@@ -6,8 +6,8 @@
 
 include_once 'crealead_needs.features.inc';
 
-define('ADD_TO_NEED_TEXT', 'Je m\'ajoute à ce besoin');
-define('REMOVE_FROM_NEED_TEXT', 'Je n\'ai plus ce besoin');
+define('ADD_TO_NEED_TEXT', 'Je m\'ajoute à cette demande');
+define('REMOVE_FROM_NEED_TEXT', 'Je n\'ai plus cette demande');
 
 /**
  * Implements hook_menu().
