@@ -538,17 +538,16 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Formations et produits',
+    'label' => 'Formations',
     'weight' => '31',
     'children' => array(
       0 => 'trainings_entity_view_1',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Formations',
       'instance_settings' => array(
         'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -1357,7 +1356,7 @@ function crealead_brands_field_group_info() {
   t('Contact');
   t('Entrepreneurs');
   t('Equipe');
-  t('Formations et produits');
+  t('Formations');
   t('Informations Générales');
   t('Infos 1');
   t('Infos 2');
