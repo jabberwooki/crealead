@@ -289,3 +289,10 @@ function crealead_update_7011() {
 function crealead_update_7012() {
   module_enable(array('mimemail'));
 }
+
+/**
+ * Activate label_help contrib module.
+ */
+function crealead_update_7012() {
+  module_enable(array('label_help'));
+}

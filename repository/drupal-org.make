@@ -170,6 +170,9 @@ projects[filefield_sources][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
+projects[label_help][subdir] = contrib
+projects[label_help][version] = "1.2"
+
 projects[manualcrop][subdir] = contrib
 projects[manualcrop][version] = "1.5"
 
