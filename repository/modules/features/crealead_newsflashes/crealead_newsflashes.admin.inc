@@ -33,53 +33,91 @@ function crealead_newsflashes_settings_form() {
 
 // TAB 2 - Manual sending functions.
 function crealead_newsflashes_manual_sending_form($form, &$form_state) {
-  $newsflashes_number = crealead_newsflashes_get_latest();
+  drupal_add_css(drupal_get_path('module','crealead_newsflashes') . '/css/crealead_newsflashes.css');
+  drupal_add_js(drupal_get_path('module','crealead_newsflashes') . '/js/crealead_newsflashes.js');
 
+  $newsflashes = crealead_newsflashes_get_latest(TRUE);
+  $nf_options = array();
+  foreach ($newsflashes as $newsflash) {
+    $nf_options[$newsflash['nid']] = $newsflash['title'];
+  }
+
+  $form = array();
+  $form['intro'] = array(
+    '#markup' => '<p class="newsflashes-manual-sending-intro">'. 'Vous pouvez envoyer manuellement '
+      . 'les dernières brèves à tous les utilisateurs.<br/>'
+      . 'Ces brèves seront définitivement envoyées et ne seront pas prises en compte lors du prochain envoi automatique.<br/>'
+      . '</p>',
+  );
+
+  $newsflashes_number = sizeof($newsflashes);
   if (!$newsflashes_number) {
-    $disabled = TRUE;
-    $newsflashes_text = '<p>' . 'Il n\'y a actuellement aucune brève à envoyer. Toutes les brèves publiées ont déjà été envoyées.' . '</p>';
+    $form['intro'] = array(
+      '#markup' => '<p class="newsflashes-manual-nothing-to-send">'.
+        'Il n\'y a actuellement aucune brève à envoyer . Toutes les brèves publiées ont déjà été envoyées .'
+        . '</p>',
+    );
   }
   else {
-    $disabled = FALSE;
-    $plural = 's';
-    if ($newsflashes_number == 1) {
-      $plural = '';
-    }
-    $newsflashes_text = 'Il y a <span class="newsflashes-number">' . $newsflashes_number . '</span> brève' . $plural . ' à envoyer.';
+//    $plural = 's';
+//    if ($newsflashes_number == 1) {
+//      $plural = '';
+//    }
+    $form['newsflashes-list'] = array(
+      '#type' => 'checkboxes',
+      '#title' => 'Brèves à envoyer',
+      '#theme_options' => array(
+        'description at top' => '<p>Cochez la ou les brèves que vous souhaitez envoyer.<br/>'
+          . 'Vous devez cocher au moins une brève pour avoir accès au bouton Envoyer.'
+          . '</p>',
+      ),
+      '#options' => $nf_options,
+    );
   }
 
-  $form = array(
-    'intro' => array(
-      '#markup' => '<p class="newsflashes-manual-sending-intro">'. 'En utilisant le bouton ci-dessous, vous pouvez envoyer manuellement '
-        . 'les dernières brèves à tous les utilisateurs.<br/>'
-        . 'Ces brèves seront définitivement envoyées et ne seront pas prises en compte lors du prochain envoi automatique.<br/>'
-        . '</p>',
-    ),
-    'submit' => array (
-      '#type' => 'submit',
-      '#value' => t('Envoyer les dernières brèves'),
-      '#disabled' => $disabled,
-      '#suffix' => '<div class="newsflashes-manual-sending-text">' . $newsflashes_text . '</div>',
-    ),
+  $form['submit'] = array (
+    '#type' => 'submit',
+    '#value' => t('Envoyer'),
   );
 
   return $form;
 }
 
 function crealead_newsflashes_manual_sending_form_submit($form, &$form_state) {
-  crealead_send_latest_newsflashes(TRUE);
+  $newsflashes_list = $form_state['values']['newsflashes-list'];
+  foreach ($newsflashes_list as $key=>$value) {
+    if ($value == 0) {
+      unset($newsflashes_list[$key]);
+    }
+  }
+
+  crealead_send_latest_newsflashes(TRUE,FALSE, $newsflashes_list);
 }
 
 // TAB 3 - Test sending functions.
 function crealead_newsflashes_test_sending_form($form, &$form_state) {
   $newsflashes_number = crealead_newsflashes_get_latest();
 
+  $form = array();
   if (!$newsflashes_number) {
     $disabled = TRUE;
     $newsflashes_text = '<p class="newsflashes-test-sending-intro">' . 'Il n\'y a actuellement aucune brève à tester. Vous devez créer au moins une brève pour pouvoir faire un test.' . '</p>';
   }
   else {
     $disabled = FALSE;
+
+    $form['intro'] = array(
+      '#markup' => '<p>'. 'Ce formulaire permet de tester l\'envoi des brèves par email.<br/> '
+        . 'Les brèves envoyées dans un test ne sont pas marquées comme envoyées. '
+        . 'Elles sont donc renvoyées à chaque test tant qu\un envoi manuel ou automatique n\a pas eu lieu.'
+        . '</p>',
+    );
+    $form['emails'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Adresses email',
+      '#description' => 'Entrez une ou plusieurs adresses email valides, séparées par une <em><b>virgule</b></em> ou un <em><b>point virgule</b></em>.',
+    );
+
     $plural = 's';
     if ($newsflashes_number == 1) {
       $plural = '';
@@ -87,24 +125,11 @@ function crealead_newsflashes_test_sending_form($form, &$form_state) {
     $newsflashes_text = 'Il y a <span class="newsflashes-number">' . $newsflashes_number . '</span> brève' . $plural . ' à tester.';
   }
 
-  $form = array(
-    'intro' => array(
-      '#markup' => '<p>'. 'Ce formulaire permet de tester l\'envoi des brèves par email.<br/> '
-        . 'Les brèves envoyées dans un test ne sont pas marquées comme envoyées. '
-        . 'Elles sont donc renvoyées à chaque test tant qu\un envoi manuel ou automatique n\a pas eu lieu.'
-        . '</p>',
-    ),
-    'emails' => array(
-      '#type' => 'textfield',
-      '#title' => 'Adresses email',
-      '#description' => 'Entrez une ou plusieurs adresses email valides, séparées par un point virgule',
-    ),
-    'submit' => array (
-     '#type' => 'submit',
-     '#value' => t('Envoyer le test'),
-      '#disabled' => $disabled,
-      '#suffix' => '<div class="newsflashes-test-sending-text">' . $newsflashes_text . '</div>',
-    ),
+  $form['submit'] = array (
+    '#type' => 'submit',
+    '#value' => t('Envoyer le test'),
+    '#disabled' => $disabled,
+    '#prefix' => '<div class="newsflashes-test-sending-text">' . $newsflashes_text . '</div>',
   );
 
   return $form;

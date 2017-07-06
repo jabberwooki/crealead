@@ -97,13 +97,18 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
 //  crealead_send_latest_newsflashes();
 //}
 
-function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL) {
-  $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
+function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL, $selected_newsflashes=array()) {
+  if (!empty($selected_newsflashes)) {
+    $newsflashes_details = crealead_newsflashes_get_latest(TRUE, $selected_newsflashes);
+  }
+  else {
+    $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
+  }
 
   if($real_sending) {
     $email_addresses = crealead_get_users_emails();
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
-    //$email_addresses = array('christophe.espiau@gmail.com');
+//    $email_addresses = array('christophe.espiau@gmail.com');
     $mail_subject = '[Site web Crealead] Dernières brèves';
   }
   else {
@@ -130,27 +135,42 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   $params = array('subject' => $mail_subject, 'body' => $mail_body);
 
   $type = 'success';
+
+  $what = 'Les brèves';
+  $adjective = 'sélectionnées';
+  $verb = 'ont été envoyées';
+  $recipient = 'aux co-entrepreuneurs.';
+
+  if (sizeof($newsflashes_details) == 1) {
+    $what = 'La brève';
+    $adjective = 'sélectionnée';
+    $verb = 'a été envoyée';
+  }
+
   if (drupal_mail('crealead_newsflashes', 'latest_newsflashes_list', $to, language_default(), $params, $from)) {
     if ($real_sending) {
-      $list_type = 'coes list';
+      foreach ($newsflashes_details as $item) {
+        $nf_wrapper = entity_metadata_wrapper('node', $item['nid']);
+        $nf_wrapper->field_sent_by_email = 'oui';
+        $nf_wrapper->save();
+      }
     }
     else {
-      $list_type = 'test list';
+      $adjective = '';
+      $recipient = 'à l\'adresse email de test';
+      if (sizeof($test_addresses) > 1) {
+        $recipient = 'aux adresses email de test';
+      }
     }
-    $message = t('Latest newsflashes list successfully sent to %list.', array(
-      '%list' => $list_type,
+    $message = t('%what %adjective %verb %recipient.', array(
+      '%what' => $what,
+      '%adjective' => $adjective,
+      '%verb' => $verb,
+      '%recipient' => $recipient,
     ));
-
-    foreach ($newsflashes_details as $item) {
-      $nf_wrapper = entity_metadata_wrapper('node', $item['nid']);
-      $nf_wrapper->field_sent_by_email = 'oui';
-      $nf_wrapper->save();
-    }
   }
   else {
-    $message = t('Email message could not be sent to %list.', array(
-      '%list' => $list_type,
-    ));
+    $message = t('L\'envoi a échoué. Veuillez contacter l\'administrateur.');
     $type = 'warning';
   }
   drupal_set_message('<div class="message ' . $type . '">' . $message . '</div>');
@@ -175,10 +195,11 @@ function crealead_get_users_emails() {
   return $query->execute()->fetchAllKeyed(0, 1);
 }
 
-function crealead_newsflashes_get_latest($with_details=FALSE) {
+function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflashes=array()) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'newsflash')
+//    ->entityCondition('entity_id', array_values($selected_newsflashes), 'IN')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_sent_by_email', 'value', 'non')
     ->fieldCondition('field_display_end_date','value', date('Y-m-d') . 'T00:00:00', '>=');
@@ -186,7 +207,7 @@ function crealead_newsflashes_get_latest($with_details=FALSE) {
   $result = $query->execute();
 
   if (!isset($result['node'])) {
-    return null;
+    return array();
   }
   else {
     if (!$with_details) {
@@ -197,6 +218,11 @@ function crealead_newsflashes_get_latest($with_details=FALSE) {
       $newsflashes_details = array();
 
       foreach ($newsflashes_nids as $nid) {
+        if (!empty($selected_newsflashes)) {
+          if (!in_array($nid, $selected_newsflashes)) {
+            continue;
+          }
+        }
         $wrapper = entity_metadata_wrapper('node', $nid);
         $newsflashes_details[] = array(
           'nid' => $nid,
