@@ -293,6 +293,6 @@ function crealead_update_7012() {
 /**
  * Activate label_help contrib module.
  */
-function crealead_update_7012() {
+function crealead_update_7013() {
   module_enable(array('label_help'));
 }
