@@ -15,7 +15,7 @@ function kcore_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Accueil espace entrepreneurs';
+  $view->human_name = 'Onglets espace entrepreneurs';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -57,10 +57,18 @@ function kcore_views_default_views() {
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['value']['value'] = '999999999';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'espace-co-entrepreneur/accueil';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  /* Display: Onglet Informations */
+  $handler = $view->new_display('page', 'Onglet Informations', 'page');
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/informations';
+  $handler->display->display_options['menu']['title'] = 'Accueil';
+  $handler->display->display_options['menu']['weight'] = '-10';
+  $handler->display->display_options['menu']['name'] = 'menu-coe-area';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Onglet Echanges */
+  $handler = $view->new_display('page', 'Onglet Echanges', 'page_1');
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/echanges';
   $handler->display->display_options['menu']['title'] = 'Accueil';
   $handler->display->display_options['menu']['weight'] = '-10';
   $handler->display->display_options['menu']['name'] = 'menu-coe-area';
@@ -74,7 +82,8 @@ function kcore_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Page'),
+    t('Onglet Informations'),
+    t('Onglet Echanges'),
   );
   $export['coes_area_home'] = $view;
 
@@ -231,6 +240,53 @@ function kcore_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     103860121 => '103860121',
   );
+
+  /* Display: Noms utilisateurs (ER) */
+  $handler = $view->new_display('entityreference', 'Noms utilisateurs (ER)', 'users_names');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Nom des entrepreneurs';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    193262079 => '193262079',
+    103860121 => '103860121',
+    191976793 => '191976793',
+    231346920 => '231346920',
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'name' => 'name',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_user_firstname' => 'field_user_firstname',
+    'field_user_lastname' => 'field_user_lastname',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' ';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $translatables['users'] = array(
     t('Master'),
     t('Référents Crealead'),
@@ -247,6 +303,7 @@ function kcore_views_default_views() {
     t('more'),
     t('Noms entrepreneurs (ER)'),
     t('Nom des entrepreneurs'),
+    t('Noms utilisateurs (ER)'),
   );
   $export['users'] = $view;
 
