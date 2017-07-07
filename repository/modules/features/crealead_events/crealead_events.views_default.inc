@@ -399,7 +399,7 @@ function crealead_events_views_default_views() {
   );
 
   /* Display: Bloc agenda marque */
-  $handler = $view->new_display('entity_view', 'Bloc agenda marque', 'entity_view_1');
+  $handler = $view->new_display('entity_view', 'Bloc agenda marque', 'eva_agenda');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Agenda';
   $handler->display->display_options['display_description'] = 'Destiné à l\'affichage dans l\'onglet Actualités d\'une marque';
@@ -437,7 +437,15 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'events_calendar';
-  $handler->display->display_options['fields']['view']['display'] = 'block_3';
+  $handler->display->display_options['fields']['view']['display'] = 'sub_block_events';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['label'] = '';
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'events_calendar';
+  $handler->display->display_options['fields']['view_1']['display'] = 'sub_block_sessions';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -461,6 +469,192 @@ function crealead_events_views_default_views() {
     0 => 'brand',
   );
   $handler->display->display_options['show_title'] = 1;
+
+  /* Display: Sous-bloc événements */
+  $handler = $view->new_display('block', 'Sous-bloc événements', 'sub_block_events');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_event_dates',
+      'rendered' => 0,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Titre sous-bloc';
+  $handler->display->display_options['header']['area']['content'] = '<h4>Evénements</h4>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_event_related_brands_target_id']['id'] = 'field_event_related_brands_target_id';
+  $handler->display->display_options['relationships']['field_event_related_brands_target_id']['table'] = 'field_data_field_event_related_brands';
+  $handler->display->display_options['relationships']['field_event_related_brands_target_id']['field'] = 'field_event_related_brands_target_id';
+  $handler->display->display_options['relationships']['field_event_related_brands_target_id']['label'] = 'Entité Contenu réferencée par field_event_related_brands';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  /* Field: Content: Date(s) */
+  $handler->display->display_options['fields']['field_event_dates']['id'] = 'field_event_dates';
+  $handler->display->display_options['fields']['field_event_dates']['table'] = 'field_data_field_event_dates';
+  $handler->display->display_options['fields']['field_event_dates']['field'] = 'field_event_dates';
+  $handler->display->display_options['fields']['field_event_dates']['label'] = '';
+  $handler->display->display_options['fields']['field_event_dates']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_dates']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_dates']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_event_dates']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_event_dates']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_event_dates']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_event_related_brands_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+
+  /* Display: Sous-bloc sessions */
+  $handler = $view->new_display('block', 'Sous-bloc sessions', 'sub_block_sessions');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_session_dates',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Titre sous-bloc';
+  $handler->display->display_options['header']['area']['content'] = '<h4>Sessions de formation</h4>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
+  $handler->display->display_options['relationships']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
+  $handler->display->display_options['relationships']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
+  $handler->display->display_options['relationships']['field_related_training_target_id']['label'] = 'Entité Contenu réferencée par field_related_training';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_training_related_brands_target_id']['id'] = 'field_training_related_brands_target_id';
+  $handler->display->display_options['relationships']['field_training_related_brands_target_id']['table'] = 'field_data_field_training_related_brands';
+  $handler->display->display_options['relationships']['field_training_related_brands_target_id']['field'] = 'field_training_related_brands_target_id';
+  $handler->display->display_options['relationships']['field_training_related_brands_target_id']['relationship'] = 'field_related_training_target_id';
+  $handler->display->display_options['relationships']['field_training_related_brands_target_id']['label'] = 'Entité Contenu réferencée par field_training_related_brands';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  /* Field: Content: Dates */
+  $handler->display->display_options['fields']['field_session_dates']['id'] = 'field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates']['table'] = 'field_data_field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates']['field'] = 'field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates']['label'] = '';
+  $handler->display->display_options['fields']['field_session_dates']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_dates']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_dates']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_session_dates']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_session_dates']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Dates (field_session_dates) */
+  $handler->display->display_options['sorts']['field_session_dates_value']['id'] = 'field_session_dates_value';
+  $handler->display->display_options['sorts']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
+  $handler->display->display_options['sorts']['field_session_dates_value']['field'] = 'field_session_dates_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_training_related_brands_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training_session' => 'training_session',
+  );
   $translatables['events_calendar'] = array(
     t('Master'),
     t('more'),
@@ -482,6 +676,14 @@ function crealead_events_views_default_views() {
     t('Bloc agenda marque'),
     t('Agenda'),
     t('Destiné à l\'affichage dans l\'onglet Actualités d\'une marque'),
+    t('Sous-bloc événements'),
+    t('Titre sous-bloc'),
+    t('<h4>Evénements</h4>'),
+    t('Entité Contenu réferencée par field_event_related_brands'),
+    t('Sous-bloc sessions'),
+    t('<h4>Sessions de formation</h4>'),
+    t('Entité Contenu réferencée par field_related_training'),
+    t('Entité Contenu réferencée par field_training_related_brands'),
   );
   $export['events_calendar'] = $view;
 

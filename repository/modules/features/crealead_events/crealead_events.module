@@ -50,3 +50,18 @@ function crealead_events_node_view($node, $view_mode, $langcode) {
     'group' => JS_THEME,
   ));
 }
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_events_views_query_alter(&$view, &$query) {
+  if ($view->name == 'brands_calendar' && $view->current_display == 'agenda_listing') {
+    // Small trick to filter events and training sessions belonging to current brand,
+    // because I could not apply nested "AND" and OR" conditions to contextual filters.
+    // So normal filters are used with a value set to 0 (zero) which is dynamically replaced
+    // by the current brand's nid.
+    $query->where[2]['conditions'][0]['value'] = arg(1);
+    $query->where[2]['conditions'][1]['value'] = arg(1);
+  }
+}
+

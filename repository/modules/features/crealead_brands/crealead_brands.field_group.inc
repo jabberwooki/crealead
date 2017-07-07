@@ -389,7 +389,7 @@ function crealead_brands_field_group_info() {
     'weight' => '28',
     'children' => array(
       0 => 'news_brand_news',
-      1 => 'events_calendar_entity_view_1',
+      1 => 'brands_calendar_eva_agenda',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(

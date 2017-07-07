@@ -99,7 +99,7 @@ function crealead_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -227,7 +227,7 @@ function crealead_events_field_default_field_instances() {
         'available_countries' => array(
           'FR' => 'FR',
         ),
-        'default_country' => 'FR',
+        'default_country' => '',
         'format_handlers' => array(
           'address' => 'address',
           'address-hide-country' => 'address-hide-country',
@@ -238,9 +238,10 @@ function crealead_events_field_default_field_instances() {
           'name-full' => 0,
           'name-oneline' => 0,
         ),
+        'label_help_description' => '',
       ),
       'type' => 'addressfield_standard',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -338,7 +339,7 @@ function crealead_events_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -447,9 +448,71 @@ function crealead_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_session_dates'.
+  $field_instances['node-event-field_session_dates'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_session_dates',
+    'label' => 'Dates',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date_multiselect',
+      'settings' => array(
+        'label_help_description' => '',
+        'maxDate' => '',
+        'minDate' => '',
+        'numberOfMonths' => 3,
+        'yearRange' => '-3:+3',
+      ),
+      'type' => 'date_multiselect',
+      'weight' => 4,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Date(s)');
+  t('Dates');
   t('Descriptif');
   t('Lieu(x)');
   t('Marque(s) concernée(s)');

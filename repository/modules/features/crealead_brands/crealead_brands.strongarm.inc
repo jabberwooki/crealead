@@ -110,7 +110,7 @@ function crealead_brands_strongarm() {
         ),
         'news_brand_news' => array(
           'full' => array(
-            'weight' => '42',
+            'weight' => '44',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -242,7 +242,43 @@ function crealead_brands_strongarm() {
         ),
         'events_calendar_entity_view_1' => array(
           'full' => array(
-            'weight' => '43',
+            'weight' => '46',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_entity_view_2' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'brand_agenda_entity_view_1' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_entity_view_3' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_eva_agenda' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'brands_calendar_entity_view_1' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_calendar_eva_agenda' => array(
+          'full' => array(
+            'weight' => '45',
             'visible' => TRUE,
           ),
         ),
