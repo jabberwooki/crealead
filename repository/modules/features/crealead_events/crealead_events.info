@@ -58,6 +58,7 @@ features[uuid_term][] = 8d1e166e-eead-47da-9672-d29351cb9fdb
 features[uuid_term][] = 8ffec054-b4ed-479c-bfa2-e11545d5d724
 features[uuid_term][] = 9ae8b999-ff98-4b20-8c6e-94192f28f49c
 features[uuid_term][] = b9026b48-b3c8-4c52-9bcb-49147ec3d062
+features[variable][] = date_format_calendar_brands_listing
 features[variable][] = field_bundle_settings_node__event
 features[variable][] = language_content_type_event
 features[variable][] = menu_options_event
