@@ -105,7 +105,7 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['fields']['field_crealead_name']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Autres entrepreneurs avec la même demande */
+  /* Field: Content: Autres coE avec la même demande */
   $handler->display->display_options['fields']['field_other_enquirers']['id'] = 'field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['table'] = 'field_data_field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['field'] = 'field_other_enquirers';
