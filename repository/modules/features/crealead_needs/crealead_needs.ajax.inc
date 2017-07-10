@@ -80,8 +80,8 @@ function crealead_needs_add_coe_from_node($type='ajax') {
     $need_wrapper->field_other_enquirers[] = $user;
     $need_wrapper->save();
 
-    // Then, we get the needs_list view block content
-    // in order to replace view content by the updated view content
+    // Then, we get the freshly updated node
+    // in order to replace node display by the updated node content.
     $need = node_load($need_id);
     $output = drupal_render(node_view($need));
 
@@ -114,8 +114,8 @@ function crealead_needs_remove_coe_from_node($type='ajax', $need_nid) {
     }
     $need_wrapper->save();
 
-    // Then, we get the needs_list view block content
-    // in order to replace view content by the updated view content
+    // Then, we get the freshly updated node
+    // in order to replace node display by the updated node content.
     $need = node_load($need_id);
     $output = drupal_render(node_view($need));
 
