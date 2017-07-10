@@ -42,6 +42,10 @@ jQuery(function($){
           $('<h3 class="subtitle-brand">' +$(this).text()+ '</h3>').prependTo(id_anchor);
         });
       }
+      history.pushState(null, null,"#bootstrap-fieldgroup-nav-item--prsentation");
+      $('.group-brand-tabs > li > a').click(function(){
+        history.pushState(null, null, $(this).attr("href"));
+      });
     }
   };
 }(jQuery))
