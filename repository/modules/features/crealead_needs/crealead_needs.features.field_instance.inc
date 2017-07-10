@@ -835,7 +835,7 @@ function crealead_needs_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_other_enquirers',
-    'label' => 'Autres entrepreneurs avec la même demande',
+    'label' => 'Autres coE avec la même demande',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -844,6 +844,7 @@ function crealead_needs_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'label_help_description' => '',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -990,7 +991,7 @@ function crealead_needs_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Action');
-  t('Autres entrepreneurs avec la même demande');
+  t('Autres coE avec la même demande');
   t('Client');
   t('Coordonnées');
   t('Date d\'expiration');
