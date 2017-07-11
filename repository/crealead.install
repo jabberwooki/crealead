@@ -296,3 +296,10 @@ function crealead_update_7012() {
 function crealead_update_7013() {
   module_enable(array('label_help'));
 }
+
+/**
+ * Activate feature crealead_warnings.
+ */
+function crealead_update_7014() {
+  module_enable(array('crealead_warnings'));
+}
