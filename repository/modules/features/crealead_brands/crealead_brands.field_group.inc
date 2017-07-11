@@ -21,7 +21,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Réalisations',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_brand_achievements',
     ),
@@ -73,7 +73,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'articles_brand_articles',
     ),
@@ -153,7 +153,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Références',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_brand_references',
     ),
@@ -232,7 +232,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '32',
+    'weight' => '25',
     'children' => array(
       0 => 'field_contact_form',
       1 => 'brand_contacts',
@@ -386,10 +386,10 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '28',
+    'weight' => '29',
     'children' => array(
-      0 => 'news_brand_news',
-      1 => 'brands_calendar_eva_agenda',
+      0 => 'brands_calendar_eva_agenda',
+      1 => 'news_brand_news',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -475,11 +475,11 @@ function crealead_brands_field_group_info() {
     'label' => 'Onglets marque',
     'weight' => '0',
     'children' => array(
-      0 => 'group_brand_main',
-      1 => 'group_brand_ordering',
+      0 => 'group_brand_achievements',
+      1 => 'group_brand_clients',
       2 => 'group_brand_coes',
-      3 => 'group_brand_clients',
-      4 => 'group_brand_achievements',
+      3 => 'group_brand_main',
+      4 => 'group_brand_ordering',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -510,9 +510,9 @@ function crealead_brands_field_group_info() {
       2 => 'group_brand_clients_tab',
       3 => 'group_brand_contact_tab',
       4 => 'group_brand_infos_tab',
-      5 => 'group_brans_coes_tab',
+      5 => 'group_brand_news_tab',
       6 => 'group_brand_trainings_tab',
-      7 => 'group_brand_news_tab',
+      7 => 'group_brans_coes_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -564,7 +564,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Equipe',
-    'weight' => '25',
+    'weight' => '26',
     'children' => array(
       0 => 'field_brand_coes',
     ),
@@ -692,6 +692,7 @@ function crealead_brands_field_group_info() {
       0 => 'field_brand_email',
       1 => 'field_brand_phone',
       2 => 'field_brand_website',
+      3 => 'field_lien_formulaire_contact',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -726,6 +727,7 @@ function crealead_brands_field_group_info() {
       0 => 'field_brand_search',
       1 => 'field_contact_form',
       2 => 'field_brand_validated',
+      3 => 'field_lien_formulaire_contact',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
