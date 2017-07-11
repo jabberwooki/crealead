@@ -48,7 +48,7 @@ function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $f
  * Implements hook_block_view_alter().
  */
 function crealead_warnings_block_view_alter(&$data, $block) {
-  if ($block->module == 'views') {
+  if ($block->module == 'views' && substr($block->delta,0,4) != '-exp') {
     // Get the content types that users can create warnings on.
     $warning_content_types = array_filter(variable_get('warning_content_types', array()));
 
