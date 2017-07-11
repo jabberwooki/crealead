@@ -1,0 +1,125 @@
+<?php
+/**
+ * @file
+ * Code for the Alertes feature.
+ */
+
+include_once 'crealead_warnings.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_warnings_menu() {
+  $items['admin/config/crealead/warnings'] = array(
+    'title' => 'Alertes',
+    'description' => 'Paramétrage des alertes.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_warnings_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_warnings.admin.inc',
+  );
+
+  $items['user/%user/warnings'] = array(
+    'title' => t('Mes alertes'),
+    'page callback' => 'crealead_warnings_user_warnings',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_warnings') . '/js/crealead_warnings.js');
+
+  global $user;
+  $form['field_recipient_email']['und'][0]['email']['#default_value'] = $user->mail;
+  $query_params = drupal_get_query_parameters();
+  $form['field_warning_content_type']['und'][0]['value']['#default_value'] = $query_params['type'];
+  $form['field_warning_content_type']['und'][0]['value']['#type'] = 'hidden';
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function crealead_warnings_block_view_alter(&$data, $block) {
+  if ($block->module == 'views') {
+    // Get the content types that users can create warnings on.
+    $warning_content_types = array_filter(variable_get('warning_content_types', array()));
+
+    // Get the content type name the current block view uses.
+    // TODO : Handle cases where view block uses more than one content type.
+    $view = views_get_view(substr($block->delta, 0, strpos($block->delta,'-')));
+    $display = substr($block->delta, strpos($block->delta,'-') +1);
+    $view->set_display($display);
+    $view->pre_execute();
+    $content_type = key($view->filter['type']->value);
+
+    // If current view block manipulates content type that is warning allowed,
+    // we can display warning handling links at the bottom of block.
+    if (in_array($content_type, $warning_content_types)) {
+      global $user;
+      $user_warnings_count = crealead_warnings_get_user_warnings($user->uid, TRUE);
+      $warning_links = '<span class="warning-add-link">'
+        . '<a href="/node/add/warning?type=' . $content_type . '&destination=/user/' . $user->uid . '/warnings">Ajouter une alerte</a>'
+        . '</span>';
+
+      if ($user_warnings_count > 0) {
+        $warning_links .= ' | <span class="warning-list-link">'
+          . '<a href="/user/' . $user->uid . '/warnings">Gérer mes alertes</a>'
+          . '</span>';
+      }
+      $data['content']['#markup'] .= '<div class="warning-links">' . $warning_links . '</div>';
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_warnings_views_pre_render(&$view) {
+  if ($view->name == 'warnings' && $view->current_display == 'user_warnings') {
+    $content_types = node_type_get_types();
+
+    foreach ($view->result as $key=>$result) {
+      $content_type = $result->field_field_warning_content_type[0]['rendered']['#markup'];
+      $human_name = $content_types[$content_type]->name;
+
+      $view->result[$key]->field_field_warning_content_type[0]['rendered']['#markup'] = $human_name . 's';
+    }
+  }
+}
+
+function crealead_warnings_get_user_warnings($uid, $count=false) {
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'warning')
+    ->propertyCondition('status', 1)
+    ->propertyCondition('uid', $uid);
+  $result = $query->execute();
+
+  if ($count) {
+    if (isset($result['node'])) {
+      return sizeof($result['node']);
+    }
+
+    return 0;
+  }
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return $nids;
+  }
+
+  return array();
+}
+
+function crealead_warnings_user_warnings() {
+  return views_embed_view('warnings','user_warnings');
+}
