@@ -623,7 +623,6 @@ body.node-type-brand {
   #bootstrap-fieldgroup-nav-item--actualits, #bootstrap-fieldgroup-nav-item--articles{
     .view-articles .field-name-field-landing-pages {
       .category();
-
     }
     .view-id-articles {
       .field-name-field-image {
@@ -677,10 +676,32 @@ body.node-type-brand {
       }
 
     }
-    .view .date-nav-wrapper .date-prev{
-      right: auto;
-      left: 0;
+    .view-brands-calendar{
+      .view .date-nav-wrapper .date-prev{
+        right: auto;
+        left: 0;
+      }
+      .view-grouping-header{
+        .date-display-single{
+          display: block;
+          border-bottom: 1px solid @gris-fonce-crealead;
+          &:before{
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+      .views-field-title a{
+        display: block;
+        &:before{
+          .glyphicon();
+          content: "\e82d";
+          color: @rouge-crealead;
+          margin-right: 0;
+        }
+      }
     }
+
   }
 
   #bootstrap-fieldgroup-nav-item--actualits {
