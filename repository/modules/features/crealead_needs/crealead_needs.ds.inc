@@ -24,14 +24,6 @@ function crealead_needs_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_solution_found' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'Solution trouvée pour répondre à cette demande',
-          'lb-col' => TRUE,
-        ),
-      ),
-    ),
     'field_need_action' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -66,34 +58,26 @@ function crealead_needs_ds_layout_settings_info() {
   $ds_layout->layout = 'bootstrap_6_6_stacked';
   $ds_layout->settings = array(
     'regions' => array(
-      'top' => array(
-        0 => 'field_other_enquirers',
-        1 => 'field_solution_details',
-        3 => 'field_solution_found',
-      ),
-      'bottom' => array(
-        2 => 'field_need_action',
-      ),
       'left' => array(
-        4 => 'body',
+        0 => 'body',
       ),
       'right' => array(
-        5 => 'group_need_contact_infos',
-        6 => 'field_budget',
-        7 => 'field_need_location',
-        8 => 'field_crealead_name',
-        9 => 'field_expiration_type',
-        10 => 'field_display_end_date',
-        11 => 'field_need_client',
-        12 => 'field__need_contact_name',
-        13 => 'field_need_contact_details',
+        1 => 'group_need_contact_infos',
+        2 => 'field_budget',
+        3 => 'field_need_location',
+        4 => 'field_crealead_name',
+        5 => 'field_expiration_type',
+        6 => 'field_display_end_date',
+        7 => 'field_need_client',
+        8 => 'field_other_enquirers',
+        10 => 'field__need_contact_name',
+        11 => 'field_need_contact_details',
+      ),
+      'bottom' => array(
+        9 => 'field_need_action',
       ),
     ),
     'fields' => array(
-      'field_other_enquirers' => 'top',
-      'field_solution_details' => 'top',
-      'field_need_action' => 'bottom',
-      'field_solution_found' => 'top',
       'body' => 'left',
       'group_need_contact_infos' => 'right',
       'field_budget' => 'right',
@@ -102,6 +86,8 @@ function crealead_needs_ds_layout_settings_info() {
       'field_expiration_type' => 'right',
       'field_display_end_date' => 'right',
       'field_need_client' => 'right',
+      'field_other_enquirers' => 'right',
+      'field_need_action' => 'bottom',
       'field__need_contact_name' => 'right',
       'field_need_contact_details' => 'right',
     ),
