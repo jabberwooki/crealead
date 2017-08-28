@@ -130,17 +130,14 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'newsflash' => 'newsflash',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Date d&#039;expiration (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_display_end_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_display_end_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Envoyé par email (field_sent_by_email) */
-  $handler->display->display_options['filters']['field_sent_by_email_value']['id'] = 'field_sent_by_email_value';
-  $handler->display->display_options['filters']['field_sent_by_email_value']['table'] = 'field_data_field_sent_by_email';
-  $handler->display->display_options['filters']['field_sent_by_email_value']['field'] = 'field_sent_by_email_value';
-  $handler->display->display_options['filters']['field_sent_by_email_value']['value'] = 'non';
 
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'coes_area_block');

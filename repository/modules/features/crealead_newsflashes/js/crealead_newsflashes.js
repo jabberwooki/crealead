@@ -7,8 +7,8 @@
     attach: function (context, settings) {
       $('#edit-submit').attr('disabled','disabled');
 
-      $('#edit-newsflashes-list .form-checkbox').click(function () {
-        var checkedBoxes = $('#edit-newsflashes-list input[type=checkbox]:checked');
+      $('#crealead-newsflashes-manual-sending-form .form-checkbox').click(function () {
+        var checkedBoxes = $('#crealead-newsflashes-manual-sending-form input[type=checkbox]:checked');
         if (checkedBoxes.length == 0) {
           $('#edit-submit').attr('disabled','disabled');
         }

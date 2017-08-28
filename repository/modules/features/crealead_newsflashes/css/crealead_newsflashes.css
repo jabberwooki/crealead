@@ -1,3 +1,18 @@
+#edit-not-yet-sent,
+#edit-already-sent {
+    float: left;
+    width: 49%;
+    border-left: 1px solid grey;
+}
+
+#crealead-newsflashes-manual-sending-form .form-item {
+    margin-left: 20px;
+}
+
+#edit-submit-container {
+    clear: both;
+}
+
 #edit-submit {
     border: 1px solid red;
     margin-top: 15px;

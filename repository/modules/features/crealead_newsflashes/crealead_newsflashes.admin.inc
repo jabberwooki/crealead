@@ -37,9 +37,15 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
   drupal_add_js(drupal_get_path('module','crealead_newsflashes') . '/js/crealead_newsflashes.js');
 
   $newsflashes = crealead_newsflashes_get_latest(TRUE);
-  $nf_options = array();
+  $nf_not_yet_sent_options = array();
+  $nf_already_sent_options = array();
   foreach ($newsflashes as $newsflash) {
-    $nf_options[$newsflash['nid']] = $newsflash['title'];
+    if ($newsflash['sent_by_email'] == 'non') {
+      $nf_not_yet_sent_options[$newsflash['nid']] = $newsflash['title'];
+    }
+    else {
+      $nf_already_sent_options[$newsflash['nid']] = $newsflash['title'];
+    }
   }
 
   $form = array();
@@ -54,7 +60,7 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
   if (!$newsflashes_number) {
     $form['intro'] = array(
       '#markup' => '<p class="newsflashes-manual-nothing-to-send">'.
-        'Il n\'y a actuellement aucune brève à envoyer . Toutes les brèves publiées ont déjà été envoyées .'
+        'Il n\'y a actuellement aucune brève à envoyer.'
         . '</p>',
     );
   }
@@ -63,19 +69,45 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
 //    if ($newsflashes_number == 1) {
 //      $plural = '';
 //    }
-    $form['newsflashes-list'] = array(
+
+    $form['not-yet-sent'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('nf-not-yet-sent-container')),
+    );
+
+    $form['not-yet-sent']['newsflashes-not-yet-sent-list'] = array(
       '#type' => 'checkboxes',
-      '#title' => 'Brèves à envoyer',
+      '#title' => 'Brèves non encore envoyées',
       '#theme_options' => array(
         'description at top' => '<p>Cochez la ou les brèves que vous souhaitez envoyer.<br/>'
           . 'Vous devez cocher au moins une brève pour avoir accès au bouton Envoyer.'
           . '</p>',
       ),
-      '#options' => $nf_options,
+      '#options' => $nf_not_yet_sent_options,
     );
-  }
 
-  $form['submit'] = array (
+    if (!empty($nf_already_sent_options)) {
+      $form['already-sent'] = array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('nf-already-sent-container')),
+      );
+
+      $form['already-sent']['newsflashes-already-sent-list'] = array(
+        '#type' => 'checkboxes',
+        '#title' => 'Brèves déjà envoyées',
+        '#theme_options' => array(
+          'description at top' => '<p>Vous pouvez aussi renvoyer des brèves déjà envoyées.<br/>'
+            . 'Ces brèves sont toujours visibles parce qu\'elles n\'ont pas encore atteint leur date limite de parution.'
+            . '</p>',
+        ),
+        '#options' => $nf_already_sent_options,
+      );
+    }
+  }
+  $form['submit-container'] = array(
+    '#type' => 'container',
+  );
+  $form['submit-container']['submit'] = array (
     '#type' => 'submit',
     '#value' => t('Envoyer'),
   );
@@ -84,10 +116,19 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
 }
 
 function crealead_newsflashes_manual_sending_form_submit($form, &$form_state) {
-  $newsflashes_list = $form_state['values']['newsflashes-list'];
-  foreach ($newsflashes_list as $key=>$value) {
-    if ($value == 0) {
-      unset($newsflashes_list[$key]);
+  $newsflashes_list = array();
+  if (isset($form_state['values']['newsflashes-not-yet-sent-list'])) {
+    foreach ($form_state['values']['newsflashes-not-yet-sent-list'] as $key=>$value) {
+      if ($value != 0) {
+        $newsflashes_list[$key] = $value;
+      }
+    }
+  }
+  if (isset($form_state['values']['newsflashes-already-sent-list'])) {
+    foreach ($form_state['values']['newsflashes-already-sent-list'] as $key=>$value) {
+      if ($value != 0) {
+        $newsflashes_list[$key] = $value;
+      }
     }
   }
 

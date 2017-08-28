@@ -107,30 +107,44 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 
   if($real_sending) {
     $email_addresses = crealead_get_users_emails();
+    $current_date = format_date(time(), 'custom', 'l j F Y');
+
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
-//    $email_addresses = array('christophe.espiau@gmail.com');
-    $mail_subject = '[Site web Crealead] Dernières brèves';
+    // $email_addresses = array('christophe.espiau@laposte.net');
+
+    $mail_subject = '[Crealead] Informations du ' . $current_date;
   }
   else {
     $email_addresses = $test_addresses;
-    $mail_subject = '[Site web Crealead - TEST] Dernières brèves';
+    $mail_subject = '[Crealead - TEST] Informations du ' . $current_date;
   }
 
   // Email message building
   $to = implode(';', $email_addresses);
   $from = variable_get('site_mail');
-  $mail_body = '<div>Liste des dernières brèves publiées sur le site web de Crealead.</div>';
+  $from = "no-reply@crealead.com";
+  $mail_body = '<p>Bonjour à tous,</p>'
+    . '<p>Voici la liste des dernières brèves publiées sur le site web de Crealead.</p>';
   $host = $_SERVER['HTTP_HOST'];
+
+  $mail_body .= '<table id="crealead-newsflashes-list">';
   foreach ($newsflashes_details as $item) {
-    $mail_body .= '<div class="nf_item">';
+    $mail_body .= '<tr class="nf_item">';
     $mail_body .=
-      '<p class="nf_title">'
-      . '<span class="nf-population">' . $item['population'] . '</span>'
-      . ' - '
-      . '<a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a>'
-      . '</p>';
+      '<td class="nf-population">' . $item['population'] . '</td>' .
+      '<td class="nf-title" style="padding-left:20px;"><a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a></td>';
+    $mail_body .= '</tr>';
   }
-  $mail_body .= '</div>';
+
+  $mail_body .= '</table>';
+
+  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+
+  $mail_body .=
+    '<br/><br/>' .
+    '<p class="crealead-email-footer">' .
+    '<img src="' . $footer_image_fullpath . '">' .
+    '</p>';
 
   $params = array('subject' => $mail_subject, 'body' => $mail_body);
 
@@ -139,7 +153,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   $what = 'Les brèves';
   $adjective = 'sélectionnées';
   $verb = 'ont été envoyées';
-  $recipient = 'aux co-entrepreuneurs.';
+  $recipient = 'aux co-entrepreneurs';
 
   if (sizeof($newsflashes_details) == 1) {
     $what = 'La brève';
@@ -201,8 +215,9 @@ function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflas
     ->entityCondition('bundle', 'newsflash')
 //    ->entityCondition('entity_id', array_values($selected_newsflashes), 'IN')
     ->propertyCondition('status', NODE_PUBLISHED)
-    ->fieldCondition('field_sent_by_email', 'value', 'non')
-    ->fieldCondition('field_display_end_date','value', date('Y-m-d') . 'T00:00:00', '>=');
+//    ->fieldCondition('field_sent_by_email', 'value', 'non')
+    ->fieldCondition('field_display_end_date','value', date('Y-m-d') . 'T00:00:00', '>=')
+    ->propertyOrderBy('created', 'DESC');
 
   $result = $query->execute();
 
@@ -229,6 +244,7 @@ function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflas
           'title' => $wrapper->title->value(),
           'population' => $wrapper->field_related_population->name->value(),
           'author' => $wrapper->author->name->value(),
+          'sent_by_email' => $wrapper->field_sent_by_email->value(),
         );
       }
 
