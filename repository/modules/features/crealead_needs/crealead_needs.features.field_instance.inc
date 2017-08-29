@@ -27,13 +27,13 @@ function crealead_needs_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -210,7 +210,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -294,7 +294,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -392,7 +392,7 @@ function crealead_needs_field_default_field_instances() {
           'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -453,7 +453,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -509,7 +509,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => 'need-add',
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -593,7 +593,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -726,7 +726,7 @@ function crealead_needs_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -823,7 +823,7 @@ function crealead_needs_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -869,12 +869,9 @@ function crealead_needs_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -957,12 +954,9 @@ function crealead_needs_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => 'need-solution',
-        ),
-        'type' => 'list_default',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
