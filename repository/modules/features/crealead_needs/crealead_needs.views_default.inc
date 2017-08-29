@@ -75,7 +75,7 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucun besoin.';
+  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucune demande.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -182,7 +182,7 @@ function crealead_needs_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Il n\'y a actuellement aucun besoin.'),
+    t('Il n\'y a actuellement aucune demande.'),
     t('Date'),
     t('Client'),
     t('Title'),

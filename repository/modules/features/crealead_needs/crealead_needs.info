@@ -90,6 +90,7 @@ features[variable][] = node_preview_need
 features[variable][] = node_submitted_need
 features[variable][] = pathauto_node_need_pattern
 features[variable][] = pathauto_taxonomy_term_expiration_types_pattern
+features[variable][] = pathauto_taxonomy_term_need_clients_pattern
 features[variable][] = pathauto_taxonomy_term_need_types_pattern
 features[views_view][] = needs
 project path = profiles/crealead/modules/features
