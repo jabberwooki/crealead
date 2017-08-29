@@ -12,12 +12,13 @@
 function crealead_warnings_settings_form() {
   $types = node_type_get_types();
   unset($types['warning']);
-  asort($types);
 
   $options = array();
   foreach ($types as $type=>$obj) {
     $options[$type] = $obj->name;
   }
+  asort($options);
+
   $form['crealead_warnings']['warning_content_types'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Types de contenu'),
