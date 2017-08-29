@@ -173,6 +173,9 @@ projects[imagecache_actions][version] = "1.7"
 projects[label_help][subdir] = contrib
 projects[label_help][version] = "1.2"
 
+projects[mailsystem][subdir] = contrib
+projects[mailsystem][version] = "2.34"
+
 projects[manualcrop][subdir] = contrib
 projects[manualcrop][version] = "1.5"
 
