@@ -21,6 +21,7 @@ function kcore_context_default_contexts() {
       'values' => array(
         'espace-co-entrepreneur*' => 'espace-co-entrepreneur*',
         'breves/*' => 'breves/*',
+        'demandes/*' => 'demandes/*',
       ),
     ),
   );
