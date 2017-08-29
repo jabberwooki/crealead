@@ -254,6 +254,15 @@ function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflas
 }
 
 /**
+ * Implements hook_node_access().
+ */
+function crealead_newsflashes_node_access($node, $op, $account) {
+  if (isset($node->type) && $node->type == 'newsflash' && !user_is_logged_in()) {
+    return NODE_ACCESS_DENY;
+  }
+}
+
+/**
  * Implements hook_cron().
  */
 function crealead_newsflashes_cron() {
