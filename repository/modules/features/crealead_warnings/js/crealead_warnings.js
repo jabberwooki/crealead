@@ -21,6 +21,11 @@
         }
       });
 
+      $('#edit-field-content-type-list').on('change', function () {
+        $('#edit-field-content-type-value-und-0-value').val($(this).val());
+      });
+
+      // $('#edit-field-content-type-value').hide();
     }
   };
 }(jQuery))

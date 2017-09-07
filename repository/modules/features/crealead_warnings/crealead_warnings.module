@@ -39,11 +39,56 @@ function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $f
 
   global $user;
   $form['field_recipient_email']['und'][0]['email']['#default_value'] = $user->mail;
-  $query_params = drupal_get_query_parameters();
-  $form['field_warning_content_type']['und'][0]['value']['#default_value'] = $query_params['type'];
-  $form['field_warning_content_type']['und'][0]['value']['#type'] = 'hidden';
+
+  // Content types select list preparation.
+  $options = crealead_warnings_get_warnable_content_types();
+  asort($options);
+dpm($form);
+  // Creation of an on-fly content types list select field.
+  $form['field_content_type_list'] = array(
+    '#type' => 'select',
+    '#title' => 'Type de contenu',
+    '#description' => 'Sélectionnez le type de contenu pour lequel vous créez cette alerte.',
+    '#required' => TRUE,
+    '#options' => $options,
+  );
+
+  // If node creation
+  if (!isset($form['nid']['#value'])) {
+    $query_params = drupal_get_query_parameters();
+
+    if (isset($query_params['type'])) {
+      $form['field_content_type_list']['#default_value'] = array($query_params['type']);
+      $form['field_content_type_list']['#attributes'] = array('disabled' => TRUE);
+      $form['field_content_type_list']['#description'] = '';
+
+      $form['field_content_type_value']['und'][0]['value']['#default_value'] = array($query_params['type']);
+    }
+  }
+  else {
+    $form['field_content_type_list']['#default_value'] = $form['field_content_type_value']['und'][0]['value']['#default_value'];
+  }
 }
 
+function crealead_warnings_get_warnable_content_types () {
+  // Fetch all content types, but 'Alerte'.
+  $types = node_type_get_types();
+  unset($types['warning']);
+
+  // Fecth all content types activated for warnings.
+  $activated_content_types = variable_get('warning_content_types');
+
+  // Build array to be returned.
+  $warnable_content_types = array();
+  foreach ($activated_content_types as $machine_name=>$value) {
+    if ($value) {
+      $warnable_content_types[$machine_name] = $types[$machine_name]->name;
+    }
+  }
+  asort($warnable_content_types);
+
+  return $warnable_content_types;
+}
 /**
  * Implements hook_block_view_alter().
  */
@@ -84,14 +129,14 @@ function crealead_warnings_block_view_alter(&$data, $block) {
  */
 function crealead_warnings_views_pre_render(&$view) {
   if ($view->name == 'warnings' && $view->current_display == 'user_warnings') {
-    $content_types = node_type_get_types();
+//    $content_types = node_type_get_types();
 
-    foreach ($view->result as $key=>$result) {
-      $content_type = $result->field_field_warning_content_type[0]['rendered']['#markup'];
-      $human_name = $content_types[$content_type]->name;
-
-      $view->result[$key]->field_field_warning_content_type[0]['rendered']['#markup'] = $human_name . 's';
-    }
+//    foreach ($view->result as $key=>$result) {
+//      $content_type = $result->field_field_warning_content_type[0]['rendered']['#markup'];
+//      $human_name = $content_types[$content_type]->name;
+//
+//      $view->result[$key]->field_field_warning_content_type[0]['rendered']['#markup'] = $human_name . 's';
+//    }
   }
 }
 

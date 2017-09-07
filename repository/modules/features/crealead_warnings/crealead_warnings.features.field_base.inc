@@ -10,6 +10,28 @@
 function crealead_warnings_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_content_type_value'.
+  $field_bases['field_content_type_value'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_content_type_value',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_recipient_email'.
   $field_bases['field_recipient_email'] = array(
     'active' => 1,
@@ -25,28 +47,6 @@ function crealead_warnings_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'email',
-  );
-
-  // Exported field_base: 'field_warning_content_type'.
-  $field_bases['field_warning_content_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_warning_content_type',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_warning_day'.

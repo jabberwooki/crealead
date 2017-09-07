@@ -10,51 +10,8 @@
 function crealead_warnings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-warning-field_recipient_email'.
-  $field_instances['node-warning-field_recipient_email'] = array(
-    'bundle' => 'warning',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'email',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'email_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_recipient_email',
-    'label' => 'Email de réception de l\'alerte',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'email',
-      'settings' => array(
-        'label_help_description' => '',
-        'size' => 60,
-      ),
-      'type' => 'email_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-warning-field_warning_content_type'.
-  $field_instances['node-warning-field_warning_content_type'] = array(
+  // Exported field_instance: 'node-warning-field_content_type_value'.
+  $field_instances['node-warning-field_content_type_value'] = array(
     'bundle' => 'warning',
     'default_value' => NULL,
     'deleted' => 0,
@@ -67,7 +24,7 @@ function crealead_warnings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -78,8 +35,8 @@ function crealead_warnings_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_warning_content_type',
-    'label' => 'Type de contenu',
+    'field_name' => 'field_content_type_value',
+    'label' => 'Type de contenu (valeur)',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -128,7 +85,50 @@ function crealead_warnings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-warning-field_recipient_email'.
+  $field_instances['node-warning-field_recipient_email'] = array(
+    'bundle' => 'warning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'email_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_recipient_email',
+    'label' => 'Email de réception de l\'alerte',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 3,
     ),
   );
 
@@ -174,7 +174,7 @@ function crealead_warnings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -220,7 +220,7 @@ function crealead_warnings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -300,7 +300,7 @@ Ex: formation, structure bois, aide à domicile.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -346,7 +346,7 @@ Ex: formation, structure bois, aide à domicile.',
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -359,7 +359,7 @@ Ex: formation, structure bois, aide à domicile.',
   t('Mots-clés');
   t('Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule.
 Ex: formation, structure bois, aide à domicile.');
-  t('Type de contenu');
+  t('Type de contenu (valeur)');
 
   return $field_instances;
 }
