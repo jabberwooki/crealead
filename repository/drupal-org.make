@@ -84,6 +84,9 @@ projects[uuid_features][version] = "1.0-alpha4"
 projects[views][subdir] = contrib
 projects[views][version] = "3.14"
 
+projects[webform][subdir] = contrib
+projects[webform][version] = "4.1"
+
 ;=== Modules - optional =======================================================
 projects[autocomplete_deluxe][subdir] = contrib
 projects[autocomplete_deluxe][version] = "2.2"
