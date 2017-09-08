@@ -126,7 +126,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Descriptif */
+  /* Field: Content: Corps */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -2322,7 +2322,6 @@ function crealead_brands_views_default_views() {
   /* Display: Listing */
   $handler = $view->new_display('block', 'Listing', 'agenda_listing');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -2373,6 +2372,28 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_event_related_brands_target_id']['field'] = 'field_event_related_brands_target_id';
   $handler->display->display_options['relationships']['field_event_related_brands_target_id']['label'] = 'Marque concernée par l\'événement';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Dates (field_session_dates:delta) */
+  $handler->display->display_options['fields']['delta']['id'] = 'delta';
+  $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_session_dates';
+  $handler->display->display_options['fields']['delta']['field'] = 'delta';
+  $handler->display->display_options['fields']['delta']['label'] = '';
+  $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
+  /* Field: Content: Formation */
+  $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
+  $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
+  $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
+  $handler->display->display_options['fields']['field_related_training']['label'] = '';
+  $handler->display->display_options['fields']['field_related_training']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_related_training']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_related_training']['settings'] = array(
+    'link' => 0,
+    'colorbox_node_link' => 0,
+    'colorbox_node_width' => '600',
+    'colorbox_node_height' => '600',
+    'colorbox_node_classes' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Dates */
   $handler->display->display_options['fields']['field_session_dates']['id'] = 'field_session_dates';
   $handler->display->display_options['fields']['field_session_dates']['table'] = 'field_data_field_session_dates';
@@ -2408,6 +2429,9 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -2455,7 +2479,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'col-md-4';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -2502,6 +2525,8 @@ function crealead_brands_views_default_views() {
     t('Formation concernée par la session'),
     t('Marque concernée par la formation'),
     t('Marque concernée par l\'événement'),
+    t('.'),
+    t(','),
     t('Agenda marque'),
     t('Agenda'),
   );
@@ -3001,7 +3026,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences */
+  /* Field: Field: Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';

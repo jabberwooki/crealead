@@ -585,6 +585,15 @@ function crealead_brands_views_pre_render(&$view) {
       }
     }
   }
+
+  if ($view->name == 'brands_calendar' && $view->current_display == 'agenda_listing') {
+    foreach ($view->result as $key => $item) {
+      if ($item->node_type == 'training_session') {
+        $delta = $item->field_data_field_session_dates_delta;
+        $view->result[$key]->node_title .= ' (J' . ($delta + 1) . ')';
+      }
+    }
+  }
 }
 
 /**
