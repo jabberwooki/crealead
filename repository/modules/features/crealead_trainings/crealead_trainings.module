@@ -297,6 +297,13 @@ function crealead_trainings_views_pre_render(&$view) {
       }
     }
   }
+  elseif ($view->name == 'trainings_calendar_prod') {
+    foreach ($view->result as $key => $value) {
+      $delta = $value->field_data_field_session_dates_delta;
+      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (J' . ($delta + 1) . ')';
+    }
+  }
+
 }
 
 /**
