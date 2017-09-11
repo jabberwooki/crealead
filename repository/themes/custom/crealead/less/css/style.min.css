@@ -2296,4 +2296,4 @@ body.node-type-need .print-link .print_html a img{float:left}
 body.node-type-need .group-need-contact-infos{display:table;width:inherit}
 body.node-type-need .use-ajax.ajax-processed{display:block}
 body.node-type-need .use-ajax.ajax-processed:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center;content:"\e83e";color:#bf0e38}
-.node-type-webform .print-link,.node-type-webform header .submitted,.node-type-webform ul.links{display:none}
+.node-type-webform .print-link,.node-type-webform footer ul.links,.node-type-webform header .submitted{display:none}
