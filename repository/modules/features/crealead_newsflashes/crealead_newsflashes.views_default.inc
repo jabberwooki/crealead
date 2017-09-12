@@ -76,15 +76,6 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['label'] = 'auteur';
-  /* Field: Content: Population concernée */
-  $handler->display->display_options['fields']['field_related_population']['id'] = 'field_related_population';
-  $handler->display->display_options['fields']['field_related_population']['table'] = 'field_data_field_related_population';
-  $handler->display->display_options['fields']['field_related_population']['field'] = 'field_related_population';
-  $handler->display->display_options['fields']['field_related_population']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_related_population']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_related_population']['settings'] = array(
-    'field_formatter_class' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -95,6 +86,15 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Population concernée */
+  $handler->display->display_options['fields']['field_related_population']['id'] = 'field_related_population';
+  $handler->display->display_options['fields']['field_related_population']['table'] = 'field_data_field_related_population';
+  $handler->display->display_options['fields']['field_related_population']['field'] = 'field_related_population';
+  $handler->display->display_options['fields']['field_related_population']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_related_population']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_related_population']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -142,6 +142,85 @@ function crealead_newsflashes_views_default_views() {
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'coes_area_block');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rechercher';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'newsflash' => 'newsflash',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Date d&#039;expiration (field_display_end_date) */
+  $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
+  $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
+  $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
+  $handler->display->display_options['filters']['field_display_end_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_display_end_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_display_end_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Thème de la brève (field_theme_breve) */
+  $handler->display->display_options['filters']['field_theme_breve_tid']['id'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['table'] = 'field_data_field_theme_breve';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['field'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['operator_id'] = 'field_theme_breve_tid_op';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['label'] = 'Thème';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['operator'] = 'field_theme_breve_tid_op';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['identifier'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_theme_breve_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['vocabulary'] = 'th_mes_br_ve';
+  /* Filter criterion: Content: Population concernée (field_related_population) */
+  $handler->display->display_options['filters']['field_related_population_tid']['id'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['table'] = 'field_data_field_related_population';
+  $handler->display->display_options['filters']['field_related_population_tid']['field'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['operator_id'] = 'field_related_population_tid_op';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['label'] = 'Population concernée';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['operator'] = 'field_related_population_tid_op';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['identifier'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    191976793 => 0,
+    259028912 => 0,
+    7178059 => 0,
+    157297110 => 0,
+    31497918 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_related_population_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_related_population_tid']['vocabulary'] = 'populations';
   $translatables['newsflashes'] = array(
     t('Master'),
     t('Brèves'),
@@ -160,11 +239,15 @@ function crealead_newsflashes_views_default_views() {
     t('last »'),
     t('Il n\'y a actuellement aucune brève.'),
     t('auteur'),
-    t('Population concernée'),
     t('Titre'),
+    t('Population concernée'),
     t('Auteur'),
     t('Date'),
     t('Bloc espace coes'),
+    t('Rechercher'),
+    t('Réinitialiser'),
+    t('Trier par'),
+    t('Thème'),
   );
   $export['newsflashes'] = $view;
 

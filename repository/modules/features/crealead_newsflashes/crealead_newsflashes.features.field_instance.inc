@@ -329,6 +329,46 @@ function crealead_newsflashes_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-newsflash-field_theme_breve'.
+  $field_instances['node-newsflash-field_theme_breve'] = array(
+    'bundle' => 'newsflash',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_theme_breve',
+    'label' => 'Thème de la brève',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Corps de texte');
@@ -336,6 +376,7 @@ function crealead_newsflashes_field_default_field_instances() {
   t('Envoyé par email');
   t('Fichier joint');
   t('Population concernée');
+  t('Thème de la brève');
 
   return $field_instances;
 }

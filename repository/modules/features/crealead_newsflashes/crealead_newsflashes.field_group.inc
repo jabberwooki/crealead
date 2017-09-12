@@ -23,8 +23,7 @@ function crealead_newsflashes_field_group_info() {
     'label' => 'Champs Crealead',
     'weight' => '11',
     'children' => array(
-      0 => 'field_sent',
-      1 => 'field_sent_by_email',
+      0 => 'field_sent_by_email',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
