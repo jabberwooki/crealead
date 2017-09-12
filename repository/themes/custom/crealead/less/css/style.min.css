@@ -2284,6 +2284,7 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-newsflash .field-name-field-related-population a:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e847";color:#999}
 .node-type-newsflash .print-link{display:none}
 #block-views-newsflashes-coes-area-block .views-exposed-widgets .views-widget,#block-views-newsflashes-coes-area-block .views-exposed-widgets label{float:left}
+#block-views-newsflashes-coes-area-block .views-exposed-widgets .views-exposed-widgets{margin-bottom:30px}
 #block-views-newsflashes-coes-area-block .views-exposed-widgets label{padding-top:7px;margin-right:15px}
 #block-views-newsflashes-coes-area-block .views-exposed-widgets label:after{content:" :"}
 #block-views-newsflashes-coes-area-block .views-exposed-widgets label[for=edit-field-related-population-tid]{margin-left:30px}
