@@ -69,7 +69,7 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucune brève.';
+  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucune brève. Veuillez modifier vos critères de recherche le cas échéant.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -183,16 +183,16 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
+    1 => '1',
+    14479344 => '14479344',
+    103860121 => '103860121',
+    191976793 => '191976793',
+    259028912 => '259028912',
+    7178059 => '7178059',
+    157297110 => '157297110',
+    31497918 => '31497918',
+    231346920 => '231346920',
+    193262079 => '193262079',
   );
   $handler->display->display_options['filters']['field_theme_breve_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_theme_breve_tid']['vocabulary'] = 'th_mes_br_ve';
@@ -237,7 +237,7 @@ function crealead_newsflashes_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Il n\'y a actuellement aucune brève.'),
+    t('Il n\'y a actuellement aucune brève. Veuillez modifier vos critères de recherche le cas échéant.'),
     t('auteur'),
     t('Titre'),
     t('Population concernée'),
