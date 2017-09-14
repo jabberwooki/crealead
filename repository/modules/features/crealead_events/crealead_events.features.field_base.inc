@@ -10,33 +10,6 @@
 function crealead_events_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_event_dates'.
-  $field_bases['field_event_dates'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_event_dates',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'date',
-    'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'granularity' => array(
-        0 => 'year',
-        1 => 'month',
-        2 => 'day',
-      ),
-      'profile2_private' => FALSE,
-      'timezone_db' => '',
-      'todate' => '',
-      'tz_handling' => 'none',
-    ),
-    'translatable' => 0,
-    'type' => 'date',
-  );
-
   // Exported field_base: 'field_event_locations'.
   $field_bases['field_event_locations'] = array(
     'active' => 1,

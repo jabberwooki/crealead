@@ -131,6 +131,9 @@ projects[default_image_ft][version] = "1.5"
 projects[draggableviews][subdir] = contrib
 projects[draggableviews][version] = "2.1"
 
+projects[efq_extra_field][subdir] = contrib
+projects[efq_extra_field][version] = "1.0-alpha1"
+
 projects[email][subdir] = contrib
 projects[email][version] = "1.3"
 

@@ -48,24 +48,14 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date(s) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_event_dates']['id'] = 'field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['table'] = 'field_data_field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['field'] = 'field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['label'] = '';
   $handler->display->display_options['fields']['field_event_dates']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_dates']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => '',
-  );
-  $handler->display->display_options['fields']['field_event_dates']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['delta_offset'] = '0';
-  /* Sort criterion: Content: Date(s) (field_event_dates) */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['field_event_dates_value']['id'] = 'field_event_dates_value';
   $handler->display->display_options['sorts']['field_event_dates_value']['table'] = 'field_data_field_event_dates';
   $handler->display->display_options['sorts']['field_event_dates_value']['field'] = 'field_event_dates_value';
@@ -224,23 +214,13 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date(s) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_event_dates']['id'] = 'field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['table'] = 'field_data_field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['field'] = 'field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['label'] = '';
   $handler->display->display_options['fields']['field_event_dates']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_dates']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => '',
-  );
-  $handler->display->display_options['fields']['field_event_dates']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -510,7 +490,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date(s) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_event_dates']['id'] = 'field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['table'] = 'field_data_field_event_dates';
   $handler->display->display_options['fields']['field_event_dates']['field'] = 'field_event_dates';
@@ -518,17 +498,6 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['fields']['field_event_dates']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_dates']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_dates']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_event_dates']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_dates']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
