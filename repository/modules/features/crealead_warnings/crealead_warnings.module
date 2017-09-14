@@ -36,14 +36,12 @@ function crealead_warnings_menu() {
  */
 function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_js(drupal_get_path('module','crealead_warnings') . '/js/crealead_warnings.js');
-
-  global $user;
-  $form['field_recipient_email']['und'][0]['email']['#default_value'] = $user->mail;
+  drupal_add_css(drupal_get_path('module','crealead_warnings') . '/css/crealead_warnings.css');
 
   // Content types select list preparation.
   $options = crealead_warnings_get_warnable_content_types();
   asort($options);
-dpm($form);
+
   // Creation of an on-fly content types list select field.
   $form['field_content_type_list'] = array(
     '#type' => 'select',
@@ -64,6 +62,9 @@ dpm($form);
 
       $form['field_content_type_value']['und'][0]['value']['#default_value'] = array($query_params['type']);
     }
+
+    global $user;
+    $form['field_recipient_email']['und'][0]['email']['#default_value'] = $user->mail;
   }
   else {
     $form['field_content_type_list']['#default_value'] = $form['field_content_type_value']['und'][0]['value']['#default_value'];
@@ -129,14 +130,22 @@ function crealead_warnings_block_view_alter(&$data, $block) {
  */
 function crealead_warnings_views_pre_render(&$view) {
   if ($view->name == 'warnings' && $view->current_display == 'user_warnings') {
-//    $content_types = node_type_get_types();
+    global $user;
+    $action_link =
+      '<div class="warning-links">' .
+        '<span class="warning-add-link">' .
+          '<a href="/node/add/warning?destination=/user/' . $user->uid . '/warnings">Ajouter une alerte</a>' .
+        '</span>' .
+      '</div>';
 
-//    foreach ($view->result as $key=>$result) {
-//      $content_type = $result->field_field_warning_content_type[0]['rendered']['#markup'];
-//      $human_name = $content_types[$content_type]->name;
-//
-//      $view->result[$key]->field_field_warning_content_type[0]['rendered']['#markup'] = $human_name . 's';
-//    }
+    $view->attachment_after = $action_link;
+  }
+  if ($view->name == 'warnings' && $view->current_display == 'full_list') {
+    $warnable_content_types = crealead_warnings_get_warnable_content_types();
+    foreach ($view->result as $item) {
+      $markup = $item->field_field_content_type_value[0]['rendered']['#markup'];
+      $item->field_field_content_type_value[0]['rendered']['#markup'] = $warnable_content_types[$markup];
+    }
   }
 }
 
@@ -167,4 +176,137 @@ function crealead_warnings_get_user_warnings($uid, $count=false) {
 
 function crealead_warnings_user_warnings() {
   return views_embed_view('warnings','user_warnings');
+}
+
+
+/**
+ * Implements hook_node_postinsert().
+ */
+function crealead_warnings_node_postinsert($node) {
+  $warnable_content_types = crealead_warnings_get_warnable_content_types();
+  if (!empty($warnable_content_types) && in_array($node->type, array_keys($warnable_content_types))) {
+    $email_addresses = crealead_warnings_get_email_addresses($node,1);
+
+    if (!empty($email_addresses)) {
+      watchdog('crealead_warnings', "The inserted node {$node->type} id is {$node->nid}. The email addresses are : {$email_addresses}.");
+      crealead_warnings_send_warning_email($email_addresses, $node, 'insert', $warnable_content_types);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_postupdate().
+ */
+function crealead_warnings_node_postupdate($node) {
+  $warnable_content_types = crealead_warnings_get_warnable_content_types();
+  if (!empty($warnable_content_types) && in_array($node->type, array_keys($warnable_content_types))) {
+    $email_addresses = crealead_warnings_get_email_addresses($node,2);
+
+    if (!empty($email_addresses)) {
+      watchdog('crealead_warnings', "The updated node {$node->type} id is {$node->nid}. The email addresses are : {$email_addresses}.");
+      crealead_warnings_send_warning_email($email_addresses, $node, 'update', $warnable_content_types);
+    }
+  }
+}
+
+/**
+ * Return email addresses of registered warnings whose keywords match updated node title and/or body.
+ *
+ * @param string $node The node that as just been updated.
+ * @param int $when 1=insert, 2=insert and update.
+ * @param int $frequency 1=immediately, 2=daily, 3=weekly.
+ *
+ * @return string A string containing the list of emails to use, or an empty string.
+ */
+function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
+  // Fetch warnings from database
+  $query = new EntityFieldQueryExtraFields();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'warning')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_content_type_value','value', $node->type)
+    ->fieldCondition('field_warning_frequency','value', $frequency)
+    ->addExtraField('field_recipient_email','email')
+    ->addExtraField('field_warning_keywords','value')
+    ->propertyOrderBy('created', 'DESC');
+
+  // On node update, we must seek for warnings whose When value = 2.
+  // But on node insertion, we must seek both values 1 and 2, which means that we don't need this criterion.
+  if ($when == 2) {
+    $query->fieldCondition('field_warning_when', 'value', $when);
+  }
+
+  $result = $query->execute();
+
+  // If results, keywords are tested again node title and body.
+  $email_addresses = '';
+  if (!empty($result)) {
+    $warnings = $result['node'];
+    $haystack = $node->title . ' ' .$node->body['und'][0]['value'];
+
+    foreach ($warnings as $key=>$warning) {
+      // Warning's keywords field cleaned up and prepared for regex.
+      // For instance, the ugly field value " , keyword1, , keyword2 keyword3, " is converted into "keyword1|keyword2 keyword3".
+      $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
+
+      if( preg_match('/\b(' . $keywords . ')/i' , $haystack)){
+        $email_addresses[$key] = $warning->extraFields->field_recipient_email_;
+      }
+    }
+    $email_addresses = implode(';', $email_addresses);
+  }
+
+  return $email_addresses;
+}
+
+function crealead_warnings_send_warning_email($email_addresses, $node, $op, $warnable_content_types) {
+
+  // Email message building
+  $to = $email_addresses;
+  //$from = variable_get('site_mail');
+  $from = "no-reply@crealead.com";
+  $host = $_SERVER['HTTP_HOST'];
+
+  $operation = ($op == 'insert') ? 'création' : 'modification';
+  $verb = ($op == 'insert') ? 'créé' : 'modifié';
+  $content_type = $warnable_content_types[$node->type];
+  $mail_subject = '[Crealead Alertes] ' . ucfirst($operation) . ' d\'un contenu de type ' . $content_type;
+
+  $mail_body = '<div id="crealead-email-body">' .
+    '<br/>' .
+    '<p>Bonjour,</p>'.
+    '<p>Le contenu  <b><a href="http://' . $host . '/node/' . $node->nid . '">' . $node->title . '</a></b> (' . $content_type . ')' .
+    ' correspondant à l\'une de vos alertes vient d\'être ' . $verb.'.</p>' .
+    '</div>';
+
+  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+
+  $mail_body .=
+    '<br/><br/>' .
+    '<p class="crealead-email-footer">' .
+    '<img src="' . $footer_image_fullpath . '">' .
+    '</p>';
+
+  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+
+  if (drupal_mail('crealead_warnings', 'warning_email', $to, language_default(), $params, $from)) {
+    $message = "Warning email for node {$node->nid} ({$op}) sent to " . sizeof(explode(';', $email_addresses)) . " recipients.";
+  }
+  else {
+    $message = "Warning email sending failed.";
+  }
+
+  watchdog('crealead_warnings', $message);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_warnings_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'warning_email':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }
