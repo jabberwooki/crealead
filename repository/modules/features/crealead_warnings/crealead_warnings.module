@@ -94,7 +94,7 @@ function crealead_warnings_get_warnable_content_types () {
  * Implements hook_block_view_alter().
  */
 function crealead_warnings_block_view_alter(&$data, $block) {
-  if ($block->module == 'views' && substr($block->delta,0,4) != '-exp') {
+  if (user_is_logged_in() && $block->module == 'views' && substr($block->delta,0,4) != '-exp') {
     // Get the content types that users can create warnings on.
     $warning_content_types = array_filter(variable_get('warning_content_types', array()));
 
