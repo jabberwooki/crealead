@@ -1,3 +1,7 @@
+Hotfix missing-warnings-view / 2017/09/15
+=========================================
+ * crealead_warnings up: missing warnings view added.
+
 Crealead 3.5 / 2017-09-15
 =========================
  * kcore and crealead_gazette up: Permission on 'Echanges' and 'Gazettes' tab links altered to make them not to show up when user is not connected.
