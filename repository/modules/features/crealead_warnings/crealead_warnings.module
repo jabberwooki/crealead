@@ -175,7 +175,12 @@ function crealead_warnings_get_user_warnings($uid, $count=false) {
 }
 
 function crealead_warnings_user_warnings() {
-  return views_embed_view('warnings','user_warnings');
+  if (module_exists('crealead_warnings')) {
+    return views_embed_view('warnings', 'user_warnings');
+  }
+  else {
+    return "Cette fonctionnalité n'est pas activée.";
+  }
 }
 
 
