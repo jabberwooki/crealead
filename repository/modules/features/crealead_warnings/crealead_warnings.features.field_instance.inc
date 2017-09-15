@@ -229,8 +229,10 @@ function crealead_warnings_field_default_field_instances() {
     'bundle' => 'warning',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule.
-Ex: formation, structure bois, aide à domicile.',
+    'description' => 'Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule. <em><br/>
+Ex: formation, structure bois, aide à domicile.</em><br/>
+Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>, des <span class="field-help-emphasis">minuscules</span>, des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">virgules</span> et des <span class="field-help-emphasis">espaces</span>.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -357,8 +359,10 @@ Ex: formation, structure bois, aide à domicile.',
   t('Jour de la semaine');
   t('M\'avertir en cas de');
   t('Mots-clés');
-  t('Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule.
-Ex: formation, structure bois, aide à domicile.');
+  t('Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule. <em><br/>
+Ex: formation, structure bois, aide à domicile.</em><br/>
+Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>, des <span class="field-help-emphasis">minuscules</span>, des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">virgules</span> et des <span class="field-help-emphasis">espaces</span>.
+');
   t('Type de contenu (valeur)');
 
   return $field_instances;

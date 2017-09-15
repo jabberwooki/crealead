@@ -1,3 +1,121 @@
+Hotfix missing-warnings-view / 2017/09/15
+=========================================
+ * crealead_warnings up: missing warnings view added.
+
+Crealead 3.5 / 2017-09-15
+=========================
+ * kcore and crealead_gazette up: Permission on 'Echanges' and 'Gazettes' tab links altered to make them not to show up when user is not connected.
+ * crealead_warnings up: Bugfix: Links 'Ajouter alerte | Gérer mes alertes' must be added to bottom of concerned blocks only if user is connected, otherwise there is no block to display and unknown ['content'] index throws an error message.
+ * crealead_events up: Initial field_event_dates removed and replaced by field_session_dates to make possible to display training sessions AND events on the same brand's calendar.
+ * crealead_warnings up: Email sending implemented for immediate warnings.
+ * views up for security reasons : 3.14 -> 3.18
+ * Feature newsflashes up to modify exposed filter parameter (enable ajax).
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * Feature newsflashes up to add exposed filter to breve's view block.
+ * kcore up: Old 'Listing des contacts' link removed from admin menu.
+ * crealead_brands.js up to manage browser back button when leaving and comming back to a brand.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_news up: Offset value changed from 3 ou 0 in page_news_list view display.
+ * crealead_brands up: Ajax re-enabled on brand's agenda_listing view display.
+ * crealead_brands up: Brand's agenda updated: Day of session (J1, J2 ...) now displayed.
+ * Custom profile up: Patch declaration for date_views added to .make file.
+ * crealead_trainings up: New view trainings_calendar_pro created directly in production instance and function crealead_trainings_views_pre_render() completed consequently.
+ * crealead_trainings up: filted on training_sessions content type added.
+ * crealead_needs up: code for sending warning emails started.
+ * crealead_warning up: some content type fields changed to improve warning creation.
+ * webform added to drupal-org.make.
+ * crealead_warnings up: content types list on admin page is now sorted alphabetically ASC.
+ * crealead_warnings up: missing permissions added.
+ * kcore up: context entrepreneur_area updated: coe area menu block now visible in need node pages.
+ * crealead_needs up: Message for empty view, and pathauto pattern, altered.
+ * crealead_needs and crealead_newsflashes up: hook_node_access implementation for newsflahses moved from the wrong (needs) to the correct (newsflashes) feature.
+ * crealead_needs up: hook_node_access implemented to prevent anonymous users to get access to need nodes from Crealead emails.
+ * Install profile up: missing contrib module Mailsystem declaration added to .make file.
+ * crealead_newsflashes up: modifications listed in Trello card 8 (sprint 10) done.
+ * LESS and CSS up.
+ * Feature needs up to change layout.
+ * crealead_warnings up: Fixes WSOD bug in hook crealead_warnings_block_view_alter().
+ * Install profile up: Missing dependency to crealead_warnings added.
+ * Feature crealead_warnings created.
+ * Feature brands up to manage back button with tab anchor links.
+ * LESS and CSS up.
+ * Feature brands up to manage new field field_lien_formulaire_contact.
+ * crealead_needs up: 'Entrepreneurs' renamed 'coE'.
+ * crealead_needs up: Fixes bug on adding/removing coe to need from full mode view. Node content is now properly refreshed.
+ * Directory cdn deleted.
+ * crealead_events up: Missing calendar_brand_listing date format strongarm settings added.
+ * crealead_brands up: Missing view brands_calendar added.
+ * crealead_brands, crealead_events and custom theme up: Training sessions are added to brand's agenda (in addition to training sessions).
+ * kcore up: Missing coE area's new menu links added.
+ * Install profile up: Wrong number corrected (in hook_update_N implementation) in .install file.
+ * Install profile up: label_help contrib module dependency added.
+ * Major reorganisation of coE area tabs.
+ * crealead_needs up: Human readable name of feature changed from Besoins to Demandes.
+ * crealead_newsflashes up: checkable list of newsflashes is now available in Manual sending tab.
+ * crealead_brands up: 'Formation et Produits' tab rename 'Formations'.
+ * crealead_needs up: 'Besoin' renamed 'Demande'.
+ * crealead_events up: field weights altered.
+ * crealead_info_meetings up: Subscriptions stats data now exported in xls format with a timestamped filename.
+ * crealead_info_meetings up: Stats views data export altered: All subscription form data are now extracted.
+ * Feature events up to improve layout.
+ * LESS and CSS up.
+ * Feature needs up to improve the layout.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_newsflashes up: Admin permission granted to 'administrateur' and 'webmaster' roles.
+ * crealead_newsflashes and kcore up: Crealead admin menu entries reorganised.
+ * crealead_needs up: Mimemail contrib module dependency and settings added.
+ * crealead_newsflashes up: automatic, manual and test email sendings coded.
+ * crealead_needs up: Empty result text added.
+ * crealead_news up: Test and manual sendings ok.
+ * crealead_news up: Référent, Webmaster and Pôle Gestion rôles are now allowed to attache Crealead news to any sector brands.
+ * crealead_documents up: Filedepot 'Rapports' and 'Recent folders' left columm folders removed from display.
+ * crealead_events up: Field field_event_type added to full mode view.
+ * crealead_events up: Missing field fiel_event_type added to content type.
+ * Install profile up: Missing dependency to the new feature crealead_needs added.
+ * crealead_needs up: Major reorganisation of need content type fields, full mode view and block view altered, jquery code updated.
+ * crealead_needs up: needs_list block visibility restricted to authenticated users.
+ * crealead_newsflashes up: coe_area_block visibility restricted to authenticated users.
+ * crealead_newsflashes up: Context updated.
+ * crealead_needs up: Ajax enabled on needs_list view block.
+ * crealead_needs up: All ajax callbacks for adding/removing coe to/from need coded.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * repository/themes/custom/crealead/less/js/match-event-date-location-height.js up.
+ * crealead_needs up: Date filter added to block view.
+ * LESS and CSS up.
+ * Feature crealead_events up to add match-event-date-location.js when viewing node.
+ * Feature crealead_needs created.
+ * LESS and CSS up.
+ * Fontello up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * match-news-articles-height.j created.
+ * Feature crealead_brands.module up to call match-news-articles-height.js.
+ * crealead_events up: Missing field_event_related_brands field instance added.
+ * crealead_events up: Missing feature elements added.
+ * Feature crealead_events created.
+ * crealead_articles up: Field Authors added.
+ * crealead_newsflashes up: email sending coding started.
+ * crealead_newsflashes up: Permissions settings added.
+ * crealead_newsflashes up: 'Printer, email and PDF' wrong setting fixed.
+ * crealead_newsflashes up: Missing strongarm settings added.
+ * kcore up: Missing menu-top link 'Espace co-entrepreneurs' added.
+ * kcore up: Missing view coe_area_home added.
+ * kcore up: coes_area menu link Accueil added.
+ * Feature crealead_newsflashes created.
+ * crealead_brands, crealead_articles and crealead_news up: Major reorganisation of the Brand page (full mode view).
+ * LESS and CSS up.
+
 Crealead hotfix / 2017-06-21
 ============================
 Hotfix :
