@@ -19,6 +19,11 @@
 
       // Listing/Calendar switcher turned as bootstrap tabs.
       $('#block-menu-menu-calendar-listing-switcher ul').addClass('nav-tabs');
+
+      // If user is not logged in, coe area tabs menu is not displayed.
+      if (!Drupal.settings.creaeleadCoeArea.userLoggedIn) {
+        $('#block-menu-menu-coe-area ul.menu').remove();
+      }
     }
   };
 }(jQuery))

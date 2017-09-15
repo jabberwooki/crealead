@@ -1,3 +1,7 @@
+Hotfix coe-area-menu-display-remove / 2017-09-15
+================================================
+ * kcore up: User logging test to display or not the Coe area tabs menu.
+
 Hotfix missing-warnings-view / 2017/09/15
 =========================================
  * crealead_warnings up: missing warnings view added.
