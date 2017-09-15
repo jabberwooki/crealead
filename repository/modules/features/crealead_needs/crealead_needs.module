@@ -1,0 +1,132 @@
+<?php
+/**
+ * @file
+ * Code for the Besoins feature.
+ */
+
+include_once 'crealead_needs.features.inc';
+
+define('ADD_TO_NEED_TEXT', 'Je m\'ajoute à cette demande');
+define('REMOVE_FROM_NEED_TEXT', 'Je n\'ai plus cette demande');
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_needs_menu() {
+  $items['add_coe_to_need/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_needs_add_coe',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_needs.ajax.inc',
+  );
+
+  $items['remove_coe_from_need/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_needs_remove_coe',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_needs.ajax.inc',
+  );
+
+  $items['add_coe_to_need_from_node/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_needs_add_coe_from_node',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_needs.ajax.inc',
+  );
+
+  $items['remove_coe_from_need_from_node/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_needs_remove_coe_from_node',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_needs.ajax.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_needs') . '/js/crealead_needs.js');
+
+  /* Packaged need clients are :
+   * Activité co-entrepreneur   uuid = b4346853-567b-448c-910d-0e79d75d4e99
+   * Perso                      uuid = edcd12a6-b46d-416d-919b-c52d0acfa1df
+   * Crealead Structure         uuid = 7a01c453-5ac3-42a6-a374-ee9d26137a2f
+   * Client externe             uuid = 7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4
+   */
+  // So we build a $params array of client terms uuids keyed by client terms tid,
+  $need_clients_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('need_clients')->vid);
+  $params = array();
+  foreach ($need_clients_terms as $clients_term) {
+    $params[$clients_term->tid] = $clients_term->uuid;
+  }
+  // and we store it in the javascript crealead_needs_clients variable.
+  drupal_add_js(array('crealead_needs_clients' => $params), 'setting');
+
+  // We also pass on to javascript connected user infos
+  global $user;
+  drupal_add_js(array('crealead_needs_connected_user' => $user), 'setting');
+
+
+  // Here, we add a custom validation function.
+  $form['#validate'][] = 'crealead_needs_form_validate';
+}
+
+function crealead_needs_form_validate($form, &$form_state) {
+  // Pour l'instant, pas de demande de champ obligatoire à valider.
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_needs_views_pre_render(&$view) {
+  if ($view->name == 'needs' && $view->current_display == 'needs_list') {
+    foreach ($view->result as $key=>$item) {
+      global $user;
+      $ajax_link_url = '/add_coe_to_need/' . $item->nid . '/nojs';
+      $ajax_link_text = ADD_TO_NEED_TEXT;
+
+      foreach ($item->field_field_other_enquirers as $enquirer) {
+        if ($enquirer['raw']['target_id'] == $user->uid) {
+          $ajax_link_url = '/remove_coe_from_need/' . $item->nid . '/nojs';
+          $ajax_link_text = REMOVE_FROM_NEED_TEXT;
+          break;
+        }
+      }
+
+      $view->result[$key]->field_field_need_action[0]['rendered']['#markup'] =
+        '<a href="' . $ajax_link_url . '" class="use-ajax">' . $ajax_link_text . '</a>';
+    }
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_needs_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'need' && $view_mode == 'full') {
+    drupal_add_js(drupal_get_path('module','crealead_needs') . '/js/crealead_needs_full.js');
+
+    global $user;
+    $ajax_link_url = '/add_coe_to_need_from_node/' . $node->nid . '/nojs';
+    $ajax_link_text = ADD_TO_NEED_TEXT;
+
+    if (isset($node->field_other_enquirers['und'])) {
+      foreach ($node->field_other_enquirers['und'] as $coe) {
+        if ($coe['target_id'] == $user->uid) {
+          $ajax_link_url = '/remove_coe_from_need_from_node/' . $node->nid . '/nojs';
+          $ajax_link_text = REMOVE_FROM_NEED_TEXT;
+          break;
+        }
+      }
+    }
+
+    $node->content['field_need_action'][0]['#markup'] =
+      '<a href="' . $ajax_link_url . '" class="use-ajax">' . $ajax_link_text . '</a>';
+  }
+}

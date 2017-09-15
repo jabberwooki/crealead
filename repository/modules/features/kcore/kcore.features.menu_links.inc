@@ -51,26 +51,45 @@ function kcore_menu_default_menu_links() {
     'weight' => 10,
     'customized' => 1,
   );
-  // Exported menu link: management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table.
-  $menu_links['management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table'] = array(
-    'menu_name' => 'management',
-    'link_path' => 'admin/structure/entityform_types/manage/site_contact/submissions/autofields_table',
-    'router_path' => 'admin/structure/entityform_types/manage/%/submissions',
-    'link_title' => 'Listing des contacts',
+  // Exported menu link: menu-coe-area_echanges:espace-co-entrepreneur/echanges.
+  $menu_links['menu-coe-area_echanges:espace-co-entrepreneur/echanges'] = array(
+    'menu_name' => 'menu-coe-area',
+    'link_path' => 'espace-co-entrepreneur/echanges',
+    'router_path' => 'espace-co-entrepreneur/echanges',
+    'link_title' => 'Echanges',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'management_listing-des-contacts:admin/structure/entityform_types/manage/site_contact/submissions/autofields_table',
+      'identifier' => 'menu-coe-area_echanges:espace-co-entrepreneur/echanges',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 40,
+    'weight' => 1,
     'customized' => 1,
-    'parent_identifier' => 'management_administration:admin',
+  );
+  // Exported menu link: menu-coe-area_informations:espace-co-entrepreneur/informations.
+  $menu_links['menu-coe-area_informations:espace-co-entrepreneur/informations'] = array(
+    'menu_name' => 'menu-coe-area',
+    'link_path' => 'espace-co-entrepreneur/informations',
+    'router_path' => 'espace-co-entrepreneur/informations',
+    'link_title' => 'Informations',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-coe-area_informations:espace-co-entrepreneur/informations',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
   );
   // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
@@ -112,13 +131,35 @@ function kcore_menu_default_menu_links() {
     'weight' => 1,
     'customized' => 1,
   );
+  // Exported menu link: menu-top_espace-co-entrepreneurs:espace-co-entrepreneur/informations.
+  $menu_links['menu-top_espace-co-entrepreneurs:espace-co-entrepreneur/informations'] = array(
+    'menu_name' => 'menu-top',
+    'link_path' => 'espace-co-entrepreneur/informations',
+    'router_path' => 'espace-co-entrepreneur/informations',
+    'link_title' => 'Espace co-entrepreneurs',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-top_espace-co-entrepreneurs:espace-co-entrepreneur/informations',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 2,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Accueil');
   t('Contact');
   t('Découvrez l\'offre des<br>co-entrepreneurs');
-  t('Listing des contacts');
+  t('Echanges');
+  t('Espace co-entrepreneurs');
+  t('Informations');
   t('Plan du site');
 
   return $menu_links;

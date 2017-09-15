@@ -197,6 +197,14 @@ ul.coche-rouge, #block-system-main ul{
     }
   }
 }
+.pagination li.active > span{
+  padding: 11px 19px;
+}
+li.print_html{
+  &:before{
+    content: '' !important;
+  }
+}
 
 /* social links *******************************************************************************************************/
 div.service-links{
@@ -212,5 +220,11 @@ div.service-links{
 .node-type-page{
   div.service-links{
     margin-top: -20px;
+  }
+}
+/* Liens contextuels **************************************************************************************************/
+.contextual-links{
+  li:before, li a:before{
+    content: '' !important;
   }
 }

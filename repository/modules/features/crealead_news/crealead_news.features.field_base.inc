@@ -94,7 +94,7 @@ function crealead_news_field_default_field_bases() {
   // Exported field_base: 'field_news_author'.
   $field_bases['field_news_author'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_news_author',
@@ -112,6 +112,7 @@ function crealead_news_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -138,6 +139,7 @@ function crealead_news_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'profile2_private' => FALSE,
       'timezone_db' => '',
       'todate' => '',
       'tz_handling' => 'none',

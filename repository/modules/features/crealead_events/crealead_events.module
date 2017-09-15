@@ -1,0 +1,67 @@
+<?php
+/**
+ * @file
+ * Code for the Evénements feature.
+ */
+
+include_once 'crealead_events.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_events_form_event_node_form_alter(&$form, &$form_state, $form_id) {
+  // Related brands list handling ----------------------------------------------
+  // The event create/edit form always contains a user id.
+  // If event is being created, user id is the current user id.
+  // If event is being modified, user id is the event author id.
+  // In either cases, we must seek for brands the concerned user belongs to.
+  $query = db_select('field_data_field_brand_coe', 'coe');
+  $query->fields('coe', array('entity_id', 'field_brand_coe_target_id'));
+  $query->join('field_data_field_brand_coes', 'coes', 'coes.field_brand_coes_value=coe.entity_id');
+  $query->join('node', 'n', 'n.nid=coes.entity_id');
+  $query->fields('coes', array('entity_id'));
+  $query->condition('field_brand_coe_target_id', $form['uid']['#value']);
+  $query->condition('n.status', NODE_PUBLISHED);
+  $users_published_brands = $query->execute()->fetchAllKeyed(2, 2);
+
+  $brand_options = $form['field_event_related_brands']['und']['#options'];
+  foreach ($brand_options as $key => $brand) {
+    if (!in_array($key, $users_published_brands)) {
+      unset($brand_options[$key]);
+    }
+  }
+  $form['field_event_related_brands']['und']['#options'] = $brand_options;
+
+  // Then, if news is being modified and current user is not event author,
+  // we must display a disabled brand list, unless current used is allowed to.
+  global $user;
+  if (isset($form['nid']['#value']) && $user->uid != $form['uid']['#value'] && empty($current_user_allowed_roles) && $user->uid != 1) {
+    $form['field_event_related_brands']['#disabled'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_events_node_view($node, $view_mode, $langcode) {
+//  dpm($node);
+  drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-event-date-location-height.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+  ));
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_events_views_query_alter(&$view, &$query) {
+  if ($view->name == 'brands_calendar' && $view->current_display == 'agenda_listing') {
+    // Small trick to filter events and training sessions belonging to current brand,
+    // because I could not apply nested "AND" and OR" conditions to contextual filters.
+    // So normal filters are used with a value set to 0 (zero) which is dynamically replaced
+    // by the current brand's nid.
+    $query->where[2]['conditions'][0]['value'] = arg(1);
+    $query->where[2]['conditions'][1]['value'] = arg(1);
+  }
+}
+

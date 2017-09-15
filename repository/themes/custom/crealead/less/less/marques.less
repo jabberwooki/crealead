@@ -416,12 +416,15 @@ body.node-type-brand {
         clear: both;
         a{
           .red-button-link();
+          margin-top: 20px;
+          margin-bottom: 0;
         }
       }
     }
   }
+
   /* Page des infos générales ********************************************************/
-  #bootstrap-fieldgroup-nav-item--informations-gnrales {
+  #bootstrap-fieldgroup-nav-item--prsentation {
     .field-name-field-business-groups {
       display: none;
       float: right;
@@ -510,7 +513,7 @@ body.node-type-brand {
     }
   }
   /* page des clients  ou références *************************************************************/
-  #bootstrap-fieldgroup-nav-item--rfrences-client {
+  #bootstrap-fieldgroup-nav-item--rfrences {
     margin-top: 20px;
     #views-bootstrap-grid-1{
       @media (min-width: @screen-md) {
@@ -616,11 +619,10 @@ body.node-type-brand {
 
   }
 
-  /* Onglet blog *******************************************************************************/
-  #bootstrap-fieldgroup-nav-item--blog {
+  /* Onglet blog maintenant actualités et articles ********************************************************************/
+  #bootstrap-fieldgroup-nav-item--actualits, #bootstrap-fieldgroup-nav-item--articles{
     .view-articles .field-name-field-landing-pages {
       .category();
-
     }
     .view-id-articles {
       .field-name-field-image {
@@ -640,14 +642,21 @@ body.node-type-brand {
       }
     }
 
-    .view-news {
-      .views-row {
+    .view-news, .view-articles {
+      .row {
         margin-bottom: 20px;
         padding-bottom: 20px;
-        background: url(../images/red-news-line.gif) no-repeat 50% 100%;
+        div.node{
+          padding: 10px;
+        }
 
-        .field-name-field-news-type {
+        .field-name-field-news-type{
           .category();
+          margin-left: 5px;
+        }
+        .field-name-field-landing-pages {
+          .category();
+          margin-left: 10px;
         }
         h4.h4-title-news-in-brand a {
           color: @rouge-crealead;
@@ -657,7 +666,6 @@ body.node-type-brand {
           }
         }
         .field-name-field-image {
-          height: 200px;
           overflow: hidden;
           text-align: center;
           img {
@@ -668,8 +676,55 @@ body.node-type-brand {
       }
 
     }
+    .view-brands-calendar{
+      .view .date-nav-wrapper .date-prev{
+        right: auto;
+        left: 0;
+      }
+      .view-grouping-header{
+        .date-display-single{
+          display: block;
+          border-bottom: 1px solid @gris-fonce-crealead;
+          &:before{
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+      .views-field-title a{
+        display: block;
+        &:before{
+          .glyphicon();
+          content: "\e82d";
+          color: @rouge-crealead;
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+
+  #bootstrap-fieldgroup-nav-item--actualits {
+    .view-brands-calendar {
+      .view-grouping-content {
+        margin-left: 1em;
+
+        .views-row {
+          margin-left: 1em;
+        }
+      }
+    }
   }
   /* Onglet contact ***************************************************************************************************/
+  .group-brand-contact-tab{
+    display: none;
+  }
+  #link-form-brand{
+    &:before{
+      .glyphicon();
+      content: "\e820";
+    }
+  }
   .radio input[type="radio"] {
     margin-left: 0;
   }
@@ -749,8 +804,8 @@ body.node-type-brand {
     h3,h4{
       page-break-after: avoid;
     }
-    .tabs--primary, .alert-block, #bootstrap-fieldgroup-nav-item--rfrences-client,#bootstrap-fieldgroup-nav-item--ralisations,
-    #bootstrap-fieldgroup-nav-item--blog, #bootstrap-fieldgroup-nav-item--formations-et-produits,
+    .tabs--primary, .alert-block, #bootstrap-fieldgroup-nav-item--rfrences,#bootstrap-fieldgroup-nav-item--ralisations,
+    #bootstrap-fieldgroup-nav-item--actualits, #bootstrap-fieldgroup-nav-item--formations-et-produits,
     #bootstrap-fieldgroup-nav-item--contact{
       display: none;
     }

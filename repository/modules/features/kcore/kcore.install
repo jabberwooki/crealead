@@ -61,3 +61,10 @@ function kcore_update_7007() {
 function kcore_update_7008() {
   module_enable(array('colorbox_node'));
 }
+
+/**
+ * Activate mimemail module.
+ */
+function kcore_update_7009() {
+  module_enable(array('mimemail'));
+}

@@ -110,7 +110,7 @@ function crealead_brands_strongarm() {
         ),
         'news_brand_news' => array(
           'full' => array(
-            'weight' => '42',
+            'weight' => '44',
             'visible' => TRUE,
           ),
           'block' => array(
@@ -238,6 +238,48 @@ function crealead_brands_strongarm() {
           'certifications_labels_block' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_entity_view_1' => array(
+          'full' => array(
+            'weight' => '46',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_entity_view_2' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'brand_agenda_entity_view_1' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_entity_view_3' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+        'events_calendar_eva_agenda' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => FALSE,
+          ),
+        ),
+        'brands_calendar_entity_view_1' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => TRUE,
+          ),
+        ),
+        'brands_calendar_eva_agenda' => array(
+          'full' => array(
+            'weight' => '45',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -764,6 +806,20 @@ function crealead_brands_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_business_sectors_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_business_sectors_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_cl_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_cl_categories_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_sector_brands_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_sector_brands_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

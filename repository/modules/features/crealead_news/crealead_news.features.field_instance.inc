@@ -80,7 +80,7 @@ function crealead_news_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
-          'trim_length' => 600,
+          'trim_length' => 300,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 4,
@@ -753,7 +753,7 @@ function crealead_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => 0,
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 22,

@@ -82,9 +82,15 @@ projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.0-alpha4"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.14"
+projects[views][version] = "3.18"
+
+projects[webform][subdir] = contrib
+projects[webform][version] = "4.1"
 
 ;=== Modules - optional =======================================================
+projects[autocomplete_deluxe][subdir] = contrib
+projects[autocomplete_deluxe][version] = "2.2"
+
 ;projects[bean][subdir] = contrib
 ;projects[bean][version] = ""
 
@@ -114,6 +120,7 @@ projects[conditional_fields][version] = "3.0-alpha2"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
+projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
 
 projects[date_multiselect][subdir] = contrib
 projects[date_multiselect][version] = "1.0"
@@ -123,6 +130,9 @@ projects[default_image_ft][version] = "1.5"
 
 projects[draggableviews][subdir] = contrib
 projects[draggableviews][version] = "2.1"
+
+projects[efq_extra_field][subdir] = contrib
+projects[efq_extra_field][version] = "1.0-alpha1"
 
 projects[email][subdir] = contrib
 projects[email][version] = "1.3"
@@ -167,6 +177,12 @@ projects[filefield_sources][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
+projects[label_help][subdir] = contrib
+projects[label_help][version] = "1.2"
+
+projects[mailsystem][subdir] = contrib
+projects[mailsystem][version] = "2.34"
+
 projects[manualcrop][subdir] = contrib
 projects[manualcrop][version] = "1.5"
 
@@ -175,6 +191,9 @@ projects[manualcrop][version] = "1.5"
 
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "2.5"
+
+;projects[mimemail][subdir] = contrib
+;projects[mimemail][version] = "1.0"
 
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"

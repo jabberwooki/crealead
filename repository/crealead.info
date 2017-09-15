@@ -114,9 +114,8 @@ dependencies[] = crealead_trainings
 dependencies[] = crealead_gazette
 dependencies[] = crealead_documents
 dependencies[] = crealead_geolocations
-
-
-
-
-
+dependencies[] = crealead_newsflashes
+dependencies[] = crealead_events
+dependencies[] = crealead_needs
+dependencies[] = crealead_warnings
 

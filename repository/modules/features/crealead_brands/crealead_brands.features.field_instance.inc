@@ -2596,7 +2596,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -3106,6 +3106,136 @@ Le label doit être prouvé.',
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-brand-field_lien_formulaire_contact'.
+  $field_instances['node-brand-field_lien_formulaire_contact'] = array(
+    'bundle' => 'brand',
+    'default_value' => array(
+      0 => array(
+        'value' => '<a href="#bootstrap-fieldgroup-nav-item--contact">Formulaire de contact</a>',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_image_style' => '',
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+          'field_formatter_class' => '',
+        ),
+        'type' => 'colorbox_field_formatter_linked',
+        'weight' => 39,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'logo' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_lien_formulaire_contact',
+    'label' => 'Lien formulaire contact',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 23,
     ),
   );
 
@@ -4000,6 +4130,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Le contenu du champ Mots-clés ci-dessus sera utilisé dans la recherche des marques.');
   t('Le contenu du champ Solutions ci-dessus sera utilisé dans la recherche des marques.');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des marques qui sont spécialisées dans les dîtes thématiques. Merci de cocher une thématique que si elle fait partie de votre coeur de métier.');
+  t('Lien formulaire contact');
   t('Liens réseaux sociaux');
   t('Localisation');
   t('Logo');

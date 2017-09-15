@@ -261,3 +261,45 @@ function crealead_update_7007() {
 function crealead_update_7008() {
   module_enable(array('crealead_geoolocations'));
 }
+
+/**
+ * Activate feature crealead_newsflashes.
+ */
+function crealead_update_7009() {
+  module_enable(array('crealead_newsflashes'));
+}
+
+/**
+ * Activate feature crealead_events.
+ */
+function crealead_update_7010() {
+  module_enable(array('crealead_events'));
+}
+
+/**
+ * Activate feature crealead_needs.
+ */
+function crealead_update_7011() {
+  module_enable(array('crealead_needs'));
+}
+
+/**
+ * Activate mimemail contrib module.
+ */
+function crealead_update_7012() {
+  module_enable(array('mimemail'));
+}
+
+/**
+ * Activate label_help contrib module.
+ */
+function crealead_update_7013() {
+  module_enable(array('label_help'));
+}
+
+/**
+ * Activate feature crealead_warnings.
+ */
+function crealead_update_7014() {
+  module_enable(array('crealead_warnings'));
+}

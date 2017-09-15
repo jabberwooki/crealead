@@ -56,12 +56,13 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
     $form['field_related_brands']['und']['#default_value'] = array(arg(3));
   }
   // End of Related brands list handling ---------------------------------------
-
+  $sector_brands_full_list = $form['field_related_sector_brands']['und']['#options'];
   // Hugly hack to remove no longer wanted options of field_news_kind
   // (They cannot be simply deleted because already used).
   unset($form['field_news_kind']['und']['#options'][2]);
   unset($form['field_news_kind']['und']['#options'][3]);
 
+  // Related sector brands list handling ---------------------------------------
   // We must display only sector brands and certifications/labels the parent brand(s) of the current news is related to.
   // First, we get the parent brands.
   $parent_brands = crealead_news_get_parent_brands($form['nid']['#value']);
@@ -100,6 +101,16 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
     $form['field_related_sector_brands']['#access'] = FALSE;
     $form['field_related_certifs_labels']['#access'] = FALSE;
   }
+
+  // EXCEPTION : referents, webmasters and pole gestion are allowed to attach CREALEAD tagged news to any sector brand,
+  // but only if news is "Crealead news" (which means in edit mode, during creation mode the node cannot be "Crealead news").
+  $crealead_sector_brands_allowed_roles = array('administrateur','webmaster','référent','pôle gestion');
+  $current_user_sector_brands_allowed_roles = array_intersect($crealead_sector_brands_allowed_roles, $current_user_roles);
+  if (isset($form['nid']['#value']) && isset($form_state['node']->field_news_kind['und'][0]['value']) && $form_state['node']->field_news_kind['und'][0]['value'] == 1) {
+    $form['field_related_sector_brands']['und']['#options'] = $sector_brands_full_list;
+    $form['field_related_sector_brands']['#access'] = TRUE;
+  }
+  // End of Related sector brands list handling --------------------------------
 
   // Summary is now in plain text. We must remove html tags for nodes saved prior to this modification.
   $form['body']['und'][0]['summary']['#default_value'] = strip_tags($form['body']['und'][0]['summary']['#default_value']);
@@ -157,11 +168,11 @@ function crealead_news_views_pre_render(&$view) {
   }
   elseif ($view->name == 'news' && $view->current_display == 'brand_news') {
     // Link 'Ajouter une actualité' must be added to block only for coes attached to the current brand.
-    $current_brand = $view->current_entity;
+    global $user;
+    $current_brand = menu_get_object();
     $wrapper = entity_metadata_wrapper('node', $current_brand);
     $brand_coes = $wrapper->field_brand_coes->value();
 
-    global $user;
     foreach ($brand_coes as $brand_coe) {
       if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
         continue;
