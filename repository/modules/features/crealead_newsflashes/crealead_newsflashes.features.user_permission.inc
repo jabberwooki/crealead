@@ -25,7 +25,6 @@ function crealead_newsflashes_user_default_permissions() {
     'name' => 'create newsflash content',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -48,9 +47,7 @@ function crealead_newsflashes_user_default_permissions() {
   // Exported permission: 'delete own newsflash content'.
   $permissions['delete own newsflash content'] = array(
     'name' => 'delete own newsflash content',
-    'roles' => array(
-      'entrepreneur' => 'entrepreneur',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -69,9 +66,7 @@ function crealead_newsflashes_user_default_permissions() {
   // Exported permission: 'edit own newsflash content'.
   $permissions['edit own newsflash content'] = array(
     'name' => 'edit own newsflash content',
-    'roles' => array(
-      'entrepreneur' => 'entrepreneur',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
