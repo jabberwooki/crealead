@@ -82,7 +82,7 @@ projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.0-alpha4"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.18"
+projects[views][version] = "3.14"
 
 projects[webform][subdir] = contrib
 projects[webform][version] = "4.1"
@@ -192,8 +192,8 @@ projects[manualcrop][version] = "1.5"
 ;projects[migrate_extras][subdir] = contrib
 ;projects[migrate_extras][version] = "2.5"
 
-;projects[mimemail][subdir] = contrib
-;projects[mimemail][version] = "1.0"
+projects[mimemail][subdir] = contrib
+projects[mimemail][version] = "1.0"
 
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"

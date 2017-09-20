@@ -1,3 +1,8 @@
+Hotfix mimemail-declaration-missing / 2017-09-20
+================================================
+ * Install profile up: Views module version downgraded from 3.18 to 3.14.
+ * Install profile up: Mimemail contrib module declaration uncommented.
+
 Hotfix coe-area-menu-display-remove / 2017-09-15
 ================================================
  * kcore up: User logging test to display or not the Coe area tabs menu.
