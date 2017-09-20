@@ -24,7 +24,7 @@ function crealead_newsflashes_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -90,7 +90,7 @@ function crealead_newsflashes_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -107,7 +107,7 @@ function crealead_newsflashes_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -158,7 +158,7 @@ function crealead_newsflashes_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -172,7 +172,7 @@ function crealead_newsflashes_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -206,7 +206,7 @@ function crealead_newsflashes_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -218,12 +218,12 @@ function crealead_newsflashes_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'field_formatter_class' => '',
         ),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -265,7 +265,7 @@ function crealead_newsflashes_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -337,13 +337,13 @@ function crealead_newsflashes_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'field_formatter_class' => '',
         ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -355,7 +355,7 @@ function crealead_newsflashes_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_theme_breve',
-    'label' => 'Thème de la brève',
+    'label' => 'Thème',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -363,9 +363,11 @@ function crealead_newsflashes_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 2,
     ),
   );
 
@@ -376,7 +378,7 @@ function crealead_newsflashes_field_default_field_instances() {
   t('Envoyé par email');
   t('Fichier joint');
   t('Population concernée');
-  t('Thème de la brève');
+  t('Thème');
 
   return $field_instances;
 }

@@ -1,3 +1,9 @@
+Hotfix newsflashes improvements / 201-09-20
+===========================================
+ * crealead_newsflashes up: All ermissions on newsflash node type removed from role 'entrepreneur'.
+ * crealead_newsflashes up: Newsflash full view mode improved.
+ * crealead_newsflashes up: Email message improved: Title 'Population concernée' added.
+
 Hotfix newsflashes-test-sending-date-missing / 2017-09-20
 =========================================================
  * crealead_newsflashes up: Bugfix: Missing date in Newsflashes email subject.

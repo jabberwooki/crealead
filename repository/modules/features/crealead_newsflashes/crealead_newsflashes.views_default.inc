@@ -171,7 +171,7 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['filters']['field_display_end_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_display_end_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_display_end_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Thème de la brève (field_theme_breve) */
+  /* Filter criterion: Content: Thème (field_theme_breve) */
   $handler->display->display_options['filters']['field_theme_breve_tid']['id'] = 'field_theme_breve_tid';
   $handler->display->display_options['filters']['field_theme_breve_tid']['table'] = 'field_data_field_theme_breve';
   $handler->display->display_options['filters']['field_theme_breve_tid']['field'] = 'field_theme_breve_tid';
