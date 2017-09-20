@@ -1,3 +1,6 @@
 #crealead-newsflashes-list .nf-title {
     padding-left: 20px;
 }
+#crealead-newsflashes-list th {
+    text-align: left;
+}
