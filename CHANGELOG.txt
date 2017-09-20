@@ -1,3 +1,7 @@
+Hotfix newsflashes-test-sending-date-missing / 2017-09-20
+=========================================================
+ * crealead_newsflashes up: Bugfix: Missing date in Newsflashes email subject.
+ 
 Hotfix mimemail-declaration-missing / 2017-09-20
 ================================================
  * Install profile up: Views module version downgraded from 3.18 to 3.14.
