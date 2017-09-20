@@ -21,7 +21,7 @@ function crealead_newsflashes_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '11',
+    'weight' => '9',
     'children' => array(
       0 => 'field_sent_by_email',
     ),
