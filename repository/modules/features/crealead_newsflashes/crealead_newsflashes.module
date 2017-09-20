@@ -105,9 +105,9 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
     $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
   }
 
+  $current_date = format_date(time(), 'custom', 'l j F Y');
   if($real_sending) {
     $email_addresses = crealead_get_users_emails();
-    $current_date = format_date(time(), 'custom', 'l j F Y');
 
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
     // $email_addresses = array('christophe.espiau@laposte.net');
