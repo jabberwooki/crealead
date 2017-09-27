@@ -2224,6 +2224,7 @@ body a[href]:after{content:none!important}
 body .training-email-label{font-weight:700}
 }
 body.front #block-views-articles-testimonials-front .field-name-body h3,body.front #block-views-articles-testimonials-front .field-name-body h4,body.front #block-views-articles-testimonials-front .field-name-body h5,body.front #block-views-news-block-news-focus .field-name-body h3,body.front #block-views-news-block-news-focus .field-name-body h4,body.front #block-views-news-block-news-focus .field-name-body h5{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
+body.front #block-views-articles-testimonials-front{margin-top:-20px}
 .view-id-gazettes .col-md-4>div{border:1px solid #333;padding:10px 20px;height:269px;overflow:hidden;margin:0 0 20px}
 .view-id-gazettes .col-md-4>div h3 a{display:block}
 #sector_brands_navigation{background-color:#009aa0}
