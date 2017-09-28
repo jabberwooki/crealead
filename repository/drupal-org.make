@@ -119,9 +119,8 @@ projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][version] = "3.0-alpha2"
 
 projects[date][subdir] = contrib
-projects[date][version] = "2.10"
-;The following patch was applicable on 2.9 version. It is not on 2.10 version.
-;projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
+projects[date][version] = "2.9"
+projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
 
 projects[date_multiselect][subdir] = contrib
 projects[date_multiselect][version] = "1.0"
