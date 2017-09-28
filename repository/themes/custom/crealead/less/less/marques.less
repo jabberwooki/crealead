@@ -676,6 +676,7 @@ body.node-type-brand {
       }
 
     }
+    // Agenda marques - Ancienne version
     .view-brands-calendar{
       .view .date-nav-wrapper .date-prev{
         right: auto;
@@ -689,6 +690,35 @@ body.node-type-brand {
             .glyphicon();
             content: "\e807";
           }
+        }
+      }
+      .views-field-title a{
+        display: block;
+        &:before{
+          .glyphicon();
+          content: "\e82d";
+          color: @rouge-crealead;
+          margin-right: 0;
+        }
+      }
+    }
+    // Agenda marques - Nouvelle version
+    .view-brand-agenda {
+      .date-nav-wrapper {
+        .date-nav {
+          margin-bottom: 0;
+          .date-prev {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+      .date-display-single{
+        display: block;
+        border-bottom: 1px solid @gris-fonce-crealead;
+        &:before{
+          .glyphicon();
+          content: "\e807";
         }
       }
       .views-field-title a{
