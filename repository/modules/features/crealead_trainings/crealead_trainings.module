@@ -324,4 +324,20 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
   if (!isset($form['nid']['#value']) && NULL != arg(3)) {
     $form['field_related_training']['und']['#default_value'] = array(arg(3));
   }
+  // If session is being modified and the current user is not the session author,
+  // we must display the select list of auhor's trainings.
+  elseif (isset($form['nid']['#value'])) {
+    $session_author_trainings = views_get_view_result('trainings','user_trainings', $form['uid']['#value']);
+
+    $options = array();
+    if (!empty($session_author_trainings)) {
+      foreach ($session_author_trainings as $training) {
+          $options[$training->nid] = $training->node_title;
+      }
+    }
+
+    $current_related_training = $form_state['node']->field_related_training['und'][0]['target_id'];
+    $form['field_related_training']['und']['#options'] = $options;
+    $form['field_related_training']['und']['#default_value'] = array($current_related_training);
+  }
 }
