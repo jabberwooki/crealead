@@ -281,20 +281,19 @@ function crealead_trainings_views_pre_render(&$view) {
   elseif ($view->name == 'trainings' && $view->current_display == 'all_sessions') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
   }
-  elseif ($view->name == 'trainings_calendar') {
+  elseif ($view->name == 'brand_agenda' && $view->current_display == 'attachment_2') {
     foreach ($view->result as $key => $value) {
       $delta = $value->field_data_field_session_dates_delta;
       $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
-      if ($view->current_display != 'listing') {
-        $ellipsis = ' ';
-        if (strlen($markup) > 20) {
-          $ellipsis = '... ';
-        }
-        $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(J' . ($delta + 1) . ')';
-      }
-      else {
-        $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = $markup . ' (J' . ($delta + 1) . ')';
-      }
+
+//      $ellipsis = ' ';
+//      $nb_chars = 20;
+//      if (strlen($markup) > $nb_chars) {
+//        $ellipsis = '... ';
+//      }
+//      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(jour ' . ($delta + 1) . ')';
+
+      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (jour ' . ($delta + 1) . ')';
     }
   }
   elseif ($view->name == 'trainings_calendar_prod') {
