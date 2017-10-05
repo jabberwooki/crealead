@@ -134,11 +134,14 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
 //    if ($sessions_markup == '<p>Nous contacter</p>' && $sessions_number == 0) {
 //      $sessions_markup = 'Nous contacter.';
 //    }
+
     if ($sessions_number > 0) {
-      $trainings_view = views_get_view('trainings');
-      $trainings_view->set_display('next_sessions');
-      $trainings_view->pre_execute();
-      $sessions_list .= $trainings_view->render('next_sessions');
+//      $trainings_view = views_get_view('trainings');
+//      $trainings_view->set_display('next_sessions');
+//      $trainings_view->pre_execute();
+//      $sessions_list .= $trainings_view->render('next_sessions');
+
+      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
 
       // At the moment we know that at least one training session exists,
       // we can remove the mention "Nous contacter"
@@ -284,8 +287,8 @@ function crealead_trainings_views_pre_render(&$view) {
   elseif ($view->name == 'brand_agenda' && $view->current_display == 'attachment_2') {
     foreach ($view->result as $key => $value) {
       $delta = $value->field_data_field_session_dates_delta;
-      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
 
+//      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
 //      $ellipsis = ' ';
 //      $nb_chars = 20;
 //      if (strlen($markup) > $nb_chars) {
@@ -339,5 +342,48 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
     $current_related_training = $form_state['node']->field_related_training['und'][0]['target_id'];
     $form['field_related_training']['und']['#options'] = $options;
     $form['field_related_training']['und']['#default_value'] = array($current_related_training);
+  }
+}
+
+function crealead_trainings_get_next_sessions($training) {
+  $query = new EntityFieldQueryExtraFields();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'training_session')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_related_training', 'target_id', $training->nid)
+    ->addExtraField('', 'title', 'title', 'node')
+    ->addExtraField('field_session_dates','value');
+
+  $result = $query->execute();
+
+  if (!empty($result)) {
+    $sessions = $result['node'];
+    $current_date = date('Y-m-d');
+    $sessions_list = '';
+    global $user;
+
+    foreach ($sessions as $key=>$session) {
+      $max_date = max($session->extraFields->field_session_dates_);
+      if ($current_date <= substr($max_date,0,10)) {
+        $sessions_list .=
+          '<div class="views-row">' .
+              '<a href="/node/' . $session->nid . '" class="colorbox-node" data-inner-width="600" data-inner-height="300">' .
+                format_date(strtotime($session->extraFields->field_session_dates_[0]),'custom','d F Y') .
+              '</a>';
+
+              // If current user is the training author, we display an edit link for the listed session.
+              if ($training->uid == $user->uid) {
+                $sessions_list .=
+                  '<span class="views-field views-field-edit-node">' .
+                    '<a href="/node/' . $session->nid .'/edit?destination=node/' . $training->nid . '">' .
+                      'modifier' .
+                    '</a>' .
+                  '</span>';
+              }
+          $sessions_list .= '</div>';
+      }
+    }
+
+    return $sessions_list;
   }
 }
