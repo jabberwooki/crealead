@@ -120,9 +120,11 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   }
 
   // Email message building
-  $to = implode(';', $email_addresses);
-  $from = variable_get('site_mail');
+//  $to = implode(';', $email_addresses);
+//  $from = variable_get('site_mail');
   $from = "no-reply@crealead.com";
+  $to = 'undisclosed-recipients:;';
+  $bcc = implode(';', $email_addresses);
   $mail_body = '<p>Bonjour à tous,</p>'
     . '<p>Voici la liste des dernières brèves publiées sur le site web de Crealead.</p>';
   $host = $_SERVER['HTTP_HOST'];
@@ -147,7 +149,13 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
     '<img src="' . $footer_image_fullpath . '">' .
     '</p>';
 
-  $params = array('subject' => $mail_subject, 'body' => $mail_body);
+  $params = array(
+    'headers' => array(
+      'Bcc' => $bcc,
+    ),
+    'subject' => $mail_subject,
+    'body' => $mail_body,
+  );
 
   $type = 'success';
 
@@ -197,6 +205,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 function crealead_newsflashes_mail($key, &$message, $params) {
   switch ($key) {
     case 'latest_newsflashes_list':
+      $message['headers'] += $params['headers'];
       $message['subject'] = $params['subject'];
       $message['body'][] = $params['body'];
       break;
