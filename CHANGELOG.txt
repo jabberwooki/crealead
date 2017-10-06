@@ -1,4 +1,8 @@
-Hotfix newsflashes improvements / 201-09-20
+Hotfix newsflashes_email_bcc_sending / 2017-10-06
+=================================================
+ * crealead_newsflashes up: email now sent to coes addresses using Bcc instead of To.
+
+Hotfix newsflashes improvements / 2017-09-20
 ===========================================
  * crealead_newsflashes up: All ermissions on newsflash node type removed from role 'entrepreneur'.
  * crealead_newsflashes up: Newsflash full view mode improved.
