@@ -136,12 +136,14 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
 //    }
 
     if ($sessions_number > 0) {
-//      $trainings_view = views_get_view('trainings');
-//      $trainings_view->set_display('next_sessions');
-//      $trainings_view->pre_execute();
-//      $sessions_list .= $trainings_view->render('next_sessions');
+      // Initial version of sessions list (discarded, then re-used).
+      $trainings_view = views_get_view('trainings');
+      $trainings_view->set_display('next_sessions');
+      $trainings_view->pre_execute();
+      $sessions_list .= $trainings_view->render('next_sessions');
 
-      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
+//      // New version of sessions list, but eventually discarded (see function crealead_trainings_get_next_sessions() below).
+//      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
 
       // At the moment we know that at least one training session exists,
       // we can remove the mention "Nous contacter"
@@ -281,8 +283,27 @@ function crealead_trainings_views_pre_render(&$view) {
     ksort($sessions);
     $view->result = $sessions;
   }
-  elseif ($view->name == 'trainings' && $view->current_display == 'all_sessions') {
+  elseif ($view->name == 'trainings' && ($view->current_display == 'next_sessions' || $view->current_display == 'all_sessions')) {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
+
+    // To get sessions having at least one date greater than current date,
+    // I had to remove the Contenu:Dates:delta(=0) filter criterion.
+    // Otherwise, only session with first date greater than current date are listed.
+
+    // But consequently, the 2 view displays "next_sessions" and "all_sessions"
+    // return one row for each date in session greater than current date
+    // instead of a unique row for each session.
+    // To fix this, the following foreach loop keeps only the first date of each session,
+    // even if this first date is in the past.
+    $sessions_nids = array();
+    foreach($view->result as $key=>$result) {
+      if (!in_array($result->nid,$sessions_nids)) {
+        $sessions_nids[$result->nid] = $result->nid;
+      }
+      else {
+        unset($view->result[$key]);
+      }
+    }
   }
   elseif ($view->name == 'brand_agenda' && $view->current_display == 'attachment_2') {
     foreach ($view->result as $key => $value) {
@@ -345,45 +366,52 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
   }
 }
 
-function crealead_trainings_get_next_sessions($training) {
-  $query = new EntityFieldQueryExtraFields();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'training_session')
-    ->propertyCondition('status', NODE_PUBLISHED)
-    ->fieldCondition('field_related_training', 'target_id', $training->nid)
-    ->addExtraField('', 'title', 'title', 'node')
-    ->addExtraField('field_session_dates','value');
-
-  $result = $query->execute();
-
-  if (!empty($result)) {
-    $sessions = $result['node'];
-    $current_date = date('Y-m-d');
-    $sessions_list = '';
-    global $user;
-
-    foreach ($sessions as $key=>$session) {
-      $max_date = max($session->extraFields->field_session_dates_);
-      if ($current_date <= substr($max_date,0,10)) {
-        $sessions_list .=
-          '<div class="views-row">' .
-              '<a href="/node/' . $session->nid . '" class="colorbox-node" data-inner-width="600" data-inner-height="300">' .
-                format_date(strtotime($session->extraFields->field_session_dates_[0]),'custom','d F Y') .
-              '</a>';
-
-              // If current user is the training author, we display an edit link for the listed session.
-              if ($training->uid == $user->uid) {
-                $sessions_list .=
-                  '<span class="views-field views-field-edit-node">' .
-                    '<a href="/node/' . $session->nid .'/edit?destination=node/' . $training->nid . '">' .
-                      'modifier' .
-                    '</a>' .
-                  '</span>';
-              }
-          $sessions_list .= '</div>';
-      }
-    }
-
-    return $sessions_list;
-  }
-}
+/**
+ * Return a training's session list whose at least one session date is greater than current date.
+ * [EDIT] NO LONGER USED
+ *
+ * @param $training The training node.
+ * @return string A string containing the renderer html code.
+ */
+//function crealead_trainings_get_next_sessions($training) {
+//  $query = new EntityFieldQueryExtraFields();
+//  $query->entityCondition('entity_type', 'node')
+//    ->entityCondition('bundle', 'training_session')
+//    ->propertyCondition('status', NODE_PUBLISHED)
+//    ->fieldCondition('field_related_training', 'target_id', $training->nid)
+//    ->addExtraField('', 'title', 'title', 'node')
+//    ->addExtraField('field_session_dates','value');
+//
+//  $result = $query->execute();
+//
+//  if (!empty($result)) {
+//    $sessions = $result['node'];
+//    $current_date = date('Y-m-d');
+//    $sessions_list = '';
+//    global $user;
+//
+//    foreach ($sessions as $key=>$session) {
+//      $max_date = max($session->extraFields->field_session_dates_);
+//      if ($current_date <= substr($max_date,0,10)) {
+//        $sessions_list .=
+//          '<div class="views-row">' .
+//              '<a href="/node/' . $session->nid . '" class="colorbox-node" data-inner-width="600" data-inner-height="300">' .
+//                format_date(strtotime($session->extraFields->field_session_dates_[0]),'custom','d F Y') .
+//              '</a>';
+//
+//              // If current user is the training author, we display an edit link for the listed session.
+//              if ($training->uid == $user->uid) {
+//                $sessions_list .=
+//                  '<span class="views-field views-field-edit-node">' .
+//                    '<a href="/node/' . $session->nid .'/edit?destination=node/' . $training->nid . '">' .
+//                      'modifier' .
+//                    '</a>' .
+//                  '</span>';
+//              }
+//          $sessions_list .= '</div>';
+//      }
+//    }
+//
+//    return $sessions_list;
+//  }
+//}

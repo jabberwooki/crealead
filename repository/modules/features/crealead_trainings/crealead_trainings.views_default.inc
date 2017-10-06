@@ -934,18 +934,15 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_session' => 'training_session',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Dates (field_session_dates) */
   $handler->display->display_options['filters']['field_session_dates_value']['id'] = 'field_session_dates_value';
   $handler->display->display_options['filters']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
   $handler->display->display_options['filters']['field_session_dates_value']['field'] = 'field_session_dates_value';
   $handler->display->display_options['filters']['field_session_dates_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_session_dates_value']['group'] = 1;
   $handler->display->display_options['filters']['field_session_dates_value']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_session_dates_value']['add_delta'] = 'yes';
-  /* Filter criterion: Content: Dates (field_session_dates:delta) */
-  $handler->display->display_options['filters']['delta']['id'] = 'delta';
-  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['filters']['delta']['field'] = 'delta';
-  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
   $handler->display->display_options['path'] = 'formations/prochaines-sessions';
 
   /* Display: Nombre de sessions */
@@ -1130,18 +1127,15 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'training_session' => 'training_session',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Dates (field_session_dates) */
   $handler->display->display_options['filters']['field_session_dates_value']['id'] = 'field_session_dates_value';
   $handler->display->display_options['filters']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
   $handler->display->display_options['filters']['field_session_dates_value']['field'] = 'field_session_dates_value';
   $handler->display->display_options['filters']['field_session_dates_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_session_dates_value']['group'] = 1;
   $handler->display->display_options['filters']['field_session_dates_value']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_session_dates_value']['add_delta'] = 'yes';
-  /* Filter criterion: Content: Dates (field_session_dates:delta) */
-  $handler->display->display_options['filters']['delta']['id'] = 'delta';
-  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['filters']['delta']['field'] = 'delta';
-  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
   $handler->display->display_options['path'] = 'formations/toutes-les-sessions';
   $translatables['trainings'] = array(
     t('Master'),
