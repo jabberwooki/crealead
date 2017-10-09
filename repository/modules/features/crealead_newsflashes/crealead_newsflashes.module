@@ -97,9 +97,9 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
 //  crealead_send_latest_newsflashes();
 //}
 
-function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL, $selected_newsflashes=array()) {
+function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL, $selected_newsflashes=array(), $full_body=0) {
   if (!empty($selected_newsflashes)) {
-    $newsflashes_details = crealead_newsflashes_get_latest(TRUE, $selected_newsflashes);
+    $newsflashes_details = crealead_newsflashes_get_latest(TRUE, $selected_newsflashes, $full_body);
   }
   else {
     $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
@@ -133,10 +133,20 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   $mail_body .= '<tr><th>Population concernée</th><th></th></tr>';
   foreach ($newsflashes_details as $item) {
     $mail_body .= '<tr class="nf_item">';
+
+    $mail_body .= '<td class="nf-population">' . $item['population'] . '</td>';
     $mail_body .=
-      '<td class="nf-population">' . $item['population'] . '</td>' .
-      '<td class="nf-title" style="padding-left:20px;"><a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a></td>';
+      '<td class="nf-title" style="padding-left:20px;">' .
+        '<a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a>' .
+      '</td>';
     $mail_body .= '</tr>';
+
+    if ($full_body) {
+      $mail_body .= '<tr class="nf_item_body">';
+      $mail_body .= '<td></td>';
+      $mail_body .= '<td class="nf-body">' . $item['body'] . '</td>';
+      $mail_body .= '</tr>';
+    }
   }
 
   $mail_body .= '</table>';
@@ -219,7 +229,7 @@ function crealead_get_users_emails() {
   return $query->execute()->fetchAllKeyed(0, 1);
 }
 
-function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflashes=array()) {
+function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflashes=array(), $full_body=0) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'newsflash')
@@ -249,13 +259,18 @@ function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflas
           }
         }
         $wrapper = entity_metadata_wrapper('node', $nid);
-        $newsflashes_details[] = array(
+        $newsflashes_details[$nid] = array(
           'nid' => $nid,
           'title' => $wrapper->title->value(),
           'population' => $wrapper->field_related_population->name->value(),
           'author' => $wrapper->author->name->value(),
           'sent_by_email' => $wrapper->field_sent_by_email->value(),
         );
+
+        if ($full_body) {
+          $newsflash_body = $wrapper->body->value()['safe_value'];
+          $newsflashes_details[$nid]['body'] = $newsflash_body;
+        }
       }
 
       return $newsflashes_details;

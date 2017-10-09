@@ -5,6 +5,7 @@
 (function ($) {
   Drupal.behaviors.newsflashes = {
     attach: function (context, settings) {
+      $('#edit-include-full-body').hide();
       $('#edit-submit').attr('disabled','disabled');
 
       $('#crealead-newsflashes-manual-sending-form .form-checkbox').click(function () {
@@ -14,9 +15,17 @@
         }
         else {
           $('#edit-submit').removeAttr('disabled');
+
+          if (checkedBoxes.length == 1) {
+            $('#edit-include-full-body').show();
+          }
+          else {
+            $('#edit-include-full-body').hide();
+            $('#edit-full-body-yes-no-0').prop('checked', true);
+            $('#edit-full-body-yes-no-1').prop('checked', false);
+          }
         }
       });
-
 
       // var attr = $('#edit-submit').attr('disabled');
       // console.log(typeof  attr);

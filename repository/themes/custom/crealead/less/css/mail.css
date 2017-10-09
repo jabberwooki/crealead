@@ -1,4 +1,8 @@
-#crealead-newsflashes-list .nf-title {
+#crealead-newsflashes-list .nf-population {
+    vertical-align: top;
+}
+#crealead-newsflashes-list .nf-title,
+#crealead-newsflashes-list .nf-body {
     padding-left: 20px;
 }
 #crealead-newsflashes-list th {

@@ -103,6 +103,18 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
         '#options' => $nf_already_sent_options,
       );
     }
+
+    $form['include-full-body'] = array(
+      '#type' => 'container',
+    );
+    $options = array('0' => 'non', '1' => 'oui');
+    $form['include-full-body']['full-body-yes-no'] = array(
+      '#type' => 'radios',
+      '#title' => 'Envoyer aussi le corps de la brève ?',
+      '#options' => $options,
+      '#default_value' => 0,
+      '#description' => 'Ceci est possible lorsque vous ne sélectionnez qu\'une seule brève.',
+    );
   }
   $form['submit-container'] = array(
     '#type' => 'container',
@@ -132,7 +144,7 @@ function crealead_newsflashes_manual_sending_form_submit($form, &$form_state) {
     }
   }
 
-  crealead_send_latest_newsflashes(TRUE,FALSE, $newsflashes_list);
+  crealead_send_latest_newsflashes(TRUE,FALSE, $newsflashes_list, $form_state['values']['full-body-yes-no']);
 }
 
 // TAB 3 - Test sending functions.
