@@ -190,21 +190,13 @@ travailler ensemble.</span></div>';
           'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
           'logo-file' => 'ca-lr_263x57.png'
         ),
-        'l-europe-s-engage' => array(
+        'fond-social-europeen' => array(
           'url' => '',
-          'logo-file' => 'l-europe-s-engage_160x100.png'
-        ),
-        'ue-fse' => array(
-          'url' => '',
-          'logo-file' => 'ue-fse_100x100.jpg'
+          'logo-file' => 'fds-social-europeen_506x130.png'
         ),
         'prefecture' => array(
           'url' => '',
           'logo-file' => 'prefecture_78x100.jpg'
-        ),
-        'region-lrmp' => array(
-          'url' => 'http://www.regionlrmp.fr/',
-          'logo-file' => 'region-lrmp_100x100.png'
         ),
         'montpellier-metropole' => array(
           'url' => 'http://www.montpellier3m.fr/',
