@@ -307,6 +307,6 @@ function crealead_update_7014() {
 /**
  * Activate feature crealead_ads.
  */
-function crealead_update_7014() {
+function crealead_update_7015() {
   module_enable(array('crealead_ads'));
 }
