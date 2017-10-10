@@ -70,11 +70,23 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
 //      $plural = '';
 //    }
 
+    $form['email-subject'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('email-title-container')),
+    );
+    $form['email-subject']['subject'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Objet',
+      '#size' => 100,
+      '#field_prefix' => '[Crealead]',
+      '#default_value' => 'Informations du ' . lcfirst(format_date(time(), 'custom', 'l d F Y')),
+    );
+
+
     $form['not-yet-sent'] = array(
       '#type' => 'container',
       '#attributes' => array('class' => array('nf-not-yet-sent-container')),
     );
-
     $form['not-yet-sent']['newsflashes-not-yet-sent-list'] = array(
       '#type' => 'checkboxes',
       '#title' => 'Brèves non encore envoyées',
@@ -91,7 +103,6 @@ function crealead_newsflashes_manual_sending_form($form, &$form_state) {
         '#type' => 'container',
         '#attributes' => array('class' => array('nf-already-sent-container')),
       );
-
       $form['already-sent']['newsflashes-already-sent-list'] = array(
         '#type' => 'checkboxes',
         '#title' => 'Brèves déjà envoyées',
@@ -144,7 +155,7 @@ function crealead_newsflashes_manual_sending_form_submit($form, &$form_state) {
     }
   }
 
-  crealead_send_latest_newsflashes(TRUE,FALSE, $newsflashes_list, $form_state['values']['full-body-yes-no']);
+  crealead_send_latest_newsflashes(TRUE,FALSE, $newsflashes_list, $form_state['values']);
 }
 
 // TAB 3 - Test sending functions.

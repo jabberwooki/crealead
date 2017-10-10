@@ -97,9 +97,9 @@ function crealead_newsflashes_form_newsflash_node_form_alter(&$form, &$form_stat
 //  crealead_send_latest_newsflashes();
 //}
 
-function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL, $selected_newsflashes=array(), $full_body=0) {
+function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=NULL, $selected_newsflashes=array(), $form_state_values=null) {
   if (!empty($selected_newsflashes)) {
-    $newsflashes_details = crealead_newsflashes_get_latest(TRUE, $selected_newsflashes, $full_body);
+    $newsflashes_details = crealead_newsflashes_get_latest(TRUE, $selected_newsflashes, $form_state_values['full-body-yes-no']);
   }
   else {
     $newsflashes_details = crealead_newsflashes_get_latest(TRUE);
@@ -112,7 +112,12 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
     // $email_addresses = array('christophe.espiau@laposte.net');
 
-    $mail_subject = '[Crealead] Informations du ' . $current_date;
+    if (isset($form_state_values)) {
+      $mail_subject = '[Crealead] ' . $form_state_values['subject'];
+    }
+    else {
+      $mail_subject = '[Crealead] Informations du ' . $current_date;
+    }
   }
   else {
     $email_addresses = $test_addresses;
@@ -141,7 +146,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
       '</td>';
     $mail_body .= '</tr>';
 
-    if ($full_body) {
+    if ($form_state_values['full-body-yes-no']) {
       $mail_body .= '<tr class="nf_item_body">';
       $mail_body .= '<td></td>';
       $mail_body .= '<td class="nf-body">' . $item['body'] . '</td>';
