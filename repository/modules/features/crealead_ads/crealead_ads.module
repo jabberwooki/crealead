@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Code for the Annonces/Offres feature.
+ */
+
+include_once 'crealead_ads.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_ads_form_ad_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_ads') . '/js/crealead_ads.js');
+
+  /* Packaged ad sources terms are :
+   * Activité co-entrepreneur   uuid = 61eeb89e-9d86-4f60-aca8-ffde34e7ff14
+   * Perso                      uuid = 88e99ddc-b047-47b9-b882-0ebe830b79c9
+   * Crealead Structure         uuid = 81bffdc8-426e-4ac0-935a-a821a405b085
+   * Offre externe             uuid = f3416d0e-6a45-44da-8ebf-3670e5e3a941
+*/
+  // So we build a $params array of source terms uuids keyed by source terms tid,
+  $ad_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('ad_sources')->vid);
+  $params = array();
+  foreach ($ad_source_terms as $source_term) {
+    $params[$source_term->tid] = $source_term->uuid;
+  }
+
+  // and we store it in the javascript crealead_needs_clients variable.
+  drupal_add_js(array('crealead_ad_sources' => $params), 'setting');
+
+  // We also pass on to javascript connected user infos
+  global $user;
+  drupal_add_js(array('crealead_needs_connected_user' => $user), 'setting');
+}
