@@ -9,6 +9,9 @@
     margin-left: 20px;
 }
 
+#edit-include-full-body {
+    clear: both;
+}
 #edit-submit-container {
     clear: both;
 }
