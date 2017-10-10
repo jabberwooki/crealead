@@ -58,6 +58,13 @@ function crealead_ads_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucune annonce/offre.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -137,6 +144,7 @@ function crealead_ads_views_default_views() {
     t('‹ précédent'),
     t('suivant ›'),
     t('dernier »'),
+    t('Il n\'y a actuellement aucune annonce/offre.'),
     t('Date'),
     t('Origine'),
     t('Titre'),
