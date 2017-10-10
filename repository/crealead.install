@@ -303,3 +303,10 @@ function crealead_update_7013() {
 function crealead_update_7014() {
   module_enable(array('crealead_warnings'));
 }
+
+/**
+ * Activate feature crealead_ads.
+ */
+function crealead_update_7014() {
+  module_enable(array('crealead_ads'));
+}
