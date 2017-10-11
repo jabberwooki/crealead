@@ -632,7 +632,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox'] = TRUE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -776,7 +776,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox'] = TRUE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
