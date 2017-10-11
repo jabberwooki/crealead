@@ -169,6 +169,10 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
     }
     $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
   }
+  elseif ($type == 'node' && $build['#bundle'] == 'training_session' && $build['#view_mode'] == 'colorbox') {
+//    dpm($build['#node']);
+
+  }
 }
 
 /**
@@ -177,6 +181,30 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
 function crealead_trainings_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'training' && $view_mode == 'full') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_view_trainings.js');
+  }
+  elseif ($node->type == 'training_session' && $view_mode == 'colorbox') {
+    // If visitor comes from training full node, we remove the link "Voir toutes les sessions".
+    $referer = $_SERVER['HTTP_REFERER'];
+    if (strpos($referer, '/formations/') !== false) {
+      unset($node->content['see_all_sessions_link'][0]['#markup']);
+    }
+    // else we create the hyperlink pointing to the training full node.
+    else {
+      $node->content['see_all_sessions_link'][0]['#markup'] =
+        '<a href="/node/' . $node->field_related_training['und'][0]['entity']->nid . '">' .
+        'Voir toutes les sessions' .
+        '</a>';
+    }
+
+    // Addition of the 'Jour N - ' prefix.
+    $element = $node->content['field_session_dates'];
+    $children = array_intersect_key($element, element_children($element));
+    $count = 0;
+    foreach ($children as $key => $child) {
+      $markup = $child['#markup'];
+      $tag_content = strip_tags($child['#markup']);
+      $node->content['field_session_dates'][$key]['#markup'] = str_replace($tag_content, 'Jour ' . ++$count . ' - ' . $tag_content, $markup);
+    }
   }
 }
 
@@ -417,3 +445,4 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
 //    return $sessions_list;
 //  }
 //}
+

@@ -44,6 +44,21 @@ function crealead_trainings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|training_session|colorbox';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'training_session';
+  $ds_fieldsetting->view_mode = 'colorbox';
+  $ds_fieldsetting->settings = array(
+    'see_all_sessions_link' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|training_session|colorbox'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|training|certifications_labels_block';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'training';
@@ -365,6 +380,28 @@ function crealead_trainings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|training|sessions';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'training';
+  $ds_fieldsetting->view_mode = 'sessions';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['node|training|sessions'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|training|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'training';
@@ -392,6 +429,25 @@ function crealead_trainings_ds_field_settings_info() {
  */
 function crealead_trainings_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'see_all_sessions_link';
+  $ds_field->label = 'Voir toutes les sessions';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'training_session|colorbox';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'sessions
+',
+      'format' => 'plain_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['see_all_sessions_link'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -459,6 +515,45 @@ function crealead_trainings_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|achievement|landing_page_block'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training_session|colorbox';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training_session';
+  $ds_layout->view_mode = 'colorbox';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'field_related_training',
+        1 => 'see_all_sessions_link',
+        2 => 'group_session_details',
+        3 => 'field_session_dates',
+        4 => 'field_session_place',
+        5 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_related_training' => 'central',
+      'see_all_sessions_link' => 'central',
+      'group_session_details' => 'central',
+      'field_session_dates' => 'central',
+      'field_session_place' => 'central',
+      'body' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|training_session|colorbox'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -708,6 +803,39 @@ function crealead_trainings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|training|sessions';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'training';
+  $ds_layout->view_mode = 'sessions';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'title',
+        1 => 'field_introduction',
+        2 => 'field_training_duration',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'central',
+      'field_introduction' => 'central',
+      'field_training_duration' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|training|sessions'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|training|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'training';
@@ -746,6 +874,24 @@ function crealead_trainings_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|training|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function crealead_trainings_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'sessions';
+  $ds_view_mode->label = 'Sessions';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['sessions'] = $ds_view_mode;
 
   return $export;
 }
