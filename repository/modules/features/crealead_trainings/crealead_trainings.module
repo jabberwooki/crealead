@@ -306,8 +306,8 @@ function crealead_trainings_views_pre_render(&$view) {
     }
   }
   elseif ($view->name == 'brand_agenda' && $view->current_display == 'attachment_2') {
-    foreach ($view->result as $key => $value) {
-      $delta = $value->field_data_field_session_dates_delta;
+    foreach ($view->result as $key => $item) {
+      $delta = $item->field_data_field_session_dates_delta;
 
 //      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
 //      $ellipsis = ' ';
@@ -321,9 +321,11 @@ function crealead_trainings_views_pre_render(&$view) {
     }
   }
   elseif ($view->name == 'trainings_calendar_prod') {
-    foreach ($view->result as $key => $value) {
-      $delta = $value->field_data_field_session_dates_delta;
-      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (J' . ($delta + 1) . ')';
+    foreach ($view->result as $key => $item) {
+      if ($item->_field_data['nid']['entity']->type == 'training_session') {
+        $delta = $item->field_data_field_session_dates_delta;
+        $view->result[$key]->node_title = $item->field_field_related_training[0]['raw']['entity']->title . ' (J' . ($delta + 1) . ')';
+      }
     }
   }
 
