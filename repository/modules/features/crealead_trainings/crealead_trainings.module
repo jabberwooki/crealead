@@ -366,16 +366,33 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
     $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
   }
+  elseif ($form_id == 'training_session_node_form') {
+    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_sessions_add.js');
+  }
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_trainings_form_training_session_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['intro'] = array(
+    '#type' => 'item',
+    '#markup' => 'Vous n\'avez pas à saisir le titre de la session.<br/>' .
+      'Celui-ci sera (re)créé automatiquement à partir ' .
+      'du <b><i>titre</i></b> de la formation sélectionnée et de la <b><i>première date</i></b> de la session.',
+    '#weight' => -1,
+
+  );
+  // If session is being created, we must provide a temporary title to pass validation successfully.
+  // Then an eventual title is created in the custom submit function.
+  // See function crealead_trainings_training_session_submit_handler() below.
+  if (!isset($form['nid']['#value'])) {
+    $form['title']['#default_value'] = 'temporary title';
+  }
   // If session is being created from a training page,
   // we must catch the training nid from url
   // and select the corresponding training in field_related_training field.
-  if (!isset($form['nid']['#value']) && NULL != arg(3)) {
+  elseif (!isset($form['nid']['#value']) && NULL != arg(3)) {
     $form['field_related_training']['und']['#default_value'] = array(arg(3));
   }
   // If session is being modified and the current user is not the session author,
@@ -394,6 +411,21 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
     $form['field_related_training']['und']['#options'] = $options;
     $form['field_related_training']['und']['#default_value'] = array($current_related_training);
   }
+
+  $form['#submit'][] = 'crealead_trainings_training_session_submit_handler';
+//  dpm($form);
+}
+
+function crealead_trainings_training_session_submit_handler($form, &$form_state) {
+  // Retrieve selected training
+  $selected_training = $form_state['input']['field_related_training']['und'];
+  $training_title = $form['field_related_training']['und']['#options'][$selected_training];
+
+  // Retrieve first session date
+  $first_date = format_date(strtotime($form_state['values']['field_session_dates']['und'][0]['value']), 'custom', 'd M Y');
+
+  // Build session title based on selected training and first session date.
+  $form_state['values']['title'] = $training_title . ' (session commençant le ' . $first_date . ')';
 }
 
 /**
