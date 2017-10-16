@@ -45,6 +45,7 @@ jQuery(function($){
       // if url has #hash, we add the presentation one
       if(!window.location.hash) {
         location.hash = 'bootstrap-fieldgroup-nav-item--prsentation';
+        $("html, body").animate({ scrollTop: 0 }, "slow");
       }
       //add anchor to history each time user click on a brand tab
       $('.group-brand-tabs > li > a').click(function(){
