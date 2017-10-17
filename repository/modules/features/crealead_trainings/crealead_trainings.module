@@ -222,7 +222,7 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
       }
       $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
     }
-    elseif ($build['#view_mode'] == 'list') {
+    elseif ($build['#view_mode'] == 'list' || $build['#view_mode'] == 'teaser') {
       if (!empty($build['#node']->field_crealead_funded) && $build['#node']->field_crealead_funded['und'][0]['value'] == 1) {
         $type_markup = $build['field_training_type'][0]['#markup'];
         $logo_markup = crealead_trainings_get_funded_logo_markup();
