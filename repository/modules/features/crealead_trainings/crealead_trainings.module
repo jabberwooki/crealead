@@ -6,6 +6,24 @@
 
 include_once 'crealead_trainings.features.inc';
 
+define('ADD_TO_SESSION_TEXT', 'Je suis intéressé(e)');
+define('REMOVE_FROM_SESSION_TEXT', 'Je ne suis plus intéressé(e)');
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_trainings_menu() {
+  $items['remove_user_from_session/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_trainings_session_remove_user',
+    'access arguments' => array('access content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_trainings_sessions.ajax.inc',
+  );
+
+  return $items;
+}
+
 function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings.js');
 
@@ -169,20 +187,24 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
     }
     $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
   }
-  elseif ($type == 'node' && $build['#bundle'] == 'training_session' && $build['#view_mode'] == 'colorbox') {
-//    dpm($build['#node']);
-
-  }
+//  elseif ($type == 'node' && $build['#bundle'] == 'training_session' && $build['#view_mode'] == 'colorbox') {
+//  }
 }
 
 /**
  * Implements hook_node_view().
  */
 function crealead_trainings_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'training_session') {
+    drupal_add_css(drupal_get_path('module','crealead_trainings') . '/css/crealead_training_session_popup.css');
+  }
   if ($node->type == 'training' && $view_mode == 'full') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_view_trainings.js');
   }
   elseif ($node->type == 'training_session' && $view_mode == 'colorbox') {
+    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_session_popup.js');
+    drupal_add_css(drupal_get_path('module','crealead_trainings') . '/css/crealead_training_session_popup.css');
+
     // If visitor comes from training full node, we remove the link "Voir toutes les sessions".
     $referer = $_SERVER['HTTP_REFERER'];
     if (strpos($referer, '/formations/') !== false) {
@@ -205,7 +227,125 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       $tag_content = strip_tags($child['#markup']);
       $node->content['field_session_dates'][$key]['#markup'] = str_replace($tag_content, 'Jour ' . ++$count . ' - ' . $tag_content, $markup);
     }
+
+    /////////// Interested/Not interested switch link handling. ////////////////
+    global $user;
+    // If current user is the session author, the switch is not displayed.
+    if ($user->uid == $node->uid) {
+      unset($node->content['interested_switch']);
+    }
+    else {
+      unset($node->content['field_interested_users']);
+
+      $is_already_interested = false;
+      // If session already contains interested users,
+      // we must check if the current user is one of these.
+      if (!empty($node->field_interested_users)) {
+        $session_wrapper = entity_metadata_wrapper('node', $node);
+        $interested_users = $session_wrapper->field_interested_users->value();
+
+        foreach ($interested_users as $interested_user) {
+          if ($interested_user->field_user_name['und'][0]['target_id'] == $user->uid) {
+            $is_already_interested = true;
+            break;
+          }
+        }
+      }
+      $node->content['interested_switch'][0]['#markup'] = crealead_trainings_get_interest_widget($is_already_interested, $node->nid, $user);
+     ///////// End of Interested/Not interested switch link handling. //////////
+    }
   }
+}
+
+function crealead_trainings_get_interest_widget($is_already_interested=true, $session_nid, $user) {
+  if ($is_already_interested) {
+    $output =
+      '<div id="session-switch-wrapper">' .
+        '<a href="/remove_user_from_session/' . $session_nid .'/nojs" class="use-ajax">' .
+          REMOVE_FROM_SESSION_TEXT .
+        '</a>' .
+      '</div>';
+  }
+  else {
+    $vars = array('session_nid' => $session_nid, 'user' => $user);
+
+    $output =
+      '<div id="session-switch-wrapper">' .
+        '<a class="add-to-session-open-close">' . ADD_TO_SESSION_TEXT . '</a>' .
+        '<div class="user-details" style="display: none">' .
+            drupal_render(drupal_get_form('crealead_trainings_add_user_to_session_form', $vars)) .
+        '</div>'.
+      '</div>';
+  }
+
+  return $output;
+}
+
+function crealead_trainings_add_user_to_session_form($form, &$form_state, $vars) {
+  $form['session_nid'] = array(
+    '#type' => 'hidden',
+    '#value' => $vars['session_nid'],
+  );
+
+  $user = $vars['user'];
+  $form['user_name'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Votre nom',
+    '#default_value' => $user->name,
+  );
+
+  $form['user_contact'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Contact (email, tél...)',
+    '#default_value' => $user->mail,
+    '#description' => '(Votre email, votre n° de tél...)',
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Soumettre',
+    '#ajax' => array(
+      'callback' => 'crealead_trainings_add_user_to_session',
+      'wrapper' => 'session-switch-wrapper',
+    ),
+  );
+
+  return $form;
+}
+
+function crealead_trainings_add_user_to_session($form, $form_state) {
+  if (form_get_errors()) {
+    return $form;
+  }
+
+  global $user;
+  $session_nid = $form_state['values']['session_nid'];
+  $contact = $form_state['values']['user_contact'];
+
+  // First, we create a new field collection item from passed on data.
+  $fci_values = array(
+    'field_name' => 'field_interested_users',
+    'field_user_name' => array(
+      LANGUAGE_NONE => array(array('target_id' => $user->uid)),
+    ),
+    'field_user_contact' => array(
+      LANGUAGE_NONE => array(array('value' => $contact)),
+    ),
+  );
+  if (!$fc_entity = entity_create('field_collection_item', $fci_values)) {
+    watchdog('crealead_trainings', 'Field collection item creation failed.');
+  }
+  else {
+    // Then, we attach it to parent node
+    $session = node_load($session_nid);
+    $fc_entity->setHostEntity('node', $session);
+    $fc_entity->save();
+  }
+
+  // Then, we change the session's colorbox switch link.
+  return crealead_trainings_get_interest_widget(true, $session_nid, $user);
+
 }
 
 /**
@@ -413,7 +553,6 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
   }
 
   $form['#submit'][] = 'crealead_trainings_training_session_submit_handler';
-//  dpm($form);
 }
 
 function crealead_trainings_training_session_submit_handler($form, &$form_state) {

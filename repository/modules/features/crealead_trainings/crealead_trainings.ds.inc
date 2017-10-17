@@ -49,10 +49,20 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'training_session';
   $ds_fieldsetting->view_mode = 'colorbox';
   $ds_fieldsetting->settings = array(
+    'interested_switch' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'see_all_sessions_link' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'field_interested_users' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|training_session|colorbox'] = $ds_fieldsetting;
@@ -432,6 +442,24 @@ function crealead_trainings_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'interested_switch';
+  $ds_field->label = 'Switch intéréssé/plus intéressé';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'training_session|colorbox';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'switch intéressé/pluss intéressé',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['interested_switch'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'see_all_sessions_link';
   $ds_field->label = 'Voir toutes les sessions';
   $ds_field->field_type = 5;
@@ -476,6 +504,35 @@ function crealead_trainings_ds_custom_fields_info() {
  */
 function crealead_trainings_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_interested_users|sessions';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_interested_users';
+  $ds_layout->view_mode = 'sessions';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_user_name',
+        1 => 'field_user_contact',
+      ),
+    ),
+    'fields' => array(
+      'field_user_name' => 'left',
+      'field_user_contact' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['field_collection_item|field_interested_users|sessions'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -528,19 +585,23 @@ function crealead_trainings_ds_layout_settings_info() {
       'central' => array(
         0 => 'field_related_training',
         1 => 'see_all_sessions_link',
-        2 => 'group_session_details',
-        3 => 'field_session_dates',
-        4 => 'field_session_place',
-        5 => 'body',
+        2 => 'field_session_dates',
+        3 => 'group_session_details',
+        4 => 'interested_switch',
+        5 => 'field_session_place',
+        6 => 'body',
+        7 => 'field_interested_users',
       ),
     ),
     'fields' => array(
       'field_related_training' => 'central',
       'see_all_sessions_link' => 'central',
-      'group_session_details' => 'central',
       'field_session_dates' => 'central',
+      'group_session_details' => 'central',
+      'interested_switch' => 'central',
       'field_session_place' => 'central',
       'body' => 'central',
+      'field_interested_users' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -569,6 +630,7 @@ function crealead_trainings_ds_layout_settings_info() {
         1 => 'field_session_dates',
         2 => 'field_session_place',
         3 => 'body',
+        4 => 'field_interested_users',
       ),
     ),
     'fields' => array(
@@ -576,6 +638,7 @@ function crealead_trainings_ds_layout_settings_info() {
       'field_session_dates' => 'central',
       'field_session_place' => 'central',
       'body' => 'central',
+      'field_interested_users' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -889,6 +952,7 @@ function crealead_trainings_ds_view_modes_info() {
   $ds_view_mode->view_mode = 'sessions';
   $ds_view_mode->label = 'Sessions';
   $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
     'node' => 'node',
   );
   $export['sessions'] = $ds_view_mode;
