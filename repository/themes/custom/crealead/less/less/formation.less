@@ -95,6 +95,7 @@
       }
     }
   }
+  .detail-session();
 }
 
 .field-name-field-session-dates {
@@ -386,6 +387,80 @@
 
         }
 
+    }
+  }
+  .view-trainings-calendar-prod {
+    .view-content {
+        .calendar-listing-day-wrapper {
+          display: table;
+          > div.views-row{
+            a {
+              position: relative;
+              .quick();
+              font-size: 1.3em;
+              display: block;
+              padding-top: 15px;
+              &:before{
+                .glyphicon();
+                content: "\f0c8";
+                position: absolute;
+                left: -30px;
+                top: 25px;
+                color: @bleu-clair-crealead;
+                font-size: 0.6em;
+              }
+            }
+          }
+          > h3 {
+            display: table-cell;
+            margin: 0 10px 20px 0;
+            padding: 20px;
+            @media (min-width: @screen-md) {
+              min-width: 210px;
+            }
+            &:before {
+              .glyphicon();
+              content: "\e834";
+            }
+          }
+          &:after {
+            content: "";
+            display: block;
+            clear: both;
+            border-bottom: 3px dotted @gris-fonce-crealead;
+            width: 60%;
+            margin: 25px auto;
+          }
+
+        }
+
+    }
+  }
+  .detail-session();
+
+}
+.detail-session {
+  .field-name-field-introduction{
+    max-height: 110px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    background-color: @gris-clair-crealead;
+    border-radius: 8px;
+    padding: 20px;
+    border-bottom: 20px solid @gris-clair-crealead;
+    margin-bottom: 20px;
+  }
+  .field-name-field-training-duration{
+    margin: 0 20px;
+  }
+  .group-session-details {
+    position: relative;
+    margin-top: 20px;
+    .field-name-see-all-sessions-link{
+      position: absolute;
+      right: 0px;
+      top: 10px;
+      padding: 0 20px 0 0;
     }
   }
 }
