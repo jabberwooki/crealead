@@ -10,6 +10,17 @@ define('ADD_TO_SESSION_TEXT', 'Je suis intéressé(e)');
 define('REMOVE_FROM_SESSION_TEXT', 'Je ne suis plus intéressé(e)');
 
 /**
+ * Implements hook_permission().
+ */
+function crealead_trainings_permission() {
+  return array(
+    'administer trainings' => array(
+      'title' => t('Administrer les formations'),
+    )
+  );
+}
+
+/**
  * Implements hook_menu().
  */
 function crealead_trainings_menu() {
@@ -19,6 +30,16 @@ function crealead_trainings_menu() {
     'access arguments' => array('access content'),
     'access callback' => TRUE,
     'file' => 'crealead_trainings_sessions.ajax.inc',
+  );
+
+  $items['admin/config/crealead/trainings'] = array(
+    'title' => 'Formations',
+    'description' => 'Paramétrage des formations.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_trainings_settings_form'),
+    'access arguments' => array('administer trainings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_trainings.admin.inc',
   );
 
   return $items;
@@ -126,69 +147,114 @@ function crealead_trainings_after_build($form, &$form_state) {
  * Implements hook_entity_view_alter().
  */
 function crealead_trainings_entity_view_alter(&$build, $type) {
-  if ($type == 'node' && $build['#bundle'] == 'training' && $build['#view_mode'] == 'full') {
-    if (!empty($build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'])) {
-      $email = $build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'];
-      $link = '/' . drupal_get_path_alias('node/' . $build['field_training_related_brands']['#items'][0]['entity']->nid)
-        . '#bootstrap-fieldgroup-nav-item--contact';
-      $contact_link = '<a href="' . $link . '">' . $email . '</a>';
-      $build['training_contact'][0]['#markup'] = $contact_link;
-    }
-    else {
-      unset($build['training_contact']);
-    }
+//  if ($type == 'node' && $build['#bundle'] == 'training' && $build['#view_mode'] == 'full') {
+  if ($type == 'node' && $build['#bundle'] == 'training') {
+    drupal_add_css(drupal_get_path('module', 'crealead_trainings') . '/css/crealead_trainings.css');
 
-    // From now on, sessions field value is the concatenation of data entered by user in add/edit form
-    // + content provided by the trainings/next_sessions view display.
-    $previous_sessions_markup = $build['field_scheduled_sessions'][0]['#markup'];
-    $sessions_list = '';
-    $sessions_user_links = '';
+    if ($build['#view_mode'] == 'full') {
+      ////////////////// CONTACTEZ-NOUS //////////////////////////////////////////
+      if (!empty($build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'])) {
+        $email = $build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'];
+        $link = '/' . drupal_get_path_alias('node/' . $build['field_training_related_brands']['#items'][0]['entity']->nid)
+          . '#bootstrap-fieldgroup-nav-item--contact';
+        $contact_link = '<a href="' . $link . '">' . $email . '</a>';
+        $build['training_contact'][0]['#markup'] = $contact_link;
+      }
+      else {
+        unset($build['training_contact']);
+      }
 
-    $trainings_view = views_get_view('trainings');
-    $trainings_view->set_display('sessions_count');
-    $trainings_view->pre_execute();
-    $sessions_number = trim(strip_tags($trainings_view->render('sessions_count')));
+      //////////////////// CREALEAD FUNDED ///////////////////////////////////////
+      if (!empty($build['#node']->field_crealead_funded) && $build['#node']->field_crealead_funded['und'][0]['value'] == 1) {
+        $tarif_markup = $build['field_training_price'][0]['#markup'];
+        $logo_markup = crealead_trainings_get_funded_logo_markup();
 
-//    if ($sessions_markup == '<p>Nous contacter</p>' && $sessions_number == 0) {
-//      $sessions_markup = 'Nous contacter.';
-//    }
+        $build['field_training_price'][0]['#markup'] =
+          '<div class="training-funded-logo">' .
+          $logo_markup .
+          '</div>' .
+          $tarif_markup;
+      }
 
-    if ($sessions_number > 0) {
-      // Initial version of sessions list (discarded, then re-used).
+      ///////////////// SESSIONS HANDLING ////////////////////////////////////////
+      // From now on, sessions field value is the concatenation of data entered by user in add/edit form
+      // + content provided by the trainings/next_sessions view display.
+      $previous_sessions_markup = $build['field_scheduled_sessions'][0]['#markup'];
+      $sessions_list = '';
+      $sessions_user_links = '';
+
       $trainings_view = views_get_view('trainings');
-      $trainings_view->set_display('next_sessions');
+      $trainings_view->set_display('sessions_count');
       $trainings_view->pre_execute();
-      $sessions_list .= $trainings_view->render('next_sessions');
+      $sessions_number = trim(strip_tags($trainings_view->render('sessions_count')));
 
-//      // New version of sessions list, but eventually discarded (see function crealead_trainings_get_next_sessions() below).
-//      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
+      if ($sessions_number > 0) {
+        // Initial version of sessions list (discarded, then re-used).
+        $trainings_view = views_get_view('trainings');
+        $trainings_view->set_display('next_sessions');
+        $trainings_view->pre_execute();
+        $sessions_list .= $trainings_view->render('next_sessions');
 
-      // At the moment we know that at least one training session exists,
-      // we can remove the mention "Nous contacter"
-      // which is the field_scheduled_sessions saved default value (see crealead_trainings_node_presave hook).
-      if (strstr($previous_sessions_markup, 'Nous contacter')) {
-        $previous_sessions_markup = '';
+  //      // New version of sessions list, but eventually discarded (see function crealead_trainings_get_next_sessions() below).
+  //      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
+
+        // At the moment we know that at least one training session exists,
+        // we can remove the mention "Nous contacter"
+        // which is the field_scheduled_sessions saved default value (see crealead_trainings_node_presave hook).
+        if (strstr($previous_sessions_markup, 'Nous contacter')) {
+          $previous_sessions_markup = '';
+        }
+
+        if ($sessions_number > 3 ) {
+          $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
+          $sessions_list .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
+        }
       }
+      global $user;
 
-      if ($sessions_number > 3 ) {
-        $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
-        $sessions_list .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
+      if ($user->uid == $build['#node']->uid) {
+        $new_session_link = l(
+          'Créer une session',
+          '/node/add/training-session/' . $build['#node']->nid,
+          array('query' => array('destination' => current_path()))
+        );
+        $sessions_user_links .= '<div class="new-session-link">' . $new_session_link . '</div>';
+      }
+      $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
+    }
+    elseif ($build['#view_mode'] == 'list') {
+      if (!empty($build['#node']->field_crealead_funded) && $build['#node']->field_crealead_funded['und'][0]['value'] == 1) {
+        $type_markup = $build['field_training_type'][0]['#markup'];
+        $logo_markup = crealead_trainings_get_funded_logo_markup();
+
+        $build['field_training_type'][0]['#markup'] =
+          '<div class="training-funded-logo">' .
+          $logo_markup .
+          '</div>' .
+          $type_markup;
       }
     }
-    global $user;
-
-    if ($user->uid == $build['#node']->uid) {
-      $new_session_link = l(
-        'Créer une session',
-        '/node/add/training-session/' . $build['#node']->nid,
-        array('query' => array('destination' => current_path()))
-      );
-      $sessions_user_links .= '<div class="new-session-link">' . $new_session_link . '</div>';
-    }
-    $build['field_scheduled_sessions'][0]['#markup'] = $previous_sessions_markup . $sessions_list . $sessions_user_links;
   }
-//  elseif ($type == 'node' && $build['#bundle'] == 'training_session' && $build['#view_mode'] == 'colorbox') {
-//  }
+}
+
+function crealead_trainings_get_funded_logo_markup() {
+  $logo_markup = 'Logo manquant';
+
+  if ($logo_fid = variable_get('crealead_training_funded_logo_fid', FALSE)) {
+    if ($image = file_load($logo_fid)) {
+      $logo_markup = theme(
+        'image_style',
+        array(
+          'style_name' => 'funded_logo',
+          'path' => $image->uri,
+          'alt' => 'Prise en charge partielle du financement par Crealead pour les Crealeadiens',
+          'title' => 'Prise en charge partielle du financement par Crealead pour les Crealeadiens',
+        )
+      );
+    }
+  }
+
+  return $logo_markup;
 }
 
 /**
@@ -616,4 +682,5 @@ function crealead_trainings_training_session_submit_handler($form, &$form_state)
 //    return $sessions_list;
 //  }
 //}
+
 
