@@ -121,6 +121,7 @@ features[taxonomy][] = target_groups
 features[taxonomy][] = training_domains
 features[taxonomy][] = training_type
 features[user_permission][] = add terms in training_type
+features[user_permission][] = administer trainings
 features[user_permission][] = create training content
 features[user_permission][] = create training_session content
 features[user_permission][] = delete any training content

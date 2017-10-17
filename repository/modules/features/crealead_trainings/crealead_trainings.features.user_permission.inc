@@ -20,6 +20,15 @@ function crealead_trainings_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'administer trainings'.
+  $permissions['administer trainings'] = array(
+    'name' => 'administer trainings',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'crealead_trainings',
+  );
+
   // Exported permission: 'create training content'.
   $permissions['create training content'] = array(
     'name' => 'create training content',
