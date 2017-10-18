@@ -1,0 +1,30 @@
+#session-switch-wrapper .add-to-session-open-close {
+    cursor: pointer;
+}
+#session-switch-wrapper .user-details {
+    margin-bottom: 20px;
+}
+#session-switch-wrapper form {
+    margin: 10px 20px;
+}
+#session-switch-wrapper label {
+    display: block;
+}
+#session-switch-wrapper input {
+    width: 100%;
+}
+#session-switch-wrapper .description {
+    font-style: italic;
+    color: #aaa;
+}
+#session-switch-wrapper .user-add-link {
+    background-color: #4d8f46;
+    padding: 5px 10px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+#session-switch-wrapper .user-add-link-msg {
+    color: red;
+    text-align: center;
+}

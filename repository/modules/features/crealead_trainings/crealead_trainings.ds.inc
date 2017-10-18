@@ -49,10 +49,20 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'training_session';
   $ds_fieldsetting->view_mode = 'colorbox';
   $ds_fieldsetting->settings = array(
+    'interested_switch' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'see_all_sessions_link' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'field_interested_users' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|training_session|colorbox'] = $ds_fieldsetting;
@@ -133,29 +143,15 @@ function crealead_trainings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_training_aims' => array(
+    'field_training_type' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-cl' => 'field-label',
+          'lb-cl' => 'field-label pull-left',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'field',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_training_attendees_number' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'col-md-2 training-attendees-number',
+          'ow-cl' => 'field training-type',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -170,6 +166,20 @@ function crealead_trainings_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'col-md-2 training-duration',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_training_attendees_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-md-2 training-attendees-number',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -206,15 +216,15 @@ function crealead_trainings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_training_type' => array(
+    'field_training_aims' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-cl' => 'field-label pull-left',
+          'lb-cl' => 'field-label',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'field training-type',
+          'ow-cl' => 'field',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -265,7 +275,7 @@ function crealead_trainings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_assessment_methods' => array(
+    'field_training_validation' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -280,7 +290,7 @@ function crealead_trainings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_training_validation' => array(
+    'field_assessment_methods' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -432,6 +442,24 @@ function crealead_trainings_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'interested_switch';
+  $ds_field->label = 'Switch intéréssé/plus intéressé';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'training_session|colorbox';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'switch intéressé/pluss intéressé',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['interested_switch'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'see_all_sessions_link';
   $ds_field->label = 'Voir toutes les sessions';
   $ds_field->field_type = 5;
@@ -476,6 +504,35 @@ function crealead_trainings_ds_custom_fields_info() {
  */
 function crealead_trainings_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_interested_users|sessions';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_interested_users';
+  $ds_layout->view_mode = 'sessions';
+  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_user_name',
+        1 => 'field_user_contact',
+      ),
+    ),
+    'fields' => array(
+      'field_user_name' => 'left',
+      'field_user_contact' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['field_collection_item|field_interested_users|sessions'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -528,19 +585,23 @@ function crealead_trainings_ds_layout_settings_info() {
       'central' => array(
         0 => 'field_related_training',
         1 => 'see_all_sessions_link',
-        2 => 'group_session_details',
-        3 => 'field_session_dates',
-        4 => 'field_session_place',
-        5 => 'body',
+        2 => 'field_session_dates',
+        3 => 'group_session_details',
+        4 => 'interested_switch',
+        5 => 'field_session_place',
+        6 => 'body',
+        7 => 'field_interested_users',
       ),
     ),
     'fields' => array(
       'field_related_training' => 'central',
       'see_all_sessions_link' => 'central',
-      'group_session_details' => 'central',
       'field_session_dates' => 'central',
+      'group_session_details' => 'central',
+      'interested_switch' => 'central',
       'field_session_place' => 'central',
       'body' => 'central',
+      'field_interested_users' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -569,6 +630,7 @@ function crealead_trainings_ds_layout_settings_info() {
         1 => 'field_session_dates',
         2 => 'field_session_place',
         3 => 'body',
+        4 => 'field_interested_users',
       ),
     ),
     'fields' => array(
@@ -576,6 +638,7 @@ function crealead_trainings_ds_layout_settings_info() {
       'field_session_dates' => 'central',
       'field_session_place' => 'central',
       'body' => 'central',
+      'field_interested_users' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -634,8 +697,8 @@ function crealead_trainings_ds_layout_settings_info() {
         0 => 'group_training_header',
         1 => 'field_training_duration',
         2 => 'group_training_data',
-        3 => 'field_training_type',
-        4 => 'field_training_attendees_number',
+        3 => 'field_training_attendees_number',
+        4 => 'field_training_type',
         5 => 'title',
         6 => 'field_training_price',
         7 => 'field_introduction',
@@ -645,14 +708,14 @@ function crealead_trainings_ds_layout_settings_info() {
         11 => 'field_training_aims',
         12 => 'field_training_method',
         13 => 'group_training_left_col',
-        14 => 'field_training_teachers',
-        15 => 'body',
-        16 => 'group_training_right_col',
-        17 => 'field_training_validation',
+        14 => 'body',
+        15 => 'field_training_teachers',
+        16 => 'field_training_validation',
+        17 => 'group_training_right_col',
         18 => 'field_assessment_methods',
         19 => 'group_training_header_left',
-        20 => 'training_contact',
-        21 => 'field_training_related_brands',
+        20 => 'field_training_related_brands',
+        21 => 'training_contact',
         22 => 'group_training_header_center',
         23 => 'group_training_header_right',
       ),
@@ -661,8 +724,8 @@ function crealead_trainings_ds_layout_settings_info() {
       'group_training_header' => 'central',
       'field_training_duration' => 'central',
       'group_training_data' => 'central',
-      'field_training_type' => 'central',
       'field_training_attendees_number' => 'central',
+      'field_training_type' => 'central',
       'title' => 'central',
       'field_training_price' => 'central',
       'field_introduction' => 'central',
@@ -672,14 +735,14 @@ function crealead_trainings_ds_layout_settings_info() {
       'field_training_aims' => 'central',
       'field_training_method' => 'central',
       'group_training_left_col' => 'central',
-      'field_training_teachers' => 'central',
       'body' => 'central',
-      'group_training_right_col' => 'central',
+      'field_training_teachers' => 'central',
       'field_training_validation' => 'central',
+      'group_training_right_col' => 'central',
       'field_assessment_methods' => 'central',
       'group_training_header_left' => 'central',
-      'training_contact' => 'central',
       'field_training_related_brands' => 'central',
+      'training_contact' => 'central',
       'group_training_header_center' => 'central',
       'group_training_header_right' => 'central',
     ),
@@ -889,6 +952,7 @@ function crealead_trainings_ds_view_modes_info() {
   $ds_view_mode->view_mode = 'sessions';
   $ds_view_mode->label = 'Sessions';
   $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
     'node' => 'node',
   );
   $export['sessions'] = $ds_view_mode;

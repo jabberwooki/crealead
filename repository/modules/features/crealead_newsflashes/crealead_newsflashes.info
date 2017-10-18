@@ -55,6 +55,7 @@ features[variable][] = node_preview_newsflash
 features[variable][] = node_submitted_newsflash
 features[variable][] = pathauto_node_newsflash_pattern
 features[variable][] = pathauto_taxonomy_term_populations_pattern
+features[variable][] = pathauto_taxonomy_term_th_mes_br_ve_pattern
 features[variable][] = print_html_display_comment_newsflash
 features[variable][] = print_html_display_newsflash
 features[variable][] = print_html_display_urllist_newsflash

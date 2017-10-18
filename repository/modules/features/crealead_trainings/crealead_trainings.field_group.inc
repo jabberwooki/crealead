@@ -21,7 +21,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_training_search',
     ),
@@ -80,8 +80,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'Caractéristiques',
     'weight' => '1',
     'children' => array(
-      0 => 'field_training_attendees_number',
-      1 => 'field_training_duration',
+      0 => 'field_training_duration',
+      1 => 'field_training_attendees_number',
       2 => 'field_scheduled_sessions',
       3 => 'field_training_price',
     ),
@@ -279,13 +279,13 @@ function crealead_trainings_field_group_info() {
     'label' => 'Colonne droite',
     'weight' => '9',
     'children' => array(
-      0 => 'field_training_aims',
-      1 => 'field_training_public',
-      2 => 'field_training_requirements',
+      0 => 'field_training_public',
+      1 => 'field_training_requirements',
+      2 => 'field_training_aims',
       3 => 'field_training_method',
       4 => 'field_training_teachers',
-      5 => 'field_assessment_methods',
-      6 => 'field_training_validation',
+      5 => 'field_training_validation',
+      6 => 'field_assessment_methods',
     ),
     'format_type' => 'div',
     'format_settings' => array(

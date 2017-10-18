@@ -61,6 +61,30 @@ function crealead_trainings_features_date_type_default() {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function crealead_trainings_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: funded_logo.
+  $styles['funded_logo'] = array(
+    'label' => 'Logo prise en charge Crealead',
+    'effects' => array(
+      29 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 48,
+          'height' => 48,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function crealead_trainings_node_info() {
