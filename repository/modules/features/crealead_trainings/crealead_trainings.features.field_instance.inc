@@ -2708,9 +2708,9 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Ajouter',
+          'add' => '',
           'delete' => 'Supprimer',
-          'description' => TRUE,
+          'description' => 1,
           'edit' => 'Modifier',
           'field_formatter_class' => '',
           'view_mode' => 'full',

@@ -355,9 +355,9 @@ function crealead_trainings_add_user_to_session_form($form, &$form_state, $vars)
 
   $user = $vars['user'];
   $form['user_name'] = array(
-    '#type' => 'textfield',
+    '#type' => 'item',
     '#title' => 'Votre nom',
-    '#default_value' => $user->name,
+    '#markup' => '<div class="user-name-markup">' . $user->name . '</div>',
   );
 
   $form['user_contact'] = array(

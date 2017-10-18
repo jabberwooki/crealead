@@ -28,3 +28,7 @@
     color: red;
     text-align: center;
 }
+
+#session-switch-wrapper .user-name-markup {
+    padding-left: 12px;
+}

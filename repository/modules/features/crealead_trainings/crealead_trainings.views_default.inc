@@ -164,6 +164,14 @@ function crealead_trainings_views_default_views() {
 
   /* Display: Bloc */
   $handler = $view->new_display('block', 'Bloc', 'interested_users');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<span style="display:none">[nothing_2]</span>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $translatables['fcv_session_users'] = array(
     t('Master'),
     t('more'),
@@ -189,6 +197,7 @@ function crealead_trainings_views_default_views() {
     t('Add'),
     t('All'),
     t('Bloc'),
+    t('<span style="display:none">[nothing_2]</span>'),
   );
   $export['fcv_session_users'] = $view;
 
