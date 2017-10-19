@@ -102,10 +102,13 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
       $form['field_business_sector']['#disabled'] = TRUE;
     }
     // 4 - Sector brands field disabled.
-    $form['field_related_sector_brands']['und']['#attributes'] = array('disabled' => TRUE);
+    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
+    $form['field_related_sector_brands']['#attributes']['class'][] = 'readonly-field';
+    $form['field_related_sector_brands']['und']['#attributes'] = array('onclick' => 'return false;', 'class' => array('non-clickable'));
 
     // 5 - Certifications/labels field disabled.
-    $form['field_certifications_labels']['und']['#attributes'] = array('disabled' => TRUE);
+    $form['field_certifications_labels']['#attributes']['class'][] = 'readonly-field';
+    $form['field_certifications_labels']['und']['#attributes'] = array('onclick' => 'return false;', 'class' => array('non-clickable'));
   }
   // And now what about allowed users.
   else {
