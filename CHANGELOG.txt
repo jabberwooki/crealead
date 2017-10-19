@@ -1,4 +1,8 @@
-Hotfix logos-europe-new-versions / 2017-01-09
+Hotfix field-name-field-certifications-labels / 2017-10-19
+==========================================================
+ * crealead_brands up: Fixes bug on sector brands and certification/labels loss when read only users save brand node.
+
+Hotfix logos-europe-new-versions / 2017-10-09
 =============================================
  * kcore and custom theme up: New Europe logos added and footer css style altered to reflect the larger footer height.
  
