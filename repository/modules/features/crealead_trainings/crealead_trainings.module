@@ -488,7 +488,12 @@ function crealead_trainings_views_pre_render(&$view) {
   // If brand's training tab
   if ($view->name == 'trainings' && $view->current_display == 'entity_view_1') {
     // Link 'Ajouter une formation' must be added to block only for coes attached to the current brand.
-    $current_brand = $view->current_entity;
+    if (isset($view->current_entity)) {
+      $current_brand = $view->current_entity;
+    }
+    else {
+      $current_brand = node_load(arg(1));
+    }
     $wrapper = entity_metadata_wrapper('node', $current_brand);
     $brand_coes = $wrapper->field_brand_coes->value();
 
