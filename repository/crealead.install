@@ -310,3 +310,10 @@ function crealead_update_7014() {
 function crealead_update_7015() {
   module_enable(array('crealead_ads'));
 }
+
+/**
+ * Activate feature crealead_offers.
+ */
+function crealead_update_7016() {
+  module_enable(array('crealead_offers'));
+}

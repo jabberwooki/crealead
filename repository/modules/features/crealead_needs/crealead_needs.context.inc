@@ -32,9 +32,9 @@ function crealead_needs_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'views-ads-ads_list' => array(
+        'views-offers-offers_list' => array(
           'module' => 'views',
-          'delta' => 'ads-ads_list',
+          'delta' => 'offers-offers_list',
           'region' => 'content',
           'weight' => '-9',
         ),
