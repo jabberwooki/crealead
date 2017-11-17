@@ -164,6 +164,27 @@ function crealead_offers_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_offer_pattern';
+  $strongarm->value = 'offres/[node:title]';
+  $export['pathauto_node_offer_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_offer_sources_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_offer_sources_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_offer_types_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_offer_types_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_html_display_comment_offer';
   $strongarm->value = 0;
   $export['print_html_display_comment_offer'] = $strongarm;
