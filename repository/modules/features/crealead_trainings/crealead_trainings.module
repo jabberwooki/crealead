@@ -525,24 +525,41 @@ function crealead_trainings_views_pre_render(&$view) {
   elseif ($view->name == 'trainings' && ($view->current_display == 'next_sessions' || $view->current_display == 'all_sessions')) {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
 
-    // To get sessions having at least one date greater than current date,
-    // I had to remove the Contenu:Dates:delta(=0) filter criterion.
-    // Otherwise, only session with first date greater than current date are listed.
+    /*
+     * The 2 view displays 'next_sessions' and 'all_sessions' have been build
+     * without date filter and without date sorting to prevent unpredictable results.
+     * Both displays fetch all sessions belonging to a given training.
+     * So, we have to filter and sort results here.
+     *
+     * RULE 1 - The 2 displays must must filter sessions having the last date greater than current date.
+     * For instance:
+     *
+     * Current date:                          21/11/2017
+     *
+     * Session 1                                           25/11/2017  15/12/2017  -> visible
+     * Session 2                  15/11/2017               25/11/2017              -> visible
+     * Session 3     10/10/2017   15/11/2017   21/11/2017                          -> visible
+     * Session 4     10/10/2017   15/11/2017                                       -> no longer visible
+     *
+     * RULE 2 - The 'next_sessions' display must keep the next 3 sessions only.
+     *
+     * RULE 3 - the session list must be sorted by first date ascending value.     *
+     */
+    $coming_sessions = array();
+    foreach ($view->result as $key=>$item) {
+      $first_session_date = date('Ymd', strtotime($item->field_field_session_dates[0]['raw']['value']));
+      $last_session_date = date('Ymd', strtotime($item->field_field_session_dates_1[0]['raw']['value']));
+      $current_date = date('Ymd');
 
-    // But consequently, the 2 view displays "next_sessions" and "all_sessions"
-    // return one row for each date in session greater than current date
-    // instead of a unique row for each session.
-    // To fix this, the following foreach loop keeps only the first date of each session,
-    // even if this first date is in the past.
-    $sessions_nids = array();
-    foreach($view->result as $key=>$result) {
-      if (!in_array($result->nid,$sessions_nids)) {
-        $sessions_nids[$result->nid] = $result->nid;
-      }
-      else {
-        unset($view->result[$key]);
+      if ($last_session_date >= $current_date) { // Rule 1
+        if (($view->current_display == 'next_sessions' && sizeof($coming_sessions) < 3) || $view->current_display == 'all_sessions') { // Rule 2
+          $coming_sessions[$first_session_date] = $item;
+        }
       }
     }
+    ksort($coming_sessions); // Rule 3
+
+    $view->result = $coming_sessions;
   }
   elseif ($view->name == 'brand_agenda' && $view->current_display == 'attachment_2') {
     foreach ($view->result as $key => $item) {

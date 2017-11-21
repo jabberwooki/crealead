@@ -1040,8 +1040,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -1067,6 +1066,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['field_session_dates']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_session_dates']['settings'] = array(
     'format_type' => 'info_meeting_medium',
+    'custom_date_format' => '',
     'fromto' => 'both',
     'multiple_number' => '1',
     'multiple_from' => '',
@@ -1075,6 +1075,27 @@ function crealead_trainings_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_session_dates']['delta_offset'] = '0';
+  /* Field: Dernière date */
+  $handler->display->display_options['fields']['field_session_dates_1']['id'] = 'field_session_dates_1';
+  $handler->display->display_options['fields']['field_session_dates_1']['table'] = 'field_data_field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates_1']['field'] = 'field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates_1']['ui_name'] = 'Dernière date';
+  $handler->display->display_options['fields']['field_session_dates_1']['label'] = '';
+  $handler->display->display_options['fields']['field_session_dates_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_dates_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_dates_1']['settings'] = array(
+    'format_type' => 'info_meeting_medium',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_reversed'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1094,10 +1115,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Dates (field_session_dates) */
-  $handler->display->display_options['sorts']['field_session_dates_value']['id'] = 'field_session_dates_value';
-  $handler->display->display_options['sorts']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['sorts']['field_session_dates_value']['field'] = 'field_session_dates_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Formation (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
@@ -1126,14 +1143,6 @@ function crealead_trainings_views_default_views() {
     'training_session' => 'training_session',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Dates (field_session_dates) */
-  $handler->display->display_options['filters']['field_session_dates_value']['id'] = 'field_session_dates_value';
-  $handler->display->display_options['filters']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['filters']['field_session_dates_value']['field'] = 'field_session_dates_value';
-  $handler->display->display_options['filters']['field_session_dates_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_session_dates_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_session_dates_value']['default_date'] = 'now';
-  $handler->display->display_options['filters']['field_session_dates_value']['add_delta'] = 'yes';
   $handler->display->display_options['path'] = 'formations/prochaines-sessions';
 
   /* Display: Nombre de sessions */
@@ -1207,7 +1216,6 @@ function crealead_trainings_views_default_views() {
     'title' => 'title',
     'edit_node' => 'edit_node',
   );
-  $handler->display->display_options['row_options']['separator'] = ' - ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -1268,6 +1276,27 @@ function crealead_trainings_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_session_dates']['delta_offset'] = '0';
+  /* Field: Dernière date */
+  $handler->display->display_options['fields']['field_session_dates_1']['id'] = 'field_session_dates_1';
+  $handler->display->display_options['fields']['field_session_dates_1']['table'] = 'field_data_field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates_1']['field'] = 'field_session_dates';
+  $handler->display->display_options['fields']['field_session_dates_1']['ui_name'] = 'Dernière date';
+  $handler->display->display_options['fields']['field_session_dates_1']['label'] = '';
+  $handler->display->display_options['fields']['field_session_dates_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_dates_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_dates_1']['settings'] = array(
+    'format_type' => 'info_meeting_medium',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_session_dates_1']['delta_reversed'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1287,10 +1316,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Dates (field_session_dates) */
-  $handler->display->display_options['sorts']['field_session_dates_value']['id'] = 'field_session_dates_value';
-  $handler->display->display_options['sorts']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['sorts']['field_session_dates_value']['field'] = 'field_session_dates_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Formation (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
@@ -1319,14 +1344,6 @@ function crealead_trainings_views_default_views() {
     'training_session' => 'training_session',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Dates (field_session_dates) */
-  $handler->display->display_options['filters']['field_session_dates_value']['id'] = 'field_session_dates_value';
-  $handler->display->display_options['filters']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
-  $handler->display->display_options['filters']['field_session_dates_value']['field'] = 'field_session_dates_value';
-  $handler->display->display_options['filters']['field_session_dates_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_session_dates_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_session_dates_value']['default_date'] = 'now';
-  $handler->display->display_options['filters']['field_session_dates_value']['add_delta'] = 'yes';
   $handler->display->display_options['path'] = 'formations/toutes-les-sessions';
   $translatables['trainings'] = array(
     t('Master'),
