@@ -9,6 +9,6 @@
 /**
  * Activates efq_extra_field contrib module.
  */
-function crealead_trainings_update_7001() {
+function crealead_warnings_update_7001() {
   module_enable(array('efq_extra_field'));
 }
