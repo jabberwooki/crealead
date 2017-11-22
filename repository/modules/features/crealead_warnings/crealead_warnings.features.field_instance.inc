@@ -297,7 +297,7 @@ function crealead_warnings_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule. <em><br/>
 Ex: formation, structure bois, aide à domicile.</em><br/>
-Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>, des <span class="field-help-emphasis">minuscules</span>, des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">virgules</span> et des <span class="field-help-emphasis">espaces</span>.
+Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>et  des <span class="field-help-emphasis">minuscules</span> (accentués ou pas), des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">espaces</span>, des <span class="field-help-emphasis">points</span> et des <span class="field-help-emphasis">virgules</span>. Vous ne pouvez pas saisir d\'autres signes de ponctuation.
 ',
     'display' => array(
       'colorbox' => array(
@@ -463,7 +463,7 @@ Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span
   t('Mots-clés');
   t('Saisissez un plusieurs mots-clés et/ou expressions, séparés par une virgule. <em><br/>
 Ex: formation, structure bois, aide à domicile.</em><br/>
-Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>, des <span class="field-help-emphasis">minuscules</span>, des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">virgules</span> et des <span class="field-help-emphasis">espaces</span>.
+Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>et  des <span class="field-help-emphasis">minuscules</span> (accentués ou pas), des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">espaces</span>, des <span class="field-help-emphasis">points</span> et des <span class="field-help-emphasis">virgules</span>. Vous ne pouvez pas saisir d\'autres signes de ponctuation.
 ');
   t('Type de contenu (valeur)');
 

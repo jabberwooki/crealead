@@ -15,7 +15,7 @@
       // Control placed on warning keyword field so that
       // only lowercase and uppercase letters, numbers, space and backspace are accepted
       $("#edit-field-warning-keywords-und-0-value").keypress(function(e) {
-        if (String.fromCharCode(e.which).match(/[^A-Za-z0-9\,\s\b]/)) {
+        if (String.fromCharCode(e.which).match(/[^A-Za-z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ\,\.\s\b]/)) {
           e.preventDefault();
         }
       });
