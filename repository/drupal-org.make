@@ -207,6 +207,9 @@ projects[phone][version] = "1.0-beta1"
 projects[plupload][subdir] = contrib
 projects[plupload][version] = "1.7"
 
+projects[hook_post_action][subdir] = contrib
+projects[hook_post_action][version] = "1.0-beta2"
+
 projects[profile2][subdir] = contrib
 projects[profile2][version] = "1.3"
 
