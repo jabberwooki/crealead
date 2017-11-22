@@ -705,4 +705,56 @@ function crealead_trainings_training_session_submit_handler($form, &$form_state)
 //  }
 //}
 
+/**
+ * Implements hook_node_postsave().
+ */
+function crealead_trainings_node_postsave($node, $op) {
+  if ($node->type == 'training') {
+    if (($op == 'delete') || ($op == 'update' && $node->status == 0)) {
+      if (!empty($sessions = crealead_trainings_get_training_sessions($node->nid))) {
+        $unpublished_sessions_nids = 0;
+        foreach ($sessions as $session) {
+          if ($session->status == 1) {
+            $session->status = 0;
+            node_save($session);
+            $unpublished_sessions_nids++;
+          }
+        }
+        if ($op == 'delete') {
+          $msg = "Node {$node->nid} has been deleted. " . $unpublished_sessions_nids . " of its " . sizeof($sessions) . " sessions have been unpublished.";
+        }
+        else {
+          $msg = "Updated node {$node->nid} and " . $unpublished_sessions_nids . " of " . sizeof($sessions) . " sessions have been unpublished.";
+        }
+        watchdog('crealead_trainings', $msg);
+      }
+    }
+    elseif ($op == 'update' && $node->status == 1) {
+      if (!empty($sessions = crealead_trainings_get_training_sessions($node->nid))) {
+        $published_sessions_nids = 0;
+        foreach ($sessions as $session) {
+          if ($session->status == 0) {
+            $session->status = 1;
+            node_save($session);
+            $published_sessions_nids++;
+          }
+        }
+        watchdog('crealead_trainings', "{$op}d node {$node->nid} and " . $published_sessions_nids . " of " . sizeof($sessions) . " sessions have been published.");
+      }
+    }
+  }
+}
 
+function crealead_trainings_get_training_sessions($training_nid) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'training_session')
+    ->fieldCondition('field_related_training','target_id', $training_nid);
+
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    return entity_load('node', array_keys($result['node']));
+  }
+
+  return array();
+}
