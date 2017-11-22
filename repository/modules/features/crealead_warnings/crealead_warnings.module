@@ -244,7 +244,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
   $result = $query->execute();
 
   // If results, keywords are tested again node title and body.
-  $email_addresses = '';
+  $email_addresses = array();
   if (!empty($result)) {
     $warnings = $result['node'];
     $haystack = $node->title . ' ' .$node->body['und'][0]['value'];
@@ -255,7 +255,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
       $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
 
       if( preg_match('/\b(' . $keywords . ')/i' , $haystack)){
-        $email_addresses[$key] = $warning->extraFields->field_recipient_email_;
+        $email_addresses[$warning->extraFields->field_recipient_email_] = $warning->extraFields->field_recipient_email_;
       }
     }
     $email_addresses = implode(';', $email_addresses);
@@ -313,5 +313,15 @@ function crealead_warnings_mail($key, &$message, $params) {
       $message['subject'] = $params['subject'];
       $message['body'][] = $params['body'];
       break;
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_warnings_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'warning' && ($view_mode == 'colorbox' || $view_mode == 'full')) {
+    $type = node_type_load($node->content['field_content_type_value'][0]['#markup']);
+    $node->content['field_content_type_value'][0]['#markup'] = $type->name;
   }
 }

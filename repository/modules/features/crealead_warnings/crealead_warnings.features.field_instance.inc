@@ -17,8 +17,26 @@ function crealead_warnings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
@@ -96,8 +114,26 @@ function crealead_warnings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'email_default',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'above',
+        'module' => 'email',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'email_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'module' => 'email',
         'settings' => array(
           'field_formatter_class' => '',
@@ -143,6 +179,12 @@ function crealead_warnings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -150,6 +192,12 @@ function crealead_warnings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -189,8 +237,26 @@ function crealead_warnings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(
           'field_formatter_class' => '',
@@ -234,8 +300,26 @@ Ex: formation, structure bois, aide à domicile.</em><br/>
 Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span>, des <span class="field-help-emphasis">minuscules</span>, des <span class="field-help-emphasis">chiffres</span>, des <span class="field-help-emphasis">virgules</span> et des <span class="field-help-emphasis">espaces</span>.
 ',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
@@ -317,8 +401,26 @@ Vous ne pouvez saisir que des <span class="field-help-emphasis">majuscules</span
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(
           'field_formatter_class' => '',

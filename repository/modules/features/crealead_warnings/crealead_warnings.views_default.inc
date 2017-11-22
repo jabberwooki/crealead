@@ -189,6 +189,60 @@ function crealead_warnings_views_default_views() {
   /* Display: Alertes utilisateur */
   $handler = $view->new_display('block', 'Alertes utilisateur', 'user_warnings');
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Intitulé';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Mots-clés */
+  $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
+  $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
+  $handler->display->display_options['fields']['field_warning_keywords']['field'] = 'field_warning_keywords';
+  $handler->display->display_options['fields']['field_warning_keywords']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_warning_keywords']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Email de réception de l'alerte */
+  $handler->display->display_options['fields']['field_recipient_email']['id'] = 'field_recipient_email';
+  $handler->display->display_options['fields']['field_recipient_email']['table'] = 'field_data_field_recipient_email';
+  $handler->display->display_options['fields']['field_recipient_email']['field'] = 'field_recipient_email';
+  $handler->display->display_options['fields']['field_recipient_email']['type'] = 'email_plain';
+  $handler->display->display_options['fields']['field_recipient_email']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: M'avertir en cas de */
+  $handler->display->display_options['fields']['field_warning_when']['id'] = 'field_warning_when';
+  $handler->display->display_options['fields']['field_warning_when']['table'] = 'field_data_field_warning_when';
+  $handler->display->display_options['fields']['field_warning_when']['field'] = 'field_warning_when';
+  $handler->display->display_options['fields']['field_warning_when']['label'] = 'Quand';
+  $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Fréquence des alertes */
+  $handler->display->display_options['fields']['field_warning_frequency']['id'] = 'field_warning_frequency';
+  $handler->display->display_options['fields']['field_warning_frequency']['table'] = 'field_data_field_warning_frequency';
+  $handler->display->display_options['fields']['field_warning_frequency']['field'] = 'field_warning_frequency';
+  $handler->display->display_options['fields']['field_warning_frequency']['label'] = 'Fréquence';
+  $handler->display->display_options['fields']['field_warning_frequency']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Action';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = 'Lien de suppression';
 
   /* Display: Liste des alertes */
   $handler = $view->new_display('page', 'Liste des alertes', 'full_list');
