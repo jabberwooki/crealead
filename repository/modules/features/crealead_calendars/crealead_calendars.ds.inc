@@ -44,14 +44,12 @@ function crealead_calendars_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'title',
-        1 => 'field_gclal_date',
-        2 => 'field_gcal_location',
-        3 => 'field_gcal_description',
+        0 => 'field_gclal_date',
+        1 => 'field_gcal_location',
+        2 => 'field_gcal_description',
       ),
     ),
     'fields' => array(
-      'title' => 'central',
       'field_gclal_date' => 'central',
       'field_gcal_location' => 'central',
       'field_gcal_description' => 'central',

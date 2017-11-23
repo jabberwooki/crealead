@@ -32,7 +32,7 @@ function crealead_calendars_strongarm() {
         'custom_settings' => FALSE,
       ),
       'colorbox' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'ical' => array(
         'custom_settings' => FALSE,

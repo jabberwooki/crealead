@@ -17,6 +17,15 @@ function crealead_calendars_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -27,7 +36,7 @@ function crealead_calendars_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
@@ -105,6 +114,15 @@ function crealead_calendars_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'inline',
         'module' => 'text',
@@ -115,7 +133,7 @@ function crealead_calendars_field_default_field_instances() {
         'weight' => 1,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
@@ -192,6 +210,21 @@ function crealead_calendars_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'inline',
         'module' => 'date',

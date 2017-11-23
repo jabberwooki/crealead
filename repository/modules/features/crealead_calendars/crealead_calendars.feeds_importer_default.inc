@@ -64,21 +64,21 @@ function crealead_calendars_feeds_importer_default() {
             'language' => 'und',
           ),
           3 => array(
-            'source' => 'LOCATION:ALTREP',
-            'target' => 'field_gcal_location',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          4 => array(
             'source' => 'DESCRIPTION',
             'target' => 'field_gcal_description',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'UID',
             'target' => 'guid',
             'unique' => 1,
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'LOCATION',
+            'target' => 'field_gcal_location',
+            'unique' => FALSE,
           ),
         ),
         'insert_new' => '1',
