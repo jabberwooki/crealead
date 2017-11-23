@@ -119,3 +119,4 @@ dependencies[] = crealead_events
 dependencies[] = crealead_needs
 ;dependencies[] = crealead_warnings
 dependencies[] = crealead_offers
+dependencies[] = crealead_calendars

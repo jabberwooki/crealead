@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Calendriers feature.
+ */
+
+include_once 'crealead_calendars.features.inc';

@@ -317,3 +317,10 @@ function crealead_update_7015() {
 function crealead_update_7016() {
   module_enable(array('crealead_offers'));
 }
+
+/**
+ * Activate feature crealead_calendars.
+ */
+function crealead_update_7017() {
+  module_enable(array('crealead_calendars'));
+}
