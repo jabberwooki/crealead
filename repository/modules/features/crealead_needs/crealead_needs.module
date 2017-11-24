@@ -85,7 +85,21 @@ function crealead_needs_form_validate($form, &$form_state) {
  * Implements hook_views_pre_render().
  */
 function crealead_needs_views_pre_render(&$view) {
-  if ($view->name == 'needs' && $view->current_display == 'needs_list') {
+  if ($view->name == 'needs' && $view->current_display == 'needs_list') {//dpm($view);dpm($view->header);
+    // Gestion du bouton "Ajouter un besoin"
+    // Dans la vue needs/needs_list, header et footer contiennent un texte provisoire qui est modifié par le code ci-dessous.
+    //
+    // Pour rendre le bouton visible en haut -> $header_button doit être TRUE.
+    // Pour rendre le bouton visible en bas -> $footer_button doit être TRUE.
+    $header_button = TRUE;
+    $footer_button = FALSE;
+    $button = l('Ajouter une demande', '/node/add/need', array('query' => array('destination' => current_path())));
+
+    $view->header['area']->options['content'] = (!$header_button) ? '' : $button;
+    $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
+
+
+    // Gestion du lien "J'ai la même demande".
     foreach ($view->result as $key=>$item) {
       global $user;
       $ajax_link_url = '/add_coe_to_need/' . $item->nid . '/nojs';

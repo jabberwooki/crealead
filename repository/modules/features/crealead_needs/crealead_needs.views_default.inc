@@ -70,6 +70,20 @@ function crealead_needs_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'code du bouton Ajouter
+voir crealead_needs_views_pre_render()';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = 'code du bouton Ajouter
+voir crealead_needs_views_pre_render()';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -182,6 +196,8 @@ function crealead_needs_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('code du bouton Ajouter
+voir crealead_needs_views_pre_render()'),
     t('Il n\'y a actuellement aucune demande.'),
     t('Date'),
     t('Client'),

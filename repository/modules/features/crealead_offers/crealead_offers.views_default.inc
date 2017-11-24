@@ -65,6 +65,14 @@ function crealead_offers_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = 'Les Offres listées ci-dessous sont des promotions et offres temporaires visibles uniquement par les co-entrepreneurs. 
 Les produits et formations publics et permanents proposés par les marques co-entrepreneurs se trouvent dans les fiches marques.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = 'code du bouton Ajouter
+voir crealead_offers_views_pre_render()';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -151,6 +159,8 @@ Les produits et formations publics et permanents proposés par les marques co-en
     t('dernier »'),
     t('Les Offres listées ci-dessous sont des promotions et offres temporaires visibles uniquement par les co-entrepreneurs. 
 Les produits et formations publics et permanents proposés par les marques co-entrepreneurs se trouvent dans les fiches marques.'),
+    t('code du bouton Ajouter
+voir crealead_offers_views_pre_render()'),
     t('Il n\'y a actuellement aucune offre.'),
     t('Titre'),
     t('Offre proposée par'),

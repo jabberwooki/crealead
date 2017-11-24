@@ -71,6 +71,21 @@ function crealead_offers_form_offer_node_form_alter(&$form, &$form_state, $form_
  */
 function crealead_offers_views_pre_render(&$view) {
   if ($view->name == 'offers' && $view->current_display == 'offers_list') {
+    // Gestion du bouton "Ajouter un besoin"
+    // Dans la vue offers/offers_list, header contient un texte d'infos à laisser intact.
+    // et footer contient un texte provisoire à modifier.
+    //
+    // Pour rendre le bouton visible en haut -> $header_button doit être TRUE.
+    // Pour rendre le bouton visible en bas -> $footer_button doit être TRUE.
+    $header_button = TRUE;
+    $footer_button = FALSE;
+    $button = l('Ajouter une offre', '/node/add/offer', array('query' => array('destination' => current_path())));
+    $header_info = $view->header['area']->options['content'];
+
+    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . '<p>' . $button . '</p>';
+    $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
+
+
     /*
      * OFFERS ORIGIN VALUE HANDLING
      *
