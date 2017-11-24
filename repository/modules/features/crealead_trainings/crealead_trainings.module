@@ -211,11 +211,15 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
         }
       }
       global $user;
-
       if ($user->uid == $build['#node']->uid) {
+        // On récupère l'info Formation financée par la structure
+        $funded = '/0';
+        if (isset($build['#node']->field_crealead_funded['und'][0]['value'])) {
+          $funded = '/' . $build['#node']->field_crealead_funded['und'][0]['value'];
+        }
         $new_session_link = l(
           'Créer une session',
-          '/node/add/training-session/' . $build['#node']->nid,
+          '/node/add/training-session/' . $build['#node']->nid . $funded,
           array('query' => array('destination' => current_path()))
         );
         $sessions_user_links .= '<div class="new-session-link">' . $new_session_link . '</div>';
@@ -282,6 +286,16 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
         '<a href="/node/' . $node->field_related_training['und'][0]['entity']->nid . '">' .
         'Voir les sessions à venir' .
         '</a>';
+    }
+
+    // Crealead funded logo display
+    if (isset($node->content['field_funded_session'])) {
+      if ($node->content['field_funded_session'][0]['#markup'] == 'non') {
+        unset($node->content['field_funded_session']);
+      }
+      else {
+        $node->content['field_funded_session'][0]['#markup'] = crealead_trainings_get_funded_logo_markup();
+      }
     }
 
     // Addition of the 'Jour N - ' prefix.
@@ -596,6 +610,16 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
   }
   elseif ($form_id == 'training_session_node_form') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_sessions_add.js');
+
+    // Current user trainings
+    global $user;
+    if (!empty($current_user_trainings = crealead_trainings_get_user_trainings($user->uid))) {
+      $params = array();
+      foreach ($current_user_trainings as $training) {
+        $params[$training->nid] = $training->extraFields->field_crealead_funded_;
+      }
+      drupal_add_js(array('creaeladTrainingsFunding' => $params), 'setting');
+    }
   }
 }
 
@@ -611,21 +635,27 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
     '#weight' => -1,
 
   );
-  // If session is being created, we must provide a temporary title to pass validation successfully.
-  // Then an eventual title is created in the custom submit function.
-  // See function crealead_trainings_training_session_submit_handler() below.
+  // If session is being created
   if (!isset($form['nid']['#value'])) {
+    // We must provide a temporary title to pass validation successfully.
+    // Then an eventual title is created in the custom submit function.
+    // See function crealead_trainings_training_session_submit_handler() below.
     $form['title']['#default_value'] = 'temporary title';
+
+    // If session is being created from a training page, we must catch the training nid from url
+    // and select the corresponding training in field_related_training field.
+    if (!isset($form['nid']['#value']) && NULL != arg(3)) {
+      $form['field_related_training']['und']['#default_value'] = array(arg(3));
+      $form['field_funded_session']['und']['#default_value'] = arg(4);
+    }
   }
-  // If session is being created from a training page,
-  // we must catch the training nid from url
-  // and select the corresponding training in field_related_training field.
-  elseif (!isset($form['nid']['#value']) && NULL != arg(3)) {
-    $form['field_related_training']['und']['#default_value'] = array(arg(3));
-  }
-  // If session is being modified and the current user is not the session author,
-  // we must display the select list of auhor's trainings.
+
+  // If session is being modified :
+  // 1) if the current user is not the session author, we must display the select list of auhor's trainings.
+  // 2) if session node was created before V3 sprint 3, the new compulsory field_funded_session is NULL.
+  // So we must force its value to zero.
   elseif (isset($form['nid']['#value'])) {
+    // 1) trainings list
     $session_author_trainings = views_get_view_result('trainings','user_trainings', $form['uid']['#value']);
 
     $options = array();
@@ -638,6 +668,11 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
     $current_related_training = $form_state['node']->field_related_training['und'][0]['target_id'];
     $form['field_related_training']['und']['#options'] = $options;
     $form['field_related_training']['und']['#default_value'] = array($current_related_training);
+
+    // 2) field_funded_session
+    if (empty($form_state['node']->field_funded_session)) {
+      $form['field_funded_session']['und']['#default_value'] = 0;
+    }
   }
 
   $form['#submit'][] = 'crealead_trainings_training_session_submit_handler';
@@ -757,4 +792,22 @@ function crealead_trainings_get_training_sessions($training_nid) {
   }
 
   return array();
+}
+
+function crealead_trainings_get_user_trainings($uid) {
+  $query = new EntityFieldQueryExtraFields();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'training')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyCondition('uid', $uid)
+    ->addExtraField('', 'title', 'title', 'node')
+    ->addExtraField('field_crealead_funded','value')
+    ->execute();
+
+  $trainings = array();
+  if (!empty($result)) {
+    $trainings = $result['node'];
+  }
+
+  return $trainings;
 }

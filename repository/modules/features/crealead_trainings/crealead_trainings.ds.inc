@@ -55,14 +55,9 @@ function crealead_trainings_ds_field_settings_info() {
       'format' => 'default',
     ),
     'see_all_sessions_link' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_interested_users' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
     ),
   );
   $export['node|training_session|colorbox'] = $ds_fieldsetting;
@@ -584,24 +579,26 @@ function crealead_trainings_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'field_related_training',
-        1 => 'see_all_sessions_link',
-        2 => 'field_session_dates',
+        1 => 'field_funded_session',
+        2 => 'see_all_sessions_link',
         3 => 'group_session_details',
         4 => 'interested_switch',
-        5 => 'field_session_place',
-        6 => 'body',
+        5 => 'field_session_dates',
+        6 => 'field_session_place',
         7 => 'field_interested_users',
+        8 => 'body',
       ),
     ),
     'fields' => array(
       'field_related_training' => 'central',
+      'field_funded_session' => 'central',
       'see_all_sessions_link' => 'central',
-      'field_session_dates' => 'central',
       'group_session_details' => 'central',
       'interested_switch' => 'central',
+      'field_session_dates' => 'central',
       'field_session_place' => 'central',
-      'body' => 'central',
       'field_interested_users' => 'central',
+      'body' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -2601,7 +2601,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2681,7 +2681,68 @@ function crealead_trainings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-training_session-field_funded_session'.
+  $field_instances['node-training_session-field_funded_session'] = array(
+    'bundle' => 'training_session',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_funded_session',
+    'label' => 'Session financée par Crealead Structure',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
@@ -2752,7 +2813,7 @@ function crealead_trainings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -2845,7 +2906,7 @@ function crealead_trainings_field_default_field_instances() {
           'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'inline',
@@ -2915,7 +2976,7 @@ function crealead_trainings_field_default_field_instances() {
         'yearRange' => '-3:+3',
       ),
       'type' => 'date_multiselect',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -2933,7 +2994,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'inline',
@@ -3011,7 +3072,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -3046,6 +3107,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Pré-requis');
   t('Précisez le nombre de participants min et max si nécessaire.');
   t('Public visé');
+  t('Session financée par Crealead Structure');
   t('Sessions programmées');
   t('Tarif');
   t('Thématique(s) concernée(s)');

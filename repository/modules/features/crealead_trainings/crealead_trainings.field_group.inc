@@ -53,7 +53,8 @@ function crealead_trainings_field_group_info() {
       0 => 'body',
       1 => 'field_session_dates',
       2 => 'field_session_place',
-      3 => 'see_all_sessions_link',
+      3 => 'field_funded_session',
+      4 => 'see_all_sessions_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
