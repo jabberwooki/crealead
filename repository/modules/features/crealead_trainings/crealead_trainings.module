@@ -598,7 +598,6 @@ function crealead_trainings_views_pre_render(&$view) {
       }
     }
   }
-
 }
 
 /**
@@ -810,4 +809,30 @@ function crealead_trainings_get_user_trainings($uid) {
   }
 
   return $trainings;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function crealead_trainings_block_info() {
+  $blocks = array();
+  $blocks['crealead_calendar_legend'] = array(
+    'info' => t('Crealead : Légende calendrier formations'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function crealead_trainings_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'crealead_calendar_legend' :
+      $block['content'] = '<span class="calendar-legend">Sessions en rouge = Prise en charge partielle du financement par Crealead pour les Crealeadiens</span>';
+  }
+
+  return $block;
 }

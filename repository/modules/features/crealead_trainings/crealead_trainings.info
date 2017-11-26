@@ -7,6 +7,7 @@ dependencies[] = field_group
 dependencies[] = term_reference_tree
 features[context][] = trainings_calendar
 features[context][] = trainings_calendar_calendar
+features[context][] = trainings_calendar_mois
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
