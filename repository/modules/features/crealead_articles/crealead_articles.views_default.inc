@@ -256,6 +256,13 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a id="testimony-home-more" href="/articles/temoignages">Voir toutes les témoignages</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -404,6 +411,13 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="page-header">Témoignages</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -454,6 +468,7 @@ function crealead_articles_views_default_views() {
     t('Articles Crealed'),
     t('Témoignages accueil'),
     t('Témoignages'),
+    t('<a id="testimony-home-more" href="/articles/temoignages">Voir toutes les témoignages</a>'),
     t('Articles d\'une marque sectorielle'),
     t('Articles de fond'),
     t('« first'),
@@ -464,6 +479,7 @@ function crealead_articles_views_default_views() {
     t('Articles d\'une certification/label'),
     t('terme à partir de field_related_certifs_labels'),
     t('Page témoignages'),
+    t('<h2 class="page-header">Témoignages</h2>'),
   );
   $export['articles'] = $view;
 
