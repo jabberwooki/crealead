@@ -19,20 +19,13 @@
       var initialContactDetails = $('#edit-field-need-contact-details-und-0-value').val();
 
       var initialSourceValue = $('#edit-field-offer-origin-und').val();
-      console.log(initialSourceValue);
-
       var userBrand = settings.crealead_offers_user_brand;
-      console.log(userBrand);
-
 
       if (initialSourceValue == '_none') {
-        console.log('dans if');
-
         $('#edit-field-crealead-name').hide();
         $('.group-offer-contact-infos').hide();
       }
       else {
-        console.log('dans else');
         if (source_uuids[initialSourceValue] == 'd608a566-a38c-4906-a43f-b94964fddc15') { // Offre externe.
           $('#edit-field-crealead-name').hide();
         }
@@ -44,7 +37,6 @@
       // Client field change handling.
       $('#edit-field-offer-origin-und').change(function() {
         var selectedSourceValue = $('#edit-field-offer-origin-und option:selected').val();
-        console.log(selectedSourceValue);
 
         // 1 - Fields content handling
         if (selectedSourceValue == '_none') {
@@ -69,7 +61,6 @@
             $('#edit-field-need-contact-details-und-0-value').val(connectedUser.mail);
 
             if (selectedSourceUuid == 'a4df642a-58e8-450b-9098-4503ed11313a') { // Activité co-entrepreneur
-              console.log('dans coE');
               $('#field-crealead-name-add-more-wrapper label').text('Marque concernée');
               if (userBrand) {
                 $('#edit-field-crealead-name-und-0-value').val(userBrand);

@@ -34,22 +34,19 @@ function crealead_offers_form_offer_node_form_alter(&$form, &$form_state, $form_
   global $user;
   drupal_add_js(array('crealead_offers_connected_user' => $user), 'setting');
 
-  // If offer is being created, we must fetch user's first brand (brand with the lower nid).
-  if (!isset($form['nid']['#value'])) {
-    $coe_brands = views_get_view_result('brands','coe_brands',$user->uid);
+  // Connected user's first brand (brand with the lower nid).
+  $coe_brands = views_get_view_result('brands','coe_brands',$user->uid);
 
-    $brand_name = NULL;
-    $reference_brand_nid = 10000000000;
-    if (!empty($coe_brands)) {
-      foreach ($coe_brands as $brand) {
-        if($brand->nid < $reference_brand_nid) {
-          $brand_name = $brand->node_title;
-        }
+  $brand_name = NULL;
+  $reference_brand_nid = 10000000000;
+  if (!empty($coe_brands)) {
+    foreach ($coe_brands as $brand) {
+      if($brand->nid < $reference_brand_nid) {
+        $brand_name = $brand->node_title;
       }
     }
-    drupal_add_js(array('crealead_offers_user_brand' => $brand_name), 'setting');
-
   }
+  drupal_add_js(array('crealead_offers_user_brand' => $brand_name), 'setting');
 
   // 2 - Info text field added at the top of form //////////////////////////////
   $info_text =
