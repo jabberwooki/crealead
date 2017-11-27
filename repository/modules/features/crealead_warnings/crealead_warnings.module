@@ -24,11 +24,24 @@ function crealead_warnings_menu() {
     'title' => t('Mes alertes'),
     'page callback' => 'crealead_warnings_user_warnings',
     'page arguments' => array(1),
-    'access callback' => TRUE,
+    'access callback' => 'crealead_warnings_warnings_list_access',
     'type' => MENU_LOCAL_TASK,
   );
 
   return $items;
+}
+
+/**
+ * Callback function to handle the "Mes alertes" tab on user page.
+ *
+ * @return bool True if visitor is the visited user, otherwise false
+ */
+function crealead_warnings_warnings_list_access() {
+  global $user;
+  if (arg(0) == 'user' && arg(1) == $user->uid) {
+    return TRUE;
+  }
+  return FALSE;
 }
 
 /**
