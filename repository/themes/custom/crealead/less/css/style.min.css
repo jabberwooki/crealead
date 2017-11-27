@@ -1660,7 +1660,9 @@ h5{color:#bf0e38}
 .title-blue-bg{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1.3em;margin-bottom:0}
 .red-button-link{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;margin-bottom:20px;height:35px}
 .red-button-link:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
+.button-home-more{float:right;margin-top:-36px;display:block;border:1px solid #999;background-color:#ededed;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;padding:5px 10px;color:#000;font-size:.8em;font-family:arial,sans-serif}
 .chapo,blockquote{font-family:Quicksand,sans-serif;font-size:1.6em}
+.button-home-more:hover{background-color:#bf0e38;color:#fff;text-decoration:none}
 .bold{font-weight:700}
 .chapo{color:#1d1e19}
 div.chapo{margin:15px 0}
@@ -1863,6 +1865,8 @@ body.node-type-news .field-name-body h3{font-family:Quicksand,sans-serif;color:#
 h3.home-news-title{margin-top:5px;line-height:.8em}
 h3.home-news-title a{color:#bf0e38!important;text-decoration:none!important;font-family:Quicksand,sans-serif;font-size:.7em;font-weight:700}
 h3.home-news-title a:hover{text-decoration:none;color:#999}
+.view-display-id-testimonials_front #testimony-home-more{float:right;margin-top:-36px;display:block;border:1px solid #999;background-color:#ededed;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;padding:5px 10px;color:#000;font-size:.8em;font-family:arial,sans-serif}
+.view-display-id-testimonials_front #testimony-home-more:hover{background-color:#bf0e38;color:#fff;text-decoration:none}
 .node-type-article .field-name-body{margin-top:30px}
 .page-articles-temoignages .views-row{position:relative}
 .page-articles-temoignages .views-row:after{content:"";display:block;width:94%;margin:0 auto 20px;height:1px;background-color:#bf0e38;position:absolute;bottom:0}
