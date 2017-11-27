@@ -36,7 +36,7 @@ function crealead_needs_uuid_features_default_terms() {
     'name' => 'Crealead Structure',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 2,
+    'weight' => 1,
     'uuid' => '7a01c453-5ac3-42a6-a374-ee9d26137a2f',
     'vocabulary_machine_name' => 'need_clients',
     'path' => array(
@@ -44,10 +44,10 @@ function crealead_needs_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Client externe',
+    'name' => 'Demande externe',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 3,
+    'weight' => 2,
     'uuid' => '7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4',
     'vocabulary_machine_name' => 'need_clients',
     'path' => array(
@@ -143,10 +143,10 @@ function crealead_needs_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Perso',
+    'name' => 'Crealeadien à titre personnel',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 1,
+    'weight' => 3,
     'uuid' => 'edcd12a6-b46d-416d-919b-c52d0acfa1df',
     'vocabulary_machine_name' => 'need_clients',
     'path' => array(

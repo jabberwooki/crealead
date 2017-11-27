@@ -53,6 +53,9 @@ function crealead_needs_menu() {
 function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_js(drupal_get_path('module','crealead_needs') . '/js/crealead_needs.js');
 
+  // 1 - Javascript data preparation ///////////////////////////////////////////
+
+  // 1.1 - Client sources data --------------------------------------------------
   /* Packaged need clients are :
    * Activité co-entrepreneur   uuid = b4346853-567b-448c-910d-0e79d75d4e99
    * Perso                      uuid = edcd12a6-b46d-416d-919b-c52d0acfa1df
@@ -68,10 +71,24 @@ function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id
   // and we store it in the javascript crealead_needs_clients variable.
   drupal_add_js(array('crealead_needs_clients' => $params), 'setting');
 
-  // We also pass on to javascript connected user infos
+  // 1.2 - User and brand data -------------------------------------------------
+  // Connected user data
   global $user;
   drupal_add_js(array('crealead_needs_connected_user' => $user), 'setting');
 
+  // Connected user's first brand (brand with the lower nid).
+    $coe_brands = views_get_view_result('brands','coe_brands',$user->uid);
+
+    $brand_name = NULL;
+    $reference_brand_nid = 10000000000;
+    if (!empty($coe_brands)) {
+      foreach ($coe_brands as $brand) {
+        if($brand->nid < $reference_brand_nid) {
+          $brand_name = $brand->node_title;
+        }
+      }
+    }
+    drupal_add_js(array('crealead_needs_user_brand' => $brand_name), 'setting');
 
   // Here, we add a custom validation function.
   $form['#validate'][] = 'crealead_needs_form_validate';
@@ -85,8 +102,8 @@ function crealead_needs_form_validate($form, &$form_state) {
  * Implements hook_views_pre_render().
  */
 function crealead_needs_views_pre_render(&$view) {
-  if ($view->name == 'needs' && $view->current_display == 'needs_list') {//dpm($view);dpm($view->header);
-    // Gestion du bouton "Ajouter un besoin"
+  if ($view->name == 'needs' && $view->current_display == 'needs_list') {
+    // 1 - Gestion du bouton "Ajouter un besoin"
     // Dans la vue needs/needs_list, header et footer contiennent un texte provisoire qui est modifié par le code ci-dessous.
     //
     // Pour rendre le bouton visible en haut -> $header_button doit être TRUE.
@@ -98,9 +115,57 @@ function crealead_needs_views_pre_render(&$view) {
     $view->header['area']->options['content'] = (!$header_button) ? '' : $button;
     $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
 
+    // 2 - Gestion des différents champs de chaque demande
 
-    // Gestion du lien "J'ai la même demande".
+    // 2.0 - D'abord, on récupère les uuid des termes du vocabulaire "Clients d'un besoin".
+    /*
+     * Need origin                    Value to be displayed
+     * -----------                    ---------------------
+     * Activité coE                   <brand name>
+     * Crealead Structure             "Crealead Structure"
+     * Demande externe                <organism name>
+     * Crealeadien à titre personnel  "Crealidien à titre personnel"
+     *
+     * Packaged need clients are :
+     * Activité coE                   uuid = b4346853-567b-448c-910d-0e79d75d4e99
+     * Crealead Structure             uuid = 7a01c453-5ac3-42a6-a374-ee9d26137a2f
+     * Demande externe                uuid = 7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4
+     * Crealeadien à titre personnel  uuid = edcd12a6-b46d-416d-919b-c52d0acfa1df
+     */
+    $client_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('need_clients')->vid);
+    $terms = array();
+    foreach ($client_source_terms as $source_term) {
+      $terms[$source_term->tid] = $source_term->uuid;
+    }
+
     foreach ($view->result as $key=>$item) {
+      // 2.1 - Gestion du champ Demandé par.
+      $need_term_tid = $item->field_field_need_client[0]['raw']['tid'];
+      $term_uuid = $terms[$need_term_tid];
+
+      // Si Activité coE ou Demande externe, on affiche la marque ou l'organisme (contenu dans field_crealead_name),
+      // sinon, on affiche le terme (Crealead Structure ou Crealeadien à titre personnel).
+      if ($term_uuid == 'b4346853-567b-448c-910d-0e79d75d4e99' || $term_uuid == '7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4') {
+        if (!empty($item->_field_data['nid']['entity']->field_crealead_name)) {
+          $view->result[$key]->field_field_need_client[0]['rendered']['#markup'] =
+            $item->_field_data['nid']['entity']->field_crealead_name['und'][0]['value'];
+        }
+      }
+
+      // 2.2 - Gestion du champ Contact
+      // C'est un champ libre, donc il faut le parser pour récupérer une éventuelle adresse email.
+      if (!empty($item->field_field_need_contact_details[0]['rendered']['#markup'])) {
+        $words = explode(' ', preg_replace( "/\r|\n/", " ", $item->field_field_need_contact_details[0]['rendered']['#markup']));
+        $emails = array();
+        foreach ($words as $word) {
+          if(filter_var($word, FILTER_VALIDATE_EMAIL)) {
+            $emails[] = $word;
+          }
+        }
+        $view->result[$key]->field_field_need_contact_details[0]['rendered']['#markup'] = implode('<br/>', $emails);
+      }
+
+      // 2.3 - Gestion du lien "J'ai la même demande".
       global $user;
       $ajax_link_url = '/add_coe_to_need/' . $item->nid . '/nojs';
       $ajax_link_text = ADD_TO_NEED_TEXT;
@@ -142,5 +207,41 @@ function crealead_needs_node_view($node, $view_mode, $langcode) {
     }
     $node->content['field_need_action'][0]['#markup'] =
       '<a href="' . $ajax_link_url . '" class="use-ajax">' . $ajax_link_text . '</a>';
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function crealead_needs_node_view_alter(&$build) {
+  if ($build['#bundle'] == 'need' && $build['#view_mode'] == 'full') {
+    /*
+     * NEED ORIGIN VALUE HANDLING
+     *
+     * Need origin                    Value to be displayed
+     * -----------                    ---------------------
+     * Activité coE                   <brand name>
+     * Crealead Structure             "Crealead Structure"
+     * Demande externe                <organism name>
+     * Crealeadien à titre personnel  "Crealidien à titre personnel"
+     *
+     * Packaged need clients are :
+     * Activité coE                   uuid = b4346853-567b-448c-910d-0e79d75d4e99
+     * Crealead Structure             uuid = 7a01c453-5ac3-42a6-a374-ee9d26137a2f
+     * Demande externe                uuid = 7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4
+     * Crealeadien à titre personnel  uuid = edcd12a6-b46d-416d-919b-c52d0acfa1df
+     */
+    $client_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('need_clients')->vid);
+    $terms = array();
+    foreach ($client_source_terms as $source_term) {
+      $terms[$source_term->tid] = $source_term->uuid;
+    }
+    $need_term_tid = $build['#node']->field_need_client['und'][0]['tid'];
+    $term_uuid = $terms[$need_term_tid];
+
+    // Activité coE ou Client externe
+    if ($term_uuid == 'b4346853-567b-448c-910d-0e79d75d4e99' || $term_uuid == '7b581fb4-6fcb-4be4-8f14-53f14dc4f3d4') {
+      $build['field_need_client'][0]['#markup'] = $build['#node']->field_crealead_name['und'][0]['value'];
+    }
   }
 }
