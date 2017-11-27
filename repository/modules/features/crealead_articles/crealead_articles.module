@@ -113,6 +113,8 @@ function crealead_articles_get_parent_brands($article_id) {
  * Implements hook_views_pre_render().
  */
 function crealead_articles_views_pre_render(&$view) {
+  dpm($view->name);
+  dpm($view->current_display);
   if ($view->name == 'articles' && $view->current_display == 'brand_articles') {
     // Link 'Ajouter un article' must be added to block only for coes attached to the current brand.
     global $user;
@@ -133,6 +135,12 @@ function crealead_articles_views_pre_render(&$view) {
         break;
       }
     }
+  }
+  else if ($view->name == 'articles' && $view->current_display == 'page_temoignages') {
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-testimony-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
   }
 }
 

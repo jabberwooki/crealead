@@ -388,6 +388,46 @@ function crealead_articles_views_default_views() {
     0 => 'certifications_labels',
   );
   $handler->display->display_options['argument_mode'] = 'none';
+
+  /* Display: Page témoignages */
+  $handler = $view->new_display('page', 'Page témoignages', 'page_temoignages');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+  );
+  /* Filter criterion: Content: Nature de l&#039;article (field_article_kind) */
+  $handler->display->display_options['filters']['field_article_kind_value']['id'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['table'] = 'field_data_field_article_kind';
+  $handler->display->display_options['filters']['field_article_kind_value']['field'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['path'] = 'articles/temoignages';
   $translatables['articles'] = array(
     t('Master'),
     t('plus'),
@@ -423,6 +463,7 @@ function crealead_articles_views_default_views() {
     t('terme à partir de field_related_sector_brands'),
     t('Articles d\'une certification/label'),
     t('terme à partir de field_related_certifs_labels'),
+    t('Page témoignages'),
   );
   $export['articles'] = $view;
 
