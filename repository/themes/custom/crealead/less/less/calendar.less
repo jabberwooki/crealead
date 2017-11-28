@@ -93,12 +93,23 @@
         color: #000 !important;
         &:before {
           .glyphicon();
-          content: "\e850";
-          color: @rouge-crealead;
+          content: "\e834";
+          color: @noir-crealead;
           margin: 0 4px 0 0;
+          position: relative;
+          top: -1px;
+        }
+      }
+      .funded-session{
+        a {
+          &:before {
+            color: @rouge-crealead;
+          }
+          border-bottom: 1px solid @rouge-crealead;
         }
       }
     }
+
   }
 
   .view-id-trainings_calendar.view-display-id-listing {
@@ -201,4 +212,9 @@
 #block-views-structure-calendar-structure{
   border-top: 3px dotted #CCC;
   margin-top: 15px;
+}
+#block-crealead-trainings-crealead-calendar-legend {
+  .calendar-legend{
+    color: @rouge-crealead;
+  }
 }
