@@ -261,7 +261,7 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a id="testimony-home-more" href="/articles/temoignages">Voir toutes les témoignages</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a id="testimony-home-more" href="/articles/temoignages">Voir tous les témoignages</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -469,7 +469,7 @@ function crealead_articles_views_default_views() {
     t('Articles Crealed'),
     t('Témoignages accueil'),
     t('Témoignages'),
-    t('<a id="testimony-home-more" href="/articles/temoignages">Voir toutes les témoignages</a>'),
+    t('<a id="testimony-home-more" href="/articles/temoignages">Voir tous les témoignages</a>'),
     t('Articles d\'une marque sectorielle'),
     t('Articles de fond'),
     t('« first'),
