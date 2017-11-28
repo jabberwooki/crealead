@@ -396,8 +396,8 @@ function crealead_articles_views_default_views() {
   );
   $handler->display->display_options['argument_mode'] = 'none';
 
-  /* Display: Page témoignages */
-  $handler = $view->new_display('page', 'Page témoignages', 'page_temoignages');
+  /* Display: Page témoignages (with Page Title) */
+  $handler = $view->new_display('page_with_page_title', 'Page témoignages (with Page Title)', 'page_temoignages');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -442,6 +442,7 @@ function crealead_articles_views_default_views() {
     4 => '4',
   );
   $handler->display->display_options['path'] = 'articles/temoignages';
+  $handler->display->display_options['page_title_pattern'] = 'Témoignages entrepreneurs coopérative d\'activité montpellier';
   $translatables['articles'] = array(
     t('Master'),
     t('plus'),
@@ -478,7 +479,7 @@ function crealead_articles_views_default_views() {
     t('terme à partir de field_related_sector_brands'),
     t('Articles d\'une certification/label'),
     t('terme à partir de field_related_certifs_labels'),
-    t('Page témoignages'),
+    t('Page témoignages (with Page Title)'),
     t('<h2 class="page-header">Témoignages</h2>'),
   );
   $export['articles'] = $view;
