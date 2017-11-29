@@ -2163,8 +2163,8 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .node-type-training .group-session-details{position:relative;margin-top:20px}
 .node-type-training .group-session-details .field-name-see-all-sessions-link{position:absolute;right:0;top:10px;padding:0 20px 0 0}
 .node-type-training .group-session-details img{float:right}
-.node-type-training .group-training-right-col ul>li{position:relative;padding-left:20px}
-.node-type-training .group-training-right-col ul>li:before{position:absolute;left:0;top:1px}
+.node-type-training .group-training-right-col ul>li{position:relative;border:1px solid red;padding-left:20px!important;display:block!important}
+.node-type-training .group-training-right-col ul>li:before{position:absolute!important;left:0;top:15px!important;display:block!important}
 .field-name-field-session-dates .field-label{float:none}
 .field-name-field-session-dates .field-items>.field-item{display:block}
 .field-name-field-session-dates .field-items>.field-item:before,.page-formations-toutes-les-sessions a.colorbox-node:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e834'}
