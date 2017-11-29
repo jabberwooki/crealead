@@ -264,10 +264,11 @@ function crealead_newsflashes_get_latest($with_details=FALSE, $selected_newsflas
           }
         }
         $wrapper = entity_metadata_wrapper('node', $nid);
+        $population = (!empty($wrapper->field_related_population->value())) ? $wrapper->field_related_population->name->value() : '';
         $newsflashes_details[$nid] = array(
           'nid' => $nid,
           'title' => $wrapper->title->value(),
-          'population' => $wrapper->field_related_population->name->value(),
+          'population' => $population,
           'author' => $wrapper->author->name->value(),
           'sent_by_email' => $wrapper->field_sent_by_email->value(),
         );
