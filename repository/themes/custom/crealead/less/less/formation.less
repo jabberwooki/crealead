@@ -99,17 +99,15 @@
     }
   }
   .detail-session();
-  .group-training-right-col {
+  .group-training-right-col { // ce code ne permet pas de régler le pb d'espace entre les lignes d'une puce quand le texte est sur plusieurs lignes
     ul > li{
-      position: relative;
-      border: 1px solid red;
       padding-left: 20px !important;
       display: block !important;
+      list-style-type: none !important;
+      background: url(../images/coche.png) no-repeat 0 5px;
       &:before {
-        position: absolute !important;
-        left: 0;
-        top: 15px !important;
-        display: block !important;
+        display: none !important;
+        content: '' !important;
       }
     }
   }
@@ -273,17 +271,17 @@
   .field-name-field-training-duration{
     margin: 0 20px;
   }
-  .group-session-details {
-    position: relative;
-    margin-top: 20px;
-    .field-name-see-all-sessions-link{
-      position: absolute;
-      right: 0px;
-      top: 10px;
-      padding: 0 20px 0 0;
-    }
-    img{
-      float: right;
-    }
+}
+.group-session-details {
+  position: relative;
+  margin-top: 20px;
+  .field-name-see-all-sessions-link{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    padding: 0 20px 0 0;
+  }
+  img{
+    float: right;
   }
 }
