@@ -72,6 +72,14 @@ function crealead_calendars_features_date_type_default() {
  */
 function crealead_calendars_node_info() {
   $items = array(
+    'room_event' => array(
+      'name' => t('Evénement Salle'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Titre'),
+      'help' => '',
+    ),
     'structure_event' => array(
       'name' => t('Evénement Structure'),
       'base' => 'node_content',
