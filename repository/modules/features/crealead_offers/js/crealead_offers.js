@@ -26,11 +26,14 @@
         $('.group-offer-contact-infos').hide();
       }
       else {
-        if (source_uuids[initialSourceValue] == 'd608a566-a38c-4906-a43f-b94964fddc15') { // Offre externe.
-          $('#edit-field-crealead-name').hide();
+        if (source_uuids[initialSourceValue] == 'a4df642a-58e8-450b-9098-4503ed11313a') { // Activité coE
+          $('#field-crealead-name-add-more-wrapper label').text('Marque concernée');
+        }
+        else if (source_uuids[initialSourceValue] == 'd608a566-a38c-4906-a43f-b94964fddc15') { // Offre externe.
+          $('#field-crealead-name-add-more-wrapper label').text('Personne ou Organisme concerné');
         }
         else if (source_uuids[initialSourceValue] == '8f7a4d71-a3a5-4619-ad14-aa4fe2cee28d') { // Crealead Structure
-          $('.group-ad-contact-infos').hide();
+          $('#edit-field-crealead-name').hide();
         }
       }
 
@@ -74,7 +77,7 @@
               $('#edit-field-need-contact-details-und-0-value').val('');
             }
             else if (selectedSourceUuid == 'd608a566-a38c-4906-a43f-b94964fddc15') { // Offre externe
-              $('#field-crealead-name-add-more-wrapper label').text('Organisme');
+              $('#field-crealead-name-add-more-wrapper label').text('Personne ou Organisme concerné');
               $('#edit-field-crealead-name-und-0-value').val('');
               $('#edit-field-need-contact-name-und-0-value').val('');
               $('#edit-field-need-contact-details-und-0-value').val('');
