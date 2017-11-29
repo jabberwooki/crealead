@@ -133,12 +133,25 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
   // Hide scheduled sessions field (handled now by sessions view).
   //$form['field_scheduled_sessions']['#access'] = FALSE;
 
+  // Previous publication status is stored in the readonly field_previous_status.
+  $form['field_previous_status']['und'][0]['value']['#default_value'] = $form['#entity']->status;
+
+  $form['#submit'][] = 'crealead_trainings_training_submit_handler';
+}
+
+function crealead_trainings_training_submit_handler($form, &$form_state) {
+  if ($form_state['values']['field_previous_status']['und'][0]['value'] == 0 && $form_state['values']['status']) {
+    drupal_set_message('ATTENTION ! toutes les sessions rattachées à cette formation viennent d\'être republiées.', 'warning');
+  }
 }
 
 function crealead_trainings_after_build($form, &$form_state) {
   // Make the field field_training_search readonly.
   $form['field_training_search']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
   $form_state['values']['field_training_search']['und'][0]['value'] = $form['field_training_search']['und'][0]['value']['#default_value'];
+
+  // Make the field field_previous_status readonly.
+  $form['field_previous_status']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
 
   return $form;
 }
@@ -763,7 +776,7 @@ function crealead_trainings_node_postsave($node, $op) {
         watchdog('crealead_trainings', $msg);
       }
     }
-    elseif ($op == 'update' && $node->status == 1) {
+    elseif ($op == 'update' && $node->status == 1 && $node->field_previous_status['und'][0]['value'] == 0) {
       if (!empty($sessions = crealead_trainings_get_training_sessions($node->nid))) {
         $published_sessions_nids = 0;
         foreach ($sessions as $session) {
