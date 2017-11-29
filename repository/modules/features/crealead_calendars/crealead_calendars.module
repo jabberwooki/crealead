@@ -5,3 +5,63 @@
  */
 
 include_once 'crealead_calendars.features.inc';
+
+/**
+ * Implements hook_feeds_after_save().
+ */
+function crealead_calendars_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+//  dpm($source);
+//  dpm($entity);
+//  dpm($item);
+//  dpm($entity_id);
+}
+
+/**
+ * Implements hook_feeds_presave().
+ */
+function crealead_calendars_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
+  if ($entity->type == 'room_event') {
+    $rooms_tids = crealead_calendars_get_rooms_tids();
+    // Si pas de nom de salle, ou nom de salle inconnu du vocabulaires Salles Crealead
+    $location = strtolower(str_replace(array('Bureau ','Salle '), array('',''), $item['LOCATION']));
+    if (empty($item['LOCATION']) || !array_key_exists($location, $rooms_tids)) {
+      // on met 'non défini' dans le champ Lieu
+      $entity->field_gcal_location = array(
+        'und' => array(
+          '0' => array(
+            'value' => 'non défini',
+            'format' => NULL,
+            'safe_value' => 'non défini',
+          )
+        )
+      );
+      // et on attribue le terme de taxo 'non défini';
+      $entity->field_room = array('und' => array('0' => array('tid' => $rooms_tids['non défini'])));
+    }
+    // sinon on attribue le terme de taxo correspondant
+    else {
+      $entity->field_room = array('und' => array('0' => array('tid' => $rooms_tids[$location])));
+    }
+  }
+}
+
+function crealead_calendars_get_rooms_tids() {
+  $rooms_tids = &drupal_static(__FUNCTION__);
+  if (!isset($my_data)) {
+    $room_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('crealead_rooms')->vid);
+    $rooms_tids = array();
+    foreach ($room_terms as $term) {
+      $room_name = strtolower(str_replace(array('Bureau ','Salle '), array('',''),$term->name));
+      $rooms_tids[$room_name] = $term->tid;
+    }
+  }
+
+  return $rooms_tids;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_calendars_views_pre_render(&$view) {
+  drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars_rooms.css');
+}
