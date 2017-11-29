@@ -99,8 +99,21 @@
     }
   }
   .detail-session();
+  .group-training-right-col {
+    ul > li{
+      position: relative;
+      border: 1px solid red;
+      padding-left: 20px !important;
+      display: block !important;
+      &:before {
+        position: absolute !important;
+        left: 0;
+        top: 15px !important;
+        display: block !important;
+      }
+    }
+  }
 }
-
 .field-name-field-session-dates {
   .field-label {
     float: none;
