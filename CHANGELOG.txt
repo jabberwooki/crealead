@@ -1,3 +1,7 @@
+Hotfix newsflashes_email_adresses_implode_function / 2011-11-30
+===============================================================
+ * crealead_newsflashes up: crealead_send_latest_newsflashes() function altered: implode() function used with ',' instead of ';'.
+
 Crealead 3.6 / 2017-11-30
 =========================
  * crealead_calendars up: room_event permissions granted to Pôle Gestion and administrateur. Menu link removed from menu-coe-area.
