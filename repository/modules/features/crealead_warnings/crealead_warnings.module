@@ -82,6 +82,18 @@ function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $f
   else {
     $form['field_content_type_list']['#default_value'] = $form['field_content_type_value']['und'][0]['value']['#default_value'];
   }
+
+    // Info text field added at the top of form
+  $info_text =
+    '<p class="info-text">' .
+    'Les événéments correspondant à votre alerte (création/modification d\'une demande, d\'une offre...) généreront des notifications immédiates.' .
+    '</p>';
+  $form['info_text'] = array(
+    '#type' => 'item',
+    '#title' => 'A NOTER',
+    '#markup' => $info_text,
+    '#weight' => -10
+  );
 }
 
 function crealead_warnings_get_warnable_content_types () {
