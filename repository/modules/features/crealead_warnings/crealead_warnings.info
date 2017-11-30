@@ -42,5 +42,7 @@ features[variable][] = node_options_warning
 features[variable][] = node_preview_warning
 features[variable][] = node_submitted_warning
 features[variable][] = pathauto_node_warning_pattern
+features[variable][] = print_html_display_urllist_warning
+features[variable][] = print_html_display_warning
 features[views_view][] = warnings
 project path = profiles/crealead/modules/features
