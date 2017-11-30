@@ -129,7 +129,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 //  $from = variable_get('site_mail');
   $from = "no-reply@crealead.com";
   $to = 'undisclosed-recipients:;';
-  $bcc = implode(';', $email_addresses);
+  $bcc = implode(',', $email_addresses);
   $mail_body = '<p>Bonjour à tous,</p>'
     . '<p>Voici la liste des dernières brèves publiées sur le site web de Crealead.</p>';
   $host = $_SERVER['HTTP_HOST'];
