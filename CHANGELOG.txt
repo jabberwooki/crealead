@@ -1,3 +1,94 @@
+Crealead 3.6 / 2017-11-30
+=========================
+ * crealead_calendars up: room_event permissions granted to Pôle Gestion and administrateur. Menu link removed from menu-coe-area.
+ * crealead_warnings up: missing display suite settings added.
+ * crealead_warnings up: new field Type de selection added and warning mechanism altered consequently.
+ * crealead_warnings up: Add/List links markup added before view content instead of after view content.
+ * crealead_warnings up: Info text about immediate warnings added at the top of add/edit form.
+ * crealead_warnings up: Content type column added in warnings table list.
+ * crealead_warnings up: missing warning content type settings added.
+ * crealead_trainings up: Warning message about sessions republication is now send only if currently saved training has sessions.
+ * crealead_trainings up: The 2 additional criteria (warning message about session republication) completed.
+ * crealead_offers up: Finalisation tasks completed.
+ * crealead_newsflashes up: Bugfix: newsflashes without population selected do not send ' EntityMetadataWrapperException' anymore.
+ * crealead_calendars up: Rooms agenda created.
+ * Feature articles up to correct voir toutes les temoignages.
+ * Feature crealead_articles up to add title to view page temoignages.
+ * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+ * match-testimony-height.js and views-view-unformatted--articles--page-temoignages.tpl.php created to improve testymony page layout.
+ * Feature crealead_articles up to add testymony page.
+ * crealead_warnings up: Callback function to allow or deny access to 'Mes alertes' tab created.
+ * crealead_trainings up: Missing link Modifier in sessions list re-added using a Global Custom Text.
+ * crealead_trainings up: template for session titles in Month view improved to display missing day number (J1, J2...).
+ * crealead_needs up: field_crealead_name value tested: if empty, displayed value is not replaced.
+ * crealead_offers up: All console.log() occurences removed, and user brand passed on to js file when offer is being created AND modified.
+ * crealead_needs up: Closes story V3 S3-13: Needs table display reorganised.
+ * kcore up: new role associé created.
+ * crealead_trainings up: Funded sessions are now themable in calendar month page.
+ * crealead_trainings up: Closes story S3-9: Affichage Appel à Compétences à compléter.
+ * crealead_needs and crealead_offers up: Closes story V3S3-8: Add Need and Add Offer buttons.
+ * crealead_calendars up: missing permission on calendar block added to prevent anonymous users to see events.
+ * crealead_calendars up: Google Calendar Structure feed settings improved again: Location value now properly saved.
+ * crealead_calendars up: Google Calendar Structure feed settings improved.
+ * crealead_warnings up: Fixes 'key() parameter null in crealead_warnings_block_view_alter() hook.
+ * Feature crealead_calendars created.
+ * crealead_needs up: email addresses of interested coEs are now visible in full mode view.
+ * Infos meetings template up: 'à Montpellier' added to page title.
+ * crealead needs up: ADD_TO_NEED_TEXT changed.
+ * crealead_warnings up: javascript regex for warning keywords typing improved.
+ * crealead_warnings up: typo fixed in .install file (crealead_trainings_update_7001 replaced by crealead_warnings_update_7001).
+ * crealead_warnings up: missing contrib module efq_extra_field activation added in new .install file.
+ * crealead_warning up: feature creation completed.
+ * Install profile up: Contrib module hook_post_action added.
+ * crealead_trainings up: Training unpublication causes unpublication of all its sessions.
+ * crealead_trainings up: Closes story V3S3-2: All sessions are now visible when number is greater than 3.
+ * Obsolete feature crealead_ads removed.
+ * crealead_offers up: missing offer_sources terms added.
+ * Feature crealead_offers created: Replaces crealead_ads which has been removed.
+ * crealead_trainings up: Fixes ajax bug 'unknown data property field_brand_coes dans EntityStructureWrapper->getPropertyInfo(), ligne 335' showing up when number of registered trainings in a brand is greater than the number of items as set up in Infinite Scroll pager mode.
+ * crealead_trainings up: 'Voir toutes les sessions' changed into 'Voir les sessions à venir'.
+ * crealead_trainings up: Trello card 2-7 completed.
+ * crealead_trainings up: Funded logo also displayed on a brand's trainings list (Trainings Tab).
+ * crealead_newsflashes up: Newsflashes view block coe_area_block pagination changed from 10 to 5 items.
+ * crealead_trainings up: Missing permissions added.
+ * crealead_trainings up: Crealead funded logo display mechanism coded.
+ * crealead_trainings up: Connected users can (un)subscribe (interested/not interested) to a training session.
+ * views-view-unformatted--trainings-calendar-prod--listing.tpl added and less up to mananage difference between prod and local calendar.
+ * views-view--clients--brand-clients.tpl.php created and less up to better manage client's trade layout.
+ * crealead_brands.js up.
+ * Useless custom templates removed.
+ * crealead_trainings up: training session title automatically created from training title and session first date.
+ * crealead_trainings up: Link 'Voir toutes les sessions' conditionnaly added to training sessions colorbox view mode.
+ * crealead_brands up: colorbox size changed from 600x300 to 600x600.
+ * crealead_brands up: Training sessions and events from brand's agenda view are now displaying in colorbox popups.
+ * crealead_trainings up: Training sessions and events from calendar and list view display (training_calendar_prod) are now displaying in colorbox popups.
+ * kcore and crealead_needs up: Context updates for Ads block display.
+ * crealead_ads up: Empty results messages added.
+ * crealead profile up: Typo on hook_update_N() implementation fixed.
+ * crealead profile up: Missing crealead_ads feature activation added.
+ * crealead profile up: missing dependency crealead_ads added.
+ * Feature crealead_ads created.
+ * crealead_newsflashes up: Customisable subject added to manual sending form.
+ * crealead_newsflashes up: Css of mnual sending admin page layout improved.
+ * crealead_newsflashes up: Newsflash manual sending with full body (story 2-3).
+ * Conflict resolution: conflict on minified style.min.css resolved.
+ * crealead_trainings up: View displays next_sessions and all_sessions update to return a list of session having at least one date greater than current date, instead of first date greater than current date.
+ * crealead_trainings up: In training full node, the sessions list now displays sessions having last date equals or greater than current date.
+ * crealead_trainings up: Bugfix: Session edit form now display a select list of trainings belonging to session's author, not connected user.
+ * crealead_brands and crealad_trainings up: Session title replaced by training title (+ day number in session) in brand's agenda.
+ * crealead_newsflashes up: drap'n'drop and MEE enabled on body field.
+ * Install profile up: Date module back to 2.9 version.
+ * Stylesheet re-compiled.
+ * Install profile up: Patch 2375235_calendar-pager_not_advancing-25.patch no longer applied on Date module.
+ * Conflict resolution on style.min.css.
+ * Install profile up: Date contrib module updated from 2.9 to 2.10 to remove a warning bug (DateTime object not correctly initialized).
+ * crealead_brands and custom theme up: Major rebuilding of the brand's agenda to remove unfixable bug of events and training sessions non visible to non admin users.
+ * LESS and CSS up.
+ * Install profile up: Views module version downgraded from 3.18 back to 3.14.
+ * Custom profile up: crealead_warnings declaration remove from .info file.
+ * Feature crealead_brands up to hide user/%user/contact menu item.
+ * Merge tag 'missing-warnings-view' into develop
+
 Hotfix field-name-field-certifications-labels / 2017-10-19
 ==========================================================
  * crealead_brands up: Fixes bug on sector brands and certification/labels loss when read only users save brand node.

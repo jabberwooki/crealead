@@ -72,13 +72,13 @@ function crealead_newsflashes_field_default_field_instances() {
       'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'display_summary' => 0,
-      'dnd_enabled' => 0,
+      'dnd_enabled' => 1,
       'linkit' => array(
         'button_text' => 'Rechercher',
         'enable' => 0,
         'profile' => '',
       ),
-      'mee_enabled' => 0,
+      'mee_enabled' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -86,6 +86,7 @@ function crealead_newsflashes_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 5,
         'summary_rows' => 5,
       ),

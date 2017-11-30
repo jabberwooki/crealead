@@ -390,7 +390,7 @@ body.node-type-brand {
           background-color: black;
           font-weight: bold;
           text-transform: uppercase;
-          padding: 12px 19px;
+          padding: 7px 19px;
           &:hover {
             background-color: @gris-fonce-crealead;
           }
@@ -515,18 +515,8 @@ body.node-type-brand {
   /* page des clients  ou références *************************************************************/
   #bootstrap-fieldgroup-nav-item--rfrences {
     margin-top: 20px;
-    #views-bootstrap-grid-1{
-      @media (min-width: @screen-md) {
-        margin-left: 250px;
-      }
-    }
     .view-display-id-brand_clients {
-      @media (min-width: @screen-md) {
-        .view-filters {
-          float: left;
-          width: 225px;
-        }
-      }
+
 
       .views-exposed-form {
         .views-exposed-widget {
@@ -553,6 +543,9 @@ body.node-type-brand {
       }
     }
     .view-content {
+      .node-client {
+        margin-bottom: 30px;
+      }
       .field-name-field-client-logo {
         border: 1px solid @gris-fonce-crealead;
         padding: 2px;
@@ -676,6 +669,7 @@ body.node-type-brand {
       }
 
     }
+    // Agenda marques - Ancienne version
     .view-brands-calendar{
       .view .date-nav-wrapper .date-prev{
         right: auto;
@@ -689,6 +683,35 @@ body.node-type-brand {
             .glyphicon();
             content: "\e807";
           }
+        }
+      }
+      .views-field-title a{
+        display: block;
+        &:before{
+          .glyphicon();
+          content: "\e82d";
+          color: @rouge-crealead;
+          margin-right: 0;
+        }
+      }
+    }
+    // Agenda marques - Nouvelle version
+    .view-brand-agenda {
+      .date-nav-wrapper {
+        .date-nav {
+          margin-bottom: 0;
+          .date-prev {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+      .date-display-single{
+        display: block;
+        border-bottom: 1px solid @gris-fonce-crealead;
+        &:before{
+          .glyphicon();
+          content: "\e807";
         }
       }
       .views-field-title a{
@@ -729,7 +752,7 @@ body.node-type-brand {
     margin-left: 0;
   }
   /* Onglet formation *************************************************************************************************/
-  #bootstrap-fieldgroup-nav-item--formations-et-produits{
+  #bootstrap-fieldgroup-nav-item--formations{
     div.view-header{
       a{
         .red-button-link();
@@ -816,5 +839,6 @@ body.node-type-brand {
     }
 
   }
+  .detail-session();
 }
 

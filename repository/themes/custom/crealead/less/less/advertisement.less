@@ -1,0 +1,24 @@
+.view-display-id-ads_list {
+  tr td:first-child {
+    width: 95px;
+  }
+  tr td:nth-child(2)  {
+    width: 183px;
+  }
+  .views-field-title a{
+    display: block;
+    padding: 2px 0;
+    &:before {
+      .glyphicon();
+      content: "\e834";
+      color: @rouge-crealead;
+    }
+    &:hover:before {
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: @gris-clair-crealead;
+    }
+  }
+
+}

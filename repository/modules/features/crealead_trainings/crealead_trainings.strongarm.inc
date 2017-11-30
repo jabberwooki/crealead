@@ -23,6 +23,16 @@ function crealead_trainings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_view_modes_training_session';
+  $strongarm->value = array(
+    0 => 'default',
+    1 => 'teaser',
+  );
+  $export['ds_extras_view_modes_training_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__training';
   $strongarm->value = array(
     'view_modes' => array(
@@ -93,16 +103,16 @@ function crealead_trainings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '24',
+          'weight' => '25',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '22',
+          'weight' => '23',
         ),
         'redirect' => array(
-          'weight' => '23',
+          'weight' => '24',
         ),
       ),
       'display' => array(),
@@ -173,20 +183,26 @@ function crealead_trainings_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'sessions' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

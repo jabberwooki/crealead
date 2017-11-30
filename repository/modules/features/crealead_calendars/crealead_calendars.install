@@ -1,0 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 23/11/17
+ * Time: 14:55
+ */
+
+/**
+ * Remove field_business_groups field (base and instance and data) from brand content type.
+ */
+function crealead_calendars_update_7001() {
+  module_enable(array('job_scheduler','feeds','date_ical'));
+}

@@ -19,7 +19,7 @@
  * @ingroup views_templates
  */
 ?>
-<h3 class="title-info-meeting title-table-meeting">Prochaines réunions :</h3>
+<h3 class="title-info-meeting title-table-meeting">Prochaines réunions à Montpellier</h3>
 <table <?php if ($classes) { print 'class="'. $classes . '" '; } ?><?php print $attributes; ?>>
    <?php if (!empty($title) || !empty($caption)) : ?>
      <caption><?php print $caption . $title; ?></caption>

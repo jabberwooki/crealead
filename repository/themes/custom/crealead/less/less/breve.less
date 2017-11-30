@@ -1,4 +1,13 @@
 .view-newsflashes, .view-id-needs{
+  .view-header {
+    position: relative;
+    > p > a {
+      .red-button-link();
+      position: absolute;
+      top: -40px;
+      left: 200px;
+    }
+  }
   .views-field-field-related-population{
     &:before{
       .glyphicon();
@@ -9,6 +18,10 @@
   .views-field-title{
     a {
       display: block;
+      padding: 2px 0;
+      &:hover {
+        background-color: @gris-clair-crealead;
+      }
       &:before{
         .glyphicon();
         content: "\e818";

@@ -1,0 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 22/11/17
+ * Time: 17:11
+ */
+
+/**
+ * Activates efq_extra_field contrib module.
+ */
+function crealead_warnings_update_7001() {
+  module_enable(array('efq_extra_field'));
+}

@@ -24,11 +24,24 @@ function crealead_warnings_menu() {
     'title' => t('Mes alertes'),
     'page callback' => 'crealead_warnings_user_warnings',
     'page arguments' => array(1),
-    'access callback' => TRUE,
+    'access callback' => 'crealead_warnings_warnings_list_access',
     'type' => MENU_LOCAL_TASK,
   );
 
   return $items;
+}
+
+/**
+ * Callback function to handle the "Mes alertes" tab on user page.
+ *
+ * @return bool True if visitor is the visited user, otherwise false
+ */
+function crealead_warnings_warnings_list_access() {
+  global $user;
+  if (arg(0) == 'user' && arg(1) == $user->uid) {
+    return TRUE;
+  }
+  return FALSE;
 }
 
 /**
@@ -69,6 +82,18 @@ function crealead_warnings_form_warning_node_form_alter(&$form, &$form_state, $f
   else {
     $form['field_content_type_list']['#default_value'] = $form['field_content_type_value']['und'][0]['value']['#default_value'];
   }
+
+    // Info text field added at the top of form
+  $info_text =
+    '<p class="info-text">' .
+    'Les événéments correspondant à votre alerte (création/modification d\'une demande, d\'une offre...) généreront des notifications immédiates.' .
+    '</p>';
+  $form['info_text'] = array(
+    '#type' => 'item',
+    '#title' => 'A NOTER',
+    '#markup' => $info_text,
+    '#weight' => -10
+  );
 }
 
 function crealead_warnings_get_warnable_content_types () {
@@ -98,17 +123,17 @@ function crealead_warnings_block_view_alter(&$data, $block) {
     // Get the content types that users can create warnings on.
     $warning_content_types = array_filter(variable_get('warning_content_types', array()));
 
-    // Get the content type name the current block view uses.
+    // Get the content type name the current block view uses, if any.
     // TODO : Handle cases where view block uses more than one content type.
     $view = views_get_view(substr($block->delta, 0, strpos($block->delta,'-')));
     $display = substr($block->delta, strpos($block->delta,'-') +1);
     $view->set_display($display);
     $view->pre_execute();
-    $content_type = key($view->filter['type']->value);
+    $content_type = (isset($view->filter['type']->value)) ? key($view->filter['type']->value) : null;
 
     // If current view block manipulates content type that is warning allowed,
     // we can display warning handling links at the bottom of block.
-    if (in_array($content_type, $warning_content_types)) {
+    if ($content_type && in_array($content_type, $warning_content_types)) {
       global $user;
       $user_warnings_count = crealead_warnings_get_user_warnings($user->uid, TRUE);
       $warning_links = '<span class="warning-add-link">'
@@ -120,7 +145,9 @@ function crealead_warnings_block_view_alter(&$data, $block) {
           . '<a href="/user/' . $user->uid . '/warnings">Gérer mes alertes</a>'
           . '</span>';
       }
-      $data['content']['#markup'] .= '<div class="warning-links">' . $warning_links . '</div>';
+      $data['content']['#markup'] = '<div class="warning-links">' . $warning_links . '</div>' . $data['content']['#markup'];
+
+      drupal_add_css(drupal_get_path('module','crealead_warnings') . '/css/crealead_warnings.css');
     }
   }
 }
@@ -130,6 +157,8 @@ function crealead_warnings_block_view_alter(&$data, $block) {
  */
 function crealead_warnings_views_pre_render(&$view) {
   if ($view->name == 'warnings' && $view->current_display == 'user_warnings') {
+    drupal_add_css(drupal_get_path('module','crealead_warnings') . '/css/crealead_warnings.css');
+
     global $user;
     $action_link =
       '<div class="warning-links">' .
@@ -139,8 +168,19 @@ function crealead_warnings_views_pre_render(&$view) {
       '</div>';
 
     $view->attachment_after = $action_link;
+
+    foreach ($view->result as $key=>$result) {
+      if ($result->field_field_selection_type[0]['raw']['value'] == 1) {
+        $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] =
+          '<span class="non-used-keywords">' .
+          $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] .
+          '</span>';
+
+        $non_used_keywords = true;
+      }
+    }
   }
-  if ($view->name == 'warnings' && $view->current_display == 'full_list') {
+  if ($view->name == 'warnings') {
     $warnable_content_types = crealead_warnings_get_warnable_content_types();
     foreach ($view->result as $item) {
       $markup = $item->field_field_content_type_value[0]['rendered']['#markup'];
@@ -232,6 +272,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
     ->fieldCondition('field_content_type_value','value', $node->type)
     ->fieldCondition('field_warning_frequency','value', $frequency)
     ->addExtraField('field_recipient_email','email')
+    ->addExtraField('field_selection_type','value')
     ->addExtraField('field_warning_keywords','value')
     ->propertyOrderBy('created', 'DESC');
 
@@ -244,18 +285,26 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
   $result = $query->execute();
 
   // If results, keywords are tested again node title and body.
-  $email_addresses = '';
+  $email_addresses = array();
   if (!empty($result)) {
     $warnings = $result['node'];
     $haystack = $node->title . ' ' .$node->body['und'][0]['value'];
 
     foreach ($warnings as $key=>$warning) {
-      // Warning's keywords field cleaned up and prepared for regex.
-      // For instance, the ugly field value " , keyword1, , keyword2 keyword3, " is converted into "keyword1|keyword2 keyword3".
-      $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
+      // Selection types are : (1) Tout, (2) Par mots-clés
+      // Il selection type = 1, we don't need to test keywords matching.
+      if ($warning->extraFields->field_selection_type_ == 1) {
+        $email_addresses[$warning->extraFields->field_recipient_email_] = $warning->extraFields->field_recipient_email_;
+      }
+      // otherwise, selection type = 2 and we have to test keywords matching.
+      else {
+        // Warning's keywords field cleaned up and prepared for regex.
+        // For instance, the ugly field value " , keyword1, , keyword2 keyword3, " is converted into "keyword1|keyword2 keyword3".
+        $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
 
-      if( preg_match('/\b(' . $keywords . ')/i' , $haystack)){
-        $email_addresses[$key] = $warning->extraFields->field_recipient_email_;
+        if (preg_match('/\b(' . $keywords . ')/i', $haystack)) {
+          $email_addresses[$warning->extraFields->field_recipient_email_] = $warning->extraFields->field_recipient_email_;
+        }
       }
     }
     $email_addresses = implode(';', $email_addresses);
@@ -313,5 +362,15 @@ function crealead_warnings_mail($key, &$message, $params) {
       $message['subject'] = $params['subject'];
       $message['body'][] = $params['body'];
       break;
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_warnings_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'warning' && ($view_mode == 'colorbox' || $view_mode == 'full')) {
+    $type = node_type_load($node->content['field_content_type_value'][0]['#markup']);
+    $node->content['field_content_type_value'][0]['#markup'] = $type->name;
   }
 }

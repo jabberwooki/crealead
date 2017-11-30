@@ -15,10 +15,23 @@
       // Control placed on warning keyword field so that
       // only lowercase and uppercase letters, numbers, space and backspace are accepted
       $("#edit-field-warning-keywords-und-0-value").keypress(function(e) {
-        if (String.fromCharCode(e.which).match(/[^A-Za-z0-9\,\s\b]/)) {
+        if (String.fromCharCode(e.which).match(/[^A-Za-z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ\,\.\s\b]/)) {
           e.preventDefault();
         }
       });
+
+      // Selection type handling
+      $('#edit-field-selection-type input[type=radio]').change(function () {
+        console.log($('#edit-field-selection-type input[type=radio]:checked').val());
+        if ($('#edit-field-selection-type input[type=radio]:checked').val() == 1) {
+          $('#edit-field-warning-keywords').hide(1000);
+        }
+        else {
+          $('#edit-field-warning-keywords').show(1000);
+        }
+      });
+
+
 
       // Warning frequency handling
       // Warnings frequency is not yet implemented. We keep the corresponding field in content type but we hide it in add/edit form.

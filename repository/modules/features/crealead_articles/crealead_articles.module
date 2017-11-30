@@ -134,6 +134,12 @@ function crealead_articles_views_pre_render(&$view) {
       }
     }
   }
+  else if ($view->name == 'articles' && $view->current_display == 'page_temoignages') {
+    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-testimony-height.js', array(
+      'type' => 'file',
+      'group' => JS_THEME,
+    ));
+  }
 }
 
 /**

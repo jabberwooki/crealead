@@ -190,7 +190,7 @@ function crealead_brands_strongarm() {
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
-            'weight' => '21',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'block' => array(
@@ -254,8 +254,8 @@ function crealead_brands_strongarm() {
         ),
         'brand_agenda_entity_view_1' => array(
           'full' => array(
-            'weight' => '45',
-            'visible' => FALSE,
+            'weight' => '46',
+            'visible' => TRUE,
           ),
         ),
         'events_calendar_entity_view_3' => array(
@@ -277,6 +277,30 @@ function crealead_brands_strongarm() {
           ),
         ),
         'brands_calendar_eva_agenda' => array(
+          'full' => array(
+            'weight' => '46',
+            'visible' => FALSE,
+          ),
+        ),
+        'brands_calendar_2_eva_agenda' => array(
+          'full' => array(
+            'weight' => '26',
+            'visible' => FALSE,
+          ),
+        ),
+        'agendas_eva_brand_agenda' => array(
+          'full' => array(
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
+        ),
+        'brandagenda_entity_view_1' => array(
+          'full' => array(
+            'weight' => '46',
+            'visible' => FALSE,
+          ),
+        ),
+        'brand_agenda_eva_brandagenda' => array(
           'full' => array(
             'weight' => '45',
             'visible' => TRUE,

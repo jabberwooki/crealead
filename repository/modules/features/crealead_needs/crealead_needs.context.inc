@@ -32,6 +32,12 @@ function crealead_needs_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'views-offers-offers_list' => array(
+          'module' => 'views',
+          'delta' => 'offers-offers_list',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

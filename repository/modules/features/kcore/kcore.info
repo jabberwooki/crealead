@@ -253,6 +253,7 @@ features[user_permission][] = view own entityform
 features[user_permission][] = view own unpublished content
 features[user_permission][] = view the administration theme
 features[user_role][] = administrateur
+features[user_role][] = associé
 features[user_role][] = canditat
 features[user_role][] = certif LR
 features[user_role][] = entrepreneur

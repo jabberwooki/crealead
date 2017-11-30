@@ -1,0 +1,155 @@
+<?php
+/**
+ * @file
+ * Code for the Offres feature.
+ */
+
+include_once 'crealead_offers.features.inc';
+
+function crealead_offers_form_offer_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module', 'crealead_offers') . '/js/crealead_offers.js');
+  drupal_add_css(drupal_get_path('module', 'crealead_offers') . '/css/crealead_offers.css');
+
+  // 1 - Javascript data preparation ///////////////////////////////////////////
+
+  // 1.1 - Offer sources data --------------------------------------------------
+  /* Packaged offer sources terms are :
+  * Activité co-entrepreneur        uuid = a4df642a-58e8-450b-9098-4503ed11313a
+  * Crealead Structure              uuid = 8f7a4d71-a3a5-4619-ad14-aa4fe2cee28d
+  * Offre externe                   uuid = d608a566-a38c-4906-a43f-b94964fddc15
+  * Crealeadien à titre personnel   uuid = 35943eb4-72e5-43f9-91ad-e3509da52f7f
+  */
+
+  // So we build a $params array of source terms uuids keyed by source terms tid,
+  $offer_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('offer_sources')->vid);
+  $params = array();
+  foreach ($offer_source_terms as $source_term) {
+    $params[$source_term->tid] = $source_term->uuid;
+  }
+  // and we store it in the javascript crealead_offer_sources variable.
+  drupal_add_js(array('crealead_offer_sources' => $params), 'setting');
+
+  // 1.2 - User and brand data -------------------------------------------------
+  // Connected user data
+  global $user;
+  drupal_add_js(array('crealead_offers_connected_user' => $user), 'setting');
+
+  // Connected user's first brand (brand with the lower nid).
+  $coe_brands = views_get_view_result('brands','coe_brands',$user->uid);
+
+  $brand_name = NULL;
+  $reference_brand_nid = 10000000000;
+  if (!empty($coe_brands)) {
+    foreach ($coe_brands as $brand) {
+      if($brand->nid < $reference_brand_nid) {
+        $brand_name = $brand->node_title;
+      }
+    }
+  }
+  drupal_add_js(array('crealead_offers_user_brand' => $brand_name), 'setting');
+
+  // 2 - Info text field added at the top of form //////////////////////////////
+  $info_text =
+    '<p class="info-text">' .
+    'Utilisez-le pour annoncer la création d\'une session de formation, une offre spéciale temporaire, une offre externe intéressante pour tous, une vente d\'appartement ou d\'objets...' .
+    '<br/>' .
+    'Les offres permanentes (vos formations habituelles, vos produits) ne sont pas à mettre ici.' .
+    '</p>';
+  $form['info_text'] = array(
+    '#type' => 'item',
+    '#title' => 'Quand utiliser ce formulaire ?',
+    '#markup' => $info_text,
+    '#weight' => -10
+  );
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_offers_views_pre_render(&$view) {
+  if ($view->name == 'offers' && $view->current_display == 'offers_list') {
+    // Gestion du bouton "Ajouter un besoin"
+    // Dans la vue offers/offers_list, header contient un texte d'infos à laisser intact.
+    // et footer contient un texte provisoire à modifier.
+    //
+    // Pour rendre le bouton visible en haut -> $header_button doit être TRUE.
+    // Pour rendre le bouton visible en bas -> $footer_button doit être TRUE.
+    $header_button = TRUE;
+    $footer_button = FALSE;
+    $button = l('Ajouter une offre', '/node/add/offer', array('query' => array('destination' => current_path())));
+    $header_info = $view->header['area']->options['content'];
+
+    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . '<p>' . $button . '</p>';
+    $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
+
+
+    /*
+     * OFFERS ORIGIN VALUE HANDLING
+     *
+     * Offer origin           Value to be displayed
+     * ------------------     ------------------------------
+     * Activité coE           <brand name>
+     * Crealead Structure     "Crealead Structure"
+     * Offre externe          <organism name>
+     * Perso                  "Crealidien à titre personnel"
+     *
+     * Packaged offer sources terms are :
+     * Activité co-entrepreneur        uuid = a4df642a-58e8-450b-9098-4503ed11313a
+     * Crealead Structure              uuid = 8f7a4d71-a3a5-4619-ad14-aa4fe2cee28d
+     * Offre externe                   uuid = d608a566-a38c-4906-a43f-b94964fddc15
+     * Crealeadien à titre personnel   uuid = 35943eb4-72e5-43f9-91ad-e3509da52f7f
+    */
+    $offer_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('offer_sources')->vid);
+    $terms = array();
+    foreach ($offer_source_terms as $source_term) {
+      $terms[$source_term->tid] = $source_term->uuid;
+    }
+
+    foreach ($view->result as $key=>$item) {
+      $offer_term_tid = $item->field_field_offer_origin[0]['raw']['tid'];
+      $term_uuid = $terms[$offer_term_tid];
+
+      // Activité coE ou Offre externe
+      if ($term_uuid == 'a4df642a-58e8-450b-9098-4503ed11313a' || $term_uuid == 'd608a566-a38c-4906-a43f-b94964fddc15') {
+        $view->result[$key]->field_field_offer_origin[0]['rendered']['#markup'] =
+          $item->_field_data['nid']['entity']->field_crealead_name['und'][0]['value'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function crealead_offers_node_view_alter(&$build) {
+  if ($build['#bundle'] == 'offer' && $build['#view_mode'] == 'full') {
+    /*
+     * OFFERS ORIGIN VALUE HANDLING
+     *
+     * Offer origin           Value to be displayed
+     * ------------------     ------------------------------
+     * Activité coE           <brand name>
+     * Crealead Structure     "Crealead Structure"
+     * Offre externe          <organism name>
+     * Perso                  "Crealidien à titre personnel"
+     *
+     * Packaged offer sources terms are :
+     * Activité co-entrepreneur        uuid = a4df642a-58e8-450b-9098-4503ed11313a
+     * Crealead Structure              uuid = 8f7a4d71-a3a5-4619-ad14-aa4fe2cee28d
+     * Offre externe                   uuid = d608a566-a38c-4906-a43f-b94964fddc15
+     * Crealeadien à titre personnel   uuid = 35943eb4-72e5-43f9-91ad-e3509da52f7f
+    */
+    $offer_source_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('offer_sources')->vid);
+    $terms = array();
+    foreach ($offer_source_terms as $source_term) {
+      $terms[$source_term->tid] = $source_term->uuid;
+    }
+    $offer_origin_tid = $build['#node']->field_offer_origin['und'][0]['tid'];
+    $offer_origin_uuid = $terms[$offer_origin_tid];
+
+    // Activité coE ou Offre externe
+    if ($offer_origin_uuid == 'a4df642a-58e8-450b-9098-4503ed11313a' || $offer_origin_uuid == 'd608a566-a38c-4906-a43f-b94964fddc15') {
+      $build['field_offer_origin'][0]['#markup'] = $build['#node']->field_crealead_name['und'][0]['value'];
+    }
+  }
+}

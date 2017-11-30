@@ -21,9 +21,10 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_training_search',
+      1 => 'field_previous_status',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -40,6 +41,37 @@ function crealead_trainings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_session_details|node|training_session|colorbox';
+  $field_group->group_name = 'group_session_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training_session';
+  $field_group->mode = 'colorbox';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Détails de la session',
+    'weight' => '1',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_session_dates',
+      2 => 'field_session_place',
+      3 => 'field_funded_session',
+      4 => 'see_all_sessions_link',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-session-details field-group-fieldset',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_session_details|node|training_session|colorbox'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_training_data|node|training|full';
   $field_group->group_name = 'group_training_data';
   $field_group->entity_type = 'node';
@@ -50,8 +82,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'Caractéristiques',
     'weight' => '1',
     'children' => array(
-      0 => 'field_training_attendees_number',
-      1 => 'field_training_duration',
+      0 => 'field_training_duration',
+      1 => 'field_training_attendees_number',
       2 => 'field_scheduled_sessions',
       3 => 'field_training_price',
     ),
@@ -249,13 +281,13 @@ function crealead_trainings_field_group_info() {
     'label' => 'Colonne droite',
     'weight' => '9',
     'children' => array(
-      0 => 'field_training_aims',
-      1 => 'field_training_public',
-      2 => 'field_training_requirements',
+      0 => 'field_training_public',
+      1 => 'field_training_requirements',
+      2 => 'field_training_aims',
       3 => 'field_training_method',
       4 => 'field_training_teachers',
-      5 => 'field_assessment_methods',
-      6 => 'field_training_validation',
+      5 => 'field_training_validation',
+      6 => 'field_assessment_methods',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -356,6 +388,7 @@ function crealead_trainings_field_group_info() {
   t('Champs Crealead');
   t('Colonne droite');
   t('Colonne gauche');
+  t('Détails de la session');
   t('En-tête');
   t('En-tête centre');
   t('En-tête droit');

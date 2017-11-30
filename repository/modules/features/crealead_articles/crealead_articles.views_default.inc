@@ -256,6 +256,13 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a id="testimony-home-more" href="/articles/temoignages">Voir tous les témoignages</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -388,6 +395,54 @@ function crealead_articles_views_default_views() {
     0 => 'certifications_labels',
   );
   $handler->display->display_options['argument_mode'] = 'none';
+
+  /* Display: Page témoignages (with Page Title) */
+  $handler = $view->new_display('page_with_page_title', 'Page témoignages (with Page Title)', 'page_temoignages');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="page-header">Témoignages</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+  );
+  /* Filter criterion: Content: Nature de l&#039;article (field_article_kind) */
+  $handler->display->display_options['filters']['field_article_kind_value']['id'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['table'] = 'field_data_field_article_kind';
+  $handler->display->display_options['filters']['field_article_kind_value']['field'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['path'] = 'articles/temoignages';
+  $handler->display->display_options['page_title_pattern'] = 'Témoignages entrepreneurs coopérative d\'activité montpellier';
   $translatables['articles'] = array(
     t('Master'),
     t('plus'),
@@ -414,6 +469,7 @@ function crealead_articles_views_default_views() {
     t('Articles Crealed'),
     t('Témoignages accueil'),
     t('Témoignages'),
+    t('<a id="testimony-home-more" href="/articles/temoignages">Voir tous les témoignages</a>'),
     t('Articles d\'une marque sectorielle'),
     t('Articles de fond'),
     t('« first'),
@@ -423,6 +479,8 @@ function crealead_articles_views_default_views() {
     t('terme à partir de field_related_sector_brands'),
     t('Articles d\'une certification/label'),
     t('terme à partir de field_related_certifs_labels'),
+    t('Page témoignages (with Page Title)'),
+    t('<h2 class="page-header">Témoignages</h2>'),
   );
   $export['articles'] = $view;
 

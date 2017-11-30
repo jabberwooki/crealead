@@ -1,0 +1,220 @@
+/* Calendrier crealead importé et formation interne *******************************************************************/
+.page-espace-co-entrepreneur-calendrier-formations, #block-views-structure-calendar-structure {
+  #block-menu-menu-calendar-listing-switcher {
+    ul.nav-tabs {
+      > li.first {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+      > li.last {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e86c";
+          }
+        }
+      }
+    }
+  }
+  #block-menu-menu-trainings-calendar {
+    .nav-tabs {
+      border: 0;
+      > li.active {
+        border-bottom: 1px solid @rouge-crealead;
+        > a {
+          border: 0;
+        }
+      }
+      > li.first {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e86e";
+          }
+        }
+      }
+      > li:nth-child(2) {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e870";
+          }
+        }
+      }
+      > li:nth-child(3) {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\f0c8";
+          }
+        }
+      }
+      > li.last {
+        > a {
+          &:before {
+            .glyphicon();
+            content: "\e807";
+          }
+        }
+      }
+    }
+  }
+  .date-nav {
+    ul.pager {
+      @media (min-width: @screen-md) {
+        li.date-prev {
+          position: absolute;
+          left: 25%;
+          right: auto !important;
+          background-color: transparent !important;
+        }
+
+        li.date-next {
+          position: absolute;
+          left: auto !important;
+          right: 25% !important;
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+  /* Liste *******************************************************************************************************/
+  .calendar-calendar {
+    div.calendar {
+      background-color: transparent !important;
+    }
+    .field-content {
+      a {
+        font-family: arial !important;
+        color: #000 !important;
+        &:before {
+          .glyphicon();
+          content: "\e834";
+          color: @noir-crealead;
+          margin: 0 4px 0 0;
+          position: relative;
+          top: -1px;
+        }
+      }
+      .funded-session{
+        a {
+          color: @rouge-crealead !important;
+          &:before {
+            color: @rouge-crealead;
+          }
+        }
+      }
+    }
+
+  }
+
+  .view-id-trainings_calendar.view-display-id-listing {
+    .view-content {
+      .calendar-listing-day-wrapper {
+        display: table;
+        > div.views-row{
+          a {
+            position: relative;
+            .quick();
+            font-size: 1.3em;
+            display: block;
+            padding-top: 15px;
+            &:before{
+              .glyphicon();
+              content: "\f0c8";
+              position: absolute;
+              left: -30px;
+              top: 25px;
+              color: @bleu-clair-crealead;
+              font-size: 0.6em;
+            }
+          }
+        }
+        > h3 {
+          display: table-cell;
+          margin: 0 10px 20px 0;
+          padding: 20px;
+          @media (min-width: @screen-md) {
+            min-width: 210px;
+          }
+          &:before {
+            .glyphicon();
+            content: "\e834";
+          }
+        }
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
+          border-bottom: 3px dotted @gris-fonce-crealead;
+          width: 60%;
+          margin: 25px auto;
+        }
+
+      }
+
+    }
+  }
+  .view-trainings-calendar-prod {
+    .view-content {
+      .calendar-listing-day-wrapper {
+        display: table;
+        > div.views-row{
+          a {
+            position: relative;
+            .quick();
+            font-size: 1.3em;
+            display: block;
+            padding-top: 15px;
+            &:before{
+              .glyphicon();
+              content: "\f0c8";
+              position: absolute;
+              left: -30px;
+              top: 25px;
+              color: @bleu-clair-crealead;
+              font-size: 0.6em;
+            }
+          }
+        }
+        > h3 {
+          display: table-cell;
+          margin: 0 10px 20px 0;
+          padding: 20px;
+          @media (min-width: @screen-md) {
+            min-width: 210px;
+          }
+          &:before {
+            .glyphicon();
+            content: "\e834";
+          }
+        }
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
+          border-bottom: 3px dotted @gris-fonce-crealead;
+          width: 60%;
+          margin: 25px auto;
+        }
+
+      }
+
+    }
+  }
+  .detail-session();
+}
+/* Calendrier structure ***********************************************************************************************/
+#block-views-structure-calendar-structure{
+  border-top: 3px dotted #CCC;
+  margin-top: 15px;
+}
+#block-crealead-trainings-crealead-calendar-legend {
+  .calendar-legend{
+    color: @rouge-crealead;
+  }
+}

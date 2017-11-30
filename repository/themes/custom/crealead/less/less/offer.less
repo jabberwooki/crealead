@@ -1,0 +1,25 @@
+#block-views-offers-offers-list {
+  position: relative;
+  .view-header > p > a {
+    .red-button-link();
+    position: absolute;
+    padding-right: 45px;
+    top : 15px;
+    left: 200px;
+  }
+  .views-table .views-field-title > a{
+    display: block;
+    padding: 2px 0;
+    &:hover {
+      background-color: @gris-clair-crealead;
+    }
+    &:before{
+      .glyphicon();
+      content: "\e818";
+      color: @rouge-crealead;
+    }
+    &:hover:before{
+      text-decoration: none;
+    }
+  }
+}

@@ -1,3 +1,10 @@
 span.field-help-emphasis {
     color: red;
 }
+div.warning-links {
+    text-align: right;
+}
+span.non-used-keywords {
+    color: gray;
+    text-decoration: line-through;
+}

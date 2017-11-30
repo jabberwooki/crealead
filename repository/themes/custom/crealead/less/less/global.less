@@ -127,7 +127,25 @@ h5{
       color: white;
     }
 }
-
+.button-home-more {
+  float: right;
+  margin-top: -36px;
+  display: block;
+  border: 1px solid @gris-fonce-crealead;
+  background-color: @gris-clair-crealead;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #000;
+  font-size: 0.8em;
+  font-family: arial, sans-serif;
+  &:hover {
+    background-color: @rouge-crealead;
+    color: white;
+    text-decoration: none;
+  }
+}
 /* Textes *************************************************************************************************************/
 .bold{
   font-weight: 700;
@@ -197,15 +215,12 @@ ul.coche-rouge, #block-system-main ul{
     }
   }
 }
-.pagination li.active > span{
-  padding: 11px 19px;
-}
+
 li.print_html{
   &:before{
     content: '' !important;
   }
 }
-
 /* social links *******************************************************************************************************/
 div.service-links{
   display: block;
@@ -227,4 +242,13 @@ div.service-links{
   li:before, li a:before{
     content: '' !important;
   }
+}
+/* pop-up *************************************************************************************************************/
+#cboxLoadedContent{
+  overflow-x: hidden !important;
+}
+/* alert **************************************************************************************************************/
+.warning-links a:before{
+  .glyphicon();
+  content: "\e84a";
 }

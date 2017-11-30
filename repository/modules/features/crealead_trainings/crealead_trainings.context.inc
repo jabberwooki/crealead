@@ -66,5 +66,37 @@ function crealead_trainings_context_default_contexts() {
   t('Formations');
   $export['trainings_calendar_calendar'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'trainings_calendar_mois';
+  $context->description = '';
+  $context->tag = 'Formations';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'espace-co-entrepreneur/calendrier-formations/mois' => 'espace-co-entrepreneur/calendrier-formations/mois',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'crealead_trainings-crealead_calendar_legend' => array(
+          'module' => 'crealead_trainings',
+          'delta' => 'crealead_calendar_legend',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Formations');
+  $export['trainings_calendar_mois'] = $context;
+
   return $export;
 }

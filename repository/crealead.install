@@ -303,3 +303,24 @@ function crealead_update_7013() {
 function crealead_update_7014() {
   module_enable(array('crealead_warnings'));
 }
+
+/**
+ * Activate feature crealead_ads.
+ */
+function crealead_update_7015() {
+  module_enable(array('crealead_ads'));
+}
+
+/**
+ * Activate feature crealead_offers.
+ */
+function crealead_update_7016() {
+  module_enable(array('crealead_offers'));
+}
+
+/**
+ * Activate feature crealead_calendars.
+ */
+function crealead_update_7017() {
+  module_enable(array('crealead_calendars'));
+}

@@ -605,7 +605,7 @@ function crealead_needs_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_need_client',
-    'label' => 'Client',
+    'label' => 'Demandé par',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -613,7 +613,9 @@ function crealead_needs_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_select',
       'weight' => 8,
     ),
@@ -986,9 +988,9 @@ function crealead_needs_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Action');
   t('Autres coE avec la même demande');
-  t('Client');
   t('Coordonnées');
   t('Date d\'expiration');
+  t('Demandé par');
   t('Description de la demande');
   t('Echéance');
   t('Ici aussi, saisissez le début du prénom ou du nom. Vous pouvez entrer une ou plusieurs personnes en séparant les noms par une virgule.');

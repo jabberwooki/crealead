@@ -99,7 +99,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '42',
+    'weight' => '24',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
@@ -129,7 +129,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Blog',
-    'weight' => '30',
+    'weight' => '22',
     'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -388,8 +388,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Actualités',
     'weight' => '29',
     'children' => array(
-      0 => 'brands_calendar_eva_agenda',
-      1 => 'news_brand_news',
+      0 => 'news_brand_news',
+      1 => 'brand_agenda_eva_brandagenda',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -412,7 +412,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '41',
+    'weight' => '23',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
@@ -503,7 +503,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Onglets',
-    'weight' => '4',
+    'weight' => '0',
     'children' => array(
       0 => 'group_brand_achiev_tab',
       1 => 'group_brand_articles_tab',
@@ -849,7 +849,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'group row 1',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'group_col3_3',
       1 => 'group_col_1_3',

@@ -122,6 +122,9 @@ projects[date][subdir] = contrib
 projects[date][version] = "2.9"
 projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
 
+projects[date_ical][subdir] = contrib
+projects[date_ical][version] = "3.9"
+
 projects[date_multiselect][subdir] = contrib
 projects[date_multiselect][version] = "1.0"
 
@@ -153,6 +156,9 @@ projects[entityreference_views_formatter][version] = "1.x-dev"
 projects[eva][subdir] = contrib
 projects[eva][version] = "1.2"
 
+projects[feeds][subdir] = contrib
+projects[feeds][version] = "2.0-beta4"
+
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = "1.0-beta11"
 
@@ -176,6 +182,9 @@ projects[filefield_sources][version] = "1.10"
 
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
+
+projects[job_scheduler][subdir] = contrib
+projects[job_scheduler][version] = "2.0-alpha3"
 
 projects[label_help][subdir] = contrib
 projects[label_help][version] = "1.2"
@@ -206,6 +215,9 @@ projects[phone][version] = "1.0-beta1"
 
 projects[plupload][subdir] = contrib
 projects[plupload][version] = "1.7"
+
+projects[hook_post_action][subdir] = contrib
+projects[hook_post_action][version] = "1.0-beta2"
 
 projects[profile2][subdir] = contrib
 projects[profile2][version] = "1.3"

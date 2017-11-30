@@ -34,8 +34,8 @@
   <div class="date-nav item-list">
     <div class="date-heading">
 
-      <!-- For brand's agenda block -->
-      <?php if ($plugin->view->current_display == 'agenda_listing'): ?>
+      <!-- For brand's agenda block (old and new version) -->
+      <?php if ($plugin->view->current_display == 'agenda_listing' || $plugin->view->current_display == 'eva_brandagenda'): ?>
         <h4><?php print $nav_title ?></h4>
       <?php else: ?>
         <h3><?php print $nav_title ?></h3>

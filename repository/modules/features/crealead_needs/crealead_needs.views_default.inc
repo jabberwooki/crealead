@@ -70,6 +70,20 @@ function crealead_needs_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'code du bouton Ajouter
+voir crealead_needs_views_pre_render()';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = 'code du bouton Ajouter
+voir crealead_needs_views_pre_render()';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -77,14 +91,13 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Il n\'y a actuellement aucune demande.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Date';
-  $handler->display->display_options['fields']['created']['date_format'] = 'news_short';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Client */
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Demandé par */
   $handler->display->display_options['fields']['field_need_client']['id'] = 'field_need_client';
   $handler->display->display_options['fields']['field_need_client']['table'] = 'field_data_field_need_client';
   $handler->display->display_options['fields']['field_need_client']['field'] = 'field_need_client';
@@ -92,19 +105,21 @@ function crealead_needs_views_default_views() {
   $handler->display->display_options['fields']['field_need_client']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Personne concernée */
-  $handler->display->display_options['fields']['field_crealead_name']['id'] = 'field_crealead_name';
-  $handler->display->display_options['fields']['field_crealead_name']['table'] = 'field_data_field_crealead_name';
-  $handler->display->display_options['fields']['field_crealead_name']['field'] = 'field_crealead_name';
-  $handler->display->display_options['fields']['field_crealead_name']['settings'] = array(
+  /* Field: Content: Coordonnées */
+  $handler->display->display_options['fields']['field_need_contact_details']['id'] = 'field_need_contact_details';
+  $handler->display->display_options['fields']['field_need_contact_details']['table'] = 'field_data_field_need_contact_details';
+  $handler->display->display_options['fields']['field_need_contact_details']['field'] = 'field_need_contact_details';
+  $handler->display->display_options['fields']['field_need_contact_details']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_need_contact_details']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date';
+  $handler->display->display_options['fields']['created']['date_format'] = 'news_short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Autres coE avec la même demande */
   $handler->display->display_options['fields']['field_other_enquirers']['id'] = 'field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['table'] = 'field_data_field_other_enquirers';
@@ -182,11 +197,13 @@ function crealead_needs_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('code du bouton Ajouter
+voir crealead_needs_views_pre_render()'),
     t('Il n\'y a actuellement aucune demande.'),
-    t('Date'),
-    t('Client'),
     t('Title'),
-    t('Personne concernée'),
+    t('Demandé par'),
+    t('Contact'),
+    t('Date'),
     t('Avec la même demande'),
     t('Action'),
     t('Bloc espace coes'),

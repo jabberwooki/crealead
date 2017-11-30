@@ -22,6 +22,7 @@ function kcore_context_default_contexts() {
         'espace-co-entrepreneur*' => 'espace-co-entrepreneur*',
         'breves/*' => 'breves/*',
         'demandes/*' => 'demandes/*',
+        'offres/*' => 'offres/*',
       ),
     ),
   );
