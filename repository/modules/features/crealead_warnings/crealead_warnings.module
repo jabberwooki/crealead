@@ -157,6 +157,8 @@ function crealead_warnings_block_view_alter(&$data, $block) {
  */
 function crealead_warnings_views_pre_render(&$view) {
   if ($view->name == 'warnings' && $view->current_display == 'user_warnings') {
+    drupal_add_css(drupal_get_path('module','crealead_warnings') . '/css/crealead_warnings.css');
+
     global $user;
     $action_link =
       '<div class="warning-links">' .
@@ -166,6 +168,17 @@ function crealead_warnings_views_pre_render(&$view) {
       '</div>';
 
     $view->attachment_after = $action_link;
+
+    foreach ($view->result as $key=>$result) {
+      if ($result->field_field_selection_type[0]['raw']['value'] == 1) {
+        $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] =
+          '<span class="non-used-keywords">' .
+          $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] .
+          '</span>';
+
+        $non_used_keywords = true;
+      }
+    }
   }
   if ($view->name == 'warnings') {
     $warnable_content_types = crealead_warnings_get_warnable_content_types();
@@ -259,6 +272,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
     ->fieldCondition('field_content_type_value','value', $node->type)
     ->fieldCondition('field_warning_frequency','value', $frequency)
     ->addExtraField('field_recipient_email','email')
+    ->addExtraField('field_selection_type','value')
     ->addExtraField('field_warning_keywords','value')
     ->propertyOrderBy('created', 'DESC');
 
@@ -277,12 +291,20 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
     $haystack = $node->title . ' ' .$node->body['und'][0]['value'];
 
     foreach ($warnings as $key=>$warning) {
-      // Warning's keywords field cleaned up and prepared for regex.
-      // For instance, the ugly field value " , keyword1, , keyword2 keyword3, " is converted into "keyword1|keyword2 keyword3".
-      $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
-
-      if( preg_match('/\b(' . $keywords . ')/i' , $haystack)){
+      // Selection types are : (1) Tout, (2) Par mots-clés
+      // Il selection type = 1, we don't need to test keywords matching.
+      if ($warning->extraFields->field_selection_type_ == 1) {
         $email_addresses[$warning->extraFields->field_recipient_email_] = $warning->extraFields->field_recipient_email_;
+      }
+      // otherwise, selection type = 2 and we have to test keywords matching.
+      else {
+        // Warning's keywords field cleaned up and prepared for regex.
+        // For instance, the ugly field value " , keyword1, , keyword2 keyword3, " is converted into "keyword1|keyword2 keyword3".
+        $keywords = $keywords = implode('|', array_filter(array_map('trim', explode(',', $warning->extraFields->field_warning_keywords_))));
+
+        if (preg_match('/\b(' . $keywords . ')/i', $haystack)) {
+          $email_addresses[$warning->extraFields->field_recipient_email_] = $warning->extraFields->field_recipient_email_;
+        }
       }
     }
     $email_addresses = implode(';', $email_addresses);

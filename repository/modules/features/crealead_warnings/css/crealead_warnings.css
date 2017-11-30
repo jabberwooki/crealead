@@ -4,3 +4,7 @@ span.field-help-emphasis {
 div.warning-links {
     text-align: right;
 }
+span.non-used-keywords {
+    color: gray;
+    text-decoration: line-through;
+}

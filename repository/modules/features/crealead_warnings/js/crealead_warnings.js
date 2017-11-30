@@ -20,6 +20,19 @@
         }
       });
 
+      // Selection type handling
+      $('#edit-field-selection-type input[type=radio]').change(function () {
+        console.log($('#edit-field-selection-type input[type=radio]:checked').val());
+        if ($('#edit-field-selection-type input[type=radio]:checked').val() == 1) {
+          $('#edit-field-warning-keywords').hide(1000);
+        }
+        else {
+          $('#edit-field-warning-keywords').show(1000);
+        }
+      });
+
+
+
       // Warning frequency handling
       // Warnings frequency is not yet implemented. We keep the corresponding field in content type but we hide it in add/edit form.
       $("#edit-field-warning-frequency").hide();

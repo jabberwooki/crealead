@@ -210,6 +210,13 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_content_type_value']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Type de sélection */
+  $handler->display->display_options['fields']['field_selection_type']['id'] = 'field_selection_type';
+  $handler->display->display_options['fields']['field_selection_type']['table'] = 'field_data_field_selection_type';
+  $handler->display->display_options['fields']['field_selection_type']['field'] = 'field_selection_type';
+  $handler->display->display_options['fields']['field_selection_type']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Mots-clés */
   $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
@@ -232,14 +239,6 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_when']['field'] = 'field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['label'] = 'Quand';
   $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Fréquence des alertes */
-  $handler->display->display_options['fields']['field_warning_frequency']['id'] = 'field_warning_frequency';
-  $handler->display->display_options['fields']['field_warning_frequency']['table'] = 'field_data_field_warning_frequency';
-  $handler->display->display_options['fields']['field_warning_frequency']['field'] = 'field_warning_frequency';
-  $handler->display->display_options['fields']['field_warning_frequency']['label'] = 'Fréquence';
-  $handler->display->display_options['fields']['field_warning_frequency']['settings'] = array(
     'field_formatter_class' => '',
   );
   /* Field: Content: Edit link */
@@ -543,6 +542,7 @@ function crealead_warnings_views_default_views() {
     t('Tout'),
     t('Alertes utilisateur'),
     t('Type de contenu'),
+    t('Type de sélection'),
     t('Liste des alertes'),
     t('Liste de toutes les alertes'),
     t('Appliquer'),
