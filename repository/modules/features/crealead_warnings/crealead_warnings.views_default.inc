@@ -201,6 +201,15 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Type de contenu (valeur) */
+  $handler->display->display_options['fields']['field_content_type_value']['id'] = 'field_content_type_value';
+  $handler->display->display_options['fields']['field_content_type_value']['table'] = 'field_data_field_content_type_value';
+  $handler->display->display_options['fields']['field_content_type_value']['field'] = 'field_content_type_value';
+  $handler->display->display_options['fields']['field_content_type_value']['label'] = 'Type de contenu';
+  $handler->display->display_options['fields']['field_content_type_value']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_content_type_value']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Mots-clés */
   $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
@@ -533,6 +542,7 @@ function crealead_warnings_views_default_views() {
     t('Lien de suppression'),
     t('Tout'),
     t('Alertes utilisateur'),
+    t('Type de contenu'),
     t('Liste des alertes'),
     t('Liste de toutes les alertes'),
     t('Appliquer'),

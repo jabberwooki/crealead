@@ -153,7 +153,7 @@ function crealead_warnings_views_pre_render(&$view) {
 
     $view->attachment_after = $action_link;
   }
-  if ($view->name == 'warnings' && $view->current_display == 'full_list') {
+  if ($view->name == 'warnings') {
     $warnable_content_types = crealead_warnings_get_warnable_content_types();
     foreach ($view->result as $item) {
       $markup = $item->field_field_content_type_value[0]['rendered']['#markup'];
