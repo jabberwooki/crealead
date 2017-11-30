@@ -39,6 +39,50 @@ function crealead_calendars_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'create room_event content'.
+  $permissions['create room_event content'] = array(
+    'name' => 'create room_event content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any room_event content'.
+  $permissions['delete any room_event content'] = array(
+    'name' => 'delete any room_event content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own room_event content'.
+  $permissions['delete own room_event content'] = array(
+    'name' => 'delete own room_event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any room_event content'.
+  $permissions['edit any room_event content'] = array(
+    'name' => 'edit any room_event content',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own room_event content'.
+  $permissions['edit own room_event content'] = array(
+    'name' => 'edit own room_event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'import google_rooms_calendar feeds'.
   $permissions['import google_rooms_calendar feeds'] = array(
     'name' => 'import google_rooms_calendar feeds',
