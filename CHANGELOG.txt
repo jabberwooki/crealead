@@ -1,3 +1,9 @@
+Hotfix css-structure-calendar-fix-third / 2017-12-06
+===============================================================
+ * CSS up to improve structure calendar multiday events
+
+
+
 Hotfix css-structure-calendar-fix-bis / 2011-12-06
 ===============================================================
  * CSS up to improve structure calendar multiday events
