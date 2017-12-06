@@ -1,36 +1,25 @@
 #block-views-offers-offers-list {
-  border-top: 5px dotted @gris-fonce-crealead;
-  margin-top: 25px;
-  padding-top: 20px;
   position: relative;
   .view-header > p > a {
     .red-button-link();
     position: absolute;
     padding-right: 45px;
-    top : 35px;
+    top : 15px;
     left: 200px;
   }
-  div.warning-links{
-    position: absolute;
-    top: 40px;
-    left: 430px;
-  }
-  .views-table {
-    margin-top: 20px;
-    .views-field-title > a{
-      display: block;
-      padding: 2px 0;
-      &:hover {
-        background-color: @gris-clair-crealead;
-      }
-      &:before{
-        .glyphicon();
-        content: "\e818";
-        color: @rouge-crealead;
-      }
-      &:hover:before{
-        text-decoration: none;
-      }
+  .views-table .views-field-title > a{
+    display: block;
+    padding: 2px 0;
+    &:hover {
+      background-color: @gris-clair-crealead;
+    }
+    &:before{
+      .glyphicon();
+      content: "\e818";
+      color: @rouge-crealead;
+    }
+    &:hover:before{
+      text-decoration: none;
     }
   }
 }
