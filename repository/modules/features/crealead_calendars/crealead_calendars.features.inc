@@ -41,6 +41,12 @@ function crealead_calendars_features_date_format_default() {
     'type' => 'custom',
     'locked' => 0,
   );
+  $fdf_config[] = array(
+    'dfid' => 49,
+    'format' => 'd/m/Y H:i',
+    'type' => 'custom',
+    'locked' => 0,
+  );
   return $fdf_config;
 }
 
@@ -50,6 +56,13 @@ function crealead_calendars_features_date_format_default() {
 function crealead_calendars_features_date_type_default() {
   $fdt_config = array();
 
+  $fdt_config[] = array(
+    'is_new' => FALSE,
+    'module' => '',
+    'type' => 'rooms_agenda_import',
+    'title' => 'Agenda Salles (import)',
+    'locked' => 0,
+  );
   $fdt_config[] = array(
     'is_new' => FALSE,
     'module' => '',

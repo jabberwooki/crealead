@@ -39,6 +39,13 @@ function crealead_calendars_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'clear rooms_agenda feeds'.
+  $permissions['clear rooms_agenda feeds'] = array(
+    'name' => 'clear rooms_agenda feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'create room_event content'.
   $permissions['create room_event content'] = array(
     'name' => 'create room_event content',
@@ -103,6 +110,13 @@ function crealead_calendars_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'import rooms_agenda feeds'.
+  $permissions['import rooms_agenda feeds'] = array(
+    'name' => 'import rooms_agenda feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'unlock google_rooms_calendar feeds'.
   $permissions['unlock google_rooms_calendar feeds'] = array(
     'name' => 'unlock google_rooms_calendar feeds',
@@ -120,6 +134,13 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'pôle gestion' => 'pôle gestion',
     ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock rooms_agenda feeds'.
+  $permissions['unlock rooms_agenda feeds'] = array(
+    'name' => 'unlock rooms_agenda feeds',
+    'roles' => array(),
     'module' => 'feeds',
   );
 

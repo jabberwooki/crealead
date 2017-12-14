@@ -182,15 +182,71 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  $handler->display->display_options['row_options']['colors']['legend'] = 'type';
+  $handler->display->display_options['row_options']['separator'] = ' ';
+  $handler->display->display_options['row_options']['colors']['legend'] = 'taxonomy';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'news' => '#ffffff',
+    'warning' => '#ffffff',
+    'ad' => '#ffffff',
+    'article' => '#ffffff',
+    'newsflash' => '#ffffff',
+    'client' => '#ffffff',
+    'need' => '#ffffff',
+    'diapositive' => '#ffffff',
+    'filedepot_folder' => '#ffffff',
+    'event' => '#ffffff',
+    'crealead_event' => '#ffffff',
+    'room_event' => '#ffffff',
+    'structure_event' => '#ffffff',
+    'training' => '#ffffff',
+    'gazette' => '#ffffff',
+    'brand' => '#ffffff',
+    'offer' => '#ffffff',
+    'outlook_events' => '#ffffff',
+    'page' => '#ffffff',
+    'achievement' => '#ffffff',
+    'info_meeting' => '#ffffff',
+    'training_session' => '#ffffff',
+  );
+  $handler->display->display_options['row_options']['colors']['taxonomy_field'] = 'field_room';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_vocabulary'] = array(
+    'field_room' => '35',
+  );
+  $handler->display->display_options['row_options']['colors']['calendar_colors_taxonomy'] = array(
+    437 => '#c71728',
+    438 => '#1727c7',
+    439 => '#1dc910',
+    435 => '#e1d92a',
+    436 => '#c77312',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['label'] = '';
+  $handler->display->display_options['fields']['field_gclal_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['settings'] = array(
+    'format_type' => 'structure_calendar_time',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
   /* Field: Content: Lieu */
   $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gcal_location']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_gcal_location']['settings'] = array(
     'field_formatter_class' => '',
   );
@@ -207,23 +263,17 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
-  $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
-  $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
-  $handler->display->display_options['fields']['field_gclal_date']['label'] = '';
-  $handler->display->display_options['fields']['field_gclal_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_gclal_date']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_gclal_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => '',
+  /* Field: Content: Salle */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['label'] = '';
+  $handler->display->display_options['fields']['field_room']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['settings'] = array(
+    'field_formatter_class' => '',
   );
-  $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
