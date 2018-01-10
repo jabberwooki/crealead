@@ -2318,9 +2318,9 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-event .field-name-field-event-locations{float:left;width:49%;padding:20px;border:1px solid #999;position:relative}
 .node-type-event .field-name-field-event-locations:before{text-align:center;content:"\e875";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
 .node-type-event .field-name-field-event-picture{clear:both;float:right;margin-left:20px}
+.calendar-calendar td span.date-display-end,.calendar-calendar td span.date-display-start,body.node-type-need .print-link .print_html a img{float:left}
 .node-type-event .field-name-body{clear:left}
 body.node-type-need .print-link{text-align:left}
-body.node-type-need .print-link .print_html a img{float:left}
 body.node-type-need .group-need-contact-infos{display:table;width:inherit}
 body.node-type-need .use-ajax.ajax-processed{display:block}
 body.node-type-need .use-ajax.ajax-processed:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center;content:"\e83e";color:#bf0e38}
