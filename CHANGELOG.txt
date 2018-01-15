@@ -1,16 +1,18 @@
+Hotfix sector-brands-blank-page-fix / 2018-01-15
+================================================
+ * Fixes blank page bug for sector brands that occurs when user is connected.
+
 Hotfix css-structure-calendar-fix-third / 2017-12-06
-===============================================================
+====================================================
  * CSS up to improve structure calendar multiday events
 
-
-
 Hotfix css-structure-calendar-fix-bis / 2011-12-06
-===============================================================
+==================================================
  * CSS up to improve structure calendar multiday events
 
 
 Hotfix css-structure-calendar-fix / 2011-12-06
-===============================================================
+==============================================
  * CSS up to improve structure calendar multiday events
 
 Hotfix newsflashes_email_adresses_implode_function / 2011-11-30
