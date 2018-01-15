@@ -1,3 +1,17 @@
+Crealead 3.6.1 / 2018-01-15
+===========================
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * LESS and CSS up.
+ * crealead_calendars up: missing strongarm settings form date types/formats added.
+ * crealead_calendars up: New Feed Importer rooms_agenda created and rooms_calendar view altered accordingly.
+ * Merge tag 'css-structure-calendar-fix-third' into develop
+ * Merge tag 'css-structure-calendar-fix-bis' into develop
+ * Merge tag 'css-structure-calendar-fix' into develop
+ * Revert "LESS and CSS up."
+ * LESS and CSS up.
+
 Hotfix sector-brands-blank-page-fix / 2018-01-15
 ================================================
  * Fixes blank page bug for sector brands that occurs when user is connected.

@@ -21,27 +21,12 @@ function crealead_calendars_feeds_after_save(FeedsSource $source, $entity, $item
  */
 function crealead_calendars_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
   if ($entity->type == 'room_event') {
+//    dpm($item);
+//    dpm($entity);
+
     $rooms_tids = crealead_calendars_get_rooms_tids();
-    // Si pas de nom de salle, ou nom de salle inconnu du vocabulaires Salles Crealead
-    $location = strtolower(str_replace(array('Bureau ','Salle '), array('',''), $item['LOCATION']));
-    if (empty($item['LOCATION']) || !array_key_exists($location, $rooms_tids)) {
-      // on met 'non défini' dans le champ Lieu
-      $entity->field_gcal_location = array(
-        'und' => array(
-          '0' => array(
-            'value' => 'non défini',
-            'format' => NULL,
-            'safe_value' => 'non défini',
-          )
-        )
-      );
-      // et on attribue le terme de taxo 'non défini';
-      $entity->field_room = array('und' => array('0' => array('tid' => $rooms_tids['non défini'])));
-    }
-    // sinon on attribue le terme de taxo correspondant
-    else {
-      $entity->field_room = array('und' => array('0' => array('tid' => $rooms_tids[$location])));
-    }
+    $room = $item['salle'];
+    $entity->field_room = array('und' => array('0' => array('tid' => $rooms_tids[$room])));
   }
 }
 
@@ -51,8 +36,7 @@ function crealead_calendars_get_rooms_tids() {
     $room_terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('crealead_rooms')->vid);
     $rooms_tids = array();
     foreach ($room_terms as $term) {
-      $room_name = strtolower(str_replace(array('Bureau ','Salle '), array('',''),$term->name));
-      $rooms_tids[$room_name] = $term->tid;
+      $rooms_tids[$term->name] = $term->tid;
     }
   }
 

@@ -1690,7 +1690,7 @@ div.service-links a{float:left;margin-right:10px}
 .glyphicon,.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{font-style:normal;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px;color:#777;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;text-transform:none}
 .glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,[class*=" icon-"]:before,[class^=icon-]:before{position:relative;top:1px}
 .glyphicon-h3-a>h3>span>a:hover:before{text-decoration:none}
-#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{top:1px;text-decoration:inherit;line-height:1em;font-style:normal;text-align:center;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after{top:1px;text-decoration:inherit;text-align:center;font-style:normal;speak:none;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 [class*=" iconafter-"]:after{position:relative;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-transform:none;color:#777}
 .icon-facebook:before{content:"\e85f";color:#154EA8}
 .icon-twitter:before{content:"\e860";color:#0C93FC}
@@ -1988,8 +1988,8 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-fie
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups .field-label{margin-top:5px;color:#000}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-business-groups .field-item{margin-bottom:5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags{clear:right;float:right;width:275px;padding:15px 20px;margin-left:20px}
+.node-type-info-meeting #registration-form fieldset,body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-items{clear:both}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-label{margin:5px 0 15px;color:#000}
-body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-items{clear:both}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-item{margin-bottom:5px;float:left;margin-right:5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-item a{font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
@@ -2085,14 +2085,13 @@ body.node-type-brand .field-name-field-training-duration{margin:0 20px}
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
 .node-type-info-meeting a.field-group-format-title{font-size:.8em}
-.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
 .node-type-info-meeting #registration-form #edit-field-registrant-gender-und .radio:first-child,body.page-registration.not-logged-in .field-name-field-attendee{display:none}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios,.node-type-info-meeting #registration-form .form-type-radios label{float:left}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio{float:left;margin-top:0;margin-right:15px}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
-.node-type-info-meeting #registration-form fieldset{clear:both}
 .node-type-info-meeting #registration-form .field-name-field-registrant-how{clear:left}
 @media (min-width:992px){.view-display-id-block_home_slideshow{max-height:531px;overflow:hidden;position:relative}
 .view-display-id-block_home_slideshow .wrapper-diapo .row-diapo{float:left}
@@ -2146,7 +2145,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .node-type-training .group-training-data .col-md-2 .label-above,.node-type-training .group-training-data .col-md-3 .label-above,.node-type-training .group-training-data .col-md-5 .label-above{font-weight:700;font-family:'Source Sans Pro',sans-serif}
 .node-type-training .group-training-right-col .label-above{font-family:'Source Sans Pro',sans-serif}
 .node-type-training .training-sessions .new-session-link>a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;color:#fff;margin-top:15px}
-.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px}
+.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-training .training-sessions .new-session-link>a:before{text-decoration:inherit;content:"\e834";color:#fff}
 .node-type-training .training-sessions .views-row .views-field-edit-node a{color:#000;text-decoration:underline;padding-left:20px}
 .node-type-training .training-sessions .views-row .views-field-edit-node a:before{text-decoration:inherit;color:#777;content:"\e862";left:6px}
@@ -2182,7 +2181,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:3px dotted #999}
 .page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:1.4em}
 .page-certifications-et-labels .view-certifications-labels .views-row{clear:both;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bf0e38}
-.page-certifications-et-labels .view-certifications-labels .views-row.views-row-last{border:0}
+#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs,.page-certifications-et-labels .view-certifications-labels .views-row.views-row-last,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs{border:0}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-name a{font-family:Quicksand,sans-serif;font-size:1.8em}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-description{font-size:1.2em;line-height:2em}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-field-cl-logo{float:left;margin-right:20px}
@@ -2268,7 +2267,6 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h3,.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h4{font-size:1em;font-family:'Source Sans Pro',sans-serif;font-weight:400;text-transform:none;color:#333!important}
 .main-container.main-container-sector-brands .group-sectorbrands-news>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38;padding-top:35px}
 .main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative .field-type-taxonomy-term-reference{background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;position:absolute;top:10px;left:5px}
-#block-views-needs-needs-list .views-field-title a:hover,#block-views-offers-offers-list .views-table .views-field-title>a:hover,.view-display-id-ads_list .views-field-title a:hover,.view-newsflashes .views-field-title a:hover{background-color:#ededed}
 .main-container.main-container-sector-brands .group-sectorbrands-articles{background-color:#ededed;padding-bottom:20px;margin-top:80px}
 .main-container.main-container-sector-brands .group-sectorbrands-articles>h3{color:#009aa0;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #000}
 .main-container.main-container-sector-brands .group-sectorbrands-articles h4>a{color:#009aa0}
@@ -2286,6 +2284,7 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .view-newsflashes{position:relative}
 .view-newsflashes div.warning-links{position:absolute;top:5px;left:400px}
 .view-newsflashes .view-header>p>a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;position:absolute;top:0;left:200px}
+#block-views-needs-needs-list .views-field-title a:hover,#block-views-offers-offers-list .views-table .views-field-title>a:hover,.view-display-id-ads_list .views-field-title a:hover,.view-newsflashes .views-field-title a:hover{background-color:#ededed}
 .view-newsflashes .view-header>p>a:before,.view-newsflashes .views-field-field-related-population:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-decoration:inherit}
 .view-newsflashes .view-header>p>a:before{content:"\e834";color:#fff}
 .view-newsflashes .views-field-field-related-population:before{content:"\e847";color:#999}
@@ -2318,9 +2317,9 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .node-type-event .field-name-field-event-locations{float:left;width:49%;padding:20px;border:1px solid #999;position:relative}
 .node-type-event .field-name-field-event-locations:before{text-align:center;content:"\e875";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
 .node-type-event .field-name-field-event-picture{clear:both;float:right;margin-left:20px}
+.calendar-calendar td span.date-display-end,.calendar-calendar td span.date-display-start,body.node-type-need .print-link .print_html a img{float:left}
 .node-type-event .field-name-body{clear:left}
 body.node-type-need .print-link{text-align:left}
-body.node-type-need .print-link .print_html a img{float:left}
 body.node-type-need .group-need-contact-infos{display:table;width:inherit}
 body.node-type-need .use-ajax.ajax-processed{display:block}
 body.node-type-need .use-ajax.ajax-processed:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center;content:"\e83e";color:#bf0e38}
@@ -2333,7 +2332,7 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-needs-needs-list .view-header>p>a:before{content:"\e834";color:#fff}
 #block-views-needs-needs-list .views-table{margin-top:20px}
 #block-views-needs-needs-list .views-field-field-related-population:before{content:"\e847";color:#999}
-#block-views-needs-needs-list .views-field-field-need-action a:before,#block-views-needs-needs-list .views-field-title a:before{top:1px;font-weight:400;color:#bf0e38;position:relative;font-family:fontello;font-style:normal;speak:none;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em}
+#block-views-needs-needs-list .views-field-field-need-action a:before,#block-views-needs-needs-list .views-field-title a:before{top:1px;font-weight:400;color:#bf0e38;position:relative;font-family:fontello;font-style:normal;speak:none;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;width:1em}
 #block-views-needs-needs-list .views-field-title a{display:block;padding:2px 0}
 #block-views-needs-needs-list .views-field-title a:before{display:inline-block;text-decoration:inherit;content:"\e818"}
 #block-views-needs-needs-list .views-field-title a:hover:before{text-decoration:none}
@@ -2344,27 +2343,28 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-offers-offers-list .view-header>p>a{display:inline-block;background-color:#bf0e38;padding:6px 45px 6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;position:absolute;top:35px;left:200px}
 #block-views-offers-offers-list .view-header>p>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
 #block-views-offers-offers-list div.warning-links{position:absolute;top:40px;left:430px}
+#block-views-offers-offers-list .views-table .views-field-title>a:before,.view-display-id-ads_list .views-field-title a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#bf0e38}
 #block-views-offers-offers-list .views-table{margin-top:20px}
 #block-views-offers-offers-list .views-table .views-field-title>a{display:block;padding:2px 0}
-#block-views-offers-offers-list .views-table .views-field-title>a:before,.view-display-id-ads_list .views-field-title a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#bf0e38}
-#block-views-offers-offers-list .views-table .views-field-title>a:before{content:"\e818"}
+#block-views-offers-offers-list .views-table .views-field-title>a:before{display:inline-block;text-decoration:inherit;width:1em;content:"\e818"}
 #block-views-offers-offers-list .views-table .views-field-title>a:hover:before{text-decoration:none}
 .node-type-webform .print-link,.node-type-webform footer ul.links,.node-type-webform header .submitted{display:none}
 .view-display-id-ads_list tr td:first-child{width:95px}
 .view-display-id-ads_list tr td:nth-child(2){width:183px}
 .view-display-id-ads_list .views-field-title a{display:block;padding:2px 0}
-.view-display-id-ads_list .views-field-title a:before{content:"\e834"}
-#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before{position:relative;top:1px;font-family:fontello;margin-right:10px;color:#777;font-size:1em;display:inline-block;width:1em;font-style:normal;font-weight:400;speak:none;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.view-display-id-ads_list .views-field-title a:before{display:inline-block;text-decoration:inherit;width:1em;content:"\e834"}
 .view-display-id-ads_list .views-field-title a:hover:before{text-decoration:none}
-#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before{text-decoration:inherit;content:"\e807"}
-#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before{text-decoration:inherit;content:"\e86c"}
-#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs{border:0}
+.calendar-calendar .month-view .full td .inner div.calendar.monthview div>span,.calendar-calendar .month-view .full td.multi-day .inner div>span{margin-right:5px;float:left}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before{position:relative;top:1px;font-family:fontello;margin-right:10px;color:#777;font-size:1em;display:inline-block;width:1em;font-style:normal;font-weight:400;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.calendar.monthview>a{margin-left:5px}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before{content:"\e807"}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before{content:"\e86c"}
 #block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.active,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active{border-bottom:1px solid #bf0e38}
 #block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.active>a,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active>a{border:0}
-#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before{text-decoration:inherit;content:"\e86e"}
-#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before{text-decoration:inherit;content:"\e870"}
-#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before{text-decoration:inherit;content:"\f0c8"}
-#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before{text-decoration:inherit;content:"\e807"}
+#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.first>a:before{content:"\e86e"}
+#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(2)>a:before{content:"\e870"}
+#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li:nth-child(3)>a:before{content:"\f0c8"}
+#block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.last>a:before{content:"\e807"}
 @media (min-width:992px){#block-views-structure-calendar-structure .date-nav ul.pager li.date-prev,.page-espace-co-entrepreneur-calendrier-formations .date-nav ul.pager li.date-prev{position:absolute;left:25%;right:auto!important;background-color:transparent!important}
 #block-views-structure-calendar-structure .date-nav ul.pager li.date-next,.page-espace-co-entrepreneur-calendrier-formations .date-nav ul.pager li.date-next{position:absolute;left:auto!important;right:25%!important;background-color:transparent!important}
 #block-views-structure-calendar-structure .view-id-trainings_calendar.view-display-id-listing .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-calendrier-formations .view-id-trainings_calendar.view-display-id-listing .view-content .calendar-listing-day-wrapper>h3{min-width:210px}

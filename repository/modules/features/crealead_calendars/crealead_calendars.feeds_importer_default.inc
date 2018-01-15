@@ -187,5 +187,83 @@ function crealead_calendars_feeds_importer_default() {
   );
   $export['google_structure_calendar'] = $feeds_importer;
 
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'rooms_agenda';
+  $feeds_importer->config = array(
+    'name' => 'Agenda des salles',
+    'description' => 'Occupation des salles Crealead',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'delete_uploaded_file' => 1,
+        'direct' => 0,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'private' => 'private',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'encoding' => 'UTF-8',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => '1',
+        'authorize' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'titre',
+            'target' => 'title',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          1 => array(
+            'source' => 'debut',
+            'target' => 'field_gclal_date:start',
+            'timezone' => 'Europe/Paris',
+            'language' => 'und',
+          ),
+          2 => array(
+            'source' => 'fin',
+            'target' => 'field_gclal_date:end',
+            'timezone' => 'Europe/Paris',
+            'language' => 'und',
+          ),
+          3 => array(
+            'source' => 'salle',
+            'target' => 'field_gcal_location',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+        ),
+        'insert_new' => '1',
+        'update_existing' => '2',
+        'update_non_existent' => 'delete',
+        'input_format' => 'full_html',
+        'skip_hash_check' => 0,
+        'bundle' => 'room_event',
+        'language' => 'fr',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '3600',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['rooms_agenda'] = $feeds_importer;
+
   return $export;
 }
