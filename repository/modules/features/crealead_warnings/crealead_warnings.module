@@ -170,7 +170,7 @@ function crealead_warnings_views_pre_render(&$view) {
     $view->attachment_after = $action_link;
 
     foreach ($view->result as $key=>$result) {
-      if ($result->field_field_selection_type[0]['raw']['value'] == 1) {
+      if ($result->field_field_selection_type[0]['raw']['value'] == 1 && !empty($result->field_field_warning_keywords)) {
         $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] =
           '<span class="non-used-keywords">' .
           $view->result[$key]->field_field_warning_keywords[0]['rendered']['#markup'] .
