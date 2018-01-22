@@ -1,3 +1,7 @@
+Hotfix undefined-offset-zero-when-creating-warning / 2018-01-22
+===============================================================
+ * Fixes undefined offset 0 bug when creating warning with selection type equals to All.
+
 Crealead 3.6.1 / 2018-01-15
 ===========================
  * LESS and CSS up.
