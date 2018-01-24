@@ -751,6 +751,13 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/structure_event">LIEN_AJOUTER</a> ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
@@ -1097,6 +1104,7 @@ function crealead_calendars_views_default_views() {
     t('Desc'),
     t('Evénements Structure'),
     t('Calendrier Structure'),
+    t('<a href="/node/add/structure_event">LIEN_AJOUTER</a> '),
     t('All'),
     t('Month'),
     t('Week'),

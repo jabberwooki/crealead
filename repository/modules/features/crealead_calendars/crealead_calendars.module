@@ -47,5 +47,40 @@ function crealead_calendars_get_rooms_tids() {
  * Implements hook_views_pre_render().
  */
 function crealead_calendars_views_pre_render(&$view) {
-  drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars_rooms.css');
+  if ($view->name == 'structure_calendar') {
+    if (user_access('create structure_event content')) {
+      $add_link = '<a href="/node/add/structure-event">Ajouter un événement</a>';
+//      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+    }
+    else {
+      $add_link = '';
+    }
+    $view->header['area']->options['content'] = str_replace('LIEN_AJOUTER', $add_link, $view->header['area']->options['content']);
+  }
+  elseif ($view->name == 'rooms_calendar') {
+    drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars_rooms.css');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_calendars_form_structure_event_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!isset($form['nid']['#value'])) {
+    $form['actions']['submit']['#submit'][] = 'crealead_calendars_structure_event_redirect';
+  }
+}
+
+function crealead_calendars_structure_event_redirect(&$form, &$form_state) {
+  $event_start_date = $form_state['values']['field_gclal_date']['und'][0]['value'];
+  $year_month = substr($event_start_date, 0, 7);
+  $form_state['redirect'] = array(
+    'espace-co-entrepreneur/informations',
+    array(
+      'query' => array(
+        'mini' => $year_month,
+      )
+    )
+  );
+  drupal_set_message('L\événement structure a été ajouté.');
 }

@@ -360,7 +360,7 @@ function crealead_calendars_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -457,7 +457,7 @@ function crealead_calendars_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'inline',
@@ -559,7 +559,7 @@ function crealead_calendars_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'inline',
@@ -615,7 +615,7 @@ function crealead_calendars_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd/m/y',
+        'input_format' => 'd/m/Y H:i:s',
         'input_format_custom' => '',
         'label_help_description' => '',
         'label_position' => 'above',
