@@ -81,6 +81,7 @@ features[user_permission][] = view any unpublished structure_event content
 features[variable][] = date_format_structure_calendar
 features[variable][] = date_format_structure_calendar_time
 features[variable][] = ds_extras_view_modes_room_event
+features[variable][] = ds_extras_view_modes_structure_event
 features[variable][] = field_bundle_settings_node__room_event
 features[variable][] = field_bundle_settings_node__structure_event
 features[variable][] = language_content_type_room_event
