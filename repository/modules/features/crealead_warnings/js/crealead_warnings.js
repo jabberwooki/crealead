@@ -29,11 +29,6 @@
           }
         });
 
-      // Selection type handling
-      if ($('#edit-field-selection-type input[type=radio]:checked').val() == 1) {
-        $('#edit-field-warning-keywords').hide();
-      }
-
       // Submit button help text (displayed on hovering when button is disabled).
       $disabled_button_help_text =
         '<div class="field-help-emphasis">'
@@ -43,6 +38,11 @@
       $('.form-actions').append($disabled_button_help_text);
       $('.form-actions .field-help-emphasis').hide();
 
+      // Selection type handling
+      if ($('#edit-field-selection-type input[type=radio]:checked').val() == 1) {
+        $('#edit-field-warning-keywords').hide();
+      }
+
       $('#edit-field-selection-type input[type=radio]').change(function () {
         // console.log($('#edit-field-selection-type input[type=radio]:checked').val());
         if ($('#edit-field-selection-type input[type=radio]:checked').val() == 1) {
@@ -50,23 +50,27 @@
           // $('#edit-field-warning-keywords-und-0-value').val('');
           $("#field-warning-keywords-add-more-wrapper label span").remove();
           $("#field-warning-keywords-add-more-wrapper div.description span.keywords-required").remove();
+
           unlockSubmitButton();
         }
         else {
-          $("#field-warning-keywords-add-more-wrapper label").append('<span class="form-required" title="Ce champ est requis.">*</span>');
+          if ($("#edit-field-warning-keywords-und-0-value").val().length <= 2) {
+            $("#field-warning-keywords-add-more-wrapper label").append('<span class="form-required" title="Ce champ est requis.">*</span>');
 
-          $required_info_text =
-            '<span class="keywords-required">'
+            $required_info_text =
+              '<span class="keywords-required">'
               + '<span class="field-help-emphasis">Si vous sélectionnez l\'option </span>'
               + '<b><em>Par mots-clés</em></b>'
               + '<span class="field-help-emphasis">, le champ </span>'
               + '<b><em>Mots-clés</em></b>'
               + '<span class="field-help-emphasis"> ci-dessus devient obligatoire.</span>'
               + '<br/><br/>'
-            + '</span>';
-          $("#field-warning-keywords-add-more-wrapper div.description").prepend($required_info_text);
+              + '</span>';
+            $("#field-warning-keywords-add-more-wrapper div.description").prepend($required_info_text);
 
-          lockSubmitButton();
+            lockSubmitButton();
+          }
+
           $('#edit-field-warning-keywords').show(700);
         }
       });
