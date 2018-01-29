@@ -200,7 +200,7 @@ function crealead_calendars_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -331,7 +331,7 @@ function crealead_calendars_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_room',
     'label' => 'Salle',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -342,7 +342,7 @@ function crealead_calendars_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 

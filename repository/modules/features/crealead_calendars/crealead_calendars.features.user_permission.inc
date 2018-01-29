@@ -51,6 +51,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'create room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -72,6 +73,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'delete any room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -107,6 +109,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'edit any room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
