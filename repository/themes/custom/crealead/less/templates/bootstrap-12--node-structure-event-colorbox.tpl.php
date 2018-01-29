@@ -28,7 +28,7 @@
 
         $links = '<div class="structure-events-links">';
         if (user_access('edit any structure_event content')) {
-          $links .= '<span class="edit-link"><a href="/node/' . $nid . '/edit?destination=' . $destination . '">Modifier</a></span>';
+          $links .= '<span class="edit-link"><a href="/node/' . $nid . '/edit">Modifier</a></span>';
           $edit_allowed = true;
         }
         if (user_access('delete any structure_event content')) {

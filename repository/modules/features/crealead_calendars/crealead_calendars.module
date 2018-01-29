@@ -72,9 +72,9 @@ function crealead_calendars_views_pre_render(&$view) {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_calendars_form_structure_event_node_form_alter(&$form, &$form_state, $form_id) {
-  if (!isset($form['nid']['#value'])) {
+//  if (!isset($form['nid']['#value'])) {
     $form['actions']['submit']['#submit'][] = 'crealead_calendars_structure_event_redirect';
-  }
+//  }
 }
 
 function crealead_calendars_structure_event_redirect(&$form, &$form_state) {
