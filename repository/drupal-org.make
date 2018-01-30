@@ -142,6 +142,7 @@ projects[email][version] = "1.3"
 
 projects[email_registration][subdir] = contrib
 projects[email_registration][version] = "1.3"
+projects[email_registration][patch][] = "https://www.drupal.org/files/issues/waitlist-notice-when-no-more-room-2563669-2.patch"
 
 projects[entityform][subdir] = contrib
 projects[entityform][version] = "2.0-rc1"
