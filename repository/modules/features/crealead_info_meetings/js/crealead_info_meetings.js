@@ -5,7 +5,7 @@
 (function ($) {
   Drupal.behaviors.info_meetings = {
     attach: function (context, settings) {
-      console.log(settings.crealead_registration_display);
+      // console.log(settings.crealead_registration_display);
       
       ////////// Reorganisation of STATUT checkboxes field + complementary info fields in registration create/edit forms. //////////
       if (settings.crealead_registration_display == 'create-form' || settings.crealead_registration_display == 'edit-form') {
@@ -103,6 +103,18 @@
             otherStatusInfo = $(".field-name-field-other-specify .field-item.even").text();
             $(this).append(' <span class="other-status-info">(' + otherStatusInfo + ')</span>');
             $(".field-name-field-other-specify").remove();
+          }
+        });
+      }
+
+      // Info meeting list handling
+      if ($('.view-display-id-info_meetings_list').length) {
+        $('table tbody tr a').each(function () {
+          // If no more room in current info meeting, link "S'inscrire" is disabled.
+          if ($(this).parent().prev().text() == 0) {
+            $(this).bind('click', false);
+            $(this).css('background-color', 'transparent');
+            $(this).css('cursor','default');
           }
         });
       }
