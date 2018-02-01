@@ -4,3 +4,8 @@
 .form-item-reminder-reminder-settings-reminder-template {
     clear: left;
 }
+
+#edit-field-registrant-firstname {
+    clear: left;
+    margin-top: 50px;
+}

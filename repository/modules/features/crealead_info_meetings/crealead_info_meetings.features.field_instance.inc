@@ -935,7 +935,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 8,
     ),
   );
 
@@ -1118,7 +1118,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 7,
     ),
   );
 
@@ -1166,7 +1166,7 @@ function crealead_info_meetings_field_default_field_instances() {
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 

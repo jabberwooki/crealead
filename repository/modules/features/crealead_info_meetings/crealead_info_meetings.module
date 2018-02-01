@@ -71,6 +71,8 @@ function crealead_info_meetings_menu() {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
+
   // Form fields re-ordering
   $form['who_is_registering']['#weight'] = -10;
   $form['user']['#weight'] = -9;
