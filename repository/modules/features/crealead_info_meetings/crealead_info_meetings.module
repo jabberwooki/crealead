@@ -101,10 +101,11 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
 
-    $form['anon_mail']['#weight'] = 10;
-    $form['field_registrant_lastname']['#weight'] = 11;
-    $form['field_registrant_firstname']['#weight'] = 12;
-    $form['field_registrant_phone']['#weight'] = 13;
+    $form['anon_mail']['#weight'] = 20;
+    $form['field_registrant_lastname']['#weight'] = 25;
+    $form['field_registrant_firstname']['#weight'] = 30;
+    $form['field_registrant_phone']['#weight'] = 35;
+//    unset($form['field_registrant_phone']);
   }
 }
 
