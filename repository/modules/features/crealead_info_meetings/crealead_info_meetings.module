@@ -72,22 +72,21 @@ function crealead_info_meetings_menu() {
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
   drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
-
   // Form fields re-ordering
-  $form['who_is_registering']['#weight'] = -10;
-  $form['user']['#weight'] = -9;
-  $form['count']['#weight'] = -8;
+//  $form['who_is_registering']['#weight'] = -10;
+//  $form['user']['#weight'] = -9;
+//  $form['count']['#weight'] = -8;
 
-  //$form['field_registrant_title']['#weight'] =
-  $form['field_registrant_title']['#weight'] = 0;
-  $form['field_registrant_firstname']['#weight'] = 1;
-  $form['field_registrant_lastname']['#weight'] = 2;
-  $form['field_registrant_phone']['#weight'] = 4;
-  $form['field_registrant_project_domain']['#weight'] = 5;
-  $form['field_registrant_status']['#weight'] = 6;
-  $form['field_beneficiary_number']['#weight'] = 10;
-  $form['field_unemployment_date']['#weight'] = 11;
-  $form['field_other_specify']['#weight'] = 12;
+//  $form['field_registrant_title']['#weight'] = 0;
+//  $form['field_registrant_firstname']['#weight'] = 1;
+//  $form['field_registrant_lastname']['#weight'] = 1;
+//  $form['anon_mail']['#weight'] = 0;
+//  $form['field_registrant_phone']['#weight'] = 4;
+//  $form['field_registrant_project_domain']['#weight'] = 5;
+//  $form['field_registrant_status']['#weight'] = 6;
+//  $form['field_beneficiary_number']['#weight'] = 10;
+//  $form['field_unemployment_date']['#weight'] = 11;
+//  $form['field_other_specify']['#weight'] = 12;
 
   $form['state']['#weight'] = 100;
 
@@ -101,6 +100,11 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
     unset($form['field_attendee']);
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
+
+    $form['anon_mail']['#weight'] = 10;
+    $form['field_registrant_lastname']['#weight'] = 11;
+    $form['field_registrant_firstname']['#weight'] = 12;
+    $form['field_registrant_phone']['#weight'] = 13;
   }
 }
 
@@ -284,5 +288,4 @@ function crealead_info_meetings_form_registration_registrations_broadcast_form_a
     $form['message']['#weight'] = 0;
   }
   $form['message']['#default_value'] = $default_message;
-  dpm($form);
 }

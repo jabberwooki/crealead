@@ -5,7 +5,9 @@
     clear: left;
 }
 
-#edit-field-registrant-firstname {
+.form-item-anon-mail,
+.field-name-field-registrant-firstname,
+.field-name-field-registrant-lastname {
     clear: left;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
