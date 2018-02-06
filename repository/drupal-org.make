@@ -322,7 +322,7 @@ projects[registration][subdir] = contrib
 projects[registration][version] = "1.6"
 projects[registration][patch][] = "https://www.drupal.org/files/registration-Add-views-filters-for-open-date-and-close-date-1949466-1.patch"
 ;projects[registration][patch][] = https://www.drupal.org/files/issues/registration_fatal_error_class-2546836-6.patch
-projects[registration][patch][] = "https://www.drupal.org/files/issues/waitlist-notice-when-no-more-room-2563669-2.patch"
+;projects[registration][patch][] = "https://www.drupal.org/files/issues/waitlist-notice-when-no-more-room-2563669-2.patch"
 
 ;--- Geolocation --------------------------------------------------------------
 projects[getlocations][subdir] = contrib
