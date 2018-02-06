@@ -88,6 +88,9 @@ projects[webform][subdir] = contrib
 projects[webform][version] = "4.1"
 
 ;=== Modules - optional =======================================================
+projects[admin_views][subdir] = contrib
+projects[admin_views][version] = "1.6"
+
 projects[autocomplete_deluxe][subdir] = contrib
 projects[autocomplete_deluxe][version] = "2.2"
 
