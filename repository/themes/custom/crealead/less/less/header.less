@@ -1,164 +1,253 @@
-#h1-logo{
-  margin: 0;
+#h1-logo {
+  margin: 10px 0 0 0;
   padding: 0;
 }
-.navbar-fixed-top{
-  @media (max-width: @screen-sm){
+
+.navbar-fixed-top {
+  @media (max-width: @screen-sm) {
     position: static;
   }
 }
+
 /* Menu principal *****************************************************************************************************/
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   color: white;
   background-color: @rouge-crealead;
 }
-header#navbar nav{
-  margin: 18px 0 0 40px;
-  > ul.menu{
-    margin: 0 0 0 5px;
-    @media (min-width: @screen-lg){
-      margin: 0 0 0 20px;
-    }
-    > li.last{
-      /* display: none;  must be removed */
-      margin-left: 5px;
-      border: 1px solid @rouge-crealead;
-      > a{
-        color: @rouge-crealead;
-        &:hover{
-          background-color: @bleu-clair-crealead;
-          color: white;
-        }
-      }
-    }
-  }
 
-  ul.menu a{
-    font-family: 'Quicksand', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: @noir-crealead;
-    background-color: white;
-    &:hover{
-      background-color: @rouge-crealead;
-      color: white;
-    }
-  }
-  ul > li{
-    @media (max-width: @screen-lg){
-      max-width: 150px;
-    }
-    @media (max-width: @screen-sm){
-      max-width: none;
-      a br{
-        display: none;
-      }
-    }
-  }
-  ul.dropdown-menu{
-    background-color: white;
-    a:hover{
-      background-color: @noir-crealead;
-    }
-    @media (min-width: @screen-lg){
-      > li {
-        > a, a{
-          width: 260px;
-          white-space: normal;
-          border-bottom: 1px solid black;
-          margin: 0;
-          padding-bottom: 10px;
-          padding-top: 10px;
-        }
-      }
-      li.last > a{
-        border-bottom: 0;
-      }
-    }
-    @media (max-width: @screen-lg){
-      > li {
-        > a, a{
-          width: 100%;
-          white-space: normal;
-          border-bottom: 1px solid black;
-          margin-bottom: 10px;
-          padding-bottom: 10px
+body.not-logged-in header#navbar {
+  > .container {
+    #social-headband-search {
+      section#block-boxes-social-headband {
+        a.icon-twitter:before,
+        a.icon-facebook:before,
+        a.icon-linkedin:before {
+          margin-top: 5px;
         }
       }
     }
-
-  }
-  > ul.menu:first-child > li.first > a{
-    @media (min-width: @screen-sm){
-      width: 20px;
-      height: 20px;
-      margin-top: 15px;
-      margin-right: 15px;
-      overflow: hidden;
-      color: white;
-      &:before{
-        .glyphicon();
-        content: "\e819";
-        color: black;
-        font-size: 18px;
-        background-color: transparent;
-        padding: 0 !important;
-        margin: 0;
-      }
-      @media (min-width: @screen-sm){
-        padding: 0;
-      }
+    section#block-search-form form {
+      margin-top: 0 !important;
     }
   }
-  > ul.menu:first-child > li.first.active > a{
-    @media (min-width: @screen-sm){
-      background-color: transparent;
-      &:before{
-        color: @rouge-crealead;
-      }
-    }
-  }
-  > ul.menu:first-child > li.first > a:hover{
-    @media (min-width: @screen-sm) {
-      background-color: transparent;
-      &:before {
-        color: @rouge-crealead;
-      }
-    }
-  }
-  > ul.menu > li > a{
-    text-align: center;
-    @media (min-width: @screen-sm){
-      min-height: 70px;
-    }
-    &.active-trail{
-      background-color: @rouge-crealead;
-      color: white;
-    }
-  }
-  
 }
+
+header#navbar {
+  > .container {
+    position: relative;
+
+    #social-headband-search {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      section#block-boxes-social-headband {
+        float: left;
+        a.icon-facebook:before,
+        a.icon-linkedin:before,
+        a.icon-twitter:before{
+          float: left;
+          font-size: 1.6em;
+          background-color: transparent;
+          color: @gris-fonce-crealead;
+          margin-right: 20px;
+          margin-top: -10px;
+        }
+        a.icon-twitter:before{
+          margin-right: 10px;
+        }
+      }
+      section#block-search-form {
+        float: left;
+        form {
+          margin-top: -5px;
+          input.form-text {
+            border: 0;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            top: -1000em;
+            overflow: hidden;
+          }
+          &:hover {
+            input.form-text {
+              border: 0;
+              position: static;
+              width: auto;
+              height: auto;
+              top: 0;
+              overflow: visible;
+            }
+          }
+          button {
+            background-color: transparent;
+            border: 0;
+            span.glyphicon-search {
+              background-color: transparent;
+              &:before {
+                content: "\e831";
+                background-color: transparent;
+                color: @bleu-clair-crealead;
+                font-size: 1.7em;
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  nav {
+    margin: 38px 0 0 40px;
+    > ul.menu {
+      margin: 0 0 0 5px;
+      @media (min-width: @screen-lg) {
+        margin: 0 0 0 20px;
+      }
+      > li.last {
+        /* display: none;  must be removed */
+        margin-left: 5px;
+        border: 1px solid @rouge-crealead;
+        > a {
+          color: @rouge-crealead;
+          &:hover {
+            background-color: @bleu-clair-crealead;
+            color: white;
+          }
+        }
+      }
+    }
+
+    ul.menu a {
+      font-family: 'Quicksand', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: @noir-crealead;
+      background-color: white;
+      &:hover {
+        background-color: @rouge-crealead;
+        color: white;
+      }
+    }
+    ul > li {
+      @media (max-width: @screen-lg) {
+        max-width: 150px;
+      }
+      @media (max-width: @screen-sm) {
+        max-width: none;
+        a br {
+          display: none;
+        }
+      }
+    }
+    ul.dropdown-menu {
+      background-color: white;
+      a:hover {
+        background-color: @noir-crealead;
+      }
+      @media (min-width: @screen-lg) {
+        > li {
+          > a, a {
+            width: 260px;
+            white-space: normal;
+            border-bottom: 1px solid black;
+            margin: 0;
+            padding-bottom: 10px;
+            padding-top: 10px;
+          }
+        }
+
+        li.last > a {
+          border-bottom: 0;
+        }
+      }
+      @media (max-width: @screen-lg) {
+        > li {
+          > a, a {
+            width: 100%;
+            white-space: normal;
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+            padding-bottom: 10px
+          }
+        }
+      }
+
+    }
+    > ul.menu:first-child > li.first > a {
+      @media (min-width: @screen-sm) {
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+        margin-right: 15px;
+        overflow: hidden;
+        color: white;
+        &:before {
+          .glyphicon();
+          content: "\e819";
+          color: black;
+          font-size: 18px;
+          background-color: transparent;
+          padding: 0 !important;
+          margin: 0;
+        }
+
+        @media (min-width: @screen-sm) {
+          padding: 0;
+        }
+      }
+    }
+    > ul.menu:first-child > li.first.active > a {
+      @media (min-width: @screen-sm) {
+        background-color: transparent;
+        &:before {
+          color: @rouge-crealead;
+        }
+      }
+    }
+    > ul.menu:first-child > li.first > a:hover {
+      @media (min-width: @screen-sm) {
+        background-color: transparent;
+        &:before {
+          color: @rouge-crealead;
+        }
+      }
+    }
+    > ul.menu > li > a {
+      text-align: center;
+      @media (min-width: @screen-sm) {
+        min-height: 70px;
+      }
+      &.active-trail {
+        background-color: @rouge-crealead;
+        color: white;
+      }
+    }
+
+  }
+}
+
 /* Menu secondaire ****************************************************************************************************/
-#block-menu-menu-top{
-  margin-top: 25px;
-  ul.menu.nav{
-    > li{
+#block-menu-menu-top {
+  margin-top: 30px;
+  ul.menu.nav {
+    > li {
       margin: 0;
       padding: 0;
-      > a{
+      > a {
         padding: 5px 5px 5px 20px;
-        height: 30px;/* pour régler le pb avec certaines version de chrome */
+        height: 30px; /* pour régler le pb avec certaines version de chrome */
         color: #000;
-        &:before{
+        &:before {
           .glyphicon();
           content: "\e834";
         }
-        &:hover:before{
+        &:hover:before {
           color: @rouge-crealead;
         }
-        &.active-trail{
+        &.active-trail {
           color: @rouge-crealead;
-          &:before{
+          &:before {
             color: @rouge-crealead;
           }
         }
@@ -166,39 +255,41 @@ header#navbar nav{
     }
   }
 }
+
 /* Menu smartphone ****************************************************************************************************/
-@media (max-width: @screen-lg){
-  #top-navigation{
-    &.pull-right{
+@media (max-width: @screen-lg) {
+  #top-navigation {
+    &.pull-right {
       float: none !important;
     }
     margin-top: -80px;
-    #block-menu-menu-top{
-      ul.menu{
+    #block-menu-menu-top {
+      ul.menu {
         > li {
           float: left;
           margin: 0;
-          a{
+          a {
             padding: 0 15px 0 0;
-            &:before{
+            &:before {
               margin: 0;
             }
           }
 
         }
-      
+
       }
     }
   }
-  .navbar-default .navbar-toggle.sub-arrow{
+
+  .navbar-default .navbar-toggle.sub-arrow {
     background-color: transparent;
     border: 0;
     margin-top: -10px;
-    &:hover{
+    &:hover {
       border: 0;
       background-color: transparent;
     }
-    &:before{
+    &:before {
       .glyphicon();
       content: "\e835";
       color: darkgrey;
