@@ -1721,8 +1721,9 @@ body.not-logged-in header#navbar>.container section#block-search-form form{margi
 header#navbar>.container{position:relative}
 header#navbar>.container #social-headband-search{position:absolute;top:0;right:10px}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband{float:left}
-header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{float:left;font-size:1.6em;background-color:transparent;color:#999;margin-right:20px;margin-top:-10px}
+header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{float:left;font-size:1.6em;background-color:transparent;color:#999;margin-right:20px}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{margin-right:10px}
+header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-twitter:before{margin-top:-10px}
 header#navbar>.container #social-headband-search section#block-search-form{float:left}
 header#navbar>.container #social-headband-search section#block-search-form form{margin-top:-5px}
 header#navbar>.container #social-headband-search section#block-search-form form input.form-text{border:0;position:absolute;width:1px;height:1px;top:-1000em;overflow:hidden}
