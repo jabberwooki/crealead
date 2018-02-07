@@ -29,10 +29,19 @@
       > .form-item {
         @media (min-width: @screen-md) {
           width: 960px;
-          a:before{
-            .glyphicon();
-            content: "\e879";
-            color: @bleu-clair-crealead;
+          a{
+            &:before{
+              .glyphicon();
+              content: "\e879";
+              color: @bleu-clair-crealead;
+            }
+            &.active{
+              color: #000;
+              &:before{
+                content: "";
+              }
+            }
+
           }
         }
       }
