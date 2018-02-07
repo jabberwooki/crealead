@@ -26,6 +26,18 @@ function kcontextes_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'boxes-social_headband' => array(
+          'module' => 'boxes',
+          'delta' => 'social_headband',
+          'region' => 'social',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'social',
+          'weight' => '-9',
+        ),
         'menu-menu-top' => array(
           'module' => 'menu',
           'delta' => 'menu-top',

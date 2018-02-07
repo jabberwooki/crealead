@@ -13,6 +13,7 @@ dependencies[] = kcore
 dependencies[] = kpages
 dependencies[] = menu
 dependencies[] = views
+features[box][] = social_headband
 features[context][] = all
 features[context][] = front
 features[context][] = not-front
