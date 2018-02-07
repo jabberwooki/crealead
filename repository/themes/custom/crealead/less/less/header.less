@@ -25,13 +25,16 @@ body.not-logged-in header#navbar {
           margin-top: 5px;
         }
       }
+      @media (max-width: @screen-sm) {
+        top: -5px;
+        right: 70px;
+      }
     }
     section#block-search-form form {
       margin-top: 0 !important;
     }
   }
 }
-
 header#navbar {
   > .container {
     position: relative;
