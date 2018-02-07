@@ -106,6 +106,12 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'user';
+  $handler->display->display_options['filters']['status']['value'] = '1';
 
   /* Display: Trombinoscope */
   $handler = $view->new_display('page', 'Trombinoscope', 'page');
