@@ -18,6 +18,26 @@
 .page-espace-co-entrepreneur-calendrier-formations,
 #block-views-structure-calendar-structure,
 .page-espace-co-entrepreneur-agenda-salles {
+  .views-widget-filter-field_room_tid{
+    > label{
+      float: left;
+      &:after {
+        content: " : ";
+      }
+    }
+    .bef-select-as-links {
+      .form-item {
+        @media (min-width: @screen-md) {
+          width: 800px;
+          a:before{
+            .glyphicon();
+            content: "\e879";
+            color: @bleu-clair-crealead;
+          }
+        }
+      }
+    }
+  }
   #block-menu-menu-calendar-listing-switcher {
     ul.nav-tabs {
       > li.first {
