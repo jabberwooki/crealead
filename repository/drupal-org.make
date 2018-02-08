@@ -198,6 +198,9 @@ projects[label_help][version] = "1.2"
 projects[mailsystem][subdir] = contrib
 projects[mailsystem][version] = "2.34"
 
+projects[mailjet][subdir] = contrib
+projects[mailjet][version] = "2.16"
+
 projects[manualcrop][subdir] = contrib
 projects[manualcrop][version] = "1.5"
 
