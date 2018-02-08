@@ -49,7 +49,7 @@ function crealead_calendars_get_rooms_tids() {
 function crealead_calendars_views_pre_render(&$view) {
   if ($view->name == 'structure_calendar') {
     if (user_access('create structure_event content')) {
-      $add_link = '<a href="/node/add/structure-event">Ajouter un événement</a>';
+      $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
 //      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
     }
     else {
@@ -59,7 +59,7 @@ function crealead_calendars_views_pre_render(&$view) {
   }
   elseif ($view->name == 'rooms_calendar') {
     if (user_access('create room_event content')) {
-      $add_link = '<a href="/node/add/room-event">Ajouter une réservation</a>';
+      $add_link = '<a class="red-button-link" href="/node/add/room-event">Ajouter une réservation</a>';
     }
     else {
       $add_link = '';
