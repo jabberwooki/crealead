@@ -65,10 +65,15 @@ header#navbar {
           }
         }
       }/* contextual-links-region */
-      section#block-search-form {
+      section#block-custom-search-blocks-1 {
+        margin: 0;
+        padding: 0;
         float: left;
         form {
           margin-top: -5px;
+          .form-item-custom-search-blocks-form-1{
+            float: left;
+          }
           input.form-text {
             border: 0;
             position: absolute;
@@ -76,6 +81,9 @@ header#navbar {
             height: 1px;
             top: -1000em;
             overflow: hidden;
+          }
+          label {
+            display: none;
           }
           &:hover {
             input.form-text {
@@ -87,20 +95,28 @@ header#navbar {
               overflow: visible;
             }
           }
-          button {
-            background-color: transparent;
-            border: 0;
-            span.glyphicon-search {
+          .form-actions{
+            clear: none;
+            float: left;
+            button {
+              clear: none;
               background-color: transparent;
+              border: 0;
+              width: 40px;
+              height: 30px;
+              overflow: hidden;
               &:before {
+                .glyphicon();
                 content: "\e831";
                 background-color: transparent;
                 color: @bleu-clair-crealead;
                 font-size: 1.7em;
                 background-color: transparent;
               }
+
             }
           }
+
         }
       }
     }
