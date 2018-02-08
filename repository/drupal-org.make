@@ -121,6 +121,9 @@ projects[colorbox_node][version] = "3.5"
 projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][version] = "3.0-alpha2"
 
+projects[custom_search][subdir] = contrib
+projects[custom_search][version] = "1.20"
+
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
 projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
