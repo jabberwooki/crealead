@@ -2559,7 +2559,7 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-structure-calendar-structure .views-field-title{clear:left}
 #colorbox .node-structure-event .field-name-title{color:#a00c2f}
 .view-display-id-rooms_month .bef-select-as-links .form-type-bef-link{float:left;padding:0 10px}
-.form-item-edit-field-room-tid-2107{border-bottom:#7db700}
-.form-item-edit-field-room-tid-2108{border-bottom:#ff3f18}
-.form-item-edit-field-room-tid-2109{border-bottom:#009aa0}
-.form-item-edit-field-room-tid-2110{border-bottom:#44059c}
+.form-item-edit-field-room-tid-2107{border-bottom:1px solid #7db700}
+.form-item-edit-field-room-tid-2108{border-bottom:1px solid #ff3f18}
+.form-item-edit-field-room-tid-2109{border-bottom:1px solid #009aa0}
+.form-item-edit-field-room-tid-2110{border-bottom:1px solid #44059c}
