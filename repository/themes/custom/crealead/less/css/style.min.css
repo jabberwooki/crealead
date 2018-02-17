@@ -2549,6 +2549,7 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 }
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after{content:"";display:block;clear:both;border-bottom:3px dotted #999;width:60%;margin:25px auto}
+.form-item-edit-field-room-tid-2106 a.active:before,.form-item-edit-field-room-tid-2107 a.active:before,.form-item-edit-field-room-tid-2108 a.active:before,.form-item-edit-field-room-tid-2109 a.active:before,.form-item-edit-field-room-tid-2110 a.active:before{content:"\e879"}
 #block-views-structure-calendar-structure .field-name-field-introduction,.page-espace-co-entrepreneur-agenda-salles .field-name-field-introduction,.page-espace-co-entrepreneur-calendrier-formations .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
 #block-views-structure-calendar-structure .field-name-field-training-duration,.page-espace-co-entrepreneur-agenda-salles .field-name-field-training-duration,.page-espace-co-entrepreneur-calendrier-formations .field-name-field-training-duration{margin:0 20px}
 #colorbox .node-structure-event .structure-events-links,.node-room-event.view-mode-colorbox .structure-events-links{margin-top:20px;text-align:right}
@@ -2560,7 +2561,17 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #colorbox .node-structure-event .field-name-title{color:#a00c2f}
 .view-display-id-rooms_month .bef-select-as-links .form-type-bef-link{float:left;padding:0 10px}
 .form-item-edit-field-room-tid-2106 a{border-bottom:1px solid #bf0e38}
+.form-item-edit-field-room-tid-2106 a:before{color:#bf0e38}
+.form-item-edit-field-room-tid-2106 a.active{border-bottom:2px solid #bf0e38}
 .form-item-edit-field-room-tid-2107 a{border-bottom:1px solid #7db700}
+.form-item-edit-field-room-tid-2107 a:before{color:#7db700}
+.form-item-edit-field-room-tid-2107 a.active{border-bottom:2px solid #7db700}
 .form-item-edit-field-room-tid-2108 a{border-bottom:1px solid #f2cc2b}
+.form-item-edit-field-room-tid-2108 a:before{color:#f2cc2b}
+.form-item-edit-field-room-tid-2108 a.active{border-bottom:2px solid #f2cc2b}
 .form-item-edit-field-room-tid-2109 a{border-bottom:1px solid #009aa0}
+.form-item-edit-field-room-tid-2109 a:before{color:#009aa0}
+.form-item-edit-field-room-tid-2109 a.active{border-bottom:2px solid #009aa0}
 .form-item-edit-field-room-tid-2110 a{border-bottom:1px solid #44059c}
+.form-item-edit-field-room-tid-2110 a:before{color:#44059c}
+.form-item-edit-field-room-tid-2110 a.active{border-bottom:2px solid #44059c}
