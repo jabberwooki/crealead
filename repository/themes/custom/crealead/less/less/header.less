@@ -23,6 +23,7 @@ body.not-logged-in header#navbar {
         a.icon-facebook:before,
         a.icon-linkedin:before {
           margin-top: 5px;
+          float: none;
         }
       }
       @media (max-width: @screen-sm) {
@@ -38,17 +39,16 @@ body.not-logged-in header#navbar {
 header#navbar {
   > .container {
     position: relative;
-
     #social-headband-search {
       position: absolute;
-      top: 0;
+      top: 4px;
       right: 10px;
       section#block-boxes-social-headband {
         float: left;
         a.icon-facebook:before,
         a.icon-linkedin:before,
         a.icon-twitter:before{
-          float: left;
+          float: none;
           font-size: 1.6em;
           background-color: transparent;
           color: @gris-fonce-crealead;
