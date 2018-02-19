@@ -815,6 +815,7 @@ function kcore_user_default_permissions() {
     'name' => 'edit meta tags',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'entrepreneur' => 'entrepreneur',
       'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',

@@ -32,9 +32,9 @@ function kcontextes_context_default_contexts() {
           'region' => 'social',
           'weight' => '-10',
         ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
+        'custom_search_blocks-1' => array(
+          'module' => 'custom_search_blocks',
+          'delta' => '1',
           'region' => 'social',
           'weight' => '-9',
         ),
