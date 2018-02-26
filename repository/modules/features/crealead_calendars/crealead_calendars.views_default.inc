@@ -220,6 +220,13 @@ function crealead_calendars_views_default_views() {
     436 => '#c77312',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/room_event">LIEN_AJOUTER</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
@@ -240,14 +247,14 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
-  /* Field: Content: Lieu */
-  $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
-  $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
-  $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
-  $handler->display->display_options['fields']['field_gcal_location']['label'] = '';
-  $handler->display->display_options['fields']['field_gcal_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_gcal_location']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_gcal_location']['settings'] = array(
+  /* Field: Content: Salle */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['label'] = '';
+  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['settings'] = array(
     'field_formatter_class' => '',
   );
   /* Field: Content: Title */
@@ -263,17 +270,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_room']['settings'] = array(
-    'field_formatter_class' => '',
-  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -640,6 +636,7 @@ function crealead_calendars_views_default_views() {
     t('Trier par'),
     t('Options avancées'),
     t('Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats'),
+    t('<a href="/node/add/room_event">LIEN_AJOUTER</a>'),
     t('All'),
     t('Salle'),
     t('Month'),
@@ -751,6 +748,13 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/structure_event">LIEN_AJOUTER</a> ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
@@ -1097,6 +1101,7 @@ function crealead_calendars_views_default_views() {
     t('Desc'),
     t('Evénements Structure'),
     t('Calendrier Structure'),
+    t('<a href="/node/add/structure_event">LIEN_AJOUTER</a> '),
     t('All'),
     t('Month'),
     t('Week'),

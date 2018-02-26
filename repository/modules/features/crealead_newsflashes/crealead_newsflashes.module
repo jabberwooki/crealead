@@ -127,15 +127,22 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   // Email message building
 //  $to = implode(';', $email_addresses);
 //  $from = variable_get('site_mail');
-  $from = "no-reply@crealead.com";
+  $from = "Crealead <contact@crealead.com>";
+  $reply_to = "no-reply@crealead.com";
   $to = 'undisclosed-recipients:;';
   $bcc = implode(',', $email_addresses);
-  $mail_body = '<p>Bonjour à tous,</p>'
-    . '<p>Voici la liste des dernières brèves publiées sur le site web de Crealead.</p>';
+
   $host = $_SERVER['HTTP_HOST'];
+  $newsflashes_url = 'http://' . $host . '/espace-co-entrepreneur/informations';
+
+  $mail_body = '<p>Bonjour à tous,</p>'
+    . '<p>Voici la liste des dernières brèves publiées sur le site web de Crealead.</p>'
+    . '<p>Si ce message ne s\'affiche pas correctement, allez voir les brèves sur le <a href="'. $newsflashes_url . '">site web</a>.</p>';
+
 
   $mail_body .= '<table id="crealead-newsflashes-list">';
   $mail_body .= '<tr><th>Population concernée</th><th></th></tr>';
+  $mail_body .= '<tr><td colspan="2"></td></tr>';
   foreach ($newsflashes_details as $item) {
     $mail_body .= '<tr class="nf_item">';
 
@@ -144,6 +151,8 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
       '<td class="nf-title" style="padding-left:20px;">' .
         '<a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a>' .
       '</td>';
+
+    $mail_body .= '<tr><td colspan="2"></td></tr>';
     $mail_body .= '</tr>';
 
     if ($form_state_values['full-body-yes-no']) {
@@ -167,6 +176,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   $params = array(
     'headers' => array(
       'Bcc' => $bcc,
+      'Reply-To' => $reply_to,
     ),
     'subject' => $mail_subject,
     'body' => $mail_body,

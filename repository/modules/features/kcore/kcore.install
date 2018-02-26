@@ -75,3 +75,10 @@ function kcore_update_7009() {
 function kcore_update_7010() {
   module_enable(array('hook_post_action'));
 }
+
+/**
+ * Activate admin_views module.
+ */
+function kcore_update_7011() {
+  module_enable(array('admin_views'));
+}

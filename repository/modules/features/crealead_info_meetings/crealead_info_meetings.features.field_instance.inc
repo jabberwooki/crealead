@@ -447,6 +447,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_info_meeting_registration',
     'label' => 'Formulaire d\'inscription',
@@ -466,20 +467,23 @@ function crealead_info_meetings_field_default_field_instances() {
           'open' => NULL,
         ),
         'settings' => array(
-          'confirmation' => 'Votre inscription a été enregistrée;',
+          'confirmation' => 'Votre inscription a été enregistrée.',
           'confirmation_redirect' => '',
-          'from_address' => 'christophe.espiau@gmail.com',
+          'from_address' => 'contact@crealead.com',
           'maximum_spaces' => 1,
           'multiple_registrations' => 0,
         ),
         'status' => 1,
       ),
+      'hide_register_tab' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
       'module' => 'registration',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'registration_select',
       'weight' => 5,
     ),
@@ -931,7 +935,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 8,
     ),
   );
 
@@ -1114,7 +1118,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 7,
     ),
   );
 
@@ -1162,7 +1166,7 @@ function crealead_info_meetings_field_default_field_instances() {
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 

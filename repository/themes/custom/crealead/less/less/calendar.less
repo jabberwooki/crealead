@@ -1,6 +1,6 @@
 /* Global *************************************************************************************************************/
 .calendar-calendar td span.date-display-start, .calendar-calendar td span.date-display-end {
-  float:left;
+  //float:left;
 }
 .calendar-calendar .month-view .full td.multi-day .inner div,
 .calendar-calendar .month-view .full td .inner div.calendar.monthview div{
@@ -15,7 +15,38 @@
   }
 }
 /* Calendrier crealead importé et formation interne *******************************************************************/
-.page-espace-co-entrepreneur-calendrier-formations, #block-views-structure-calendar-structure {
+.page-espace-co-entrepreneur-calendrier-formations,
+#block-views-structure-calendar-structure,
+.page-espace-co-entrepreneur-agenda-salles {
+  .views-widget-filter-field_room_tid{
+    > label{
+      float: left;
+      &:after {
+        content: " : ";
+      }
+    }
+    .bef-select-as-links {
+      > .form-item {
+        @media (min-width: @screen-md) {
+          width: 960px;
+          a{
+            &:before{
+              .glyphicon();
+              content: "\e879";
+              color: @bleu-clair-crealead;
+            }
+            &.active{
+              color: #000;
+              &:before{
+                content: "";
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
   #block-menu-menu-calendar-listing-switcher {
     ul.nav-tabs {
       > li.first {
@@ -127,19 +158,24 @@
     }
     .month-view .full td.multi-day .inner div,
     .month-view .full td .inner div.calendar.monthview div.date-display-range {
-      background-color: #F8F8F8;
-      height: 20px;
+      /*background-color: #F8F8F8;
+      height: 20px;*/
+
       a{
         position: relative;
-        top: -17px;
         color: #000;
         background-color: #F8F8F8;
         padding: 1px 3px 3px 3px ;
         font-size: 1.2em;
       }
+      .date-display-range{
+        margin-top: 3px;
+      }
     }
-    td span.date-display-single{
-      display: none;
+    td.multi-day{
+      a:before{
+        content: " - ";
+      }
     }
     .month-view .full td.multi-day .inner .monthview .cutoff,
     .month-view .full td.multi-day .inner .monthview .cutoff {
@@ -245,12 +281,121 @@
   .detail-session();
 }
 /* Calendrier structure ***********************************************************************************************/
-#block-views-structure-calendar-structure{
-  border-top: 3px dotted #CCC;
-  margin-top: 15px;
+.calendar-calendar .month-view .full td.multi-day div.monthview {
+  color: #777;
 }
+#block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner div a {
+  position: static;
+}
+#block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff {
+  border-right: none;
+}
+
+//#block-views-structure-calendar-structure {
+//  border-top: 3px dotted #CCC;
+//  margin-top: 15px;
+//
+//  .month-view {
+//    td.multi-day {
+//      div.monthview {
+//        .date-display-single {
+//          border: 1px solid red;
+//          span.date-display-range {
+//            color: #777;
+//          }
+//          a {
+//            position: static;
+//            top: 0;
+//          }
+//        }
+//      }
+//
+//    }
+//  }
+//}
 #block-crealead-trainings-crealead-calendar-legend {
   .calendar-legend{
     color: @rouge-crealead;
   }
+}
+#block-views-structure-calendar-structure .views-field-title {
+  clear: left;
+}
+#colorbox .node-structure-event .structure-events-links {
+  margin-top: 20px;
+  text-align: right;
+}
+#colorbox .node-structure-event .field-name-title {
+  color: #a00c2f;
+}
+
+/* Calendrier salles **************************************************************************************************/
+.view-display-id-rooms_month .bef-select-as-links .form-type-bef-link {
+  float: left;
+  padding: 0 10px;
+
+}
+.node-room-event.view-mode-colorbox .structure-events-links {
+    margin-top: 20px;
+    text-align: right;
+}
+.form-item-edit-field-room-tid-2106 a{
+  &:before{
+    color: @rouge-crealead;
+  }
+  &.active{
+    border-bottom: 2px solid @rouge-crealead;
+    &:before{
+      content: "\e879";
+    }
+  }
+  border-bottom: 1px solid @rouge-crealead
+}
+.form-item-edit-field-room-tid-2107 a{
+  &:before{
+    color: @vert-crealead;
+  }
+  &.active{
+    border-bottom: 2px solid @vert-crealead;
+    &:before{
+      content: "\e879";
+    }
+  }
+  border-bottom: 1px solid @vert-crealead;
+}
+.form-item-edit-field-room-tid-2108 a{
+  &:before{
+    color: @jaune-crealead;
+  }
+  &.active{
+    border-bottom: 2px solid @jaune-crealead;
+    &:before{
+      content: "\e879";
+    }
+  }
+  border-bottom: 1px solid @jaune-crealead;
+}
+.form-item-edit-field-room-tid-2109 a{
+  &:before{
+    color: @bleu-clair-crealead;
+  }
+  &.active{
+    border-bottom: 2px solid @bleu-clair-crealead;
+    &:before{
+      content: "\e879";
+    }
+  }
+  border-bottom: 1px solid @bleu-clair-crealead;
+}
+.form-item-edit-field-room-tid-2110 a{
+  &:before{
+    color: @bleu-fonce-crealead;
+  }
+  &.active{
+    border-bottom: 2px solid @bleu-fonce-crealead;
+    &:before{
+      content: "\e879";
+    }
+  }
+  border-bottom: 1px solid @bleu-fonce-crealead;
 }

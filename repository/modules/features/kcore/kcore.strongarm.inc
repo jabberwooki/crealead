@@ -602,7 +602,7 @@ Please go to [password-policy:password-edit-url] to change your password.';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_sourceurl_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_sourceurl_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -616,7 +616,7 @@ Please go to [password-policy:password-edit-url] to change your password.';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_urls';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_urls'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -324,3 +324,30 @@ function crealead_update_7016() {
 function crealead_update_7017() {
   module_enable(array('crealead_calendars'));
 }
+
+/**
+ * Activate feature crealead_repository and disable admin_views_user view (from Administration Views contrib module).
+ */
+function crealead_update_7018() {
+  module_enable(array('crealead_repository'));
+
+  // Disable view admin_views_user.
+  // Disabled views are stored in the array variable named views_defaults (key=view_name, value = TRUE).
+  $disabled_views_status = variable_get('views_defaults', array());
+  $disabled_views_status['admin_views_user'] = TRUE;
+  variable_set('views_defaults', $disabled_views_status);
+}
+/**
+ * Activate modules custom_search and custom_search_blocks.
+ */
+function crealead_update_7019() {
+  module_enable(array('custom_search'));
+  module_enable(array('custom_search_blocks'));
+}
+
+/**
+ * Activate module mailjet.
+ */
+/*function crealead_update_7020() {
+  module_enable(array('mailjet'));
+}*/

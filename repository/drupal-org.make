@@ -88,6 +88,9 @@ projects[webform][subdir] = contrib
 projects[webform][version] = "4.1"
 
 ;=== Modules - optional =======================================================
+projects[admin_views][subdir] = contrib
+projects[admin_views][version] = "1.6"
+
 projects[autocomplete_deluxe][subdir] = contrib
 projects[autocomplete_deluxe][version] = "2.2"
 
@@ -117,6 +120,9 @@ projects[colorbox_node][version] = "3.5"
 
 projects[conditional_fields][subdir] = contrib
 projects[conditional_fields][version] = "3.0-alpha2"
+
+projects[custom_search][subdir] = contrib
+projects[custom_search][version] = "1.20"
 
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
@@ -191,6 +197,9 @@ projects[label_help][version] = "1.2"
 
 projects[mailsystem][subdir] = contrib
 projects[mailsystem][version] = "2.34"
+
+projects[mailjet][subdir] = contrib
+projects[mailjet][version] = "2.16"
 
 projects[manualcrop][subdir] = contrib
 projects[manualcrop][version] = "1.5"
@@ -319,6 +328,7 @@ projects[registration][subdir] = contrib
 projects[registration][version] = "1.6"
 projects[registration][patch][] = "https://www.drupal.org/files/registration-Add-views-filters-for-open-date-and-close-date-1949466-1.patch"
 ;projects[registration][patch][] = https://www.drupal.org/files/issues/registration_fatal_error_class-2546836-6.patch
+;projects[registration][patch][] = "https://www.drupal.org/files/issues/waitlist-notice-when-no-more-room-2563669-2.patch"
 
 ;--- Geolocation --------------------------------------------------------------
 projects[getlocations][subdir] = contrib

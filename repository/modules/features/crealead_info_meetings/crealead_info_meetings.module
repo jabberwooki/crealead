@@ -33,6 +33,10 @@ function crealead_info_meetings_init() {
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
     drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
   }
+  elseif ('reunions-information' == current_path()) {
+    drupal_page_is_cacheable(FALSE);
+    drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
+  }
 }
 
 /**
@@ -48,24 +52,41 @@ function crealead_info_meetings_permission() {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function crealead_info_meetings_menu() {
+  $items['admin/config/crealead/info-meetings'] = array(
+    'title' => 'Réunion d\'information',
+    'description' => 'Paramétrage des réunions d\'information.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_info_meetings_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_info_meetings.admin.inc',
+  );
+
+  return $items;
+}
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
   // Form fields re-ordering
-  $form['who_is_registering']['#weight'] = -10;
-  $form['user']['#weight'] = -9;
-  $form['count']['#weight'] = -8;
+//  $form['who_is_registering']['#weight'] = -10;
+//  $form['user']['#weight'] = -9;
+//  $form['count']['#weight'] = -8;
 
-  //$form['field_registrant_title']['#weight'] =
-  $form['field_registrant_title']['#weight'] = 0;
-  $form['field_registrant_firstname']['#weight'] = 1;
-  $form['field_registrant_lastname']['#weight'] = 2;
-  $form['field_registrant_phone']['#weight'] = 4;
-  $form['field_registrant_project_domain']['#weight'] = 5;
-  $form['field_registrant_status']['#weight'] = 6;
-  $form['field_beneficiary_number']['#weight'] = 10;
-  $form['field_unemployment_date']['#weight'] = 11;
-  $form['field_other_specify']['#weight'] = 12;
+//  $form['field_registrant_title']['#weight'] = 0;
+//  $form['field_registrant_firstname']['#weight'] = 1;
+//  $form['field_registrant_lastname']['#weight'] = 1;
+//  $form['anon_mail']['#weight'] = 0;
+//  $form['field_registrant_phone']['#weight'] = 4;
+//  $form['field_registrant_project_domain']['#weight'] = 5;
+//  $form['field_registrant_status']['#weight'] = 6;
+//  $form['field_beneficiary_number']['#weight'] = 10;
+//  $form['field_unemployment_date']['#weight'] = 11;
+//  $form['field_other_specify']['#weight'] = 12;
 
   $form['state']['#weight'] = 100;
 
@@ -79,6 +100,12 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
     unset($form['field_attendee']);
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
+
+    $form['anon_mail']['#weight'] = 20;
+    $form['field_registrant_lastname']['#weight'] = 25;
+    $form['field_registrant_firstname']['#weight'] = 30;
+    $form['field_registrant_phone']['#weight'] = 35;
+//    unset($form['field_registrant_phone']);
   }
 }
 
@@ -219,4 +246,47 @@ function crealead_info_meetings_registration_status_alter(&$status, &$context) {
   if (user_is_logged_in()) {
     $status = TRUE;
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_info_meetings_form_registration_entity_settings_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
+  // Prevent page freezing when trying to display all available token in the reminder settings form.
+  if(isset($form['reminder']['reminder_settings']['token_tree'])) {
+    unset($form['reminder']['reminder_settings']['token_tree']);
+  }
+  $form['reminder']['reminder_settings']['reminder_template']['#title'] = 'Message de rappel';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_info_meetings_form_registration_registrations_broadcast_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['token_tree'])) {
+    unset($form['token_tree']);
+  }
+
+  $default_message = variable_get('info_meeting_default_email_body','');
+  if($default_message == '') {
+    $admin_url = '/admin/config/crealead/info-meetings?destination=' . current_path();
+
+    $form['subject']['#weight'] = -2;
+
+    $help_text = '<div>'
+      . 'Aucun message par défaut n\'a été paramétré. '
+      . 'Vous pouvez le faire en allant dans '
+      . '<a href="' . $admin_url . '">Configuration > Crealead > Réunions d\'information</a>.'
+      .'</div>';
+
+    $form['help_text'] = array(
+      '#markup' => $help_text,
+      '#weight' => -1,
+    );
+
+
+    $form['message']['#weight'] = 0;
+  }
+  $form['message']['#default_value'] = $default_message;
 }

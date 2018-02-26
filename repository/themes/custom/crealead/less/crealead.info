@@ -8,6 +8,7 @@ base theme = bootstrap
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
+regions[social]         = 'Social Headband'
 regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
 regions[highlighted]    = 'Highlighted'
@@ -50,6 +51,8 @@ scripts[] = 'bootstrap/js/transition.js'
 
 scripts[] = 'smartmenus/jquery.smartmenus.js'
 scripts[] = 'smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js'
+
+scripts[] = 'js/search_form_focus.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''

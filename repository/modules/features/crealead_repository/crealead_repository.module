@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Annuaire feature.
+ */
+
+include_once 'crealead_repository.features.inc';

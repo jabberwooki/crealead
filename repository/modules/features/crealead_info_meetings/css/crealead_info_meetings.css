@@ -1,0 +1,13 @@
+.container-inline-date .form-item {
+    display: block;
+}
+.form-item-reminder-reminder-settings-reminder-template {
+    clear: left;
+}
+
+.form-item-anon-mail,
+.field-name-field-registrant-firstname,
+.field-name-field-registrant-lastname {
+    clear: left;
+    /*margin-top: 50px;*/
+}
