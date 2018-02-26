@@ -1,3 +1,7 @@
+Hotfix warmings-fromemail-address-change / 2018-02-26
+=====================================================
+ * crealead_warnings up: From email address back to contact@crealead.com (instead of no-reply).
+
 Crealead 3.7 / 2018-02-26
 =========================
  * crealead.install up to not activate module mailjet.
