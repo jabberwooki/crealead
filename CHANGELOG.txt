@@ -1,3 +1,42 @@
+Crealead 3.7 / 2018-02-26
+=========================
+ * crealead.install up to not activate module mailjet.
+ * crealead_info_meetings up: Config error in email sent after subscription: firstname replaced by lastname.
+ * kcore up: URLs list in print version of info meetings page removed.
+ * Feature kcore up to add module metadata right for role entrepreneur.
+ * Library phpmailer 5.2.21 added.
+ * crealead.install up to enable mailjet module.
+ * drupal-org.make up to add mailjet module.
+ * Feature crealead_calendars.module up to add red-button-link class to link add structure event and add room event.
+ * Script search_form_focus.js added to manage form search focus.
+ * Feature kcontextes up to add custom_search and custom_search_blocks permissions and parameters.
+ * repository/drupal-org.make up to install custom_search v1.20
+ * crealead.install up to activate custom_search and custom_search_blocks.
+ * Feature kcontextes up to add social and search headband.
+ * Less, page.tpl.php and crealead.info up to add social and search headband.
+ * drupal-org.make up to comment patch waitlist-notice-when-no-more-room-2563669-2.patch.
+ * Fixes wrong declaration for patch application (declaration moved from email_registration to registration module).
+ * Feature crealead_repository (annuaire) added.
+ * drupal-org.make up to add admin_views module
+ * crealead.info up to add crealead_repository (annuaire) as dependency.
+ * Feature kcore up to enable admin_views module.
+ * crealead_info_meetings up: Subscription form fields weights altered to get a better ordering for anonymous users.
+ * crealead_info_meetings up: Subscription form fields reordered for anonymous users.
+ * crealead_info_meetings up: Gender field moved to 'Vos informations' box to be more visible.
+ * crealead_info_meetings up: Missing Rules config to send email to subscribers added.
+ * Css up: Call to no longer existing image file bg_grey.png removed.
+ * crealead_info_meetings up: Closes story V3 S4-11: Info meetings improvements.
+ * Patch created for Registration contrib module (see https://www.drupal.org/project/registration/issues/2563669#comment-12457667) and patching instruction added to .make file.
+ * crealead_newsflashes up: Closes V3 S4-6: Crealead replaces 'no-reply' in From displayed field, better display of plain-text email messages, link to web site added.
+ * crealead_calendars up: CSS altered to make multi-day events visible.
+ * crealead_calendars up: structure_event edit navigation altered to redirect to modified month as well.
+ * crealead_calendars up: Story V3 S4-5 criterion #3 processed: create/edit/delete room events navigation coded.
+ * crealead_warning up: jquery code updated to prevent submit button lock when clicking 'Par mots-clés' and keywords already exist.
+ * crealead_warnings up: Closes stories V3 S4-3 and S4-4.
+ * crealead_calendars up: Missing DS colorbox settings added.
+ * crealead_calendars up: Missing view modes settings added.
+ * Closes story V3 S4-1: Structure calendar bugs fixed and add/edit/delete redirections to concerned calendar month added.
+
 Hotfix undefined-offset-zero-when-creating-warning / 2018-01-22
 ===============================================================
  * Fixes undefined offset 0 bug when creating warning with selection type equals to All.
