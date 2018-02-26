@@ -320,7 +320,8 @@ function crealead_warnings_send_warning_email($email_addresses, $node, $op, $war
   // Email message building
   $to = $email_addresses;
   //$from = variable_get('site_mail');
-  $from = "no-reply@crealead.com";
+//  $from = "no-reply@crealead.com";
+  $from = "Crealead <contact@crealead.com>";
   $host = $_SERVER['HTTP_HOST'];
 
   $operation = ($op == 'insert') ? 'création' : 'modification';
