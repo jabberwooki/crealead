@@ -309,7 +309,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
         }
       }
     }
-    $email_addresses = implode(';', $email_addresses);
+    $email_addresses = implode(',', $email_addresses);
 
     return $email_addresses;
   }
