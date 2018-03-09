@@ -1,3 +1,7 @@
+Hotfix not-sent-email-warnings-bugfix / 2018-03-02
+=====================================================
+ * Features crealead_warnings up to debug warning email not sent (, vs ; in field $to).
+
 Hotfix warmings-fromemail-address-change / 2018-02-26
 =====================================================
  * crealead_warnings up: From email address back to contact@crealead.com (instead of no-reply).
