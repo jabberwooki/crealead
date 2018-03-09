@@ -11,3 +11,10 @@
     clear: left;
     /*margin-top: 50px;*/
 }
+.presence-yes {
+    font-weight: 600;
+    font-size: 110%;
+}
+.presence-no {
+    color: #aaa;
+}

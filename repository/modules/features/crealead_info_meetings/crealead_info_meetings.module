@@ -182,7 +182,9 @@ function crealead_info_meetings_views_pre_render(&$view) {
     && (($view->current_display == 'registrations_list') || $view->current_display == 'registrations_stats'
   || $view->current_display == 'registration_export')) {
     foreach ($view->result as $result) {
-      $result->field_field_attendee[0]['rendered']['#markup'] = ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : '';
+      drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
+      $result->field_field_attendee[0]['rendered']['#markup'] =
+        ($result->field_field_attendee[0]['raw']['value'] == 1) ? '<span class="presence-yes">oui</span>' : '<span class="presence-no">non</span>';
     }
   }
 }
