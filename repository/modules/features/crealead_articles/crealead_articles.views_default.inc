@@ -515,6 +515,7 @@ function crealead_articles_views_default_views() {
     0 => 'brand',
   );
   $handler->display->display_options['argument_mode'] = 'none';
+  $handler->display->display_options['show_title'] = 1;
   $translatables['articles'] = array(
     t('Master'),
     t('plus'),
