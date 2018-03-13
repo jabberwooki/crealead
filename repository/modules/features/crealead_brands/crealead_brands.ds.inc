@@ -881,8 +881,8 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'group_brand_tabs',
-        1 => 'field_brand_coes',
-        2 => 'field_brand_references',
+        1 => 'field_brand_references',
+        2 => 'field_brand_coes',
         7 => 'field_contact_form',
         8 => 'brand_contacts',
         10 => 'trainings_entity_view_1',
@@ -903,6 +903,7 @@ function crealead_brands_ds_layout_settings_info() {
         36 => 'body',
         37 => 'field_brand_solutions',
         38 => 'articles_brand_articles',
+        39 => 'articles_allowed_articles',
       ),
       'content_header_brand' => array(
         3 => 'group_col_1_3',
@@ -925,8 +926,8 @@ function crealead_brands_ds_layout_settings_info() {
     ),
     'fields' => array(
       'group_brand_tabs' => 'central',
-      'field_brand_coes' => 'central',
       'field_brand_references' => 'central',
+      'field_brand_coes' => 'central',
       'group_col_1_3' => 'content_header_brand',
       'group_row_1' => 'content_header_brand',
       'group_col_2_6' => 'content_header_brand',
@@ -963,6 +964,7 @@ function crealead_brands_ds_layout_settings_info() {
       'body' => 'central',
       'field_brand_solutions' => 'central',
       'articles_brand_articles' => 'central',
+      'articles_allowed_articles' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
