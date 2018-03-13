@@ -10,6 +10,8 @@ include_once 'crealead_articles.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_css(drupal_get_path('module','crealead_articles') . '/css/crealead_articles.css');
+
   // If user is not allowed, field_news_kind and field_related_themes removed.
   global $user;
   $current_user_roles = $user->roles;
@@ -38,12 +40,17 @@ function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $f
   $news_brands = $query->execute()->fetchAllKeyed(2, 2);
   
   $brand_options = $form['field_article_related_brands']['und']['#options'];
+  $allowed_brands_options = array();
   foreach ($brand_options as $key => $brand) {
     if (!in_array($key, $news_brands)) {
+      $allowed_brands_options[$key] = $brand;
       unset($brand_options[$key]);
     }
   }
   $form['field_article_related_brands']['und']['#options'] = $brand_options;
+  $form['field_allowed_brands']['und']['#options'] = $allowed_brands_options;
+//  $form['field_allowed_brands']['und']['#prefix'] = '<div lclass="allowed-brands">';
+//  $form['field_allowed_brands']['und']['#suffix'] = '</div>';
 
   // Then, if news is being modified and current user is not news author,
   // we must display a disabled brand list, unless current used is allowed to.
