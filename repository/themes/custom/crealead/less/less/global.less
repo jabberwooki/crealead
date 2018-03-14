@@ -252,3 +252,15 @@ div.service-links{
   .glyphicon();
   content: "\e84a";
 }
+/* alert on logo right click ******************************************************************************************/
+.ui-dialog-titlebar-close{
+  position: relative;
+  &:before{
+    .glyphicon();
+    content: "\e832";
+    color: @rouge-crealead;
+    position: absolute;
+    top: 0;
+    left: 1px;
+  }
+}
