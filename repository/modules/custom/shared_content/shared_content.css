@@ -1,0 +1,32 @@
+div.content-publication-handling {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.shared-content-handling-title {
+    font-size: 130%;
+    color: #bf0e38;
+}
+.published_content {
+    font-weight: bold;
+}
+.unpublished_content {
+    font-style: italic;
+    color: #aaa;
+}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a.content-publication {
+    display: inline;
+    background-color: white;
+    color: #bf0e38;
+    text-transform: lowercase;
+    font-weight: normal;
+    font-family: "Source Sans Pro",sans-serif;
+    padding: 0 10px;
+}
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a.content-publication:hover {
+    background-color: white;
+}
+
+.field-name-empty-field p {
+    font-size: 1%;
+    color: transparent;
+}

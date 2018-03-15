@@ -1,0 +1,4 @@
+name = "Shared Content"
+description = "Stores info about content (articles, news...) shared by brands"
+package = "App"
+core = "7.x"
