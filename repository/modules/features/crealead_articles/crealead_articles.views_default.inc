@@ -12,7 +12,7 @@ function crealead_articles_views_default_views() {
 
   $view = new view();
   $view->name = 'articles';
-  $view->description = '';
+  $view->description = 'Articles d\'une marque visibles dans une autre marque après partage';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Articles';
@@ -443,6 +443,83 @@ function crealead_articles_views_default_views() {
   );
   $handler->display->display_options['path'] = 'articles/temoignages';
   $handler->display->display_options['page_title_pattern'] = 'Témoignages entrepreneurs coopérative d\'activité montpellier';
+
+  /* Display: Articles partagés avec une marque */
+  $handler = $view->new_display('entity_view', 'Articles partagés avec une marque', 'allowed_articles');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Les articles partagés avec moi';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'brand_articles';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'brand_articles';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Marques qui peuvent utiliser cet article (field_allowed_brands) */
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'brand',
+  );
+  $handler->display->display_options['argument_mode'] = 'none';
+  $handler->display->display_options['show_title'] = 1;
   $translatables['articles'] = array(
     t('Master'),
     t('plus'),
@@ -481,6 +558,9 @@ function crealead_articles_views_default_views() {
     t('terme à partir de field_related_certifs_labels'),
     t('Page témoignages (with Page Title)'),
     t('<h2 class="page-header">Témoignages</h2>'),
+    t('Articles partagés avec une marque'),
+    t('Les articles partagés avec moi'),
+    t('Entité Contenu réferencée par field_allowed_brands'),
   );
   $export['articles'] = $view;
 

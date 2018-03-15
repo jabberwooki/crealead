@@ -76,6 +76,8 @@ function crealead_brands_field_group_info() {
     'weight' => '30',
     'children' => array(
       0 => 'articles_brand_articles',
+      1 => 'allowed_articles_handling',
+      2 => 'group_allowed_articles_wrapper',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(

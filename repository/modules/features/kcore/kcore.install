@@ -82,3 +82,10 @@ function kcore_update_7010() {
 function kcore_update_7011() {
   module_enable(array('admin_views'));
 }
+
+/**
+ * Activate custom module shared_content.
+ */
+function kcore_update_7012() {
+  module_enable(array('shared_content'));
+}
