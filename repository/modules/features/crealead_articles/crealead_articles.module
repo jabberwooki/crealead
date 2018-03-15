@@ -162,3 +162,45 @@ function crealead_articles_node_view($node, $view_mode, $langcode) {
     }
   }
 }
+
+/**
+ * Implements hook_node_postsave().
+ */
+function crealead_articles_node_postsave($node, $op) {
+  switch ($op) {
+    case 'insert':
+      foreach ($node->field_allowed_brands['und'] as $brand) {
+        $data = array(
+          'nid' => $node->nid,
+          'type' => $node->type,
+          'brand_id' => $brand['target_id'],
+          'status' => 0
+        );
+        $query = db_insert('crealead_shared_content')->fields($data);
+        $query->execute();
+      }
+      break;
+
+    case 'update':
+      $query = db_delete('crealead_shared_content')
+        ->condition('nid', $node->nid);
+      $query->execute();
+
+      foreach ($node->field_allowed_brands['und'] as $brand) {
+        $data = array(
+          'nid' => $node->nid,
+          'type' => $node->type,
+          'brand_id' => $brand['target_id'],
+          'status' => 0
+        );
+        $query = db_insert('crealead_shared_content')->fields($data);
+        $query->execute();
+      }
+      break;
+
+    case 'delete':
+      $query = db_delete('crealead_shared_content')
+        ->condition('nid', $node->nid);
+      $query->execute();
+  }
+}
