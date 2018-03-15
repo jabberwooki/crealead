@@ -188,6 +188,16 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'brand';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'allowed_articles_handling' => array(
+      'weight' => '56',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'empty_field' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'brand_contacts' => array(
       'weight' => '5',
       'label' => 'hidden',
@@ -498,6 +508,21 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'allowed_articles_handling';
+  $ds_field->label = 'Gestion des articles partagés';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'brand|full';
+  $ds_field->properties = array(
+    'block' => 'shared_content|allowed_articles_handling',
+    'block_render' => '2',
+  );
+  $export['allowed_articles_handling'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'brand_contacts';
   $ds_field->label = 'Prises de contact';
   $ds_field->field_type = 6;
@@ -529,6 +554,25 @@ function crealead_brands_ds_custom_fields_info() {
     'use_token' => 0,
   );
   $export['brands_products_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'empty_field';
+  $ds_field->label = 'Champ vide';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'brand|full';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '  champ vide
+',
+      'format' => 'plain_text',
+    ),
+    'use_token' => 0,
+  );
+  $export['empty_field'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -881,56 +925,61 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'group_brand_tabs',
-        1 => 'field_brand_references',
-        2 => 'field_brand_coes',
-        7 => 'field_contact_form',
-        8 => 'brand_contacts',
-        10 => 'trainings_entity_view_1',
-        11 => 'field_brand_achievements',
-        12 => 'group_brand_infos_tab',
-        13 => 'group_brand_contact_tab',
-        14 => 'group_brans_coes_tab',
-        15 => 'group_brand_clients_tab',
-        16 => 'group_brand_achiev_tab',
-        17 => 'group_brand_news_tab',
-        18 => 'group_brand_articles_tab',
-        19 => 'group_brand_trainings_tab',
-        31 => 'news_brand_news',
-        32 => 'brand_agenda_eva_brandagenda',
-        33 => 'group_brand_infos_1',
-        34 => 'group_brand_infos_2',
-        35 => 'field_brand_tags',
-        36 => 'body',
-        37 => 'field_brand_solutions',
-        38 => 'articles_brand_articles',
-        39 => 'articles_allowed_articles',
+        1 => 'field_brand_coes',
+        2 => 'field_brand_references',
+        3 => 'articles_allowed_articles',
+        7 => 'empty_field',
+        9 => 'field_contact_form',
+        10 => 'brand_contacts',
+        12 => 'trainings_entity_view_1',
+        13 => 'field_brand_achievements',
+        14 => 'group_brand_infos_tab',
+        15 => 'group_brand_contact_tab',
+        16 => 'group_brans_coes_tab',
+        17 => 'group_brand_clients_tab',
+        18 => 'group_brand_achiev_tab',
+        19 => 'group_brand_news_tab',
+        20 => 'group_brand_articles_tab',
+        21 => 'group_brand_trainings_tab',
+        33 => 'news_brand_news',
+        34 => 'brand_agenda_eva_brandagenda',
+        35 => 'group_brand_infos_1',
+        36 => 'group_brand_infos_2',
+        37 => 'field_brand_tags',
+        38 => 'body',
+        39 => 'field_brand_solutions',
+        40 => 'articles_brand_articles',
+        41 => 'group_allowed_articles_wrapper',
+        42 => 'allowed_articles_handling',
       ),
       'content_header_brand' => array(
-        3 => 'group_col_1_3',
-        4 => 'group_row_1',
-        5 => 'group_col_2_6',
-        6 => 'group_col3_3',
-        9 => 'field_brand_logo',
-        20 => 'group_title_hook',
-        21 => 'title',
-        22 => 'field_brand_baseline',
-        23 => 'field_certifications_labels',
-        24 => 'field_business_sector',
-        25 => 'group_contact',
-        26 => 'field_brand_phone',
-        27 => 'field_social_links',
-        28 => 'field_brand_email',
-        29 => 'field_brand_website',
-        30 => 'field_lien_formulaire_contact',
+        4 => 'group_col_1_3',
+        5 => 'group_row_1',
+        6 => 'group_col_2_6',
+        8 => 'group_col3_3',
+        11 => 'field_brand_logo',
+        22 => 'group_title_hook',
+        23 => 'title',
+        24 => 'field_brand_baseline',
+        25 => 'field_certifications_labels',
+        26 => 'field_business_sector',
+        27 => 'group_contact',
+        28 => 'field_brand_phone',
+        29 => 'field_social_links',
+        30 => 'field_brand_email',
+        31 => 'field_brand_website',
+        32 => 'field_lien_formulaire_contact',
       ),
     ),
     'fields' => array(
       'group_brand_tabs' => 'central',
-      'field_brand_references' => 'central',
       'field_brand_coes' => 'central',
+      'field_brand_references' => 'central',
+      'articles_allowed_articles' => 'central',
       'group_col_1_3' => 'content_header_brand',
       'group_row_1' => 'content_header_brand',
       'group_col_2_6' => 'content_header_brand',
+      'empty_field' => 'central',
       'group_col3_3' => 'content_header_brand',
       'field_contact_form' => 'central',
       'brand_contacts' => 'central',
@@ -964,7 +1013,8 @@ function crealead_brands_ds_layout_settings_info() {
       'body' => 'central',
       'field_brand_solutions' => 'central',
       'articles_brand_articles' => 'central',
-      'articles_allowed_articles' => 'central',
+      'group_allowed_articles_wrapper' => 'central',
+      'allowed_articles_handling' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

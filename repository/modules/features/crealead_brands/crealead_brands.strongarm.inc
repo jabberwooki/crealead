@@ -308,7 +308,7 @@ function crealead_brands_strongarm() {
         ),
         'articles_allowed_articles' => array(
           'full' => array(
-            'weight' => '54',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
