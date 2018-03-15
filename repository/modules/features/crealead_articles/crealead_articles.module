@@ -178,8 +178,7 @@ function crealead_articles_node_postsave($node, $op) {
             'status' => 0
           );
           $query = db_insert('crealead_shared_content')->fields($data);
-          $result = $query->execute();
-          watchdog('crealead_shared_content', 'Result = ' . $result);
+          watchdog('crealead_shared_content', 'Node ' . $node->nid . 'inserted.');
         }
         break;
 
@@ -197,7 +196,7 @@ function crealead_articles_node_postsave($node, $op) {
           );
           $query = db_insert('crealead_shared_content')->fields($data);
           $query->execute();
-          watchdog('crealead_shared_content', $node->nid . ' mis à jour.');
+          watchdog('crealead_shared_content', 'Node ' . $node->nid . 'updated.');
         }
         break;
 
@@ -205,6 +204,7 @@ function crealead_articles_node_postsave($node, $op) {
         $query = db_delete('crealead_shared_content')
           ->condition('nid', $node->nid);
         $query->execute();
+        watchdog('crealead_shared_content', 'Node ' . $node->nid . 'deleted.');
     }
   }
 }
