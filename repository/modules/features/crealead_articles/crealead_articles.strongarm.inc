@@ -73,6 +73,15 @@ function crealead_articles_strongarm() {
       'list' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sessions' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

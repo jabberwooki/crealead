@@ -3,25 +3,36 @@ div.content-publication-handling {
     padding-top: 20px;
 }
 .shared-content-handling-title {
-    font-size: 130%;
+    font-size: 1.4em;
+    color: #555;
+}
+
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li span.published-content a {
     color: #bf0e38;
 }
-.published_content {
-    font-weight: bold;
-}
-.unpublished_content {
+body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li span.unpublished-content a {
     font-style: italic;
-    color: #aaa;
+    font-weight: normal;
+    color: #555;
 }
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a.content-publication {
-    display: inline;
-    background-color: white;
     color: #bf0e38;
-    text-transform: lowercase;
+    text-transform: none;
     font-weight: normal;
     font-family: "Source Sans Pro",sans-serif;
+    /*padding: 0 10px;*/
+}
+#shared-content-wrapper ul  a {
+    display: inline;
+    background-color: white;
     padding: 0 10px;
 }
+
+#shared-content-wrapper ul  a.shared-item-title {
+    text-transform: none;
+    font-size: 1.1em;
+}
+
 body.node-type-brand .main-container.main-container-with-header .group-brand-tabs li a.content-publication:hover {
     background-color: white;
 }
