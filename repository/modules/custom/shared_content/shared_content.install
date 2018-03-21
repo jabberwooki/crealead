@@ -34,9 +34,12 @@ function shared_content_schema() {
         'description' => 'Boolean indicating whether the shared content is published by recipient brand.',
         'type' => 'int',
         'not null' => TRUE,
-        'default' => 1,
+        'length' => 1,
+        'default' => 0,
       ),
     ),
   );
+
   return $schema;
 }
+
