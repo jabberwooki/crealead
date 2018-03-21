@@ -43,3 +43,9 @@ function shared_content_schema() {
   return $schema;
 }
 
+/**
+ * Implements hook_uninstall().
+ */
+function shared_content_uninstall() {
+
+}
