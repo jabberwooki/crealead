@@ -46,6 +46,7 @@ function kcontextes_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'custom_search_blocks',
   );

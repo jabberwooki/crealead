@@ -253,14 +253,30 @@ div.service-links{
   content: "\e84a";
 }
 /* alert on logo right click ******************************************************************************************/
-.ui-dialog-titlebar-close{
-  position: relative;
+#alert-logo{
+  border: 5px solid @gris-fonce-crealead;
+  padding: 20px;
+  position: absolute;
+  position:absolute;
+  width: 400px;
+  left: 50%;
+  margin-left: -210px;
+  z-index: 9999;
+  background-color: white;
+}
+#close-logo{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: -16px;
+  margin-right: -15px;
   &:before{
     .glyphicon();
     content: "\e832";
     color: @rouge-crealead;
-    position: absolute;
-    top: 0;
-    left: 1px;
+
+  }
+  &:hover{
+    cursor: pointer;
   }
 }
