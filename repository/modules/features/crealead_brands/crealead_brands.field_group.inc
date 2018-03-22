@@ -13,6 +13,39 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_allowed_articles_wrapper|node|brand|full';
+  $field_group->group_name = 'group_allowed_articles_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_articles_tab';
+  $field_group->data = array(
+    'label' => 'Enveloppe articles partagés',
+    'weight' => '54',
+    'children' => array(
+      0 => 'articles_allowed_articles',
+      1 => 'empty_field',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Enveloppe articles partagés',
+      'instance_settings' => array(
+        'id' => 'allowed_articles_wrapper',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_allowed_articles_wrapper|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_achiev_tab|node|brand|full';
   $field_group->group_name = 'group_brand_achiev_tab';
   $field_group->entity_type = 'node';
@@ -1359,6 +1392,7 @@ function crealead_brands_field_group_info() {
   t('Clients');
   t('Contact');
   t('Entrepreneurs');
+  t('Enveloppe articles partagés');
   t('Equipe');
   t('Formations');
   t('Informations Générales');
