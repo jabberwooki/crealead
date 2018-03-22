@@ -91,7 +91,7 @@ function crealead_groups_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'label_help_description' => '',
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 3,
@@ -256,7 +256,7 @@ function crealead_groups_field_default_field_instances() {
       'settings' => array(
         'label_help_description' => '',
       ),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 6,
     ),
   );

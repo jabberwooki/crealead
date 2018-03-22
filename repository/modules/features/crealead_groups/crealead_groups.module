@@ -5,3 +5,14 @@
  */
 
 include_once 'crealead_groups.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_groups_form_business_group_node_form_alter(&$form, &$form_state, $form_id) {
+//  dpm($form);
+//  dpm($form['field_linked_groups']['und']['#options']);
+  if ($form['nid']['#value']) {
+    unset($form['field_linked_groups']['und']['#options'][$form['nid']['#value']]);
+  }
+}
