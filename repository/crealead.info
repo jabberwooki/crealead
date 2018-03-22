@@ -121,3 +121,5 @@ dependencies[] = crealead_needs
 dependencies[] = crealead_offers
 dependencies[] = crealead_calendars
 dependencies[] = crealead_repository
+dependencies[] = crealead_groups
+

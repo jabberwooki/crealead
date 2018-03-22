@@ -351,3 +351,11 @@ function crealead_update_7019() {
 /*function crealead_update_7020() {
   module_enable(array('mailjet'));
 }*/
+
+
+/**
+ * Activate feature crealead_groups.
+ */
+function crealead_update_7021() {
+  module_enable(array('crealead_groups'));
+}
