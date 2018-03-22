@@ -36,6 +36,28 @@ function crealead_groups_ds_field_settings_info() {
   );
   $export['node|business_group|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|business_group|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'business_group';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['node|business_group|teaser'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -90,6 +112,39 @@ function crealead_groups_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|business_group|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|business_group|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'business_group';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'central' => array(
+        0 => 'title',
+        1 => 'field_group_type',
+        2 => 'field_purpose',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'central',
+      'field_group_type' => 'central',
+      'field_purpose' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'central' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|business_group|teaser'] = $ds_layout;
 
   return $export;
 }
