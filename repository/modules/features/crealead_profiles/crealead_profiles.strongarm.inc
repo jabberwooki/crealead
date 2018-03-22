@@ -179,7 +179,7 @@ function crealead_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'path' => array(
           'weight' => '11',

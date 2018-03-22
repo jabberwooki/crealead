@@ -115,7 +115,7 @@ function crealead_groups_field_default_field_bases() {
           'business_group' => 'business_group',
         ),
       ),
-      'profile2_private' => FALSE,
+      'profile2_private' => 0,
       'target_type' => 'node',
     ),
     'translatable' => 0,
