@@ -301,6 +301,46 @@ function kcore_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-business_groups-field_group_type'.
+  $field_instances['taxonomy_term-business_groups-field_group_type'] = array(
+    'bundle' => 'business_groups',
+    'default_value' => array(
+      0 => array(
+        'value' => 'cm',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_group_type',
+    'label' => 'Type de collectif',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_user_firstname'.
   $field_instances['user-user-field_user_firstname'] = array(
     'bundle' => 'user',
@@ -544,6 +584,7 @@ function kcore_field_default_field_instances() {
   t('Prénom');
   t('Référent');
   t('Sujet de votre message');
+  t('Type de collectif');
   t('Votre adresse e-mail');
   t('Votre message');
   t('Votre nom');

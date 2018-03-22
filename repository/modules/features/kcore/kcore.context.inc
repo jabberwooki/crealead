@@ -23,6 +23,7 @@ function kcore_context_default_contexts() {
         'breves/*' => 'breves/*',
         'demandes/*' => 'demandes/*',
         'offres/*' => 'offres/*',
+        'collectifs/*' => 'collectifs/*',
       ),
     ),
   );

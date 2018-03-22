@@ -10,7 +10,7 @@
 function kcore_taxonomy_default_vocabularies() {
   return array(
     'business_groups' => array(
-      'name' => 'Groupes métier',
+      'name' => 'Collectifs métier',
       'machine_name' => 'business_groups',
       'description' => '',
       'hierarchy' => 0,

@@ -98,7 +98,14 @@ function crealead_groups_strongarm() {
           'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'users_entity_view_1' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__business_group'] = $strongarm;

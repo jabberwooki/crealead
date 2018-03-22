@@ -28,11 +28,6 @@ function crealead_groups_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
-    'field_linked_groups' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|business_group|full'] = $ds_fieldsetting;
 
@@ -81,6 +76,7 @@ function crealead_groups_ds_layout_settings_info() {
         1 => 'author',
         2 => 'field_purpose',
         3 => 'field_group_desc',
+        7 => 'users_entity_view_1',
       ),
       'right' => array(
         4 => 'field_interesting_thematics',
@@ -96,6 +92,7 @@ function crealead_groups_ds_layout_settings_info() {
       'field_interesting_thematics' => 'right',
       'field_useful_links' => 'right',
       'field_linked_groups' => 'right',
+      'users_entity_view_1' => 'left',
     ),
     'classes' => array(),
     'wrappers' => array(
