@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Collectifs feature.
+ */
+
+include_once 'crealead_groups.features.inc';
