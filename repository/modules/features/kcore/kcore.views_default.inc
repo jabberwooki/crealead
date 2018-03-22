@@ -331,6 +331,15 @@ function kcore_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Getlocations Fields: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'getlocations_fields';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Sort criterion: User: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'users';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Collectifs auxquels j&#039;appartiens (field_linked_groups) */
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
