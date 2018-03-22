@@ -837,7 +837,7 @@ function crealead_needs_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_other_enquirers',
-    'label' => 'Autres coE avec la même demande',
+    'label' => 'Prises de contact',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -987,7 +987,6 @@ function crealead_needs_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Action');
-  t('Autres coE avec la même demande');
   t('Coordonnées');
   t('Date d\'expiration');
   t('Demandé par');
@@ -1001,6 +1000,7 @@ function crealead_needs_field_default_field_instances() {
   t('Nom et prénom de la personne concerné dans Crealead (vous, un co-entrepreneur, un membre de l\'équipe structure...).');
   t('Nom et prénom de la personne à contacter.');
   t('Personne concernée');
+  t('Prises de contact');
   t('Si l\'échéance que vous voulez indiquer n\'est pas disponible, vous pouvez la saisir manuellement. Elle sera enregistrée.');
   t('Solution trouvée');
 
