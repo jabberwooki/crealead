@@ -189,6 +189,9 @@ projects[filefield_sources][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 
+projects[isotope][subdir] = contrib
+projects[isotope][version] = "2.0"
+
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = "2.0-alpha3"
 
