@@ -13,6 +13,11 @@ function crealead_faqs_init() {
   if (request_uri() == '/faqs' || request_uri() == '/faq-publique') {
     drupal_add_css(drupal_get_path('module','crealead_faqs') . '/crealead_faqs.css');
   }
+  else if (request_uri() == '/node/add/faq' || (menu_get_object() && menu_get_object()->type == 'faq')) {
+    $params = array('allOptionTermId' => key(taxonomy_get_term_by_name('Tous')));
+    drupal_add_js(array('crealeadFaqs' => $params), 'setting');
+    drupal_add_js(drupal_get_path('module','crealead_faqs') . '/crealead_faqs.js');
+  }
 }
 
 /**
