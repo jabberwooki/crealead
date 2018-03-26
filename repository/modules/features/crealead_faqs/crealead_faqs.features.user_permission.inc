@@ -13,14 +13,24 @@ function crealead_faqs_user_default_permissions() {
   // Exported permission: 'create faq content'.
   $permissions['create faq content'] = array(
     'name' => 'create faq content',
-    'roles' => array(),
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any faq content'.
   $permissions['delete any faq content'] = array(
     'name' => 'delete any faq content',
-    'roles' => array(),
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'node',
   );
 
@@ -34,7 +44,12 @@ function crealead_faqs_user_default_permissions() {
   // Exported permission: 'edit any faq content'.
   $permissions['edit any faq content'] = array(
     'name' => 'edit any faq content',
-    'roles' => array(),
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'node',
   );
 
