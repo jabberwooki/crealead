@@ -360,7 +360,7 @@ function crealead_update_7021() {
 }
 
 /**
- * Activate feature crealead_groups.
+ * Activate feature crealead_faqs.
  */
 function crealead_update_7022() {
   module_enable(array('crealead_faqs'));
