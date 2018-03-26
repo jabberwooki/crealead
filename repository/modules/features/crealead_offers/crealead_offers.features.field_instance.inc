@@ -328,7 +328,7 @@ function crealead_offers_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd/m/y',
+        'input_format' => 'd/m/Y',
         'input_format_custom' => '',
         'label_help_description' => '',
         'label_position' => 'above',
