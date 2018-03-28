@@ -292,6 +292,71 @@ function kcore_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Membres d'un collectif */
+  $handler = $view->new_display('entity_view', 'Membres d\'un collectif', 'entity_view_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Membres du collectif';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['label'] = 'Profil';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Photo */
+  $handler->display->display_options['fields']['field_coe_photo']['id'] = 'field_coe_photo';
+  $handler->display->display_options['fields']['field_coe_photo']['table'] = 'field_data_field_coe_photo';
+  $handler->display->display_options['fields']['field_coe_photo']['field'] = 'field_coe_photo';
+  $handler->display->display_options['fields']['field_coe_photo']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_coe_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_coe_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_coe_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_coe_photo']['settings'] = array(
+    'image_style' => 'photo_utilisateur',
+    'image_link' => 'content',
+    'field_formatter_class' => '',
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Getlocations Fields: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'getlocations_fields';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Sort criterion: User: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'users';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Collectifs auxquels j&#039;appartiens (field_linked_groups) */
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['table'] = 'field_data_field_linked_groups';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['field'] = 'field_linked_groups_target_id';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['relationship'] = 'profile';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_linked_groups_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'business_group',
+  );
+  $handler->display->display_options['show_title'] = 1;
   $translatables['users'] = array(
     t('Master'),
     t('Référents Crealead'),
@@ -309,6 +374,10 @@ function kcore_views_default_views() {
     t('Noms entrepreneurs (ER)'),
     t('Nom des entrepreneurs'),
     t('Noms utilisateurs (ER)'),
+    t('Membres d\'un collectif'),
+    t('Membres du collectif'),
+    t('Profil'),
+    t('Tout'),
   );
   $export['users'] = $view;
 

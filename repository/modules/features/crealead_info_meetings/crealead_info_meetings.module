@@ -260,6 +260,9 @@ function crealead_info_meetings_form_registration_entity_settings_form_alter(&$f
     unset($form['reminder']['reminder_settings']['token_tree']);
   }
   $form['reminder']['reminder_settings']['reminder_template']['#title'] = 'Message de rappel';
+
+  $form['scheduling']['open']['#date_format'] = 'd/m/Y H:i O';
+  $form['scheduling']['close']['#date_format'] = 'd/m/Y H:i O';
 }
 
 /**

@@ -120,11 +120,10 @@ voir crealead_needs_views_pre_render()';
   $handler->display->display_options['fields']['created']['label'] = 'Date';
   $handler->display->display_options['fields']['created']['date_format'] = 'news_short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Autres coE avec la même demande */
+  /* Field: Content: Prises de contact */
   $handler->display->display_options['fields']['field_other_enquirers']['id'] = 'field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['table'] = 'field_data_field_other_enquirers';
   $handler->display->display_options['fields']['field_other_enquirers']['field'] = 'field_other_enquirers';
-  $handler->display->display_options['fields']['field_other_enquirers']['label'] = 'Avec la même demande';
   $handler->display->display_options['fields']['field_other_enquirers']['settings'] = array(
     'link' => 0,
     'colorbox_node_link' => 0,
@@ -204,7 +203,7 @@ voir crealead_needs_views_pre_render()'),
     t('Demandé par'),
     t('Contact'),
     t('Date'),
-    t('Avec la même demande'),
+    t('Prises de contact'),
     t('Action'),
     t('Bloc espace coes'),
   );

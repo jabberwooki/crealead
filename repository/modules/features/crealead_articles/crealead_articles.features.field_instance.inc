@@ -47,6 +47,15 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
       ),
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -153,7 +162,9 @@ function crealead_articles_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Saisissez les premiers caractères de la marque que vous voulez enregistrer.<br>
+Ne saisissez qu\'une seule marque. Pour ajouter une autre marque, cliquez sur le bouton <em><b>Ajouter un autre élément</b></em>.<br>
+Pour retirer une marque, videz le champ qui la contient.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -173,6 +184,20 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => 0,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 17,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -188,10 +213,18 @@ function crealead_articles_field_default_field_instances() {
         'weight' => 8,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => 0,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -222,11 +255,18 @@ function crealead_articles_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'label_help_description' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
       ),
-      'type' => 'options_buttons',
+      'type' => 'entityreference_autocomplete',
       'weight' => 3,
     ),
   );
@@ -256,6 +296,12 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -269,7 +315,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -331,6 +377,20 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -429,6 +489,17 @@ function crealead_articles_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => 'large_bandeau',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'above',
@@ -571,6 +642,12 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -584,7 +661,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -650,6 +727,12 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -663,7 +746,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -729,6 +812,12 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -742,7 +831,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -805,6 +894,12 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 18,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -818,7 +913,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -868,6 +963,9 @@ function crealead_articles_field_default_field_instances() {
   t('Marques qui peuvent utiliser cet article');
   t('Nature de l\'article');
   t('Pour pouvoir être utilisés, une certification et/ou un label doivent être prouvés.');
+  t('Saisissez les premiers caractères de la marque que vous voulez enregistrer.<br>
+Ne saisissez qu\'une seule marque. Pour ajouter une autre marque, cliquez sur le bouton <em><b>Ajouter un autre élément</b></em>.<br>
+Pour retirer une marque, videz le champ qui la contient.');
   t('Thématique(s) concernée(s)');
 
   return $field_instances;

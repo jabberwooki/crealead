@@ -447,7 +447,7 @@ function crealead_articles_views_default_views() {
   /* Display: Articles partagés avec une marque */
   $handler = $view->new_display('entity_view', 'Articles partagés avec une marque', 'allowed_articles');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Les articles partagés avec moi';
+  $handler->display->display_options['title'] = 'brand_name vous conseille ces articles d\'autres auteurs';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -487,7 +487,7 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Marques qui peuvent utiliser cet article (field_allowed_brands) */
+  /* Contextual filter: Content: Marques qui peuvent utiliser cette actualité (field_allowed_brands) */
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
@@ -559,7 +559,7 @@ function crealead_articles_views_default_views() {
     t('Page témoignages (with Page Title)'),
     t('<h2 class="page-header">Témoignages</h2>'),
     t('Articles partagés avec une marque'),
-    t('Les articles partagés avec moi'),
+    t('brand_name vous conseille ces articles d\'autres auteurs'),
     t('Entité Contenu réferencée par field_allowed_brands'),
   );
   $export['articles'] = $view;

@@ -1,0 +1,134 @@
+<?php
+/**
+ * @file
+ * Code for the FAQs feature.
+ */
+
+include_once 'crealead_faqs.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_faqs_init() {
+  if (request_uri() == '/faqs' || request_uri() == '/faq-publique') {
+    drupal_add_css(drupal_get_path('module','crealead_faqs') . '/crealead_faqs.css');
+  }
+  else if (request_uri() == '/node/add/faq' || (menu_get_object() && menu_get_object()->type == 'faq')) {
+    $params = array('allOptionTermId' => key(taxonomy_get_term_by_name('Tous')));
+    drupal_add_js(array('crealeadFaqs' => $params), 'setting');
+    drupal_add_js(drupal_get_path('module','crealead_faqs') . '/crealead_faqs.js');
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function crealead_faqs_theme_registry_alter(&$theme_registry) {
+  if (isset($theme_registry['isotope_filter'])) {
+    $theme_registry['isotope_filter']['function'] = 'crealead_faqs_theme_isotope_filter';
+  }
+}
+
+/**
+ * Default theme implementation for the filter list.
+ *
+ * @param array $vars
+ *   Variables for theming.
+ *
+ * @return string
+ *   Markup.
+ */
+function crealead_faqs_theme_isotope_filter(array $vars) {
+  $multi_field_logic = 'OR';
+  $attributes['class'] = 'isotope-options clearfix';
+  if (!empty($vars['instance'])) {
+    $attributes['data-instance-id'] = 'isotope-instance-' . $vars['instance'];
+  }
+  if (!empty($vars['filtername'])) {
+    $attributes['data-filter-group'] = $vars['filtername'];
+  }
+  else {
+    $attributes['data-filter-group'] = 'unnamed_filter';
+  }
+
+  $title = !empty($vars['filtertitle']) ? $vars['filtertitle'] : NULL;
+
+  $items[] = l(t('All'), '', array(
+    'attributes' => array(
+      'class' => 'filterbutton btn btn-primary',
+      'data-filter' => '',
+    ),
+    'fragment' => 'filter',
+    'external' => TRUE,
+  ));
+
+  foreach ($vars['items'] as $key => $label) {
+    $keys = explode(',', $key);
+    foreach ($keys as $k => $v) {
+      $keys[$k] = '.' . isotope_sanitize($v);
+    }
+    if ($multi_field_logic == 'OR') {
+      $keys = implode(', ', $keys);
+    }
+    else {
+      $keys = implode('', $keys);
+    }
+    $items[] = l($label, '', array(
+      'attributes' => array(
+        'class' => 'filterbutton btn btn-primary',
+        'data-filter' => $keys,
+      ),
+      'fragment' => 'filter',
+      'external' => TRUE,
+      'html' => TRUE,
+    ));
+  }
+
+  $return = array(
+    '#theme' => 'item_list',
+    '#items' => $items,
+    '#type' => 'ul',
+    '#title' => $title,
+    '#attributes' => $attributes,
+  );
+
+  return drupal_render($return);
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_faqs_views_pre_render(&$view) {
+  if ($view->current_display == 'category_filter' && '/faq-publique' == request_uri()) {
+    $public_categories_tids = crealead_faqs_get_public_categories_tids();
+    if (sizeof($public_categories_tids) < 2) {
+      $view->result = array();
+    }
+    else {
+      foreach ($view->result as $key=>$item) {
+        if (!in_array($item->field_data_field_faq_caegory_field_faq_caegory_tid, $public_categories_tids)) {
+          unset($view->result[$key]);
+        }
+      }
+    }
+  }
+}
+
+function crealead_faqs_get_public_categories_tids() {
+  $query = new EntityFieldQueryExtraFields();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'faq')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_public_faq', 'value', 2)
+    ->addExtraField('field_faq_caegory','tid')
+    ->execute();
+
+  $tids = array();
+  if (!empty($result)) {
+    foreach ($result['node'] as $faq) {
+      $tids[$faq->extraFields->field_faq_caegory_] =  $faq->extraFields->field_faq_caegory_;
+    }
+  }
+
+  return $tids;
+}

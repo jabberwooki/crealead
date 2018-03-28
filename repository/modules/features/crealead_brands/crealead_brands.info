@@ -125,6 +125,7 @@ features[field_base][] = field_contact_type
 features[field_base][] = field_lien_formulaire_contact
 features[field_base][] = field_related_sector_brands
 features[field_base][] = field_social_links
+features[field_group][] = group_allowed_articles_wrapper|node|brand|full
 features[field_group][] = group_brand_achiev_tab|node|brand|full
 features[field_group][] = group_brand_achievements|node|brand|form
 features[field_group][] = group_brand_articles_tab|node|brand|full

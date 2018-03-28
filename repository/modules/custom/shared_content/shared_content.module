@@ -6,40 +6,6 @@
  * Time: 18:36
  */
 
-/**
- * Implements hook_schema().
- */
-function shared_content_schema() {
-    $schema['crealead_shared_content'] = array(
-    'description' => 'Stores info about content shared by brands.',
-    'fields' => array(
-      'nid' => array(
-        'description' => 'Nid of the shared content',
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE
-      ),
-      'type' => array(
-        'type' => 'varchar',
-        'length' => 32,
-        'not null' => TRUE,
-        'default' => ''
-      ),
-      'brand_id' => array(
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE
-      ),
-      'status' => array(
-        'description' => 'Boolean indicating whether the shared content is published by recipient brand.',
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 1,
-      ),
-    ),
-  );
-  return $schema;
-}
 
 /**
  * Implements hook_block_info().
@@ -106,25 +72,27 @@ function _get_shared_content($type, $brand_nid) {
   }
 
   $content = '<div id="shared-content-wrapper"><ul>';
-  foreach ($result as $article) {
-    $class = 'unpublished_content';
+  foreach ($result as $item) {
+    $class = 'unpublished-content';
     $new_status = '1';
-    $link_title = 'Publier';
+    $link_title = 'Afficher dans ma marque';
 
-    if ($article->status) {
-      $class = 'published_content';
+    if ($item->status) {
+      $class = 'published-content';
       $new_status = '0';
-      $link_title = 'Déplublier';
+      $link_title = 'Ne plus afficher dans ma marque';
     }
 
     $link = '<a href="/alter_shared_content_status/'
       . $type . '/'
       . $new_status . '/'
-      . $article->nid . '/'
-      . $article->brand_id . '/nojs"'
+      . $item->nid . '/'
+      . $item->brand_id . '/nojs"'
       . ' class="use-ajax content-publication">' . $link_title .'</a>';
 
-    $content .= '<li><span class="' . $class . '">' . $article->title . '</span>' . $link . '</li>';
+    $href = '/node/' . $item->nid . '?width=60%25&height=80%25'; //&iframe=true';
+
+    $content .= '<li><span class="' . $class . '"><a class="shared-item-title colorbox-node" href="' . $href . '">' . $item->title . '</a></span>' . $link . '</li>';
   }
   $content .= '</div></ul>';
 

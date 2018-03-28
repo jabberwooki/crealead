@@ -118,6 +118,13 @@ function crealead_articles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'sld_group_image',
     ),
+    'field_allowed_brands' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'mais aussi ',
+        ),
+      ),
+    ),
   );
   $export['node|article|full'] = $ds_fieldsetting;
 
@@ -313,6 +320,7 @@ function crealead_articles_ds_layout_settings_info() {
         2 => 'service_links_displays_group',
         3 => 'body',
         4 => 'field_article_related_brands',
+        5 => 'field_allowed_brands',
       ),
     ),
     'fields' => array(
@@ -321,6 +329,7 @@ function crealead_articles_ds_layout_settings_info() {
       'service_links_displays_group' => 'central',
       'body' => 'central',
       'field_article_related_brands' => 'central',
+      'field_allowed_brands' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -99,7 +99,7 @@ function crealead_profiles_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -251,7 +251,7 @@ function crealead_profiles_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -376,7 +376,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -935,7 +935,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'use_country_dropdown' => 1,
       ),
       'type' => 'getlocations_fields',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1028,7 +1028,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1080,7 +1080,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1173,7 +1173,66 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-coe_page-field_linked_groups'.
+  $field_instances['profile2-coe_page-field_linked_groups'] = array(
+    'bundle' => 'coe_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_linked_groups',
+    'label' => 'Collectifs auxquels j\'appartiens',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
@@ -1225,7 +1284,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1324,6 +1383,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   // Included for use with string extractors like potx.
   t('Biographie');
   t('Centres d\'intérêt');
+  t('Collectifs auxquels j\'appartiens');
   t('Compétences et spécialités');
   t('Coordonnées');
   t('Email envoyé');

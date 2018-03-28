@@ -20,7 +20,6 @@ function crealead_alter_shared_content_status($type='ajax') {
       ->condition('brand_id', $brand_nid)
       ->execute();
 
-
     $commands = array();
 
     // Then we get a fresh list of shared content.
@@ -28,10 +27,9 @@ function crealead_alter_shared_content_status($type='ajax') {
     $commands[] = ajax_command_replace('#shared-content-wrapper', $output);
 
     // Then, we get the view block content
-    // in order to replace content by the updated content
+    // in order to replace its content by the updated content
     switch ($content_type) {
       case 'article':
-
         $view_content = views_embed_view('articles','allowed_articles', $brand_nid);
         if (!strpos($view_content, '<div class="view-content">')) {
           $view_content = '';
@@ -58,4 +56,3 @@ function crealead_alter_shared_content_status($type='ajax') {
     return $output;
   }
 }
-
