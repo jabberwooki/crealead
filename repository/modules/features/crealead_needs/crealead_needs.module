@@ -247,3 +247,12 @@ function crealead_needs_node_view_alter(&$build) {
     }
   }
 }
+
+/**
+ * Implements hook_node_access().
+ */
+function crealead_needs_node_access($node, $op, $account) {
+  if (isset($node->type) && $node->type == 'need' && !user_is_logged_in()) {
+    return NODE_ACCESS_DENY;
+  }
+}
