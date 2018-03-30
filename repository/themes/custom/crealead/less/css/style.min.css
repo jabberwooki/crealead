@@ -2580,3 +2580,5 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 .form-item-edit-field-room-tid-2110 a{border-bottom:1px solid #44059c}
 .form-item-edit-field-room-tid-2110 a:before{color:#44059c}
 .form-item-edit-field-room-tid-2110 a.active{border-bottom:2px solid #44059c}
+.node-type-book .book-navigation ul.dropdown-menu li:before{display:none!important}
+.node-type-book footer .book_printer{display:none}
