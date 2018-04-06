@@ -94,13 +94,19 @@ header#navbar {
           &:hover {
             input.form-text {
               border-bottom: 1px solid @bleu-clair-crealead;
-              position: static;
+              position: absolute;
               width: auto;
               height: auto;
               top: 0;
               overflow: visible;
-
+              @media (max-width: @screen-sm){
+                width: 100px;
+              }
             }
+            button:before {
+              display: none !important;
+            }
+
           }
           .form-actions{
             clear: none;
@@ -120,6 +126,7 @@ header#navbar {
                 font-size: 1.7em;
                 background-color: transparent;
               }
+
 
             }
           }
