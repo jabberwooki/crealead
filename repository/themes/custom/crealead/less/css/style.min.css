@@ -1846,7 +1846,7 @@ div.service-links a{float:left;margin-right:10px}
 body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{margin-top:5px;float:none}
 @media (max-width:768px){.navbar-fixed-top{position:static}
 body.not-logged-in header#navbar>.container #social-headband-search{top:-5px;right:70px}
-header#navbar>.container #social-headband-search .region-social{margin-right:40px}
+header#navbar>.container #social-headband-search .region-social{margin-right:70px}
 }
 body.not-logged-in header#navbar>.container section#block-search-form form{margin-top:0!important}
 header#navbar>.container #social-headband-search{position:relative}
