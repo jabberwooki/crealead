@@ -38,11 +38,17 @@ body.not-logged-in header#navbar {
 }
 header#navbar {
   > .container {
-    position: relative;
+    
     #social-headband-search {
-      position: absolute;
-      top: 4px;
-      right: 10px;
+      position: relative;
+      .region-social{
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        @media (max-width: @screen-sm){
+          margin-right: 80px;
+        }
+      }
       section#block-boxes-social-headband {
         float: left;
         a.icon-facebook:before,
@@ -127,6 +133,10 @@ header#navbar {
     margin: 38px 0 0 40px;
     > ul.menu {
       margin: 0 0 0 5px;
+      /* entre 1200 et 992 */
+      @media (min-width: @screen-md) and (max-width: @screen-lg) {
+        margin: 20px 0 0 20px;
+      }
       @media (min-width: @screen-lg) {
         margin: 0 0 0 20px;
       }
@@ -255,9 +265,62 @@ header#navbar {
 
 /* Menu secondaire ****************************************************************************************************/
 #block-menu-menu-top {
+  position: static;
   margin-top: 30px;
-  ul.menu.nav {
+  ul.menu.nav{
+
     > li {
+    &:nth-of-type(3){
+      position: absolute;
+
+      @media (min-width:1540px){
+        right:0;
+        background-color: @jaune-crealead;
+        a{
+          padding-left: 10px;
+          &:before{
+            content: "\e847";
+            color: #000;
+          }
+        }
+      }
+      @media (min-width:768px) and(max-width:1540px){
+        right:0;
+        width: 40px;
+        overflow: hidden;
+        background-color: @jaune-crealead;
+        a{
+          padding-left: 10px;
+          &:before{
+            content: "\e847";
+            color: #000;
+          }
+        }
+      }
+      @media (max-width:768px){
+        right:20px;
+        width: 35px;
+        height: 30px;
+        overflow: hidden;
+        background-color: @jaune-crealead;
+        a{
+          padding-left: 10px;
+          &:before{
+            content: "\e847";
+            color: #000;
+            margin-left: 8px !important;
+            margin-bottom: 20px !important;
+            padding-top: 0;
+          }
+          &:after{
+            content:"LOGIN";
+            position: absolute;
+            top: 15px;
+            font-size:0.9em;
+          }
+        }
+      }
+    }
       margin: 0;
       padding: 0;
       > a {
@@ -320,5 +383,10 @@ header#navbar {
       content: "\e835";
       color: darkgrey;
     }
+  }
+}
+.slicknav_menu{
+  @media (max-width: @screen-sm){
+    display: none;
   }
 }
