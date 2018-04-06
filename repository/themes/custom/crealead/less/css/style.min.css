@@ -1850,7 +1850,7 @@ header#navbar>.container #social-headband-search .region-social{margin-right:80p
 }
 body.not-logged-in header#navbar>.container section#block-search-form form{margin-top:0!important}
 header#navbar>.container #social-headband-search{position:relative}
-header#navbar>.container #social-headband-search .region-social{position:absolute;top:4px;right:10px}
+header#navbar>.container #social-headband-search .region-social{position:absolute;top:4px;right:-30px}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband{float:left}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{float:none;font-size:1.6em;background-color:transparent;color:#999;margin-right:20px}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{margin-right:10px}
