@@ -1846,7 +1846,7 @@ div.service-links a{float:left;margin-right:10px}
 body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,body.not-logged-in header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{margin-top:5px;float:none}
 @media (max-width:768px){.navbar-fixed-top{position:static}
 body.not-logged-in header#navbar>.container #social-headband-search{top:-5px;right:70px}
-header#navbar>.container #social-headband-search .region-social{margin-right:70px}
+header#navbar>.container #social-headband-search .region-social{margin-right:40px}
 }
 body.not-logged-in header#navbar>.container section#block-search-form form{margin-top:0!important}
 header#navbar>.container #social-headband-search{position:relative}
@@ -1854,7 +1854,7 @@ header#navbar>.container #social-headband-search .region-social{position:absolut
 header#navbar>.container #social-headband-search section#block-boxes-social-headband{float:left}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{float:none;font-size:1.6em;background-color:transparent;color:#999;margin-right:20px}
 header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-twitter:before{margin-right:10px}
-@media (max-width:768px){header#navbar>.container #social-headband-search section#block-boxes-social-headband a,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before{margin-right:4px}
+@media (max-width:768px){header#navbar>.container #social-headband-search section#block-boxes-social-headband a,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband a.icon-linkedin:before{margin-right:2px}
 }
 header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-facebook:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-linkedin:before,header#navbar>.container #social-headband-search section#block-boxes-social-headband.contextual-links-region a.icon-twitter:before{margin-top:-10px}
 header#navbar>.container #social-headband-search section#block-custom-search-blocks-1{margin:0;padding:0;float:left}
