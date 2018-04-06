@@ -36,10 +36,21 @@ body.not-logged-in header#navbar {
     }
   }
 }
-
+body.logged-in {
+  header#navbar {
+    > .container {
+      #social-headband-search {
+        .region-social {
+          @media (max-width: @screen-sm) {
+            margin-right: 140px;
+          }
+        }
+      }
+    }
+  }
+}
 header#navbar {
   > .container {
-    
     #social-headband-search {
       position: relative;
       .region-social{
@@ -47,7 +58,7 @@ header#navbar {
         top: 4px;
         right: -30px;
         @media (max-width: @screen-sm){
-          margin-right: 40px;
+          margin-right: 90px;
         }
       }
       section#block-boxes-social-headband {
@@ -67,8 +78,8 @@ header#navbar {
         @media (max-width: @screen-sm){
           a.icon-facebook:before,
           a.icon-linkedin:before,
-          a {
-            margin-right: 2px;
+          a.icon-twitter:before {
+            margin-right: 3px !important;
           }
         }
         &.contextual-links-region{
