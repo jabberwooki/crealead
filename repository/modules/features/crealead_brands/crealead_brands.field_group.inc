@@ -423,8 +423,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Actualités',
     'weight' => '29',
     'children' => array(
-      0 => 'news_brand_news',
-      1 => 'brand_agenda_eva_brandagenda',
+      0 => 'brand_agenda_eva_brandagenda',
+      1 => 'news_brand_news',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -573,14 +573,15 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Formations',
+    'label' => 'Solutions',
     'weight' => '31',
     'children' => array(
       0 => 'trainings_entity_view_1',
+      1 => 'products_entity_view_1',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Formations',
+      'label' => 'Solutions',
       'instance_settings' => array(
         'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item',
       ),
@@ -624,7 +625,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col3-3',
-    'weight' => '3',
+    'weight' => '13',
     'children' => array(
       0 => 'field_social_links',
       1 => 'group_contact',
@@ -657,7 +658,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col1-3',
-    'weight' => '1',
+    'weight' => '11',
     'children' => array(
       0 => 'field_brand_logo',
     ),
@@ -689,7 +690,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col2-6',
-    'weight' => '2',
+    'weight' => '12',
     'children' => array(
       0 => 'field_business_sector',
       1 => 'group_title_hook',
@@ -1394,7 +1395,6 @@ function crealead_brands_field_group_info() {
   t('Entrepreneurs');
   t('Enveloppe articles partagés');
   t('Equipe');
-  t('Formations');
   t('Informations Générales');
   t('Infos 1');
   t('Infos 2');
@@ -1407,6 +1407,7 @@ function crealead_brands_field_group_info() {
   t('Présentation');
   t('Réalisations');
   t('Références');
+  t('Solutions');
   t('group col1-3');
   t('group col2-6');
   t('group col3-3');
