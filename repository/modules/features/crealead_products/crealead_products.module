@@ -1,0 +1,103 @@
+<?php
+/**
+ * @file
+ * Code for the Produits feature.
+ */
+
+include_once 'crealead_products.features.inc';
+
+function crealead_products_form_product_node_form_alter(&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('module','crealead_products') . '/js/crealead_products.js');
+  global $user;
+  $current_user_roles = $user->roles;
+  $crealead_products_allowed_roles = array('administrateur','webmaster','référent');
+  $current_user_allowed_roles = array_intersect($crealead_products_allowed_roles, $current_user_roles);
+
+  // Related brands list handling ----------------------------------------------
+  // The product create/edit form always contains a user id.
+  // If product is being created, user id is the current user id.
+  // If product is being modified, user id is the product author id.
+  // In either cases, we must seek for brands the concerned user belongs to.
+  $query = db_select('field_data_field_brand_coe', 'coe');
+  $query->fields('coe', array('entity_id', 'field_brand_coe_target_id'));
+  $query->join('field_data_field_brand_coes', 'coes', 'coes.field_brand_coes_value=coe.entity_id');
+  $query->fields('coes', array('entity_id'));
+  $query->condition('field_brand_coe_target_id', $form['uid']['#value']);
+  $product_brands = $query->execute()->fetchAllKeyed(2, 2);
+
+  $brand_options = $form['field_product_related_brands']['und']['#options'];
+  foreach ($brand_options as $key => $brand) {
+    if (!in_array($key, $product_brands)) {
+      unset($brand_options[$key]);
+    }
+  }
+
+  $form['field_product_related_brands']['und']['#options'] = $brand_options;
+  /*
+    // Then, if product is being modified and current user is not news author,
+    // we must display a disabled brand list, unless current used is allowed to.
+    if (isset($form['nid']['#value']) && $user->uid != $form['uid']['#value'] && empty($current_user_allowed_roles) & $user->uid != 1) {
+      $form['field_product_related_brands']['#disabled'] = TRUE;
+    }
+    // End of Related brands list handling ---------------------------------------
+
+    // If product is being created from a brand page,
+    // we must catch the brand nid from url
+    // and check the corresponding brand in field_related_brands field.
+    if (!isset($form['nid']['#value']) && NULL != arg(3)) {
+      $form['field_product_related_brands']['und']['#default_value'] = arg(3);
+    }
+    // End of Related brands list handling ---------------------------------------
+
+    // We must display only sector brands and certifications/labels the parent brand(s) of the current product is (are) related to.
+    // First, we get the parent brands.
+    $parent_brands = crealead_products_get_parent_brands($form['nid']['#value']);
+    $parent_certifs_labels = crealead_brands_get_parent_certifs_labels($parent_brands);
+
+    // If any parent brands exist, we get the sector brands of each parent brand.
+    if (!empty($parent_brands)) {
+      $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+      // If any parent sector brands exist
+      if (!empty($parent_sector_brands)) {
+        // We have to clean the sector brand field options array by keeping only the parent sector brands.
+        $form['field_related_sector_brands']['und']['#options'] =
+          crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+      }
+      // otherwise we remove the related sector brands field from display.
+      else {
+        $form['field_related_sector_brands']['#access'] = FALSE;
+      }
+
+      // If any certif/label exists
+      if (!empty($parent_certifs_labels)) {
+        // We have to clean the certifications/labels field options array by keeping only the parent ones.
+        $form['field_related_certifs_labels']['und']['#options'] =
+          crealead_clean_certifs_labels_options($form['field_related_certifs_labels']['und']['#options'], $parent_certifs_labels);
+      }
+      else {
+        $form['field_related_certifs_labels']['#access'] = FALSE;
+      }
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+      $form['field_related_certifs_labels']['#access'] = FALSE;
+    }
+
+    // Move "Champs Crealed" vertical tab to the bottom.
+    $form['#groups']['group_crealead_fields']->weight = 200;
+
+    // Stuff that has to be done after form build.
+    $form['#after_build'][] = 'crealead_products_after_build';
+
+    // Hide scheduled sessions field (handled now by sessions view).
+    //$form['field_scheduled_sessions']['#access'] = FALSE;
+
+    // Previous publication status is stored in the readonly field_previous_status.
+    $form['field_previous_status']['und'][0]['value']['#default_value'] = $form['#entity']->status;
+
+    $form['#submit'][] = 'crealead_products_product_submit_handler';
+  */
+}
+
