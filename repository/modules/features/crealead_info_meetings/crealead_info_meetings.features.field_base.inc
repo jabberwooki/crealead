@@ -141,9 +141,7 @@ function crealead_info_meetings_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'registration',
-    'settings' => array(
-      'profile2_private' => FALSE,
-    ),
+    'settings' => array(),
     'translatable' => 0,
     'type' => 'registration',
   );
