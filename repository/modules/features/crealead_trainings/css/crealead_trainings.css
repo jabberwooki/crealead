@@ -15,6 +15,9 @@
     position: relative;
 }
 
+.field-name-field-brand-logo {
+    margin-bottom: 20px;
+}
 .field-name-recommendations-number {
     margin: 10px 0 30px;
 }
