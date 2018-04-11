@@ -21,7 +21,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_training_search',
       1 => 'field_previous_status',
@@ -247,9 +247,11 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Colonne gauche',
-    'weight' => '7',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
+      1 => 'field_recommended_by',
+      2 => 'recommendation_action',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -279,7 +281,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Colonne droite',
-    'weight' => '9',
+    'weight' => '3',
     'children' => array(
       0 => 'field_training_public',
       1 => 'field_training_requirements',
@@ -319,14 +321,18 @@ function crealead_trainings_field_group_info() {
     'label' => 'group wrapper teaser',
     'weight' => '0',
     'children' => array(
-      0 => 'field_training_aims',
+      0 => 'field_training_type',
       1 => 'field_training_duration',
-      2 => 'field_training_related_brands',
+      2 => 'field_training_aims',
       3 => 'field_training_theme',
-      4 => 'field_training_type',
+      4 => 'field_training_related_brands',
       5 => 'field_training_teachers',
       6 => 'field_training_price',
-      7 => 'title',
+      7 => 'field_recommended_by',
+      8 => 'recommendations_number',
+      9 => 'recommendation_action',
+      10 => 'training_nid',
+      11 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(

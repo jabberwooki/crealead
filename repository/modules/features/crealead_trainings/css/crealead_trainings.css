@@ -1,3 +1,25 @@
+.field-name-training-nid .field-item {
+    font-size: 1px;
+    color: transparent;
+}
+
 .training-funded-logo {
     float: right;
+}
+
+.field-name-field-recommended-by {
+    margin-top: 20px;
+}
+
+.node-training .group-wrapper-teaser {
+    position: relative;
+}
+
+.field-name-recommendations-number {
+    margin: 10px 0 30px;
+}
+.field-name-recommendation-action {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
