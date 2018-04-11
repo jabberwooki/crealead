@@ -12,17 +12,17 @@
 }
 
 .node-training .group-wrapper-teaser {
-    position: relative;
+    /*position: relative;*/
 }
 
 .field-name-field-brand-logo {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 .field-name-recommendations-number {
-    margin: 10px 0 30px;
+    /*margin: 10px 0 30px;*/
 }
 .field-name-recommendation-action {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    /*position: absolute;*/
+    /*bottom: 10px;*/
+    /*right: 10px;*/
 }
