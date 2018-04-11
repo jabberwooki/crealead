@@ -752,7 +752,9 @@ body.node-type-brand {
     margin-left: 0;
   }
   /* Onglet formation *************************************************************************************************/
-  #bootstrap-fieldgroup-nav-item--formations{
+
+  #bootstrap-fieldgroup-nav-item--formations,
+  #bootstrap-fieldgroup-nav-item--solutions{
     div.view-header{
       a{
         .red-button-link();
@@ -760,11 +762,19 @@ body.node-type-brand {
         margin-bottom: 0;
       }
     }
-    .node-training .row{
+    .node-training .row,
+    .node-product .row {
       padding: 20px;
+      .field-name-field-introduction {
+        max-height: none !important;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        border-bottom: 0;
+        margin-bottom: 0;
+      }
     }
   }
-
   /* Onglets pour les smartphones *************************************************************************************/
   .subtitle-brand{
     display: none;
