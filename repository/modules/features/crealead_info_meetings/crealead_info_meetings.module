@@ -99,6 +99,8 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
   if (!user_is_logged_in()) {
     // field attendee is hidden
     unset($form['field_attendee']);
+    // field attendance is hidden
+    unset($form['field_attendance']);
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
 
@@ -183,13 +185,29 @@ function crealead_info_meetings_views_pre_render(&$view) {
     && (($view->current_display == 'registrations_list') || $view->current_display == 'registrations_stats'
       || $view->current_display == 'registration_export')
   ) {
+    drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
     foreach ($view->result as $result) {
-      drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
+      // Old field attendee
       $result->field_field_attendee[0]['rendered']['#markup'] =
-        ($result->field_field_attendee[0]['raw']['value'] == 1) ? '<span class="presence-yes">oui</span>' : '<span class="presence-no">non</span>';
+        ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : 'non';
+
+      // New field attendance
+      if (isset($result->field_field_attendance) && !empty($result->field_field_attendance)) {
+        $markup = $result->field_field_attendance[0]['rendered']['#markup'];
+        $modified_markup = '';
+        switch ($result->field_field_attendance[0]['raw']['value']) {
+          case '0':
+            $modified_markup = '<span class="presence-not-processed">' . $markup . '</span>';
+            break;
+          case '1':
+            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
+            break;
+          case '2':
+            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
+        }
+      }
     }
   }
-
 }
 
 
@@ -226,7 +244,8 @@ function crealead_info_meetings_action_info() {
  * @param $context
  */
 function crealead_check_registrants_as_present(&$entity, $context) {
-  crealead_field_attendee_value_alter($entity->registration_id, 1);
+//  crealead_field_attendee_value_alter($entity->registration_id, 1);
+  crealead_field_attendance_value_alter($entity->registration_id, 1);
 }
 
 /**
@@ -236,19 +255,37 @@ function crealead_check_registrants_as_present(&$entity, $context) {
  * @param $context
  */
 function crealead_check_registrants_as_absent(&$entity, $context) {
-  crealead_field_attendee_value_alter($entity->registration_id, 0);
+//  crealead_field_attendee_value_alter($entity->registration_id, 0);
+  crealead_field_attendance_value_alter($entity->registration_id, 2);
 }
 
 /**
- * Helper function for VBO callback actions.
+ * Helper function for VBO callback actions on field_attendee.
  *
  * @param integer $entity_id ID of the entity to alter.
  * @param integer $value Value to be given to field_attendee (1 to mark as present, 0 to mark as absent).
  */
-function crealead_field_attendee_value_alter($entity_id, $value) {
-  $wrapper = entity_metadata_wrapper('registration', $entity_id);
-  $wrapper->field_attendee = $value;
-  $wrapper->save();
+function crealead_field_attendee_value_alter($registration_id, $value) {
+  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+  if (isset($registration_wrapper->field_attendee) && !empty($registration_wrapper->field_attendee)) {
+    $registration_wrapper->field_attendee = $value;
+    $registration_wrapper->save();
+  }
+}
+
+/**
+ * Helper function for VBO callback actions on field_attendance.
+ * (This field has been created as replacement of field_attendee)
+ *
+ * @param integer $entity_id ID of the entity to alter.
+ * @param integer $value Value to be given to field_attendee (1 to mark as present, 2 to mark as absent).
+ */
+function crealead_field_attendance_value_alter($registration_id, $value) {
+  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+  if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
+    $registration_wrapper->field_attendance->set($value);
+    $registration_wrapper->save();
+  }
 }
 
 /**

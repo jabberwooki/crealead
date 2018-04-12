@@ -195,6 +195,14 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
+  /* Field: Registration: Présence */
+  $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_attendance']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -234,6 +242,7 @@ function crealead_info_meetings_views_default_views() {
     t('Edit link'),
     t('Delete link'),
     t('Présent'),
+    t('Présence'),
     t('Tout'),
     t('Page'),
     t('more'),
@@ -708,6 +717,15 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
+  /* Field: Registration: Présence */
+  $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['field_attendance']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_attendance']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
@@ -2136,6 +2154,7 @@ Téléphone : 04-67-06-96-72'),
     t('Ville'),
     t('Prescripteur'),
     t('Présent'),
+    t('Présence'),
     t('Stats'),
     t('Statistiques réunions'),
     t('Options avancées'),
