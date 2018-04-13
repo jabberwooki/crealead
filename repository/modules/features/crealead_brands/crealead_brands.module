@@ -268,11 +268,12 @@ function crealead_brands_node_presave($node) {
     if (!isset($node->metatags['fr']['title']['value']) || !$node->metatags['fr']['title']['value']) {
       if (isset($node->field_brand_baseline['und'][0]['value'])) {
         $title_tag = $node->field_brand_baseline['und'][0]['value'];
-      }
-      if (isset($node->field_business_sector['und'])) {
-        foreach ($node->field_business_sector['und'] as $value){
-          $term = taxonomy_term_load($value["tid"]);
-          $title_tag .= ($title_tag) ? " - ". $term->name : $term->name;
+
+        if (isset($node->field_business_sector['und'])) {
+          foreach ($node->field_business_sector['und'] as $value){
+            $term = taxonomy_term_load($value["tid"]);
+            $title_tag .= ($title_tag) ? " - ". $term->name : $term->name;
+          }
         }
       }
       if ($title_tag) {
