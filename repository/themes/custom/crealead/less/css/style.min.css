@@ -1922,7 +1922,7 @@ header#navbar nav>ul.menu>li>a.active-trail{background-color:#bf0e38;color:#fff}
 @media (max-width:768px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:20px;width:35px;height:30px;overflow:hidden;background-color:#f2cc2b}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#000;margin-left:8px!important;margin-bottom:20px!important;padding-top:0}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:after{content:"LOGIN";position:absolute;top:15px;font-size:.9em}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:after{content:"coE";position:absolute;top:15px;left:7px;font-size:.9em}
 }
 #block-menu-menu-top ul.menu.nav>li>a{padding:5px 5px 5px 20px;height:30px;color:#000}
 #block-menu-menu-top ul.menu.nav>li>a:before{position:relative;top:1px;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-transform:none;color:#777;content:"\e834"}
