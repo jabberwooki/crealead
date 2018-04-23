@@ -66,9 +66,17 @@ function crealead_trainings_menu() {
     'file' => 'crealead_trainings.ajax.inc',
   );
 
-  $items['remove_recommendation_from_list/%'] = array(
+  $items['add_recommendation_from_brand_tab/%'] = array(
     'type' => MENU_CALLBACK,
-    'page callback' => 'crealead_trainings_remove_recommendation_from_list',
+    'page callback' => 'crealead_trainings_add_recommendation_from_brand_tab',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_trainings.ajax.inc',
+  );
+
+  $items['remove_recommendation_from_brand_tab/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_trainings_remove_recommendation_from_brand_tab',
     'access arguments' => array('acces content'),
     'access callback' => TRUE,
     'file' => 'crealead_trainings.ajax.inc',
@@ -373,6 +381,43 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
           foreach ($node->field_recommended_by['und'] as $coe_entity) {
             if ($coe_entity['target_id'] == $user->uid) { // Current user is already in recommenders list.
               $ajax_link_url = '/remove_recommendation_from_list/' . $node->nid . '/nojs';
+              $ajax_link_text = 'Je ne recommande plus cette formation';
+              break;
+            }
+          }
+        }
+
+        $node->content['recommendation_action'][0]['#markup'] =
+          '<a href="' . $ajax_link_url . '" class="use-ajax">' . $ajax_link_text . '</a>';
+      }
+    }
+    elseif ($view_mode == 'teaser') {
+      drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_list.js');
+
+      if (isset($node->content['field_recommended_by'])) {
+        $node->content['recommendations_number'][0]['#markup'] =
+          '<div class="field field-name-field-recommendations-number">' .
+          'Recommandé par ' . sizeof(element_children($node->content['field_recommended_by'])) . ' personnes' .
+          '</div>';
+
+        unset($node->content['field_recommended_by']);
+      }
+      else {
+        unset($node->content['recommendations_number']);
+      }
+
+      global $user;
+      if(!user_is_logged_in() || $node->uid == $user->uid) {
+        unset($node->content['recommendation_action']);
+      }
+      else {
+        $ajax_link_url = '/add_recommendation_from_brand_tab/' . $node->nid . '/nojs';
+        $ajax_link_text = 'Je recommande cette formation';
+
+        if (isset($node->field_recommended_by['und'])) {
+          foreach ($node->field_recommended_by['und'] as $coe_entity) {
+            if ($coe_entity['target_id'] == $user->uid) { // Current user is already in recommenders list.
+              $ajax_link_url = '/remove_recommendation_from_brand_tab/' . $node->nid . '/nojs';
               $ajax_link_text = 'Je ne recommande plus cette formation';
               break;
             }
