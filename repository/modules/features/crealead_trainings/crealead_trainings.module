@@ -358,9 +358,11 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
     }
     elseif ($view_mode == 'list') {
       if (isset($node->content['field_recommended_by'])) {
+        $number = sizeof(element_children($node->content['field_recommended_by']));
+        $plural = ($number > 1) ? 's' : '';
         $node->content['recommendations_number'][0]['#markup'] =
           '<div class="field field-name-field-recommendations-number">' .
-          'Recommandé par ' . sizeof(element_children($node->content['field_recommended_by'])) . ' personnes' .
+          'Recommandé par ' . $number  . ' personne' . $plural .
           '</div>';
 
         unset($node->content['field_recommended_by']);
@@ -395,9 +397,11 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_list.js');
 
       if (isset($node->content['field_recommended_by'])) {
+        $number = sizeof(element_children($node->content['field_recommended_by']));
+        $plural = ($number > 1) ? 's' : '';
         $node->content['recommendations_number'][0]['#markup'] =
           '<div class="field field-name-field-recommendations-number">' .
-          'Recommandé par ' . sizeof(element_children($node->content['field_recommended_by'])) . ' personnes' .
+          'Recommandé par ' . $number  . ' personne' . $plural .
           '</div>';
 
         unset($node->content['field_recommended_by']);
