@@ -121,7 +121,15 @@
 .icon-location-outline:before { content: '\e877'; } /* '' */
 .icon-location-2:before { content: '\e878'; } /* '' */
 .icon-location-3:before { content: '\e879'; } /* '' */
+.icon-emo-thumbsup:before { content: '\e87a'; } /* '' */
+.icon-thumbs-up:before { content: '\e87b'; } /* '' */
+.icon-thumbs-down:before { content: '\e87c'; } /* '' */
+.icon-heart:before { content: '\e87d'; } /* '' */
+.icon-thumbs-up-1:before { content: '\e87e'; } /* '' */
+.icon-heart-broken:before { content: '\f028'; } /* '' */
 .icon-location-4:before { content: '\f031'; } /* '' */
 .icon-blank:before { content: '\f0c8'; } /* '' */
 .icon-list-bullet:before { content: '\f0ca'; } /* '' */
 .icon-list-numbered:before { content: '\f0cb'; } /* '' */
+.icon-thumbs-up-alt:before { content: '\f164'; } /* '' */
+.icon-thumbs-down-alt:before { content: '\f165'; } /* '' */

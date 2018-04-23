@@ -1,3 +1,47 @@
+.field-name-recommendation-action {
+  margin-top: 20px;
+  a {
+    font-size: 1.4em;
+    color: @bleu-lien-crealead;
+    &:before {
+      .glyphicon();
+      content: "\e87B";
+      color: @noir-crealead;
+    }
+  }
+  a[href*="remove"] {
+    font-size: 1em;
+    &:before {
+      .glyphicon();
+      content: "\e87C";
+      color: @rouge-crealead;
+    }
+  }
+}
+.field-name-field-recommended-by {
+  .field-label {
+    margin-top: 20px;
+    font-size: 1.6em;
+    &:before {
+      .glyphicon();
+      content: "\e87e";
+      color: @vert-crealead;
+    }
+
+  }
+  a {
+    padding-left: 30px;
+  }
+}
+.field-name-recommendations-number .field-name-field-recommendations-number{
+  font-size: 1.4em;
+  &:before {
+    .glyphicon();
+    content: "\e87e";
+    color: @vert-crealead;
+  }
+}
+
 .node-type-training {
   .field-name-field-brand-logo img {
     margin-right: 20px;
@@ -88,7 +132,7 @@
         left: 10px;
       }
     }
-    .views-field-nothing{
+    .views-field-nothing {
       float: right;
     }
     .session-list-link > a {
@@ -100,7 +144,7 @@
   }
   .detail-session();
   .group-training-right-col { // ce code ne permet pas de régler le pb d'espace entre les lignes d'une puce quand le texte est sur plusieurs lignes
-    ul > li{
+    ul > li {
       padding-left: 20px !important;
       display: block !important;
       list-style-type: none !important;
@@ -111,7 +155,9 @@
       }
     }
   }
+
 }
+
 .field-name-field-session-dates {
   .field-label {
     float: none;
@@ -130,7 +176,7 @@
     h3 {
       > a {
         float: right;
-        @media screen and (min-width: @screen-md){
+        @media screen and (min-width: @screen-md) {
           margin-right: 50%;
         }
 
@@ -255,8 +301,9 @@
     }
   }
 }
+
 .detail-session {
-  .field-name-field-introduction{
+  .field-name-field-introduction {
     max-height: 110px;
     overflow-y: auto;
     margin-bottom: 30px;
@@ -266,20 +313,21 @@
     border-bottom: 20px solid @gris-clair-crealead;
     margin-bottom: 20px;
   }
-  .field-name-field-training-duration{
+  .field-name-field-training-duration {
     margin: 0 20px;
   }
 }
+
 .group-session-details {
   position: relative;
   margin-top: 20px;
-  .field-name-see-all-sessions-link{
+  .field-name-see-all-sessions-link {
     position: absolute;
     right: 0px;
     top: 10px;
     padding: 0 20px 0 0;
   }
-  img{
+  img {
     float: right;
   }
 }

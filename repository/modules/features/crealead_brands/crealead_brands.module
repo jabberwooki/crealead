@@ -12,22 +12,23 @@ include_once 'crealead_brands.features.inc';
 function crealead_brands_init() {
   $node = menu_get_object();
   if ((!empty($node) && $node->type == 'brand' && arg(2) != 'edit') || (arg(1) == 'add' && arg(2) == 'brand')) {
-    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands.js');
-    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
+    drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brands.js');
+    drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands.css');
   }
   elseif (arg(0) == 'annuaire-entrepreneurs' && sizeof(arg()) == 1) {
     $params = array('brand_feature_path' => drupal_get_path('module', 'crealead_brands'));
     drupal_add_js(array('creaelad_brands_search' => $params), 'setting');
-    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brand_search.js');
+    drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brand_search.js');
   }
   elseif (request_uri() == '/node/add/client') {
     drupal_add_js(array('crealead_similar_clients' => array('ajaxUrl' => url('ajax/similar_clients'))), 'setting');
-    drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_brands_similar_clients.js');
-    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands_clients.css');
+    drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brands_similar_clients.js');
+    drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands_clients.css');
   }
 
-  drupal_add_js(drupal_get_path('module','crealead_brands') . '/js/crealead_sector_brands_menu.js');
+  drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }
+
 /**
  * Implements hook_menu_alter().
  */
@@ -64,7 +65,7 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
   // 1 - Current connected user allowed roles.
   global $user;
   $current_user_roles = $user->roles;
-  $allowed_roles = array('administrateur','webmaster','référent');
+  $allowed_roles = array('administrateur', 'webmaster', 'référent');
   $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
 
   // 2 - Brand's author profile validation (NO LONGER TESTED)
@@ -108,13 +109,19 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
       $form['field_business_sector']['#disabled'] = TRUE;
     }
     // 4 - Sector brands field disabled.
-    drupal_add_css(drupal_get_path('module','crealead_brands') . '/css/crealead_brands.css');
+    drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands.css');
     $form['field_related_sector_brands']['#attributes']['class'][] = 'readonly-field';
-    $form['field_related_sector_brands']['und']['#attributes'] = array('onclick' => 'return false;', 'class' => array('non-clickable'));
+    $form['field_related_sector_brands']['und']['#attributes'] = array(
+      'onclick' => 'return false;',
+      'class' => array('non-clickable')
+    );
 
     // 5 - Certifications/labels field disabled.
     $form['field_certifications_labels']['#attributes']['class'][] = 'readonly-field';
-    $form['field_certifications_labels']['und']['#attributes'] = array('onclick' => 'return false;', 'class' => array('non-clickable'));
+    $form['field_certifications_labels']['und']['#attributes'] = array(
+      'onclick' => 'return false;',
+      'class' => array('non-clickable')
+    );
   }
   // And now what about allowed users.
   else {
@@ -153,7 +160,10 @@ function crealead_brands_form_brand_node_form_alter(&$form, &$form_state, $form_
 
   // If brand creation
   if (!isset($form['nid']['#value'])) {
-    $params = array('name' => $form['#node']->name, 'uid' => $form['#node']->uid);
+    $params = array(
+      'name' => $form['#node']->name,
+      'uid' => $form['#node']->uid
+    );
     drupal_add_js(array('crealead_brands_default_coe' => $params), 'setting');
   }
 
@@ -266,13 +276,14 @@ function crealead_brands_node_presave($node) {
     // Change node metatag title
     $title_tag = "";
     if (!isset($node->metatags['fr']['title']['value']) || !$node->metatags['fr']['title']['value']) {
+
       if (isset($node->field_brand_baseline['und'][0]['value'])) {
         $title_tag = $node->field_brand_baseline['und'][0]['value'];
-      }
-      if (isset($node->field_business_sector['und'])) {
-        foreach ($node->field_business_sector['und'] as $value){
-          $term = taxonomy_term_load($value["tid"]);
-          $title_tag .= ($title_tag) ? " - ". $term->name : $term->name;
+        if (isset($node->field_business_sector['und'])) {
+          foreach ($node->field_business_sector['und'] as $value){
+            $term = taxonomy_term_load($value["tid"]);
+            $title_tag .= ($title_tag) ? " - ". $term->name : $term->name;
+          }
         }
       }
       if ($title_tag) {
@@ -313,7 +324,7 @@ function crealead_brands_block_info() {
 function crealead_brands_block_view($delta = '') {
   $block = array();
 
-  switch($delta) {
+  switch ($delta) {
     case 'crealead_brands_number' :
       $brands_number_display = variable_get('brands_number', 1);
 
@@ -349,8 +360,8 @@ function crealead_brands_block_view($delta = '') {
       $content = '<ul class="nav navbar-nav">';
       $content .= '<li class="item1 first"><a href="#">Introduction</a>';
 
-      $news = views_get_view_result('news','sector_brand_news',$current_sector_brand->tid);
-      $articles = views_get_view_result('articles','sector_brand_articles',$current_sector_brand->tid);
+      $news = views_get_view_result('news', 'sector_brand_news', $current_sector_brand->tid);
+      $articles = views_get_view_result('articles', 'sector_brand_articles', $current_sector_brand->tid);
       if (!empty($news) || !empty($articles)) {
         $content .= '<li class="item4 last"><a href="#news-articles">Actualités et articles de fond</a>';
       }
@@ -360,7 +371,7 @@ function crealead_brands_block_view($delta = '') {
         $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
       }
 
-      $achievements = views_get_view_result('achievements','sector_brand_achievs',$current_sector_brand->tid);
+      $achievements = views_get_view_result('achievements', 'sector_brand_achievs', $current_sector_brand->tid);
       if (!empty($achievements)) {
         $content .= '<li class="item3"><a href="#achievements">Réalisations</a>';
       }
@@ -389,7 +400,7 @@ function crealead_brands_entity_view($entity, $type, $view_mode, $langcode) {
 function crealead_brands_entity_view_alter(&$build, $type) {
   if ($build['#entity_type'] == 'entityform_type' && $build['#entity']->type == 'contact' && $build['#view_mode'] == 'full') {
     $build['#entity']->label = '';
-    $build['#entity']->data['redirect_path'] = substr($_SERVER['REDIRECT_URL'],1);
+    $build['#entity']->data['redirect_path'] = substr($_SERVER['REDIRECT_URL'], 1);
   }
 
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
@@ -402,11 +413,11 @@ function crealead_brands_entity_view_alter(&$build, $type) {
     // if achievement full node, there is no info about parent brand.
     // Brand knows achievements, achievements don't know their parent brand.
     $query = db_select('field_data_field_brand_achievements', 'fba');
-    $query->addField('fba','entity_id');
+    $query->addField('fba', 'entity_id');
     $query->condition('fba.field_brand_achievements_target_id', $build['#node']->nid);
     $brand_nid = $query->execute()->fetchField();
     $brand = node_load($brand_nid);
-    
+
     if ($brand) {
       $build['achievement_brand'][0]['#markup'] = l($brand->title, '/node/' . $brand_nid);
     }
@@ -509,11 +520,16 @@ function crealead_brand_contacts_list() {
     foreach ($fc_coes as $fc_item_id) {
       $wrapper = entity_metadata_wrapper('field_collection_item', $fc_item_id['value']);
       $fc_item = $wrapper->value();
-        $allowed_uids[] = $fc_item->field_brand_coe['und'][0]['target_id'];
+      $allowed_uids[] = $fc_item->field_brand_coe['und'][0]['target_id'];
     }
   }
 
-  $allowed_roles = array('administrateur', 'webmaster', 'référent', 'pôle gestion');
+  $allowed_roles = array(
+    'administrateur',
+    'webmaster',
+    'référent',
+    'pôle gestion'
+  );
   global $user;
 
   $output = '';
@@ -571,6 +587,7 @@ function crealead_brands_mail($key, &$message, $params) {
       break;
   }
 }
+
 /**
  * Implements hook_views_pre_render().
  */
@@ -590,7 +607,7 @@ function crealead_brands_views_pre_render(&$view) {
     ));
 
     // Handling of coes in "Entrepreneurs" tab.
-    foreach ($view->result as $key=>$coe) {
+    foreach ($view->result as $key => $coe) {
       // If coe profile pid not null
       if (isset($coe->profile_users_pid)) {
         $coe_profile = entity_metadata_wrapper('profile2', $coe->profile_users_pid);
@@ -680,8 +697,8 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
 
   // Add form field related_brands
   // Seek brands belonging to current user.
-  $query = db_select('node','n')
-    ->fields('n', array('nid','title'))
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
     ->condition('n.status', 1)
     ->condition('n.type', 'brand')
     ->condition('n.uid', $form['uid']);
@@ -698,19 +715,21 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
     '#options' => $options,
     '#default_value' => array_keys($parent_brands),
   );
-  
+
   // Add custom submit handler.
   $form['actions']['submit']['#submit'][] = 'crealead_achievement_submit';
 }
 
 function crealead_achievements_get_parent_brands($achiev_id) {
-  if (!isset($achiev_id)) return array();
+  if (!isset($achiev_id)) {
+    return array();
+  }
 
   $query = db_select('field_data_field_brand_achievements', 'fba');
   $query->fields('fba', array('entity_id'));
   $query->condition('field_brand_achievements_target_id', $achiev_id);
 
-  return $query->execute()->fetchAllKeyed(0,0);
+  return $query->execute()->fetchAllKeyed(0, 0);
 }
 
 function crealead_brands_get_parent_sector_brands($brands) {
@@ -736,7 +755,7 @@ function crealead_brands_get_parent_certifs_labels($brands) {
 }
 
 function crealead_clean_sector_brands_options($sector_brands_options, $parent_sector_brands) {
-  foreach ($sector_brands_options as $key=>$sector_brand) {
+  foreach ($sector_brands_options as $key => $sector_brand) {
     if (!in_array($key, $parent_sector_brands)) {
       unset($sector_brands_options[$key]);
     }
@@ -745,7 +764,7 @@ function crealead_clean_sector_brands_options($sector_brands_options, $parent_se
 }
 
 function crealead_clean_certifs_labels_options($certifs_labels_options, $parent_certifs_labels) {
-  foreach ($certifs_labels_options as $key=>$certif_label) {
+  foreach ($certifs_labels_options as $key => $certif_label) {
     if (!in_array($key, $parent_certifs_labels)) {
       unset($certifs_labels_options[$key]);
     }
@@ -762,8 +781,8 @@ function crealead_clean_certifs_labels_options($certifs_labels_options, $parent_
  */
 function crealead_brands_form_client_node_form_alter(&$form, &$form_state, $form_id) {
   // Seek brands belonging to current user.
-  $query = db_select('node','n')
-    ->fields('n', array('nid','title'))
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
     ->condition('n.status', 1)
     ->condition('n.type', 'brand')
     ->condition('n.uid', $form['uid']);
@@ -849,7 +868,10 @@ function crealead_brands_similar_clients() {
     ->condition('n.type', 'client');
   $similar_client_names = $query->execute()->fetchAllKeyed(0, 1);
 
-  return array('new_client_name' => $_GET['clientName'], 'similar_client_names' => $similar_client_names);
+  return array(
+    'new_client_name' => $_GET['clientName'],
+    'similar_client_names' => $similar_client_names
+  );
 }
 
 /**
@@ -869,7 +891,7 @@ function crealead_brands_similar_clients_list(array $comparison_data) {
     $value = $comparison->compareStrings($client_name, $new_client_name);
     if ($value >= 0.25) {
       $similar_clients_list .= '<li>'
-        . '<a class="registered-client" name="' . $client_id .'">'
+        . '<a class="registered-client" name="' . $client_id . '">'
         . $client_name
         . '</a>'
 //        . ' ('
@@ -884,7 +906,7 @@ function crealead_brands_similar_clients_list(array $comparison_data) {
   }
   else {
     print '<p class="question">S\'agit-il d\'un de ces clients ?</p>' .
-    '<ul>' . $similar_clients_list . '</ul>';
+      '<ul>' . $similar_clients_list . '</ul>';
   }
 }
 
@@ -910,8 +932,8 @@ function crealead_brands_link_registered_client() {
 
   drupal_set_message(
     t('Le client <b>@client_name</b> a bien été ajouté à la marque <b>@brand_name</b>',
-    array('@client_name' => $client_name, '@brand_name' => $brand_name)
-  ));
+      array('@client_name' => $client_name, '@brand_name' => $brand_name)
+    ));
 
   drupal_goto('/node/' . $brand_nid);
 }
@@ -947,14 +969,15 @@ function crealead_brands_node_view($node, $view_mode, $langcode) {
     'group' => JS_THEME,
   ));
 }
+
 /**
  * Implements hook_block_view_alter().
  */
 function crealead_brands_block_view_alter(&$data, $block) {
-  if($block->bid == "ds_extras-content_header_brand") {
-    if ( arg(0) == 'node' && is_numeric(arg(1)) && ! arg(2) ) {
+  if ($block->bid == "ds_extras-content_header_brand") {
+    if (arg(0) == 'node' && is_numeric(arg(1)) && !arg(2)) {
       $node = node_load(arg(1));
-      if(count($node->field_contact_form)){
+      if (count($node->field_contact_form)) {
         $data['content']['field_lien_formulaire_contact'][0]['#markup'] = '<a id="link-form-brand" href="#bootstrap-fieldgroup-nav-item--contact">Formulaire de contact</a>';
       }
       else {
