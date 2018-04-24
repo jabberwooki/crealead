@@ -196,16 +196,28 @@ function crealead_articles_node_postsave($node, $op) {
         break;
 
       case 'update':
+        // First of all, we must store brand_id and display status
+        // for all brand the current article is shared with.
+        $query = db_select('crealead_shared_content', 'csc');
+        $query->fields('csc', array('nid','brand_id', 'status'));
+        $query->condition('nid', $node->nid);
+        $previously_registered_brands = $query->execute()->fetchAllKeyed(1,2);
+
+        // Then, in table crealead_shared_content, we delete all records
+        // related to the current article.
         $query = db_delete('crealead_shared_content')
           ->condition('nid', $node->nid);
         $query->execute();
 
+        // Finally, we register allowed brands in crealead_shared_content.
+        // If this brand previously existed, we save it with the previous status.
         foreach ($node->field_allowed_brands['und'] as $brand) {
+          $status = isset($previously_registered_brands[$brand['target_id']]) ? $previously_registered_brands[$brand['target_id']] : '0';
           $data = array(
             'nid' => $node->nid,
             'type' => $node->type,
             'brand_id' => $brand['target_id'],
-            'status' => 0
+            'status' => $status
           );
           $query = db_insert('crealead_shared_content')->fields($data);
           $query->execute();

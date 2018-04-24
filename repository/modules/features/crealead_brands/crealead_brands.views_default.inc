@@ -126,7 +126,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -729,7 +729,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Formation concernée */
+  /* Field: Content: Formation */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -2938,7 +2938,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_brand_coe']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Field: Compétences */
+  /* Field: Field: Compétences et spécialités */
   $handler->display->display_options['fields']['field_competencies']['id'] = 'field_competencies';
   $handler->display->display_options['fields']['field_competencies']['table'] = 'field_data_field_competencies';
   $handler->display->display_options['fields']['field_competencies']['field'] = 'field_competencies';
