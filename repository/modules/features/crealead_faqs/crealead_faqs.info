@@ -39,7 +39,6 @@ features[field_instance][] = node-faq-field_detailed_question
 features[field_instance][] = node-faq-field_faq_caegory
 features[field_instance][] = node-faq-field_public_faq
 features[field_instance][] = node-faq-field_related_population
-features[menu_links][] = menu-coe-area_foire-aux-questions:faqs
 features[menu_links][] = menu-top_foire-aux-questions:faq-publique
 features[node][] = faq
 features[taxonomy][] = faq_categories
