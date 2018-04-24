@@ -13,7 +13,6 @@ dependencies[] = strongarm
 dependencies[] = view_unpublished
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
-features[menu_links][] = menu-coe-area_documents:filedepot
 features[user_permission][] = access filedepot
 features[user_permission][] = administer filedepot
 features[user_permission][] = create filedepot_folder content
