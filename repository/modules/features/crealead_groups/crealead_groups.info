@@ -40,7 +40,6 @@ features[field_instance][] = node-business_group-field_interesting_thematics
 features[field_instance][] = node-business_group-field_linked_groups
 features[field_instance][] = node-business_group-field_purpose
 features[field_instance][] = node-business_group-field_useful_links
-features[menu_links][] = menu-coe-area_collectifs:espace-co-entrepreneur/collectifs
 features[node][] = business_group
 features[user_permission][] = create business_group content
 features[user_permission][] = delete any business_group content
