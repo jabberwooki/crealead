@@ -101,3 +101,53 @@ function crealead_products_form_product_node_form_alter(&$form, &$form_state, $f
   */
 }
 
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_products_views_pre_render(&$view) {
+  if ($view->name == 'products' && $view->current_display == 'entity_view_1') {
+    dpm("Hello boy");
+    // Link 'Ajouter une formation' must be added to block only for coes attached to the current brand.
+    if (isset($view->current_entity)) {
+      $current_brand = $view->current_entity;
+    }
+    else {
+      $current_brand = node_load(arg(1));
+    }
+    $wrapper = entity_metadata_wrapper('node', $current_brand);
+    $brand_coes = $wrapper->field_brand_coes->value();
+    global $user;
+    foreach ($brand_coes as $brand_coe) {
+      if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
+        continue;
+      }
+      else {
+        $view->header['area']->options['content'] = l(
+          'Ajouter un produit',
+          '/node/add/product/' . $current_brand->nid,
+          array('query' => array('destination' => current_path()))
+        );
+        break;
+      }
+    }
+    /*
+
+
+    global $user;
+    foreach ($brand_coes as $brand_coe) {
+      if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
+        continue;
+      }
+      else {
+        $view->header['area']->options['content'] = l(
+          'Ajouter un produit',
+          '/node/add/produit/' . $current_brand->nid,
+          array('query' => array('destination' => current_path()))
+        );
+        break;
+      }
+    }*/
+
+  }
+}
+

@@ -82,6 +82,12 @@ function crealead_products_views_default_views() {
 
   /* Display: Produits d'une marque */
   $handler = $view->new_display('entity_view', 'Produits d\'une marque', 'entity_view_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['entity_type'] = 'node';
   $handler->display->display_options['bundles'] = array(
     0 => 'brand',
