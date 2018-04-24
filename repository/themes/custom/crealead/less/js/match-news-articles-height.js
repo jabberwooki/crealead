@@ -1,3 +1,3 @@
 jQuery(function($) {
-  $('.row .col-lg-4 > div').matchHeight();
+  $('.row div[class*="col-lg-"] > div').matchHeight();
 });
