@@ -2190,14 +2190,14 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-fie
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-name-field-brand-tags .field-item a{font-weight:700;background-color:#ededed;border:1px solid #333;padding:2px 5px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-label{font-family:Quicksand,sans-serif;color:#bf0e38;margin-top:20px;font-size:1.2em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-item{margin-bottom:20px}
-body.node-type-brand .col-lg-4{margin-top:20px}
-body.node-type-brand .col-lg-4>div{border:1px solid #999}
-body.node-type-brand .col-lg-4>div .field-name-field-training-type .field-item{font-style:italic}
-body.node-type-brand .col-lg-4>div h2{margin-top:0}
-body.node-type-brand .col-lg-4>div .views-field-field-coe-photo{float:left;margin-right:10px}
-body.node-type-brand .col-lg-4>div .views-field-field-brand-coe a{font-family:Quicksand,sans-serif;font-weight:700}
-body.node-type-brand .col-lg-4>div .views-field-field-coe-status{font-weight:700}
-body.node-type-brand .col-lg-4>div .views-field-field-competencies:after{content:'';display:block;clear:left}
+body.node-type-brand .view-content div[class*=col-lg]{margin-top:20px}
+body.node-type-brand .view-content div[class*=col-lg]>div{border:1px solid #999}
+body.node-type-brand .view-content div[class*=col-lg]>div .field-name-field-training-type .field-item{font-style:italic}
+body.node-type-brand .view-content div[class*=col-lg]>div h2{margin-top:0}
+body.node-type-brand .view-content div[class*=col-lg]>div .views-field-field-coe-photo{float:left;margin-right:10px}
+body.node-type-brand .view-content div[class*=col-lg]>div .views-field-field-brand-coe a{font-family:Quicksand,sans-serif;font-weight:700}
+body.node-type-brand .view-content div[class*=col-lg]>div .views-field-field-coe-status{font-weight:700}
+body.node-type-brand .view-content div[class*=col-lg]>div .views-field-field-competencies:after{content:'';display:block;clear:left}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences{margin-top:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget{float:none;padding:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--rfrences .view-display-id-brand_clients .views-exposed-form .views-exposed-widget a{display:block;background-color:#ededed;padding:8px 0 8px 20px;margin-bottom:3px;color:#000;font-weight:700;font-family:Quicksand,sans-serif}
