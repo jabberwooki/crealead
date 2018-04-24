@@ -285,6 +285,38 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_formations|node|brand|full';
+  $field_group->group_name = 'group_brand_formations';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_solution_col1';
+  $field_group->data = array(
+    'label' => 'Formations',
+    'weight' => '63',
+    'children' => array(
+      0 => 'trainings_entity_view_1',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Formations',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-formations field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_brand_formations|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_brand_infos_1|node|brand|full';
   $field_group->group_name = 'group_brand_infos_1';
   $field_group->entity_type = 'node';
@@ -496,6 +528,38 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_brand_ordering|node|brand|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_brand_products|node|brand|full';
+  $field_group->group_name = 'group_brand_products';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_solution_col2';
+  $field_group->data = array(
+    'label' => 'Produits',
+    'weight' => '66',
+    'children' => array(
+      0 => 'products_entity_view_1',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Produits',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-brand-products field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_brand_products|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1137,6 +1201,102 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_solution_col1|node|brand|full';
+  $field_group->group_name = 'group_solution_col1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_solutions_rows';
+  $field_group->data = array(
+    'label' => 'Formations',
+    'weight' => '14',
+    'children' => array(
+      0 => 'group_brand_formations',
+    ),
+    'format_type' => 'bootstrap_grid_col',
+    'format_settings' => array(
+      'label' => 'Formations',
+      'instance_settings' => array(
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '6',
+        'bootstrap_grid_col_lg' => '6',
+        'classes' => 'group-solution-col1 field-group-bootstrap_grid_col',
+      ),
+    ),
+  );
+  $field_groups['group_solution_col1|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_solution_col2|node|brand|full';
+  $field_group->group_name = 'group_solution_col2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_solutions_rows';
+  $field_group->data = array(
+    'label' => 'Produits',
+    'weight' => '15',
+    'children' => array(
+      0 => 'group_brand_products',
+    ),
+    'format_type' => 'bootstrap_grid_col',
+    'format_settings' => array(
+      'label' => 'Produits',
+      'instance_settings' => array(
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '6',
+        'bootstrap_grid_col_lg' => '6',
+        'classes' => 'group-solution-col2 field-group-bootstrap_grid_col',
+      ),
+    ),
+  );
+  $field_groups['group_solution_col2|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_solutions_rows|node|brand|full';
+  $field_group->group_name = 'group_solutions_rows';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_trainings_tab';
+  $field_group->data = array(
+    'label' => 'Solutions row',
+    'weight' => '11',
+    'children' => array(
+      0 => 'group_solution_col1',
+      1 => 'group_solution_col2',
+    ),
+    'format_type' => 'bootstrap_grid_row',
+    'format_settings' => array(
+      'label' => 'Solutions row',
+      'instance_settings' => array(
+        'show_heading' => '0',
+        'heading_position' => '0',
+        'label_element' => 'h3',
+        'description_element' => 'p',
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '0',
+        'bootstrap_grid_col_sm' => '0',
+        'bootstrap_grid_col_md' => '0',
+        'bootstrap_grid_col_lg' => '0',
+        'classes' => 'group-solutions-rows field-group-bootstrap_grid_row',
+        'description' => '',
+      ),
+    ),
+  );
+  $field_groups['group_solutions_rows|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_theme_articles_tab|taxonomy_term|themes|full';
   $field_group->group_name = 'group_theme_articles_tab';
   $field_group->entity_type = 'taxonomy_term';
@@ -1394,6 +1554,7 @@ function crealead_brands_field_group_info() {
   t('Entrepreneurs');
   t('Enveloppe articles partagés');
   t('Equipe');
+  t('Formations');
   t('Informations Générales');
   t('Infos 1');
   t('Infos 2');
@@ -1402,11 +1563,13 @@ function crealead_brands_field_group_info() {
   t('Marques et produits');
   t('Onglets');
   t('Onglets marque');
+  t('Produits');
   t('Produits et formations');
   t('Présentation');
   t('Réalisations');
   t('Références');
   t('Solutions');
+  t('Solutions row');
   t('group col1-3');
   t('group col2-6');
   t('group col3-3');
