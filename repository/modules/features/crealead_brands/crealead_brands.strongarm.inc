@@ -190,7 +190,7 @@ function crealead_brands_strongarm() {
         ),
         'brand_contact_submissions_eva_contacts_list' => array(
           'full' => array(
-            'weight' => '19',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'block' => array(
@@ -220,7 +220,7 @@ function crealead_brands_strongarm() {
         ),
         'trainings_entity_view_1' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '64',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -266,7 +266,7 @@ function crealead_brands_strongarm() {
         ),
         'events_calendar_eva_agenda' => array(
           'full' => array(
-            'weight' => '45',
+            'weight' => '26',
             'visible' => FALSE,
           ),
         ),
@@ -314,7 +314,7 @@ function crealead_brands_strongarm() {
         ),
         'products_entity_view_1' => array(
           'full' => array(
-            'weight' => '11',
+            'weight' => '67',
             'visible' => TRUE,
           ),
         ),

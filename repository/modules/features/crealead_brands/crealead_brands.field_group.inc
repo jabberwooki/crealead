@@ -134,7 +134,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '24',
+    'weight' => '25',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
@@ -164,7 +164,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Blog',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -447,7 +447,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '23',
+    'weight' => '24',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
@@ -576,8 +576,7 @@ function crealead_brands_field_group_info() {
     'label' => 'Solutions',
     'weight' => '31',
     'children' => array(
-      0 => 'trainings_entity_view_1',
-      1 => 'products_entity_view_1',
+      0 => 'group_solutions_rows',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -625,7 +624,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col3-3',
-    'weight' => '13',
+    'weight' => '60',
     'children' => array(
       0 => 'field_social_links',
       1 => 'group_contact',
@@ -658,7 +657,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col1-3',
-    'weight' => '11',
+    'weight' => '58',
     'children' => array(
       0 => 'field_brand_logo',
     ),
@@ -690,7 +689,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_row_1';
   $field_group->data = array(
     'label' => 'group col2-6',
-    'weight' => '12',
+    'weight' => '59',
     'children' => array(
       0 => 'field_business_sector',
       1 => 'group_title_hook',
