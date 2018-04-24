@@ -63,10 +63,8 @@ jQuery(function($){
         cols_product = $(".group-solution-col2 div.col");
         nb_products = $(".group-solution-col2 div.col").length;
       }
-      console.log("Nombre de formations : " + nb_trainings);
-      console.log("Nombre de produits : " + nb_products);
+
       if (nb_trainings && nb_products ) {
-        console.log("nbp/nbf = " + nb_products / nb_trainings);
         if((nb_products / nb_trainings) <= 0.5){
           $(".group-solution-col1").removeClass("col-lg-6").addClass("col-lg-8");
           $(".group-solution-col2").removeClass("col-lg-6").addClass("col-lg-4");
