@@ -480,9 +480,16 @@ body.node-type-brand {
     }
   }
   .view-content div[class*="col-lg"] {
+    position: relative;
     margin-top: 20px;
+
+    .contextual-links-region,
+    div[class*="col-"] {
+      position: static;
+    }
     > div {
       border: 1px solid @gris-fonce-crealead;
+      padding-bottom: 40px;
       .field-name-field-training-type .field-item{
         font-style: italic;
       }
