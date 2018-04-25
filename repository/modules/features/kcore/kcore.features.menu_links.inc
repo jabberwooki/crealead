@@ -51,46 +51,6 @@ function kcore_menu_default_menu_links() {
     'weight' => 10,
     'customized' => 1,
   );
-  // Exported menu link: menu-coe-area_echanges:espace-co-entrepreneur/echanges.
-  $menu_links['menu-coe-area_echanges:espace-co-entrepreneur/echanges'] = array(
-    'menu_name' => 'menu-coe-area',
-    'link_path' => 'espace-co-entrepreneur/echanges',
-    'router_path' => 'espace-co-entrepreneur/echanges',
-    'link_title' => 'Echanges',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-coe-area_echanges:espace-co-entrepreneur/echanges',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 1,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-coe-area_informations:espace-co-entrepreneur/informations.
-  $menu_links['menu-coe-area_informations:espace-co-entrepreneur/informations'] = array(
-    'menu_name' => 'menu-coe-area',
-    'link_path' => 'espace-co-entrepreneur/informations',
-    'router_path' => 'espace-co-entrepreneur/informations',
-    'link_title' => 'Informations',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-coe-area_informations:espace-co-entrepreneur/informations',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
   // Exported menu link: menu-footer-menu_plan-du-site:sitemap.
   $menu_links['menu-footer-menu_plan-du-site:sitemap'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -142,6 +102,7 @@ function kcore_menu_default_menu_links() {
         'title' => '',
       ),
       'identifier' => 'menu-top_espace-co-entrepreneurs:espace-co-entrepreneur/informations',
+      'fragment' => 'from-top-menu',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -157,9 +118,7 @@ function kcore_menu_default_menu_links() {
   t('Accueil');
   t('Contact');
   t('Découvrez l\'offre des<br>co-entrepreneurs');
-  t('Echanges');
   t('Espace co-entrepreneurs');
-  t('Informations');
   t('Plan du site');
 
   return $menu_links;

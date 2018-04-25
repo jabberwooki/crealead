@@ -157,6 +157,10 @@ header#navbar {
 
   }
   nav {
+    @media (max-width: @screen-sm) {
+      margin-top: 0 !important;
+      margin-left: 0 !important;
+    }
     margin: 38px 0 0 40px;
     > ul.menu {
       margin: 0 0 0 5px;
@@ -166,6 +170,19 @@ header#navbar {
       }
       @media (min-width: @screen-lg) {
         margin: 0 0 0 20px;
+      }
+      @media (max-width: @screen-sm) {
+        li {
+          a {
+            text-align: left !important;
+          }
+        }
+        > li.last {
+          border: 0 !important;
+          > a{
+            color: @noir-crealead !important;
+          }
+        }
       }
       > li.last {
         /* display: none;  must be removed */

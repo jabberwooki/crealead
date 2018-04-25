@@ -89,7 +89,6 @@ features[field_instance][] = taxonomy_term-themes-field_term_summary
 features[image][] = photo_utilisateur
 features[menu_custom][] = menu-business-sectors
 features[menu_custom][] = menu-themes
-features[menu_links][] = menu-coe-area_trombinoscope:espace-co-entrepreneur/trombinoscope
 features[profile2_type][] = coe_page
 features[taxonomy][] = business_sectors
 features[taxonomy][] = client_types
