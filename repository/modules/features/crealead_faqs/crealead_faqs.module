@@ -112,6 +112,13 @@ function crealead_faqs_views_pre_render(&$view) {
       }
     }
   }
+  elseif ($view->name == 'faqs' && $view->current_display == 'public_page') {
+//    dpm($view->header);
+//    dpm($view->header['view_1']);
+    if (!user_is_logged_in()) {
+      unset($view->header['area']);
+    }
+  }
 }
 
 function crealead_faqs_get_public_categories_tids() {

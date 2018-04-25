@@ -213,6 +213,16 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Lien FAQ privée';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<div class="view-faqs private-faq-link">
+<a href="/faqs">Accéder à la FAQ privée</a>
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Filtre catégories 2 */
   $handler->display->display_options['header']['view_1']['id'] = 'view_1';
   $handler->display->display_options['header']['view_1']['table'] = 'views';
@@ -310,6 +320,10 @@ function crealead_faqs_views_default_views() {
     t('Filtre catégories'),
     t('Filtre populations'),
     t('Page publique'),
+    t('Lien FAQ privée'),
+    t('<div class="view-faqs private-faq-link">
+<a href="/faqs">Accéder à la FAQ privée</a>
+</div>'),
   );
   $export['faqs'] = $view;
 
