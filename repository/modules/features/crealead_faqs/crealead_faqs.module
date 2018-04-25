@@ -53,7 +53,18 @@ function crealead_faqs_theme_isotope_filter(array $vars) {
 
   $title = !empty($vars['filtertitle']) ? $vars['filtertitle'] : NULL;
 
-  $items[] = l(t('All'), '', array(
+//  dpm($vars);
+  switch($vars['filtername']) {
+    case 'Catégorie':
+      $button_label = 'Toutes les catégories';
+      break;
+    case 'Population concernée':
+      $button_label = 'Toutes les populations';
+      break;
+    default:
+      $button_label = t('All');
+  }
+  $items[] = l($button_label, '', array(
     'attributes' => array(
       'class' => 'filterbutton btn btn-primary',
       'data-filter' => '',
@@ -99,17 +110,24 @@ function crealead_faqs_theme_isotope_filter(array $vars) {
  * Implements hook_views_pre_render().
  */
 function crealead_faqs_views_pre_render(&$view) {
-  if ($view->current_display == 'category_filter' && '/faq-publique' == request_uri()) {
-    $public_categories_tids = crealead_faqs_get_public_categories_tids();
-    if (sizeof($public_categories_tids) < 2) {
-      $view->result = array();
-    }
-    else {
-      foreach ($view->result as $key=>$item) {
-        if (!in_array($item->field_data_field_faq_caegory_field_faq_caegory_tid, $public_categories_tids)) {
-          unset($view->result[$key]);
+  if ($view->name == 'faqs' && $view->current_display == 'category_filter') {
+    if ('/faq-publique' == request_uri()) {
+      $public_categories_tids = crealead_faqs_get_public_categories_tids();
+      if (sizeof($public_categories_tids) < 2) {
+        $view->result = array();
+      }
+      else {
+        foreach ($view->result as $key=>$item) {
+          if (!in_array($item->field_data_field_faq_caegory_field_faq_caegory_tid, $public_categories_tids)) {
+            unset($view->result[$key]);
+          }
         }
       }
+    }
+  }
+  elseif ($view->name == 'faqs' && $view->current_display == 'public_page') {
+    if (!user_is_logged_in()) {
+      unset($view->header['area']);
     }
   }
 }
@@ -131,4 +149,25 @@ function crealead_faqs_get_public_categories_tids() {
   }
 
   return $tids;
+}
+
+/**
+ * Implements hook_query_alter().
+ */
+function crealead_faqs_query_alter(QueryAlterableInterface $query) {
+  $search = FALSE;
+  $node = FALSE;
+
+  foreach($query->getTables() as $alias => $table) {
+    if ($table['table'] == 'search_index') {
+      $search = $alias;
+    }
+    elseif ($table['table'] == 'node') {
+      $node = $alias;
+    }
+
+    if ($node && $search && !user_is_logged_in()) {
+      $query->condition($node . '.type', array('faq'), '<>');
+    }
+  }
 }

@@ -134,6 +134,18 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['fields']['field_detailed_question']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Voir la réponse';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '60%';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '80%';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -141,6 +153,7 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="question">[title]</div>
 <div class="detailed-question">[field_detailed_question]</div>
+<div class="see-answer">[view_node]</div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'faqs';
@@ -213,6 +226,16 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Lien FAQ privée';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<div class="view-faqs private-faq-link">
+<a href="/faqs">Accéder à la FAQ privée</a>
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Filtre catégories 2 */
   $handler->display->display_options['header']['view_1']['id'] = 'view_1';
   $handler->display->display_options['header']['view_1']['table'] = 'views';
@@ -260,6 +283,18 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['fields']['field_detailed_question']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Voir la réponse';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '60%';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '80%';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -267,7 +302,7 @@ function crealead_faqs_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="question">[title]</div>
 <div class="detailed-question">[field_detailed_question]</div>
-';
+<div class="see-answer">[view_node]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -304,12 +339,21 @@ function crealead_faqs_views_default_views() {
     t('Desc'),
     t('Page'),
     t('Foire aux questions'),
+    t('Voir la réponse'),
     t('<div class="question">[title]</div>
 <div class="detailed-question">[field_detailed_question]</div>
+<div class="see-answer">[view_node]</div>
 '),
     t('Filtre catégories'),
     t('Filtre populations'),
     t('Page publique'),
+    t('Lien FAQ privée'),
+    t('<div class="view-faqs private-faq-link">
+<a href="/faqs">Accéder à la FAQ privée</a>
+</div>'),
+    t('<div class="question">[title]</div>
+<div class="detailed-question">[field_detailed_question]</div>
+<div class="see-answer">[view_node]</div>'),
   );
   $export['faqs'] = $view;
 
