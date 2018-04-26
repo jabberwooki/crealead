@@ -2191,7 +2191,7 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-label{fo
 body.node-type-brand #bootstrap-fieldgroup-nav-item--prsentation .field-item{margin-bottom:20px}
 body.node-type-brand .view-content div[class*=col-lg]{position:relative;margin-top:20px}
 body.node-type-brand .view-content div[class*=col-lg] .contextual-links-region,body.node-type-brand .view-content div[class*=col-lg] div[class*=col-]{position:static}
-body.node-type-brand .view-content div[class*=col-lg]>div{border:1px solid #999;padding-bottom:40px}
+body.node-type-brand .view-content div[class*=col-lg]>div{border:10px solid #999;padding-bottom:40px}
 body.node-type-brand .view-content div[class*=col-lg]>div .field-name-field-training-type .field-item{font-style:italic}
 body.node-type-brand .view-content div[class*=col-lg]>div h2{margin-top:0}
 body.node-type-brand .view-content div[class*=col-lg]>div .views-field-field-coe-photo{float:left;margin-right:10px}
