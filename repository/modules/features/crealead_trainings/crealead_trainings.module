@@ -477,7 +477,13 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       unset($node->content['interested_switch']);
     }
     else {
-      unset($node->content['field_interested_users']);
+      // Table of interested users if visible only to allowed rôles (Trello V3 S6-5).
+      $current_user_roles = $user->roles;
+      $crealead_trainings_allowed_roles = array('administrateur','webmaster','pôle gestion');
+      $current_user_allowed_roles = array_intersect($crealead_trainings_allowed_roles, $current_user_roles);
+      if (empty($current_user_allowed_roles) && $user->uid != 1) {
+        unset($node->content['field_interested_users']);
+      }
 
       $is_already_interested = false;
       // If session already contains interested users,
@@ -513,7 +519,7 @@ function crealead_trainings_get_interest_widget($is_already_interested=true, $se
 
     $output =
       '<div id="session-switch-wrapper">' .
-        '<a class="add-to-session-open-close">' . ADD_TO_SESSION_TEXT . '</a>' .
+        '<a class="btn btn-primary add-to-session-open-close">' . ADD_TO_SESSION_TEXT . '</a>' .
         '<div class="user-details" style="display: none">' .
             drupal_render(drupal_get_form('crealead_trainings_add_user_to_session_form', $vars)) .
         '</div>'.
