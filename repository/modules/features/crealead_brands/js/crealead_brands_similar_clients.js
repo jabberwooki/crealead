@@ -79,7 +79,6 @@
 
                 // Handles click on a Client name from the similar clients list.
                 $('#similar-clients-list a').click(function () {
-                  console.log('toto');
                   if ($('#edit-related-brands input[type="checkbox"]:checked').length) {
                     var clientId = $(this).attr('name');
                     $('#edit-related-brands input[type="checkbox"]').each(function () {
