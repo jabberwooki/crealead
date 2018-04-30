@@ -2375,7 +2375,7 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .field-name-field-session-dates .field-items>.field-item:before{margin-right:10px}
 .page-formations-toutes-les-sessions .view-id-trainings h3>a{float:right}
 @media screen and (min-width:992px){.page-formations-toutes-les-sessions .view-id-trainings h3>a{margin-right:50%}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser{min-height:400px;overflow:hidden}
+.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser{min-height:400px;overflow:hidden}
 }
 .page-formations-toutes-les-sessions a.colorbox-node:before{margin-right:10px}
 .page-formations .views-exposed-widget{width:210px}
@@ -2386,9 +2386,9 @@ body.page-user h4.h4-user{font-family:Quicksand,sans-serif;color:#bf0e38}
 .page-formations .views-exposed-form #edit-reset:before,.page-formations .views-exposed-form #edit-submit-trainings:before{content:'\e831';color:#FFF;font-size:1.6em;left:-8px;top:-3px}
 .page-formations .views-exposed-form .views-reset-button #edit-reset:before{content:'\e832';color:#888;font-size:1.8em;top:-4px}
 .page-formations .form-item-title{width:200px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser{box-shadow:0 0 5px #aaa;margin-top:20px;padding:10px 10px 80px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
+.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser{box-shadow:0 0 5px #aaa;margin-top:20px;padding:10px 10px 80px}
+.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-name-field-training-type,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
+.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-item>h3,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
 .page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:3px dotted #999}
 .page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:1.4em}
 .page-certifications-et-labels .view-certifications-labels .views-row{clear:both;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bf0e38}
