@@ -117,7 +117,7 @@ function crealead_products_views_pre_render(&$view) {
     $brand_coes = $wrapper->field_brand_coes->value();
     global $user;
     foreach ($brand_coes as $brand_coe) {
-      if ($user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
+      if (!empty($brand_coe->field_brand_coe) && $user->uid != $brand_coe->field_brand_coe['und'][0]['target_id']) {
         continue;
       }
       else {
