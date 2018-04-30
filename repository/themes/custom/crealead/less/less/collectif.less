@@ -33,7 +33,7 @@
       border-radius: 8px;
       margin: 20px 0;
     }
-   
+
     .col-sm-4{
       > div {
         border-left: 1px solid @gris-fonce-crealead;
@@ -44,6 +44,22 @@
             padding-left: 20px;
           }
         }
+      }
+    }
+  }
+  .view-id-users {
+    h2 {
+      overflow: hidden;
+      &:after {
+        background-color: @orange-crealead;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+        left: 0.5em;
+        margin-right: -50%;
       }
     }
   }

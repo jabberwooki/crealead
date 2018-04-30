@@ -390,8 +390,7 @@ blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child,ol ol,
 address,dl{margin-bottom:20px}
 ol,ul{margin-bottom:10px}
 .list-inline{margin-left:-5px}
-.list-inline>li,.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
-.list-inline>li{display:inline-block;padding-right:5px}
+.list-inline>li{display:inline-block;padding-left:5px;padding-right:5px}
 dd{margin-left:0}
 @media (min-width:768px){.dl-horizontal dt{float:left;width:160px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dl-horizontal dd{margin-left:180px}
@@ -2250,7 +2249,6 @@ body.node-type-brand #link-form-brand:before{font-weight:400;display:inline-bloc
 body.node-type-brand .radio input[type=radio]{margin-left:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;height:35px;overflow:hidden;margin-top:20px;margin-bottom:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a:before,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:before{font-weight:400;display:inline-block;content:"\e834";color:#fff}
-.node-type-info-meeting a.field-group-format-title,.page-reunions-information ul.coche-rouge{font-size:.8em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-product .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-training .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-product .row,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-training .row{padding:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-product .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-training .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-product .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-training .row .field-name-field-introduction{max-height:none!important;background-color:transparent;border-radius:0;padding:0;border-bottom:0;margin-bottom:0}
 body.node-type-brand .subtitle-brand{display:none}
@@ -2270,6 +2268,7 @@ body.node-type-brand .field-name-field-introduction{max-height:110px;overflow-y:
 .view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
 body.node-type-brand .field-name-field-training-duration{margin:0 20px}
 .page-reunions-information .page-header{margin-bottom:0}
+.page-reunions-information ul.coche-rouge{font-size:.8em}
 .page-reunions-information ul.coche-rouge>li{margin-top:20px;font-weight:700}
 .page-reunions-information ul.coche-rouge>li:before{display:none}
 .page-reunions-information ul.coche-rouge>li li{font-weight:400}
@@ -2281,6 +2280,7 @@ body.node-type-brand .field-name-field-training-duration{margin:0 20px}
 .view-info-meetings .view-content table tr td a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
+.node-type-info-meeting a.field-group-format-title{font-size:.8em}
 .node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
@@ -2288,6 +2288,7 @@ body.node-type-brand .field-name-field-training-duration{margin:0 20px}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios,.node-type-info-meeting #registration-form .form-type-radios label{float:left}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio{float:left;margin-top:0;margin-right:15px}
 .node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio input[type=radio]{position:inherit;float:left;margin-left:25px}
+.node-type-info-meeting #registration-form .form-type-radios div.form-radios .form-type-radio label{padding-left:5px}
 .node-type-info-meeting #registration-form fieldset{clear:both}
 .node-type-info-meeting #registration-form .field-name-field-registrant-how{clear:left}
 @media (min-width:992px){.view-display-id-block_home_slideshow{max-height:531px;overflow:hidden;position:relative}
@@ -2338,7 +2339,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .field-name-recommendation-action a:before{position:relative;font-size:1em;content:"\e87B";color:#1d1e19}
 .field-name-recommendation-action a[href*=remove]{font-size:1em}
 .field-name-recommendation-action a[href*=remove]:before{position:relative;font-size:1em;content:"\e87C";color:#bf0e38}
-.field-name-field-recommended-by .field-label:before,.field-name-recommendations-number .field-name-field-recommendations-number:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e87e";color:#7db700;display:inline-block;text-decoration:inherit}
+.field-name-field-recommended-by .field-label:before,.field-name-recommendations-number .field-name-field-recommendations-number:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e87e";color:#7db700;text-decoration:inherit}
 .field-name-field-recommended-by .field-label{margin-top:20px;font-size:1.6em}
 .field-name-field-recommended-by .field-label:before{position:relative;font-size:1em}
 .field-name-field-recommended-by a{padding-left:30px}
@@ -2357,7 +2358,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .node-type-training .group-training-data .col-md-2 .label-above,.node-type-training .group-training-data .col-md-3 .label-above,.node-type-training .group-training-data .col-md-5 .label-above{font-weight:700;font-family:'Source Sans Pro',sans-serif}
 .node-type-training .group-training-right-col .label-above{font-family:'Source Sans Pro',sans-serif}
 .node-type-training .training-sessions .new-session-link>a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;color:#fff;margin-top:15px}
-.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px}
+.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-training .training-sessions .new-session-link>a:before{text-decoration:inherit;content:"\e834";color:#fff}
 .node-type-training .training-sessions .views-row .views-field-edit-node a{color:#000;text-decoration:underline;padding-left:20px}
 .node-type-training .training-sessions .views-row .views-field-edit-node a:before{text-decoration:inherit;color:#777;content:"\e862";left:6px}
@@ -2503,10 +2504,9 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .view-newsflashes .views-field-field-need-action a:before,.view-newsflashes .views-field-title a:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#bf0e38;position:relative;margin-right:10px}
 .view-newsflashes .views-field-title a{display:block;padding:2px 0}
 .view-newsflashes .views-field-title a:before{display:inline-block;text-decoration:inherit;content:"\e818"}
-.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
+.view-newsflashes .views-field-field-need-action a:hover:before,.view-newsflashes .views-field-title a:hover:before{text-decoration:none}
 .view-newsflashes .views-field-field-need-action a{display:block}
 .view-newsflashes .views-field-field-need-action a:before{display:inline-block;text-decoration:inherit;content:"\e83e"}
-.view-newsflashes .views-field-field-need-action a:hover:before{text-decoration:none}
 .node-type-newsflash .field-name-field-attached-file:before,.node-type-newsflash .field-name-field-related-population a:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center}
 .node-type-newsflash .field-name-field-attached-file{position:relative;margin-top:20px;border:1px solid #999;padding:20px}
 .node-type-newsflash .field-name-field-attached-file:before{margin-right:10px;content:"\e83b";width:30px;position:absolute;top:-10px;left:20px;display:block;border-right:10px solid #fff;border-left:5px solid #fff;background-color:#fff;color:#ff3f18}
@@ -2650,3 +2650,5 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 .node-type-business-group #block-system-main .field-name-field-purpose{background-color:#009aa0;padding:10px;color:#fff;border-radius:8px;margin:20px 0}
 .node-type-business-group #block-system-main .col-sm-4>div{border-left:1px solid #999;padding-left:20px;margin-bottom:20px}
 .node-type-business-group #block-system-main .col-sm-4>div .field-items .field-item{padding-left:20px}
+.node-type-business-group .view-id-users h2{overflow:hidden}
+.node-type-business-group .view-id-users h2:after{background-color:#ff3f18;content:"";display:inline-block;height:1px;position:relative;vertical-align:middle;width:100%;left:.5em;margin-right:-50%}
