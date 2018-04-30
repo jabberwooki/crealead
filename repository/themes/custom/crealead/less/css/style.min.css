@@ -2642,3 +2642,11 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 .form-item-edit-field-room-tid-2110 a.active{border-bottom:2px solid #44059c}
 .node-type-book .book-navigation ul.dropdown-menu li:before{display:none!important}
 .node-type-book footer .book_printer{display:none}
+.view-business-groups .node-business-group{box-shadow:0 0 5px #999;padding:0 20px 10px;margin-bottom:20px}
+.view-business-groups .node-business-group h2 a{display:block}
+.view-business-groups .node-business-group .field-type-list-text{font-weight:700;color:#ff3f18}
+.node-type-business-group #block-system-main .field{line-height:2em}
+.node-type-business-group #block-system-main .field-name-author .field-label{color:#ff3f18}
+.node-type-business-group #block-system-main .field-name-field-purpose{background-color:#009aa0;padding:10px;color:#fff;border-radius:8px;margin:20px 0}
+.node-type-business-group #block-system-main .col-sm-4>div{border-left:1px solid #999;padding-left:20px;margin-bottom:20px}
+.node-type-business-group #block-system-main .col-sm-4>div .field-items .field-item{padding-left:20px}
