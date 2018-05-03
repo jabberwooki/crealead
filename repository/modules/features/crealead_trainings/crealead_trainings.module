@@ -689,7 +689,7 @@ function crealead_trainings_views_pre_render(&$view) {
         $view->header['area']->options['content'] = l(
           'Ajouter une formation',
           '/node/add/training/' . $current_brand->nid,
-          array('query' => array('destination' => current_path()))
+          array('query' => array('destination' => current_path() . '#bootstrap-fieldgroup-nav-item--solutions'))
         );
         break;
       }
