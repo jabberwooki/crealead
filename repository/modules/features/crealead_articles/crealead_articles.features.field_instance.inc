@@ -65,6 +65,15 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'diff_standard' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -212,6 +221,20 @@ Pour retirer une marque, videz le champ qui la contient.',
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'diff_standard' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
       'full' => array(
         'label' => 'inline',
         'module' => 'entityreference',
@@ -311,6 +334,15 @@ Pour retirer une marque, videz le champ qui la contient.',
         'type' => 'list_default',
         'weight' => 1,
       ),
+      'diff_standard' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
@@ -393,6 +425,20 @@ Pour retirer une marque, videz le champ qui la contient.',
         'weight' => 16,
       ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
@@ -502,6 +548,17 @@ Pour retirer une marque, videz le champ qui la contient.',
         'weight' => 1,
       ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -657,6 +714,15 @@ Pour retirer une marque, videz le champ qui la contient.',
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'diff_standard' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
@@ -734,6 +800,15 @@ Pour retirer une marque, videz le champ qui la contient.',
         'weight' => 15,
       ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(
@@ -827,6 +902,15 @@ Pour retirer une marque, videz le champ qui la contient.',
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
+      'diff_standard' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
+      ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
@@ -901,6 +985,15 @@ Pour retirer une marque, videz le champ qui la contient.',
         'weight' => 18,
       ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(

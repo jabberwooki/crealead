@@ -11,3 +11,21 @@
 #field-allowed-brands-values tbody {
     border: 1px solid #ccc;
 }
+
+.page-node-revisions .diff-links {
+    display: none;
+}
+.page-node-revisions .diff-section-title {
+    /* padding-top: 20px; */
+    font-size: 120%;
+}
+.page-node-revisions .diff-section-title .placeholder {
+    color: red;
+}
+.page-node-revisions div.diff-section-title {
+    margin: 50px 0 10px 0;
+}
+
+.page-node-revisions table.diff tbody td {
+   padding: 10px;
+}
