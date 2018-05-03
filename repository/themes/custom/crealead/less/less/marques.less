@@ -479,18 +479,16 @@ body.node-type-brand {
       margin-bottom: 20px;
     }
   }
-  .view-content div[class*="col-lg"] {
+
+  .view-field-collection-coes .view-content .col-lg-4 {
     position: relative;
     margin-top: 20px;
-
     .contextual-links-region,
     div[class*="col-"] {
       position: static;
     }
     > div {
-      /*
-      border: 10px solid @gris-fonce-crealead;
-      */
+
       box-shadow: 0 0 5px @gris-fonce-crealead;
       padding-bottom: 40px;
       .field-name-field-training-type .field-item{
@@ -519,6 +517,11 @@ body.node-type-brand {
           clear: left;
         }
       }
+    }
+  }
+  .view-field-collection-coes .view-content .col-lg-4 {
+    > div {
+      padding-bottom: 0;
     }
   }
   /* page des clients  ou références *************************************************************/
@@ -771,9 +774,17 @@ body.node-type-brand {
         margin-bottom: 0;
       }
     }
+    .group-brand-formations,
+    .group-brand-products {
+      .group-wrapper-teaser {
+        box-shadow: 0 0 5px @gris-fonce-crealead;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+    }
     .node-training .row,
     .node-product .row {
-      padding: 20px;
+
       .field-name-field-introduction {
         max-height: none !important;
         background-color: transparent;
