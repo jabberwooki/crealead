@@ -351,18 +351,18 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'training';
   $ds_fieldsetting->view_mode = 'list';
   $ds_fieldsetting->settings = array(
-    'recommendations_number' => array(
-      'weight' => '10',
+    'recommendation_action' => array(
+      'weight' => '37',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'recommendation_action' => array(
-      'weight' => '11',
+    'recommendations_number' => array(
+      'weight' => '36',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'training_nid' => array(
-      'weight' => '0',
+      'weight' => '35',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -375,7 +375,7 @@ function crealead_trainings_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '37',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -440,18 +440,18 @@ function crealead_trainings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'training';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'recommendations_number' => array(
-      'weight' => '8',
+    'recommendation_action' => array(
+      'weight' => '38',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'recommendation_action' => array(
-      'weight' => '9',
+    'recommendations_number' => array(
+      'weight' => '37',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'training_nid' => array(
-      'weight' => '0',
+      'weight' => '36',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -464,7 +464,7 @@ function crealead_trainings_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '38',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -918,35 +918,37 @@ function crealead_trainings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'training_nid',
-        1 => 'group_wrapper_teaser',
-        2 => 'field_training_type',
-        3 => 'title',
-        4 => 'field_training_price',
-        5 => 'field_training_theme',
-        6 => 'field_training_duration',
-        7 => 'field_training_aims',
-        8 => 'field_training_teachers',
-        9 => 'field_training_related_brands',
-        10 => 'field_recommended_by',
-        11 => 'recommendations_number',
-        12 => 'recommendation_action',
+        0 => 'group_wrapper_teaser',
+        1 => 'group_sub_wrapper_teaser',
+        2 => 'training_nid',
+        3 => 'field_recommended_by',
+        4 => 'field_training_type',
+        5 => 'recommendations_number',
+        6 => 'title',
+        7 => 'recommendation_action',
+        8 => 'field_training_price',
+        9 => 'field_training_theme',
+        10 => 'field_training_duration',
+        11 => 'field_training_aims',
+        12 => 'field_training_teachers',
+        13 => 'field_training_related_brands',
       ),
     ),
     'fields' => array(
-      'training_nid' => 'central',
       'group_wrapper_teaser' => 'central',
+      'group_sub_wrapper_teaser' => 'central',
+      'training_nid' => 'central',
+      'field_recommended_by' => 'central',
       'field_training_type' => 'central',
+      'recommendations_number' => 'central',
       'title' => 'central',
+      'recommendation_action' => 'central',
       'field_training_price' => 'central',
       'field_training_theme' => 'central',
       'field_training_duration' => 'central',
       'field_training_aims' => 'central',
       'field_training_teachers' => 'central',
       'field_training_related_brands' => 'central',
-      'field_recommended_by' => 'central',
-      'recommendations_number' => 'central',
-      'recommendation_action' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1033,31 +1035,33 @@ function crealead_trainings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'training_nid',
-        1 => 'group_wrapper_teaser',
-        2 => 'field_training_type',
-        3 => 'title',
-        4 => 'field_training_price',
-        5 => 'field_training_theme',
-        6 => 'field_training_duration',
-        7 => 'field_training_aims',
-        8 => 'field_recommended_by',
-        9 => 'recommendations_number',
-        10 => 'recommendation_action',
+        0 => 'group_wrapper_teaser',
+        1 => 'group_sub_wrapper_teaser',
+        2 => 'field_recommended_by',
+        3 => 'training_nid',
+        4 => 'field_training_type',
+        5 => 'recommendations_number',
+        6 => 'recommendation_action',
+        7 => 'title',
+        8 => 'field_training_price',
+        9 => 'field_training_theme',
+        10 => 'field_training_duration',
+        11 => 'field_training_aims',
       ),
     ),
     'fields' => array(
-      'training_nid' => 'central',
       'group_wrapper_teaser' => 'central',
+      'group_sub_wrapper_teaser' => 'central',
+      'field_recommended_by' => 'central',
+      'training_nid' => 'central',
       'field_training_type' => 'central',
+      'recommendations_number' => 'central',
+      'recommendation_action' => 'central',
       'title' => 'central',
       'field_training_price' => 'central',
       'field_training_theme' => 'central',
       'field_training_duration' => 'central',
       'field_training_aims' => 'central',
-      'field_recommended_by' => 'central',
-      'recommendations_number' => 'central',
-      'recommendation_action' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(

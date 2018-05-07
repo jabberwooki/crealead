@@ -72,6 +72,84 @@ function crealead_trainings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_sub_wrapper_teaser|node|training|list';
+  $field_group->group_name = 'group_sub_wrapper_teaser';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'list';
+  $field_group->parent_name = 'group_wrapper_teaser';
+  $field_group->data = array(
+    'label' => 'Sub group wrapper teaser',
+    'weight' => '34',
+    'children' => array(
+      0 => 'field_training_aims',
+      1 => 'field_training_duration',
+      2 => 'field_training_price',
+      3 => 'field_training_related_brands',
+      4 => 'field_training_teachers',
+      5 => 'field_training_theme',
+      6 => 'field_training_type',
+      7 => 'training_nid',
+      8 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Sub group wrapper teaser',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sub-wrapper-teaser field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sub_wrapper_teaser|node|training|list'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sub_wrapper_teaser|node|training|teaser';
+  $field_group->group_name = 'group_sub_wrapper_teaser';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper_teaser';
+  $field_group->data = array(
+    'label' => 'Sub wrapper teaser',
+    'weight' => '35',
+    'children' => array(
+      0 => 'field_training_aims',
+      1 => 'field_training_duration',
+      2 => 'field_training_price',
+      3 => 'field_training_theme',
+      4 => 'field_training_type',
+      5 => 'training_nid',
+      6 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Sub wrapper teaser',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-sub-wrapper-teaser field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_sub_wrapper_teaser|node|training|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_training_data|node|training|full';
   $field_group->group_name = 'group_training_data';
   $field_group->entity_type = 'node';
@@ -321,18 +399,10 @@ function crealead_trainings_field_group_info() {
     'label' => 'group wrapper teaser',
     'weight' => '0',
     'children' => array(
-      0 => 'field_training_type',
-      1 => 'field_training_duration',
-      2 => 'field_training_aims',
-      3 => 'field_training_theme',
-      4 => 'field_training_related_brands',
-      5 => 'field_training_teachers',
-      6 => 'field_training_price',
-      7 => 'field_recommended_by',
-      8 => 'recommendations_number',
-      9 => 'recommendation_action',
-      10 => 'training_nid',
-      11 => 'title',
+      0 => 'field_recommended_by',
+      1 => 'recommendation_action',
+      2 => 'recommendations_number',
+      3 => 'group_sub_wrapper_teaser',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -364,16 +434,10 @@ function crealead_trainings_field_group_info() {
     'label' => 'group wrapper teaser',
     'weight' => '0',
     'children' => array(
-      0 => 'field_training_type',
-      1 => 'field_training_duration',
-      2 => 'field_training_aims',
-      3 => 'field_training_theme',
-      4 => 'field_training_price',
-      5 => 'field_recommended_by',
-      6 => 'recommendations_number',
-      7 => 'recommendation_action',
-      8 => 'training_nid',
-      9 => 'title',
+      0 => 'field_recommended_by',
+      1 => 'recommendation_action',
+      2 => 'recommendations_number',
+      3 => 'group_sub_wrapper_teaser',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -403,6 +467,8 @@ function crealead_trainings_field_group_info() {
   t('En-tête centre');
   t('En-tête droit');
   t('En-tête gauche');
+  t('Sub group wrapper teaser');
+  t('Sub wrapper teaser');
   t('group wrapper teaser');
 
   return $field_groups;

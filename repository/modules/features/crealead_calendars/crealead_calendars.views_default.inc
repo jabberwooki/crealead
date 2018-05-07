@@ -88,6 +88,8 @@ function crealead_calendars_views_default_views() {
 
   /* Display: Evénements salles */
   $handler = $view->new_display('page', 'Evénements salles', 'rooms_month');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Agenda des salles';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -631,6 +633,7 @@ function crealead_calendars_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Evénements salles'),
+    t('Agenda des salles'),
     t('Appliquer'),
     t('Réinitialiser'),
     t('Trier par'),

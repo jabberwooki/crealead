@@ -1209,7 +1209,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_solutions_rows';
   $field_group->data = array(
     'label' => 'Formations',
-    'weight' => '14',
+    'weight' => '16',
     'children' => array(
       0 => 'group_brand_formations',
     ),

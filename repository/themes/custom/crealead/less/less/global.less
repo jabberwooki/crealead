@@ -331,6 +331,7 @@ div.service-links {
   #block-menu-menu-coe-area,
   #block-views-newsflashes-coes-area-block {
     position: static;
+
     @media (min-width: @screen-md) {
       a {
         width: 180px !important;
@@ -351,9 +352,8 @@ div.service-links {
             .glyphicon();
             content: "\e840";
             color: @jaune-crealead;
-            position: absolute;
             margin-top: 5px;
-            margin-left: -20px;
+            margin-left: -10px;
           }
           &:hover {
             background-color: @gris-clair-crealead;
@@ -366,6 +366,22 @@ div.service-links {
       position: static;
       clear: both;
       display: block;
+    }
+  }
+  #block-menu-menu-coe-area{
+    h2.block-title{
+      background-color: @jaune-crealead;
+      display: block;
+      padding: 10px;
+      font-weight: 400;
+      text-align: center;
+      color: @noir-crealead;
+      margin-top: -20px;
+      &:before {
+        .glyphicon();
+        content: "\e847";
+        color: #000;
+      }
     }
   }
   .dropdown-menu,

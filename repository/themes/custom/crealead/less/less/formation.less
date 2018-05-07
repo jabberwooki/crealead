@@ -1,8 +1,11 @@
+body.node-type-training {
+  .field-name-recommendation-action {
+    position: static !important;
+  }
+}
+
 .field-name-recommendation-action {
   margin-top: 20px;
-  position: absolute;
-  bottom: 10px;
-
   a {
     font-size: 1.4em;
     color: @bleu-lien-crealead;
@@ -37,9 +40,8 @@
   }
 }
 .field-name-recommendations-number {
-  position: absolute;
-  bottom: 30px;
   .field-name-field-recommendations-number{
+    margin-top: 15px;
     font-size: 1.4em;
     &:before {
       .glyphicon();
@@ -245,7 +247,8 @@
   .form-item-title {
     width: 200px;
   }
-  #views-bootstrap-grid-1 {
+  #views-bootstrap-grid-1,
+  #views-bootstrap-grid-2 {
     > .row {
       .group-wrapper-teaser {
         box-shadow: 0 0 5px #aaa;
@@ -254,11 +257,10 @@
           overflow: hidden;
         }
         margin-top: 20px;
-        padding: 10px 10px 80px 10px;
+        padding: 10px;
         .field-name-field-training-type {
           /*border-top: 1px solid @rouge-crealead;*/
           padding-top: 15px;
-
         }
         .field-item {
 
@@ -320,9 +322,7 @@
     border-bottom: 20px solid @gris-clair-crealead;
     margin-bottom: 20px;
   }
-  .field-name-field-training-duration {
-    margin: 0 20px;
-  }
+  
 }
 
 .group-session-details {

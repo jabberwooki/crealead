@@ -55,15 +55,15 @@ jQuery(function($){
       var nb_trainings = 0;
       var nb_products = 0;
       var cols_training, cols_product;
-      if ($(".group-solution-col1 div.col").length) {
-        cols_training = $(".group-solution-col1 div.col");
-        nb_trainings = $(".group-solution-col1 div.col").length;
+      if ($(".group-solution-col1 div.trainings-in-brand").length) {
+        cols_training = $(".group-solution-col1 div.trainings-in-brand");
+        nb_trainings = $(".group-solution-col1 div.trainings-in-brand").length;
       }
-      if ($(".group-solution-col2 div.col").length) {
-        cols_product = $(".group-solution-col2 div.col");
-        nb_products = $(".group-solution-col2 div.col").length;
+      if ($(".group-solution-col2 div.products-in-brand").length) {
+        cols_product = $(".group-solution-col2 div.products-in-brand");
+        nb_products = $(".group-solution-col2 div.products-in-brand").length;
       }
-
+      console.log("formations produits : " + nb_trainings + " - " + nb_products);
       if (nb_trainings && nb_products ) {
         if((nb_products / nb_trainings) <= 0.5){
           $(".group-solution-col1").removeClass("col-lg-6").addClass("col-lg-8");
