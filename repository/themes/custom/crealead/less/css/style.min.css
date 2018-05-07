@@ -27,6 +27,7 @@ hr{box-sizing:content-box;height:0}
 pre,textarea{overflow:auto}
 code,kbd,pre,samp{font-size:1em}
 button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+.popover,.tooltip,address{font-style:normal}
 button{overflow:visible}
 button,select{text-transform:none}
 button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
@@ -409,7 +410,6 @@ code,kbd{padding:2px 4px;font-size:90%}
 caption,th{text-align:left}
 .blockquote-reverse .small:before,.blockquote-reverse footer:before,.blockquote-reverse small:before,blockquote.pull-right .small:before,blockquote.pull-right footer:before,blockquote.pull-right small:before{content:''}
 .blockquote-reverse .small:after,.blockquote-reverse footer:after,.blockquote-reverse small:after,blockquote.pull-right .small:after,blockquote.pull-right footer:after,blockquote.pull-right small:after{content:'\00A0 \2014'}
-address{font-style:normal}
 code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,"Courier New",monospace}
 code{color:#c7254e;background-color:#f9f2f4;border-radius:4px}
 kbd{color:#fff;background-color:#333;border-radius:3px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}
@@ -1125,7 +1125,6 @@ a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover{border-color:#a00c2f}
 .alert>p+p{margin-top:5px}
 .alert-dismissable,.alert-dismissible{padding-right:35px}
 .alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}
-.modal,.modal-backdrop{right:0;bottom:0;left:0}
 .alert-success{background-color:#dff0d8;border-color:#d6e9c6;color:#3c763d}
 .alert-success hr{border-top-color:#c9e2b3}
 .alert-success .alert-link{color:#2b542c}
@@ -1276,17 +1275,17 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 .well-lg{padding:24px;border-radius:6px}
 .well-sm{padding:9px;border-radius:3px}
 .close{float:right;font-size:21px;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
-.popover,.tooltip{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;letter-spacing:normal;line-break:auto;line-height:1.42857143;text-shadow:none;white-space:normal;word-break:normal;word-spacing:normal;word-wrap:normal;text-decoration:none;text-transform:none}
+.popover,.tooltip{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:normal;line-break:auto;line-height:1.42857143;text-shadow:none;white-space:normal;word-break:normal;word-spacing:normal;word-wrap:normal;text-decoration:none;text-transform:none}
 .close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer;opacity:.5;filter:alpha(opacity=50)}
 button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}
 .modal-content,.popover{background-clip:padding-box}
-.modal{display:none;position:fixed;top:0;-webkit-overflow-scrolling:touch;outline:0}
+.modal{display:none;position:fixed;top:0;right:0;bottom:0;left:0;-webkit-overflow-scrolling:touch;outline:0}
 .modal.fade .modal-dialog{-webkit-transform:translate(0,-25%);-ms-transform:translate(0,-25%);-o-transform:translate(0,-25%);transform:translate(0,-25%);-webkit-transition:-webkit-transform .3s ease-out;-moz-transition:-moz-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out}
 .modal.in .modal-dialog{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0);transform:translate(0,0)}
 .modal-open .modal{overflow-x:hidden;overflow-y:auto}
 .modal-dialog{position:relative;width:auto;margin:10px}
 .modal-content{position:relative;background-color:#fff;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);-moz-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5);outline:0}
-.modal-backdrop{position:fixed;top:0;background-color:#000}
+.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;background-color:#000}
 .modal-backdrop.fade{opacity:0;filter:alpha(opacity=0)}
 .modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}
 .modal-header{padding:15px;border-bottom:1px solid #e5e5e5}
@@ -1510,12 +1509,12 @@ fieldset .panel-body{clear:both;display:inherit}
 fieldset .panel-heading a.panel-title{color:inherit;display:block;margin:-10px -15px;padding:10px 15px}
 fieldset .panel-heading a.panel-title:hover{text-decoration:none}
 .form-group:last-child,.panel:last-child{margin-bottom:0}
+.line-bottom-red,.text-format-wrapper{margin-bottom:15px}
 .form-horizontal .form-group{margin-left:0;margin-right:0}
 div.image-widget-data{float:none;overflow:hidden}
 table.sticky-header{z-index:1}
 .resizable-textarea textarea{border-radius:4px 4px 0 0}
 .ajax-progress-bar,.filter-wrapper{border-radius:0 0 4px 4px}
-.text-format-wrapper{margin-bottom:15px}
 .text-format-wrapper .filter-wrapper,.text-format-wrapper>.form-type-textarea{margin-bottom:0}
 .filter-wrapper .panel-body{padding:7px}
 .filter-wrapper .form-type-select{min-width:30%}
@@ -1672,24 +1671,26 @@ h5{color:#bf0e38}
 div.chapo{margin:15px 0}
 .p{line-height:1.2em}
 blockquote{font-style:italic;color:#bf0e38;border:0;text-align:center}
-blockquote p:after,blockquote p:before{display:inline-block;margin-right:10px;line-height:1em;font-size:.5em;color:#bf0e38;vertical-align:text-top;position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;text-decoration:inherit;width:1em;text-align:center;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+blockquote p:after,blockquote p:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:.5em;color:#bf0e38;vertical-align:text-top;position:relative;top:1px;width:1em}
 blockquote p:before{content:"\e857"}
 blockquote p:after{content:"\e856";margin-left:10px}
-.line-bottom-red{border-bottom:1px solid #bf0e38;padding-bottom:15px;margin-bottom:15px}
+.line-bottom-red{border-bottom:1px solid #bf0e38;padding-bottom:15px}
 .cartouche-noir{color:#fff;background:rgba(0,0,0,.7);display:inline;box-shadow:10px 0 0 rgba(0,0,0,.7),-10px 0 0 rgba(0,0,0,.7);line-height:1.3em}
+#block-system-main ul li:before,.warning-links a:before,ul.coche-rouge li:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #block-system-main ul,ul.coche-rouge{padding:0;margin:0}
 #block-system-main ul li,ul.coche-rouge li{list-style:none;padding:0;margin:0}
-#block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e850";color:#bf0e38}
+#block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e850";color:#bf0e38}
 .contextual-links li a:before,.contextual-links li:before,li.print_html:before{content:''!important}
 #block-system-main ul.pager li:before,#block-system-main ul.pagination li:before,ul.coche-rouge.pager li:before,ul.coche-rouge.pagination li:before{display:none}
 div.service-links{display:block;float:right;margin-top:0;padding:0 0 0 20px}
-#close-logo:before,.warning-links a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#close-logo:before,.warning-links a:before{position:relative;top:1px;display:inline-block;width:1em}
 div.service-links a{float:left;margin-right:10px}
 .node-type-page div.service-links{margin-top:-20px}
 #cboxLoadedContent{overflow-x:hidden!important}
-.warning-links a:before{color:#777;content:"\e84a"}
+.warning-links a:before{margin-right:10px;color:#777;content:"\e84a"}
 #alert-logo{border:5px solid #999;padding:20px;position:absolute;width:400px;left:50%;margin-left:-210px;z-index:9999;background-color:#fff}
 #close-logo{width:20px;height:20px;float:right;margin-top:-16px;margin-right:-15px}
+#close-logo:before,.coe-area #block-menu-menu-coe-area h2.block-title:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #close-logo:before{content:"\e832";color:#bf0e38}
 #close-logo:hover{cursor:pointer}
 @media (min-width:992px) and (max-width:1526px){.coe-area .main-container{width:60%!important}
@@ -1698,11 +1699,13 @@ div.service-links a{float:left;margin-right:10px}
 @media (min-width:992px){.coe-area #block-menu-menu-coe-area a,.coe-area #block-views-newsflashes-coes-area-block a{width:180px!important}
 .coe-area #block-menu-menu-coe-area>ul.nav-pills,.coe-area #block-views-newsflashes-coes-area-block>ul.nav-pills{position:fixed;right:0;top:170px;width:184px;display:block}
 .coe-area #block-menu-menu-coe-area>ul.nav-pills>li>a,.coe-area #block-views-newsflashes-coes-area-block>ul.nav-pills>li>a{background-color:transparent;color:#bf0e38;padding:5px 5px 5px 18px}
-.coe-area #block-menu-menu-coe-area>ul.nav-pills>li>a:before,.coe-area #block-views-newsflashes-coes-area-block>ul.nav-pills>li>a:before{top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e840";color:#f2cc2b;position:absolute;margin-top:5px;margin-left:-20px}
+.coe-area #block-menu-menu-coe-area>ul.nav-pills>li>a:before,.coe-area #block-views-newsflashes-coes-area-block>ul.nav-pills>li>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e840";color:#f2cc2b;margin-top:5px;margin-left:-10px}
 .coe-area #block-menu-menu-coe-area>ul.nav-pills>li>a:hover,.coe-area #block-views-newsflashes-coes-area-block>ul.nav-pills>li>a:hover{background-color:#ededed}
 }
 .coe-area #block-menu-menu-coe-area ul.menu li,.coe-area #block-menu-menu-coe-area ul.menu ul,.coe-area #block-views-newsflashes-coes-area-block ul.menu li,.coe-area #block-views-newsflashes-coes-area-block ul.menu ul{position:static;clear:both;display:block}
-.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,.private-file a:before,[class*=" icon-"]:before,[class^=icon-]:before{position:relative;top:1px}
+.glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,.private-file a:before,[class*=" icon-"]:before,[class*=" iconafter-"]:after,[class^=icon-]:before{position:relative;top:1px}
+.coe-area #block-menu-menu-coe-area h2.block-title{background-color:#f2cc2b;display:block;padding:10px;font-weight:400;text-align:center;color:#1d1e19;margin-top:-20px}
+.coe-area #block-menu-menu-coe-area h2.block-title:before{position:relative;top:1px;display:inline-block;width:1em;content:"\e847";color:#000}
 .coe-area .dropdown-menu,.coe-area .nav-pills>li>a{border:0;border-radius:0;box-shadow:none}
 .coe-area .dropdown-menu{margin:0;padding:0}
 @media (max-width:992px){.coe-area .dropdown-menu{float:none}
@@ -1715,7 +1718,7 @@ div.service-links a{float:left;margin-right:10px}
 [class*="blue icon-"]:before{color:#44059c!important}
 .glyphicon-h3-a>h3>span>a:hover:before{text-decoration:none}
 #block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after,header#navbar>.container #social-headband-search section#block-custom-search-blocks-1 form .form-actions button:before{text-decoration:inherit;font-style:normal;speak:none;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-[class*=" iconafter-"]:after{position:relative;top:1px;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-align:center;text-transform:none;color:#777}
+[class*=" iconafter-"]:after{font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-align:center;text-transform:none;color:#777}
 .icon-facebook:before{color:#154EA8}
 .icon-twitter:before{color:#0C93FC}
 .icon-youtube:before{color:#CD0000}
@@ -2582,8 +2585,10 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-structure-calendar-structure .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active,.page-espace-co-entrepreneur-agenda-salles .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active,.page-espace-co-entrepreneur-calendrier-formations .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active{color:#000}
 #block-views-structure-calendar-structure .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active:before,.page-espace-co-entrepreneur-agenda-salles .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active:before,.page-espace-co-entrepreneur-calendrier-formations .views-widget-filter-field_room_tid .bef-select-as-links>.form-item a.active:before{content:""}
 }
-#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.first>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e807"}
-#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.nav-tabs>li.last>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e86c"}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first{float:left}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first>a:before,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.first>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e807"}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last{float:left}
+#block-views-structure-calendar-structure #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last>a:before,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last>a:before,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-calendar-listing-switcher ul.menu.nav>li.last>a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e86c"}
 #block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-trainings-calendar .nav-tabs,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs{border:0}
 #block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.active,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-trainings-calendar .nav-tabs>li.active,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active{border-bottom:1px solid #bf0e38}
 #block-views-structure-calendar-structure #block-menu-menu-trainings-calendar .nav-tabs>li.active>a,.page-espace-co-entrepreneur-agenda-salles #block-menu-menu-trainings-calendar .nav-tabs>li.active>a,.page-espace-co-entrepreneur-calendrier-formations #block-menu-menu-trainings-calendar .nav-tabs>li.active>a{border:0}
