@@ -2275,7 +2275,6 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--actualits,body.node-type-br
 }
 body.node-type-brand .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
 .view-info-meetings .view-content table th,.view-info-meetings .view-content table tr{border-bottom:3px solid #fff;background-color:#ededed}
-body.node-type-brand .field-name-field-training-duration{margin:0 20px}
 body.node-type-brand .field-name-allowed-articles-handling #shared-content-wrapper a{text-decoration:underline}
 body.node-type-brand #colorbox{line-height:1.5em}
 .page-reunions-information .page-header{margin-bottom:0}
@@ -2365,7 +2364,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .node-type-training .group-training-data .col-md-2 .label-above,.node-type-training .group-training-data .col-md-3 .label-above,.node-type-training .group-training-data .col-md-5 .label-above{font-weight:700;font-family:'Source Sans Pro',sans-serif}
 .node-type-training .group-training-right-col .label-above{font-family:'Source Sans Pro',sans-serif}
 .node-type-training .training-sessions .new-session-link>a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;font-weight:700;text-align:center;margin-bottom:20px;height:35px;overflow:hidden;color:#fff;margin-top:15px}
-.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.node-type-training .training-sessions .new-session-link>a:before,.node-type-training .training-sessions .session-list-link>a:before,.node-type-training .training-sessions .views-row .views-field-edit-node a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;width:1em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px}
 .node-type-training .training-sessions .new-session-link>a:before{text-decoration:inherit;content:"\e834";color:#fff}
 .node-type-training .training-sessions .views-row .views-field-edit-node a{color:#000;text-decoration:underline;padding-left:20px}
 .node-type-training .training-sessions .views-row .views-field-edit-node a:before{text-decoration:inherit;color:#777;content:"\e862";left:6px}
@@ -2375,7 +2374,6 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .node-type-training .training-sessions .views-field-nothing{float:right}
 .node-type-training .training-sessions .session-list-link>a:before{text-decoration:inherit;color:#777;content:'\e834'}
 .node-type-training .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
-.node-type-training .field-name-field-training-duration{margin:0 20px}
 .node-type-training .group-training-right-col ul>li{padding-left:20px!important;display:block!important;list-style-type:none!important;background:url(../images/coche.png) 0 5px no-repeat}
 .node-type-training .group-training-right-col ul>li:before{display:none!important;content:''!important}
 .field-name-field-session-dates .field-label{float:none}
@@ -2406,7 +2404,6 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-description{font-size:1.2em;line-height:2em}
 .page-certifications-et-labels .view-certifications-labels .views-row .views-field-field-cl-logo{float:left;margin-right:20px}
 .detail-session .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
-.detail-session .field-name-field-training-duration{margin:0 20px}
 .group-session-details{position:relative;margin-top:20px}
 .group-session-details .field-name-see-all-sessions-link{position:absolute;right:0;top:10px;padding:0 20px 0 0}
 .group-session-details img{float:right}
@@ -2624,9 +2621,8 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after{content:"";display:block;clear:both;border-bottom:3px dotted #999;width:60%;margin:25px auto}
 .form-item-edit-field-room-tid-2106 a.active:before,.form-item-edit-field-room-tid-2107 a.active:before,.form-item-edit-field-room-tid-2108 a.active:before,.form-item-edit-field-room-tid-2109 a.active:before,.form-item-edit-field-room-tid-2110 a.active:before{content:"\e879"}
-#block-views-structure-calendar-structure .field-name-field-introduction,.page-espace-co-entrepreneur-agenda-salles .field-name-field-introduction,.page-espace-co-entrepreneur-calendrier-formations .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
-#block-views-structure-calendar-structure .field-name-field-training-duration,.page-espace-co-entrepreneur-agenda-salles .field-name-field-training-duration,.page-espace-co-entrepreneur-calendrier-formations .field-name-field-training-duration{margin:0 20px}
 #colorbox .node-structure-event .structure-events-links,.node-room-event.view-mode-colorbox .structure-events-links{margin-top:20px;text-align:right}
+#block-views-structure-calendar-structure .field-name-field-introduction,.page-espace-co-entrepreneur-agenda-salles .field-name-field-introduction,.page-espace-co-entrepreneur-calendrier-formations .field-name-field-introduction{max-height:110px;overflow-y:auto;background-color:#ededed;border-radius:8px;padding:20px;border-bottom:20px solid #ededed;margin-bottom:20px}
 .calendar-calendar .month-view .full td.multi-day div.monthview{color:#777}
 #block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner div a{position:static}
 #block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff{border-right:none}
