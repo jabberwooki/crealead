@@ -1332,7 +1332,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 48,
       ),
@@ -1455,6 +1457,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'entityreference_views_formatter',
         'settings' => array(
+          'field_formatter_class' => '',
           'view_display' => 'brand_achievements',
           'view_name' => 'achievements',
         ),
@@ -1547,7 +1550,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 34,
       ),
@@ -1674,6 +1679,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'settings' => array(
           'add' => '',
           'display_id' => 'brand_coes',
+          'field_formatter_class' => '',
           'name' => 'field_collection_coes',
         ),
         'type' => 'field_collection_views_view',
@@ -1752,7 +1758,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'inline',
         'module' => 'email',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'email_default',
         'weight' => 37,
       ),
@@ -1842,6 +1850,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => 'brand_logo',
         ),
@@ -1978,7 +1987,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'inline',
         'module' => 'phone',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'phone',
         'weight' => 36,
       ),
@@ -2065,6 +2076,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'entityreference_views_formatter',
         'settings' => array(
+          'field_formatter_class' => '',
           'view_display' => 'brand_clients',
           'view_name' => 'clients',
         ),
@@ -2261,7 +2273,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 49,
       ),
@@ -2376,7 +2390,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 47,
       ),
@@ -2615,7 +2631,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'inline',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'link_default',
         'weight' => 38,
       ),
@@ -2716,7 +2734,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 35,
       ),
@@ -2795,6 +2815,7 @@ Le label doit être prouvé.',
         'label' => 'hidden',
         'module' => 'ds',
         'settings' => array(
+          'field_formatter_class' => '',
           'taxonomy_term_reference_view_mode' => 'logo',
           'use_content_language' => 1,
         ),
@@ -2884,6 +2905,7 @@ Le label doit être prouvé.',
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'field_formatter_class' => '',
           'links' => 0,
           'view_mode' => 'full',
         ),
@@ -3132,6 +3154,7 @@ Le label doit être prouvé.',
           'colorbox_field_formatter_link_type' => 'content',
           'colorbox_field_formatter_style' => 'colorbox-load',
           'colorbox_field_formatter_width' => 500,
+          'field_formatter_class' => '',
         ),
         'type' => 'colorbox_field_formatter_linked',
         'weight' => 39,
@@ -3404,6 +3427,7 @@ Le label doit être prouvé.',
         'label' => 'hidden',
         'module' => 'socialfield',
         'settings' => array(
+          'field_formatter_class' => '',
           'link_text' => 1,
         ),
         'type' => 'socialfield_formatter',

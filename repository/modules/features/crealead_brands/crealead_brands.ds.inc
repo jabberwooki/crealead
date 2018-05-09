@@ -193,13 +193,13 @@ function crealead_brands_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'brand_contacts' => array(
-      'weight' => '5',
+    'empty_field' => array(
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'empty_field' => array(
-      'weight' => '2',
+    'brand_contacts' => array(
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
