@@ -66,6 +66,14 @@ function crealead_trainings_menu() {
     'file' => 'crealead_trainings.ajax.inc',
   );
 
+  $items['remove_recommendation_from_list/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_trainings_remove_recommendation_from_list',
+    'access arguments' => array('acces content'),
+    'access callback' => TRUE,
+    'file' => 'crealead_trainings.ajax.inc',
+  );
+
   $items['add_recommendation_from_brand_tab/%'] = array(
     'type' => MENU_CALLBACK,
     'page callback' => 'crealead_trainings_add_recommendation_from_brand_tab',
