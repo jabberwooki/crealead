@@ -166,8 +166,19 @@ function crealead_faqs_query_alter(QueryAlterableInterface $query) {
       $node = $alias;
     }
 
+    // If user is not connected, excludes non public FAQs.
     if ($node && $search && !user_is_logged_in()) {
-      $query->condition($node . '.type', array('faq'), '<>');
+      $nids = [];
+      $efq = new EntityFieldQuery();
+      $efq->entityCondition('entity_type','node')
+        ->fieldCondition('field_public_faq', 'value', 1, '=');
+      $result = $efq->execute();
+      if (isset($result['node'])) {
+        $nids = array_keys($result['node']);
+      }
+      if (count($nids) > 0) {
+        $query->condition($node . '.nid', $nids, 'NOT IN');
+      }
     }
   }
 }
