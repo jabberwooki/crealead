@@ -54,7 +54,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Réalisations',
-    'weight' => '28',
+    'weight' => '29',
     'children' => array(
       0 => 'field_brand_achievements',
     ),
@@ -106,7 +106,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '30',
+    'weight' => '31',
     'children' => array(
       0 => 'articles_brand_articles',
       1 => 'allowed_articles_handling',
@@ -188,7 +188,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Références',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_brand_references',
     ),
@@ -453,7 +453,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '29',
+    'weight' => '30',
     'children' => array(
       0 => 'brand_agenda_eva_brandagenda',
       1 => 'news_brand_news',
@@ -638,7 +638,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
     'label' => 'Solutions',
-    'weight' => '31',
+    'weight' => '27',
     'children' => array(
       0 => 'group_solutions_rows',
     ),
