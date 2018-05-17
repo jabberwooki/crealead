@@ -1671,26 +1671,26 @@ h5{color:#bf0e38}
 div.chapo{margin:15px 0}
 .p{line-height:1.2em}
 blockquote{font-style:italic;color:#bf0e38;border:0;text-align:center}
-blockquote p:after,blockquote p:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:.5em;color:#bf0e38;vertical-align:text-top;position:relative;top:1px;width:1em}
+blockquote p:after,blockquote p:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:.5em;color:#bf0e38;vertical-align:text-top;position:relative;top:1px;width:1em;text-align:center}
 blockquote p:before{content:"\e857"}
 blockquote p:after{content:"\e856";margin-left:10px}
 .line-bottom-red{border-bottom:1px solid #bf0e38;padding-bottom:15px}
 .cartouche-noir{color:#fff;background:rgba(0,0,0,.7);display:inline;box-shadow:10px 0 0 rgba(0,0,0,.7),-10px 0 0 rgba(0,0,0,.7);line-height:1.3em}
-#block-system-main ul li:before,.warning-links a:before,ul.coche-rouge li:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#block-system-main ul li:before,.warning-links a:before,ul.coche-rouge li:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #block-system-main ul,ul.coche-rouge{padding:0;margin:0}
 #block-system-main ul li,ul.coche-rouge li{list-style:none;padding:0;margin:0}
-#block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;content:"\e850";color:#bf0e38}
+#block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;text-align:center;content:"\e850";color:#bf0e38}
 .contextual-links li a:before,.contextual-links li:before,li.print_html:before{content:''!important}
 #block-system-main ul.pager li:before,#block-system-main ul.pagination li:before,ul.coche-rouge.pager li:before,ul.coche-rouge.pagination li:before{display:none}
 div.service-links{display:block;float:right;margin-top:0;padding:0 0 0 20px}
-#close-logo:before,.warning-links a:before{position:relative;top:1px;display:inline-block;width:1em}
+#close-logo:before,.warning-links a:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center}
 div.service-links a{float:left;margin-right:10px}
 .node-type-page div.service-links{margin-top:-20px}
 #cboxLoadedContent{overflow-x:hidden!important}
 .warning-links a:before{margin-right:10px;color:#777;content:"\e84a"}
 #alert-logo{border:5px solid #999;padding:20px;position:absolute;width:400px;left:50%;margin-left:-210px;z-index:9999;background-color:#fff}
 #close-logo{width:20px;height:20px;float:right;margin-top:-16px;margin-right:-15px}
-#close-logo:before,.coe-area #block-menu-menu-coe-area h2.block-title:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#close-logo:before,.coe-area #block-menu-menu-coe-area h2.block-title:before{font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;text-decoration:inherit;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #close-logo:before{content:"\e832";color:#bf0e38}
 #close-logo:hover{cursor:pointer}
 @media (min-width:992px) and (max-width:1526px){.coe-area .main-container{width:60%!important}
@@ -1704,8 +1704,8 @@ div.service-links a{float:left;margin-right:10px}
 }
 .coe-area #block-menu-menu-coe-area ul.menu li,.coe-area #block-menu-menu-coe-area ul.menu ul,.coe-area #block-views-newsflashes-coes-area-block ul.menu li,.coe-area #block-views-newsflashes-coes-area-block ul.menu ul{position:static;clear:both;display:block}
 .glyphicon-h3-a-after>h3>span>a:after,.glyphicon-h3-a>h3>span>a:before,.private-file a:before,[class*=" icon-"]:before,[class*=" iconafter-"]:after,[class^=icon-]:before{position:relative;top:1px}
-.coe-area #block-menu-menu-coe-area h2.block-title{background-color:#f2cc2b;display:block;padding:10px;font-weight:400;text-align:center;color:#1d1e19;margin-top:-20px}
-.coe-area #block-menu-menu-coe-area h2.block-title:before{position:relative;top:1px;display:inline-block;width:1em;content:"\e847";color:#000}
+.coe-area #block-menu-menu-coe-area h2.block-title{box-shadow:0 3px 2px -2px #f2cc2b;display:block;padding:10px;font-weight:400;text-align:left;color:#1d1e19;margin-top:-10px}
+.coe-area #block-menu-menu-coe-area h2.block-title:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center;content:"\e847";color:#000}
 .coe-area .dropdown-menu,.coe-area .nav-pills>li>a{border:0;border-radius:0;box-shadow:none}
 .coe-area .dropdown-menu{margin:0;padding:0}
 @media (max-width:992px){.coe-area .dropdown-menu{float:none}
@@ -2382,7 +2382,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .field-name-field-session-dates .field-items>.field-item:before{margin-right:10px}
 .page-formations-toutes-les-sessions .view-id-trainings h3>a{float:right}
 @media screen and (min-width:992px){.page-formations-toutes-les-sessions .view-id-trainings h3>a{margin-right:50%}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser{min-height:400px;overflow:hidden}
+.page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser{min-height:400px;overflow:hidden}
 }
 .page-formations-toutes-les-sessions a.colorbox-node:before{margin-right:10px}
 .page-formations .views-exposed-widget{width:210px}
@@ -2393,9 +2393,9 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-formations .views-exposed-form #edit-reset:before,.page-formations .views-exposed-form #edit-submit-trainings:before{content:'\e831';color:#FFF;font-size:1.6em;left:-8px;top:-3px}
 .page-formations .views-exposed-form .views-reset-button #edit-reset:before{content:'\e832';color:#888;font-size:1.8em;top:-4px}
 .page-formations .form-item-title{width:200px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser{box-shadow:0 0 5px #aaa;margin-top:20px;padding:10px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-name-field-training-type,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
-.page-formations #views-bootstrap-grid-1>.row .group-wrapper-teaser .field-item>h3,.page-formations #views-bootstrap-grid-2>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
+.page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser{box-shadow:0 0 5px #aaa;margin-top:20px;padding:10px}
+.page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
+.page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
 .page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:3px dotted #999}
 .page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:1.4em}
 .page-certifications-et-labels .view-certifications-labels .views-row{clear:both;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bf0e38}
