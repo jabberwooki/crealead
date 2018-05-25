@@ -311,23 +311,11 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
 }
 
 function crealead_trainings_get_funded_logo_markup() {
-  $logo_markup = 'Logo manquant';
+  $funded_logo_fullpath = '/' . drupal_get_path('module','crealead_trainings') . '/images/tampon-crealead-v3.png';
+  $alt = "Prise en charge partielle du financement par Crealead pour les Crealeadiens";
+  $title = "Prise en charge partielle du financement par Crealead pour les Crealeadiens";
 
-  if ($logo_fid = variable_get('crealead_training_funded_logo_fid', FALSE)) {
-    if ($image = file_load($logo_fid)) {
-      $logo_markup = theme(
-        'image_style',
-        array(
-          'style_name' => 'funded_logo',
-          'path' => $image->uri,
-          'alt' => 'Prise en charge partielle du financement par Crealead pour les Crealeadiens',
-          'title' => 'Prise en charge partielle du financement par Crealead pour les Crealeadiens',
-        )
-      );
-    }
-  }
-
-  return $logo_markup;
+  return '<img typeof="foaf:Image"  src="'. $funded_logo_fullpath . '" alt="' . $alt . '" title="' . $title . '"/>';
 }
 
 /**
