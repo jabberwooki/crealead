@@ -128,7 +128,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 //  $to = implode(';', $email_addresses);
 //  $from = variable_get('site_mail');
   $from = "Crealead <contact@crealead.com>";
-  $reply_to = "no-reply@crealead.com";
+  $reply_to = "contact@crealead.com";
   $to = 'undisclosed-recipients:;';
   $bcc = implode(',', $email_addresses);
 

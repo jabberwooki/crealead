@@ -1,3 +1,7 @@
+Hotfix no-reply-to-contact / 2018-05-28
+=======================================
+  * crealead_newsflashes and crealead_warnings up: reply-to address set to contact@crealead.com instead of no-reply@crealead.com
+
 Hotfix drupal-core-up-security-59 / 2018-04-25
 =====================================================
  * core up to 7.59
