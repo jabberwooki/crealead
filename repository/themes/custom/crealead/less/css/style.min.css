@@ -1937,18 +1937,18 @@ header#navbar nav>ul.menu>li>a.active-trail{background-color:#bf0e38;color:#fff}
 #block-menu-menu-top ul.menu.nav>li{margin:0;padding:0}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3){position:absolute}
 @media (min-width:1540px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:0;background-color:#bf0e38}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px;color:#fff}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px;color:#fff;background-color:#bf0e38}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#fff}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail{color:#fff;background-color:#bf0e38}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:before{color:#fff}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover:before,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:hover{color:#000}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover:before,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:hover,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:hover:before{color:#000}
 }
-@media (min-width:768px) and (max-width:1540px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:0;width:40px;overflow:hidden;background-color:#f2cc2b}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#000}
+@media (min-width:768px) and (max-width:1540px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:0;width:40px;overflow:hidden;background-color:#bf0e38}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px;background-color:#bf0e38}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#fff}
 }
-@media (max-width:768px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:20px;width:35px;height:30px;overflow:hidden;background-color:#f2cc2b}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px}
+@media (max-width:768px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:20px;width:35px;height:30px;overflow:hidden;background-color:#bf0e38}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px;background-color:#bf0e38}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#000;margin-left:8px!important;margin-bottom:20px!important;padding-top:0}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:after{content:"coE";position:absolute;top:15px;left:7px;font-size:.9em}
 }

@@ -323,6 +323,7 @@ header#navbar {
         a{
           padding-left: 10px;
           color: white;
+          background-color: @rouge-crealead;
           &:before{
             content: "\e847";
             color: white;
@@ -342,6 +343,9 @@ header#navbar {
           }
           &:hover{
             color: #000;
+            &:before {
+              color: black;
+            }
           }
         }
       }
@@ -349,12 +353,13 @@ header#navbar {
         right:0;
         width: 40px;
         overflow: hidden;
-        background-color: @jaune-crealead;
+        background-color: @rouge-crealead;
         a{
           padding-left: 10px;
+          background-color: @rouge-crealead;
           &:before{
             content: "\e847";
-            color: #000;
+            color: white;
           }
         }
       }
@@ -363,9 +368,10 @@ header#navbar {
         width: 35px;
         height: 30px;
         overflow: hidden;
-        background-color: @jaune-crealead;
+        background-color: @rouge-crealead;
         a{
           padding-left: 10px;
+          background-color: @rouge-crealead;
           &:before{
             content: "\e847";
             color: #000;
