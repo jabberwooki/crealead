@@ -1939,7 +1939,8 @@ header#navbar nav>ul.menu>li>a.active-trail{background-color:#bf0e38;color:#fff}
 @media (min-width:1540px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:0;background-color:#bf0e38}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a{padding-left:10px;color:#fff}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:before{content:"\e847";color:#fff}
-#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:before{color:#fff}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail{color:#fff;background-color:#bf0e38}
+#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:before{color:#fff}
 #block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a.active-trail:hover:before,#block-menu-menu-top ul.menu.nav>li:nth-of-type(3) a:hover{color:#000}
 }
 @media (min-width:768px) and (max-width:1540px){#block-menu-menu-top ul.menu.nav>li:nth-of-type(3){right:0;width:40px;overflow:hidden;background-color:#f2cc2b}
