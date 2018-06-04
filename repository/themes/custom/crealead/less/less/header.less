@@ -312,7 +312,6 @@ header#navbar {
   position: static;
   margin-top: 30px;
   ul.menu.nav{
-
     > li {
     &:nth-of-type(3){
       position: absolute;
@@ -405,9 +404,9 @@ header#navbar {
           color: white;
         }
         &.active-trail {
-          color: white;
+          color: @rouge-crealead;
           &:before {
-            color: white;
+            color: @rouge-crealead;
           }
         }
       }
@@ -428,10 +427,13 @@ header#navbar {
           float: left;
           margin: 0;
           a {
-            padding: 0 15px 0 0;
+            padding: 0 7px 0 0;
             &:before {
               margin: 0;
             }
+          }
+          &.last{
+            padding: 0;
           }
 
         }

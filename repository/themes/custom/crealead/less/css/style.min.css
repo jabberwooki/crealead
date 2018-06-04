@@ -1954,12 +1954,14 @@ header#navbar nav>ul.menu>li>a.active-trail{background-color:#bf0e38;color:#fff}
 }
 #block-menu-menu-top ul.menu.nav>li>a{padding:5px 5px 5px 20px;height:30px;color:#000}
 #block-menu-menu-top ul.menu.nav>li>a:before{position:relative;top:1px;font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-align:center;text-transform:none;color:#777;content:"\e834"}
-#block-menu-menu-top ul.menu.nav>li>a.active-trail,#block-menu-menu-top ul.menu.nav>li>a.active-trail:before,#block-menu-menu-top ul.menu.nav>li>a:hover:before{color:#fff}
+#block-menu-menu-top ul.menu.nav>li>a:hover:before{color:#fff}
+#block-menu-menu-top ul.menu.nav>li>a.active-trail,#block-menu-menu-top ul.menu.nav>li>a.active-trail:before{color:#bf0e38}
 @media (max-width:1200px){#top-navigation{margin-top:-80px}
 #top-navigation.pull-right{float:none!important}
 #top-navigation #block-menu-menu-top ul.menu>li{float:left;margin:0}
-#top-navigation #block-menu-menu-top ul.menu>li a{padding:0 15px 0 0}
+#top-navigation #block-menu-menu-top ul.menu>li a{padding:0 7px 0 0}
 #top-navigation #block-menu-menu-top ul.menu>li a:before{margin:0}
+#top-navigation #block-menu-menu-top ul.menu>li.last{padding:0}
 .navbar-default .navbar-toggle.sub-arrow{background-color:transparent;border:0;margin-top:-10px}
 .navbar-default .navbar-toggle.sub-arrow:hover{border:0;background-color:transparent}
 .navbar-default .navbar-toggle.sub-arrow:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e835";color:#a9a9a9}
