@@ -263,3 +263,21 @@ function kcore_admin_menu_output_alter(&$content) {
     unset($content['menu']['admin/index']);
   }
 }
+
+/**
+ * Implements hook_node_access().
+ */
+function kcore_node_access($node, $op, $account) {
+  if (isset($node->type) && $node->type == 'webform' && !user_is_logged_in()) {
+    return NODE_ACCESS_DENY;
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function kcore_block_view_alter(&$data, $block) {
+  if ($block->delta == 'menu-coe-area' && !user_is_logged_in()) {
+    $data['content'] = array();
+  }
+}
