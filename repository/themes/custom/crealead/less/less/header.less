@@ -312,19 +312,39 @@ header#navbar {
   position: static;
   margin-top: 30px;
   ul.menu.nav{
-
     > li {
     &:nth-of-type(3){
       position: absolute;
 
       @media (min-width:1540px){
         right:0;
-        background-color: @jaune-crealead;
+        background-color: @rouge-crealead;
         a{
           padding-left: 10px;
+          color: white;
+          background-color: @rouge-crealead;
           &:before{
             content: "\e847";
+            color: white;
+          }
+          &.active-trail{
+            color: white;
+            background-color: @rouge-crealead;
+            &:before{
+              color: white;
+            }
+            &:hover{
+              color: black;
+              &:before{
+                color: #000;
+              }
+            }
+          }
+          &:hover{
             color: #000;
+            &:before {
+              color: black;
+            }
           }
         }
       }
@@ -332,12 +352,13 @@ header#navbar {
         right:0;
         width: 40px;
         overflow: hidden;
-        background-color: @jaune-crealead;
+        background-color: @rouge-crealead;
         a{
           padding-left: 10px;
+          background-color: @rouge-crealead;
           &:before{
             content: "\e847";
-            color: #000;
+            color: white;
           }
         }
       }
@@ -346,12 +367,14 @@ header#navbar {
         width: 35px;
         height: 30px;
         overflow: hidden;
-        background-color: @jaune-crealead;
+        background-color: @rouge-crealead;
         a{
           padding-left: 10px;
+          background-color: @rouge-crealead;
+          color: white !important;
           &:before{
             content: "\e847";
-            color: #000;
+            color: white !important;
             margin-left: 8px !important;
             margin-bottom: 20px !important;
             padding-top: 0;
@@ -362,6 +385,7 @@ header#navbar {
             top: 15px;
             left: 7px;
             font-size:0.9em;
+            color: white !important;
           }
         }
       }
@@ -377,7 +401,7 @@ header#navbar {
           content: "\e834";
         }
         &:hover:before {
-          color: @rouge-crealead;
+          color: white;
         }
         &.active-trail {
           color: @rouge-crealead;
@@ -403,10 +427,13 @@ header#navbar {
           float: left;
           margin: 0;
           a {
-            padding: 0 15px 0 0;
+            padding: 0 7px 0 0;
             &:before {
               margin: 0;
             }
+          }
+          &.last{
+            padding: 0;
           }
 
         }
