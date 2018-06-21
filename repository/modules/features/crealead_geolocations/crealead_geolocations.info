@@ -15,7 +15,6 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[field_base][] = field_coordinates
-features[menu_links][] = menu-coe-area_localisation-des-co-entrepreneurs:espace-co-entrepreneur/localisation-entrepreneurs
 features[variable][] = getlocations_aggr
 features[variable][] = getlocations_api3_key
 features[variable][] = getlocations_colorbox

@@ -435,7 +435,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -634,7 +634,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -690,6 +690,119 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training-field_recommended_by'.
+  $field_instances['node-training-field_recommended_by'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 26,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => 0,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'entityreference_entity_id',
+        'weight' => 35,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_image_style' => '',
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+          'field_formatter_class' => '',
+        ),
+        'type' => 'colorbox_field_formatter_linked',
+        'weight' => 36,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_recommended_by',
+    'label' => 'Recommandé par',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'label_help_description' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'node-training-field_related_certifs_labels'.
   $field_instances['node-training-field_related_certifs_labels'] = array(
     'bundle' => 'training',
@@ -713,7 +826,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -786,7 +899,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -973,7 +1086,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1065,7 +1178,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 23,
+        'weight' => 41,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1086,7 +1199,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 42,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1288,7 +1401,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1363,7 +1476,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1465,7 +1578,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 22,
+        'weight' => 40,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1489,7 +1602,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 41,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1573,7 +1686,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1779,7 +1892,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 20,
+        'weight' => 38,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -1800,7 +1913,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 39,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2017,7 +2130,7 @@ function crealead_trainings_field_default_field_instances() {
           'view_mode' => 'logo',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 25,
+        'weight' => 43,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -2192,7 +2305,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2322,7 +2435,7 @@ function crealead_trainings_field_default_field_instances() {
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
-        'weight' => 24,
+        'weight' => 42,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -2421,7 +2534,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 26,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2436,7 +2549,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 21,
+        'weight' => 39,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -2457,7 +2570,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 4,
+        'weight' => 40,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2518,7 +2631,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 18,
+        'weight' => 36,
       ),
       'sector_brand_block' => array(
         'label' => 'above',
@@ -2539,7 +2652,7 @@ function crealead_trainings_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 37,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -3193,6 +3306,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Pré-requis');
   t('Précisez le nombre de participants min et max si nécessaire.');
   t('Public visé');
+  t('Recommandé par');
   t('Session financée par Crealead Structure');
   t('Sessions programmées');
   t('Statut de publication précédent');

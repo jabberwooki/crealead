@@ -1,0 +1,7 @@
+#edit-field-allowed-brands-und {
+    border: 1px solid #ddd;
+    width: 20%;
+    padding: 5px 15px;
+    overflow-y: scroll;
+    height: 160px;
+}

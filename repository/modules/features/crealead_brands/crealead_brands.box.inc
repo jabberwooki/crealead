@@ -21,7 +21,7 @@ function crealead_brands_default_box() {
     'body' => array(
       'value' => '<h2>LES CO-ENTREPRENEURS DE CREALEAD</h2>
 
-<p>Crealead, c’est 180 co-entrepreneurs aux compétences complémentaires pour répondre à vos besoins.&nbsp;<br />
+<p>Crealead, c’est plus de 200 co-entrepreneurs aux compétences complémentaires pour répondre à vos besoins.&nbsp;<br />
 Bénéficiez de la proximité et la flexibilité d’entrepreneurs individuels intégrés à une structure <strong>coopérative</strong> <strong>pérenne et solide</strong>.&nbsp;Une garantie de sérieux et de professionnalisme, l’assurance de <strong>prestations de qualité</strong> dans tous nos domaines d’intervention.&nbsp;</p>
 ',
       'format' => 'full_html',

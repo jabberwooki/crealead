@@ -238,3 +238,7 @@ function crealead_preprocess_views_view(&$vars) {
     }
   }
 }
+
+function crealead_menu_tree__menu_coe_area($variables) {
+  return '<ul class="menu nav nav-pills nav-stacked">' . $variables['tree'] . '</ul>';
+}

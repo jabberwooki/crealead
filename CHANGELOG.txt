@@ -1,3 +1,108 @@
+Crealead 3.8 / 2018-06-21
+=========================
+  * kcore up: Access perm reset to default for view espace-co-entrepreneurs/informations and hook_block_view_alter() implemented to remove coe menu when user is not logged in.
+  * crealead_faqs up: Access perm on view faqs altered: only authenticated users can see the correspondin Coe menu item.
+  * kcore up: Access perm on view espace-co-entrepreneurs/informations altered: only authenticated users can see the correspondin Coe menu item.
+  * crealead_trainings up: Funded logo hard-coded to prevent recurrent losing.
+  * Feature brands up to changer tab solutions order.
+  * crealead_faqs up: Non public FAQs are excluded from Drupal search for not connected users.
+  * crealead_brands up: Pager changed back from infinite scroll to full pager in brands catalog and from pagerer to full pager in sector brands landing page.
+  * crealead_trainings up: Brand's trainings pager changed back to full pager.
+  * crealead_trainings up: Missing hook_menu() entry remove_recommendation_from_list/% added.
+  * crealead_trainings up: CSS instruction added to add space between trainings list and pager after pager has been changed back to standard full pager instead of infinite scroll.
+  * crealead_articles up: dpm() function removed from .module file.
+  * Revisions comparison css style added.
+  * Feature brands up to manage products and trainings display layout in brands.
+  * Templates created to manage display of products and trainings in brands.
+  * Feature trainings up to manage layout in brands.
+  * Feature products up to manage layout in brands.
+  * Feature calendar up to add title to view calendar in espace coE.
+  * crealead_trainings up: Closes V3 S6-5: superadmin, admin, webmaster and pole gestion roles now can see list of interested users in training sessions colorbox popup.
+  * crealead_trainings up: forgotten dpm() removed.
+  * crealead_articles and crealead_brands up: forgottem dpm() and console.log() removed.
+  * crealead_products up: Fixes bug 'Undefined index: und dans crealead_products_views_pre_render() (ligne 120...'.
+  * crealead_articles up: Close V3 S6-4: When an article is modified, previously allowed brands receive an email.
+  * crealead_faqs up: search results display faq nodes to connected users only.
+  * crealead_faqs up: Link 'Voir la réponse' added to question items in public and private views.
+  * crealead_faqs up: Link to private FAQ added to public FAQ page.
+  * Feature products up to manage addition of product from the brand page by it's owner.
+  * Feature brands up to manage display suite solutions.
+  * crealead_brands.js to manage diff col size in display suite solutions.
+  * match-news-articles-height up to manage regexp in class selector.
+  * Feature brands up to manage display suite solutions.
+  * Feature kcore up to disconnect links from coE menu.
+  * Feature profiles up to disconnect link trombinoscope from coE menu.
+  * Feature groups up to disconnect link from coE menu.
+  * Feature geolocalisation up to disconnect link from coE menu.
+  * Feature gazette up to disconnect link from coE menu.
+  * Feature faqs up to disconnect link from coE menu.
+  * Feature documents up to delete menu link filedepot on coe area.
+  * crealead_trainings up: singular/plural form applied to displayed number of recommending people.
+  * crealead_trainings up: Recommendation mechanism added to brand's training list tab (solutions).
+  * crealead_articles up: Shared articles that have been displayed by end users remain displayed after article modification.
+  * crealead_brands up: 'Champ vide' field content changed to '&nbsp;'.
+  * template.php up to add nav-pills and nav-stacked classes to coE menu.
+  * Less ans Css up to manage coE dropdown menu in all screen sizes.
+  * Feature kcore.js up to manage coEdropdown menu in all screen sizes.
+  * Feature brands up to manage title metatag rewrite.
+  * Fontello up to add like incons.
+  * Feature brands up to modify title brand mecanism.
+  * crealead_info_meetiings up: Closes unvalidated story V3 S5-1 : New field field_attendance created to handle 3 different attendance states (not yet processed, present, absent) instead of 2 (present, absent).
+  * Feature crealead_info_meetings up to improve csv export.
+  * Feature crealead_brands up to manage metatag title.
+  * crealead_trainings up: CSS code updated: All CSS instruction related to recommendations commented.
+  * crealead_trainings up: CSS code updated: margin-bottom added to logo to prevent overlapping with the recommendation link.
+  * crealead_trainings up: Closes story V3 S5-6: Trainings can be recommended by connected users.
+  * Feature crealead_brands up to integrate products.
+  * Feature crealead_products created.
+  * CSS up to modify menu item espace co-entrepreneur position ans shape.
+  * drupal core up (58) for security reasons.
+  * crealead_faqs up: Javascript file added to control Population choices depending on public/private choice.
+  * crealead_offers up: field_display_end_date format altered : format is now 'jj/mm/aaaa'.
+  * crealead_needs up: field_display_end_date format altered : format is now 'jj/mm/aaaa'.
+  * crealead_newsflashes up: field_display_end_date format altered : format is now 'jj/mm/aaaa'.
+  * crealead_info_meetings up: Scheduling open and close dates format altered : format is now 'd/m/Y H:i O'.
+  * Install profile up: Contrib module isotope dependency added.
+  * crealead_faqs up: Missing permissions added.
+  * crealead_faqs up: Missing faqs view, menu-top and menu-coe-area links added.
+  * Install profile up: Typo in crealead_update_7002 hook's comment fixed.
+  * Install profile up: crealead_faqs feature activation added.
+  * Feature crealead_faqs created.
+  * crealead_newsflashes up: field_related_population cardinality changed to unlimited because the corresponding taxo voc must be used by fa content type as well.
+  * crealead_groups up: missing pathauto pattern for business group nodes added.
+  * kcore up: users/entity_view_1 (business_group members) altered: now sorted in name's asc order.
+  * kcore and crealead_groups up: Members of a business group are visible in a group full view mode.
+  * crealead_groups and crealead_profiles up: coes can join a business group.
+  * crealead_groups up: business_groups view created, and link added to menu_coe_area.
+  * crealead_groups up: Permissions settings added.
+  * crealead_groups up: field_linked_groups widget changed from list to checkboxes.
+  * Install profile up: crealead_groups feature activation added.
+  * crealead_groups feature created.
+  * crealead_needs up: Close story V3 5-5: 'Je contacte' instead of 'J'ai la même demande'.
+  * crealead_brands up: Missing DS group_allowed_articles_wrapper added.
+  * shared_content up: hook_uninstall() implemented with empty code.
+  * shared_content up: hook_schema altered: default value for field status set to 0 instead of 1.
+  * shared_content custom module up: shared_content.install.php (wtf) renamed shared_content.install.
+  * shared_content custom module up: hook_schema() function moved from the .module file to the .install file (so stupid indeed).
+  * crealead_articles up: Story V3 S5-3 completed.
+  * crealead_news up: css file createad.
+  * Feature kcontextes up to give custom_search_block permission to everyone.
+  * prevent-logo-download.js to avoid jquery-ui.
+  * crealead_articles up: hook_nod_postsave updated: condition on article or news content type added, watchdog comments added.
+  * crealead_articles up: hook_nod_postsave updated: condition on article or news content type added.
+  * kcore up: custom module shared_content activation added.
+  * crealead_brands up: allowed articles block and allowed content handling block added to DS full view mode.
+  * crealead_articles up: useless header and footer removed from articles/allowed_articles view block.
+  * Custom module shared_content createad.
+  * crealead_articles up: hook_node_postsave added to save shared articles into crealead_shared_content db table.
+  * prevent-logo-download.js added to prevent logo download.
+  * crealead_brands up: Block 'shared articles' added to brand's Articles tab.
+  * crealead_articles up: Title of shared articles block turned on.
+  * crealead_articles up: new view block articles/allowed_articles createad.
+  * crealead_articles up: New field field_allowed_brands created.
+  * crealead_info_meetings up: Closes story V3 S5-1: Presence non is now displayed.
+  * crealead_newsflashes up: Sender email address set up back from 'no-reply@crealead.com' to 'contact@crealead.com'.
+
 Hotfix no-reply-to-contact / 2018-05-28
 =======================================
   * crealead_newsflashes and crealead_warnings up: reply-to address set to contact@crealead.com instead of no-reply@crealead.com

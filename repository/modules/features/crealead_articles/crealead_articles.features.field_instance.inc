@@ -47,7 +47,25 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
       ),
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'diff_standard' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
@@ -144,7 +162,135 @@ function crealead_articles_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_allowed_brands'.
+  $field_instances['node-article-field_allowed_brands'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Saisissez les premiers caractères de la marque que vous voulez enregistrer.<br>
+Ne saisissez qu\'une seule marque. Pour ajouter une autre marque, cliquez sur le bouton <em><b>Ajouter un autre élément</b></em>.<br>
+Pour retirer une marque, videz le champ qui la contient.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'brand_articles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => 0,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 17,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'diff_standard' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => 0,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_allowed_brands',
+    'label' => 'Marques qui peuvent utiliser cet article',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'label_help_description' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 3,
     ),
   );
 
@@ -173,7 +319,22 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'list',
         'settings' => array(
@@ -186,7 +347,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -249,7 +410,35 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'field_formatter_class' => '',
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
@@ -347,7 +536,29 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'colorbox' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => 'large_bandeau',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -456,7 +667,7 @@ function crealead_articles_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -488,7 +699,22 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(
@@ -501,7 +727,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -538,7 +764,7 @@ function crealead_articles_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -567,7 +793,22 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'colorbox' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(
@@ -580,7 +821,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -617,7 +858,7 @@ function crealead_articles_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -646,7 +887,22 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(
@@ -659,7 +915,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -693,7 +949,7 @@ function crealead_articles_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -722,7 +978,22 @@ function crealead_articles_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 18,
       ),
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'diff_standard' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(
@@ -735,7 +1006,7 @@ function crealead_articles_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -769,7 +1040,7 @@ function crealead_articles_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -782,8 +1053,12 @@ function crealead_articles_field_default_field_instances() {
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des articles spécifiques à ces dîtes thématiques. Merci de cocher une thématique que si c\'est un sujet important de votre article.');
   t('Marque(s) concernée(s)');
   t('Marque(s) sectorielle(s) concernée(s)');
+  t('Marques qui peuvent utiliser cet article');
   t('Nature de l\'article');
   t('Pour pouvoir être utilisés, une certification et/ou un label doivent être prouvés.');
+  t('Saisissez les premiers caractères de la marque que vous voulez enregistrer.<br>
+Ne saisissez qu\'une seule marque. Pour ajouter une autre marque, cliquez sur le bouton <em><b>Ajouter un autre élément</b></em>.<br>
+Pour retirer une marque, videz le champ qui la contient.');
   t('Thématique(s) concernée(s)');
 
   return $field_instances;

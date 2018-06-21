@@ -1,0 +1,146 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 13/03/18
+ * Time: 18:36
+ */
+
+
+/**
+ * Implements hook_block_info().
+ */
+function shared_content_block_info() {
+  $blocks = array();
+  $blocks['allowed_articles_handling'] = array(
+    'info' => t('Gestion du contenu partagé : Articles'),
+  );
+  $blocks['allowed_news_handling'] = array(
+    'info' => t('Gestion du contenu partagé : Actualités'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function shared_content_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'allowed_articles_handling' :
+      $content = '';
+      global $user;
+      $brand = menu_get_object();
+      if ($user->uid == $brand->uid || in_array('administrateur', $user->roles)) {
+        drupal_add_css(drupal_get_path('module', 'shared_content') . '/shared_content.css');
+
+        if ($articles_list = _get_shared_content('article', $brand->nid)) {
+          $content = '<div class="content-publication-handling">';
+          $content .= '<p class="shared-content-handling-title">Gestion des articles partagés</p>';
+          $content .= '<div id="shared-content-wrapper">';
+          $content .= $articles_list;
+          $content .= '</div>';
+          $content .= '</div>';
+        }
+      }
+      $block['content'] = $content;
+      break;
+
+    case 'allowed_news_handling' :
+      $content = "gestion des actus partagées";
+      $block['content'] = $content;
+      break;
+  }
+
+  return $block;
+}
+
+function _get_shared_content($type, $brand_nid) {
+  $query = db_select('crealead_shared_content', 'sc');
+  $query->join('node', 'n', 'n.nid=sc.nid');
+  $query->fields('sc', array('nid','brand_id','status'));
+  $query->fields('n', array('title'));
+  $query->condition('sc.type', $type);
+  $query->condition('sc.brand_id', $brand_nid);
+  $result = $query->execute()->fetchAll();
+//  dpm($result);
+
+  if (!sizeof($result)) {
+    return false;
+  }
+
+  $content = '<div id="shared-content-wrapper"><ul>';
+  foreach ($result as $item) {
+    $class = 'unpublished-content';
+    $new_status = '1';
+    $link_title = 'Afficher dans ma marque';
+
+    if ($item->status) {
+      $class = 'published-content';
+      $new_status = '0';
+      $link_title = 'Ne plus afficher dans ma marque';
+    }
+
+    $link = '<a href="/alter_shared_content_status/'
+      . $type . '/'
+      . $new_status . '/'
+      . $item->nid . '/'
+      . $item->brand_id . '/nojs"'
+      . ' class="use-ajax content-publication">' . $link_title .'</a>';
+
+    $href = '/node/' . $item->nid . '?width=60%25&height=80%25'; //&iframe=true';
+
+    $content .= '<li><span class="' . $class . '"><a class="shared-item-title colorbox-node" href="' . $href . '">' . $item->title . '</a></span>' . $link . '</li>';
+  }
+  $content .= '</div></ul>';
+
+  return $content;
+}
+
+function shared_content_menu() {
+  $items['alter_shared_content_status/%/%/%/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'crealead_alter_shared_content_status',
+    'access callback' => TRUE,
+    'file' => 'shared_content.ajax.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function shared_content_views_query_alter(&$view, &$query) {
+  if ($view->current_display == 'allowed_articles') {
+    global $user;
+    $brand_id = $query->where[0]['conditions'][0]['value'][':field_data_field_allowed_brands_field_allowed_brands_target_id'];
+
+    // We get the allowed articles nids for the current brand.
+    $shared_content_query = db_select('crealead_shared_content', 'sc');
+    $shared_content_query->fields('sc', array('nid'));
+    $shared_content_query->condition('sc.type', 'article');
+    $shared_content_query->condition('sc.brand_id', $brand_id);
+    $shared_content_query->condition('sc.status', 1);
+    $result = $shared_content_query->execute()->fetchAllKeyed(0,0);
+
+    // Then we alter the view query based on theses article nids
+    // to make the view to display only articles published by the brand owner.
+    $query->where[1]['conditions'][] = array(
+      'field' => 'node.nid',
+      'value' => array_values($result),
+      'operator' => 'IN'
+    );
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function shared_content_views_pre_render(&$view) {
+  if ($view->current_display == 'allowed_articles' && sizeof($view->result) == 0) {
+//    $view->build_info['title'] = '';
+  }
+}

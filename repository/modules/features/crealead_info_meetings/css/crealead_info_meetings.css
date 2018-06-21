@@ -11,3 +11,25 @@
     clear: left;
     /*margin-top: 50px;*/
 }
+
+.views-field-field-attendee {
+    color: #cccc99;
+}
+.view-display-id-registrations_list th.views-field-field-attendee {
+    color: #aaaaaa;
+}
+.presence-yes {
+    font-weight: 600;
+    font-size: 110%;
+}
+.presence-no {
+    color: #aaa;
+}
+
+/* Formulaire inscription réunion */
+.node-info-meeting.view-mode-full #edit-field-attendance {
+    clear: both;
+}
+.node-info-meeting.view-mode-full .form-item-state {
+    clear: both;
+}

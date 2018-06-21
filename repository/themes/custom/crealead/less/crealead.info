@@ -53,6 +53,7 @@ scripts[] = 'smartmenus/jquery.smartmenus.js'
 scripts[] = 'smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js'
 
 scripts[] = 'js/search_form_focus.js'
+scripts[] = 'js/prevent-logo-download.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''

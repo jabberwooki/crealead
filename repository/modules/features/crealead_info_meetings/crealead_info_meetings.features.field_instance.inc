@@ -490,6 +490,47 @@ function crealead_info_meetings_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'registration-info_meeting_registration-field_attendance'.
+  $field_instances['registration-info_meeting_registration-field_attendance'] = array(
+    'bundle' => 'info_meeting_registration',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'registration',
+    'field_name' => 'field_attendance',
+    'label' => 'Présence',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
   // 'registration-info_meeting_registration-field_attendee'.
   $field_instances['registration-info_meeting_registration-field_attendee'] = array(
     'bundle' => 'info_meeting_registration',
@@ -517,6 +558,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'weight' => 3,
       ),
     ),
+    'ds_extras_field_template' => 'theme_field',
     'entity_type' => 'registration',
     'field_name' => 'field_attendee',
     'label' => 'Présent à la réunion',
@@ -529,9 +571,10 @@ function crealead_info_meetings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'display_label' => 1,
+        'label_help_description' => '',
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -1504,6 +1547,7 @@ function crealead_info_meetings_field_default_field_instances() {
   t('Projet d\'activité');
   t('Préciser');
   t('Prénom');
+  t('Présence');
   t('Présent à la réunion');
   t('Sexe');
   t('Statut');

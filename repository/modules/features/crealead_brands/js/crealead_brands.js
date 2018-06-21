@@ -43,7 +43,7 @@ jQuery(function($){
         });
       }
       // if url has #hash, we add the presentation one
-      if(!window.location.hash) {
+      if (!window.location.hash) {
         location.hash = 'bootstrap-fieldgroup-nav-item--prsentation';
         $("html, body").animate({ scrollTop: 0 }, "slow");
       }
@@ -51,6 +51,39 @@ jQuery(function($){
       $('.group-brand-tabs > li > a').click(function(){
         history.pushState(null, null, $(this).attr("href"));
       });
+      // manage width's col of solutions (products and trainings
+      var nb_trainings = 0;
+      var nb_products = 0;
+      var cols_training, cols_product;
+      if ($(".group-solution-col1 div.trainings-in-brand").length) {
+        cols_training = $(".group-solution-col1 div.trainings-in-brand");
+        nb_trainings = $(".group-solution-col1 div.trainings-in-brand").length;
+      }
+      if ($(".group-solution-col2 div.products-in-brand").length) {
+        cols_product = $(".group-solution-col2 div.products-in-brand");
+        nb_products = $(".group-solution-col2 div.products-in-brand").length;
+      }
+      console.log("formations produits : " + nb_trainings + " - " + nb_products);
+      if (nb_trainings && nb_products ) {
+        if((nb_products / nb_trainings) <= 0.5){
+          $(".group-solution-col1").removeClass("col-lg-6").addClass("col-lg-8");
+          $(".group-solution-col2").removeClass("col-lg-6").addClass("col-lg-4");
+          cols_training.removeClass("col-lg-4").addClass("col-lg-6");
+          cols_product.removeClass("col-lg-4").addClass("col-lg-12");
+        } else if((nb_products / nb_trainings) > 0.5 && (nb_products / nb_trainings) <= 1.5) {
+          cols_training.removeClass("col-lg-4").addClass("col-lg-6");
+          cols_product.removeClass("col-lg-4").addClass("col-lg-6");
+        } else {
+          $(".group-solution-col1").removeClass("col-lg-6").addClass("col-lg-4");
+          $(".group-solution-col2").removeClass("col-lg-6").addClass("col-lg-8");
+          cols_training.removeClass("col-lg-4").addClass("col-lg-12");
+          cols_product.removeClass("col-lg-4").addClass("col-lg-6");
+        }
+      } else if(nb_trainings){
+        $(".group-solution-col1").removeClass("col-lg-6").addClass("col-lg-12");
+      } else if(nb_products){
+        $(".group-solution-col2").removeClass("col-lg-6").addClass("col-lg-12");
+      }
     }
   };
 }(jQuery))

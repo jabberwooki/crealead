@@ -11,31 +11,31 @@ include_once 'crealead_info_meetings.features.inc';
  */
 function crealead_info_meetings_init() {
   $node = menu_get_object();
-  if ((isset($node) && $node->type == "info_meeting") || (arg(0) == 'registration' && ((null!== arg(1) && is_int((int)arg(1)) && arg(1) != 0) || (null !== arg(2) && arg(2) == 'edit')))) {
+  if ((isset($node) && $node->type == "info_meeting") || (arg(0) == 'registration' && ((NULL !== arg(1) && is_int((int) arg(1)) && arg(1) != 0) || (NULL !== arg(2) && arg(2) == 'edit')))) {
     // We catch the first 3 letters of each term from registrant_statuses vocabulary,
     // to be used in the STATUT checkboxes jquery reorganisation.
     // (see repository/modules/features/crealead_info_meetings/js/crealead_info_meetings.js)
     $display = 'create-form'; // case 1: we are in the info meeting full view mode which displays the registration creation form
-    if (arg(0) == 'registration' && null!== arg(1) && is_int((int)arg(1)) && arg(1) != 0) {
+    if (arg(0) == 'registration' && NULL !== arg(1) && is_int((int) arg(1)) && arg(1) != 0) {
       $display = 'full-mode'; // case 2: we are in the registration full view mode
     }
-    if (arg(0) == 'registration' && null !== arg(2) && arg(2) == 'edit') {
+    if (arg(0) == 'registration' && NULL !== arg(2) && arg(2) == 'edit') {
       $display = 'edit-form'; // case 3: we are in the registration edit form
     }
     drupal_add_js(array('crealead_registration_display' => $display), 'setting');
-    
+
     $params = array();
     $voc = taxonomy_vocabulary_machine_name_load('registrant_statuses');
     $tree = taxonomy_get_tree($voc->vid);
     foreach ($tree as $term) {
-      $params[$term->tid] = substr(strtolower(transliteration_get($term->name)),0,3);
+      $params[$term->tid] = substr(strtolower(transliteration_get($term->name)), 0, 3);
     }
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
-    drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
+    drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
   }
   elseif ('reunions-information' == current_path()) {
     drupal_page_is_cacheable(FALSE);
-    drupal_add_js(drupal_get_path('module','crealead_info_meetings') . '/js/crealead_info_meetings.js');
+    drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
   }
 }
 
@@ -67,11 +67,12 @@ function crealead_info_meetings_menu() {
 
   return $items;
 }
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_form_alter(&$form, &$form_state, $form_id) {
-  drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
+  drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
   // Form fields re-ordering
 //  $form['who_is_registering']['#weight'] = -10;
 //  $form['user']['#weight'] = -9;
@@ -98,6 +99,8 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
   if (!user_is_logged_in()) {
     // field attendee is hidden
     unset($form['field_attendee']);
+    // field attendance is hidden
+    unset($form['field_attendance']);
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
 
@@ -154,8 +157,8 @@ function crealead_info_meetings_menu_alter(&$items) {
  *
  * @return bool|void
  */
-function crealead_registration_list(){
-  return views_embed_view('crealead_registrations','registrations_list');
+function crealead_registration_list() {
+  return views_embed_view('crealead_registrations', 'registrations_list');
 }
 
 /**
@@ -180,10 +183,37 @@ function crealead_info_meetings_entity_view_alter(&$build, $type) {
 function crealead_info_meetings_views_pre_render(&$view) {
   if (($view->name == 'crealead_registrations' || $view->name == 'info_meetings')
     && (($view->current_display == 'registrations_list') || $view->current_display == 'registrations_stats'
-  || $view->current_display == 'registration_export')) {
+      || $view->current_display == 'registration_export')
+  ) {
+    drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
     foreach ($view->result as $result) {
-      $result->field_field_attendee[0]['rendered']['#markup'] = ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : '';
+      // Old field attendee
+      $result->field_field_attendee[0]['rendered']['#markup'] =
+        ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : 'non';
+
+      // New field attendance
+      if (isset($result->field_field_attendance) && !empty($result->field_field_attendance)) {
+        $markup = $result->field_field_attendance[0]['rendered']['#markup'];
+        $modified_markup = '';
+        switch ($result->field_field_attendance[0]['raw']['value']) {
+          case '0':
+            $modified_markup = '<span class="presence-not-processed">' . $markup . '</span>';
+            break;
+          case '1':
+            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
+            break;
+          case '2':
+            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
+        }
+      }
     }
+  }
+}
+
+
+function crealead_info_meetings_preprocess_views_view(&$vars) {
+  if ($vars['view']->name == 'info_meetings') {
+    $vars['header'] = '<div id="xls-button" style="background-color: #FF6600; padding: 10px 10px 5px 10px; display:table;">' . $vars['feed_icon'] . '</div>';
   }
 }
 
@@ -214,7 +244,8 @@ function crealead_info_meetings_action_info() {
  * @param $context
  */
 function crealead_check_registrants_as_present(&$entity, $context) {
-  crealead_field_attendee_value_alter($entity->registration_id, 1);
+//  crealead_field_attendee_value_alter($entity->registration_id, 1);
+  crealead_field_attendance_value_alter($entity->registration_id, 1);
 }
 
 /**
@@ -224,19 +255,37 @@ function crealead_check_registrants_as_present(&$entity, $context) {
  * @param $context
  */
 function crealead_check_registrants_as_absent(&$entity, $context) {
-  crealead_field_attendee_value_alter($entity->registration_id, 0);
+//  crealead_field_attendee_value_alter($entity->registration_id, 0);
+  crealead_field_attendance_value_alter($entity->registration_id, 2);
 }
 
 /**
- * Helper function for VBO callback actions.
+ * Helper function for VBO callback actions on field_attendee.
  *
  * @param integer $entity_id ID of the entity to alter.
  * @param integer $value Value to be given to field_attendee (1 to mark as present, 0 to mark as absent).
  */
-function crealead_field_attendee_value_alter($entity_id, $value) {
-  $wrapper = entity_metadata_wrapper('registration', $entity_id);
-  $wrapper->field_attendee = $value;
-  $wrapper->save();
+function crealead_field_attendee_value_alter($registration_id, $value) {
+  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+  if (isset($registration_wrapper->field_attendee) && !empty($registration_wrapper->field_attendee)) {
+    $registration_wrapper->field_attendee = $value;
+    $registration_wrapper->save();
+  }
+}
+
+/**
+ * Helper function for VBO callback actions on field_attendance.
+ * (This field has been created as replacement of field_attendee)
+ *
+ * @param integer $entity_id ID of the entity to alter.
+ * @param integer $value Value to be given to field_attendee (1 to mark as present, 2 to mark as absent).
+ */
+function crealead_field_attendance_value_alter($registration_id, $value) {
+  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+  if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
+    $registration_wrapper->field_attendance->set($value);
+    $registration_wrapper->save();
+  }
 }
 
 /**
@@ -252,12 +301,15 @@ function crealead_info_meetings_registration_status_alter(&$status, &$context) {
  * Implements hook_form_FORM_ID_alter().
  */
 function crealead_info_meetings_form_registration_entity_settings_form_alter(&$form, &$form_state, $form_id) {
-  drupal_add_css(drupal_get_path('module','crealead_info_meetings') . '/css/crealead_info_meetings.css');
+  drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
   // Prevent page freezing when trying to display all available token in the reminder settings form.
-  if(isset($form['reminder']['reminder_settings']['token_tree'])) {
+  if (isset($form['reminder']['reminder_settings']['token_tree'])) {
     unset($form['reminder']['reminder_settings']['token_tree']);
   }
   $form['reminder']['reminder_settings']['reminder_template']['#title'] = 'Message de rappel';
+
+  $form['scheduling']['open']['#date_format'] = 'd/m/Y H:i O';
+  $form['scheduling']['close']['#date_format'] = 'd/m/Y H:i O';
 }
 
 /**
@@ -268,8 +320,8 @@ function crealead_info_meetings_form_registration_registrations_broadcast_form_a
     unset($form['token_tree']);
   }
 
-  $default_message = variable_get('info_meeting_default_email_body','');
-  if($default_message == '') {
+  $default_message = variable_get('info_meeting_default_email_body', '');
+  if ($default_message == '') {
     $admin_url = '/admin/config/crealead/info-meetings?destination=' . current_path();
 
     $form['subject']['#weight'] = -2;
@@ -278,7 +330,7 @@ function crealead_info_meetings_form_registration_registrations_broadcast_form_a
       . 'Aucun message par défaut n\'a été paramétré. '
       . 'Vous pouvez le faire en allant dans '
       . '<a href="' . $admin_url . '">Configuration > Crealead > Réunions d\'information</a>.'
-      .'</div>';
+      . '</div>';
 
     $form['help_text'] = array(
       '#markup' => $help_text,

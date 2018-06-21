@@ -1,0 +1,66 @@
+/* Faqs private faq link */
+.private-faq-link {
+    float: right;
+}
+
+/* Faqs view filters */
+.isotope-options .filterbutton.selected {
+    color: #a00c2f;
+    background-color: white;
+}
+
+/* Faqs view header */
+
+#block-system-main .view-faqs .view-header ul li {
+    /*border: 1px solid;*/
+    display: inline-block;
+}
+
+#block-system-main .view-faqs .view-header ul li:before {
+    display: none;
+}
+
+/* Faq view content */
+#block-system-main .view-faqs .view-content {
+    margin-top: 20px;
+}
+#block-system-main .view-faqs .view-content ul li:before {
+    display: none;
+}
+
+/*.isotope-grid-sizer { width: 22%; }*/
+.isotope-gutter-sizer { width: 4%; }
+.isotope-element {
+    width: 33%;
+    /*border: 1px solid #ccc;*/
+}
+/*.isotope-element { width: 22%; height: 50px; }*/
+/*.isotope-element.my-data-value { width: 48%; }*/
+
+#block-system-main .view-faqs .isotope-element .views-field-nothing {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+#block-system-main .view-faqs .isotope-element .question {
+    margin-bottom: 15px;
+}
+#block-system-main .view-faqs .isotope-element .question a {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+/* Faqs colorbox */
+.node-faq.view-mode-colorbox .field-name-field-detailed-question {
+    font-size: 110%;
+    font-weight: bold;
+}
+.node-faq.view-mode-colorbox .field-name-field-answer {
+    margin-top: 20px;
+}
+.node-faq.view-mode-colorbox .field-name-field-attached-file {
+    margin-top: 20px;
+}
