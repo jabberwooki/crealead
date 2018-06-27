@@ -1,3 +1,7 @@
+Hotfix newsflashes-manual-sending-bugfix / 2018-06-27
+=====================================================
+  * crealead_newsflashes up: manual sending wsod bug fixed.
+
 Crealead 3.8 / 2018-06-21
 =========================
   * kcore up: Access perm reset to default for view espace-co-entrepreneurs/informations and hook_block_view_alter() implemented to remove coe menu when user is not logged in.
