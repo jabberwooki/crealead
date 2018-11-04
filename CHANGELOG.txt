@@ -1,3 +1,8 @@
+Hotfix missing-field_collection-module-dependency / 2018-11-04
+==============================================================
+  * A brand new fresh install could not create field_interested_users due to non activation of field_collection module.
+  Added as dependency in crealead.info profile's file.
+
 Hotfix newsflashes-manual-sending-bugfix / 2018-06-27
 =====================================================
   * crealead_newsflashes up: manual sending wsod bug fixed.
