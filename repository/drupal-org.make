@@ -125,8 +125,9 @@ projects[custom_search][subdir] = contrib
 projects[custom_search][version] = "1.20"
 
 projects[date][subdir] = contrib
-projects[date][version] = "2.9"
-projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
+projects[date][version] = "2.10"
+;the following patch for v2.9 is not necessary for v2.10
+;projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
 
 projects[date_ical][subdir] = contrib
 projects[date_ical][version] = "3.9"
