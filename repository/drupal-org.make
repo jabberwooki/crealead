@@ -26,6 +26,7 @@ projects[features_extra][version] = "1.0"
 
 projects[field_group][subdir] = contrib
 projects[field_group][version] = "1.5"
+projects[field_group][patch][] = "https://www.drupal.org/files/issues/field_group-php7-2661484-2.patch"
 
 projects[files_undo_remove][subdir] = contrib
 projects[files_undo_remove][version] = "1.3"
