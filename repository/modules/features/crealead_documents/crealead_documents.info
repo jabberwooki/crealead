@@ -25,4 +25,5 @@ features[variable][] = filedepot_default_notify_filechange
 features[variable][] = filedepot_default_notify_newfile
 features[variable][] = filedepot_email_to
 features[variable][] = filedepot_extension_data
+features[variable][] = filedepot_yui_baseurl
 project path = profiles/crealead/modules/features

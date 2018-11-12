@@ -1,3 +1,7 @@
+Hotfix filedepot_yahoo_library_https_url / 2018-11-12
+=====================================================
+  * crealead_documents up: Filedepot settings updated (/admin/config/media/filedepot): base url altered to make possible to load Yahoo library via https.
+
 Hotfix field_group_PHP7_bugfix / 2018-11-12
 ===========================================
   * Install profile up: drupal-org.make updated: Patch declaration added for module field_group: Fixes PHP7 incompatibility arising when viewing Features list.
