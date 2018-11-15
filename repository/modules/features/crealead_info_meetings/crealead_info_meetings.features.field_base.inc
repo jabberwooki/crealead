@@ -176,6 +176,33 @@ function crealead_info_meetings_field_default_field_bases() {
     'type' => 'registration',
   );
 
+  // Exported field_base: 'field_meeting_location'.
+  $field_bases['field_meeting_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_meeting_location',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'mo' => 'Montpellier',
+        'ni' => 'Nîmes',
+        'se' => 'Sète',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_other_specify'.
   $field_bases['field_other_specify'] = array(
     'active' => 1,

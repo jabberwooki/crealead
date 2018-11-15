@@ -31,3 +31,18 @@ function crealead_info_meetings_update_7001() {
 function crealead_info_meetings_update_7002() {
   module_enable(array('views_data_export'));
 }
+
+function crealead_info_meetings_update_7003() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'info_meeting');
+
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    foreach($result['node'] as $node) {
+      $node_wrapper = entity_metadata_wrapper('node', $node->nid);
+      $node_wrapper->field_meeting_location->set('mo');
+      $node_wrapper->save();
+    }
+  }
+}

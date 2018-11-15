@@ -175,6 +175,11 @@ function crealead_info_meetings_entity_view_alter(&$build, $type) {
     $date = format_date($date_timestamp, 'long');
     $build['info_meeting_date'][0]['#markup'] = $date;
   }
+
+  if ($build['#node']->type && $build['#view_mode'] == 'full') {
+    $location_name = crealead_info_meetings_get_location_name($build['#node']->field_meeting_location['und'][0]['value']);
+    drupal_set_title($build['#node']->title . ' à ' . $location_name);
+  }
 }
 
 /**
@@ -208,8 +213,43 @@ function crealead_info_meetings_views_pre_render(&$view) {
       }
     }
   }
+  elseif ($view->name == 'info_meetings' && $view->current_display == 'meeting_dates_list') {
+//    dpm($view->display_handler);
+//    $footer = $view->display_handler->get_option('footer');
+//    dpm($footer);
+//    $footer['area']['content'] = 'TOTO';
+//    $view->display_handler->set_option('footer', $footer);
+  }
 }
 
+/**
+ * Implements hook_views_pre_view().
+ */
+function crealead_info_meetings_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'info_meetings' && $view->current_display == 'meeting_dates_list') {
+    // Add location name (Monptellier, Nimes, Sète) to the meetings view title.
+    $localized_title = $view->display['meeting_dates_list']->display_options['title'] .= ' à ' . crealead_info_meetings_get_location_name(arg(1));
+    $view->display_handler->set_option('title', $localized_title);
+  }
+  if ($view->name == 'info_meetings' && $view->current_display == 'info_meetings_prog') {
+    // Fetch info meetings programme text from administrator settings.
+    $programme_text = variable_get('programme_default_text', null);
+    if ($programme_text) {
+      $footer_content = $programme_text['value'];
+    }
+    else {
+      $footer_content = 'Le texte du programme est à rédiger.';
+    }
+    $footer = $view->display_handler->get_option('footer');
+    $footer['area']['content'] = $footer_content;
+    $view->display_handler->set_option('footer', $footer);
+  }
+}
+
+function crealead_info_meetings_get_location_name($location_index) {
+  $field_meeting_location_infos = field_info_field('field_meeting_location');
+  return $field_meeting_location_infos['settings']['allowed_values'][$location_index];
+}
 
 function crealead_info_meetings_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'info_meetings') {
@@ -341,4 +381,44 @@ function crealead_info_meetings_form_registration_registrations_broadcast_form_a
     $form['message']['#weight'] = 0;
   }
   $form['message']['#default_value'] = $default_message;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function crealead_info_meetings_block_info() {
+  $blocks = array();
+  $blocks['crealead_meetings_locations'] = array(
+    'info' => t('Crealead : Liens inscription par ville'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function crealead_info_meetings_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'crealead_meetings_locations' :
+      $locations = array(
+        'mo' => 'Montpellier',
+        'ni' => 'Nîmes',
+        'se' => 'Sète',
+      );
+      $content = '';
+      foreach ($locations as $code => $location) {
+        if (null !== arg(1) && $code == arg(1)) {
+          $content .= '<p class="inactive">S\'inscrire à ' . $location . '</p>';
+        }
+        else {
+          $content .= '<p class="active"><a href="/reunions-information-par-ville/' . $code . '">S\'inscrire à ' . $location . '</a></p>';
+        }
+      }
+      $block['content'] = $content;
+
+      return $block;
+  }
 }

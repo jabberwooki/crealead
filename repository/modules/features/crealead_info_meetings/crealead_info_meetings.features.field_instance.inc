@@ -119,7 +119,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -204,7 +204,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -300,7 +300,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -400,7 +400,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -485,7 +485,59 @@ function crealead_info_meetings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'registration_select',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-info_meeting-field_meeting_location'.
+  $field_instances['node-info_meeting-field_meeting_location'] = array(
+    'bundle' => 'info_meeting',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_meeting_location',
+    'label' => 'Lieu',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 
@@ -1540,6 +1592,7 @@ function crealead_info_meetings_field_default_field_instances() {
   t('Domaine d\'activité');
   t('Format jj/mm/aaaa');
   t('Formulaire d\'inscription');
+  t('Lieu');
   t('Nom');
   t('N° d\'allocataire');
   t('Photo');
