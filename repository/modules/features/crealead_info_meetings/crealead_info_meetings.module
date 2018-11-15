@@ -252,7 +252,7 @@ function crealead_info_meetings_get_location_name($location_index) {
 }
 
 function crealead_info_meetings_preprocess_views_view(&$vars) {
-  if ($vars['view']->name == 'info_meetings') {
+  if ($vars['view']->name == 'info_meetings' && (!in_array($vars['view']->current_display, array('info_meetings_list','info_meetings_prog','meeting_dates_list'))) ) {
     $vars['header'] = '<div id="xls-button" style="background-color: #FF6600; padding: 10px 10px 5px 10px; display:table;">' . $vars['feed_icon'] . '</div>';
   }
 }
