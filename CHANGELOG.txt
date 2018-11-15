@@ -1,3 +1,8 @@
+Hotfix nimes-sete-header-meeting-infos-lost-bugfix / 2018-11-15
+===============================================================
+ * crealead_info_meetings up: re-enable Nimes and Sete meeting infos in info_meetings/info_meetings_list view's header.
+
+
 Hotfix filedepot_yahoo_library_https_url / 2018-11-12
 =====================================================
   * crealead_documents up: Filedepot settings updated (/admin/config/media/filedepot): base url altered to make possible to load Yahoo library via https.
