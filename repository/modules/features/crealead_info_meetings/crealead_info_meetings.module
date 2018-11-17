@@ -213,13 +213,6 @@ function crealead_info_meetings_views_pre_render(&$view) {
       }
     }
   }
-  elseif ($view->name == 'info_meetings' && $view->current_display == 'meeting_dates_list') {
-//    dpm($view->display_handler);
-//    $footer = $view->display_handler->get_option('footer');
-//    dpm($footer);
-//    $footer['area']['content'] = 'TOTO';
-//    $view->display_handler->set_option('footer', $footer);
-  }
 }
 
 /**
@@ -421,42 +414,6 @@ function crealead_info_meetings_block_view($delta = '') {
 
       return $block;
   }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function crealead_info_meetings_form_info_meeting_node_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form);
-
-  // En cas de création, il faut passer en readonly le champ Plan.
-  // Ce champ affiche la valeur par défaut définie dans les paramètres du champ.
-//  if (!$form['nid']['#value']) {
-//    //dpm($form['field_info_meeting_map']['und'][0]['#default_value']);
-//
-//    //$form['field_info_meeting_map']['und'][0]['#attributes'] += array('readonly' => 'readonly');
-//    dpm($form['field_info_meeting_map']);
-//
-//    $fields = field_info_instances('node', 'info_meeting');
-//    unset($fields['body']);
-//    dpm($fields);
-//    foreach ($fields as $field) {
-//      dpm($field['field_name']);
-//      dpm($form[$field['field_name']]['#weight'] * 2);
-//      $form[$field['field_name']]['#weight'] = $form[$field['field_name']]['#weight'] * 2;
-//    }
-//
-//    $form['field_location_map_info'] = array(
-//      '#type' => 'item',
-//      '#title' => 'Plan',
-//      '#markup' => $form['field_info_meeting_map']['und'][0]['#default_value'],
-//      '#weight' => $form['field_info_meeting_map']['#weight'] - 1,
-//    );
-//  }
-//  if (!$form['nid']['#value']) {
-//    // Add custom submit handler.
-//    $form['actions']['submit']['#submit'][] = 'crealead_location_map_submit';
-//  }
 }
 
 /**
