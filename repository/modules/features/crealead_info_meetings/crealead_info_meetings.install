@@ -32,6 +32,11 @@ function crealead_info_meetings_update_7002() {
   module_enable(array('views_data_export'));
 }
 
+/**
+ * Affect existing info meetings to Montpellier.
+ * IMPORTANT ! "drush udpb" must be run exceptionnaly AFTER "drush fra -y".
+ * WHY ? New field field_meeting_location must exist before this update is applied.
+ */
 function crealead_info_meetings_update_7003() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
