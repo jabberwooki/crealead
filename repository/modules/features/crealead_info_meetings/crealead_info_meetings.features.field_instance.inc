@@ -213,7 +213,9 @@ function crealead_info_meetings_field_default_field_instances() {
     'bundle' => 'info_meeting',
     'default_value' => array(
       0 => array(
-        'value' => '<iframe frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.477429479696!2d3.873967!3d43.596599999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6afb0c6fe293f%3A0x8e6410412d017abc!2sCrealead!5e0!3m2!1sfr!2sfr!4v1434985995735" style="border:0" width="400"></iframe>',
+        'value' => '<p><span style="color:#FF0000;"><strong>Vous êtes en cours de création d\'une réunion d\'information. Pour l\'instant, vous n\'avez rien à insérer dans ce champ.<br />
+Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par le plan de localisation (code IFRAME) correspondant à la ville choisie en haut de ce formulaire.</strong></span></p>
+',
         'format' => 'full_html',
       ),
     ),
@@ -254,6 +256,7 @@ function crealead_info_meetings_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_info_meeting_map',
     'label' => 'Plan',
@@ -261,6 +264,7 @@ function crealead_info_meetings_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
           'plain_text' => 'plain_text',
@@ -269,6 +273,9 @@ function crealead_info_meetings_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
             'filtered_html' => array(
               'weight' => -9,
             ),
@@ -281,7 +288,7 @@ function crealead_info_meetings_field_default_field_instances() {
           ),
         ),
       ),
-      'context' => 'debug',
+      'context' => 'title',
       'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'linkit' => array(
@@ -297,6 +304,7 @@ function crealead_info_meetings_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 5,
       ),
       'type' => 'text_textarea',

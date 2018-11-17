@@ -108,7 +108,7 @@
       }
 
       // Info meeting list handling
-      if ($('.view-display-id-info_meetings_list').length) {
+      if ($('.view-display-id-meeting_dates_list').length) {
         $('table tbody tr a').each(function () {
           // If no more room in current info meeting, link "S'inscrire" is disabled.
           if ($(this).parent().prev().text() == 0) {

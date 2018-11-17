@@ -80,17 +80,17 @@ function crealead_info_meetings_settings_form() {
   );
 
   // 3.2 - Nîmes
-  $mi_map = variable_get('meetings_default_map_mi', null);
-  if ($mi_map) {
-    $mi_map_default_value = $mi_map['value'];
+  $ni_map = variable_get('meetings_default_map_ni', null);
+  if ($ni_map) {
+    $ni_map_default_value = $ni_map['value'];
   }
   else {
-    $mi_map_default_value = 'Vous devez saisir ici le code IFRAME pour la carte Google de Nîmes.';
+    $ni_map_default_value = 'Vous devez saisir ici le code IFRAME pour la carte Google de Nîmes.';
   }
-  $form['crealead_info_meetings_maps']['meetings_default_map_mi'] = array(
+  $form['crealead_info_meetings_maps']['meetings_default_map_ni'] = array(
     '#type' => 'text_format',
     '#title' => t('Nîmes'),
-    '#default_value' => $mi_map_default_value,
+    '#default_value' => $ni_map_default_value,
   );
 
   // 3.3 - Sète
