@@ -176,7 +176,8 @@ function crealead_info_meetings_entity_view_alter(&$build, $type) {
     $build['info_meeting_date'][0]['#markup'] = $date;
   }
 
-  if ($build['#node']->type && $build['#view_mode'] == 'full') {
+  if ($type == 'info_meeting' && $build['#view_mode'] == 'full') {
+    dpm($build['#node']);
     $location_name = crealead_info_meetings_get_location_name($build['#node']->field_meeting_location['und'][0]['value']);
     drupal_set_title($build['#node']->title . ' à ' . $location_name);
   }
