@@ -1,0 +1,13 @@
+.view-structure-team #tabs li.profile-tab {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.view-structure-team #tabs li.profile-tab::before {
+  content: none;
+}
+
+
+.view-structure-team #tabs li.profile-tab:hover {
+  cursor: pointer;
+}

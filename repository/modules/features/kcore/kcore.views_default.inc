@@ -344,7 +344,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['sorts']['name_1']['table'] = 'users';
   $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Collectifs liés (field_linked_groups) */
+  /* Contextual filter: Field: Collectifs auxquels j&#039;appartiens (field_linked_groups) */
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['table'] = 'field_data_field_linked_groups';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['field'] = 'field_linked_groups_target_id';

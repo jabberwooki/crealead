@@ -78,6 +78,16 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit any assistant_page profile'.
+  $permissions['edit any assistant_page profile'] = array(
+    'name' => 'edit any assistant_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'edit any coe_page profile'.
   $permissions['edit any coe_page profile'] = array(
     'name' => 'edit any coe_page profile',
@@ -89,12 +99,96 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'edit any direction_page profile'.
+  $permissions['edit any direction_page profile'] = array(
+    'name' => 'edit any direction_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit any management_page profile'.
+  $permissions['edit any management_page profile'] = array(
+    'name' => 'edit any management_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit any provider_page profile'.
+  $permissions['edit any provider_page profile'] = array(
+    'name' => 'edit any provider_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit any referent_page profile'.
+  $permissions['edit any referent_page profile'] = array(
+    'name' => 'edit any referent_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own assistant_page profile'.
+  $permissions['edit own assistant_page profile'] = array(
+    'name' => 'edit own assistant_page profile',
+    'roles' => array(
+      'assistant' => 'assistant',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'edit own coe_page profile'.
   $permissions['edit own coe_page profile'] = array(
     'name' => 'edit own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own direction_page profile'.
+  $permissions['edit own direction_page profile'] = array(
+    'name' => 'edit own direction_page profile',
+    'roles' => array(
+      'direction' => 'direction',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own management_page profile'.
+  $permissions['edit own management_page profile'] = array(
+    'name' => 'edit own management_page profile',
+    'roles' => array(
       'pôle gestion' => 'pôle gestion',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own provider_page profile'.
+  $permissions['edit own provider_page profile'] = array(
+    'name' => 'edit own provider_page profile',
+    'roles' => array(
+      'entrepreneur prestataire' => 'entrepreneur prestataire',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own referent_page profile'.
+  $permissions['edit own referent_page profile'] = array(
+    'name' => 'edit own referent_page profile',
+    'roles' => array(
+      'référent' => 'référent',
     ),
     'module' => 'profile2',
   );
@@ -120,6 +214,16 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'view any assistant_page profile'.
+  $permissions['view any assistant_page profile'] = array(
+    'name' => 'view any assistant_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'view any coe_page profile'.
   $permissions['view any coe_page profile'] = array(
     'name' => 'view any coe_page profile',
@@ -130,12 +234,96 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'view any direction_page profile'.
+  $permissions['view any direction_page profile'] = array(
+    'name' => 'view any direction_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view any management_page profile'.
+  $permissions['view any management_page profile'] = array(
+    'name' => 'view any management_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view any provider_page profile'.
+  $permissions['view any provider_page profile'] = array(
+    'name' => 'view any provider_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view any referent_page profile'.
+  $permissions['view any referent_page profile'] = array(
+    'name' => 'view any referent_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own assistant_page profile'.
+  $permissions['view own assistant_page profile'] = array(
+    'name' => 'view own assistant_page profile',
+    'roles' => array(
+      'assistant' => 'assistant',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'view own coe_page profile'.
   $permissions['view own coe_page profile'] = array(
     'name' => 'view own coe_page profile',
     'roles' => array(
       'entrepreneur' => 'entrepreneur',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own direction_page profile'.
+  $permissions['view own direction_page profile'] = array(
+    'name' => 'view own direction_page profile',
+    'roles' => array(
+      'direction' => 'direction',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own management_page profile'.
+  $permissions['view own management_page profile'] = array(
+    'name' => 'view own management_page profile',
+    'roles' => array(
       'pôle gestion' => 'pôle gestion',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own provider_page profile'.
+  $permissions['view own provider_page profile'] = array(
+    'name' => 'view own provider_page profile',
+    'roles' => array(
+      'entrepreneur prestataire' => 'entrepreneur prestataire',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own referent_page profile'.
+  $permissions['view own referent_page profile'] = array(
+    'name' => 'view own referent_page profile',
+    'roles' => array(
+      'référent' => 'référent',
     ),
     'module' => 'profile2',
   );
