@@ -328,14 +328,17 @@ div.service-links {
       width: 60% !important;
     }
   }
-  #block-menu-menu-coe-area,
-  #block-views-newsflashes-coes-area-block {
-    position: static;
-
+  #block-menu-menu-coe-area {
     @media (min-width: @screen-md) {
       a {
         width: 180px !important;
       }
+    }
+  }
+  #block-menu-menu-coe-area,
+  #block-views-newsflashes-coes-area-block {
+    position: static;
+    @media (min-width: @screen-md) {
       > ul.nav-pills {
         position: fixed;
         right: 0;
