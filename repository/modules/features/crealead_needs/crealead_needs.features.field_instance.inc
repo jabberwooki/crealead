@@ -10,6 +10,133 @@
 function crealead_needs_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-link_to_doc-field_document_url'.
+  $field_instances['node-link_to_doc-field_document_url'] = array(
+    'bundle' => 'link_to_doc',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_separate',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_document_url',
+    'label' => 'Url du document',
+    'required' => 1,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-link_to_doc-field_pictogramme'.
+  $field_instances['node-link_to_doc-field_pictogramme'] = array(
+    'bundle' => 'link_to_doc',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'full',
+          'use_content_language' => TRUE,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'full',
+          'use_content_language' => TRUE,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_pictogramme',
+    'label' => 'Pictogramme',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-need-body'.
   $field_instances['node-need-body'] = array(
     'bundle' => 'need',
@@ -985,6 +1112,107 @@ function crealead_needs_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-doc_icons-field_icon_file'.
+  $field_instances['taxonomy_term-doc_icons-field_icon_file'] = array(
+    'bundle' => 'doc_icons',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'link-icon',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_icon_file',
+    'label' => 'Pictogramme',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'doc_icons',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'label_help_description' => '',
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+        'preview_image_style' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Action');
@@ -1001,9 +1229,11 @@ function crealead_needs_field_default_field_instances() {
   t('Nom et prénom de la personne concerné dans Crealead (vous, un co-entrepreneur, un membre de l\'équipe structure...).');
   t('Nom et prénom de la personne à contacter.');
   t('Personne concernée');
+  t('Pictogramme');
   t('Prises de contact');
   t('Si l\'échéance que vous voulez indiquer n\'est pas disponible, vous pouvez la saisir manuellement. Elle sera enregistrée.');
   t('Solution trouvée');
+  t('Url du document');
 
   return $field_instances;
 }

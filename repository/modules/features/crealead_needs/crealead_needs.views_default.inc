@@ -180,6 +180,68 @@ voir crealead_needs_views_pre_render()';
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'needs_list');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+
+  /* Display: Bloc liens vers document */
+  $handler = $view->new_display('block', 'Bloc liens vers document', 'links_list');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Documents à consulter';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Pictogramme */
+  $handler->display->display_options['fields']['field_pictogramme']['id'] = 'field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['table'] = 'field_data_field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['field'] = 'field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['label'] = '';
+  $handler->display->display_options['fields']['field_pictogramme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pictogramme']['type'] = 'ds_taxonomy_view_mode';
+  /* Field: Content: Url du document */
+  $handler->display->display_options['fields']['field_document_url']['id'] = 'field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['table'] = 'field_data_field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['field'] = 'field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['label'] = '';
+  $handler->display->display_options['fields']['field_document_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_document_url']['click_sort_column'] = 'url';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'link_to_doc' => 'link_to_doc',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $translatables['needs'] = array(
     t('Master'),
     t('Demandes'),
@@ -206,6 +268,8 @@ voir crealead_needs_views_pre_render()'),
     t('Prises de contact'),
     t('Action'),
     t('Bloc espace coes'),
+    t('Bloc liens vers document'),
+    t('Documents à consulter'),
   );
   $export['needs'] = $view;
 

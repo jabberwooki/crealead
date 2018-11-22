@@ -44,6 +44,17 @@ function crealead_needs_menu() {
     'access callback' => TRUE,
     'file' => 'crealead_needs.ajax.inc',
   );
+
+  $items['admin/config/crealead/exchanges'] = array(
+    'title' => 'Système d\'échange',
+    'description' => 'Paramétrage du Système d\'échanges.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_needs_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_needs.admin.inc',
+  );
+
   return $items;
 }
 
@@ -96,6 +107,39 @@ function crealead_needs_form_need_node_form_alter(&$form, &$form_state, $form_id
 
 function crealead_needs_form_validate($form, &$form_state) {
   // Pour l'instant, pas de demande de champ obligatoire à valider.
+}
+
+function crealead_needs_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'coes_area_home' && $view->current_display == 'page_1') {
+    // Replace view's header default text by custom text set in the 'Système d'échanges' admin page.
+    // Configuration > Crealead > Système d'échange.
+    $description_text = variable_get('exchanges_description_text', null);
+    if ($description_text) {
+      $header_area_content = $description_text['value'];
+    }
+    else {
+      $header_area_content = 'Le descriptif du système d\'échanges est à rédiger.';
+    }
+    $header = $view->display_handler->get_option('header');
+    $header['area']['content'] = $header_area_content;
+
+    global $user;
+    $current_user_roles = $user->roles;
+    $allowed_roles = array('administrateur', 'webmaster', 'référent');
+    $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+    if (!$current_user_allowed_roles) {
+      $header_area_1_content = '';
+    }
+    else {
+      $destination = implode('/', arg());
+      $header_area_1_content = '<div class="doc-link-add">'
+      . '<a href="/node/add/link-to-doc?destination=' . $destination . '">Ajouter un lien vers un document</a>'
+      . '</div>';
+    }
+
+    $header['area_1']['content'] = $header_area_1_content;
+    $view->display_handler->set_option('header', $header);
+  }
 }
 
 /**
@@ -256,3 +300,4 @@ function crealead_needs_node_access($node, $op, $account) {
     return NODE_ACCESS_DENY;
   }
 }
+

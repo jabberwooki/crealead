@@ -9,6 +9,29 @@
  */
 function crealead_needs_taxonomy_default_vocabularies() {
   return array(
+    'doc_icons' => array(
+      'name' => 'Pictogrammes documents',
+      'machine_name' => 'doc_icons',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'expiration_types' => array(
       'name' => 'Types d\'échéance',
       'machine_name' => 'expiration_types',
