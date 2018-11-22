@@ -10,6 +10,16 @@
 function crealead_needs_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'add terms in doc_icons'.
+  $permissions['add terms in doc_icons'] = array(
+    'name' => 'add terms in doc_icons',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'create need content'.
   $permissions['create need content'] = array(
     'name' => 'create need content',
@@ -44,6 +54,16 @@ function crealead_needs_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in doc_icons'.
+  $permissions['delete terms in doc_icons'] = array(
+    'name' => 'delete terms in doc_icons',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any need content'.
   $permissions['edit any need content'] = array(
     'name' => 'edit any need content',
@@ -63,6 +83,16 @@ function crealead_needs_user_default_permissions() {
       'pôle gestion' => 'pôle gestion',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in doc_icons'.
+  $permissions['edit terms in doc_icons'] = array(
+    'name' => 'edit terms in doc_icons',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
   );
 
   return $permissions;
