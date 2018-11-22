@@ -193,6 +193,7 @@ voir crealead_needs_views_pre_render()';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Pictogramme */
   $handler->display->display_options['fields']['field_pictogramme']['id'] = 'field_pictogramme';
