@@ -97,6 +97,7 @@ features[uuid_term][] = b4346853-567b-448c-910d-0e79d75d4e99
 features[uuid_term][] = c51e0e12-f59e-48ca-8db5-2fff8b108acc
 features[uuid_term][] = e27640d8-6ea5-402f-9c08-a608e9218a34
 features[uuid_term][] = edcd12a6-b46d-416d-919b-c52d0acfa1df
+features[variable][] = ds_extras_view_modes_link_to_doc
 features[variable][] = field_bundle_settings_node__link_to_doc
 features[variable][] = field_bundle_settings_node__need
 features[variable][] = language_content_type_link_to_doc
