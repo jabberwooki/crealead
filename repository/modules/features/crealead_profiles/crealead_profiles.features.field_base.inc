@@ -178,7 +178,7 @@ function crealead_profiles_field_default_field_bases() {
   // Exported field_base: 'field_coe_status'.
   $field_bases['field_coe_status'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 2,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_coe_status',
@@ -193,6 +193,7 @@ function crealead_profiles_field_default_field_bases() {
       'allowed_values' => array(
         1 => 'Titulaire d\'un CAPE',
         2 => 'Salarié',
+        3 => 'Administrateur',
       ),
       'allowed_values_function' => '',
       'profile2_private' => 0,

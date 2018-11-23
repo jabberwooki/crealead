@@ -115,6 +115,382 @@ function crealead_profiles_views_default_views() {
 
   /* Display: Trombinoscope */
   $handler = $view->new_display('page', 'Trombinoscope', 'page');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Chercher';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Options avancées',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_user_firstname_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_user_lastname_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_coe_status_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_competencies_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Profile: Statut de publication (field_coe_pub_status) */
+  $handler->display->display_options['filters']['field_coe_pub_status_value']['id'] = 'field_coe_pub_status_value';
+  $handler->display->display_options['filters']['field_coe_pub_status_value']['table'] = 'field_data_field_coe_pub_status';
+  $handler->display->display_options['filters']['field_coe_pub_status_value']['field'] = 'field_coe_pub_status_value';
+  $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'user';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: User: Prénom (field_user_firstname) */
+  $handler->display->display_options['filters']['field_user_firstname_value']['id'] = 'field_user_firstname_value';
+  $handler->display->display_options['filters']['field_user_firstname_value']['table'] = 'field_data_field_user_firstname';
+  $handler->display->display_options['filters']['field_user_firstname_value']['field'] = 'field_user_firstname_value';
+  $handler->display->display_options['filters']['field_user_firstname_value']['relationship'] = 'user';
+  $handler->display->display_options['filters']['field_user_firstname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_user_firstname_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_firstname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['operator_id'] = 'field_user_firstname_value_op';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['label'] = 'Prénom';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['operator'] = 'field_user_firstname_value_op';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['identifier'] = 'field_user_firstname_value';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_field'] = 'field_user_firstname';
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_user_firstname_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: User: Nom (field_user_lastname) */
+  $handler->display->display_options['filters']['field_user_lastname_value']['id'] = 'field_user_lastname_value';
+  $handler->display->display_options['filters']['field_user_lastname_value']['table'] = 'field_data_field_user_lastname';
+  $handler->display->display_options['filters']['field_user_lastname_value']['field'] = 'field_user_lastname_value';
+  $handler->display->display_options['filters']['field_user_lastname_value']['relationship'] = 'user';
+  $handler->display->display_options['filters']['field_user_lastname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_user_lastname_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_lastname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['operator_id'] = 'field_user_lastname_value_op';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['label'] = 'Nom';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['operator'] = 'field_user_lastname_value_op';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['identifier'] = 'field_user_lastname_value';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_field'] = 'field_user_lastname';
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_user_lastname_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Profile: Statut (field_coe_status) */
+  $handler->display->display_options['filters']['field_coe_status_value']['id'] = 'field_coe_status_value';
+  $handler->display->display_options['filters']['field_coe_status_value']['table'] = 'field_data_field_coe_status';
+  $handler->display->display_options['filters']['field_coe_status_value']['field'] = 'field_coe_status_value';
+  $handler->display->display_options['filters']['field_coe_status_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_coe_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_coe_status_value']['expose']['operator_id'] = 'field_coe_status_value_op';
+  $handler->display->display_options['filters']['field_coe_status_value']['expose']['label'] = 'Statut';
+  $handler->display->display_options['filters']['field_coe_status_value']['expose']['operator'] = 'field_coe_status_value_op';
+  $handler->display->display_options['filters']['field_coe_status_value']['expose']['identifier'] = 'field_coe_status_value';
+  $handler->display->display_options['filters']['field_coe_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  /* Filter criterion: Field: Compétences (field_competencies) */
+  $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
+  $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_competencies_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator_id'] = 'field_competencies_tid_op';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['label'] = 'Compétences / spécialités';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['description'] = 'Quelques lettres suffisent pour que le système vous propose une ou plusieurs expressions clés.';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator'] = 'field_competencies_tid_op';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['identifier'] = 'field_competencies_tid';
+  $handler->display->display_options['filters']['field_competencies_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_competencies_tid']['vocabulary'] = 'competencies';
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/trombinoscope';
   $translatables['coe_directory'] = array(
     t('Master'),
@@ -134,6 +510,14 @@ function crealead_profiles_views_default_views() {
     t('dernier »'),
     t('Utilisateur'),
     t('more'),
+    t('Chercher'),
+    t('Options avancées'),
+    t('Select any filter and click on Apply to see results'),
+    t('Prénom'),
+    t('Nom'),
+    t('Statut'),
+    t('Compétences / spécialités'),
+    t('Quelques lettres suffisent pour que le système vous propose une ou plusieurs expressions clés.'),
   );
   $export['coe_directory'] = $view;
 
