@@ -1967,6 +1967,13 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<a class="button-back" href="/reunions-information">Retour sur la page de descriptif des réunions d\'information</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -2171,6 +2178,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.'),
     t('Domaine activité'),
     t('Liste dates réunions'),
     t('Prochaines réunions d\'information'),
+    t('<a class="button-back" href="/reunions-information">Retour sur la page de descriptif des réunions d\'information</a>'),
     t('Pas de réunion'),
     t('Aucune réunion n\'est programmée actuellement.'),
     t('Slots consumed'),
