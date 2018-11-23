@@ -1680,7 +1680,7 @@ blockquote p:after{content:"\e856";margin-left:10px}
 #block-system-main ul,ul.coche-rouge{padding:0;margin:0}
 #block-system-main ul li,ul.coche-rouge li{list-style:none;padding:0;margin:0}
 #block-system-main ul li:before,ul.coche-rouge li:before{position:relative;top:1px;display:inline-block;width:1em;margin-right:10px;text-align:center;content:"\e850";color:#bf0e38}
-.contextual-links li a:before,.contextual-links li:before,li.print_html:before{content:''!important}
+#filedetails ul li:before,.contextual-links li a:before,.contextual-links li:before,.nav>li:before,li.print_html:before{content:''!important}
 #block-system-main ul.pager li:before,#block-system-main ul.pagination li:before,ul.coche-rouge.pager li:before,ul.coche-rouge.pagination li:before{display:none}
 div.service-links{display:block;float:right;margin-top:0;padding:0 0 0 20px}
 #close-logo:before,.warning-links a:before{position:relative;top:1px;display:inline-block;width:1em;text-align:center}
@@ -1717,7 +1717,7 @@ div.service-links a{float:left;margin-right:10px}
 [class*="orange icon-"]:before{color:#ff3f18!important}
 [class*="blue icon-"]:before{color:#44059c!important}
 .glyphicon-h3-a>h3>span>a:hover:before{text-decoration:none}
-#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after,header#navbar>.container #social-headband-search section#block-custom-search-blocks-1 form .form-actions button:before{text-decoration:inherit;font-style:normal;speak:none;font-variant:normal;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#block-menu-menu-top ul.menu.nav>li>a:before,.private-file a:before,[class*=" iconafter-"]:after,header#navbar>.container #social-headband-search section#block-custom-search-blocks-1 form .form-actions button:before{text-decoration:inherit;line-height:1em;font-style:normal;speak:none;font-variant:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 [class*=" iconafter-"]:after{font-family:fontello;font-weight:400;font-size:1em;display:inline-block;width:1em;margin-right:10px;text-align:center;text-transform:none;color:#777}
 .icon-facebook:before{color:#154EA8}
 .icon-twitter:before{color:#0C93FC}
@@ -2262,7 +2262,6 @@ body.node-type-brand #link-form-brand:before{font-weight:400;display:inline-bloc
 body.node-type-brand .radio input[type=radio]{margin-left:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a{display:inline-block;background-color:#bf0e38;padding:6px 12px;border-radius:4px;color:#FFF;font-weight:700;text-align:center;height:35px;overflow:hidden;margin-top:20px;margin-bottom:0}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a:before,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:before{font-weight:400;display:inline-block;content:"\e834";color:#fff}
-.node-type-info-meeting a.field-group-format-title,.page-reunions-information ul.coche-rouge{font-size:.8em}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .group-brand-formations .group-wrapper-teaser,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .group-brand-products .group-wrapper-teaser,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .group-brand-formations .group-wrapper-teaser,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .group-brand-products .group-wrapper-teaser{box-shadow:0 0 5px #999;padding:20px;margin-bottom:20px}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-product .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-training .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-product .row .field-name-field-introduction,body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-training .row .field-name-field-introduction{max-height:none!important;background-color:transparent;border-radius:0;padding:0;border-bottom:0;margin-bottom:0}
 body.node-type-brand .subtitle-brand{display:none}
@@ -2283,6 +2282,7 @@ body.node-type-brand .field-name-field-introduction{max-height:110px;overflow-y:
 body.node-type-brand .field-name-allowed-articles-handling #shared-content-wrapper a{text-decoration:underline}
 body.node-type-brand #colorbox{line-height:1.5em}
 .page-reunions-information .page-header{margin-bottom:0}
+.page-reunions-information ul.coche-rouge{font-size:.8em}
 .page-reunions-information ul.coche-rouge>li{margin-top:20px;font-weight:700}
 .page-reunions-information ul.coche-rouge>li:before{display:none}
 .page-reunions-information ul.coche-rouge>li li{font-weight:400}
@@ -2293,6 +2293,7 @@ body.node-type-brand #colorbox{line-height:1.5em}
 .view-info-meetings .view-content table tr td a:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:1em;content:"\e834";color:#fff}
 .view-info-meetings .view-content table tr td.views-field-field-info-meeting-date{font-weight:700}
 .view-info-meetings .view-footer{font-size:1.2em}
+.node-type-info-meeting a.field-group-format-title{font-size:.8em}
 .node-type-info-meeting a.field-group-format-title:before,.node-type-info-meeting h3.label-above:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .node-type-info-meeting a.field-group-format-title:before{content:"\e834"}
 .node-type-info-meeting h3.label-above:before{content:"\e835"}
@@ -2411,6 +2412,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .group-session-details{position:relative;margin-top:20px}
 .group-session-details .field-name-see-all-sessions-link{position:absolute;right:0;top:10px;padding:0 20px 0 0}
 .group-session-details img{float:right}
+.page-taxonomy-term .view-display-id-landing_page_trainings .view-content.row{margin:0;background-color:#ededed;min-height:240px}
 .page-taxonomy-term .carousel-control .icon-next:before,.page-taxonomy-term .carousel-control .icon-prev:before{color:red}
 .page-taxonomy-term .carousel-inner{margin-bottom:80px}
 .page-taxonomy-term .carousel-inner .node-brand .row>.left-col{background-color:#fff}
