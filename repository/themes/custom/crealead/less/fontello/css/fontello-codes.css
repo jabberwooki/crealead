@@ -126,6 +126,11 @@
 .icon-thumbs-down:before { content: '\e87c'; } /* '' */
 .icon-heart:before { content: '\e87d'; } /* '' */
 .icon-thumbs-up-1:before { content: '\e87e'; } /* '' */
+.icon-arrows-cw:before { content: '\e87f'; } /* '' */
+.icon-loop:before { content: '\e880'; } /* '' */
+.icon-loop-1:before { content: '\e881'; } /* '' */
+.icon-arrows-cw-1:before { content: '\e882'; } /* '' */
+.icon-arrows-cw-2:before { content: '\e883'; } /* '' */
 .icon-heart-broken:before { content: '\f028'; } /* '' */
 .icon-location-4:before { content: '\f031'; } /* '' */
 .icon-blank:before { content: '\f0c8'; } /* '' */
