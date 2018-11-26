@@ -259,7 +259,7 @@ function crealead_profiles_form_user_profile_form_alter(&$form, &$form_state, $f
   $params = array('user_allowed_profiles' => $user_allowed_profiles);
 
   drupal_add_js(array('crealead_profiles' => $params), 'setting');
-  drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_structure_profiles.js');
+  drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_user_profiles.js');
 }
 
 
