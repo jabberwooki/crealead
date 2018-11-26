@@ -174,11 +174,12 @@ function crealead_needs_ds_layout_settings_info() {
         6 => 'field_display_end_date',
         7 => 'field_need_client',
         8 => 'field_other_enquirers',
-        10 => 'field__need_contact_name',
-        11 => 'field_need_contact_details',
+        9 => 'field_attached_file',
+        11 => 'field__need_contact_name',
+        12 => 'field_need_contact_details',
       ),
       'bottom' => array(
-        9 => 'field_need_action',
+        10 => 'field_need_action',
       ),
     ),
     'fields' => array(
@@ -191,6 +192,7 @@ function crealead_needs_ds_layout_settings_info() {
       'field_display_end_date' => 'right',
       'field_need_client' => 'right',
       'field_other_enquirers' => 'right',
+      'field_attached_file' => 'right',
       'field_need_action' => 'bottom',
       'field__need_contact_name' => 'right',
       'field_need_contact_details' => 'right',

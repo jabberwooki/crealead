@@ -1,0 +1,13 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ubuntu
+ * Date: 26/11/18
+ */
+
+/**
+ * Activates download_file contrib module.
+ */
+function crealead_newsflashes_update_7001() {
+  module_enable(array('download_file'));
+}

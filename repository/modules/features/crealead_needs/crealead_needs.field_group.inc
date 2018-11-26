@@ -50,7 +50,7 @@ function crealead_needs_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personne à contacter',
-    'weight' => '3',
+    'weight' => '1',
     'children' => array(
       0 => 'field__need_contact_name',
       1 => 'field_need_contact_details',

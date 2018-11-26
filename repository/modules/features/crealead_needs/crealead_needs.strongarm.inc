@@ -186,16 +186,16 @@ function crealead_needs_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '15',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
