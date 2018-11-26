@@ -382,12 +382,44 @@ div.service-links {
 
 // espace coE
 .coe-area {
+  /* Tabs intra ******************************************************************/
+  .tab-intra-crealead {
+    display: inline-block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    border-top: 1px solid @rouge-crealead;
+    border-right: 1px solid @rouge-crealead;
+    border-left: 1px solid @rouge-crealead;
+    border-bottom: 1px solid white;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    top: 1px;
+    margin: 0 5px 0 5px;
+    font-size: 0.8em;
+    &:hover {
+      text-decoration: none;
+      background-color: @noir-crealead;
+      color: #FFF;
+      border: 1px solid @noir-crealead;
+    }
+    &:visited,
+    .active {
+      text-decoration: none;
+    }
+  }
+  .tab-intra-crealead-first {
+    margin-left: 30px;
+  }
+  .tab-intra-crealead-selected {
+    background-color: @noir-crealead;
+    color: #FFF;
+  }
   .main-container {
     @media (min-width: @screen-md) and (max-width: 1526px) {
       width: 60% !important;
     }
   }
-  #block-menu-menu-coe-area {
+  #block-menu-menu-coe-area ul.menu{
     @media (min-width: @screen-md) {
       a {
         width: 180px !important;
@@ -431,13 +463,15 @@ div.service-links {
 
   #block-menu-menu-coe-area{
     h2.block-title{
-      box-shadow: 0 3px 2px -2px @rouge-crealead;
+      /*box-shadow: 0 3px 2px -2px @rouge-crealead*/;
+      border-bottom: 1px solid @rouge-crealead;
       display: block;
-      padding: 10px;
+      padding: 10px 10px 0 10px;
       font-weight: 400;
       text-align: left;
       color: @noir-crealead;
       margin-top: -10px;
+      min-height: 52px;
       &:before {
         .glyphicon();
         content: "\e847";
