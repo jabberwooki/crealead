@@ -454,7 +454,9 @@ function crealead_profiles_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_buttons',
       'weight' => 0,
     ),
