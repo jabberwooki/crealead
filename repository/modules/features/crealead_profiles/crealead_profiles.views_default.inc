@@ -1830,7 +1830,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_coe_photo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_coe_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_coe_photo']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'photo_utilisateur',
     'image_link' => '',
   );
   /* Field: Global: Custom text */
