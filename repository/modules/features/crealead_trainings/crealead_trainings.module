@@ -769,8 +769,39 @@ function crealead_trainings_views_pre_render(&$view) {
  * Implements hook_form_alter().
  */
 function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
+  // Filtres exposés du catalogue Formations.
   if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
     $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
+
+    // COMMENT PERDRE 1,5 JOUR COMPLET POUR AFFICHER UNE CASE ON/OFF DANS LE FILTRE EXPOSÉ.
+    // **********************************************************************************
+    // Impossible d'afficher correctement le champ checkbox on/off "Payable en coopins"
+    // même en utilisant Better Exposed Filters (BEF ne propose pas un affichhage on/off).
+    // Donc champ custom. Mais quoi qu'on fasse, ce champ s'insère dans le div wrapper du bouton SUBMIT.
+    // Il est ensuite placé au bon endroit en jquery (voir fichier crealead_training_list.js).
+    // Puis il est traité dans le hook_views_query_alter() ci-dessous.
+    $form['field_custom_coopins_value'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Payable en COOPINs',
+      // '#return_value' => 1,
+      '#default_value' => 0,
+    );
+
+    // On utilise la même technique que ci-dessus pour le champ Tarif crealeadien.
+    $form['field_custom_crealead_price_value'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Tarif crealeadien',
+      // '#return_value' => 1,
+      '#default_value' => 0,
+    );
+
+    // On utilise encore la même technique pour le champ Prise en charge.
+    $form['field_custom_crealead_funded_value'] = array(
+      '#type'         => 'checkbox',
+      '#title'        => 'Prise en charge par Crealead',
+      // '#return_value' => 1,
+      '#default_value' => 0,
+    );
   }
   elseif ($form_id == 'training_session_node_form') {
     drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_sessions_add.js');
@@ -785,6 +816,60 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
       drupal_add_js(array('creaeladTrainingsFunding' => $params), 'setting');
     }
   }
+}
+
+
+function crealead_trainings_views_query_alter(&$view, &$query) {
+  if ($view->name == 'trainings' && $view->current_display = 'list_page') {
+    // CUSTOM FILTERS HANDLING
+    // 1 - Crealead price
+    if (isset($view->exposed_data['field_custom_crealead_price_value']) && $view->exposed_data['field_custom_crealead_price_value']) {
+      // Create a join with the table containing field_coopins value.
+      $join = new views_join();
+      $join->table = 'field_data_field_training_crealead_price';
+      $join->field = 'entity_id';
+      $join->left_table = 'node';
+      $join->left_field = 'nid';
+      $join->type = 'left';
+      // Add the join to the view query.
+      $view->query->add_relationship('crealead_price', $join, 'node');
+      $query->add_where(1, 'crealead_price.field_training_crealead_price_value', "", '<>');
+    }
+    // 2 - Coopins
+    if (isset($view->exposed_data['field_custom_coopins_value']) && $view->exposed_data['field_custom_coopins_value']) {
+      // Create a join with the table containing field_coopins value.
+      $join = new views_join();
+      $join->table = 'field_data_field_coopins';
+      $join->field = 'entity_id';
+      $join->left_table = 'node';
+      $join->left_field = 'nid';
+      $join->type = 'left';
+      // Add the join to the view query.
+      $view->query->add_relationship('coopins', $join, 'node');
+      $query->add_where(1, 'coopins.field_coopins_value', 1, '=');
+    }
+    // 3 - Crealead funded
+    if (isset($view->exposed_data['field_custom_crealead_funded_value']) && $view->exposed_data['field_custom_crealead_funded_value']) {
+      // Create a join with the table containing field_coopins value.
+      $join = new views_join();
+      $join->table = 'field_data_field_crealead_funded';
+      $join->field = 'entity_id';
+      $join->left_table = 'node';
+      $join->left_field = 'nid';
+      $join->type = 'left';
+      // Add the join to the view query.
+      $view->query->add_relationship('crealead_funded', $join, 'node');
+      $query->add_where(1, 'crealead_funded.field_crealead_funded_value', 1, '=');
+    }
+  }
+}
+
+/**
+ * Implements hook_better_exposed_filters_settings_alter().
+ */
+function crealead_trainings_better_exposed_filters_settings_alter(&$settings, $context) {
+  //dpm($settings);
+  //$settings['field_coopins_value']['bef_format'] = 'bef_single';
 }
 
 /**
