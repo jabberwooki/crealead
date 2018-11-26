@@ -1,0 +1,13 @@
+.newsflash-pager {
+    margin-top: 30px
+}
+.newsflash-pager .pager-link {
+    width: 45%;
+}
+.newsflash-pager .prev {
+    float: left;
+}
+.newsflash-pager .next {
+    float: right;
+    text-align: right;
+}
