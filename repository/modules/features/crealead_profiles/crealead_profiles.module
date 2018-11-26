@@ -298,3 +298,17 @@ function crealead_profiles_get_allowed_profiles($user) {
   }
   return $profile_user_roles;
 }
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function crealead_profiles_entity_view_alter(&$build, $type) {
+  if ($type == 'profile2' && $build['#view_mode'] == 'account' && $build['#bundle'] == 'coe_page') {
+    global $user;
+    $allowed_roles = array('administrateur','webmaster','référent','pôle gestion');
+    $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+    if ($user->uid != 1 && empty($user_allowed_roles)) {
+      unset($build['field_coopins_balance']);
+    }
+  }
+}

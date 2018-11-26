@@ -31,6 +31,7 @@ function crealead_profiles_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -72,6 +73,11 @@ function crealead_profiles_ds_field_settings_info() {
           'lb-cl' => 'h4-user',
           'lb-col' => TRUE,
         ),
+      ),
+    ),
+    'field_coopins_balance' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -130,10 +136,11 @@ function crealead_profiles_ds_layout_settings_info() {
         1 => 'field_interests',
         2 => 'field_distinct_features',
         3 => 'field_coe_status',
+        4 => 'field_coopins_balance',
       ),
       'right' => array(
-        4 => 'field_coe_photo',
-        5 => 'field_competencies',
+        5 => 'field_coe_photo',
+        6 => 'field_competencies',
       ),
     ),
     'fields' => array(
@@ -141,6 +148,7 @@ function crealead_profiles_ds_layout_settings_info() {
       'field_interests' => 'left',
       'field_distinct_features' => 'left',
       'field_coe_status' => 'left',
+      'field_coopins_balance' => 'left',
       'field_coe_photo' => 'right',
       'field_competencies' => 'right',
     ),
@@ -154,6 +162,7 @@ function crealead_profiles_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '1',
     'page_option_title' => '',
   );
