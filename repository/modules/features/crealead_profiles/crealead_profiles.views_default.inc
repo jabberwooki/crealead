@@ -1841,6 +1841,13 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username">[field_user_firstname] [field_user_lastname]</div>
 <div class="competencies">[field_competencies]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Profile type: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'profile_type';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'type';
+  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'equipe-structure';
 
   /* Display: Onglets page Structure */
