@@ -1,7 +1,6 @@
 body {
   .source();
 }
-
 img {
   max-width: 100%;
   /*max-height: 100%;*/
@@ -38,7 +37,9 @@ img {
 .link-white {
   color: white;
 }
-
+.float-right {
+  float: right;
+}
 /* Gestion des marges du container principal **************************************************************************/
 .main-container {
   &.main-container-logged-in {
@@ -150,8 +151,33 @@ h5 {
     content: "\e834"; /* icon arrow right */
     color: white;
   }
+  &:hover{
+    text-decoration: none;
+    background-color: @noir-crealead;
+    color: #FFF;
+    &:before {
+      color: @jaune-crealead;
+    }
+  }
 }
-
+.button-inactive {
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 35px;
+  overflow: hidden;
+  &:before {
+    .glyphicon();
+    font-size: 1em;
+    content: "\e834"; /* icon arrow right */
+    color: white;
+  }
+}
 .button-home-more {
   float: right;
   margin-top: -36px;
@@ -169,6 +195,32 @@ h5 {
     background-color: @rouge-crealead;
     color: white;
     text-decoration: none;
+  }
+}
+.button-back {
+  display: inline-block;
+  background-color: @gris-fonce-crealead;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: bold;
+  margin-bottom: 20px;
+  height: 35px;
+  overflow: hidden;
+  &:after {
+    .glyphicon();
+    font-size: 1em;
+    content: "\e836"; /* icon arrow up */
+    color: white;
+    margin-left: 20px;
+  }
+  &:hover{
+    text-decoration: none;
+    background-color: @noir-crealead;
+    color: #FFF;
+    &:before {
+      color: @jaune-crealead;
+    }
   }
 }
 
@@ -249,10 +301,17 @@ ul.coche-rouge, #block-system-main ul {
   }
 }
 
-li.print_html {
+li.print_html,
+.nav > li,
+#filedetails ul li,
+.form-item li{
   &:before {
     content: '' !important;
   }
+}
+.form-item li{
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* social links *******************************************************************************************************/
@@ -323,19 +382,54 @@ div.service-links {
 
 // espace coE
 .coe-area {
+  /* Tabs intra ******************************************************************/
+  .tab-intra-crealead {
+    display: inline-block;
+    padding: 10px 20px;
+    white-space: nowrap;
+    border-top: 1px solid @rouge-crealead;
+    border-right: 1px solid @rouge-crealead;
+    border-left: 1px solid @rouge-crealead;
+    border-bottom: 1px solid white;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    top: 1px;
+    margin: 0 5px 0 5px;
+    font-size: 0.8em;
+    &:hover {
+      text-decoration: none;
+      background-color: @noir-crealead;
+      color: #FFF;
+      border: 1px solid @noir-crealead;
+    }
+    &:visited,
+    .active {
+      text-decoration: none;
+    }
+  }
+  .tab-intra-crealead-first {
+    margin-left: 30px;
+  }
+  .tab-intra-crealead-selected {
+    background-color: @noir-crealead;
+    color: #FFF;
+  }
   .main-container {
     @media (min-width: @screen-md) and (max-width: 1526px) {
       width: 60% !important;
     }
   }
-  #block-menu-menu-coe-area,
-  #block-views-newsflashes-coes-area-block {
-    position: static;
-
+  #block-menu-menu-coe-area ul.menu{
     @media (min-width: @screen-md) {
       a {
         width: 180px !important;
       }
+    }
+  }
+  #block-menu-menu-coe-area,
+  #block-views-newsflashes-coes-area-block {
+    position: static;
+    @media (min-width: @screen-md) {
       > ul.nav-pills {
         position: fixed;
         right: 0;
@@ -369,13 +463,15 @@ div.service-links {
 
   #block-menu-menu-coe-area{
     h2.block-title{
-      box-shadow: 0 3px 2px -2px @rouge-crealead;
+      /*box-shadow: 0 3px 2px -2px @rouge-crealead*/;
+      border-bottom: 1px solid @rouge-crealead;
       display: block;
-      padding: 10px;
+      padding: 10px 10px 0 10px;
       font-weight: 400;
       text-align: left;
       color: @noir-crealead;
       margin-top: -10px;
+      min-height: 52px;
       &:before {
         .glyphicon();
         content: "\e847";
@@ -394,6 +490,27 @@ div.service-links {
     padding: 0;
     @media (max-width:@screen-md) {
       float: none;
+    }
+  }
+  .view-display-id-links_list {
+    .views-row {
+      float: left;
+      margin-bottom: 15px;
+      .views-field-field-pictogramme {
+        float: left;
+        margin-right: 10px;
+      }
+      .views-field-field-document-url {
+        float: left;
+      }
+      a {
+        white-space: nowrap;
+        display: block;
+        margin-right: 20px;
+      }
+      .views-field-edit-node {
+        clear: both;
+      }
     }
   }
 }

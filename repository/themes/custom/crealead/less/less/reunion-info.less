@@ -1,9 +1,15 @@
-.page-reunions-information{
+.page-reunions-information {
   //background: url(../images/bg_grey.png) repeat-x 0 30px;
   .page-header{
     margin-bottom: 0;
   }
-
+  .info-meetings-location-links {
+    a {
+      .red-button-link();
+      min-width: 223px;
+      text-align: left !important;
+    }
+  }
   ul.coche-rouge{
     font-size: 0.8em;
     > li{
@@ -15,6 +21,27 @@
       li{
         font-weight: normal;
       }
+    }
+  }
+}
+.page-reunions-information-par-ville {
+  .button-back {
+    @media (min-width: @screen-md) {
+      margin-right: 142px;
+      float: right;
+    }
+  }
+  .info-meetings-location-links{
+    a {
+      .red-button-link();
+      background-color: lighten(@rouge-crealead, 50%);
+      min-width: 223px;
+      text-align: left !important;
+    }
+    p.inactive {
+      .button-inactive();
+      min-width: 223px;
+      text-align: left !important;
     }
   }
 }
