@@ -215,7 +215,6 @@ function crealead_profiles_views_pre_render(&$view) {
   }
 
   if ($view->name == 'structure_team' && $view->current_display == 'structure_profiles') {
-    drupal_add_css(drupal_get_path('module', 'crealead_profiles') . '/css/crealead_structure_profiles.css');
     drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_structure_profiles.js');
   }
 }
