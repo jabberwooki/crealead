@@ -327,7 +327,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['field_training_duration']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Tarif */
+  /* Field: Content: Tarif public */
   $handler->display->display_options['fields']['field_training_price']['id'] = 'field_training_price';
   $handler->display->display_options['fields']['field_training_price']['table'] = 'field_data_field_training_price';
   $handler->display->display_options['fields']['field_training_price']['field'] = 'field_training_price';
@@ -497,13 +497,13 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Nos formations';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '24';
@@ -601,9 +601,31 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Publié';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    199363405 => 0,
+    14479344 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -728,31 +750,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_training_search_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Dispositif de financement (field_training_funding) */
-  $handler->display->display_options['filters']['field_training_funding_tid']['id'] = 'field_training_funding_tid';
-  $handler->display->display_options['filters']['field_training_funding_tid']['table'] = 'field_data_field_training_funding';
-  $handler->display->display_options['filters']['field_training_funding_tid']['field'] = 'field_training_funding_tid';
-  $handler->display->display_options['filters']['field_training_funding_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_training_funding_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['operator_id'] = 'field_training_funding_tid_op';
-  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['label'] = 'Dispositif de financement';
-  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['operator'] = 'field_training_funding_tid_op';
-  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['identifier'] = 'field_training_funding_tid';
-  $handler->display->display_options['filters']['field_training_funding_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
-    7178059 => 0,
-    157297110 => 0,
-    31497918 => 0,
-    231346920 => 0,
-    193262079 => 0,
-  );
-  $handler->display->display_options['filters']['field_training_funding_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_training_funding_tid']['vocabulary'] = 'funding_solutions';
   /* Filter criterion: Content: Affichage dans le catalogue ? (field_training_catalog) */
   $handler->display->display_options['filters']['field_training_catalog_value']['id'] = 'field_training_catalog_value';
   $handler->display->display_options['filters']['field_training_catalog_value']['table'] = 'field_data_field_training_catalog';
@@ -1149,7 +1146,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation (field_related_training) */
+  /* Contextual filter: Content: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1187,7 +1184,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation (field_related_training) */
+  /* Contextual filter: Content: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1365,7 +1362,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation (field_related_training) */
+  /* Contextual filter: Content: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1413,7 +1410,7 @@ function crealead_trainings_views_default_views() {
     t('more'),
     t('Thématique'),
     t('Durée'),
-    t('Tarif'),
+    t('Tarif public'),
     t('Objectifs'),
     t('Formations d\'une thématique'),
     t('Produits et formations'),
@@ -1428,11 +1425,11 @@ function crealead_trainings_views_default_views() {
     t('Auteur'),
     t('Type'),
     t('Identifiant universel unique (UUID)'),
+    t('Publié'),
     t('Domaine'),
     t('Marque'),
     t('Co-entrepreneur'),
     t('Mots-clés'),
-    t('Dispositif de financement'),
     t('Catalogue test'),
     t('Coe'),
     t('Name'),
@@ -1501,7 +1498,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Content: Formation */
+  /* Field: Content: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -1806,7 +1803,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Content: Formation */
+  /* Field: Content: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';

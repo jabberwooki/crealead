@@ -197,9 +197,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
       ),
@@ -287,7 +285,7 @@ function crealead_trainings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -313,9 +311,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 10,
       ),
@@ -401,7 +397,88 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 28,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_coopins'.
+  $field_instances['node-training-field_coopins'] = array(
+    'bundle' => 'training',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 28,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_coopins',
+    'label' => 'Payable en COOPINs',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'label_help_description' => '',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 14,
     ),
   );
 
@@ -435,7 +512,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -509,9 +586,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => 'pull-left',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
       ),
@@ -634,7 +709,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -725,7 +800,6 @@ function crealead_trainings_field_default_field_instances() {
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -740,9 +814,7 @@ function crealead_trainings_field_default_field_instances() {
       'list' => array(
         'label' => 'hidden',
         'module' => 'entityreference',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'entityreference_entity_id',
         'weight' => 35,
       ),
@@ -771,7 +843,6 @@ function crealead_trainings_field_default_field_instances() {
           'colorbox_field_formatter_link_type' => 'content',
           'colorbox_field_formatter_style' => 'colorbox-load',
           'colorbox_field_formatter_width' => 500,
-          'field_formatter_class' => '',
         ),
         'type' => 'colorbox_field_formatter_linked',
         'weight' => 36,
@@ -799,7 +870,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 27,
+      'weight' => 29,
     ),
   );
 
@@ -826,7 +897,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -899,7 +970,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -971,11 +1042,9 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1059,7 +1128,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -1086,7 +1155,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1132,7 +1201,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -1158,9 +1227,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
       ),
@@ -1174,7 +1241,6 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
@@ -1195,9 +1261,7 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 42,
       ),
@@ -1253,7 +1317,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 21,
     ),
   );
 
@@ -1279,9 +1343,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -1401,7 +1463,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1453,6 +1515,120 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training-field_training_crealead_price'.
+  $field_instances['node-training-field_training_crealead_price'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_training_crealead_price',
+    'label' => 'Tarif crealeadien',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-training-field_training_domain'.
   $field_instances['node-training-field_training_domain'] = array(
     'bundle' => 'training',
@@ -1476,7 +1652,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1558,9 +1734,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -1574,7 +1748,6 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
@@ -1598,9 +1771,7 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 41,
       ),
@@ -1686,7 +1857,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1758,9 +1929,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
       ),
@@ -1846,7 +2015,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 22,
     ),
   );
 
@@ -1872,9 +2041,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -1886,12 +2053,8 @@ function crealead_trainings_field_default_field_instances() {
       ),
       'list' => array(
         'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-          'trim_length' => 100,
-        ),
-        'type' => 'text_trimmed',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 38,
       ),
       'sector_brand_block' => array(
@@ -1908,18 +2071,15 @@ function crealead_trainings_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'text_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 39,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_training_price',
-    'label' => 'Tarif',
+    'label' => 'Tarif public',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -1964,6 +2124,7 @@ function crealead_trainings_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -1993,9 +2154,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
       ),
@@ -2081,7 +2240,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 18,
     ),
   );
 
@@ -2108,7 +2267,6 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'field_formatter_class' => '',
           'links' => 1,
           'view_mode' => 'logo',
         ),
@@ -2125,7 +2283,6 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'field_formatter_class' => '',
           'links' => 1,
           'view_mode' => 'logo',
         ),
@@ -2190,9 +2347,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
       ),
@@ -2278,7 +2433,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 20,
     ),
   );
 
@@ -2305,7 +2460,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2415,9 +2570,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
       ),
@@ -2431,7 +2584,6 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
           'trim_length' => 100,
         ),
         'type' => 'text_trimmed',
@@ -2507,7 +2659,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 23,
     ),
   );
 
@@ -2534,7 +2686,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2545,9 +2697,7 @@ function crealead_trainings_field_default_field_instances() {
       'list' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 39,
       ),
@@ -2566,9 +2716,7 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 40,
       ),
@@ -2612,9 +2760,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
@@ -2627,9 +2773,7 @@ function crealead_trainings_field_default_field_instances() {
       'list' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 36,
       ),
@@ -2648,9 +2792,7 @@ function crealead_trainings_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 37,
       ),
@@ -2668,7 +2810,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -2694,9 +2836,7 @@ function crealead_trainings_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 9,
       ),
@@ -2782,7 +2922,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 24,
     ),
   );
 
@@ -3300,6 +3440,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Nom');
   t('Nombre de participants');
   t('Objectifs pédagogiques');
+  t('Payable en COOPINs');
   t('Personnes intéressées');
   t('Prise en charge Crealead');
   t('Prise en charge par Crealead dans le cadre de l\'Appel à Compétences.');
@@ -3310,7 +3451,8 @@ function crealead_trainings_field_default_field_instances() {
   t('Session financée par Crealead Structure');
   t('Sessions programmées');
   t('Statut de publication précédent');
-  t('Tarif');
+  t('Tarif crealeadien');
+  t('Tarif public');
   t('Thématique(s) concernée(s)');
   t('Type');
   t('Validation');
