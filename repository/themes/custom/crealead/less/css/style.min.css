@@ -1177,6 +1177,7 @@ a.list-group-item .list-group-item-heading,button.list-group-item .list-group-it
 a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{text-decoration:none;color:#555;background-color:#f5f5f5}
 button.list-group-item{width:100%;text-align:left}
 .list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{background-color:#eee;color:#777;cursor:not-allowed}
+#close-logo:hover,.carousel-indicators li,.view-structure-team #tabs li.profile-tab:hover,button.close{cursor:pointer}
 .list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading{color:inherit}
 .list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777}
 .list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#a00c2f;border-color:#a00c2f}
@@ -1277,7 +1278,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 .close{float:right;font-size:21px;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
 .popover,.tooltip{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;letter-spacing:normal;line-height:1.42857143;text-shadow:none;white-space:normal;word-break:normal;word-spacing:normal;word-wrap:normal;text-decoration:none;text-transform:none}
 .close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer;opacity:.5;filter:alpha(opacity=50)}
-button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}
+button.close{padding:0;background:0 0;border:0;-webkit-appearance:none}
 .modal-content,.popover{background-clip:padding-box}
 .modal{display:none;position:fixed;top:0;-webkit-overflow-scrolling:touch;outline:0}
 .modal.fade .modal-dialog{-webkit-transform:translate(0,-25%);-ms-transform:translate(0,-25%);-o-transform:translate(0,-25%);transform:translate(0,-25%);-webkit-transition:-webkit-transform .3s ease-out;-moz-transition:-moz-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out}
@@ -1369,7 +1370,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .carousel-control .icon-prev:before{content:'\2039'}
 .carousel-control .icon-next:before{content:'\203a'}
 .carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;margin-left:-30%;padding-left:0;list-style:none;text-align:center}
-.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;border:1px solid #fff;border-radius:10px;cursor:pointer;background-color:#000\9;background-color:rgba(0,0,0,0)}
+.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;border:1px solid #fff;border-radius:10px;background-color:#000\9;background-color:rgba(0,0,0,0)}
 .carousel-indicators .active{margin:0;width:12px;height:12px;background-color:#fff}
 .carousel-caption{position:absolute;left:15%;right:15%;bottom:20px;z-index:10;padding-top:20px;padding-bottom:20px}
 .carousel-caption .btn,.text-hide{text-shadow:none}
@@ -1704,7 +1705,6 @@ div.service-links a{float:left;margin-right:10px}
 #close-logo{width:20px;height:20px;float:right;margin-top:-16px;margin-right:-15px}
 #close-logo:before{position:relative;display:inline-block;margin-right:10px;content:"\e832";color:#bf0e38}
 .coe-area .tab-intra-crealead-selected,.coe-area .tab-intra-crealead:hover{background-color:#1d1e19;color:#FFF}
-#close-logo:hover{cursor:pointer}
 .coe-area .tab-intra-crealead{display:inline-block;padding:10px 20px;white-space:nowrap;border-top:1px solid #bf0e38;border-right:1px solid #bf0e38;border-left:1px solid #bf0e38;border-bottom:1px solid #fff;border-radius:8px 8px 0 0;position:relative;top:1px;margin:0 5px;font-size:.8em}
 .coe-area .tab-intra-crealead:hover{text-decoration:none;border:1px solid #1d1e19}
 .coe-area .tab-intra-crealead .active,.coe-area .tab-intra-crealead:visited{text-decoration:none}
@@ -2673,9 +2673,8 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a{position:relative;font-family:Quicksand,sans-serif;font-size:1.3em;display:block;padding-top:15px}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a:before,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a:before,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>div.views-row a:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\f0c8";position:absolute;left:-30px;top:25px;color:#009aa0;font-size:.6em}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3{display:table-cell;margin:0 10px 20px 0;padding:20px}
-@media (min-width:992px){#block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3{min-width:210px}
-}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3:before{position:relative;top:1px;font-family:fontello;font-style:normal;font-weight:400;font-size:1em;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;text-align:center;font-variant:normal;text-transform:none;line-height:1em;color:#777;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\e834"}
+.view-structure-team #tabs ul li.profile-tab a,.view-structure-team .views-row .username{font-family:Quicksand,sans-serif;font-weight:700;text-transform:uppercase}
 #block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper:after{content:"";display:block;clear:both;border-bottom:3px dotted #999;width:60%;margin:25px auto}
 .form-item-edit-field-room-tid-2106 a.active:before,.form-item-edit-field-room-tid-2107 a.active:before,.form-item-edit-field-room-tid-2108 a.active:before,.form-item-edit-field-room-tid-2109 a.active:before,.form-item-edit-field-room-tid-2110 a.active:before{content:"\e879"}
 #colorbox .node-structure-event .structure-events-links,.node-room-event.view-mode-colorbox .structure-events-links{margin-top:20px;text-align:right}
@@ -2714,3 +2713,19 @@ body.node-type-need #node-need-full-wrapper .row>.col-sm-6>div.field>div.field-i
 .node-type-business-group #block-system-main .col-sm-4>div .field-items .field-item{padding-left:20px}
 .node-type-business-group .view-id-users h2{overflow:hidden}
 .node-type-business-group .view-id-users h2:after{background-color:#ff3f18;content:"";display:inline-block;height:1px;position:relative;vertical-align:middle;width:100%;left:.5em;margin-right:-50%}
+.view-structure-team #tabs ul li.profile-tab{padding:0!important;display:block;float:left}
+@media (min-width:517px){.view-structure-team #tabs ul li.profile-tab:first-child a{border-radius:8px 0 0 8px}
+.view-structure-team #tabs ul li.profile-tab:last-child a{border-radius:0 8px 8px 0}
+}
+@media (max-width:517px){.view-structure-team #tabs ul li.profile-tab{width:49%;margin-right:1%;margin-bottom:5px}
+}
+.view-structure-team #tabs ul li.profile-tab a{display:block;color:#fff;background-color:#000;padding:7px 19px;margin:0;border-radius:0;border:0}
+.view-structure-team #tabs ul li.profile-tab a:hover{text-decoration:none;background-color:#999;color:#000}
+.view-structure-team #tabs ul li.profile-tab.group-structure-selected a{background-color:#bf0e38}
+.view-structure-team #tabs ul li.profile-tab:before{content:none}
+.view-structure-team #tabs ul:after{content:'';display:block;clear:both;margin-bottom:30px}
+.view-structure-team .views-row{box-shadow:0 0 5px #999;padding-bottom:0;height:100px;overflow:hidden;margin-bottom:30px;margin-right:1%}
+@media (min-width:992px){#block-views-structure-calendar-structure .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-agenda-salles .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3,.page-espace-co-entrepreneur-calendrier-formations .view-trainings-calendar-prod .view-content .calendar-listing-day-wrapper>h3{min-width:210px}
+.view-structure-team .views-row{width:32%;float:left}
+}
+.view-structure-team .views-row img{float:left;margin-right:15px}
