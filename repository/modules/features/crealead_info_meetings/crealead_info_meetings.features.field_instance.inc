@@ -49,9 +49,7 @@ function crealead_info_meetings_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -148,7 +146,6 @@ function crealead_info_meetings_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'field_formatter_class' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -234,9 +231,7 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -333,7 +328,6 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => '400x400',
         ),
@@ -436,9 +430,7 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
       'full' => array(
         'label' => 'above',
         'module' => 'registration',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'registration_form',
         'weight' => 5,
       ),
