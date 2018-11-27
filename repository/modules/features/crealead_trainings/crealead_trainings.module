@@ -782,7 +782,7 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
     // Puis il est traité dans le hook_views_query_alter() ci-dessous.
     $form['field_custom_coopins_value'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Payable en COOPINs',
+      '#title' => "Payable en Coop'in",
       // '#return_value' => 1,
       '#default_value' => 0,
     );
