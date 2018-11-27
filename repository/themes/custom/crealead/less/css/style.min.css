@@ -2443,13 +2443,18 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-formations .views-exposed-widget.views-reset-button,.page-formations .views-exposed-widget.views-submit-button{width:40px}
 .page-formations #edit-title{width:190px}
 .page-formations .views-exposed-form #edit-reset,.page-formations .views-exposed-form #edit-submit-trainings{width:30px;height:34px;overflow:hidden}
-.page-formations .views-exposed-form #edit-reset:before,.page-formations .views-exposed-form #edit-submit-trainings:before,.page-formations .views-exposed-form .views-reset-button #edit-reset:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:10px;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;text-align:center}
+.page-formations .views-exposed-form #edit-reset:before,.page-formations .views-exposed-form #edit-submit-trainings:before,.page-formations .views-exposed-form .views-reset-button #edit-reset:before{font-family:fontello;font-style:normal;speak:none;display:inline-block;text-decoration:inherit;width:1em;font-variant:normal;text-transform:none;line-height:1em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-right:10px;position:relative;font-weight:400;text-align:center}
 .page-formations .views-exposed-form #edit-reset:before,.page-formations .views-exposed-form #edit-submit-trainings:before{content:'\e831';color:#FFF;font-size:1.6em;left:-8px;top:-3px}
 .page-formations .views-exposed-form .views-reset-button #edit-reset:before{content:'\e832';color:#888;font-size:1.8em;top:-4px}
 .page-formations .form-item-title{width:200px}
 .page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser{box-shadow:0 0 5px #aaa;margin-top:20px;padding:10px}
 .page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser .field-name-field-training-type{padding-top:15px}
 .page-formations .views-bootstrap-grid-plugin-style>.row .group-wrapper-teaser .field-item>h3{margin-top:0}
+.page-formations #edit-custom-coopins-value-wrapper{background-color:#ededed;border-radius:6px;padding:0 0 5px 10px;margin-right:10px;position:relative;top:33px}
+.page-formations #edit-custom-coopins-value-wrapper>div{display:none}
+.page-formations #edit-custom-coopins-value-wrapper>div.views-widget{display:block}
+.page-formations #edit-custom-coopins-value-wrapper>div.views-widget label{font-weight:400}
+.page-formations #edit-custom-coopins-value-wrapper:before{content:"Si vous êtes à Crealead";position:absolute;top:-25px;font-weight:700}
 .page-certifications-et-labels .view-certifications-labels h3{margin-bottom:30px;padding-bottom:10px;border-bottom:3px dotted #999}
 .page-certifications-et-labels .view-certifications-labels h3>a{font-family:Quicksand,sans-serif;font-size:1.4em}
 .page-certifications-et-labels .view-certifications-labels .views-row{clear:both;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bf0e38}
