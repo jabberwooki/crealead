@@ -461,36 +461,6 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
-  /* Filter criterion: Field: Compétences (field_competencies) */
-  $handler->display->display_options['filters']['field_competencies_tid']['id'] = 'field_competencies_tid';
-  $handler->display->display_options['filters']['field_competencies_tid']['table'] = 'field_data_field_competencies';
-  $handler->display->display_options['filters']['field_competencies_tid']['field'] = 'field_competencies_tid';
-  $handler->display->display_options['filters']['field_competencies_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_competencies_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator_id'] = 'field_competencies_tid_op';
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['label'] = 'Compétences / spécialités';
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['description'] = 'Quelques lettres suffisent pour que le système vous propose une ou plusieurs expressions clés.';
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['operator'] = 'field_competencies_tid_op';
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['identifier'] = 'field_competencies_tid';
-  $handler->display->display_options['filters']['field_competencies_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    14479344 => 0,
-    199363405 => 0,
-    103860121 => 0,
-    227964678 => 0,
-    157083709 => 0,
-    7178059 => 0,
-    259028912 => 0,
-    157297110 => 0,
-    191976793 => 0,
-    8998634 => 0,
-    31497918 => 0,
-    155486910 => 0,
-    231346920 => 0,
-    193262079 => 0,
-  );
-  $handler->display->display_options['filters']['field_competencies_tid']['vocabulary'] = 'competencies';
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/trombinoscope';
   $translatables['coe_directory'] = array(
     t('Master'),
@@ -516,8 +486,6 @@ function crealead_profiles_views_default_views() {
     t('Prénom'),
     t('Nom'),
     t('Statut'),
-    t('Compétences / spécialités'),
-    t('Quelques lettres suffisent pour que le système vous propose une ou plusieurs expressions clés.'),
   );
   $export['coe_directory'] = $view;
 
