@@ -1442,34 +1442,35 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'themes';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'bootstrap_6_6';
+  $ds_layout->layout = 'bootstrap_12';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
+      'central' => array(
         0 => 'achievements_theme_realisations',
-        1 => 'news_theme_news',
-        2 => 'articles_theme_articles',
+        1 => 'articles_theme_articles',
+        2 => 'trainings_landing_page_trainings',
+        3 => 'news_theme_news',
         4 => 'group_theme_brands_tab',
         5 => 'group_theme_blog_tab',
-        6 => 'group_theme_tabs',
-      ),
-      'right' => array(
-        3 => 'trainings_landing_page_trainings',
+        6 => 'group_theme_news_tab',
+        7 => 'group_theme_articles_tab',
+        8 => 'group_theme_tabs',
       ),
     ),
     'fields' => array(
-      'achievements_theme_realisations' => 'left',
-      'news_theme_news' => 'left',
-      'articles_theme_articles' => 'left',
-      'trainings_landing_page_trainings' => 'right',
-      'group_theme_brands_tab' => 'left',
-      'group_theme_blog_tab' => 'left',
-      'group_theme_tabs' => 'left',
+      'achievements_theme_realisations' => 'central',
+      'articles_theme_articles' => 'central',
+      'trainings_landing_page_trainings' => 'central',
+      'news_theme_news' => 'central',
+      'group_theme_brands_tab' => 'central',
+      'group_theme_blog_tab' => 'central',
+      'group_theme_news_tab' => 'central',
+      'group_theme_articles_tab' => 'central',
+      'group_theme_tabs' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'central' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
