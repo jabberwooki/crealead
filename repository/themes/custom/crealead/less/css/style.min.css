@@ -2537,7 +2537,7 @@ body.not-logged-in .region-sector-brands-header{margin-top:20px}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings h3{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1.3em;margin-bottom:0}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content{background-color:#ededed;padding:20px}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content.row{margin:0}
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a{display:block;color:#1d1e19;font-size:.8em;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #009aa0}
+.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a{display:block;color:#1d1e19;font-size:.8em;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #009aa0;height:178px;overflow:hidden}
 .main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a:hover{color:#bf0e38}
 .main-container.main-container-sector-brands .group-sectorbrands-achievments{padding-bottom:20px;border-bottom:1px solid #999}
 .main-container.main-container-sector-brands .group-sectorbrands-achievments>h3{text-transform:uppercase;font-family:Quicksand,sans-serif;font-weight:700;color:#bf0e38;padding-top:35px;border-top:1px solid #999}
