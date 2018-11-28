@@ -820,7 +820,7 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
 
 
 function crealead_trainings_views_query_alter(&$view, &$query) {
-  if ($view->name == 'trainings' && $view->current_display = 'list_page') {
+  if ($view->name == 'trainings' && $view->current_display == 'list_page') {
     // CUSTOM FILTERS HANDLING
     // 1 - Crealead price
     if (isset($view->exposed_data['field_custom_crealead_price_value']) && $view->exposed_data['field_custom_crealead_price_value']) {
