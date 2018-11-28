@@ -2467,6 +2467,9 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .group-session-details .field-name-see-all-sessions-link{position:absolute;right:0;top:10px;padding:0 20px 0 0}
 .group-session-details img{float:right}
 .page-taxonomy-term .view-display-id-landing_page_trainings .view-content.row{margin:0;background-color:#ededed;min-height:240px}
+.page-taxonomy-term .carousel{background-color:#ededed}
+@media (min-width:768px){.page-taxonomy-term .carousel{width:70%}
+}
 .page-taxonomy-term .carousel-control .icon-next:before,.page-taxonomy-term .carousel-control .icon-prev:before{color:red}
 .page-taxonomy-term .carousel-inner{margin-bottom:80px}
 .page-taxonomy-term .carousel-inner .node-brand .row>.left-col{background-color:#fff}
@@ -2490,19 +2493,20 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-taxonomy-term .view-brands span.info h3.mask{opacity:1!important;font-size:1em;text-align:center;padding-top:0;margin-top:10px;padding-bottom:0;margin-bottom:0}
 .page-taxonomy-term .view-brands .field-name-field-brand-baseline{margin-bottom:20px}
 .page-taxonomy-term .field-name-field-news-type{background-color:#bf0e38;padding:5px 10px;color:#fff;font-family:Quicksand,sans-serif;text-transform:uppercase;display:table;font-weight:700;font-size:.8em;position:absolute;top:10px;left:5px}
-.page-taxonomy-term .view-display-id-theme_news .right-col{height:223px;overflow:hidden}
+.page-taxonomy-term .view-display-id-theme_news .right-col{height:223px;overflow:hidden;padding-right:100px}
 .page-taxonomy-term .view-id-trainings h3{color:#fff;text-transform:uppercase;background-color:#009aa0;padding:20px;line-height:1.3em;margin-bottom:0}
 .page-taxonomy-term .view-id-trainings .field-name-title{background-color:#ededed;padding:0 10px 10px;margin:0}
 .page-taxonomy-term .view-id-trainings .field-name-title h4{padding:0;margin:0}
-.page-taxonomy-term .view-id-trainings .field-name-title h4 a{color:#000;border-bottom:1px solid #009aa0;display:block;padding:10px 0 15px}
+.page-taxonomy-term .view-id-trainings .field-name-title h4 a{color:#000;border-bottom:1px solid #009aa0;display:block;padding:30px 0 15px;min-height:100px}
 .page-taxonomy-term .view-id-articles .row{height:220px;overflow:hidden;background-color:#ededed;border-bottom:10px solid #ededed}
 .page-taxonomy-term .view-id-articles .col-sm-12{padding:0 20px;background-color:#ededed}
+.page-taxonomy-term .view-id-articles .col-sm-12>div{padding:0 100px!important}
 .page-taxonomy-term .view-id-articles .col-sm-12 h4{margin:20px 0 0}
 .page-taxonomy-term .view-id-articles .col-sm-12 .field-name-body,.page-taxonomy-term .view-id-articles .col-sm-12 .field-name-title{padding:10px}
 .page-taxonomy-term .view-achievements .field-name-field-achievement-photos>.field-items{height:224px;width:100%;padding:0 5%;background-color:#ededed;overflow:hidden;display:table}
 .page-taxonomy-term .view-achievements .field-name-field-achievement-photos>.field-items>.field-item{display:table-cell;vertical-align:middle}
-.page-taxonomy-term .view-achievements .field-name-field-achievement-photos>.field-items>.field-item img{display:block;margin:0 auto}
-.page-taxonomy-term .view-achievements .right-col{height:223px;overflow:hidden}
+.page-taxonomy-term .view-achievements .field-name-field-achievement-photos>.field-items>.field-item img{display:block;margin:0 0 0 100px}
+.page-taxonomy-term .view-achievements .right-col{height:223px;overflow:hidden;padding-right:100px}
 .page-taxonomy-term .view-achievements h4.mask a{font-size:.8em}
 @media print{body{padding:0;margin:0}
 body #navbar,body #skip-link,body .slicknav_menu{display:none}
