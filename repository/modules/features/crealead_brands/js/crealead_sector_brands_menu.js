@@ -21,21 +21,21 @@
 
           /* mecanisme open-close set-up */
           // Creation of a div with arrow in background to slide down and slide up introduction
-          console.log("creation du bouton");
-          var $arrow_down = $('<div id="open-close-sector-brand"></div>');
-          $arrow_down.css({
-            'display' : 'block',
-            'height': '33px',
-            'cursor': 'pointer'
-          });
-          $arrow_down.insertAfter('#introduction.sector-brands-header');
-          // show the headband after a click on the div by adding or removing class sector-brands-desc-open
-          $arrow_down.click(function(){
-            $('#introduction.sector-brands-header .views-field-description').toggleClass( "sector-brands-desc-open");
-            $('#introduction.sector-brands-header').toggleClass( "sector-brands-desc-open", 1000);
+          if(!$("#open-close-sector-brandopen-close-sector-brand").length) {
+            var $arrow_down = $('<div id="open-close-sector-brand"></div>');
+            $arrow_down.css({
+              'display' : 'block',
+              'height': '33px',
+              'cursor': 'pointer'
+            });
+            $arrow_down.insertAfter('#introduction.sector-brands-header');
+            // show the headband after a click on the div by adding or removing class sector-brands-desc-open
+            $arrow_down.click(function(){
+              $('#introduction.sector-brands-header .views-field-description').toggleClass( "sector-brands-desc-open");
+              $('#introduction.sector-brands-header').toggleClass( "sector-brands-desc-open", 1000);
+            });
+          }
 
-
-          });
         }
       }
       // Manage the height of news
