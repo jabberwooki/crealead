@@ -74,7 +74,7 @@ function crealead_products_strongarm() {
         'custom_settings' => FALSE,
       ),
       'landing_page_block' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'list' => array(
         'custom_settings' => FALSE,
