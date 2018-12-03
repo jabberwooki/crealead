@@ -2226,12 +2226,11 @@ function crealead_profiles_views_default_views() {
 <div class="competencies">[field_competencies]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Profile type: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'profile_type';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['relationship'] = 'type';
-  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
+  /* Sort criterion: Profile type: Label */
+  $handler->display->display_options['sorts']['label']['id'] = 'label';
+  $handler->display->display_options['sorts']['label']['table'] = 'profile_type';
+  $handler->display->display_options['sorts']['label']['field'] = 'label';
+  $handler->display->display_options['sorts']['label']['relationship'] = 'type';
   $handler->display->display_options['path'] = 'equipe-structure';
 
   /* Display: Onglets page Structure */
@@ -2274,12 +2273,11 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['weight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['weight']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Profile type: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'profile_type';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['relationship'] = 'type';
-  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
+  /* Sort criterion: Profile type: Label */
+  $handler->display->display_options['sorts']['label']['id'] = 'label';
+  $handler->display->display_options['sorts']['label']['table'] = 'profile_type';
+  $handler->display->display_options['sorts']['label']['field'] = 'label';
+  $handler->display->display_options['sorts']['label']['relationship'] = 'type';
   $handler->display->display_options['displays'] = array(
     'structure_profiles' => 'structure_profiles',
     'default' => 0,
