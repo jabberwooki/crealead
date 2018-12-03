@@ -729,7 +729,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Formation */
+  /* Field: Content: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -2968,6 +2968,14 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['arguments']['item_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['item_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['item_id']['break_phrase'] = TRUE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'profile';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
 
   /* Display: Coes fiche marque */
   $handler = $view->new_display('block', 'Coes fiche marque', 'brand_coes');

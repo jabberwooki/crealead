@@ -664,7 +664,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '3',
+            'weight' => '2',
             'visible' => FALSE,
           ),
           'block' => array(
@@ -692,7 +692,7 @@ function crealead_brands_strongarm() {
         ),
         'news_theme_news' => array(
           'full' => array(
-            'weight' => '4',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'default' => array(
