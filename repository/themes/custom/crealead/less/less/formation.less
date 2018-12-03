@@ -199,7 +199,6 @@ body.node-type-training {
     }
   }
 }
-
 /* page de formation **************************************************************************************************/
 .page-formations {
   .views-exposed-widget {
@@ -268,6 +267,29 @@ body.node-type-training {
           }
         }
       }
+    }
+  }
+  #edit-custom-coopins-value-wrapper {
+    background-color: @gris-clair-crealead;
+    border-radius: 6px;
+    padding: 0 0 5px 10px;
+    margin-right: 10px;
+    position: relative;
+    top: 33px;
+    > div {
+      display: none;
+      &.views-widget {
+        display: block;
+        label {
+          font-weight: normal;
+        }
+      }
+    }
+    &:before {
+      content: "Si vous êtes à Crealead";
+      position: absolute;
+      top: -25px;
+      font-weight: bold;
     }
   }
 }

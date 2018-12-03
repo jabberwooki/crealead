@@ -465,7 +465,7 @@ function crealead_trainings_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_coopins',
-    'label' => 'Payable en COOPINs',
+    'label' => 'Payable en Coop\'in',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -3440,7 +3440,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Nom');
   t('Nombre de participants');
   t('Objectifs pédagogiques');
-  t('Payable en COOPINs');
+  t('Payable en Coop\'in');
   t('Personnes intéressées');
   t('Prise en charge Crealead');
   t('Prise en charge par Crealead dans le cadre de l\'Appel à Compétences.');

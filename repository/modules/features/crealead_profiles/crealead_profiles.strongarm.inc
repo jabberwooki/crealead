@@ -175,9 +175,6 @@ function crealead_profiles_strongarm() {
       'block' => array(
         'custom_settings' => TRUE,
       ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
