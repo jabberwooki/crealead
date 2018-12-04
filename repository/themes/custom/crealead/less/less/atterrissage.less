@@ -1,4 +1,22 @@
 .page-taxonomy-term {
+  .view-display-id-theme_page_header {
+    .vocabulary-themes {
+      > .row{
+        @media (min-width: @screen-lg) {
+          width: 1170px;
+        }
+        @media (min-width: @screen-md) and (max-width: @screen-lg) {
+          width: 970px;
+        }
+        @media (min-width: @screen-sm) and (max-width: @screen-md) {
+          width: 750px;
+        }
+        @media (max-width: @screen-sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
   @media (max-width: @screen-sm) {
     .col-sm-6.left-col {
       > div {
