@@ -1,4 +1,16 @@
 .page-taxonomy-term {
+  @media (max-width: @screen-sm) {
+    .col-sm-6.left-col {
+      > div {
+        padding: 10px 20px;
+      }
+    }
+    .view-header {
+      > h3 {
+        margin-left: 20px;
+      }
+    }
+  }
   .view-display-id-landing_page_trainings {
     .view-content.row {
       margin: 0;
@@ -262,7 +274,7 @@
   /* Carrousels bas ***************************************************************************************************/
   #block-system-main {
     .carousel.slide {
-      height: 385px;
+      min-height: 385px;
       .carousel-inner {
         h4 {
           margin-bottom: 20px;
@@ -272,6 +284,11 @@
         border: 1px solid @rouge-crealead;
         &.active {
           background-color: @rouge-crealead;
+        }
+      }
+      @media (max-width: @screen-sm) {
+        .col-sm-6.right-col > div {
+          padding: 0 20px;
         }
       }
     }

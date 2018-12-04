@@ -2466,6 +2466,9 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .group-session-details{position:relative;margin-top:20px}
 .group-session-details .field-name-see-all-sessions-link{position:absolute;right:0;top:10px;padding:0 20px 0 0}
 .group-session-details img{float:right}
+@media (max-width:768px){.page-taxonomy-term .col-sm-6.left-col>div{padding:10px 20px}
+.page-taxonomy-term .view-header>h3{margin-left:20px}
+}
 .page-taxonomy-term .view-display-id-landing_page_trainings .view-content.row{margin:0;background-color:#ededed;min-height:240px}
 .page-taxonomy-term .carousel{background-color:#ededed}
 @media (min-width:768px){.page-taxonomy-term .carousel{width:70%}
@@ -2513,10 +2516,12 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-taxonomy-term ul.group-theme-tabs li:first-child a{border-radius:6px 0 0 6px}
 .page-taxonomy-term ul.group-theme-tabs li:last-child a{border-radius:0 6px 6px 0}
 .page-taxonomy-term ul.group-theme-tabs li.active a{background-color:#bf0e38;color:#FFF}
-.page-taxonomy-term #block-system-main .carousel.slide{height:385px}
+.page-taxonomy-term #block-system-main .carousel.slide{min-height:385px}
 .page-taxonomy-term #block-system-main .carousel.slide .carousel-inner h4{margin-bottom:20px}
 .page-taxonomy-term #block-system-main .carousel.slide .carousel-indicators li{border:1px solid #bf0e38}
 .page-taxonomy-term #block-system-main .carousel.slide .carousel-indicators li.active{background-color:#bf0e38}
+@media (max-width:768px){.page-taxonomy-term #block-system-main .carousel.slide .col-sm-6.right-col>div{padding:0 20px}
+}
 .page-taxonomy-term #block-system-main ul.pagination{display:none}
 @media print{body{padding:0;margin:0}
 body #navbar,body #skip-link,body .slicknav_menu{display:none}
