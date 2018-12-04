@@ -2523,6 +2523,7 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 @media (max-width:768px){.page-taxonomy-term #block-system-main .carousel.slide .col-sm-6.right-col>div{padding:0 20px}
 }
 .page-taxonomy-term #block-system-main ul.pagination{display:none}
+.page-taxonomy-term .view-id-trainings.view-display-id-landing_page_trainings .view-header>h3{margin-left:0}
 @media print{body{padding:0;margin:0}
 body #navbar,body #skip-link,body .slicknav_menu{display:none}
 body>.main-container{margin:0!important;padding:0!important}
