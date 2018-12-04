@@ -2508,6 +2508,16 @@ body.node-type-training .field-name-recommendation-action{position:static!import
 .page-taxonomy-term .view-achievements .field-name-field-achievement-photos>.field-items>.field-item img{display:block;margin:0 0 0 100px}
 .page-taxonomy-term .view-achievements .right-col{height:223px;overflow:hidden;padding-right:100px}
 .page-taxonomy-term .view-achievements h4.mask a{font-size:.8em}
+.page-taxonomy-term ul.group-theme-tabs li a{font-family:Quicksand,sans-serif;display:block;color:#fff;background-color:#000;font-weight:700;text-transform:uppercase;padding:7px 19px;margin:0;border-radius:0;border:0}
+.page-taxonomy-term ul.group-theme-tabs li a:hover{background-color:#999}
+.page-taxonomy-term ul.group-theme-tabs li:first-child a{border-radius:6px 0 0 6px}
+.page-taxonomy-term ul.group-theme-tabs li:last-child a{border-radius:0 6px 6px 0}
+.page-taxonomy-term ul.group-theme-tabs li.active a{background-color:#bf0e38;color:#FFF}
+.page-taxonomy-term #block-system-main .carousel.slide{height:385px}
+.page-taxonomy-term #block-system-main .carousel.slide .carousel-inner h4{margin-bottom:20px}
+.page-taxonomy-term #block-system-main .carousel.slide .carousel-indicators li{border:1px solid #bf0e38}
+.page-taxonomy-term #block-system-main .carousel.slide .carousel-indicators li.active{background-color:#bf0e38}
+.page-taxonomy-term #block-system-main ul.pagination{display:none}
 @media print{body{padding:0;margin:0}
 body #navbar,body #skip-link,body .slicknav_menu{display:none}
 body>.main-container{margin:0!important;padding:0!important}
