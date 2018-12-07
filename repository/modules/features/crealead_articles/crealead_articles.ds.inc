@@ -147,6 +147,11 @@ function crealead_articles_ds_field_settings_info() {
         'field_formatter_class' => '',
       ),
     ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|article|landing_page_block'] = $ds_fieldsetting;
 
@@ -357,11 +362,13 @@ function crealead_articles_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'title',
-        1 => 'body',
+        1 => 'field_image',
+        2 => 'body',
       ),
     ),
     'fields' => array(
       'title' => 'central',
+      'field_image' => 'central',
       'body' => 'central',
     ),
     'classes' => array(),
