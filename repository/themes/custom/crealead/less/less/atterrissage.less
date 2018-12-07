@@ -208,10 +208,19 @@
   /* Articles *********************************************************************************************************/
   .view-id-articles {
     .row {
-      height: 220px;
-      overflow: hidden;
+
       background-color: @gris-clair-crealead;
       border-bottom: 10px solid @gris-clair-crealead;
+      .field-type-image {
+        img {
+          max-height: 220px;
+          float: left;
+          margin-right: 20px;
+        }
+      }
+      .field-name-body {
+        max-height: 230px;
+      }
     }
     .col-sm-12 {
       padding: 0 20px;
