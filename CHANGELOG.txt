@@ -1,3 +1,74 @@
+Crealead 3.9 / 2018-12-28
+=========================
+  * Feature crealead_articles up to improve thematique page layout.
+  * kcore.js up to initialy add class active to 'realisations' tab in thematique page
+  * Feature crealead_news up to put no limit to news of a thematic.
+  * crealead_brands up: Fixes bug 'Unknown data property field_coe_pub_status' due to creation of structure team profile_types. Filter on profile_type=coe added to field_collection_coes view.
+  * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+  * crealead_profiles up: V3 S7-8 altered: Structure profile tabs (and corresponding content divs) reordered by label ASC instead of by weight DESC.
+  * Feature crealead_trainings up to manage  new layout of thematic page (ex: thematiques/agile).
+  * Feature crealead_products up to manage  new layout of thematic page (ex: thematiques/agile).
+  * Feature crealead_brands up to manage new layout of thematic page (ex: thematiques/agile).
+  * Feature crealead_brands up to fix bug open-close red button multiplicated.
+  * Feature crealead_trainings to fix bug in sectorial brands : training pager not working.
+  * Feature crealead_trainings up to change Payable en COOPINs in Payable en Coop'in
+  * Feature crealead_trainings up to change label COOPINs en Coop'in.
+  * Feature crealead_profiles up to delete exposed filter competences.
+  * template views-view-fields--structure-team--profile-tabs.tpl.php up: Tab labels in Structure team page replaced by their inclusive version.
+  * crealead_info_meetings up: Fieldgroup label 'Voir le plan et la photo du bâtiment' shortened to 'Voir le plan'.
+  * crealead_trainings up: Removes colon after field label 'Tarif crealeadien'.
+  * crealead_newsflashes up: Stwich of previous and next links in full node.
+  * crealead_profiles up: V3 S7-13 - Coopins balance for coes. Has to be completed with coopin data import from external file.
+  * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+  * crealead_newsflashes up: V3 S7-18: Previous/Next navigation for newsflash nodes created.
+  * Feature /crealead_profiles to come back to inital values for user profil coE status.
+  * crealead_needs, crealead_newsflashes and crealead_offers up: field_attached files added to content types, contrib module download_file installed and activated.
+  * crealead_profiles up: Fixes incorrect javascript file call.
+  * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+  * crealead_profiles up:  missing desc sorting in structure_team/structure_profiles view added.
+  * crealead_profiles up: image style 'Photo utilisateur' applied to Photo field in structure_team/structure_profiles view.
+  * crealead_profiles up: Missing 'entrepreneur' role added to user's allowed profiles handling.
+  * crealead_info_meetings up: Missing trainings/list_page settings added.
+  * crealead_intra_manage_titles.js created to add anchor to sub area in intranet pages.
+  * Feature kcore up to call crealead_intra_manage_titles.js.
+  * Feature crealead_newsflashes up to dump 15 newsflashes instead of 5 in intranet home page.
+  * crealed_info_meeting up: Fixes the lost of location name display in info meeting node's full view mode.
+  * crealead_trainings up: V3 7-15 - Trainings list filters improved to highlight crealead offers.
+  * crealead_articles up: Fixes the crazy bug 'Notice : Undefined offset: 0 dans bootstrap_pager()...' that shows up in trainings full view mode.
+  * Feature kcore up to replace 'Salariés' by 'Membres'.
+  * LESS and CSS up.
+  * Feature crealead_profiles up to add search filter in profiles view (trombinoscope).
+  * Fontello up.
+  * Tpl bootstrap-6-6-stacked--node-info-meeting-full.tpl.php up to add link to go back to info meeting presentation.
+  * Feature crealead_info_meetings up to add link to go back to info meeting presentation.
+  * Feature crealead_trainings up to improve trainings and products display in landing pages (ex: thematiques/agile).
+  * Feature crealead_brands up to show all brands in landing pages (ex: thematiques/agile).
+  * Merge branch 'develop' of https://github.com/jabberwooki/crealead into develop
+  * Feature crealead_brands up to fix landing page groups layout.
+  * Feature crealead_trainings up to improve marques-sectorielles layout.
+  * crealead_groups up: V3 S7-11: New group types added.
+  * crealead_needs up: Missing permissions on Pictogramme vocabulary added.
+  * crealead_needs up: Missing strongarm variable ds_extras_view_modes_link_to_doc added (the one which contains the list of enabled DS modes).
+  * crealead_needs up: Missing DS view mode full (Page d'un terme de taxonomie) for Pictogrammes vocabulary added.
+  * crealead_needs up: Links to doc views display up: No result message reset to 'nothing to display'.
+  * crealead_needs and kcore up: V3 S7-10: Description area, including links to documents added on top of Exchanges section.
+  * crealaed_profiles up: Missing new view structure_team added.
+  * crealed_profiles up: V3 S7-8: Structure team page.
+  * crealead_info_meetings up: bugfix in hook_entity_view_alter(): Missing ='info_meeting' added.
+  * crealead_info_meetings up: Useless code removed.
+  * crealead_info_meetings up: Missing IMPORTANT hook_update_N comment added.
+  * crealead_info_meetings up : Story V3 S7-7: Major rebuilding of info meetings pages completed.
+  * Merge tag 'nimes-sete-header-meeting-infos-lost-bugfix' into develop
+  * crealead_info_meetings up : Story V3 S7-7: Major rebuilding of info meetings pages.
+  * Ctools module upgraded from v1.9 to latest stable version 1.14 to remove PHP7 warnings 'Deprecated function : Methods with the same name as their class will not be constructors in a future version of PHP'.
+  * Closes V3 7-6: Removes duplicates users in Collectif page.
+  * crealead_calendars up: 'Agenda des salles' colors coming from prod database saved.
+  * Merge tag 'filedepot_yahoo_library_https_url' into develop
+  * Merge tag 'field_group_PHP7_bugfix' into develop
+  * Merge tag 'datetime-object-not-correctly-initialize-bugfix' into develop
+  * Merge tag 'missing-field_collection-module-dependency' into develop
+  * Merge tag 'newsflashes-manual-sending-bugfix' into develop
+
 Hotfix nimes-sete-header-meeting-infos-lost-bugfix / 2018-11-15
 ===============================================================
  * crealead_info_meetings up: re-enable Nimes and Sete meeting infos in info_meetings/info_meetings_list view's header.
