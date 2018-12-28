@@ -51,7 +51,7 @@ function crealead_info_meetings_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Voir le plan et la photo du bâtiment',
+    'label' => 'Voir le plan',
     'weight' => '4',
     'children' => array(
       0 => 'field_info_meeting_map',
@@ -59,7 +59,7 @@ function crealead_info_meetings_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Voir le plan et la photo du bâtiment',
+      'label' => 'Voir le plan',
       'instance_settings' => array(
         'id' => '',
         'classes' => 'group-plan-photo field-group-div',
@@ -410,7 +410,7 @@ function crealead_info_meetings_field_group_info() {
   t('Date de la réunion');
   t('Informations facultatives');
   t('Infos dépendantes');
-  t('Voir le plan et la photo du bâtiment');
+  t('Voir le plan');
   t('Voir le programme');
   t('Vos informations');
 

@@ -1,78 +1,120 @@
-.page-taxonomy-term{
-
-  .carousel-control{
-    .icon-prev:before, .icon-next:before{
+.page-taxonomy-term {
+  .view-display-id-theme_page_header {
+    .vocabulary-themes {
+      > .row{
+        @media (min-width: @screen-lg) {
+          width: 1170px;
+        }
+        @media (min-width: @screen-md) and (max-width: @screen-lg) {
+          width: 970px;
+        }
+        @media (min-width: @screen-sm) and (max-width: @screen-md) {
+          width: 750px;
+        }
+        @media (max-width: @screen-sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: @screen-sm) {
+    .col-sm-6.left-col {
+      > div {
+        padding: 10px 20px;
+      }
+    }
+    .view-header {
+      > h3 {
+        margin-left: 20px;
+      }
+    }
+  }
+  .view-display-id-landing_page_trainings {
+    .view-content.row {
+      margin: 0;
+      background-color: @gris-clair-crealead;
+      min-height: 240px;
+    }
+  }
+  .carousel {
+    background-color: @gris-clair-crealead;
+    @media (min-width: @screen-sm) {
+      width: 70%;
+    }
+  }
+  .carousel-control {
+    .icon-prev:before, .icon-next:before {
       color: red;
     }
   }
-  .carousel-inner{
+  .carousel-inner {
     margin-bottom: 80px;
-    .node-brand .row{
-      > .left-col{
+    .node-brand .row {
+      > .left-col {
         background-color: white;
       }
-      > .right-col{
+      > .right-col {
         background-color: #dadada;
       }
     }
   }
 
-  .col-sm-6{
-    .view-content{
-      .carousel-inner{
+  .col-sm-6 {
+    .view-content {
+      .carousel-inner {
         width: 86%;
         display: block;
         margin-left: auto;
         margin-right: auto;
         /*height: 80px;*/
         overflow: hidden;
-        .field-name-field-brand-logo img{
+        .field-name-field-brand-logo img {
           max-height: 80px;
           display: block;
           margin: 0 auto;
         }
       }
-      .carousel-indicators{
+      .carousel-indicators {
         bottom: -55px;
         height: 20px;
         display: inline-block;
-        li{
+        li {
 
           width: 14px;
           height: 14px;
           background-color: @gris-fonce-crealead;
-          &.active{
+          &.active {
             background-color: @rouge-crealead;
             position: relative;
             top: -1px;
           }
         }
       }
-      .carousel-control{
+      .carousel-control {
         background-image: none;
         width: 20px;
       }
     }
   }
 
-  .view-mode-landing_page_block{
-    h2{
+  .view-mode-landing_page_block {
+    h2 {
       .title-red-landing();
       text-transform: none;
     }
-    h3{
+    h3 {
       .title-red-landing();
     }
-    .carousel-inner{
-      .view-mode-landing_page_block{
-        > .row{
+    .carousel-inner {
+      .view-mode-landing_page_block {
+        > .row {
           .left-col {
             background-color: white;
             height: 100px;
             overflow: hidden;
             vertical-align: middle;
             position: relative;
-            img{
+            img {
               max-width: 220px;
               max-height: 90px;
               position: absolute;
@@ -88,30 +130,30 @@
             opacity: 0.9;
             height: 100px;
             overflow: hidden;
-            h4{
+            h4 {
               margin-bottom: 0;
             }
-            .field-name-field-brand-baseline{
+            .field-name-field-brand-baseline {
               color: #000;
             }
           }
         }
       }
-
     }
+
   }
   /* tous les titres ************************************************************************************************/
-  .view-header > h3{
+  .view-header > h3 {
     .title-red-landing();
   }
-  .field-item h3{
+  .field-item h3 {
     .text-normal();
     margin-top: 0;
   }
   /* Marques **********************************************************************************************************/
-  .view-brands{
-    span.info{
-      h3.mask{
+  .view-brands {
+    span.info {
+      h3.mask {
         opacity: 1 !important;
         font-size: 1em;
         text-align: center;
@@ -121,92 +163,173 @@
         margin-bottom: 0;
       }
     }
-    .field-name-field-brand-baseline{
+    .field-name-field-brand-baseline {
       margin-bottom: 20px;
     }
   }
 
   /* News *************************************************************************************************************/
-    .field-name-field-news-type {
-      .cartouche-rouge();
-      .position-cartouche-rouge();
-    }
-  .view-display-id-theme_news{
-    .right-col{
+  .field-name-field-news-type {
+    .cartouche-rouge();
+    .position-cartouche-rouge();
+  }
+  .view-display-id-theme_news {
+    .right-col {
       height: 223px;
       overflow: hidden;
+      padding-right: 100px;
     }
   }
 
   /* Formations *******************************************************************************************************/
-  .view-id-trainings{
-    h3{
+  .view-id-trainings {
+    h3 {
       .title-blue-bg();
-      margin-bottom:0;
+      margin-bottom: 0;
     }
-    .field-name-title{
+    .field-name-title {
       background-color: @gris-clair-crealead;
       padding: 0 10px 10px 10px;
-      margin:0;
-      h4{
+      margin: 0;
+      h4 {
         padding: 0;
         margin: 0;
-        a{
+        a {
           color: #000;
           border-bottom: 1px solid @bleu-clair-crealead;
           display: block;
-          padding: 10px 0 15px 0;
+          padding: 30px 0 15px 0;
+          min-height: 100px;
+
         }
       }
     }
   }
   /* Articles *********************************************************************************************************/
-  .view-id-articles{
-    .row{
-      height: 220px;
-      overflow: hidden;
+  .view-id-articles {
+    .row {
+
       background-color: @gris-clair-crealead;
       border-bottom: 10px solid @gris-clair-crealead;
+      .field-type-image {
+        img {
+          max-height: 220px;
+          float: left;
+          margin-right: 20px;
+        }
+      }
+      .field-name-body {
+        max-height: 230px;
+      }
     }
-    .col-sm-12{
+    .col-sm-12 {
       padding: 0 20px;
       background-color: @gris-clair-crealead;
-      h4{
+      > div {
+        padding: 0 100px !important;
+      }
+      h4 {
         margin: 20px 0 0 0;
       }
-      .field-name-title, .field-name-body{
+      .field-name-title, .field-name-body {
         padding: 10px;
       }
     }
   }
   /* Réalisations *****************************************************************************************************/
-  .view-achievements{
-    .field-name-field-achievement-photos{
-      > .field-items{
+  .view-achievements {
+    .field-name-field-achievement-photos {
+      > .field-items {
         height: 224px;
         width: 100%;
         padding: 0 5%;
         background-color: @gris-clair-crealead;
         overflow: hidden;
         display: table;
-        > .field-item{
+        > .field-item {
           display: table-cell;
           vertical-align: middle;
-          img{
+          img {
             display: block;
-            margin: 0 auto;
+            margin: 0 0 0 100px;
           }
         }
       }
     }
-    .right-col{
+    .right-col {
       height: 223px;
       overflow: hidden;
+      padding-right: 100px;
     }
-    h4.mask a{
+    h4.mask a {
       font-size: .8em;
     }
   }
+  /* onglets des pages thématiques tabs *******************************************************************************/
 
+  ul.group-theme-tabs {
+    li {
+      a {
+        .quick();
+        display: block;
+        color: white;
+        background-color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 7px 19px;
+        &:hover {
+          background-color: @gris-fonce-crealead;
+        }
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+      }
+      &:first-child a {
+        border-radius: 6px 0 0 6px;
+      }
+      &:last-child a {
+        border-radius: 0 6px 6px 0;
+      }
+      &.active {
+        a {
+          background-color: @rouge-crealead;
+          color: #FFF;
+        }
+      }
+    }
+  }
+  /* Carrousels bas ***************************************************************************************************/
+  #block-system-main {
+    .carousel.slide {
+      min-height: 385px;
+      .carousel-inner {
+        h4 {
+          margin-bottom: 20px;
+        }
+      }
+      .carousel-indicators li {
+        border: 1px solid @rouge-crealead;
+        &.active {
+          background-color: @rouge-crealead;
+        }
+      }
+      @media (max-width: @screen-sm) {
+        .col-sm-6.right-col > div {
+          padding: 0 20px;
+        }
+      }
+    }
+    ul.pagination {
+      display: none;
+    }
+  }
+
+  .view-id-trainings.view-display-id-landing_page_trainings {
+    .view-header {
+      > h3 {
+        margin-left: 0;
+      }
+    }
+  }
 
 }

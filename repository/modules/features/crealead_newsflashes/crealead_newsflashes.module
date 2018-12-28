@@ -328,3 +328,58 @@ function crealead_newsflashes_cron() {
     crealead_send_latest_newsflashes(TRUE);
   }
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function crealead_newsflashes_node_view($node, $view_mode, $langcode) {
+ if($node->type == 'newsflash' && $view_mode == 'full') {
+   drupal_add_css(drupal_get_path('module', 'crealead_newsflashes') . '/css/crealead_newsflashes_full.css');
+   $previous_link = $next_link = '';
+
+   $previous_node = crealead_newsflashes_node_prev_next('previous', $node);
+   if ($previous_node) {
+     $previous_link = l($previous_node->title, '/node/' . $previous_node->nid);
+   }
+
+   $next_node = crealead_newsflashes_node_prev_next('next', $node);
+   if ($next_node) {
+     $next_link = l($next_node->title, '/node/' .$next_node->nid);
+   }
+   $newsflash_pager = '<div class="newsflash-pager">';
+   $newsflash_pager .= '<div class="prev pager-link">' . $previous_link . '</div>';
+   $newsflash_pager .= '<div class="next pager-link">' . $next_link . '</div>';
+   $newsflash_pager .= '</div>';
+
+   $node->content['newsflash_pager'] = array(
+     '#markup' => $newsflash_pager,
+     '#weight' => 10,
+   );
+ }
+}
+
+function crealead_newsflashes_node_prev_next($direction, $node) {
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_display_end_date', 'end_date', 'n.nid=end_date.entity_id');
+  $query->condition('n.type','newsflash','=')
+    ->condition('n.status', 1,'=')
+    ->condition('end_date.field_display_end_date_value', gmdate("Y-m-d\T00:00:00", time()), '>')
+    ->fields('n', array('nid','type','title','created'));
+
+  if($direction == 'next') {
+    $query->condition('n.created', $node->created, '<');
+    $query->orderBy('n.created','DESC');
+  }
+  elseif($direction == 'previous') {
+    $query->condition('n.created', $node->created, '>');
+    $query->orderBy('n.created','ASC');
+  }
+
+  $close_node = $query->execute()->fetchObject();
+  if ($close_node) {
+    return $close_node;
+  }
+  else {
+    return FALSE;
+  }
+}

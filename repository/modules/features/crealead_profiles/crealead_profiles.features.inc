@@ -62,12 +62,57 @@ function crealead_profiles_image_default_styles() {
  */
 function crealead_profiles_default_profile2_type() {
   $items = array();
+  $items['assistant_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "assistant_page",
+    "label" : "Profil assistant",
+    "weight" : "3",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
   $items['coe_page'] = entity_import('profile2_type', '{
     "userCategory" : true,
     "userView" : true,
     "type" : "coe_page",
     "label" : "Profil entrepreneur",
     "weight" : "0",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  $items['direction_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "direction_page",
+    "label" : "Profil direction",
+    "weight" : "5",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  $items['management_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "management_page",
+    "label" : "Profil p\\u00f4le gestion",
+    "weight" : "4",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  $items['provider_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "provider_page",
+    "label" : "Profil entrepreneur prestataire",
+    "weight" : "1",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  $items['referent_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "referent_page",
+    "label" : "Profil r\\u00e9f\\u00e9rent",
+    "weight" : "2",
     "data" : { "registration" : 0, "use_page" : 0 },
     "rdf_mapping" : []
   }');

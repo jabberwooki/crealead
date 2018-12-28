@@ -22,16 +22,6 @@ function crealead_info_meetings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_info_meeting_registration' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Formulaire d\'inscription :',
-          'lb-el' => 'h3',
-          'lb-col' => TRUE,
-        ),
-      ),
-    ),
     'field_info_meeting_map' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -55,6 +45,16 @@ function crealead_info_meetings_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_info_meeting_registration' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Formulaire d\'inscription :',
+          'lb-el' => 'h3',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -128,10 +128,10 @@ function crealead_info_meetings_ds_layout_settings_info() {
         0 => 'links',
         1 => 'field_info_meeting_date',
         2 => 'group_program',
-        3 => 'field_info_meeting_map',
-        4 => 'body',
-        5 => 'field_info_meeting_photo',
-        6 => 'group_plan_photo',
+        3 => 'body',
+        4 => 'field_info_meeting_map',
+        5 => 'group_plan_photo',
+        6 => 'field_info_meeting_photo',
       ),
       'bottom' => array(
         7 => 'field_info_meeting_registration',
@@ -141,10 +141,10 @@ function crealead_info_meetings_ds_layout_settings_info() {
       'links' => 'top',
       'field_info_meeting_date' => 'top',
       'group_program' => 'top',
-      'field_info_meeting_map' => 'top',
       'body' => 'top',
-      'field_info_meeting_photo' => 'top',
+      'field_info_meeting_map' => 'top',
       'group_plan_photo' => 'top',
+      'field_info_meeting_photo' => 'top',
       'field_info_meeting_registration' => 'bottom',
     ),
     'classes' => array(),
@@ -159,6 +159,7 @@ function crealead_info_meetings_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );

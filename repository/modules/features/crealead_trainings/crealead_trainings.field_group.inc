@@ -21,7 +21,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '28',
+    'weight' => '30',
     'children' => array(
       0 => 'field_training_search',
       1 => 'field_previous_status',
@@ -84,13 +84,12 @@ function crealead_trainings_field_group_info() {
     'children' => array(
       0 => 'field_training_aims',
       1 => 'field_training_duration',
-      2 => 'field_training_price',
-      3 => 'field_training_related_brands',
-      4 => 'field_training_teachers',
-      5 => 'field_training_theme',
-      6 => 'field_training_type',
-      7 => 'training_nid',
-      8 => 'title',
+      2 => 'field_training_related_brands',
+      3 => 'field_training_teachers',
+      4 => 'field_training_theme',
+      5 => 'field_training_type',
+      6 => 'training_nid',
+      7 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -124,11 +123,10 @@ function crealead_trainings_field_group_info() {
     'children' => array(
       0 => 'field_training_aims',
       1 => 'field_training_duration',
-      2 => 'field_training_price',
-      3 => 'field_training_theme',
-      4 => 'field_training_type',
-      5 => 'training_nid',
-      6 => 'title',
+      2 => 'field_training_theme',
+      3 => 'field_training_type',
+      4 => 'training_nid',
+      5 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -160,10 +158,10 @@ function crealead_trainings_field_group_info() {
     'label' => 'Caractéristiques',
     'weight' => '1',
     'children' => array(
-      0 => 'field_training_duration',
+      0 => 'field_scheduled_sessions',
       1 => 'field_training_attendees_number',
-      2 => 'field_scheduled_sessions',
-      3 => 'field_training_price',
+      2 => 'field_training_duration',
+      3 => 'group_training_prices',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -195,8 +193,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'En-tête centre',
     'weight' => '31',
     'children' => array(
-      0 => 'field_training_type',
-      1 => 'field_introduction',
+      0 => 'field_introduction',
+      1 => 'field_training_type',
       2 => 'title',
     ),
     'format_type' => 'div',
@@ -351,6 +349,39 @@ function crealead_trainings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_training_prices|node|training|full';
+  $field_group->group_name = 'group_training_prices';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'training';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_training_data';
+  $field_group->data = array(
+    'label' => 'Tarifs',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_training_price',
+      1 => 'field_training_crealead_price',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tarifs',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-training-prices field-group-div col-md-3 training-prices',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_training_prices|node|training|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_training_right_col|node|training|full';
   $field_group->group_name = 'group_training_right_col';
   $field_group->entity_type = 'node';
@@ -361,13 +392,13 @@ function crealead_trainings_field_group_info() {
     'label' => 'Colonne droite',
     'weight' => '3',
     'children' => array(
-      0 => 'field_training_public',
-      1 => 'field_training_requirements',
-      2 => 'field_training_aims',
-      3 => 'field_training_method',
-      4 => 'field_training_teachers',
-      5 => 'field_training_validation',
-      6 => 'field_assessment_methods',
+      0 => 'field_assessment_methods',
+      1 => 'field_training_aims',
+      2 => 'field_training_method',
+      3 => 'field_training_public',
+      4 => 'field_training_requirements',
+      5 => 'field_training_teachers',
+      6 => 'field_training_validation',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -469,6 +500,7 @@ function crealead_trainings_field_group_info() {
   t('En-tête gauche');
   t('Sub group wrapper teaser');
   t('Sub wrapper teaser');
+  t('Tarifs');
   t('group wrapper teaser');
 
   return $field_groups;

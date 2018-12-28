@@ -96,6 +96,9 @@ body.not-logged-in {
     }
     .view-content{
       background-color: @gris-clair-crealead;
+      &.row {
+        margin: 0;
+      }
       padding: 20px;
       h4{
         a{
@@ -105,6 +108,8 @@ body.not-logged-in {
           padding-bottom: 20px;
           margin-bottom: 20px;
           border-bottom: 1px solid @bleu-clair-crealead;
+          height: 178px;
+          overflow: hidden;
           &:hover{
             color: @rouge-crealead;
           }

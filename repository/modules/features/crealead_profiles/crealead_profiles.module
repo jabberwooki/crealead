@@ -10,11 +10,13 @@ include_once 'crealead_profiles.features.inc';
  * Implements hook_profile2_insert().
  */
 function crealead_profiles_profile2_insert($profile) {
-  if ($profile->field_saving_type['und'][0]['value'] == 1) {
-    crealead_send_mail_to_referent($profile);
-    $profile_wrapper = entity_metadata_wrapper('profile2', $profile->pid);
-    $profile_wrapper->field_email_sent = 1;
-    $profile_wrapper->save();
+  if ($profile->type == 'coe_page') {
+    if ($profile->field_saving_type['und'][0]['value'] == 1) {
+      crealead_send_mail_to_referent($profile);
+      $profile_wrapper = entity_metadata_wrapper('profile2', $profile->pid);
+      $profile_wrapper->field_email_sent = 1;
+      $profile_wrapper->save();
+    }
   }
 }
 
@@ -22,12 +24,14 @@ function crealead_profiles_profile2_insert($profile) {
  * Implements hook_profile2_update().
  */
 function crealead_profiles_profile2_update($profile) {
-  // Validation request has to be sent only if field_saving_type = 1 and field_email_sent = 0.
-  if ($profile->field_saving_type['und'][0]['value'] == 1 ) {
-    if ($profile->field_email_sent['und'][0]['value'] == 0) {
-      crealead_send_mail_to_referent($profile);
-      $profile->field_email_sent['und'][0]['value'] = 1;
-      entity_save('profile2', $profile);
+  if ($profile->type == 'coe_page') {
+    // Validation request has to be sent only if field_saving_type = 1 and field_email_sent = 0.
+    if ($profile->field_saving_type['und'][0]['value'] == 1) {
+      if ($profile->field_email_sent['und'][0]['value'] == 0) {
+        crealead_send_mail_to_referent($profile);
+        $profile->field_email_sent['und'][0]['value'] = 1;
+        entity_save('profile2', $profile);
+      }
     }
   }
 }
@@ -209,6 +213,10 @@ function crealead_profiles_views_pre_render(&$view) {
         str_replace('personnes', 'personne', $view->display_handler->handlers['header']['result']->options['content']);
     }
   }
+
+  if ($view->name == 'structure_team' && $view->current_display == 'structure_profiles') {
+    drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_structure_profiles.js');
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
@@ -243,4 +251,64 @@ function crealead_assignable_roles(&$form, &$form_state) {
   $form['account']['roleassign_roles'][$entrepreneur_rid]['#checked'] = TRUE;
 
   return $form;
+}
+
+function crealead_profiles_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  $user_allowed_profiles = crealead_profiles_get_allowed_profiles($form['#user']);
+  $params = array('user_allowed_profiles' => $user_allowed_profiles);
+
+  drupal_add_js(array('crealead_profiles' => $params), 'setting');
+  drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_user_profiles.js');
+}
+
+
+function crealead_profiles_get_allowed_profiles($user) {
+  // Roles corresponding to a profile
+  $strucutre_roles_machine_names = array(
+    'direction',
+    'referent',
+    'pole_gestion',
+    'assistant',
+    'provider'
+  );
+
+  // User roles
+  $user_roles = $user->roles;
+  array_shift($user_roles);
+  $profile_user_roles = array();
+
+  // Fetch user roles machine name and store it if is a profile_role.
+  foreach($user_roles as $role) {
+    $roleObject = user_role_load_by_name($role);
+
+    if ($roleObject->machine_name == 'entrepreneur') {
+      $profile_user_roles[] = 'coe_page';
+    }
+    elseif ($roleObject->machine_name && in_array($roleObject->machine_name, $strucutre_roles_machine_names)) {
+      // Handles Pôle gestion machine name role (originally wrongly named).
+      if ($roleObject->machine_name == 'pole_gestion') {
+        $profile = 'management';
+      }
+      else {
+        $profile = $roleObject->machine_name;
+      }
+
+      $profile_user_roles[] = $profile . '_page';
+    }
+  }
+  return $profile_user_roles;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function crealead_profiles_entity_view_alter(&$build, $type) {
+  if ($type == 'profile2' && $build['#view_mode'] == 'account' && $build['#bundle'] == 'coe_page') {
+    global $user;
+    $allowed_roles = array('administrateur','webmaster','référent','pôle gestion');
+    $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+    if ($user->uid != 1 && empty($user_allowed_roles)) {
+      unset($build['field_coopins_balance']);
+    }
+  }
 }

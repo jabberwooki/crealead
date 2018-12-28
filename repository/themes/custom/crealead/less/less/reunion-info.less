@@ -1,9 +1,15 @@
-.page-reunions-information{
+.page-reunions-information {
   //background: url(../images/bg_grey.png) repeat-x 0 30px;
   .page-header{
     margin-bottom: 0;
   }
-
+  .info-meetings-location-links {
+    a {
+      .red-button-link();
+      min-width: 223px;
+      text-align: left !important;
+    }
+  }
   ul.coche-rouge{
     font-size: 0.8em;
     > li{
@@ -18,16 +24,32 @@
     }
   }
 }
+.page-reunions-information-par-ville {
+  .button-back {
+    @media (min-width: @screen-md) {
+      margin-right: 142px;
+      float: right;
+    }
+  }
+  .info-meetings-location-links{
+    a {
+      .red-button-link();
+      background-color: lighten(@rouge-crealead, 50%);
+      min-width: 223px;
+      text-align: left !important;
+    }
+    p.inactive {
+      .button-inactive();
+      min-width: 223px;
+      text-align: left !important;
+    }
+  }
+}
 .title-info-meeting{
   font-weight: 700;
 }
 /* Page de présentation de la réunion d'info et des prochaines dates **************************************************/
 .view-info-meetings{
-  .view-header{
-    background-color: @gris-clair-crealead;
-    padding: 20px;
-    margin-top: -20px;
-  }
   .view-content{
 
     .title-table-meeting{

@@ -48,7 +48,9 @@ function crealead_groups_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'cm' => 'Collectif métier',
-        'gag' => 'Groupe auto-géré',
+        'gag' => 'Collectif auto-géré',
+        'ct' => 'Collectif territorial',
+        'tec' => 'Comité technique',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

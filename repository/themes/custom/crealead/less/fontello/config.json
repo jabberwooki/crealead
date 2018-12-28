@@ -971,6 +971,36 @@
       "src": "linecons"
     },
     {
+      "uid": "a73c5deb486c8d66249811642e5d719a",
+      "css": "arrows-cw",
+      "code": 59519,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "5d3ef4b7c90d2931e641b840ee42f694",
+      "css": "loop",
+      "code": 59520,
+      "src": "iconic"
+    },
+    {
+      "uid": "em9mdmyhjwd003ndercv4r08h0ai31tl",
+      "css": "loop-1",
+      "code": 59521,
+      "src": "typicons"
+    },
+    {
+      "uid": "41eeea14413f2539da21b4d1754bf4be",
+      "css": "arrows-cw-1",
+      "code": 59522,
+      "src": "websymbols"
+    },
+    {
+      "uid": "d5fabfa46384953ae055fceacb2229a7",
+      "css": "arrows-cw-2",
+      "code": 59523,
+      "src": "elusive"
+    },
+    {
       "uid": "71eb5394e96ba64106e09db1dc530ada",
       "css": "c-crealead",
       "code": 59461,

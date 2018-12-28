@@ -73,6 +73,34 @@ function kcore_views_default_views() {
 
   /* Display: Onglet Echanges */
   $handler = $view->new_display('page', 'Onglet Echanges', 'page_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Description système d\'échange';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Description du système d\'échanges.
+Se paramètre dans Configuration > Crealead > Système d\'échange.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: View (Views field view) */
+  $handler->display->display_options['header']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['table'] = 'views';
+  $handler->display->display_options['header']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['label'] = '';
+  $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['header']['view_field']['view'] = 'needs';
+  $handler->display->display_options['header']['view_field']['display'] = 'links_list';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_1']['content'] = 'Code HTML pour créer le lien "Ajouter un lien vers un document".
+Est codé dans crealead_needs.module, fonction crealead_needs_views_pre_view(),
+au moment de l\'interception et la ré-écriture du header.';
+  $handler->display->display_options['header']['area_1']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/echanges';
   $handler->display->display_options['menu']['title'] = 'Accueil';
   $handler->display->display_options['menu']['weight'] = '-10';
@@ -89,6 +117,12 @@ function kcore_views_default_views() {
     t('Desc'),
     t('Onglet Informations'),
     t('Onglet Echanges'),
+    t('Description système d\'échange'),
+    t('Description du système d\'échanges.
+Se paramètre dans Configuration > Crealead > Système d\'échange.'),
+    t('Code HTML pour créer le lien "Ajouter un lien vers un document".
+Est codé dans crealead_needs.module, fonction crealead_needs_views_pre_view(),
+au moment de l\'interception et la ré-écriture du header.'),
   );
   $export['coes_area_home'] = $view;
 
@@ -297,6 +331,9 @@ function kcore_views_default_views() {
   $handler = $view->new_display('entity_view', 'Membres d\'un collectif', 'entity_view_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Membres du collectif';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '6';
@@ -341,7 +378,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['sorts']['name_1']['table'] = 'users';
   $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Collectifs auxquels j&#039;appartiens (field_linked_groups) */
+  /* Contextual filter: Field: Collectifs liés (field_linked_groups) */
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['table'] = 'field_data_field_linked_groups';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['field'] = 'field_linked_groups_target_id';

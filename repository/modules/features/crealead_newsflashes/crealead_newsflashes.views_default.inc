@@ -141,7 +141,7 @@ function crealead_newsflashes_views_default_views() {
     'newsflash' => 'newsflash',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Limite de validité (field_display_end_date) */
+  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
@@ -157,6 +157,19 @@ function crealead_newsflashes_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rechercher';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -174,7 +187,7 @@ function crealead_newsflashes_views_default_views() {
     'newsflash' => 'newsflash',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Limite de validité (field_display_end_date) */
+  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';

@@ -162,6 +162,37 @@ function crealead_articles_views_pre_render(&$view) {
   }
 }
 
+function crealead_articles_views_pre_view(&$view, &$display_id, &$args) {
+  if($view->name == 'articles' && $view->current_display == 'allowed_articles' && 'node' === arg(0)) {
+
+    // C.Espiau - 23 novembre 2018
+    // Très gros hack très vilain vilain pour corrgier le bug suivant :
+    // Sur la page d'une formation, on a la notice PHP suivant :
+    // Notice : Undefined offset: 0 dans bootstrap_pager()
+    // (ligne 50 dans /sites/all/themes/contrib/bootstrap/templates/system/pager.func.php).
+    //
+    // C'est un truc de fou.
+    // C'est provoqué par le pager alors qu'il n'y a aucune pagination sur une page formation.
+    // Après 1 journée de recherche, je trouve que c'est l'affichage du logo de la marque qui provoque le bug.
+    // Le display mode 'full' d'une formation utilise le display mode 'logo' d'une marque.
+    // Pour une raison mystérieuse, ce ds mode déclenche l'appel de la vue allowed_articles,
+    // alors qu'il ne contient que le champ logo. ET c'est la pagination de cette vue qui met le boxon.
+    // Si on supprime la pagination ça supprime le bug. Mais il faut la garder au cas ou les articles
+    // partagés dans une marque soient nombreux.
+    // Le présent code  vérifie qu'on est dans la vue allowed_articles et dans une page node (voir le if ci-dessus),
+    // puis vérifie que l'on est dans un node training. Et dans ce cas, on supprime le pager.
+
+    $current_node_nid = arg(1);
+    $result = db_query("SELECT type FROM {node} WHERE nid = {$current_node_nid}")->fetchCol();
+    $current_node_type = reset($result);
+    if ($current_node_type == 'training') {
+      $view->display_handler->options['pager']['type'] = 'none';
+      $view->display_handler->options['pager']['options'] = array('offset' => 0);
+      $view->display_handler->options += array('pager_options' => NULL);
+    }
+  }
+}
+
 /**
  * Implements hook_node_view().
  *

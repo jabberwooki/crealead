@@ -29,9 +29,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -123,9 +121,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
       ),
@@ -192,6 +188,80 @@ function crealead_offers_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-offer-field_attached_file'.
+  $field_instances['node-offer-field_attached_file'] = array(
+    'bundle' => 'offer',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'download_file',
+        'settings' => array(),
+        'type' => 'direct_download_icon',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_attached_file',
+    'label' => 'Fichiers joints',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'offers-files',
+      'file_extensions' => 'jpg jpeg png xls xlsx doc docx pdf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'label_help_description' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-offer-field_crealead_name'.
   $field_instances['node-offer-field_crealead_name'] = array(
     'bundle' => 'offer',
@@ -212,7 +282,7 @@ function crealead_offers_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -302,7 +372,7 @@ function crealead_offers_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -360,9 +430,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 9,
       ),
@@ -448,9 +516,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
@@ -499,9 +565,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),
@@ -556,7 +620,6 @@ function crealead_offers_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'field_formatter_class' => '',
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => '',
@@ -623,7 +686,6 @@ function crealead_offers_field_default_field_instances() {
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -674,9 +736,7 @@ function crealead_offers_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
       ),
@@ -720,6 +780,7 @@ function crealead_offers_field_default_field_instances() {
   t('Coordonnées');
   t('Description');
   t('Domaine');
+  t('Fichiers joints');
   t('Formation concernée');
   t('Limite de validité');
   t('Nom de la personne');

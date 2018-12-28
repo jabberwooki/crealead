@@ -9,7 +9,7 @@ projects[better_formats][subdir] = contrib
 projects[better_formats][version] = "1.0-beta2"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.14"
 
 projects[ds][subdir] = contrib
 projects[ds][version] = "2.13"
@@ -138,6 +138,9 @@ projects[date_multiselect][version] = "1.0"
 
 projects[default_image_ft][subdir] = contrib
 projects[default_image_ft][version] = "1.5"
+
+projects[download_file][subdir] = contrib
+projects[download_file][version] = "2.1"
 
 projects[draggableviews][subdir] = contrib
 projects[draggableviews][version] = "2.1"

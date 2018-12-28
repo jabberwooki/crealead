@@ -60,6 +60,9 @@
       });
       function changeCoETextLink() {
         console.log("in changeCoETextLink");
+        if ($(".field-group-bootstrap_fieldgroup_nav_itemactive").length) {
+          $(".field-group-bootstrap_fieldgroup_nav_itemactive").addClass("active");
+        }
         if ($( window ).width() < 1200) {
           $("header#navbar .navbar-collapse ul.navbar-nav > li:nth-of-type(4) > a").html("Voir les <br>co-Entrepreneurs");
         } else {

@@ -1089,7 +1089,7 @@ function crealead_brands_field_group_info() {
       'label' => 'Marques',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-sectorbrands-brands field-group-div col-md-9',
+        'classes' => 'group-sectorbrands-brands field-group-div col-md-6',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -1114,8 +1114,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Actualités et articles',
     'weight' => '1',
     'children' => array(
-      0 => 'group_sectorbrands_news',
-      1 => 'group_sectorbrands_articles',
+      0 => 'group_sectorbrands_articles',
+      1 => 'group_sectorbrands_news',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -1186,7 +1186,7 @@ function crealead_brands_field_group_info() {
       'label' => 'Produits et formations',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-sectorbrands-products field-group-div col-md-3',
+        'classes' => 'group-sectorbrands-products field-group-div col-md-6',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -1305,7 +1305,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_theme_tabs';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'articles_theme_articles',
     ),
@@ -1330,16 +1330,19 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_theme_tabs';
   $field_group->data = array(
-    'label' => 'Blog',
+    'label' => 'Solutions',
     'weight' => '6',
-    'children' => array(),
-    'format_type' => 'bootstrap_fieldgroup_accordion_item',
+    'children' => array(
+      0 => 'trainings_landing_page_trainings',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Solutions',
       'instance_settings' => array(
         'classes' => 'group-theme-blog-tab field-group-bootstrap_fieldgroup_accordion_item',
         'required_fields' => 1,
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_theme_blog_tab|taxonomy_term|themes|full'] = $field_group;
@@ -1380,15 +1383,16 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_theme_tabs';
   $field_group->data = array(
-    'label' => 'Marques associées',
+    'label' => 'Réalisations',
     'weight' => '5',
-    'children' => array(),
+    'children' => array(
+      0 => 'achievements_theme_realisations',
+    ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Réalisations',
       'instance_settings' => array(
         'classes' => 'group-theme-brands-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -1431,7 +1435,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_theme_tabs';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'news_theme_news',
     ),
@@ -1487,10 +1491,12 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Onglets',
-    'weight' => '8',
+    'weight' => '13',
     'children' => array(
-      0 => 'group_theme_blog_tab',
-      1 => 'group_theme_brands_tab',
+      0 => 'group_theme_articles_tab',
+      1 => 'group_theme_blog_tab',
+      2 => 'group_theme_brands_tab',
+      3 => 'group_theme_news_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(

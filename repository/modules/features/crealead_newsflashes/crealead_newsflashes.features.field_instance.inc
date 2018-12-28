@@ -20,9 +20,7 @@ function crealead_newsflashes_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -103,11 +101,9 @@ function crealead_newsflashes_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'file_default',
+        'module' => 'download_file',
+        'settings' => array(),
+        'type' => 'direct_download_icon',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -120,7 +116,7 @@ function crealead_newsflashes_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_attached_file',
-    'label' => 'Fichier joint',
+    'label' => 'Fichiers joints',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -156,6 +152,7 @@ function crealead_newsflashes_field_default_field_instances() {
             'search_all_fields' => 0,
           ),
         ),
+        'label_help_description' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -222,9 +219,7 @@ function crealead_newsflashes_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
       ),
@@ -341,9 +336,7 @@ function crealead_newsflashes_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
@@ -378,7 +371,7 @@ function crealead_newsflashes_field_default_field_instances() {
   t('Corps de texte');
   t('Date de fin d\'affichage');
   t('Envoyé par email');
-  t('Fichier joint');
+  t('Fichiers joints');
   t('Population concernée');
   t('Thème');
 

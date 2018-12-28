@@ -12,6 +12,10 @@ include_once 'kcore.features.inc';
 function kcore_init() {
   drupal_add_js(drupal_get_path('module','kcore') . '/js/kcore.js');
   drupal_add_js(array('creaeleadCoeArea' => array('userLoggedIn' => user_is_logged_in())), 'setting');
+  drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/crealead_intra_manage_titles.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+  ));
 }
 
 /**
@@ -159,7 +163,7 @@ function kcore_block_view($delta = '') {
       }
 
       $content = '<div id="refs-number" class="number refs-number">' . $number . '</div>';
-      $content .= '<div id="refs-text" class="text refs-text">Salariés<br><span class="under-key-data">d’une équipe support pour
+      $content .= '<div id="refs-text" class="text refs-text">Membres<br><span class="under-key-data">d’une équipe support pour
 accompagner et gérer</span></div>';
       $block['content'] = $content;
       break;
