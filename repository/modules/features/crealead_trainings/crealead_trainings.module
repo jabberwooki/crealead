@@ -177,6 +177,11 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
     unset($form['field_recommended_by']);
   }
 
+  // Handling of field_structure_training display
+  $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
+  if (empty(array_intersect($allowed_roles, $current_user_roles))) {
+    $form['field_structure_training']['#access'] = FALSE;
+  }
 
   // Move "Champs Crealed" vertical tab to the bottom.
   $form['#groups']['group_crealead_fields']->weight = 200;
