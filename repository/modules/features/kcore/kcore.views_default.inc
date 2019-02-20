@@ -111,6 +111,15 @@ au moment de l\'interception et la ré-écriture du header.';
   /* Display: Onglet COOP'INS */
   $handler = $view->new_display('page', 'Onglet COOP\'INS', 'page_2');
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Solde en coopins */
+  $handler->display->display_options['header']['area_2']['id'] = 'area_2';
+  $handler->display->display_options['header']['area_2']['table'] = 'views';
+  $handler->display->display_options['header']['area_2']['field'] = 'area';
+  $handler->display->display_options['header']['area_2']['ui_name'] = 'Solde en coopins';
+  $handler->display->display_options['header']['area_2']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_2']['content'] = 'Solde utilisateur connecté.
+Cet affichage est construit dans crealead_needs.module, fonction crealead_needs_views_pre_view().';
+  $handler->display->display_options['header']['area_2']['format'] = 'full_html';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -161,6 +170,8 @@ Se paramètre dans Configuration > Crealead > Système d\'échange.'),
 Est codé dans crealead_needs.module, fonction crealead_needs_views_pre_view(),
 au moment de l\'interception et la ré-écriture du header.'),
     t('Onglet COOP\'INS'),
+    t('Solde utilisateur connecté.
+Cet affichage est construit dans crealead_needs.module, fonction crealead_needs_views_pre_view().'),
     t('Description de la monnaie d\'échange.
 Se paramètre dans Configuration > Crealead > Système d\'échange.'),
   );
