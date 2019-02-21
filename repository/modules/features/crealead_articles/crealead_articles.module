@@ -218,7 +218,7 @@ function crealead_articles_node_view($node, $view_mode, $langcode) {
  * Implements hook_node_postsave().
  */
 function crealead_articles_node_postsave($node, $op) {
-  if ($node->type == 'article' || $node->type == 'news') {
+  if ($node->type == 'article' || $node->type == 'news' || $node->type == 'training') {
     switch ($op) {
       case 'insert':
         foreach ($node->field_allowed_brands['und'] as $brand) {
@@ -235,14 +235,14 @@ function crealead_articles_node_postsave($node, $op) {
 
       case 'update':
         // First of all, we must store brand_id and display status
-        // for all brand the current article is shared with.
+        // for all brand the current node is shared with.
         $query = db_select('crealead_shared_content', 'csc');
         $query->fields('csc', array('nid','brand_id', 'status'));
         $query->condition('nid', $node->nid);
         $previously_registered_brands = $query->execute()->fetchAllKeyed(1,2);
 
         // Then, in table crealead_shared_content, we delete all records
-        // related to the current article.
+        // related to the current node.
         $query = db_delete('crealead_shared_content')
           ->condition('nid', $node->nid);
         $query->execute();
@@ -263,21 +263,24 @@ function crealead_articles_node_postsave($node, $op) {
 
         watchdog('crealead_shared_content', 'Node ' . $node->nid . ' updated.');
 
-        // And we send an alert message to each of the previously allowed brands.
-        $article_data = array();
-        $article_data['nid'] = $node->nid;
-        $article_wrapper = entity_metadata_wrapper('node', $node);
-        $article_data['title'] = $article_wrapper->title->value();
-        $article_data['author'] = $article_wrapper->author->name->value();
-        $article_data['related_brand'] = $article_wrapper->field_article_related_brands[0]->title->value();
+        // And we send an alert message to each of the previously allowed brands
+        // when updated node is article or news.
+        if ($node->type == 'article' || $node->type == 'news') {
+          $article_data = array();
+          $article_data['nid'] = $node->nid;
+          $article_wrapper = entity_metadata_wrapper('node', $node);
+          $article_data['title'] = $article_wrapper->title->value();
+          $article_data['author'] = $article_wrapper->author->name->value();
+          $article_data['related_brand'] = $article_wrapper->field_article_related_brands[0]->title->value();
 
-        $brand_data = array();
-        foreach (array_keys($previously_registered_brands) as $brand_id) {
-          $wrapper = entity_metadata_wrapper('node', $brand_id);
-          $brand_data['name'] = $wrapper->title->value();
-          $brand_data['owner_mail'] = $wrapper->author->mail->value();
+          $brand_data = array();
+          foreach (array_keys($previously_registered_brands) as $brand_id) {
+            $wrapper = entity_metadata_wrapper('node', $brand_id);
+            $brand_data['name'] = $wrapper->title->value();
+            $brand_data['owner_mail'] = $wrapper->author->mail->value();
 
-          crealead_articles_send_update_email($article_data, $brand_data);
+            crealead_articles_send_update_email($article_data, $brand_data);
+          }
         }
         break;
 

@@ -2069,7 +2069,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'view_name' => 'clients',
         ),
         'type' => 'entityreference_views_formatter',
-        'weight' => 0,
+        'weight' => 30,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2541,7 +2541,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2888,7 +2888,7 @@ Le label doit être prouvé.',
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -3248,7 +3248,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -3812,6 +3812,95 @@ Le label doit être prouvé.',
     ),
   );
 
+  // Exported field_instance: 'node-training-field_allowed_brands'.
+  $field_instances['node-training-field_allowed_brands'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 31,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_allowed_brands',
+    'label' => 'Marques qui peuvent utiliser cette formation',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'label_help_description' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance:
   // 'taxonomy_term-certifications_labels-field_cl_category'.
   $field_instances['taxonomy_term-certifications_labels-field_cl_category'] = array(
@@ -4113,6 +4202,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Marque contactée');
   t('Marque validée');
   t('Marque(s) sectorielle(s) concernée(s)');
+  t('Marques qui peuvent utiliser cette formation');
   t('Mots-clés');
   t('Photos');
   t('Phrase d\'accroche');

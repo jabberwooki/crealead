@@ -188,13 +188,23 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'brand';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'allowed_trainings_handling' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'empty_field_2' => array(
+      'weight' => '67',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'allowed_articles_handling' => array(
       'weight' => '56',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'brand_contacts' => array(
-      'weight' => '5',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -544,6 +554,21 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'allowed_trainings_handling';
+  $ds_field->label = 'Gestion des formations partagées';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'brand|full';
+  $ds_field->properties = array(
+    'block' => 'shared_content|allowed_trainings_handling',
+    'block_render' => '2',
+  );
+  $export['allowed_trainings_handling'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'brand_contacts';
   $ds_field->label = 'Prises de contact';
   $ds_field->field_type = 6;
@@ -593,6 +618,24 @@ function crealead_brands_ds_custom_fields_info() {
     'use_token' => 0,
   );
   $export['empty_field'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'empty_field_2';
+  $ds_field->label = 'Champ vide 2';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'brand|full';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '&nbsp;',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['empty_field_2'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -945,67 +988,74 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'group_brand_tabs',
-        1 => 'field_brand_references',
-        2 => 'field_brand_coes',
-        4 => 'articles_allowed_articles',
-        5 => 'empty_field',
-        6 => 'field_contact_form',
-        7 => 'brand_contacts',
-        9 => 'group_solutions_rows',
-        10 => 'field_brand_achievements',
-        11 => 'group_solution_col2',
-        12 => 'group_solution_col1',
-        13 => 'group_brand_infos_tab',
-        14 => 'group_brand_contact_tab',
-        15 => 'group_brans_coes_tab',
-        16 => 'group_brand_trainings_tab',
-        17 => 'group_brand_clients_tab',
-        18 => 'group_brand_achiev_tab',
-        19 => 'group_brand_news_tab',
-        20 => 'group_brand_articles_tab',
-        32 => 'news_brand_news',
-        33 => 'brand_agenda_eva_brandagenda',
-        34 => 'group_brand_infos_1',
-        35 => 'group_brand_infos_2',
-        36 => 'field_brand_tags',
-        37 => 'body',
-        38 => 'field_brand_solutions',
-        39 => 'articles_brand_articles',
-        40 => 'group_allowed_articles_wrapper',
-        41 => 'allowed_articles_handling',
-        45 => 'group_brand_formations',
-        46 => 'trainings_entity_view_1',
-        47 => 'group_brand_products',
-        48 => 'products_entity_view_1',
+        1 => 'field_brand_coes',
+        2 => 'group_brand_products',
+        3 => 'field_contact_form',
+        5 => 'trainings_entity_view_1',
+        6 => 'articles_allowed_articles',
+        7 => 'group_allowed_trainings_wrapper',
+        8 => 'empty_field',
+        9 => 'brand_contacts',
+        10 => 'allowed_trainings_handling',
+        12 => 'group_solutions_rows',
+        13 => 'field_brand_achievements',
+        14 => 'group_solution_col2',
+        15 => 'group_solution_col1',
+        16 => 'group_brand_infos_tab',
+        17 => 'group_brand_contact_tab',
+        18 => 'group_brans_coes_tab',
+        19 => 'group_brand_trainings_tab',
+        20 => 'group_brand_clients_tab',
+        21 => 'group_brand_achiev_tab',
+        22 => 'field_brand_references',
+        23 => 'group_brand_news_tab',
+        24 => 'group_brand_articles_tab',
+        36 => 'news_brand_news',
+        37 => 'brand_agenda_eva_brandagenda',
+        38 => 'group_brand_infos_1',
+        39 => 'group_brand_infos_2',
+        40 => 'field_brand_tags',
+        41 => 'body',
+        42 => 'field_brand_solutions',
+        43 => 'articles_brand_articles',
+        44 => 'group_allowed_articles_wrapper',
+        45 => 'allowed_articles_handling',
+        49 => 'group_brand_formations',
+        50 => 'trainings_allowed_trainings',
+        51 => 'empty_field_2',
+        52 => 'products_entity_view_1',
       ),
       'content_header_brand' => array(
-        3 => 'group_row_1',
-        8 => 'field_brand_logo',
-        21 => 'group_title_hook',
-        22 => 'title',
-        23 => 'field_brand_baseline',
-        24 => 'field_business_sector',
-        25 => 'group_contact',
-        26 => 'field_certifications_labels',
-        27 => 'field_brand_phone',
-        28 => 'field_social_links',
-        29 => 'field_brand_email',
-        30 => 'field_brand_website',
-        31 => 'field_lien_formulaire_contact',
-        42 => 'group_col_1_3',
-        43 => 'group_col_2_6',
-        44 => 'group_col3_3',
+        4 => 'group_row_1',
+        11 => 'field_brand_logo',
+        25 => 'group_title_hook',
+        26 => 'title',
+        27 => 'field_brand_baseline',
+        28 => 'field_business_sector',
+        29 => 'group_contact',
+        30 => 'field_certifications_labels',
+        31 => 'field_social_links',
+        32 => 'field_brand_phone',
+        33 => 'field_brand_email',
+        34 => 'field_brand_website',
+        35 => 'field_lien_formulaire_contact',
+        46 => 'group_col_1_3',
+        47 => 'group_col_2_6',
+        48 => 'group_col3_3',
       ),
     ),
     'fields' => array(
       'group_brand_tabs' => 'central',
-      'field_brand_references' => 'central',
       'field_brand_coes' => 'central',
-      'group_row_1' => 'content_header_brand',
-      'articles_allowed_articles' => 'central',
-      'empty_field' => 'central',
+      'group_brand_products' => 'central',
       'field_contact_form' => 'central',
+      'group_row_1' => 'content_header_brand',
+      'trainings_entity_view_1' => 'central',
+      'articles_allowed_articles' => 'central',
+      'group_allowed_trainings_wrapper' => 'central',
+      'empty_field' => 'central',
       'brand_contacts' => 'central',
+      'allowed_trainings_handling' => 'central',
       'field_brand_logo' => 'content_header_brand',
       'group_solutions_rows' => 'central',
       'field_brand_achievements' => 'central',
@@ -1017,6 +1067,7 @@ function crealead_brands_ds_layout_settings_info() {
       'group_brand_trainings_tab' => 'central',
       'group_brand_clients_tab' => 'central',
       'group_brand_achiev_tab' => 'central',
+      'field_brand_references' => 'central',
       'group_brand_news_tab' => 'central',
       'group_brand_articles_tab' => 'central',
       'group_title_hook' => 'content_header_brand',
@@ -1025,8 +1076,8 @@ function crealead_brands_ds_layout_settings_info() {
       'field_business_sector' => 'content_header_brand',
       'group_contact' => 'content_header_brand',
       'field_certifications_labels' => 'content_header_brand',
-      'field_brand_phone' => 'content_header_brand',
       'field_social_links' => 'content_header_brand',
+      'field_brand_phone' => 'content_header_brand',
       'field_brand_email' => 'content_header_brand',
       'field_brand_website' => 'content_header_brand',
       'field_lien_formulaire_contact' => 'content_header_brand',
@@ -1044,8 +1095,8 @@ function crealead_brands_ds_layout_settings_info() {
       'group_col_2_6' => 'content_header_brand',
       'group_col3_3' => 'content_header_brand',
       'group_brand_formations' => 'central',
-      'trainings_entity_view_1' => 'central',
-      'group_brand_products' => 'central',
+      'trainings_allowed_trainings' => 'central',
+      'empty_field_2' => 'central',
       'products_entity_view_1' => 'central',
     ),
     'classes' => array(),
