@@ -46,6 +46,39 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_allowed_products_wrapper|node|brand|full';
+  $field_group->group_name = 'group_allowed_products_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'brand';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_brand_products';
+  $field_group->data = array(
+    'label' => 'Enveloppe produits partagés',
+    'weight' => '68',
+    'children' => array(
+      0 => 'products_allowed_products',
+      1 => 'empty_field_3',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Enveloppe produits partagés',
+      'instance_settings' => array(
+        'id' => 'allowed_products_wrapper',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_allowed_products_wrapper|node|brand|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_allowed_trainings_wrapper|node|brand|full';
   $field_group->group_name = 'group_allowed_trainings_wrapper';
   $field_group->entity_type = 'node';
@@ -54,7 +87,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_brand_formations';
   $field_group->data = array(
     'label' => 'Enveloppe formations partagées',
-    'weight' => '2',
+    'weight' => '12',
     'children' => array(
       0 => 'trainings_allowed_trainings',
       1 => 'empty_field_2',
@@ -326,7 +359,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_solution_col1';
   $field_group->data = array(
     'label' => 'Formations',
-    'weight' => '63',
+    'weight' => '28',
     'children' => array(
       0 => 'trainings_entity_view_1',
       1 => 'allowed_trainings_handling',
@@ -578,6 +611,8 @@ function crealead_brands_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'products_entity_view_1',
+      1 => 'allowed_products_handling',
+      2 => 'group_allowed_products_wrapper',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -1595,6 +1630,7 @@ function crealead_brands_field_group_info() {
   t('Entrepreneurs');
   t('Enveloppe articles partagés');
   t('Enveloppe formations partagées');
+  t('Enveloppe produits partagés');
   t('Equipe');
   t('Formations');
   t('Informations Générales');

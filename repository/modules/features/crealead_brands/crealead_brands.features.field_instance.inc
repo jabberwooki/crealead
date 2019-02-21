@@ -1459,7 +1459,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'view_name' => 'achievements',
         ),
         'type' => 'entityreference_views_formatter',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'landing_page_block' => array(
         'label' => 'above',

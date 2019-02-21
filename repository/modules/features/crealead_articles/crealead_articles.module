@@ -218,7 +218,7 @@ function crealead_articles_node_view($node, $view_mode, $langcode) {
  * Implements hook_node_postsave().
  */
 function crealead_articles_node_postsave($node, $op) {
-  if ($node->type == 'article' || $node->type == 'news' || $node->type == 'training') {
+  if ($node->type == 'article' || $node->type == 'news' || $node->type == 'training' || $node->type == 'product') {
     switch ($op) {
       case 'insert':
         foreach ($node->field_allowed_brands['und'] as $brand) {
@@ -229,6 +229,7 @@ function crealead_articles_node_postsave($node, $op) {
             'status' => 0
           );
           $query = db_insert('crealead_shared_content')->fields($data);
+          $query->execute();
           watchdog('crealead_shared_content', 'Node ' . $node->nid . ' inserted.');
         }
         break;

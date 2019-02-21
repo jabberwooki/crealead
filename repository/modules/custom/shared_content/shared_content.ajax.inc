@@ -26,7 +26,6 @@ function crealead_alter_shared_content_status($type='ajax') {
     // 1) we get a fresh list of shared content
     // 2) we get the view block content in order to replace its content by the updated content
     $output = _get_shared_content($content_type, $brand_nid);
-    watchdog('shared_content', serialize($output));
 
     // Then, we get the view block content
     // in order to replace its content by the updated content
@@ -65,6 +64,22 @@ function crealead_alter_shared_content_status($type='ajax') {
         $view_output .= '</div>';
 
         $commands[] = ajax_command_replace('#allowed-trainings-wrapper', $view_output);
+        break;
+
+      case 'product':
+        // 1) shared content update
+        $commands[] = ajax_command_replace('.field-name-allowed-products-handling #shared-content-wrapper', $output);
+
+        // 2) view block update
+        $view_content = views_embed_view('products','allowed_products', $brand_nid);
+        if (!strpos($view_content, '<div class="view-content')) {
+          $view_content = '';
+        }
+        $view_output = '<div id="allowed-products-wrapper">';
+        $view_output .= $view_content;
+        $view_output .= '</div>';
+
+        $commands[] = ajax_command_replace('#allowed-products-wrapper', $view_output);
         break;
     }
 

@@ -139,5 +139,18 @@ function crealead_products_views_pre_render(&$view) {
     }*/
 
   }
+  elseif ($view->name == 'products' && $view->current_display == 'allowed_products') {
+    // If referer is the ajax call, brand_nid can be found as argument 4, otherwise
+    if(arg(4)) {
+      $query = db_select('node', 'n')->fields('n', array('title'));
+      $query->condition('n.nid', arg(4));
+      $brand_name = $query->execute()->fetchField();
+    }
+    else {
+      $brand_name = $view->current_entity->title;
+    }
+
+    $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
+  }
 }
 

@@ -90,6 +90,13 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'produits';
 
   /* Display: Produits d'une marque */
@@ -116,6 +123,46 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'brand',
   );
+
+  /* Display: Produits partagés avec une marque */
+  $handler = $view->new_display('entity_view', 'Produits partagés avec une marque', 'allowed_products');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'brand_name vous conseille ces produits de marques partenaires';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Marques qui peuvent utiliser cet article (field_allowed_brands) */
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_allowed_brands_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'brand',
+  );
+  $handler->display->display_options['show_title'] = 1;
   $translatables['products'] = array(
     t('Master'),
     t('Produits'),
@@ -134,7 +181,10 @@ function crealead_products_views_default_views() {
     t('last »'),
     t('Tout'),
     t('Page'),
+    t('Entité Contenu réferencée par field_allowed_brands'),
     t('Produits d\'une marque'),
+    t('Produits partagés avec une marque'),
+    t('brand_name vous conseille ces produits de marques partenaires'),
   );
   $export['products'] = $view;
 
