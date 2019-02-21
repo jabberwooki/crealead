@@ -143,9 +143,9 @@ function shared_content_menu() {
  * Implements hook_views_query_alter().
  */
 function shared_content_views_query_alter(&$view, &$query) {
-  if (($object = menu_get_object()) && $object->type == 'brand') {
+  // Si on est dans l'affichage d'une marque ou si c'est une requête ajax depuis une page de marque
+  if ((($object = menu_get_object()) && $object->type == 'brand') || 'alter_shared_content_status' == arg(0)) {
     if ($view->current_display == 'allowed_articles') {
-      //dpm($query->where);
       $brand_id = reset($query->where[0]['conditions'][0]['value']);
 
       // We get the allowed articles nids for the current brand.
@@ -166,9 +166,7 @@ function shared_content_views_query_alter(&$view, &$query) {
 
     }
     elseif ($view->current_display == 'allowed_trainings') {
-      //dpm($query->where);
       $brand_id = reset($query->where[0]['conditions'][0]['value']);
-
       // We get the allowed trainings nids for the current brand.
       $shared_content_query = db_select('crealead_shared_content', 'sc');
       $shared_content_query->fields('sc', array('nid'));

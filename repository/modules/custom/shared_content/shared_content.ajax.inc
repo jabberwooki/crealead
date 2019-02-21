@@ -47,15 +47,12 @@ function crealead_alter_shared_content_status($type='ajax') {
 
       case 'training':
         $view_content = views_embed_view('trainings','allowed_trainings', $brand_nid);
-        watchdog('shared_content', 'contenu de la vue = ' . $view_content);
         if (!strpos($view_content, '<div class="view-content')) {
           $view_content = '';
         }
         $view_output = '<div id="allowed-trainings-wrapper">';
         $view_output .= $view_content;
         $view_output .= '</div>';
-
-        watchdog('shared_content', 'longueur chaine = ' . strlen($view_content));
 
         $commands[] = ajax_command_replace('#allowed-trainings-wrapper', $view_output);
         break;
