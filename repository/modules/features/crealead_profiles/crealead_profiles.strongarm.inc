@@ -175,6 +175,9 @@ function crealead_profiles_strongarm() {
       'block' => array(
         'custom_settings' => TRUE,
       ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -215,28 +218,28 @@ function crealead_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'password_policy' => array(
           'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'account' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'timezone' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'locale' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'masquerade' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'picture' => array(
           'weight' => '5',
@@ -245,6 +248,9 @@ function crealead_profiles_strongarm() {
           'weight' => '5',
         ),
         'contact' => array(
+          'weight' => '8',
+        ),
+        'mimemail' => array(
           'weight' => '7',
         ),
       ),
