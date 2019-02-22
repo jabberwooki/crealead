@@ -21,7 +21,7 @@ function crealead_offers_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personne à contacter',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field__need_contact_name',
       1 => 'field_need_contact_details',
