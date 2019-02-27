@@ -16,3 +16,4 @@ shared/_files/
 # Ignore Prepros app settings files
 repository/themes/custom/crealead/prepros-6.config
 repository/themes/custom/crealead/less/prepros-6.config
+repository/themes/custom/crealead/less/node_modules/
