@@ -170,6 +170,23 @@ function crealead_trainings_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_recommendations_count'.
+  $field_bases['field_recommendations_count'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_recommendations_count',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_recommended_by'.
   $field_bases['field_recommended_by'] = array(
     'active' => 1,

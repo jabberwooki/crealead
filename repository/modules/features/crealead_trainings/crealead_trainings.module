@@ -194,7 +194,6 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 
   // Previous publication status is stored in the readonly field_previous_status.
   $form['field_previous_status']['und'][0]['value']['#default_value'] = $form['#entity']->status;
-
   $form['#submit'][] = 'crealead_trainings_training_submit_handler';
 }
 
@@ -213,6 +212,9 @@ function crealead_trainings_after_build($form, &$form_state) {
 
   // Make the field field_previous_status readonly.
   $form['field_previous_status']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
+
+  // Make the field field_recommendations_count readonly.
+  $form['field_recommendations_count']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
 
   return $form;
 }
@@ -651,12 +653,16 @@ function crealead_trainings_node_presave($node) {
       $training_aims = strip_tags($node->field_training_aims['und'][0]['value']);
     }
 
-    foreach ($node->field_training_related_brands['und'] as $brand) {
-      $wrapper = entity_metadata_wrapper('node', $brand['target_id']);
-      $certifs_labels = $wrapper->field_certifications_labels->value();
-      foreach ($certifs_labels as $certif_label) {
-        $term = taxonomy_term_load($certif_label->tid);
-        $certifs_labels_names .= $term->name . ' ';
+    if (isset($node->field_training_related_brands['und'])) {
+      foreach ($node->field_training_related_brands['und'] as $brand) {
+        $wrapper = entity_metadata_wrapper('node', $brand['target_id']);
+        if(isset($wrapper->field_certifications_labels)) {
+          $certifs_labels = $wrapper->field_certifications_labels->value();
+          foreach ($certifs_labels as $certif_label) {
+            $term = taxonomy_term_load($certif_label->tid);
+            $certifs_labels_names .= $term->name . ' ';
+          }
+        }
       }
     }
     // Store training intro, content, public and objectives into field_training_search technical field.
@@ -887,6 +893,16 @@ function crealead_trainings_views_query_alter(&$view, &$query) {
       // Add the join to the view query.
       $view->query->add_relationship('crealead_funded', $join, 'node');
       $query->add_where(1, 'crealead_funded.field_crealead_funded_value', 1, '=');
+    }
+
+    // SORT CRITERIA HANDLING
+    if (isset($_REQUEST['recommended'])) {
+      unset($query->orderby[1]);
+      unset($query->fields['_random_seed']);
+    }
+    else {
+      unset($query->orderby[0]);
+      unset($query->fields['field_data_field_recommended_by_delta']);
     }
   }
 }

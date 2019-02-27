@@ -25,6 +25,7 @@ function crealead_trainings_field_group_info() {
     'children' => array(
       0 => 'field_training_search',
       1 => 'field_previous_status',
+      2 => 'field_recommendations_count',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
