@@ -20,8 +20,7 @@ function crealead_trainings_update_7001() {
 function crealead_trainings_update_7002() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'training')
-    ->propertyCondition('status', NODE_PUBLISHED);
+    ->entityCondition('bundle', 'training');
 
   $result = $query->execute();
   if (isset($result['node'])) {
