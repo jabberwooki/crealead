@@ -109,7 +109,6 @@ function crealead_articles_form_article_node_form_alter(&$form, &$form_state, $f
 
   drupal_add_js(drupal_get_path('module','crealead_articles') . '/css/crealead_articles.css');
   drupal_add_js(drupal_get_path('module','crealead_articles') . '/js/crealead_articles.js');
-  dpm($form['body']['und'][0]['summary']);
   $form['body']['und'][0]['summary']['#description'] .= '<br/><span class="field-help-emphasis">Si vous utilisez ce champ, il est limité à 300 caractères</span>. Il vous reste <span class="remaining-chars">300</span> caractères.';
 }
 
