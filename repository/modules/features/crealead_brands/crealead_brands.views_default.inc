@@ -729,7 +729,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Formation */
+  /* Field: Content: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -1470,6 +1470,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
   $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
   $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_custom'] = '600';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
