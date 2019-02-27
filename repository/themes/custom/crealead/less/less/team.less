@@ -3,6 +3,41 @@
 }
 
 .view-structure-team {
+  .views-row {
+    @media (min-width: @screen-md) {
+      width: 32%;
+      float: left;
+    }
+    box-shadow: 0 0 5px #999;
+    padding-bottom: 0;
+    padding-top: 5px;
+    height: 110px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-right: 1%;
+
+    .username {
+      .quick();
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  .views-field-field-coe-photo {
+    width: 120px;
+    padding-left: 5px;
+    float: left;
+    .field-content {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100px;
+      width: 100px;
+      text-align: center;
+      img {
+        max-height: 100px;
+        margin: 0 auto;
+      }
+    }
+  }
   #tabs {
     ul {
       li.profile-tab {
@@ -37,7 +72,7 @@
           margin: 0;
           border-radius: 0;
           border: 0;
-          &:hover{
+          &:hover {
             text-decoration: none;
             background-color: @gris-fonce-crealead;
             color: #000;
@@ -53,32 +88,12 @@
         }
       }
       &:after {
-        content: '';
+        content: "";
         display: block;
         clear: both;
         margin-bottom: 30px;
       }
     }
   }
-  .views-row {
-    @media (min-width: @screen-md) {
-      width: 32%;
-      float: left;
-    }
-    box-shadow: 0 0 5px #999;
-    padding-bottom: 0;
-    height: 100px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    margin-right: 1%;
-    img {
-      float: left;
-      margin-right: 15px;
-    }
-    .username {
-      .quick();
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-  }
+  
 }
