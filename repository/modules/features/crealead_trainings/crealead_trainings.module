@@ -195,6 +195,12 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
   // Previous publication status is stored in the readonly field_previous_status.
   $form['field_previous_status']['und'][0]['value']['#default_value'] = $form['#entity']->status;
   $form['#submit'][] = 'crealead_trainings_training_submit_handler';
+
+  // Handling of field_is_structure display
+  $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
+  if (empty(array_intersect($allowed_roles, $current_user_roles))) {
+    $form['field_is_structure']['#access'] = FALSE;
+  }
 }
 
 function crealead_trainings_training_submit_handler($form, &$form_state) {
@@ -1167,8 +1173,8 @@ function crealead_trainings_send_interested_user_email($email, $session_nid, $se
       '<p>Bonjour,</p>'.
 
       '<p>'.
-        'Un utilisateur s\'est enregistré comme intéressé à votre session de formation ' .
-        '<b><a href="' . $host . '/node/' . $session_nid . ' ">' . $session_title . '</a></b>' .
+        'Une personne est intéressée par votre session de formation ' .
+        '<b><a href="' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
       '</p>'.
     '</div>';
 

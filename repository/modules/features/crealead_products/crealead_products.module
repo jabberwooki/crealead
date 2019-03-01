@@ -73,12 +73,11 @@ function crealead_products_form_product_node_form_alter(&$form, &$form_state, $f
     $form['field_related_sector_brands']['#access'] = FALSE;
   }
 
-  // Handling of fied_structure_product display
+  // Handling of field_is_structure display
   $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
   if (empty(array_intersect($allowed_roles, $current_user_roles))) {
-    $form['field_structure_product']['#access'] = FALSE;
+    $form['field_is_structure']['#access'] = FALSE;
   }
-
 }
 
 
