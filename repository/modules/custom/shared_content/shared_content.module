@@ -84,7 +84,7 @@ function shared_content_block_view($delta = '') {
       if ($user->uid == $brand->uid || in_array('administrateur', $user->roles)) {
         if ($products_list = _get_shared_content('product', $brand->nid)) {
           $content = '<div class="content-publication-handling">';
-          $content .= '<p class="shared-content-handling-title">Gestion des formations partagées</p>';
+          $content .= '<p class="shared-content-handling-title">Gestion des produits partagées</p>';
           $content .= '<div id="shared-content-wrapper">';
           $content .= $products_list;
           $content .= '</div>';
