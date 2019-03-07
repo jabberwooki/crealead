@@ -123,14 +123,14 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'brand',
   );
+  $handler->display->display_options['show_title'] = 0;
 
   /* Display: Produits partagés avec une marque */
   $handler = $view->new_display('entity_view', 'Produits partagés avec une marque', 'allowed_products');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'brand_name vous conseille ces produits de marques partenaires';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';

@@ -105,6 +105,7 @@ function _get_shared_content($type, $brand_nid) {
   $query->fields('n', array('title'));
   $query->condition('sc.type', $type);
   $query->condition('sc.brand_id', $brand_nid);
+  $query->condition('n.status', NODE_PUBLISHED);
   $result = $query->execute()->fetchAll();
 //  dpm($result);
 

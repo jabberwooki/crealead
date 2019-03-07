@@ -716,7 +716,7 @@ function crealead_brands_field_group_info() {
     'format_settings' => array(
       'label' => 'Solutions',
       'instance_settings' => array(
-        'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item',
+        'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item solutions',
       ),
     ),
   );
