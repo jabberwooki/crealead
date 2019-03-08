@@ -368,7 +368,7 @@ function crealead_brands_block_view($delta = '') {
 
       $brands = views_get_view_result('brands', 'sector_brand_brands', $current_sector_brand->tid);
       if (!empty($brands)) {
-        $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
+        $content .= '<li class="item2"><a href="#brands-products">Marques et solutions</a>';
       }
 
       $achievements = views_get_view_result('achievements', 'sector_brand_achievs', $current_sector_brand->tid);

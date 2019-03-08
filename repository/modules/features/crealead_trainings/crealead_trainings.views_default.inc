@@ -477,7 +477,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Produits et formations</h3>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Solutions</h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
@@ -1476,7 +1476,7 @@ function crealead_trainings_views_default_views() {
     t('Produits et formations'),
     t('<h3>Nos formations et produits</h3>'),
     t('Formations d\'une marque sectorielle'),
-    t('<h3>Produits et formations</h3>'),
+    t('<h3>Solutions</h3>'),
     t('term from field_related_sector_brands'),
     t('Catalogue des formations'),
     t('Nos formations'),
