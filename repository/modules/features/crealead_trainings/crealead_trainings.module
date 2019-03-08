@@ -1164,6 +1164,7 @@ function crealead_trainings_send_interested_user_email($email, $session_nid, $se
   $from = "Crealead <contact@crealead.com>";
   $reply_to = "contact@crealead.com";
   $host = $_SERVER['HTTP_HOST'];
+  $protocol = $_SERVER['REQUEST_SCHEME'];
 
   $mail_subject = '[Crealead Alertes] - Sessions de formation';
 
@@ -1174,7 +1175,7 @@ function crealead_trainings_send_interested_user_email($email, $session_nid, $se
 
       '<p>'.
         'Une personne est intéressée par votre session de formation ' .
-        '<b><a href="' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
+        '<b><a href="' . $protocol . '/' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
       '</p>'.
     '</div>';
 
