@@ -1175,7 +1175,7 @@ function crealead_trainings_send_interested_user_email($email, $session_nid, $se
 
       '<p>'.
         'Une personne est intéressée par votre session de formation ' .
-        '<b><a href="' . $protocol . '/' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
+        '<b><a href="' . $protocol . '://' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
       '</p>'.
     '</div>';
 
