@@ -22,7 +22,7 @@ function crealead_coopins_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Dernières solutions payables en COOPINs';
+  $handler->display->display_options['title'] = 'Dernières solutions payables en COOP\'INs';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -93,13 +93,13 @@ function crealead_coopins_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/espace-co-entrepreneur/coopins/solutions">Voir toutes les solutions pour profiter de ses COOPINs</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/espace-co-entrepreneur/coopins/solutions">Voir toutes les solutions pour profiter de ses COOP\'INs</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
 
   /* Display: Toutes les solutions */
   $handler = $view->new_display('page', 'Toutes les solutions', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Toutes les solutions pour profiter de ses COOPINs';
+  $handler->display->display_options['title'] = 'Toutes les solutions pour profiter de ses COOP\'INs';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
@@ -226,7 +226,7 @@ function crealead_coopins_views_default_views() {
   );
   $translatables['coopins_solutions'] = array(
     t('Master'),
-    t('Dernières solutions payables en COOPINs'),
+    t('Dernières solutions payables en COOP\'INs'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -234,9 +234,9 @@ function crealead_coopins_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Dernières solutions'),
-    t('<a href="/espace-co-entrepreneur/coopins/solutions">Voir toutes les solutions pour profiter de ses COOPINs</a>'),
+    t('<a href="/espace-co-entrepreneur/coopins/solutions">Voir toutes les solutions pour profiter de ses COOP\'INs</a>'),
     t('Toutes les solutions'),
-    t('Toutes les solutions pour profiter de ses COOPINs'),
+    t('Toutes les solutions pour profiter de ses COOP\'INs'),
     t('Éléments par page'),
     t('Tout'),
     t('Décalage'),
