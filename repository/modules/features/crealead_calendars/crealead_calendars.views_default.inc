@@ -89,7 +89,7 @@ function crealead_calendars_views_default_views() {
   /* Display: Evénements salles */
   $handler = $view->new_display('page', 'Evénements salles', 'rooms_month');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Agenda des salles';
+  $handler->display->display_options['title'] = 'Calendrier des salles';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -327,11 +327,11 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['filters']['field_room_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_room_tid']['vocabulary'] = 'crealead_rooms';
-  $handler->display->display_options['path'] = 'espace-co-entrepreneur/agenda-salles';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/calendrier-salles';
   $handler->display->display_options['menu']['title'] = 'Month';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Calendar';
   $handler->display->display_options['tab_options']['weight'] = '0';
@@ -635,7 +635,7 @@ function crealead_calendars_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Evénements salles'),
-    t('Agenda des salles'),
+    t('Calendrier des salles'),
     t('Appliquer'),
     t('Réinitialiser'),
     t('Trier par'),
@@ -732,8 +732,8 @@ function crealead_calendars_views_default_views() {
     'structure_event' => 'structure_event',
   );
 
-  /* Display: Evénements Structure */
-  $handler = $view->new_display('block', 'Evénements Structure', 'structure');
+  /* Display: Evénements Structure (bloc) */
+  $handler = $view->new_display('block', 'Evénements Structure (bloc)', 'structure');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Calendrier Structure';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -805,6 +805,60 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
   );
+
+  /* Display: Evénements Structure (page) */
+  $handler = $view->new_display('page', 'Evénements Structure (page)', 'structure_month');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Calendrier structure';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/structure_event">LIEN_AJOUTER</a> ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['label'] = '';
+  $handler->display->display_options['fields']['field_gclal_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['settings'] = array(
+    'format_type' => 'structure_calendar_time',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['granularity_reset'] = 0;
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
+  );
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/calendrier-structure';
 
   /* Display: Month */
   $handler = $view->new_display('page', 'Month', 'page_1');
@@ -1104,15 +1158,19 @@ function crealead_calendars_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Evénements Structure'),
+    t('Evénements Structure (bloc)'),
     t('Calendrier Structure'),
     t('<a href="/node/add/structure_event">LIEN_AJOUTER</a> '),
     t('All'),
+    t('Evénements Structure (page)'),
+    t('Calendrier structure'),
+    t('Tout'),
     t('Month'),
     t('Week'),
     t('Day'),
     t('Year'),
     t('Block'),
+    t('Evénements Structure'),
     t('iCal'),
     t('Upcoming'),
     t('Upcoming events block'),

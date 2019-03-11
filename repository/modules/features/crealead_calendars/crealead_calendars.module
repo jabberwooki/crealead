@@ -7,6 +7,15 @@
 include_once 'crealead_calendars.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function crealead_calendars_init() {
+  $request_path = request_path();
+  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-')) {
+    drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars.css');
+  }
+}
+/**
  * Implements hook_feeds_after_save().
  */
 function crealead_calendars_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
@@ -105,6 +114,6 @@ function crealead_calendars_room_event_redirect(&$form, &$form_state) {
   $event_start_date = $form_state['values']['field_gclal_date']['und'][0]['value'];
   $year_month = substr($event_start_date, 0, 7);
   $form_state['redirect'] = array(
-    'espace-co-entrepreneur/agenda-salles/' . $year_month,
+    'espace-co-entrepreneur/calendrier-salles/' . $year_month,
   );
 }
