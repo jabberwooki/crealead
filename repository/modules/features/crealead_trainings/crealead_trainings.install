@@ -12,3 +12,22 @@
 function crealead_trainings_update_7001() {
   module_enable(array('calendar'));
 }
+
+/**
+ * Sets the value of NEW training content type field "field_recommendations_count" with the number of recorded recommendations.
+ * IMPORTANT ! "drush udpb" must be run exceptionnally AFTER "drush fra -y" because field_recommendations_count must exist before this update is applied.
+ */
+function crealead_trainings_update_7002() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'training');
+
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    foreach($result['node'] as $node) {
+      $wrapper = entity_metadata_wrapper('node', $node->nid);
+      $wrapper->field_recommendations_count->set(sizeof($wrapper->field_recommended_by->value()));
+      $wrapper->save();
+    }
+  }
+}

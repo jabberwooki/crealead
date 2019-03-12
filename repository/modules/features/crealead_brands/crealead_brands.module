@@ -368,7 +368,7 @@ function crealead_brands_block_view($delta = '') {
 
       $brands = views_get_view_result('brands', 'sector_brand_brands', $current_sector_brand->tid);
       if (!empty($brands)) {
-        $content .= '<li class="item2"><a href="#brands-products">Marques et produits</a>';
+        $content .= '<li class="item2"><a href="#brands-products">Marques et solutions</a>';
       }
 
       $achievements = views_get_view_result('achievements', 'sector_brand_achievs', $current_sector_brand->tid);
@@ -635,6 +635,20 @@ function crealead_brands_views_pre_render(&$view) {
         $view->result[$key]->node_title .= ' (J' . ($delta + 1) . ')';
       }
     }
+  }
+
+  if ($view->name == 'trainings' && $view->current_display == 'allowed_trainings') {
+    // If referer is the ajax call, brand_nid can be found as argument 4, otherwise
+    if(arg(4)) {
+      $query = db_select('node', 'n')->fields('n', array('title'));
+      $query->condition('n.nid', arg(4));
+      $brand_name = $query->execute()->fetchField();
+    }
+    else {
+      $brand_name = $view->current_entity->title;
+    }
+
+    $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
 }
 
@@ -939,23 +953,30 @@ function crealead_brands_link_registered_client() {
 }
 
 function crealead_achievement_submit($form, $form_state) {
-  // Nid of freshly created Achievement node.
-  $new_achiev_id = $form_state['nid'];
+  // Nid of the created/modified Achievement node.
+  $achievement_id = $form_state['nid'];
 
   // Selected brands handling.
-  // $form_state['values']['related_brands'] doesn't exist if new client is being created
+  // $form_state['values']['related_brands'] doesn't exist if new achievement is being created
   // from the brand's page, via popup.
   // Function array_filter() returns values different from zero.
   if (isset($form_state['values']['related_brands'])) {
     $checked_brands_ids = array_filter($form_state['values']['related_brands']);
 
-    // For each selected brand, we link the freshly created Client.
+    // For each selected brand, we link the freshly created achievement.
     foreach ($checked_brands_ids as $brand_id) {
       $wrapper = entity_metadata_wrapper('node', $brand_id);
-      $clients = $wrapper->field_brand_achievements->raw();
-      array_push($clients, $new_achiev_id);
-      $wrapper->field_brand_achievements->set($clients);
-      $wrapper->save();
+      $achievements = $wrapper->field_brand_achievements->raw();
+
+      // Si la réalisation est en cours de création
+      // ou si  réalisation est en cours de modif (le nid existe dans le formulaire)
+      // et qu'elle pas déjà dans les réalisations de la marque,
+      // alors on peut la rajouter à la marque.
+      if (!isset($form['nid']['#value']) || (isset($form['nid']['#value']) && !in_array($achievement_id, $achievements))) {
+        array_push($achievements, $achievement_id);
+        $wrapper->field_brand_achievements->set($achievements);
+        $wrapper->save();
+      }
     }
   }
 }

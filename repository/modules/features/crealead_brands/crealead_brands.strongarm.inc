@@ -220,7 +220,7 @@ function crealead_brands_strongarm() {
         ),
         'trainings_entity_view_1' => array(
           'full' => array(
-            'weight' => '64',
+            'weight' => '11',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -315,6 +315,24 @@ function crealead_brands_strongarm() {
         'products_entity_view_1' => array(
           'full' => array(
             'weight' => '67',
+            'visible' => TRUE,
+          ),
+        ),
+        'trainings_allowed_trainings' => array(
+          'full' => array(
+            'weight' => '31',
+            'visible' => TRUE,
+          ),
+        ),
+        'products_entity_view_2' => array(
+          'full' => array(
+            'weight' => '69',
+            'visible' => TRUE,
+          ),
+        ),
+        'products_allowed_products' => array(
+          'full' => array(
+            'weight' => '71',
             'visible' => TRUE,
           ),
         ),

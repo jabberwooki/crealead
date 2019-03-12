@@ -1470,6 +1470,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
   $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
   $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_custom'] = '600';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

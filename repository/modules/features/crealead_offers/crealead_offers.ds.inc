@@ -5,6 +5,30 @@
  */
 
 /**
+ * Implements hook_ds_field_settings_info().
+ */
+function crealead_offers_ds_field_settings_info() {
+  $export = array();
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|offer|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'offer';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_related_product' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|offer|full'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function crealead_offers_ds_layout_settings_info() {
@@ -27,11 +51,12 @@ function crealead_offers_ds_layout_settings_info() {
         2 => 'field_offer_origin',
         3 => 'field_offer_type',
         4 => 'field_related_training',
-        5 => 'field_training_domain',
-        6 => 'field_price',
-        7 => 'field_attached_file',
+        5 => 'field_related_product',
+        6 => 'field_training_domain',
+        7 => 'field_price',
         8 => 'field__need_contact_name',
-        9 => 'field_need_contact_details',
+        9 => 'field_attached_file',
+        10 => 'field_need_contact_details',
       ),
     ),
     'fields' => array(
@@ -40,10 +65,11 @@ function crealead_offers_ds_layout_settings_info() {
       'field_offer_origin' => 'right',
       'field_offer_type' => 'right',
       'field_related_training' => 'right',
+      'field_related_product' => 'right',
       'field_training_domain' => 'right',
       'field_price' => 'right',
-      'field_attached_file' => 'right',
       'field__need_contact_name' => 'right',
+      'field_attached_file' => 'right',
       'field_need_contact_details' => 'right',
     ),
     'classes' => array(),

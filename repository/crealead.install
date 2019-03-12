@@ -365,3 +365,11 @@ function crealead_update_7021() {
 function crealead_update_7022() {
   module_enable(array('crealead_faqs'));
 }
+
+
+/**
+ * Activate feature crealead_coopins.
+ */
+function crealead_update_7023() {
+  module_enable(array('crealead_coopins'));
+}

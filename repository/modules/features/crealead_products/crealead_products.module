@@ -48,6 +48,47 @@ function crealead_products_form_product_node_form_alter(&$form, &$form_state, $f
       $form['field_product_related_brands']['und']['#default_value'] = arg(3);
     }
     // End of Related brands list handling ---------------------------------------
+
+  // We must display only sector brands the parent brand(s) of the current product is (are) related to.
+  // First, we get the parent brands.
+  $parent_brands = crealead_products_get_parent_brands($form['nid']['#value']);
+
+  // If any parent brands exist, we get the sector brands of each parent brand.
+  if (!empty($parent_brands)) {
+    $parent_sector_brands = crealead_brands_get_parent_sector_brands($parent_brands);
+
+    // If any parent sector brands exist
+    if (!empty($parent_sector_brands)) {
+      // We have to clean the sector brand field options array by keeping only the parent sector brands.
+      $form['field_related_sector_brands']['und']['#options'] =
+        crealead_clean_sector_brands_options($form['field_related_sector_brands']['und']['#options'], $parent_sector_brands);
+    }
+    // otherwise we remove the related sector brands field from display.
+    else {
+      $form['field_related_sector_brands']['#access'] = FALSE;
+    }
+  }
+  // otherwise we remove the related sector brands field from display.
+  else {
+    $form['field_related_sector_brands']['#access'] = FALSE;
+  }
+
+  // Handling of field_is_structure display
+  $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
+  if (empty(array_intersect($allowed_roles, $current_user_roles))) {
+    $form['field_is_structure']['#access'] = FALSE;
+  }
+}
+
+
+function crealead_products_get_parent_brands($product_id) {
+  if (!isset($product_id)) return array();
+
+  $query = db_select('field_data_field_product_related_brands', 'fprb');
+  $query->fields('fprb', array('field_product_related_brands_target_id'));
+  $query->condition('entity_id', $product_id);
+
+  return $query->execute()->fetchAllKeyed(0,0);
 }
 
 /**
@@ -96,6 +137,19 @@ function crealead_products_views_pre_render(&$view) {
       }
     }*/
 
+  }
+  elseif ($view->name == 'products' && $view->current_display == 'allowed_products') {
+    // If referer is the ajax call, brand_nid can be found as argument 4, otherwise
+    if(arg(4)) {
+      $query = db_select('node', 'n')->fields('n', array('title'));
+      $query->condition('n.nid', arg(4));
+      $brand_name = $query->execute()->fetchField();
+    }
+    else {
+      $brand_name = $view->current_entity->title;
+    }
+
+    $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
 }
 

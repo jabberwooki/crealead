@@ -16,6 +16,7 @@ function crealead_trainings_add_recommendation($type='ajax') {
     // First, we load the training and we add user to it.
     $training_wrapper = entity_metadata_wrapper('node', $training_id);
     $training_wrapper->field_recommended_by[] = $user;
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() + 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node
@@ -45,6 +46,7 @@ function crealead_trainings_add_recommendation_from_list($type='ajax') {
     // First, we load the training and we add user to it.
     $training_wrapper = entity_metadata_wrapper('node', $training_id);
     $training_wrapper->field_recommended_by[] = $user;
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() + 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node
@@ -74,6 +76,7 @@ function crealead_trainings_add_recommendation_from_brand_tab($type='ajax') {
     // First, we load the training and we add user to it.
     $training_wrapper = entity_metadata_wrapper('node', $training_id);
     $training_wrapper->field_recommended_by[] = $user;
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() + 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node
@@ -108,6 +111,7 @@ function crealead_trainings_remove_recommendation($type='ajax') {
         break;
       }
     }
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() - 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node
@@ -141,6 +145,7 @@ function crealead_trainings_remove_recommendation_from_list($type='ajax') {
         break;
       }
     }
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() - 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node
@@ -174,6 +179,7 @@ function crealead_trainings_remove_recommendation_from_brand_tab($type='ajax') {
         break;
       }
     }
+    $training_wrapper->field_recommendations_count->set($training_wrapper->field_recommendations_count->value() - 1);
     $training_wrapper->save();
 
     // Then, we get the freshly updated node

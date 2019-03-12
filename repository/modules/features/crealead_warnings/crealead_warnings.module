@@ -180,7 +180,7 @@ function crealead_warnings_views_pre_render(&$view) {
       }
     }
   }
-  if ($view->name == 'warnings') {
+  elseif ($view->name == 'warnings' && $view->current_display == 'full_list') {
     $warnable_content_types = crealead_warnings_get_warnable_content_types();
     foreach ($view->result as $item) {
       $markup = $item->field_field_content_type_value[0]['rendered']['#markup'];

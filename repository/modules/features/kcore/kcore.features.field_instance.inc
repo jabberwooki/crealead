@@ -341,6 +341,51 @@ function kcore_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_interested_users_warning'.
+  $field_instances['user-user-field_interested_users_warning'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Je veux recevoir un courriel chaque fois qu\'un utilisateur est intéressé par une de mes sessions de formation.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_interested_users_warning',
+    'label' => 'Alertes sessions de formation',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'label_help_description' => '',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_user_firstname'.
   $field_instances['user-user-field_user_firstname'] = array(
     'bundle' => 'user',
@@ -580,6 +625,8 @@ function kcore_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Alertes sessions de formation');
+  t('Je veux recevoir un courriel chaque fois qu\'un utilisateur est intéressé par une de mes sessions de formation.');
   t('Nom');
   t('Prénom');
   t('Référent');

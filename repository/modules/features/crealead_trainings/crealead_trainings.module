@@ -177,6 +177,11 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
     unset($form['field_recommended_by']);
   }
 
+  // Handling of field_structure_training display
+  $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
+  if (empty(array_intersect($allowed_roles, $current_user_roles))) {
+    $form['field_structure_training']['#access'] = FALSE;
+  }
 
   // Move "Champs Crealed" vertical tab to the bottom.
   $form['#groups']['group_crealead_fields']->weight = 200;
@@ -189,8 +194,13 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 
   // Previous publication status is stored in the readonly field_previous_status.
   $form['field_previous_status']['und'][0]['value']['#default_value'] = $form['#entity']->status;
-
   $form['#submit'][] = 'crealead_trainings_training_submit_handler';
+
+  // Handling of field_is_structure display
+  $allowed_roles = array('administrateur','webmaster','assistant','direction','entrepreneur prestataire','pôle gestion','référent');
+  if (empty(array_intersect($allowed_roles, $current_user_roles))) {
+    $form['field_is_structure']['#access'] = FALSE;
+  }
 }
 
 function crealead_trainings_training_submit_handler($form, &$form_state) {
@@ -208,6 +218,9 @@ function crealead_trainings_after_build($form, &$form_state) {
 
   // Make the field field_previous_status readonly.
   $form['field_previous_status']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
+
+  // Make the field field_recommendations_count readonly.
+  $form['field_recommendations_count']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
 
   return $form;
 }
@@ -495,23 +508,23 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
           }
         }
       }
-      $node->content['interested_switch'][0]['#markup'] = crealead_trainings_get_interest_widget($is_already_interested, $node->nid, $user);
+      $node->content['interested_switch'][0]['#markup'] = crealead_trainings_get_interest_widget($is_already_interested, $node, $user);
      ///////// End of Interested/Not interested switch link handling. //////////
     }
   }
 }
 
-function crealead_trainings_get_interest_widget($is_already_interested=true, $session_nid, $user) {
+function crealead_trainings_get_interest_widget($is_already_interested=true, $session, $user) {
   if ($is_already_interested) {
     $output =
       '<div id="session-switch-wrapper">' .
-        '<a href="/remove_user_from_session/' . $session_nid .'/nojs" class="use-ajax">' .
+        '<a href="/remove_user_from_session/' . $session->nid .'/nojs" class="use-ajax">' .
           REMOVE_FROM_SESSION_TEXT .
         '</a>' .
       '</div>';
   }
   else {
-    $vars = array('session_nid' => $session_nid, 'user' => $user);
+    $vars = array('session_nid' => $session->nid, 'session_uid' => $session->uid, 'user' => $user);
 
     $output =
       '<div id="session-switch-wrapper">' .
@@ -529,6 +542,11 @@ function crealead_trainings_add_user_to_session_form($form, &$form_state, $vars)
   $form['session_nid'] = array(
     '#type' => 'hidden',
     '#value' => $vars['session_nid'],
+  );
+
+  $form['session_uid'] = array(
+    '#type' => 'hidden',
+    '#value' => $vars['session_uid'],
   );
 
   $user = $vars['user'];
@@ -565,6 +583,7 @@ function crealead_trainings_add_user_to_session($form, $form_state) {
 
   global $user;
   $session_nid = $form_state['values']['session_nid'];
+  $session_uid = $form_state['values']['session_uid'];
   $contact = $form_state['values']['user_contact'];
 
   // First, we create a new field collection item from passed on data.
@@ -584,6 +603,22 @@ function crealead_trainings_add_user_to_session($form, $form_state) {
     // Then, we attach it to parent node
     $session = node_load($session_nid);
     $fc_entity->setHostEntity('node', $session);
+
+    // Sprint V3 S8-9 - il faut envoyer un email à l'auteur de la session.
+    // On prépare les données qui seront disponibles dans le hook crealed_trainings_entity_postinsert()
+    // 1 - le nid et le titre de la session pour pouvoir pointer dessus dans le mail.
+    $fc_entity->session_nid = $session_nid;
+    $fc_entity->session_title = $session->title;
+    // 2 - l'email de l'auteur de la session
+    $session_author = user_load($session_uid);
+    $fc_entity->author_mail = $session_author->mail;
+    // 3 - Est-ce que l'auteur de la session veut être prévenu ?
+    $warning = 0;
+    if (isset($session_author->field_interested_users_warning) && $session_author->field_interested_users_warning['und'][0]['value']) {
+      $warning = 1;
+    }
+    $fc_entity->warning = $warning;
+
     $fc_entity->save();
   }
 
@@ -624,12 +659,16 @@ function crealead_trainings_node_presave($node) {
       $training_aims = strip_tags($node->field_training_aims['und'][0]['value']);
     }
 
-    foreach ($node->field_training_related_brands['und'] as $brand) {
-      $wrapper = entity_metadata_wrapper('node', $brand['target_id']);
-      $certifs_labels = $wrapper->field_certifications_labels->value();
-      foreach ($certifs_labels as $certif_label) {
-        $term = taxonomy_term_load($certif_label->tid);
-        $certifs_labels_names .= $term->name . ' ';
+    if (isset($node->field_training_related_brands['und'])) {
+      foreach ($node->field_training_related_brands['und'] as $brand) {
+        $wrapper = entity_metadata_wrapper('node', $brand['target_id']);
+        if(isset($wrapper->field_certifications_labels)) {
+          $certifs_labels = $wrapper->field_certifications_labels->value();
+          foreach ($certifs_labels as $certif_label) {
+            $term = taxonomy_term_load($certif_label->tid);
+            $certifs_labels_names .= $term->name . ' ';
+          }
+        }
       }
     }
     // Store training intro, content, public and objectives into field_training_search technical field.
@@ -861,6 +900,16 @@ function crealead_trainings_views_query_alter(&$view, &$query) {
       $view->query->add_relationship('crealead_funded', $join, 'node');
       $query->add_where(1, 'crealead_funded.field_crealead_funded_value', 1, '=');
     }
+
+    // SORT CRITERIA HANDLING
+    if (isset($_REQUEST['recommended'])) {
+      unset($query->orderby[1]);
+      unset($query->fields['_random_seed']);
+    }
+    else {
+      unset($query->orderby[0]);
+      unset($query->fields['field_data_field_recommended_by_delta']);
+    }
   }
 }
 
@@ -1085,4 +1134,84 @@ function crealead_trainings_block_view($delta = '') {
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_entity_postinsert().
+ */
+function crealead_trainings_entity_postinsert($entity, $entity_type) {
+
+  // Si un utilisateur vient de cliquer "Je suis intéressé" dans la fenêtre popup d'une session...
+  if ($entity_type == 'field_collection_item' && $entity->field_name == 'field_interested_users') {
+//    watchdog('crealead_trainings', 'item_id = ' . $entity->item_id);
+//    watchdog('crealead_trainings', 'session_nid  = ' . $entity->session_nid);
+//    watchdog('crealead_trainings', 'session_title  = ' . $entity->session_title);
+//    watchdog('crealead_trainings', 'author_mail  = ' . $entity->author_mail);
+//    watchdog('crealead_trainings', 'warning  = ' . $entity->warning);
+
+    // et que l'auteur de la session souhaite être prévenu (case à cocher "Alertes sessions de formation" dans son compte utilisateur).
+    if ($entity->warning) {
+      // On envoie un message à l'auteur de cette session
+      // Ce message doit contenir un lien vers la session.
+      crealead_trainings_send_interested_user_email($entity->author_mail, $entity->session_nid, $entity->session_title);
+    }
+  }
+}
+
+function crealead_trainings_send_interested_user_email($email, $session_nid, $session_title) {
+  // Email message building
+  $to = $email;
+  $from = "Crealead <contact@crealead.com>";
+  $reply_to = "contact@crealead.com";
+  $host = $_SERVER['HTTP_HOST'];
+  $protocol = $_SERVER['REQUEST_SCHEME'];
+
+  $mail_subject = '[Crealead Alertes] - Sessions de formation';
+
+  $mail_body =
+    '<div id="crealead-email-body">' .
+      '<br/>' .
+      '<p>Bonjour,</p>'.
+
+      '<p>'.
+        'Une personne est intéressée par votre session de formation ' .
+        '<b><a href="' . $protocol . '://' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
+      '</p>'.
+    '</div>';
+
+  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+
+  $mail_body .=
+    '<br/><br/>' .
+    '<p class="crealead-email-footer">' .
+      '<img src="' . $footer_image_fullpath . '">' .
+    '</p>';
+
+  $params = array(
+    'headers' => array(
+      'Reply-To' => $reply_to,
+    ),
+    'subject' => $mail_subject,
+    'body' => $mail_body,
+  );
+
+  if (drupal_mail('crealead_trainings', 'session_warning_email', $to, language_default(), $params, $from)) {
+    $message = "Sending of warning email for session {$session_nid} to {$email} succeeded";
+  }
+  else {
+    $message = "Sending of warning email for session {$session_nid} failed.";
+  }
+  watchdog('crealead_trainings', $message);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_trainings_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'session_warning_email':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }

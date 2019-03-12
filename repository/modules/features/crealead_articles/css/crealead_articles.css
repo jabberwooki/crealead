@@ -29,3 +29,12 @@
 .page-node-revisions table.diff tbody td {
    padding: 10px;
 }
+
+.field-help-emphasis {
+    font-weight: 700;
+}
+.remaining-chars {
+    color: red;
+    font-size: 120%;
+    font-weight: 700;
+}

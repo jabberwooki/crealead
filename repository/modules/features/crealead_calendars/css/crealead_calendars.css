@@ -1,0 +1,12 @@
+#block-menu-menu-calendriers {
+    margin-bottom: 20px;
+}
+
+#block-menu-menu-calendriers ul li {
+    float: left;
+    font-size: 130%;
+}
+
+#block-menu-menu-calendriers ul li a.active{
+    color: gray;
+}

@@ -110,35 +110,84 @@ function crealead_needs_form_validate($form, &$form_state) {
 }
 
 function crealead_needs_views_pre_view(&$view, &$display_id, &$args) {
-  if ($view->name == 'coes_area_home' && $view->current_display == 'page_1') {
-    // Replace view's header default text by custom text set in the 'Système d'échanges' admin page.
-    // Configuration > Crealead > Système d'échange.
-    $description_text = variable_get('exchanges_description_text', null);
-    if ($description_text) {
-      $header_area_content = $description_text['value'];
-    }
-    else {
-      $header_area_content = 'Le descriptif du système d\'échanges est à rédiger.';
-    }
-    $header = $view->display_handler->get_option('header');
-    $header['area']['content'] = $header_area_content;
+  if ($view->name == 'coes_area_home') {
+    if ($view->current_display == 'page_1') { // RUBRIQUE ECHANGES
+      // Replace view's header default text by custom text set in the 'Système d'échanges' admin page.
+      // Configuration > Crealead > Système d'échange.
+      $description_text = variable_get('exchanges_description_text', NULL);
+      if ($description_text) {
+        $header_area_content = $description_text['value'];
+      }
+      else {
+        $header_area_content = 'Le descriptif du système d\'échanges est à rédiger.';
+      }
+      $header = $view->display_handler->get_option('header');
+      $header['area']['content'] = $header_area_content;
 
-    global $user;
-    $current_user_roles = $user->roles;
-    $allowed_roles = array('administrateur', 'webmaster', 'référent');
-    $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
-    if (!$current_user_allowed_roles) {
-      $header_area_1_content = '';
-    }
-    else {
-      $destination = implode('/', arg());
-      $header_area_1_content = '<div class="doc-link-add">'
-      . '<a href="/node/add/link-to-doc?destination=' . $destination . '">Ajouter un lien vers un document</a>'
-      . '</div>';
-    }
+      global $user;
+      $current_user_roles = $user->roles;
+      $allowed_roles = array('administrateur', 'webmaster', 'référent');
+      $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+      if (!$current_user_allowed_roles) {
+        $header_area_1_content = '';
+      }
+      else {
+        $destination = implode('/', arg());
+        $header_area_1_content = '<div class="doc-link-add">'
+          . '<a href="/node/add/link-to-doc?section=ech&destination=' . $destination . '">Ajouter un lien vers un document</a>'
+          . '</div>';
+      }
 
-    $header['area_1']['content'] = $header_area_1_content;
-    $view->display_handler->set_option('header', $header);
+      $header['area_1']['content'] = $header_area_1_content;
+      $view->display_handler->set_option('header', $header);
+    }
+    elseif ($view->current_display == 'page_2') { // RUBRIQUE COOPINS
+      // Replace view's header default text by custom text set in the 'Système d'échanges' admin page.
+      // Configuration > Crealead > Système d'échange.
+      $description_text = variable_get('coopins_description_text', NULL);
+      if ($description_text) {
+        $header_area_content = $description_text['value'];
+      }
+      else {
+        $header_area_content = 'Le descriptif du système d\'échanges est à rédiger.';
+      }
+      $header = $view->display_handler->get_option('header');
+      $header['area']['content'] = $header_area_content;
+
+      // Link to add new document
+      global $user;
+      $current_user_roles = $user->roles;
+      $allowed_roles = array('administrateur', 'webmaster', 'référent');
+      $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+      if (!$current_user_allowed_roles) {
+        $header_area_1_content = '';
+      }
+      else {
+        $destination = implode('/', arg());
+        $header_area_1_content = '<div class="doc-link-add">'
+          . '<a href="/node/add/link-to-doc?section=coo&destination=' . $destination . '">Ajouter un lien vers un document</a>'
+          . '</div>';
+      }
+      $header['area_1']['content'] = $header_area_1_content;
+
+      // Coopins balance
+      $user_profiles = profile2_load_by_user($user->uid);
+      if (isset($user_profiles['coe_page']->field_coopins_balance)) {
+        $header_area_2_content = 'Mon solde : ';
+        if(!empty($user_profiles['coe_page']->field_coopins_balance['und'][0]['value'])) {
+          $header_area_2_content .= $user_profiles['coe_page']->field_coopins_balance['und'][0]['value'] . ' coopins';
+        }
+        else {
+          $header_area_2_content .= '...';
+        }
+        $header_area_2_content = '<div class="coopins-balance col-md-2 pull-right">' .  $header_area_2_content . '</div>';
+      }
+      else {
+        $header_area_2_content = '';
+      }
+      $header['area_2']['content'] = $header_area_2_content;
+      $view->display_handler->set_option('header', $header);
+    }
   }
 }
 
@@ -301,3 +350,11 @@ function crealead_needs_node_access($node, $op, $account) {
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_needs_form_link_to_doc_node_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($_REQUEST['section'])) {
+    $form['field_section']['und']['#default_value'] = $_REQUEST['section'];
+  }
+}

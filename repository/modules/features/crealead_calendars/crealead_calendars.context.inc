@@ -13,6 +13,40 @@ function crealead_calendars_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'calendars_all';
+  $context->description = '';
+  $context->tag = 'Calendriers';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'espace-co-entrepreneur/calendrier-structure' => 'espace-co-entrepreneur/calendrier-structure',
+        'espace-co-entrepreneur/calendrier-salles*' => 'espace-co-entrepreneur/calendrier-salles*',
+        'espace-co-entrepreneur/calendrier-formations/*' => 'espace-co-entrepreneur/calendrier-formations/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-calendriers' => array(
+          'module' => 'menu',
+          'delta' => 'menu-calendriers',
+          'region' => 'header',
+          'weight' => '5',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Calendriers');
+  $export['calendars_all'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'calendars_structure';
   $context->description = '';
   $context->tag = 'Calendriers';
@@ -23,18 +57,7 @@ function crealead_calendars_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views-structure_calendar-structure' => array(
-          'module' => 'views',
-          'delta' => 'structure_calendar-structure',
-          'region' => 'content',
-          'weight' => '1',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables

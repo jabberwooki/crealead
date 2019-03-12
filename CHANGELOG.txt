@@ -1,3 +1,42 @@
+Crealead 3.10 / 2019-03-12
+==========================
+  * crealead_calendars up: Manual modification in file crealead_calendars.features_block_settings.inc : 'title' => '' replaced by 'title' => '<none'.
+  * crealead_calendars up: Missing 'Calendriers' menu links added.
+  * crealead_calendars up: Closes S8-15: All calendars are now grouped and accessible via a unique coe menu link.
+  * crealead_brands up: Custom code for duplicate achievements cleaning created and stored in file duplicate_achievements_cleaning.php.
+  * crealead_trainings up: S8-9: New fix to email's session link that was still wrong.
+  * crealead_brands up: Fixes bug that duplicate (then multiplicate) achievements as seen in brand's achievement tab when coe edit an achievement.
+  * crealead_trainings up: Completes S8-9: Fixes wrong http link to session send to training session author when user registers for that session.
+  * crealead_trainings up: Closes S8-17: 'Produits et Formations' renamed 'Solutions' in sector brands page.
+  * crealead_coopins up: Completes S8-6: Missing apostrophes addes to all COOPINs occurences.
+  * crealead_brands and crealead_products up: Completes V3 S8-7: Handling of 'Produits' and 'Formations' titles and 'Solutions' tab displays.
+  * shared_content custome module up: V3 S8-7: 'formations' replaced by 'products'.
+  * crealead_products and crealead_trainings up: field_is_structure hidden to non allowed users.
+  * Theme views-view-unformatted--next-sessions.tpl.php up to delete col-md-4 for next sessions in training page.
+  * crealead_brands up: Closes V3 S8-2: random seed's custom reset time changed from 300 to 600 sec.
+  * crealead_articles up: drupal_add_js() for crealed_articles.css removed from crealead_articles_form_article_node_form_alter(): It seems to be already loaded and causes a bug in summary field display (in stating instance, not dev).
+  * crealead_articles up: dpm() function removed.
+  * crealead_articles up: Closes V3 S8-16: article summary field limited to 300 characters, with a visual indication of remaining characters next to the field.
+  * crealead_trainings up: crealead_trainings_update_7002() altered: condition NODE_PUBLISHED removed.
+  * crealead_trainings up: Closes V3 S8-10: Trainings catalog can be sorted by recommendations number.
+  * Template views-bootstrap-grid-plugin-style--coopins-solutions--page-1.tpl.php added to manage layout of coopin's view.
+  * repository/themes/custom/crealead/less/package-lock.json up.
+  * Template views-bootstrap-grid-plugin-style--coopins-solutions--latest-solutions.tpl.php added to manage coopin's layout.
+  * .gitignore up to manage gulp node module.
+  * crealead_profiles, crealead_trainings, crealead_warnings and kcore up: V3 S8-9 Sends email to session owner when user is interested.
+  * crealead_products and crealead_offers up: Closes V3 S8-8: Offers can be linked to products.
+  * crealead_articles, crealead_brands, crealead_products up: V3 S8-7 - Part 2/2 : Products can be shared with others brands.
+  * shared_content module up: Fixes shared content list not properly refresh bug.
+  * shared_content module up: dpm() and watchdog() function removed. shared_content_views_query_alter() function altered to be triggered also when its an ajax request.
+  * shared_content up: Fixes bug: code that gets the brand_id value is altered in shared_content_views_query_alter() function.
+  * crealead_articles, crealead_brands, crealead_trainings up: V3 S8-7 - Part 1/2 : Trainings can be shared with others brands.
+  * kcore up: Missing 'Solde en coopins' header element in 'Onglet COOP'INs' view display exported.
+  * Feature crealead_coopins created and its activation added to profile's crealead.install file.
+  * crealead_needs, crealead_products, crealead_trainings, kcore up: Closes V3 S8-6 : COOPINs page, description, links and blocks created.
+  * crealead_trainings up: Closes story V3 S8-5: field field_structure_training added.
+  * crealead custom theme up: missing style.min.css file re-created.
+  * crealead_products up: Closes story V3 S8-4: fields field_related_sector_brands, field_coopins and field_structure_product added.
+
 Hotfix trainings-crealead-checkboxes-wrong-pagination / 2019-01-11
 ==================================================================
   * Fixes bug on Trainings page : crealead checkboxes become checked when going to next page.
