@@ -246,6 +246,20 @@ body.node-type-training {
   .form-item-title {
     width: 200px;
   }
+  #sort-criteria a {
+    display: block;
+    color: @bleu-lien-crealead;
+    &:before{
+      .glyphicon();
+      content: "\e87B";
+      color: @bleu-lien-crealead;
+    }
+    &:hover {
+      &:before {
+        text-decoration: none;
+      }
+    }
+  }
   .views-bootstrap-grid-plugin-style {
     > .row {
       .group-wrapper-teaser {
