@@ -1,3 +1,9 @@
+Crealead 3.10.1 / 2019-03-12
+============================
+  * gitignore up in order to not follow crealead/less/package.json file.
+  * kcore.js up to better manager class active in brand tabs.
+  * Template views-bootstrap-grid-plugin-style--coopins-solutions--structure-solutions.tpl.php added to manage structure solutions layout.
+
 Crealead 3.10 / 2019-03-12
 ==========================
   * crealead_calendars up: Manual modification in file crealead_calendars.features_block_settings.inc : 'title' => '' replaced by 'title' => '<none'.
