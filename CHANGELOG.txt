@@ -1,3 +1,7 @@
+Hotfix missing-structure-solutions-pagination / 2019-05-07
+==========================================================
+  * crealead_coopins up : missing pagination in view coopins_solutions/structure_solutions added.
+
 Crealead 3.10.1 / 2019-03-12
 ============================
   * gitignore up in order to not follow crealead/less/package.json file.
