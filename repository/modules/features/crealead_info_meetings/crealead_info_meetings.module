@@ -193,8 +193,8 @@ function crealead_info_meetings_views_pre_render(&$view) {
     drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
     foreach ($view->result as $result) {
       // Old field attendee
-      $result->field_field_attendee[0]['rendered']['#markup'] =
-        ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : 'non';
+//      $result->field_field_attendee[0]['rendered']['#markup'] =
+//        ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : 'non';
 
       // New field attendance
       if (isset($result->field_field_attendance) && !empty($result->field_field_attendance)) {
