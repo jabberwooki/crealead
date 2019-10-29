@@ -1129,13 +1129,11 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: Présent à la réunion */
-  $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
-  $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
-  $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
-  $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
-  $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
-  $handler->display->display_options['fields']['field_attendee']['empty'] = 'non';
+  /* Field: Registration: Présence */
+  $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
@@ -1163,27 +1161,33 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Registration: Présent à la réunion (field_attendee) */
-  $handler->display->display_options['filters']['field_attendee_value']['id'] = 'field_attendee_value';
-  $handler->display->display_options['filters']['field_attendee_value']['table'] = 'field_data_field_attendee';
-  $handler->display->display_options['filters']['field_attendee_value']['field'] = 'field_attendee_value';
-  $handler->display->display_options['filters']['field_attendee_value']['relationship'] = 'registration_rel';
-  $handler->display->display_options['filters']['field_attendee_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['operator_id'] = 'field_attendee_value_op';
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['label'] = 'Présent';
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['operator'] = 'field_attendee_value_op';
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['identifier'] = 'field_attendee_value';
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_attendee_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Registration: Présence (field_attendance) */
+  $handler->display->display_options['filters']['field_attendance_value']['id'] = 'field_attendance_value';
+  $handler->display->display_options['filters']['field_attendance_value']['table'] = 'field_data_field_attendance';
+  $handler->display->display_options['filters']['field_attendance_value']['field'] = 'field_attendance_value';
+  $handler->display->display_options['filters']['field_attendance_value']['relationship'] = 'registration_rel';
+  $handler->display->display_options['filters']['field_attendance_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_attendance_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['operator_id'] = 'field_attendance_value_op';
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['label'] = 'Présence';
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['description'] = 'Présence';
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['operator'] = 'field_attendance_value_op';
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['identifier'] = 'field_attendance_value';
+  $handler->display->display_options['filters']['field_attendance_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     14479344 => 0,
+    199363405 => 0,
     103860121 => 0,
-    191976793 => 0,
-    259028912 => 0,
+    227964678 => 0,
+    157083709 => 0,
     7178059 => 0,
+    259028912 => 0,
     157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
     31497918 => 0,
+    155486910 => 0,
     231346920 => 0,
     193262079 => 0,
   );
@@ -1193,6 +1197,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_city_value']['field'] = 'field_registrant_city_value';
   $handler->display->display_options['filters']['field_registrant_city_value']['relationship'] = 'registration_rel';
   $handler->display->display_options['filters']['field_registrant_city_value']['operator'] = 'regular_expression';
+  $handler->display->display_options['filters']['field_registrant_city_value']['group'] = 1;
   $handler->display->display_options['filters']['field_registrant_city_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['operator_id'] = 'field_registrant_city_value_op';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['label'] = 'Ville (ex : mont|sete|sète)';
@@ -1225,6 +1230,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_how_value']['field'] = 'field_registrant_how_value';
   $handler->display->display_options['filters']['field_registrant_how_value']['relationship'] = 'registration_rel';
   $handler->display->display_options['filters']['field_registrant_how_value']['operator'] = 'regular_expression';
+  $handler->display->display_options['filters']['field_registrant_how_value']['group'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['operator_id'] = 'field_registrant_how_value_op';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['label'] = 'Prescripteur';
@@ -1256,6 +1262,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_info_meeting_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_info_meeting_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['operator_id'] = 'field_info_meeting_date_value_op';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['expose']['label'] = 'Après le';
@@ -1282,6 +1289,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['field'] = 'field_info_meeting_date_value';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_info_meeting_date_value_1']['group'] = 1;
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['operator_id'] = 'field_info_meeting_date_value_1_op';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['expose']['label'] = 'Avant le';
@@ -1307,6 +1315,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['field'] = 'field_registrant_dom_activite_tid';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['relationship'] = 'registration_rel';
+  $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['operator_id'] = 'field_registrant_dom_activite_tid_op';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['expose']['label'] = 'Domaine d\'activité';
@@ -2151,7 +2160,6 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.'),
     t('dd-mm-yy'),
     t('Date réunion'),
     t('Projet d\'activité'),
-    t('non'),
     t('Ville (ex : mont|sete|sète)'),
     t('La barre verticale "|" signifie "ou".'),
     t('Ex : bouche|connaiss|ami|col|relation|perso'),
