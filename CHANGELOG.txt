@@ -1,3 +1,11 @@
+Hotfix warning-email-recipients-as-bcc / 2019-10-29
+---------------------------------------------------
+  * crealead_warnings up: recipient emails placed in 'Bcc' instead of 'To'.
+
+Hotfix info-meetings-attendance-stats / 2019-10-29
+--------------------------------------------------
+  * crealead_info_meetings up: View info_meetings/registration_stats updated: field_attendee replaced by field_attendance both in results table and exposed filters.
+
 Hotfix missing-structure-solutions-pagination / 2019-05-07
 ==========================================================
   * crealead_coopins up : missing pagination in view coopins_solutions/structure_solutions added.

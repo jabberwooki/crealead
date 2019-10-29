@@ -318,7 +318,9 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
 function crealead_warnings_send_warning_email($email_addresses, $node, $op, $warnable_content_types) {
 
   // Email message building
-  $to = $email_addresses;
+  //$to = $email_addresses;
+  $to = 'undisclosed-recipients:;';
+  $bcc = implode(',', $email_addresses);
   //$from = variable_get('site_mail');
 //  $from = "no-reply@crealead.com";
   $from = "Crealead <contact@crealead.com>";
@@ -347,6 +349,7 @@ function crealead_warnings_send_warning_email($email_addresses, $node, $op, $war
 
   $params = array(
     'headers' => array(
+      'Bcc' => $bcc,
       'Reply-To' => $reply_to,
     ),
     'subject' => $mail_subject,
