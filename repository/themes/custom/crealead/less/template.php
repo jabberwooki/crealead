@@ -367,3 +367,24 @@ function crealead_pager($variables) {
     ));
   }
 }
+
+function crealead_preprocess_node(&$vars) {
+  // If the node is of type "article" or "news", add the OG image tag.
+  // Thanks to Danny Sipos from Web Omelette and his tutorial at :
+  // https://www.webomelette.com/drupal-open-graph-meta-tags.
+  if (in_array($vars['type'], array('article','news'))) {
+    // Inside this conditional, we define and add our OG tags
+    $img = field_get_items('node', $vars['node'], 'field_image');
+    $img_url = file_create_url($img[0]['uri']);
+
+    $og_image = array(
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'og:image',
+        'content' => $img_url,
+      ),
+    );
+
+    drupal_add_html_head($og_image, 'og image');
+  }
+}
