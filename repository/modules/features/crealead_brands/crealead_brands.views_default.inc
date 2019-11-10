@@ -3056,6 +3056,7 @@ function crealead_brands_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'marques-sectorielles';
 
   /* Display: En-tête de marque sectorielle */

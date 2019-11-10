@@ -6,9 +6,9 @@
   Drupal.behaviors.sector_brands = {
     attach: function (context, settings) {
       // Make the main menu item "Les marques sectorielles" not clickable.
-      $("ul.menu.navbar-nav > li.last > a").click(function(e){
-        e.preventDefault();
-      });
+      // $("ul.menu.navbar-nav > li.last > a").click(function(e){
+      //   e.preventDefault();
+      // });
 
       // manage open-close mecanism on sector brands
       if ($(".view-sector-brands .views-field-description .field-content").length){
