@@ -3109,6 +3109,102 @@ function crealead_brands_views_default_views() {
   $export['sector_brands'] = $view;
 
   $view = new view();
+  $view->name = 'sector_brands_coes_area';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Marques sectorielles (Espace Coes)';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Documents à consulter';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Pictogramme */
+  $handler->display->display_options['fields']['field_pictogramme']['id'] = 'field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['table'] = 'field_data_field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['field'] = 'field_pictogramme';
+  $handler->display->display_options['fields']['field_pictogramme']['label'] = '';
+  $handler->display->display_options['fields']['field_pictogramme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pictogramme']['type'] = 'ds_taxonomy_view_mode';
+  /* Field: Content: Url du document */
+  $handler->display->display_options['fields']['field_document_url']['id'] = 'field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['table'] = 'field_data_field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['field'] = 'field_document_url';
+  $handler->display->display_options['fields']['field_document_url']['label'] = '';
+  $handler->display->display_options['fields']['field_document_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_document_url']['click_sort_column'] = 'url';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'link_to_doc' => 'link_to_doc',
+  );
+  /* Filter criterion: Content: Rubrique (field_section) */
+  $handler->display->display_options['filters']['field_section_value']['id'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['table'] = 'field_data_field_section';
+  $handler->display->display_options['filters']['field_section_value']['field'] = 'field_section_value';
+  $handler->display->display_options['filters']['field_section_value']['value'] = array(
+    'sec' => 'sec',
+  );
+
+  /* Display: Bloc liens vers docs marques sectorielles */
+  $handler = $view->new_display('block', 'Bloc liens vers docs marques sectorielles', 'sector_brands_links_list');
+  $translatables['sector_brands_coes_area'] = array(
+    t('Master'),
+    t('Documents à consulter'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Bloc liens vers docs marques sectorielles'),
+  );
+  $export['sector_brands_coes_area'] = $view;
+
+  $view = new view();
   $view->name = 'themes';
   $view->description = '';
   $view->tag = 'default';

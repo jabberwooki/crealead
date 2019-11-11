@@ -1,0 +1,44 @@
+.view-sector-brands-coes-area .view-content {
+    display: table;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-sector-brands-coes-area .view-content .views-row {
+    display: table-row;
+}
+
+.view-sector-brands-coes-area .view-content .views-row .views-field {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.view-sector-brands-coes-area .view-content .views-row .views-field.views-field-field-pictogramme {
+    width: 4%;
+}
+
+.view-sector-brands-coes-area .view-content .views-row .views-field.views-field-edit-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-sector-brands-coes-area .view-content .views-row .views-field.views-field-delete-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-coes-area-home.view-display-id-page_3 .doc-link-add {
+    margin-top: 20px;
+}
+
+.view-sector-brands-coes-area .view-content .views-row:hover {
+    background-color: #efefef;
+}
+
+.view-display-id-sector_brands_links_list {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}

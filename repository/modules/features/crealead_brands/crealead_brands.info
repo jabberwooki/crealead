@@ -325,6 +325,7 @@ features[views_view][] = certifications_labels
 features[views_view][] = clients
 features[views_view][] = field_collection_coes
 features[views_view][] = sector_brands
+features[views_view][] = sector_brands_coes_area
 features[views_view][] = themes
 features_exclude[dependencies][field_slideshow] = field_slideshow
 features_exclude[dependencies][better_exposed_filters] = better_exposed_filters
