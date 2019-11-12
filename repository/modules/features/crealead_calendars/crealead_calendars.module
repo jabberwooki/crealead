@@ -11,7 +11,7 @@ include_once 'crealead_calendars.features.inc';
  */
 function crealead_calendars_init() {
   $request_path = request_path();
-  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-')) {
+  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-') || $request_path == 'espace-co-entrepreneur/informations') {
     drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars.css');
   }
 }
@@ -57,14 +57,17 @@ function crealead_calendars_get_rooms_tids() {
  */
 function crealead_calendars_views_pre_render(&$view) {
   if ($view->name == 'structure_calendar') {
-    if (user_access('create structure_event content')) {
-      $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
-//      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+    if ($view->current_display == 'structure_month') {
+      if (user_access('create structure_event content')) {
+        $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
+  //      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+        $add_link = 'tchi';
+      }
+      else {
+        $add_link = '';
+      }
+      $view->header['area']->options['content'] = str_replace('LIEN_AJOUTER', $add_link, $view->header['area']->options['content']);
     }
-    else {
-      $add_link = '';
-    }
-    $view->header['area']->options['content'] = str_replace('LIEN_AJOUTER', $add_link, $view->header['area']->options['content']);
   }
   elseif ($view->name == 'rooms_calendar') {
     if (user_access('create room_event content')) {

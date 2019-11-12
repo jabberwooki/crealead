@@ -79,9 +79,6 @@ function crealead_newsflashes_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -32,6 +32,12 @@ function crealead_newsflashes_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'views-structure_calendar-cob' => array(
+          'module' => 'views',
+          'delta' => 'structure_calendar-cob',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
