@@ -269,7 +269,9 @@ function crealead_profiles_get_allowed_profiles($user) {
     'referent',
     'pole_gestion',
     'assistant',
-    'provider'
+    'provider',
+    'ca',
+    'dup',
   );
 
   // User roles
@@ -280,7 +282,6 @@ function crealead_profiles_get_allowed_profiles($user) {
   // Fetch user roles machine name and store it if is a profile_role.
   foreach($user_roles as $role) {
     $roleObject = user_role_load_by_name($role);
-
     if ($roleObject->machine_name == 'entrepreneur') {
       $profile_user_roles[] = 'coe_page';
     }
@@ -296,6 +297,7 @@ function crealead_profiles_get_allowed_profiles($user) {
       $profile_user_roles[] = $profile . '_page';
     }
   }
+
   return $profile_user_roles;
 }
 

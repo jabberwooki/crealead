@@ -88,6 +88,16 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'edit any ca_page profile'.
+  $permissions['edit any ca_page profile'] = array(
+    'name' => 'edit any ca_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'edit any coe_page profile'.
   $permissions['edit any coe_page profile'] = array(
     'name' => 'edit any coe_page profile',
@@ -102,6 +112,16 @@ function crealead_profiles_user_default_permissions() {
   // Exported permission: 'edit any direction_page profile'.
   $permissions['edit any direction_page profile'] = array(
     'name' => 'edit any direction_page profile',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit any dup_page profile'.
+  $permissions['edit any dup_page profile'] = array(
+    'name' => 'edit any dup_page profile',
     'roles' => array(
       'administrateur' => 'administrateur',
       'webmaster' => 'webmaster',
@@ -148,6 +168,15 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'edit own ca_page profile'.
+  $permissions['edit own ca_page profile'] = array(
+    'name' => 'edit own ca_page profile',
+    'roles' => array(
+      'CA' => 'CA',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'edit own coe_page profile'.
   $permissions['edit own coe_page profile'] = array(
     'name' => 'edit own coe_page profile',
@@ -162,6 +191,15 @@ function crealead_profiles_user_default_permissions() {
     'name' => 'edit own direction_page profile',
     'roles' => array(
       'direction' => 'direction',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'edit own dup_page profile'.
+  $permissions['edit own dup_page profile'] = array(
+    'name' => 'edit own dup_page profile',
+    'roles' => array(
+      'DUP' => 'DUP',
     ),
     'module' => 'profile2',
   );
@@ -224,6 +262,16 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'view any ca_page profile'.
+  $permissions['view any ca_page profile'] = array(
+    'name' => 'view any ca_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'view any coe_page profile'.
   $permissions['view any coe_page profile'] = array(
     'name' => 'view any coe_page profile',
@@ -237,6 +285,16 @@ function crealead_profiles_user_default_permissions() {
   // Exported permission: 'view any direction_page profile'.
   $permissions['view any direction_page profile'] = array(
     'name' => 'view any direction_page profile',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view any dup_page profile'.
+  $permissions['view any dup_page profile'] = array(
+    'name' => 'view any dup_page profile',
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -283,6 +341,15 @@ function crealead_profiles_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'view own ca_page profile'.
+  $permissions['view own ca_page profile'] = array(
+    'name' => 'view own ca_page profile',
+    'roles' => array(
+      'CA' => 'CA',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'view own coe_page profile'.
   $permissions['view own coe_page profile'] = array(
     'name' => 'view own coe_page profile',
@@ -297,6 +364,15 @@ function crealead_profiles_user_default_permissions() {
     'name' => 'view own direction_page profile',
     'roles' => array(
       'direction' => 'direction',
+    ),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own dup_page profile'.
+  $permissions['view own dup_page profile'] = array(
+    'name' => 'view own dup_page profile',
+    'roles' => array(
+      'DUP' => 'DUP',
     ),
     'module' => 'profile2',
   );

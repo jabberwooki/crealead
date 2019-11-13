@@ -55,6 +55,8 @@ $altered_profile_labels = array (
   'management_page' => 'Gestionnaires',
   'assistant_page' => 'Assistant.e.s',
   'provider_page' => 'Entrepreneur.e.s prestataires',
+  'ca_page' => 'Conseil d\'administration',
+  'dup_page' => 'DUP',
 );
 
 // print '<a href="#' . $profile_machine_name . '">' . $altered_profile_labels[$profile_machine_name] . '</a>';

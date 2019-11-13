@@ -71,6 +71,15 @@ function crealead_profiles_default_profile2_type() {
     "data" : { "registration" : 0, "use_page" : 0 },
     "rdf_mapping" : []
   }');
+  $items['ca_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "ca_page",
+    "label" : "Profil CA",
+    "weight" : "6",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
   $items['coe_page'] = entity_import('profile2_type', '{
     "userCategory" : true,
     "userView" : true,
@@ -86,6 +95,15 @@ function crealead_profiles_default_profile2_type() {
     "type" : "direction_page",
     "label" : "Profil direction",
     "weight" : "5",
+    "data" : { "registration" : 0, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  $items['dup_page'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "dup_page",
+    "label" : "Profil DUP",
+    "weight" : "7",
     "data" : { "registration" : 0, "use_page" : 0 },
     "rdf_mapping" : []
   }');

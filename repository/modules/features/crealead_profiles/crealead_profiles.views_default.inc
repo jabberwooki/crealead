@@ -2116,11 +2116,13 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'profile';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'direction_page' => 'direction_page',
-    'referent_page' => 'referent_page',
-    'management_page' => 'management_page',
     'assistant_page' => 'assistant_page',
+    'direction_page' => 'direction_page',
+    'management_page' => 'management_page',
     'provider_page' => 'provider_page',
+    'referent_page' => 'referent_page',
+    'ca_page' => 'ca_page',
+    'dup_page' => 'dup_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
@@ -2247,6 +2249,22 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['sorts']['label']['table'] = 'profile_type';
   $handler->display->display_options['sorts']['label']['field'] = 'label';
   $handler->display->display_options['sorts']['label']['relationship'] = 'type';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'assistant_page' => 'assistant_page',
+    'direction_page' => 'direction_page',
+    'management_page' => 'management_page',
+    'provider_page' => 'provider_page',
+    'referent_page' => 'referent_page',
+    'ca_page' => 'ca_page',
+    'dup_page' => 'dup_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['displays'] = array(
     'structure_profiles' => 'structure_profiles',
     'default' => 0,
