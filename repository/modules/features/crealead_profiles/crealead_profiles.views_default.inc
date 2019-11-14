@@ -461,6 +461,36 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'user';
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Rôles';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/trombinoscope';
   $translatables['coe_directory'] = array(
     t('Master'),
@@ -486,6 +516,7 @@ function crealead_profiles_views_default_views() {
     t('Prénom'),
     t('Nom'),
     t('Statut'),
+    t('Rôles'),
   );
   $export['coe_directory'] = $view;
 

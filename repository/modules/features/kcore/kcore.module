@@ -285,3 +285,26 @@ function kcore_block_view_alter(&$data, $block) {
     $data['content'] = array();
   }
 }
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kcore_form_views_exposed_form_coe_directory_page_alter(&$form, &$form_state, $form_id) {
+  dpm('trombi');
+
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kcore_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['#id']) && $form['#id'] == 'views-exposed-form-coe-directory-page') {
+    $roles_to_keep = array('Tout', 'associé','entrepreneur prestataire','CA','DUP');
+    foreach($form['rid']['#options'] as $key=>$option) {
+      if (!in_array($option, $roles_to_keep)) {
+        unset($form['rid']['#options'][$key]);
+      }
+    }
+  }
+}
