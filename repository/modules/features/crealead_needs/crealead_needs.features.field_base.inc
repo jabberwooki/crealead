@@ -330,6 +330,7 @@ function crealead_needs_field_default_field_bases() {
         'coo' => 'COOP\'INS',
         'dup' => 'DUP',
         'sec' => 'Marques sectorielles',
+        'col' => 'Collectifs',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
