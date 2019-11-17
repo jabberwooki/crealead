@@ -2395,6 +2395,67 @@ function crealead_brands_views_default_views() {
     'brand' => 'brand',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Marques d'un coe dans son profil */
+  $handler = $view->new_display('block', 'Marques d\'un coe dans son profil', 'coe_brands2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Marques';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Co-entrepreneurs (field_brand_coes) */
+  $handler->display->display_options['relationships']['field_brand_coes_value']['id'] = 'field_brand_coes_value';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['table'] = 'field_data_field_brand_coes';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['field'] = 'field_brand_coes_value';
+  $handler->display->display_options['relationships']['field_brand_coes_value']['delta'] = '-1';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field collection item: Entrepreneur (field_brand_coe) */
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['id'] = 'field_brand_coe_target_id';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['table'] = 'field_data_field_brand_coe';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['field'] = 'field_brand_coe_target_id';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['relationship'] = 'field_brand_coes_value';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_brand_coe_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'brand' => 'brand',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $translatables['brands'] = array(
     t('Master'),
     t('Les co-entrepreneurs de Crealead'),
@@ -2452,6 +2513,7 @@ function crealead_brands_views_default_views() {
     t('Marques d\'un événement (toutes)'),
     t('Marque à afficher dans le formulaire de création/modification d\'un événement.'),
     t('Marques d\'un produit (toutes)'),
+    t('Marques d\'un coe dans son profil'),
   );
   $export['brands'] = $view;
 

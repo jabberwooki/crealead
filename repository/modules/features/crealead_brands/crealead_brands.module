@@ -660,6 +660,26 @@ function crealead_brands_views_pre_render(&$view) {
 
     $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
+
+  if ($view->name == 'brands' && $view->current_display == 'coe_brands') {
+
+    $user_id = arg(1);
+    $user_coe_profile = profile2_load_by_user($user_id, 'coe_page');
+
+    if (!empty($user_coe_profile->field_brands_order)) {
+      $user_ordered_brand_ids = explode('|', $user_coe_profile->field_brands_order['und'][0]['value']);
+
+      $user_ordered_brands = [];
+      foreach ($user_ordered_brand_ids as $brand_id) {
+        foreach ($view->result as $item) {
+          if ($item->nid == $brand_id) {
+            $user_ordered_brands[] = $item;
+          }
+        }
+      }
+      $view->result = $user_ordered_brands;
+    }
+  }
 }
 
 /**
