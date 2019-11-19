@@ -19,6 +19,17 @@ function crealead_calendars_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'administer structure events'.
+  $permissions['administer structure events'] = array(
+    'name' => 'administer structure events',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'crealead_calendars',
+  );
+
   // Exported permission: 'clear google_rooms_calendar feeds'.
   $permissions['clear google_rooms_calendar feeds'] = array(
     'name' => 'clear google_rooms_calendar feeds',
