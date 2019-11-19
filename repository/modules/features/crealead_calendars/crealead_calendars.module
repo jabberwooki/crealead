@@ -277,16 +277,17 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
 function crealead_send_next_structure_events($structure_events, $mail_subject=null, $real_sending=FALSE, $test_addresses=NULL) {
   if ($real_sending) {
     $email_addresses = crealead_get_users_emails();
+    $mail_subject = '[Crealead] ' . $mail_subject;
 
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
-    $email_addresses = array('christophe.espiau@gmail.com');
+    //$email_addresses = array('christophe.espiau@gmail.com');
   }
   else {
     // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
-    $test_addresses = array('christophe.espiau@gmail.com');
+    //$test_addresses = array('christophe.espiau@gmail.com');
 
     $email_addresses = $test_addresses;
-
+    $mail_subject = '[Crealead TEST] Evénements du mois à venir';
   }
 
   // Construction du message email
@@ -296,48 +297,32 @@ function crealead_send_next_structure_events($structure_events, $mail_subject=nu
   $bcc = implode(',', $email_addresses);
 
   $host = $_SERVER['HTTP_HOST'];
-  $structure_event_url = 'http://' . $host . '/content/';
+  $structure_event_url = 'http://' . $host . '/node/';
   $structure_events_url = 'http://' . $host . '/espace-co-entrepreneur/informations';
 
   $mail_body = '<p>Bonjour à tous,</p>'
     . '<p>Voici la liste des prochains événements publiés dans le calendrier structure de Crealead.</p>'
-    . '<p>Si ce message ne s\'affiche pas correctement, allez voir les événements sur la page <a href="'. $structure_events_url . '">Informations</a> de l\'espace co-entrepreneurs.</p>';
+    . '<p>Si ce message ne s\'affiche pas correctement, allez voir les événements sur la page '
+    . '<a href="' . $structure_events_url . '">Informations</a>'
+    . ' de l\'espace co-entrepreneurs.</p>';
 
-  $mail_body .= '<table id="crealead-structure-events-list">';
+  $mail_body .= '<table id="crealead-structure-events-list" style="width: 50%;">';
 
-  foreach ($structure_events as $day=>$events) {
-    $mail_body .= '<tr class="events-day"><td colspan="3">' . $day . '</td>';
+  foreach ($structure_events as $day => $events) {
+    $mail_body .= '<tr class="events-day"><td colspan="3" class="events-date" style="font-size: 110%; font-weight: 600; border-bottom: 1px solid #ccc; margin-top: 20px;">' . $day . '</td>';
     foreach ($events as $event) {
       $mail_body .= '<tr class="events-sublist">'
-        . '<td class="empty"></td>'
-        . '<td class="event-time">' . $event['start_time'] . ' - ' . $event['end_time'] . '</td>'
-        . '<td class="event-title-location">' . $event['title'] . ($event['location'] ? ' (' . $event['location'] . ')' : '') . '</td>'
+        . '<td class="event-time" style="width: 20%; padding-left: 20px;">' . $event['start_time'] . ' - ' . $event['end_time'] . '</td>'
+        . '<td class="event-title"><a href="' . $structure_event_url . $event['nid'] . '">' . $event['title'] . '</a></td>'
+        . '<td class="event-location" style="width: 20%">' . ($event['location'] ? ' (' . $event['location'] . ')' : '') . '</td>'
         . '</tr>';
     }
-
-
-//    $mail_body .= '<tr class="nf_item">';
-//
-//    $mail_body .= '<td class="nf-population">' . $item['population'] . '</td>';
-//    $mail_body .=
-//      '<td class="nf-title" style="padding-left:20px;">' .
-//      '<a href="http://' . $host . '/node/' . $item['nid'] . '">' . $item['title'] . '</a>' .
-//      '</td>';
-//
-//    $mail_body .= '<tr><td colspan="2"></td></tr>';
-//    $mail_body .= '</tr>';
-//
-//    if ($form_state_values['full-body-yes-no']) {
-//      $mail_body .= '<tr class="nf_item_body">';
-//      $mail_body .= '<td></td>';
-//      $mail_body .= '<td class="nf-body">' . $item['body'] . '</td>';
-//      $mail_body .= '</tr>';
-//    }
+    $mail_body .= '<tr class="spacer"><td colspan="3" style="height: 10px;"></td>';
   }
 
   $mail_body .= '</table>';
 
-  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+  $footer_image_fullpath = drupal_get_path('module', 'kcore') . '/images/bandeau-crealead.jpg';
 
   $mail_body .=
     '<br/><br/>' .
@@ -361,7 +346,7 @@ function crealead_send_next_structure_events($structure_events, $mail_subject=nu
   $verb = 'ont été envoyés';
   $recipient = 'aux co-entrepreneurs';
 
-  if (drupal_mail('crealead_structure_events', 'next_structure_events_list', $to, language_default(), $params, $from)) {
+  if (drupal_mail('crealead_calendars', 'next_structure_events_list', $to, language_default(), $params, $from)) {
     if ($real_sending) {
 
     }

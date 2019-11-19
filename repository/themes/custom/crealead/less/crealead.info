@@ -30,6 +30,7 @@ regions[page_bottom]    = 'Page bottom'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/style.min.css
+stylesheets[all][] = css/mail.css
 
 
 ;;;;;;;;;;;;;;;;;;;;;

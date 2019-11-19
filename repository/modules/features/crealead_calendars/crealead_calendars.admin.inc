@@ -147,7 +147,7 @@ function crealead_structure_events_manual_sending_form() {
   return $form;
 }
 
-function crealead_structure_events_manual_sending_form_submit($form, &$form_state) {dpm($form_state['values']);
+function crealead_structure_events_manual_sending_form_submit($form, &$form_state) {
   if(reset($form_state['values']['crealead_structure_events_0'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_0'];
   }
@@ -159,102 +159,112 @@ function crealead_structure_events_manual_sending_form_submit($form, &$form_stat
   }
 
   $structure_events = crealead_structure_events_get_next();
+  $day_grouped_events = crealead_get_day_grouped_events($structure_events, $selected_events_nids);
+
+  crealead_send_next_structure_events($day_grouped_events, $form_state['values']['structure_events_manual_sending_subject'], TRUE);
+}
+
+function crealead_get_day_grouped_events($structure_events, $selected_events_nids=NULL) {
+  $day_grouped_events = array();
+  $days_grouped_selected_events = array();
 
   foreach ($structure_events as $event_group=>$events) {
     foreach($events as $key=>$event) {
-      if (!in_array($event['nid'], $selected_events_nids)) {
-        unset($structure_events[$event_group][$key]);
+      if (isset($selected_events_nids) && in_array($event['nid'], $selected_events_nids)) {
+        $days_grouped_selected_events[$event['start_date']][] = $event;
+      }
+      else {
+        $day_grouped_events[$event['start_date']][] = $event;
       }
     }
-    if (sizeof($structure_events[$event_group]) == 0) {
-      unset($structure_events[$event_group]);
-    }
   }
 
-  $structure_events = reset($structure_events);
-  $day_grouped_events = array();
-
-  foreach($structure_events as $event) {
-    $day_grouped_events[$event['start_date']][] = $event;
+  if (isset($selected_events_nids)) {
+    return $days_grouped_selected_events;
   }
 
-  crealead_send_next_structure_events($day_grouped_events, $form_state['values']['structure_events_manual_sending_subject']);
+  return $day_grouped_events;
 }
 
 // TAB 3 - Test sending functions.
 function crealead_structure_events_test_sending_form() {
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p class="structure-events-test-sending-intro">'
-      . 'Ce formulaire permet de tester l\'envoi des événements Structure.<br/>'
-      . '</p>',
+  $structure_events = crealead_structure_events_get_next();
+  $events_number = crealead_structure_events_number($structure_events);
+
+  if ($events_number == 0) {
+    $disabled = TRUE;
+    $text = '<p class="events-test-sending-intro">' . 'Il n\'y a actuellement aucun événement Structure à venir ..' . '</p>';
+  }
+  else {
+    $disabled = FALSE;
+
+    $form['intro'] = array(
+      '#markup' => '<p>'. 'Ce formulaire permet de tester l\'envoi des événements Structure par email.' . '</p>',
+    );
+
+    $form['emails'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Adresses email',
+      '#description' => 'Entrez une ou plusieurs adresses email valides, séparées par une <em><b>virgule</b></em> ou un <em><b>point virgule</b></em>.',
+    );
+
+    $plural = 's';
+    if ($events_number == 1) {
+      $plural = '';
+    }
+    $text = 'Il y a <span class="newsflashes-number">' . $events_number . '</span> événement' . $plural . ' à tester.';
+  }
+
+  $form['submit'] = array (
+    '#type' => 'submit',
+    '#value' => t('Envoyer le test'),
+    '#disabled' => $disabled,
+    '#prefix' => '<div class="events-test-sending-text">' . $text . '</div>',
   );
-
-
-//  $newsflashes_number = crealead_newsflashes_get_latest();
-//
-//  $form = array();
-//  if (!$newsflashes_number) {
-//    $disabled = TRUE;
-//    $newsflashes_text = '<p class="newsflashes-test-sending-intro">' . 'Il n\'y a actuellement aucune brève à tester. Vous devez créer au moins une brève pour pouvoir faire un test.' . '</p>';
-//  }
-//  else {
-//    $disabled = FALSE;
-//
-//    $form['intro'] = array(
-//      '#markup' => '<p>'. 'Ce formulaire permet de tester l\'envoi des brèves par email.<br/> '
-//        . 'Les brèves envoyées dans un test ne sont pas marquées comme envoyées. '
-//        . 'Elles sont donc renvoyées à chaque test tant qu\un envoi manuel ou automatique n\a pas eu lieu.'
-//        . '</p>',
-//    );
-//    $form['emails'] = array(
-//      '#type' => 'textfield',
-//      '#title' => 'Adresses email',
-//      '#description' => 'Entrez une ou plusieurs adresses email valides, séparées par une <em><b>virgule</b></em> ou un <em><b>point virgule</b></em>.',
-//    );
-//
-//    $plural = 's';
-//    if ($newsflashes_number == 1) {
-//      $plural = '';
-//    }
-//    $newsflashes_text = 'Il y a <span class="newsflashes-number">' . $newsflashes_number . '</span> brève' . $plural . ' à tester.';
-//  }
-//
-//  $form['submit'] = array (
-//    '#type' => 'submit',
-//    '#value' => t('Envoyer le test'),
-//    '#disabled' => $disabled,
-//    '#prefix' => '<div class="newsflashes-test-sending-text">' . $newsflashes_text . '</div>',
-//  );
-
-
 
   return $form;
 }
 
-//function crealead_newsflashes_test_sending_form_validate($form, &$form_state){
-//  $addresses = crealead_newsflashes_get_emails_adresses($form_state['values']['emails']);
-//  if (empty($addresses)) {
-//    form_set_error('newsflashes', 'Vous devez saisir au moins une adresse email.');
-//  }
-//  else {
-//    $wrong_adresses = array();
-//    foreach ($addresses as $address) {
-//      if (!valid_email_address($address)) {
-//        $wrong_adresses[] = $address;
-//      }
-//    }
-//    if (!empty($wrong_adresses)) {
-//      form_set_error('newsflashes', t('Une ou plusieurs adresses sont invalides : @addresses.', array('@addresses' => implode(' ', $wrong_adresses))));
-//    }
-//  }
-//}
-//
-//function crealead_newsflashes_test_sending_form_submit($form, &$form_state) {
-//  $test_addresses = crealead_newsflashes_get_emails_adresses($form_state['values']['emails']);
-//  crealead_send_latest_newsflashes(FALSE, $test_addresses);
-//}
-//
-//function crealead_newsflashes_get_emails_adresses($adresses_field) {
-//  return preg_split('/[\s,;]+/', $adresses_field, -1, PREG_SPLIT_NO_EMPTY);
-//}
+function crealead_structure_events_number($structure_events) {
+  $number = 0;
+  foreach ($structure_events as $event_group) {
+    foreach ($event_group as $events) {
+      $number++;
+    }
+  }
+
+  return $number;
+}
+
+function crealead_structure_events_test_sending_form_validate($form, &$form_state){
+  $addresses = crealead_calendars_get_emails_adresses($form_state['values']['emails']);
+
+  if (empty($addresses)) {
+    form_set_error('Structure events', 'Vous devez saisir au moins une adresse email.');
+  }
+  else {
+    $wrong_addresses = array();
+    foreach ($addresses as $address) {
+      if (!valid_email_address($address)) {
+        $wrong_addresses[] = $address;
+      }
+    }
+
+    if (!empty($wrong_addresses)) {
+      form_set_error('Structure events', t('Une ou plusieurs adresses sont invalides : @addresses.', array('@addresses' => implode(' ', $wrong_addresses))));
+    }
+  }
+}
+
+function crealead_structure_events_test_sending_form_submit($form, &$form_state) {
+  $structure_events = crealead_structure_events_get_next();
+  $day_grouped_events = crealead_get_day_grouped_events($structure_events);
+  $test_addresses = crealead_calendars_get_emails_adresses($form_state['values']['emails']);
+
+  crealead_send_next_structure_events($day_grouped_events, FALSE, FALSE, $test_addresses);
+}
+
+function crealead_calendars_get_emails_adresses($adresses_field) {
+  return preg_split('/[\s,;]+/', $adresses_field, -1, PREG_SPLIT_NO_EMPTY);
+}
