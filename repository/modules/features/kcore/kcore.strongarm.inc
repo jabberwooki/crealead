@@ -99,7 +99,7 @@ function kcore_strongarm() {
     'mobile_breakpoint' => '768',
     'popup_agree_button_message' => 'OK, I agree',
     'show_disagree_button' => TRUE,
-    'popup_disagree_button_message' => 'No, give me more info',
+    'popup_disagree_button_message' => 'Non, je veux avoir plus d\'information',
     'disagree_button_label' => 'No, thanks',
     'withdraw_enabled' => 1,
     'withdraw_button_on_info_popup' => 0,
