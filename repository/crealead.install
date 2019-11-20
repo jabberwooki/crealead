@@ -373,3 +373,11 @@ function crealead_update_7022() {
 function crealead_update_7023() {
   module_enable(array('crealead_coopins'));
 }
+
+/**
+ * Activate eu_cookie_compliance contrib module.
+ */
+function crealead_update_7024() {
+  module_enable(array('eu_cookie_compliance'));
+}
+
