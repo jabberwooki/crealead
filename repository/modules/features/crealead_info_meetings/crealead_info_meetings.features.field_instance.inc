@@ -578,7 +578,7 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -626,7 +626,7 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
         'label_help_description' => '',
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -773,6 +773,46 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
       ),
       'type' => 'text_textfield',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-info_meeting_registration-field_privacy_policy_acceptance'.
+  $field_instances['registration-info_meeting_registration-field_privacy_policy_acceptance'] = array(
+    'bundle' => 'info_meeting_registration',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 13,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'registration',
+    'field_name' => 'field_privacy_policy_acceptance',
+    'label' => 'Acceptation politique de confidentialité',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'label_help_description' => '',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 4,
     ),
   );
 
@@ -1582,6 +1622,7 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Acceptation politique de confidentialité');
   t('Civilité');
   t('Code postal');
   t('Comment avez-vous connu Crealead');
