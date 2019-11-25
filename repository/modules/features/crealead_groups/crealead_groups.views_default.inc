@@ -74,6 +74,9 @@ function crealead_groups_views_default_views() {
   /* Display: Bloc */
   $handler = $view->new_display('block', 'Bloc', 'bg_block');
   $handler->display->display_options['display_comment'] = 'Bloc présent sur la page Collectifs (bg_block = business groups block).';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
 
   /* Display: Onglet Collectifs */
   $handler = $view->new_display('page', 'Onglet Collectifs', 'page_1');
