@@ -110,6 +110,11 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
     $form['field_registrant_phone']['#weight'] = 35;
 //    unset($form['field_registrant_phone']);
   }
+
+  // Privacy Policy Acceptance checkbox handling.
+  $form['field_privacy_policy_acceptance']['und']['#title'] = 'J\'ai pris connaissance de la '
+    . '<a href="/politique-de-confidentialite" target="_blank">Politique de Confidentialité</a>'
+  . ' du site crealead.com';
 }
 
 function crealead_info_meetings_menu_local_tasks_alter(&$data, $router_item, $root_path) {

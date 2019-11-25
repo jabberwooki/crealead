@@ -72,7 +72,7 @@
       }
 
       // Positionnement de l'onglet Réglages confidentialité
-      console.log($('.eu-cookie-withdraw-tab').css('left'));
+      //console.log($('.eu-cookie-withdraw-tab').css('left'));
 
     }
   };
