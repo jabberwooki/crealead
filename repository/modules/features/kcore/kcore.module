@@ -11,6 +11,7 @@ include_once 'kcore.features.inc';
  */
 function kcore_init() {
   drupal_add_js(drupal_get_path('module','kcore') . '/js/kcore.js');
+  drupal_add_css(drupal_get_path('module','kcore') . '/css/eu_cookies.css', array('group' => CSS_THEME));
   drupal_add_js(array('creaeleadCoeArea' => array('userLoggedIn' => user_is_logged_in())), 'setting');
   drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/crealead_intra_manage_titles.js', array(
     'type' => 'file',

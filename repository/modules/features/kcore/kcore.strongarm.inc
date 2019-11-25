@@ -72,7 +72,7 @@ function kcore_strongarm() {
   $strongarm->name = 'eu_cookie_compliance';
   $strongarm->value = array(
     'popup_enabled' => 1,
-    'method' => 'categories',
+    'method' => 'opt_in',
     'info_template' => 'new',
     'cookie_categories' => '',
     'enable_save_preferences_button' => 1,
@@ -97,22 +97,22 @@ function kcore_strongarm() {
       'format' => 'plain_text',
     ),
     'mobile_breakpoint' => '768',
-    'popup_agree_button_message' => 'OK, I agree',
+    'popup_agree_button_message' => 'J\'accepte les cookies',
     'show_disagree_button' => TRUE,
     'popup_disagree_button_message' => 'Non, je veux avoir plus d\'information',
-    'disagree_button_label' => 'No, thanks',
+    'disagree_button_label' => 'Non, merci',
     'withdraw_enabled' => 1,
     'withdraw_button_on_info_popup' => 0,
     'withdraw_message' => array(
-      'value' => '<h2>We use cookies on this site to enhance your user experience</h2>
+      'value' => '<h2>Ce site utilise des cookies pour améliorer votre expérience utilisateur.</h2>
 
-<p>You have given your consent for us to set cookies.</p>
+<p>Vous avez donné votre accord pour enregistrer des cookies.</p>
 ',
       'format' => 'full_html',
     ),
     'withdraw_tab_button_label' => 'Réglages confidentialité',
     'withdraw_action_button_label' => 'Retirer votre accord',
-    'popup_agreed_enabled' => 1,
+    'popup_agreed_enabled' => 0,
     'popup_hide_agreed' => 0,
     'popup_agreed' => array(
       'value' => '<h2>Merci d\'accepter les cookies</h2>
@@ -127,12 +127,12 @@ function kcore_strongarm() {
     'popup_link_new_window' => 0,
     'popup_position' => FALSE,
     'use_bare_css' => 0,
-    'popup_text_hex' => 'fff',
+    'popup_text_hex' => 'ffffff',
     'popup_bg_hex' => 'A12740',
     'popup_height' => '80',
     'popup_width' => '100%',
     'fixed_top_position' => 1,
-    'popup_delay' => '1000',
+    'popup_delay' => '700',
     'disagree_do_not_show_popup' => 0,
     'reload_page' => 0,
     'popup_scrolling_confirmation' => FALSE,
