@@ -306,15 +306,15 @@ function crealead_send_next_structure_events($structure_events, $mail_subject=nu
     . '<a href="' . $structure_events_url . '">Informations</a>'
     . ' de l\'espace co-entrepreneurs.</p>';
 
-  $mail_body .= '<table id="crealead-structure-events-list" style="width: 50%;">';
+  $mail_body .= '<table id="crealead-structure-events-list" style="width: 80%;">';
 
   foreach ($structure_events as $day => $events) {
-    $mail_body .= '<tr class="events-day"><td colspan="3" class="events-date" style="font-size: 110%; font-weight: 600; border-bottom: 1px solid #ccc; margin-top: 20px;">' . $day . '</td>';
+    $mail_body .= '<tr class="events-day"><td colspan="3" class="events-date" style="font-size: 110%; font-weight: 600; border-bottom: 1px solid #ccc; margin-top: 22px;">' . $day . '</td>';
     foreach ($events as $event) {
       $mail_body .= '<tr class="events-sublist">'
         . '<td class="event-time" style="width: 20%; padding-left: 20px;">' . $event['start_time'] . ' - ' . $event['end_time'] . '</td>'
         . '<td class="event-title"><a href="' . $structure_event_url . $event['nid'] . '">' . $event['title'] . '</a></td>'
-        . '<td class="event-location" style="width: 20%">' . ($event['location'] ? ' (' . $event['location'] . ')' : '') . '</td>'
+        . '<td class="event-location" style="width: 22%">' . ($event['location'] ? ' (' . $event['location'] . ')' : '') . '</td>'
         . '</tr>';
     }
     $mail_body .= '<tr class="spacer"><td colspan="3" style="height: 10px;"></td>';

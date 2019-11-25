@@ -10,17 +10,17 @@
 }
 
 #crealead-structure-events-list {
-    width: 50%;
+    width: 80%;
 }
 #crealead-structure-events-list .events-date {
     border-bottom: 1px solid #ccc;
 }
 #crealead-structure-events-list .event-time {
-    width: 20%;
+    width: 22%;
 }
 #crealead-structure-events-list .event-title {
 
 }
 #crealead-structure-events-list .event-location {
-    width: 20%;
+    width: 22%;
 }
