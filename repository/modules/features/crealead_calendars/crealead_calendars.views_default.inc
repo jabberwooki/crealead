@@ -735,7 +735,7 @@ function crealead_calendars_views_default_views() {
   /* Display: Evénements Structure (bloc) */
   $handler = $view->new_display('block', 'Evénements Structure (bloc)', 'structure');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Calendrier Structure';
+  $handler->display->display_options['title'] = 'Calendrier Vie Coopérative';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -809,7 +809,7 @@ function crealead_calendars_views_default_views() {
   /* Display: Evénements Structure (page) */
   $handler = $view->new_display('page', 'Evénements Structure (page)', 'structure_month');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Calendrier structure';
+  $handler->display->display_options['title'] = 'Calendrier Vie Coopérative';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -1119,7 +1119,7 @@ function crealead_calendars_views_default_views() {
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'cob');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Evénements Structure';
+  $handler->display->display_options['title'] = 'Evénements Vie Coopérative';
   $handler->display->display_options['display_comment'] = 'coes area block (cob)';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-views-structure-calendar-coes-area';
@@ -1277,11 +1277,10 @@ function crealead_calendars_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Evénements Structure (bloc)'),
-    t('Calendrier Structure'),
+    t('Calendrier Vie Coopérative'),
     t('<a href="/node/add/structure_event">LIEN_AJOUTER</a> '),
     t('All'),
     t('Evénements Structure (page)'),
-    t('Calendrier structure'),
     t('Tout'),
     t('Month'),
     t('Week'),
@@ -1291,6 +1290,7 @@ function crealead_calendars_views_default_views() {
     t('Evénements Structure'),
     t('iCal'),
     t('Bloc espace coes'),
+    t('Evénements Vie Coopérative'),
     t('Bloc des événements Structure à venir'),
     t('Rechercher'),
     t('Réinitialiser'),

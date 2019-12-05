@@ -64,7 +64,6 @@ features[field_instance][] = node-structure_event-field_theme_breve
 features[menu_custom][] = menu-calendriers
 features[menu_links][] = menu-calendriers_calendrier-des-formations:espace-co-entrepreneur/calendrier-formations/mois
 features[menu_links][] = menu-calendriers_calendrier-des-salles:espace-co-entrepreneur/calendrier-salles
-features[menu_links][] = menu-calendriers_calendrier-structure:espace-co-entrepreneur/calendrier-structure
 features[node][] = room_event
 features[node][] = structure_event
 features[taxonomy][] = crealead_rooms

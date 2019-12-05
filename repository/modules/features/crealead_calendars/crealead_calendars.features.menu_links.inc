@@ -50,32 +50,11 @@ function crealead_calendars_menu_default_menu_links() {
     'weight' => 5,
     'customized' => 1,
   );
-  // Exported menu link: menu-calendriers_calendrier-structure:espace-co-entrepreneur/calendrier-structure.
-  $menu_links['menu-calendriers_calendrier-structure:espace-co-entrepreneur/calendrier-structure'] = array(
-    'menu_name' => 'menu-calendriers',
-    'link_path' => 'espace-co-entrepreneur/calendrier-structure',
-    'router_path' => 'espace-co-entrepreneur/calendrier-structure',
-    'link_title' => 'Calendrier structure',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-calendriers_calendrier-structure:espace-co-entrepreneur/calendrier-structure',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Calendrier des formations');
   t('Calendrier des salles');
-  t('Calendrier structure');
 
   return $menu_links;
 }
