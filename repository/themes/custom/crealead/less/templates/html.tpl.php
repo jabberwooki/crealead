@@ -59,6 +59,27 @@
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <!-- COOKIEPRO BANNER AND PREFERENCES CENTER -->
+  <!-- https://app.cookiepro.com/app/#/module/welcome -->
+  <?php $host =$_SERVER['HTTP_HOST']; ?>
+  <?php if ($host == 'www.crealead.com'): ?>
+    <!-- OneTrust Cookies Consent Notice start - PROD VERSION -->
+    <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8584f0eb-1f70-4e85-a344-340ced7c59e1"></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end -->
+  <?php  else: ?>
+    <!-- OneTrust Cookies Consent Notice start - TEST VERSION -->
+    <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8584f0eb-1f70-4e85-a344-340ced7c59e1-test"></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end -->
+  <?php endif; ?>
+  <!-- END OF COOKIEPRO BANNER AND PREFERENCES CENTER -->
+
   <?php print $scripts; ?>
 
   <!-- Facebook Pixel Code -->
