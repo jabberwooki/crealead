@@ -377,7 +377,18 @@ function crealead_update_7023() {
 /**
  * Activate eu_cookie_compliance contrib module.
  */
-function crealead_update_7024() {
-  module_enable(array('eu_cookie_compliance'));
-}
+//function crealead_update_7024() {
+//  module_enable(array('eu_cookie_compliance'));
+//}
+
+/**
+ * ******************   IMPORTANT ! ********************************************
+ * Le hook_update 7024 ci-dessus a été désactivé avant déploiement en prod
+ * parce que le module eu_cookie_compliance a été testé mais non utilisé au final.
+ *
+ * Lors de la prochaine implémentation du hook_update_N(),
+ * il faudra utiliser le nombre 7025
+ * sinon, ça ne sera pas pris en compte par le serveur de recette sur lequel
+ * le hook_update_7024() a déjà été appliqué.
+ */
 
