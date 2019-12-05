@@ -102,7 +102,7 @@ function crealead_profiles_default_profile2_type() {
     "userCategory" : true,
     "userView" : true,
     "type" : "dup_page",
-    "label" : "Profil DUP",
+    "label" : "Profil CSE",
     "weight" : "7",
     "data" : { "registration" : 0, "use_page" : 0 },
     "rdf_mapping" : []
