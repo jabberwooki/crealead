@@ -22,7 +22,7 @@ function crealead_profiles_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Trombinoscope';
+  $handler->display->display_options['title'] = 'Trombinoscope des co-entrepreneurs';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'role';
@@ -336,6 +336,15 @@ function crealead_profiles_views_default_views() {
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Introduction';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Seuls apparaissent ici les co-entrepreneurs dont la fiche individuelle a été validée par leur référent.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Profile: Type */
@@ -466,6 +475,10 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['relationship'] = 'user';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    'all' => 'all',
+    157083709 => '157083709',
+  );
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['label'] = 'Rôles';
@@ -491,10 +504,11 @@ function crealead_profiles_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
+  $handler->display->display_options['filters']['rid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/trombinoscope';
   $translatables['coe_directory'] = array(
     t('Master'),
-    t('Trombinoscope'),
+    t('Trombinoscope des co-entrepreneurs'),
     t('plus'),
     t('Appliquer'),
     t('Réinitialiser'),
@@ -509,10 +523,13 @@ function crealead_profiles_views_default_views() {
     t('suivant ›'),
     t('dernier »'),
     t('Utilisateur'),
+    t('Trombinoscope'),
     t('more'),
     t('Chercher'),
     t('Options avancées'),
     t('Select any filter and click on Apply to see results'),
+    t('Introduction'),
+    t('Seuls apparaissent ici les co-entrepreneurs dont la fiche individuelle a été validée par leur référent.'),
     t('Prénom'),
     t('Nom'),
     t('Statut'),
