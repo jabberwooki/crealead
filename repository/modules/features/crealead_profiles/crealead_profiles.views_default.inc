@@ -2065,7 +2065,7 @@ function crealead_profiles_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Equipe Structure';
+  $handler->display->display_options['title'] = 'Equipe Support';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'role';
@@ -2249,7 +2249,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['sorts']['label']['table'] = 'profile_type';
   $handler->display->display_options['sorts']['label']['field'] = 'label';
   $handler->display->display_options['sorts']['label']['relationship'] = 'type';
-  $handler->display->display_options['path'] = 'equipe-structure';
+  $handler->display->display_options['path'] = 'equipe-support';
 
   /* Display: Onglets page Structure */
   $handler = $view->new_display('attachment', 'Onglets page Structure', 'profile_tabs');
@@ -2319,7 +2319,7 @@ function crealead_profiles_views_default_views() {
   );
   $translatables['structure_team'] = array(
     t('Master'),
-    t('Equipe Structure'),
+    t('Equipe Support'),
     t('plus'),
     t('Appliquer'),
     t('Réinitialiser'),
