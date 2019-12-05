@@ -215,6 +215,7 @@ features[variable][] = taxonomy_menu_vocab_parent_business_sectors
 features[variable][] = taxonomy_menu_vocab_parent_themes
 features[views_view][] = coe_directory
 features[views_view][] = entrepreneurs
+features[views_view][] = instances
 features[views_view][] = structure_team
 features_exclude[box][crealead_link_coe_list] = crealead_link_coe_list
 features_exclude[box][crealead_links_coe] = crealead_links_coe

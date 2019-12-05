@@ -217,6 +217,9 @@ function crealead_profiles_views_pre_render(&$view) {
   if ($view->name == 'structure_team' && $view->current_display == 'structure_profiles') {
     drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_structure_profiles.js');
   }
+  if ($view->name == 'instances' && $view->current_display == 'instances_profiles') {
+    drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_instances_profiles.js');
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
