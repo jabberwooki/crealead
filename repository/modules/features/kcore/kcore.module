@@ -190,13 +190,14 @@ travailler ensemble.</span></div>';
       $block['subject'] = '';
 
       $sponsors = array(
+        'fond-social-europeen' => array(
+          'url' => '',
+          //'logo-file' => 'fds-social-europeen_506x130.png',
+          'logo-file' => 'fds-social-europeen_506x105_transparent.png'
+        ),
         'caisse-epargne' => array(
           'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
           'logo-file' => 'ca-lr_263x57.png'
-        ),
-        'fond-social-europeen' => array(
-          'url' => '',
-          'logo-file' => 'fds-social-europeen_506x130.png'
         ),
         'prefecture' => array(
           'url' => '',
