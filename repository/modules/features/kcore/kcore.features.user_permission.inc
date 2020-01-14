@@ -232,17 +232,6 @@ function kcore_user_default_permissions() {
     'module' => 'ds_ui',
   );
 
-  // Exported permission: 'administer EU Cookie Compliance popup'.
-  $permissions['administer EU Cookie Compliance popup'] = array(
-    'name' => 'administer EU Cookie Compliance popup',
-    'roles' => array(
-      'administrateur' => 'administrateur',
-      'pôle gestion' => 'pôle gestion',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'eu_cookie_compliance',
-  );
-
   // Exported permission: 'administer account settings'.
   $permissions['administer account settings'] = array(
     'name' => 'administer account settings',
@@ -791,32 +780,6 @@ function kcore_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'display EU Cookie Compliance popup'.
-  $permissions['display EU Cookie Compliance popup'] = array(
-    'name' => 'display EU Cookie Compliance popup',
-    'roles' => array(
-      'CA' => 'CA',
-      'DUP' => 'DUP',
-      'administrateur' => 'administrateur',
-      'anonymous user' => 'anonymous user',
-      'assistant' => 'assistant',
-      'associé' => 'associé',
-      'authenticated user' => 'authenticated user',
-      'canditat' => 'canditat',
-      'certif LR' => 'certif LR',
-      'debug' => 'debug',
-      'direction' => 'direction',
-      'entrepreneur' => 'entrepreneur',
-      'entrepreneur prestataire' => 'entrepreneur prestataire',
-      'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
-      'référent' => 'référent',
-      'webmaster' => 'webmaster',
-      'éditeur gazette' => 'éditeur gazette',
-    ),
-    'module' => 'eu_cookie_compliance',
   );
 
   // Exported permission: 'display drupal links'.
