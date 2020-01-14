@@ -1,0 +1,44 @@
+.view-business-groups .view-content {
+    display: table;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-business-groups .view-content .views-row {
+    display: table-row;
+}
+
+.view-business-groups .view-content .views-row .views-field {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.view-business-groups .view-content .views-row .views-field.views-field-field-pictogramme {
+    width: 4%;
+}
+
+.view-business-groups .view-content .views-row .views-field.views-field-edit-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-business-groups .view-content .views-row .views-field.views-field-delete-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-business-groups.view-display-id-page_1 .doc-link-add {
+    margin-top: 20px;
+}
+
+.view-business-groups .view-content .views-row:hover {
+    background-color: #efefef;
+}
+
+.view-display-id-bg_links_list {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}

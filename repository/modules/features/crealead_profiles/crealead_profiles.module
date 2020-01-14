@@ -217,6 +217,9 @@ function crealead_profiles_views_pre_render(&$view) {
   if ($view->name == 'structure_team' && $view->current_display == 'structure_profiles') {
     drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_structure_profiles.js');
   }
+  if ($view->name == 'instances' && $view->current_display == 'instances_profiles') {
+    drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_instances_profiles.js');
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
@@ -269,7 +272,9 @@ function crealead_profiles_get_allowed_profiles($user) {
     'referent',
     'pole_gestion',
     'assistant',
-    'provider'
+    'provider',
+    'ca',
+    'dup',
   );
 
   // User roles
@@ -280,7 +285,6 @@ function crealead_profiles_get_allowed_profiles($user) {
   // Fetch user roles machine name and store it if is a profile_role.
   foreach($user_roles as $role) {
     $roleObject = user_role_load_by_name($role);
-
     if ($roleObject->machine_name == 'entrepreneur') {
       $profile_user_roles[] = 'coe_page';
     }
@@ -296,6 +300,7 @@ function crealead_profiles_get_allowed_profiles($user) {
       $profile_user_roles[] = $profile . '_page';
     }
   }
+
   return $profile_user_roles;
 }
 
@@ -310,5 +315,66 @@ function crealead_profiles_entity_view_alter(&$build, $type) {
     if ($user->uid != 1 && empty($user_allowed_roles)) {
       unset($build['field_coopins_balance']);
     }
+  }
+}
+
+function crealead_profiles_form_profile2_edit_coe_page_form_alter(&$form, &$form_state) {
+  drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands_sortable.css');
+
+  // Seek user's brands list (title and nid only)
+  $user_brands = views_get_view_result('brands', 'coe_brands2', $form['#user']->uid);
+
+  // If user has more than one brand.
+  if (!empty($user_brands) && count($user_brands) > 1) {
+    drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brands_sortable.js');
+
+    // Seek the previous brands order, stored in field_brands_order (looks like 125|658|445).
+    $user_ordered_brand_ids =
+      explode('|', $form['profile_coe_page']['field_brands_order']['und'][0]['value']['#default_value']);
+
+    // If brands have never been sorted, $user_ordered_brands_ids array contains an empty string as unique value.
+    // So we must display brands with the user's previous order only if this array has more than one value.
+    if (count($user_ordered_brand_ids) > 1) {
+
+      $user_ordered_brands = [];
+      foreach ($user_ordered_brand_ids as $brand_id) {
+        foreach ($user_brands as $item) {
+          if ($item->nid == $brand_id) {
+            $user_ordered_brands[] = $item;
+          }
+        }
+      }
+
+      $brands_to_display = $user_ordered_brands;
+    }
+    // Else we just display brands as stored in the database (default alphabetical order).
+    else {
+      $brands_to_display = $user_brands;
+    }
+
+    $brands_list = '<div id="coe-brands-list">';
+    $brands_list .= '<div id="coe-brands-list-title">Mes marques</div>';
+    $brands_list .= '<div id="coe-brands-list-description" class="description">'
+      . 'Vous pouvez modifier l\'ordre d\'affichage de vos marques par un glisser/déposer vers la droite ou vers la gauche'
+      . '</div>';
+    $brands_list .= '<div id="sortable-brands-container">';
+    $brands_list .= '<ul id="sortable-brands">';
+    foreach ($brands_to_display as $brand) {
+      $brands_list .= '<li id="' . $brand->nid . '">' . $brand->node_title . '</li>';
+    }
+    $brands_list .= '</ul>';
+    $brands_list .= '<div id="brands-order-saving-notice" class="description">'
+      . 'Vos modifications seront prises en compte qu\'après avoir cliqué sur <b>Enregistrer</b>'
+      . '</div>';
+    $brands_list .='</div></div>';
+
+    $field_brands_order_weight = $form['profile_coe_page']['field_brands_order']['#weight'];
+
+    $form['profile_coe_page']['field_brands_sorting'] = array(
+      '#markup' => $brands_list,
+      '#weight' => $field_brands_order_weight,
+    );
+
+    $form['profile_coe_page']['field_brands_order']['#weight'] = $field_brands_order_weight + 1;
   }
 }

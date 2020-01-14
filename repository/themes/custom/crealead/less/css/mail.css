@@ -8,3 +8,19 @@
 #crealead-newsflashes-list th {
     text-align: left;
 }
+
+#crealead-structure-events-list {
+    width: 80%;
+}
+#crealead-structure-events-list .events-date {
+    border-bottom: 1px solid #ccc;
+}
+#crealead-structure-events-list .event-time {
+    width: 22%;
+}
+#crealead-structure-events-list .event-title {
+
+}
+#crealead-structure-events-list .event-location {
+    width: 22%;
+}

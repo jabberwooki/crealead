@@ -118,6 +118,18 @@
           }
         });
       }
+
+      // Privacy policy acceptance checkbox handling.
+      var disabledStatus;
+      // When form is initially displayed or re-displayed after validation failure.
+      $('#edit-field-privacy-policy-acceptance-und').is(':checked') ? disabledStatus = false : disabledStatus = true;
+      $('.node-info-meeting #registration-form button#edit-submit').prop('disabled', disabledStatus);
+      // Handles click event on acceptance checkbox
+      $('#edit-field-privacy-policy-acceptance-und').click(function () {
+        $(this).is(':checked') ? disabledStatus = false : disabledStatus = true;
+        $('.node-info-meeting #registration-form button#edit-submit').prop('disabled', disabledStatus);
+      });
+
     }
   };
 }(jQuery));

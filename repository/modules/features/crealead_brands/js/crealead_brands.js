@@ -119,6 +119,33 @@ jQuery(function($){
           $(".group-solution-col2").removeClass("col-lg-6").addClass("col-lg-12");
         }
       }
+
+      /////////////// Affichage/Effacement du bandeau Crealead //////////////
+      // But : Privilégier la bannière de la marque.
+      var brandTopMargin = $('.content-header').css('margin-top');
+      $('.content-header').prepend('<div class="restore-header" style="text-align: center; margin-bottom: 10px; cursor: pointer"></div>');
+
+      // Etape 1 - On cache la bannière au bout de timeBefore secondes en la faisant glisser vers le haut en slideUpTime secondes.
+      var timeBefore = 1000;
+      var slideUpTime = 2000;
+
+      setTimeout(function hideCrealeadHeader() {
+        $('#dummybodyid').removeClass('navbar-is-fixed-top');
+        $('#navbar').removeClass('navbar-fixed-top');
+        $('.content-header').css('margin-top', '0px');
+        $('#navbar').slideUp(slideUpTime);
+        $('.content-header .restore-header').text('Cliquer ici pour réafficher la bannière Crealead');
+      }, timeBefore);
+
+      // Etape 2 - On peut faire réapparaitre le bandean Crealead en cliquant sur le lien tout en haut de page.
+      $('.restore-header').click(function () {
+        console.log('clic sur le bouton');
+        $('#dummybodyid').addClass('navbar-is-fixed-top');
+        $('#navbar').addClass('navbar-fixed-top');
+        $('.content-header').css('margin-top', brandTopMargin);
+        $('.content-header .restore-header').text('');
+        $('#navbar').slideDown();
+      });
     }
   };
 }(jQuery))

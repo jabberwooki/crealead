@@ -89,3 +89,10 @@ function kcore_update_7011() {
 function kcore_update_7012() {
   module_enable(array('shared_content'));
 }
+
+/**
+ * Activate metatag_opengraph module.
+ */
+function kcore_update_7013() {
+  module_enable(array('metatag_opengraph'));
+}

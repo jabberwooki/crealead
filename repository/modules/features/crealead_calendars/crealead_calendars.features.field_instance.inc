@@ -624,6 +624,58 @@ function crealead_calendars_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-structure_event-field_theme_breve'.
+  $field_instances['node-structure_event-field_theme_breve'] = array(
+    'bundle' => 'structure_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'colorbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_theme_breve',
+    'label' => 'Thème',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_select',
       'weight' => 2,
     ),
   );
@@ -634,6 +686,7 @@ function crealead_calendars_field_default_field_instances() {
   t('Description');
   t('Lieu');
   t('Salle');
+  t('Thème');
 
   return $field_instances;
 }

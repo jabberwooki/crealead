@@ -54,6 +54,16 @@ function crealead_brands_menu() {
     'access callback' => TRUE,
   );
 
+  $items['admin/config/crealead/sector_brands'] = array(
+    'title' => 'Marques sectorielles',
+    'description' => 'Paramétrage de la page Marques Sectorielles (espace coes).',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_sector_brands_settings_form'),
+    'access arguments' => array('administer crealead settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_brands.admin.inc',
+  );
+
   return $items;
 }
 
@@ -650,6 +660,26 @@ function crealead_brands_views_pre_render(&$view) {
 
     $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
+
+  if ($view->name == 'brands' && $view->current_display == 'coe_brands') {
+
+    $user_id = arg(1);
+    $user_coe_profile = profile2_load_by_user($user_id, 'coe_page');
+
+    if (!empty($user_coe_profile->field_brands_order)) {
+      $user_ordered_brand_ids = explode('|', $user_coe_profile->field_brands_order['und'][0]['value']);
+
+      $user_ordered_brands = [];
+      foreach ($user_ordered_brand_ids as $brand_id) {
+        foreach ($view->result as $item) {
+          if ($item->nid == $brand_id) {
+            $user_ordered_brands[] = $item;
+          }
+        }
+      }
+      $view->result = $user_ordered_brands;
+    }
+  }
 }
 
 /**
@@ -1005,5 +1035,46 @@ function crealead_brands_block_view_alter(&$data, $block) {
         $data['content']['field_lien_formulaire_contact'][0]['#markup'] = '';
       }
     }
+  }
+}
+
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function crealead_brands_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'coes_area_home' && $view->current_display == 'page_3') { // RUBRIQUE MARQUES SECTORIELLES
+
+    drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands_sector_brands_coes.css');
+
+      // Replace view's header default text by custom text set in the 'Marques sectorielles' admin page.
+      // Configuration > Crealead > Marques sectorielles.
+    $description_text = variable_get('sector_brands_description_text', NULL);
+    if ($description_text) {
+      $header_area_content = $description_text['value'];
+    }
+    else {
+      $header_area_content = 'Le descriptif du système d\'échanges est à rédiger.';
+    }
+    $header = $view->display_handler->get_option('header');
+    $header['area']['content'] = $header_area_content;
+
+    // Link to add new document
+    global $user;
+    $current_user_roles = $user->roles;
+    $allowed_roles = array('administrateur', 'webmaster', 'référent');
+    $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+    if (!$current_user_allowed_roles && $user->uid != 1) {
+      $header_area_1_content = '';
+    }
+    else {
+      $destination = implode('/', arg());
+      $header_area_1_content = '<div class="doc-link-add">'
+        . '<a href="/node/add/link-to-doc?section=sec&destination=' . $destination . '">Ajouter un lien vers un document</a>'
+        . '</div>';
+    }
+    $header['area_1']['content'] = $header_area_1_content;
+
+    $view->display_handler->set_option('header', $header);
   }
 }

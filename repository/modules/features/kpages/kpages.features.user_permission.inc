@@ -45,6 +45,7 @@ function kpages_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',

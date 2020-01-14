@@ -10,27 +10,6 @@
 function crealead_brands_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_les-marquesbr-sectorielles:marques-sectorielles.
-  $menu_links['main-menu_les-marquesbr-sectorielles:marques-sectorielles'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'marques-sectorielles',
-    'router_path' => 'marques-sectorielles',
-    'link_title' => 'Les marques<br />sectorielles',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'html' => 1,
-      'identifier' => 'main-menu_les-marquesbr-sectorielles:marques-sectorielles',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 1,
-    'weight' => 50,
-    'customized' => 1,
-  );
   // Exported menu link: main-menu_nos-prestatairesbret-artisans:annuaire-entrepreneurs.
   $menu_links['main-menu_nos-prestatairesbret-artisans:annuaire-entrepreneurs'] = array(
     'menu_name' => 'main-menu',
@@ -76,7 +55,6 @@ function crealead_brands_menu_default_menu_links() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Les marques<br />sectorielles');
   t('Nos prestataires<br/>et artisans');
   t('Thématiques');
 

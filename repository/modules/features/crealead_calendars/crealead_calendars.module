@@ -11,7 +11,7 @@ include_once 'crealead_calendars.features.inc';
  */
 function crealead_calendars_init() {
   $request_path = request_path();
-  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-')) {
+  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-') || $request_path == 'espace-co-entrepreneur/informations') {
     drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars.css');
   }
 }
@@ -57,14 +57,17 @@ function crealead_calendars_get_rooms_tids() {
  */
 function crealead_calendars_views_pre_render(&$view) {
   if ($view->name == 'structure_calendar') {
-    if (user_access('create structure_event content')) {
-      $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
-//      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+    if ($view->current_display == 'structure_month') {
+      if (user_access('create structure_event content')) {
+        $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
+  //      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+        $add_link = 'tchi';
+      }
+      else {
+        $add_link = '';
+      }
+      $view->header['area']->options['content'] = str_replace('LIEN_AJOUTER', $add_link, $view->header['area']->options['content']);
     }
-    else {
-      $add_link = '';
-    }
-    $view->header['area']->options['content'] = str_replace('LIEN_AJOUTER', $add_link, $view->header['area']->options['content']);
   }
   elseif ($view->name == 'rooms_calendar') {
     if (user_access('create room_event content')) {
@@ -116,4 +119,267 @@ function crealead_calendars_room_event_redirect(&$form, &$form_state) {
   $form_state['redirect'] = array(
     'espace-co-entrepreneur/calendrier-salles/' . $year_month,
   );
+}
+
+/**
+ * Implements hook_menu().
+ */
+/**
+ * Implements hook_permission().
+ */
+function crealead_calendars_permission() {
+  return array(
+    'administer structure events' => array(
+      'title' => t('Administrer Structure events'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_calendars_menu() {
+  $items['admin/config/crealead/structure-events'] = array(
+    'title' => 'Evénements Structure',
+    'description' => 'Paramétrage des envois de événements Structure par email.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_structure_events_settings_form'),
+    'access arguments' => array('administer structure events'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'crealead_calendars.admin.inc',
+  );
+  $items['admin/config/crealead/structure-events/auto'] = array(
+    'title' => 'Paramétrage des envois automatiques',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+  $items['admin/config/crealead/structure-events/manual'] = array(
+    'title' => 'Envoi manuel',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_structure_events_manual_sending_form'),
+    'access arguments' => array('administer structure events'),
+    'file' => 'crealead_calendars.admin.inc',
+  );
+  $items['admin/config/crealead/structure-events/test'] = array(
+    'title' => 'Test',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('crealead_structure_events_test_sending_form'),
+    'access arguments' => array('administer structure events'),
+    'file' => 'crealead_calendars.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function crealead_calendars_cron() {
+  // Determine the value of the current day (1=monday... 7=sunday).
+  $today = date('N');
+  // Fetch the sending days values that have been checked in the automatic sending admin page (/admin/config/crealead/structure-events).
+  $sending_days = variable_get('structure_events_sending_days', array());
+
+  if (in_array($today, $sending_days)) {
+    //crealead_send_next_structure_events(TRUE);
+  }
+}
+
+function crealead_structure_events_get_next($period=0, $selected_events = array()) {
+  // Il faut récupérer tous les événements Structure pour le prochain mois.
+  // Mais il faut les trier de la manière suivante :
+  // - group1 : les événements de la prochaine semaine.
+  // - group2 : les événements de la semaine suivante.
+  // - group3 : les événements à partir de la troisième semaine.
+  // Ainsi, dans le formulaire crealead_structure_events_manual_sending_form() (cf. crealead_calendars.admin.inc),
+  // il sera possible d'afficher les événement comme suit :
+  // - si "1 semaine" est coché -> group1
+  // - si "2 semaines" est coché -> group1 + group2
+  // - si "1 mois" est coché -> group1 + group2 + group3
+  $date = new DateTime();
+  $period_start_date = $date->format('Y-m-d') . 'T00:00:00';
+
+  $date->modify('next week');
+  $second_week_start_date = $date->format('Y-m-d');
+
+  $date->modify('next week');
+  $third_week_start_date = $date->format('Y-m-d');
+
+  $date = new DateTime('next month');
+  $period_end_date = $date->format('Y-m-d') . 'T00:00:00';
+
+  // Récupère tous les événements Structure pour le mois à venir.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'structure_event')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_gclal_date','value', $period_start_date, '>=')
+    ->fieldCondition('field_gclal_date','value2', $period_end_date, '<')
+    ->fieldOrderBy('field_gclal_date','value', 'ASC');
+
+  $result = $query->execute();
+
+  if (!isset($result['node'])) {
+    return array();
+  }
+  else {
+    $events_nids = array_keys($result['node']);
+    $events_details = [];
+
+
+    foreach ($events_nids as $nid) {
+      if (!empty($selected_events)) {
+        if (!in_array($nid, $selected_events)) {
+          continue;
+        }
+      }
+
+      $wrapper = entity_metadata_wrapper('node', $nid);
+      $event_date = $wrapper->field_gclal_date->value();
+
+      $start_timestamp = strtotime($event_date['value']);
+      $end_timestamp = strtotime($event_date['value2']);
+      $start_date = date('d/m/y', $start_timestamp);
+      $start_time = date('H:i', $start_timestamp);
+      $end_time = date('H:i', $end_timestamp);
+
+      // On test à quel groupe appartient l'événement.
+      $comparable_start_date = date('Y-m-d', $start_timestamp);
+      if ($comparable_start_date < $second_week_start_date) {
+        $event_group = 'group1';
+      }
+      elseif ($comparable_start_date >= $second_week_start_date && $comparable_start_date < $third_week_start_date) {
+        $event_group = 'group2';
+      }
+      else {
+        $event_group = 'group3';
+      }
+
+      // On stocke les détails de chaque événement, en plaçant chaque événement dans son groupe.
+      $events_details[$event_group][] = array(
+        'nid' => $nid,
+        'start_date' => $start_date,
+        'start_time' => $start_time,
+        'end_time' => $end_time,
+        'title' => $wrapper->title->value(),
+        'location' => $wrapper->field_gcal_location->value(),
+      );
+
+    }
+
+    return $events_details;
+
+  }
+}
+
+function crealead_send_next_structure_events($structure_events, $mail_subject=null, $real_sending=FALSE, $test_addresses=NULL) {
+  if ($real_sending) {
+    $email_addresses = crealead_get_users_emails();
+    $mail_subject = '[Crealead] ' . $mail_subject;
+
+    // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
+    //$email_addresses = array('christophe.espiau@gmail.com');
+  }
+  else {
+    // DO NOT DELETE THE FOLLOWING LINE (kept for tests purposes only).
+    //$test_addresses = array('christophe.espiau@gmail.com');
+
+    $email_addresses = $test_addresses;
+    $mail_subject = '[Crealead TEST] Evénements du mois à venir';
+  }
+
+  // Construction du message email
+  $from = "Crealead <contact@crealead.com>";
+  $reply_to = "contact@crealead.com";
+  $to = 'undisclosed-recipients:;';
+  $bcc = implode(',', $email_addresses);
+
+  $host = $_SERVER['HTTP_HOST'];
+  $structure_event_url = 'http://' . $host . '/node/';
+  $structure_events_url = 'http://' . $host . '/espace-co-entrepreneur/informations';
+
+  $mail_body = '<p>Bonjour à tous,</p>'
+    . '<p>Voici la liste des prochains événements publiés dans le calendrier structure de Crealead.</p>'
+    . '<p>Si ce message ne s\'affiche pas correctement, allez voir les événements sur la page '
+    . '<a href="' . $structure_events_url . '">Informations</a>'
+    . ' de l\'espace co-entrepreneurs.</p>';
+
+  $mail_body .= '<table id="crealead-structure-events-list" style="width: 80%;">';
+
+  foreach ($structure_events as $day => $events) {
+    $mail_body .= '<tr class="events-day"><td colspan="3" class="events-date" style="font-size: 110%; font-weight: 600; border-bottom: 1px solid #ccc; margin-top: 22px;">' . $day . '</td>';
+    foreach ($events as $event) {
+      $mail_body .= '<tr class="events-sublist">'
+        . '<td class="event-time" style="width: 20%; padding-left: 20px;">' . $event['start_time'] . ' - ' . $event['end_time'] . '</td>'
+        . '<td class="event-title"><a href="' . $structure_event_url . $event['nid'] . '">' . $event['title'] . '</a></td>'
+        . '<td class="event-location" style="width: 22%">' . ($event['location'] ? ' (' . $event['location'] . ')' : '') . '</td>'
+        . '</tr>';
+    }
+    $mail_body .= '<tr class="spacer"><td colspan="3" style="height: 10px;"></td>';
+  }
+
+  $mail_body .= '</table>';
+
+  $footer_image_fullpath = drupal_get_path('module', 'kcore') . '/images/bandeau-crealead.jpg';
+
+  $mail_body .=
+    '<br/><br/>' .
+    '<p class="crealead-email-footer">' .
+    '<img src="' . $footer_image_fullpath . '">' .
+    '</p>';
+
+  $params = array(
+    'headers' => array(
+      'Bcc' => $bcc,
+      'Reply-To' => $reply_to,
+    ),
+    'subject' => $mail_subject,
+    'body' => $mail_body,
+  );
+
+  $type = 'success';
+
+  $what = 'Les événements Structure';
+  $adjective = 'sélectionnés';
+  $verb = 'ont été envoyés';
+  $recipient = 'aux co-entrepreneurs';
+
+  if (drupal_mail('crealead_calendars', 'next_structure_events_list', $to, language_default(), $params, $from)) {
+    if ($real_sending) {
+
+    }
+    else {
+      $adjective = '';
+      $recipient = 'à l\'adresse email de test';
+      if (sizeof($test_addresses) > 1) {
+        $recipient = 'aux adresses email de test';
+      }
+    }
+    $message = t('%what %adjective %verb %recipient.', array(
+      '%what' => $what,
+      '%adjective' => $adjective,
+      '%verb' => $verb,
+      '%recipient' => $recipient,
+    ));
+  }
+  else {
+    $message = t('L\'envoi a échoué. Veuillez contacter l\'administrateur.');
+    $type = 'warning';
+  }
+  drupal_set_message('<div class="message ' . $type . '">' . $message . '</div>');
+}
+
+/**
+ * Implements hook_mail().
+ */
+function crealead_calendars_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'next_structure_events_list':
+      $message['headers'] += $params['headers'];
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }

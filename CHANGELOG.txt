@@ -1,3 +1,43 @@
+Crealead 3.11 / 2020-01-14
+==========================
+  * kcore up: Removal of user permissions for the no longer used module eu_cookie_compliance.
+  * Profile theme up: S9F-6: 19px padding (instead of 10px) re-applied to profiles tabs in 'Equipe Support' and 'Instances' pages.
+  * crealead_profiles up: S9F-6: CA and CSE profiles removed from 'Equipe Support' page and placed into the new 'Instances' page.
+  * crealead_profiles up: S9F-4: Equipe Structure -> Equipe Support.
+  * crealead_profiles up: S9F-2 and S9F-3: DUP -> CSE and inclusive writing removed.
+  * crealead_calendars up: S9F-1: Missing menu link 'Calendrier vie coopérative' added to Calendriers menu.
+  * crealead_calendars up: S9F-1: 'Evénements Structure' renammed 'Evénements Vie Coopérative'.
+  * crealead_profiles up: S9-15 completion: Trombi roles filter contains only 'All' and 'associés' options.
+  * Install profile up: Activation of eu_cookie_compliance contrib module has been removed.
+  * Theme's html.tpl.php template up: CookiPro banner integration.
+  * crealead_groups up: S9-12 completion: Pager removed to display ALL groups.
+  * crealead_groups up: S9-12 completion: Creation and export of the missing new context entrepreneur_area_business_groups that allows all groups to be displayed on the new 'Collectifs' page.
+  * crealead_calendars up: S9-10 completion: Structure events email message updated: table, time column et location column enlarged.
+  * crealead_info_meetings up: Missing new field field_privacy_policy_acceptance added.
+  * crealead_info_meetings up: S9-4: Privacy Policy Acceptance checkbox added to subscription form.
+  * kcore up: eu_cooki_compliance settings updated, 'Réglages confidentialité' tab css positionning set up.
+  * kcore up: Link to the privacy policy text added.
+  * kcore up: 'No, give me more info' link translated into French.
+  * kcore up: S9-3: GDPR modules eu_cookie_compliance install, activation and set up.
+  * drupal-org.make up: Instruction added to apply a mimemail patch (see https://www.drupal.org/project/mimemail/issues/2883745).
+  * crealead_calendars up: S9-10 completed: Real and Test emails sending of Structure events are now available.
+  * crealead_calendars up: S9-10: First version of email sending of structure events.
+  * crealead_profiles up: Missing coe profile's field field_brands_order added.
+  * crealead_brands and crealead_profiles up: S9-16: Coes can now set their brands display order.
+  * crealead_groups up: S9-12: Header page with description and links to documents added.
+  * kcore and crealead_profiles up: S9-15: Role filter added to Trombinoscope.
+  * crealead_profiles up: S9-14: Structure profiles removed from user page.
+  * crealead_profiles up: S9-13: Profiles CA and DUP added to Structure team.
+  * crealead_calendars, crealead_newsflashes up: S9-9: New block 'Evénements Structure' now visible on coes informations page.
+  * crealead_brands.js up: S9-11: Hide Crealead banner when landing on brand's full page. Provides a link to restore Crealed banner.
+  * crealead_brands and kcore up: S9-7: Sector brands internal page created in coe area.
+  * crealead_profiles up: S9-7: Fixes loss of 'Référent.e.s' tab in equipe-structure view by removing paging.
+  * crealead_brands up: S9-6: Main menu item made clickable and pointing to the 'Marques sectorielles' basic page.
+  * kcore up: S9-5: OG tags added for better articles and news sharing on Facebook.
+  * kpages up: 'edit all' permission on basic pages added to role 'Pôle Gestion'.
+  * crealead_brands up: brand's Url validation removed.
+  * crealead_calendars up: feature rebuilt to export new view setting (['date_argument']['summary']['format'] = 'default_summary') createad by Drupal itself.
+
 Hotfix fse-partner-logo-change / 2019-12-06
 -------------------------------------------
   * Partners logos up: New FSE logo replaces the previous one and is placed at first position in the logos line.

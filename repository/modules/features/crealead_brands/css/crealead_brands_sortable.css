@@ -1,0 +1,44 @@
+div#coe-brands-list {
+    border-top : 1px solid #ccc;
+    border-bottom : 1px solid #ccc;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+div#coe-brands-list-title {
+    font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0px 0px 20px;
+    /*line-height: 1.4;*/
+    width: initial;
+}
+div#sortable-brands-container {
+    margin-top: 40px;
+}
+ul#sortable-brands {
+    list-style-type: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+ul#sortable-brands li {
+    padding: 10px;
+    font-size: 150%;
+    border: 1px solid gray;
+    display: inline;
+    margin: 5px;
+}
+
+ul#sortable-brands li:hover {
+    cursor: pointer;
+}
+
+div#brands-order-saving-notice {
+    color: red;
+}
+
+div#edit-profile-coe-page-field-brands-order {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}

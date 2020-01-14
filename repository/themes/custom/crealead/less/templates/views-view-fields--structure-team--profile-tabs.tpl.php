@@ -50,11 +50,13 @@
  */
 $profile_machine_name = $fields['type']->raw;
 $altered_profile_labels = array (
-  'direction_page' => 'Directeur.rices',
-  'referent_page' => 'Référent.e.s',
+  'direction_page' => 'Direction',
+  'referent_page' => 'Référents',
   'management_page' => 'Gestionnaires',
-  'assistant_page' => 'Assistant.e.s',
-  'provider_page' => 'Entrepreneur.e.s prestataires',
+  'assistant_page' => 'Accueil et Communication',
+  'provider_page' => 'Entrepreneurs prestataires',
+  'ca_page' => 'Conseil d\'administration',
+  'dup_page' => 'CSE',
 );
 
 // print '<a href="#' . $profile_machine_name . '">' . $altered_profile_labels[$profile_machine_name] . '</a>';

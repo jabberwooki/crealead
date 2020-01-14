@@ -10,10 +10,24 @@
 function kcore_user_default_roles() {
   $roles = array();
 
+  // Exported role: CA.
+  $roles['CA'] = array(
+    'name' => 'CA',
+    'weight' => 13,
+    'machine_name' => 'ca',
+  );
+
+  // Exported role: DUP.
+  $roles['DUP'] = array(
+    'name' => 'DUP',
+    'weight' => 14,
+    'machine_name' => 'dup',
+  );
+
   // Exported role: administrateur.
   $roles['administrateur'] = array(
     'name' => 'administrateur',
-    'weight' => 15,
+    'weight' => 17,
     'machine_name' => '',
   );
 
@@ -34,7 +48,7 @@ function kcore_user_default_roles() {
   // Exported role: canditat.
   $roles['canditat'] = array(
     'name' => 'canditat',
-    'weight' => 3,
+    'weight' => 2,
     'machine_name' => 'canditate',
   );
 
@@ -48,7 +62,7 @@ function kcore_user_default_roles() {
   // Exported role: direction.
   $roles['direction'] = array(
     'name' => 'direction',
-    'weight' => 13,
+    'weight' => 15,
     'machine_name' => 'direction',
   );
 
@@ -90,7 +104,7 @@ function kcore_user_default_roles() {
   // Exported role: webmaster.
   $roles['webmaster'] = array(
     'name' => 'webmaster',
-    'weight' => 14,
+    'weight' => 16,
     'machine_name' => '',
   );
 

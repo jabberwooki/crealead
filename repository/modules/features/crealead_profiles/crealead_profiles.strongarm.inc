@@ -341,6 +341,54 @@ function crealead_profiles_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'mimemail' => array(
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+        'profile_assistant_page' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_direction_page' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_management_page' => array(
+          'full' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_provider_page' => array(
+          'full' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_referent_page' => array(
+          'full' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_ca_page' => array(
+          'full' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_dup_page' => array(
+          'full' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );

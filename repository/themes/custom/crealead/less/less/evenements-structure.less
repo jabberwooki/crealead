@@ -1,0 +1,52 @@
+.view-id-structure_calendar.view-display-id-cob {
+  .view-content {
+    .calendar-listing-day-wrapper {
+      display: table;
+      width: 100%;
+      > div.views-row {
+        clear: both;
+        a {
+          position: relative;
+          .quick();
+          font-size: 1.3em;
+          display: block;
+          padding-top: 15px;
+          &:before{
+            .glyphicon();
+            content: "\f0c8";
+            position: absolute;
+            left: -30px;
+            top: 25px;
+            color: @bleu-clair-crealead;
+            font-size: 0.6em;
+          }
+        }
+        div.views-field-field-gclal-date-1 {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+      > h3 {
+        display: table-cell;
+        margin: 0 10px 20px 0;
+        padding: 20px;
+        width: 20%;
+        @media (min-width: @screen-md) {
+          min-width: 210px;
+        }
+        &:before {
+          .glyphicon();
+          content: "\e834";
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+        border-bottom: 3px dotted @gris-fonce-crealead;
+        width: 100%;
+        margin: 25px auto;
+      }
+    }
+  }
+}
