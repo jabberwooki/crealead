@@ -96,3 +96,7 @@ function kcore_update_7012() {
 function kcore_update_7013() {
   module_enable(array('metatag_opengraph'));
 }
+
+function crealead_update_7014() {
+  module_enable(array('swiftmailer'));
+}

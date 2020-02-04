@@ -259,6 +259,9 @@ projects[site_map][version] = "1.3"
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
 
+projects[swiftmailer][subdir] = contrib
+projects[swiftmailer][version] = "1.7"
+
 projects[taxonomy_display][subdir] = contrib
 projects[taxonomy_display][version] = "1.1"
 
