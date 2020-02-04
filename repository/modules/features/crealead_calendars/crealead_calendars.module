@@ -348,8 +348,8 @@ function crealead_send_next_structure_events($structure_events, $mail_subject=nu
   // Les lignes ci-dessous sont à utiliser seulement dans les tests.
   // Elles permettent de ne garder que les $n premiers emails au lieu de tous les emails de la bd.
   // Penser à activer le reroutage d'email (/admin/config/development/reroute_email).
-   $n = 2;
-   $email_addresses = array_slice($email_addresses, 0, $n);
+//   $n = 2;
+//   $email_addresses = array_slice($email_addresses, 0, $n);
 
   // Envoi d'un mail avec la liste des brèves à chaque compte Drupal (ou à l'adresse test).
   $real_messages_counter = 0;
