@@ -125,12 +125,8 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
   }
 
   // Email message building
-//  $to = implode(';', $email_addresses);
-//  $from = variable_get('site_mail');
   $from = "Crealead <contact@crealead.com>";
   $reply_to = "contact@crealead.com";
-  $to = 'undisclosed-recipients:;';
-  $bcc = implode(',', $email_addresses);
 
   $host = $_SERVER['HTTP_HOST'];
   $newsflashes_url = 'http://' . $host . '/espace-co-entrepreneur/informations';
@@ -165,7 +161,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 
   $mail_body .= '</table>';
 
-  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+  $footer_image_fullpath = 'https://www.crealead.com/profiles/crealead/modules/features/kcore/images/bandeau-crealead.jpg';
 
   $mail_body .=
     '<br/><br/>' .
@@ -175,7 +171,7 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
 
   $params = array(
     'headers' => array(
-      'Bcc' => $bcc,
+      //'Bcc' => $bcc,
       'Reply-To' => $reply_to,
     ),
     'subject' => $mail_subject,
@@ -195,32 +191,60 @@ function crealead_send_latest_newsflashes($real_sending=FALSE, $test_addresses=N
     $verb = 'a été envoyée';
   }
 
-  if (drupal_mail('crealead_newsflashes', 'latest_newsflashes_list', $to, language_default(), $params, $from)) {
-    if ($real_sending) {
+  // Les lignes ci-dessous sont à utiliser seulement dans les tests.
+  // Elles permettent de ne garder que les $n premiers emails au lieu de tous les emails de la bd.
+  // Penser à activer le reroutage d'email (/admin/config/development/reroute_email).
+   $n = 2;
+   $email_addresses = array_slice($email_addresses, 0, $n);
+
+  // Envoi d'un mail avec la liste des brèves à chaque compte Drupal (ou à l'adresse test).
+  $real_messages_counter = 0;
+  $test_messages_counter = 0;
+  $number = 0;
+  foreach($email_addresses as $to) {
+    if (drupal_mail('crealead_newsflashes', 'latest_newsflashes_list', $to, language_default(), $params, $from)) {
+      if ($real_sending) {
+        $real_messages_counter++;
+      }
+      else {
+        $test_messages_counter++;
+      }
+    }
+  }
+
+  if ($real_messages_counter > 0 || $test_messages_counter > 0) {
+    if ($real_messages_counter > 0) {
+      // On met à jour les brèves envoyées pour enregistrer qu'elles ont été bien envoyées par mail.
       foreach ($newsflashes_details as $item) {
         $nf_wrapper = entity_metadata_wrapper('node', $item['nid']);
         $nf_wrapper->field_sent_by_email = 'oui';
         $nf_wrapper->save();
       }
+
+      $number = $real_messages_counter;
     }
-    else {
-      $adjective = '';
+    elseif ($test_messages_counter > 0) {
       $recipient = 'à l\'adresse email de test';
       if (sizeof($test_addresses) > 1) {
         $recipient = 'aux adresses email de test';
       }
+
+      $number = $test_messages_counter;
     }
-    $message = t('%what %adjective %verb %recipient.', array(
+
+    $message = t('%what %adjective %verb %recipient (nombre d\'envois : %number).', array(
       '%what' => $what,
       '%adjective' => $adjective,
       '%verb' => $verb,
+      '%number' => $number,
       '%recipient' => $recipient,
     ));
   }
   else {
-    $message = t('L\'envoi a échoué. Veuillez contacter l\'administrateur.');
+    $message = t('L\'envoi des brèves a échoué. Veuillez contacter l\'administrateur.');
     $type = 'warning';
   }
+
   drupal_set_message('<div class="message ' . $type . '">' . $message . '</div>');
 }
 
