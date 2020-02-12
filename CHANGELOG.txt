@@ -1,3 +1,17 @@
+Crealead 3.11.1 / 2020-02-12
+============================
+  * Maj de kcore : Ajout des paramétrages et des permissions du module swiftmailer.
+  * Correction dans kcore.install : fonction mal nommée crealead_update_7014() renommée kcore_update_7014().
+  * Maj du profil : Correction de drupal-org.make : mise en commentaire de la déclaration du module eu_cookie_compliance et correction du numéro de version du module entity (ramené à 1.6 et non 1.31 qui est le dernier numéro de version de eu_cookie_compliance.
+  * Maj de crealead_calendars : Mise en commentaire du code de test oublié par erreur dans la fonction crealead_send_next_structure_events().
+  * Maj de crealead_warnings : modif du code d'envoi de mail (fonction crealead_warnings_send_warning_email()) pour envoyer 1 mail à chaque user drupal au lieu de 1 seul mail à N user. Abandon de to='disclosed-recipient'.
+  * Maj crealead_calendars : Mise en commentaire du code de test oublié par erreur dans la fonction crealead_send_latest_newsflashes().
+  * Maj de crealead_calendars : modif du code d'envoi de mail (fonction crealead_send_next_structure_events()) pour envoyer 1 mail à chaque user drupal au lieu de 1 seul mail à N user. Abandon de to='disclosed-recipient'.
+  * Maj de crealead_newsflashes : modif du code d'envoi de mail (fonction crealead_send_latest_newsflashes()) pour envoyer 1 mail à chaque user drupal au lieu de 1 seul mail à N user. Abandon de to='disclosed-recipient'.
+  * Mise à jour du profil crealead et de la feature kcore : téléchargement du module contrib swiftmailer et activation de ce module.
+  * Ajout de la librairie PHP swiftmailer et du module contrib correspondant swiftmailer.
+  * Merge tag 'v3.11' into develop
+
 Crealead 3.11 / 2020-01-14
 ==========================
   * kcore up: Removal of user permissions for the no longer used module eu_cookie_compliance.
