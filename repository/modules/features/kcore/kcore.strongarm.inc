@@ -879,6 +879,104 @@ Please go to [password-policy:password-edit-url] to change your password.';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_character_set';
+  $strongarm->value = 'UTF-8';
+  $export['swiftmailer_character_set'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_convert_library';
+  $strongarm->value = 'html2text';
+  $export['swiftmailer_convert_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_convert_mode';
+  $strongarm->value = 0;
+  $export['swiftmailer_convert_mode'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_format';
+  $strongarm->value = 'text/html';
+  $export['swiftmailer_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_path';
+  $strongarm->value = 'profiles/crealead/libraries/swiftmailer';
+  $export['swiftmailer_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_respect_format';
+  $strongarm->value = 0;
+  $export['swiftmailer_respect_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_sender_email';
+  $strongarm->value = 'contact@crealead.com';
+  $export['swiftmailer_sender_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_sender_name';
+  $strongarm->value = 'Crealead';
+  $export['swiftmailer_sender_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_smtp_encryption';
+  $strongarm->value = 'ssl';
+  $export['swiftmailer_smtp_encryption'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_smtp_host';
+  $strongarm->value = 'mail.neore.fr';
+  $export['swiftmailer_smtp_host'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_smtp_password';
+  $strongarm->value = 'patate12312--';
+  $export['swiftmailer_smtp_password'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_smtp_port';
+  $strongarm->value = '465';
+  $export['swiftmailer_smtp_port'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_smtp_username';
+  $strongarm->value = 'patate@neore.fr';
+  $export['swiftmailer_smtp_username'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swiftmailer_transport';
+  $strongarm->value = 'smtp';
+  $export['swiftmailer_transport'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_admin_role';
   $strongarm->value = '193262079';
   $export['user_admin_role'] = $strongarm;

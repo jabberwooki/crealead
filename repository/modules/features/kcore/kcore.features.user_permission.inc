@@ -1069,6 +1069,15 @@ function kcore_user_default_permissions() {
     'module' => 'better_formats',
   );
 
+  // Exported permission: 'swiftmailer_administer'.
+  $permissions['swiftmailer_administer'] = array(
+    'name' => 'swiftmailer_administer',
+    'roles' => array(
+      'administrateur' => 'administrateur',
+    ),
+    'module' => 'swiftmailer',
+  );
+
   // Exported permission: 'switch users'.
   $permissions['switch users'] = array(
     'name' => 'switch users',

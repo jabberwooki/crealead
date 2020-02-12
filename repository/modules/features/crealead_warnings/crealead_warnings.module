@@ -233,7 +233,8 @@ function crealead_warnings_node_postinsert($node) {
     $email_addresses = crealead_warnings_get_email_addresses($node,1);
 
     if (!empty($email_addresses)) {
-      watchdog('crealead_warnings', "The inserted node {$node->type} id is {$node->nid}. The email addresses are : {$email_addresses}.");
+      $addresses_string = implode(',', $email_addresses);
+      watchdog('crealead_warnings', "The inserted node {$node->type} id is {$node->nid}. The email addresses are : {$addresses_string}.");
       crealead_warnings_send_warning_email($email_addresses, $node, 'insert', $warnable_content_types);
     }
   }
@@ -248,7 +249,8 @@ function crealead_warnings_node_postupdate($node) {
     $email_addresses = crealead_warnings_get_email_addresses($node,2);
 
     if (!empty($email_addresses)) {
-      watchdog('crealead_warnings', "The updated node {$node->type} id is {$node->nid}. The email addresses are : {$email_addresses}.");
+      $addresses_string = implode(',', $email_addresses);
+      watchdog('crealead_warnings', "The updated node {$node->type} id is {$node->nid}. The email addresses are : {$addresses_string}.");
       crealead_warnings_send_warning_email($email_addresses, $node, 'update', $warnable_content_types);
     }
   }
@@ -309,7 +311,7 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
         }
       }
     }
-    $email_addresses = implode(',', $email_addresses);
+    //$email_addresses = implode(',', $email_addresses);
 
     return $email_addresses;
   }
@@ -318,11 +320,6 @@ function crealead_warnings_get_email_addresses($node, $when=1, $frequency=1) {
 function crealead_warnings_send_warning_email($email_addresses, $node, $op, $warnable_content_types) {
 
   // Email message building
-  //$to = $email_addresses;
-  $to = 'undisclosed-recipients:;';
-  $bcc = implode(',', $email_addresses);
-  //$from = variable_get('site_mail');
-//  $from = "no-reply@crealead.com";
   $from = "Crealead <contact@crealead.com>";
   $reply_to = "contact@crealead.com";
   $host = $_SERVER['HTTP_HOST'];
@@ -339,7 +336,7 @@ function crealead_warnings_send_warning_email($email_addresses, $node, $op, $war
     ' correspondant à l\'une de vos alertes vient d\'être ' . $verb.'.</p>' .
     '</div>';
 
-  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+  $footer_image_fullpath = 'https://www.crealead.com/profiles/crealead/modules/features/kcore/images/bandeau-crealead.jpg';
 
   $mail_body .=
     '<br/><br/>' .
@@ -349,21 +346,28 @@ function crealead_warnings_send_warning_email($email_addresses, $node, $op, $war
 
   $params = array(
     'headers' => array(
-      'Bcc' => $bcc,
+      //'Bcc' => $bcc,
       'Reply-To' => $reply_to,
     ),
     'subject' => $mail_subject,
     'body' => $mail_body,
   );
 
-  if (drupal_mail('crealead_warnings', 'warning_email', $to, language_default(), $params, $from)) {
-    $message = "Warning email for node {$node->nid} ({$op}) sent to " . sizeof(explode(';', $email_addresses)) . " recipients.";
-  }
-  else {
-    $message = "Warning email sending failed.";
+  $sent_messages = 0;
+  foreach ($email_addresses as $to) {
+    if (drupal_mail('crealead_warnings', 'warning_email', $to, language_default(), $params, $from)) {
+      $sent_messages++;
+    }
+    else {
+      $message = t("Warning email sending failed (destinataire: %recipient_email.", array('%recipient_email' => $to));
+      watchdog('crealead_warnings', $message);
+    }
   }
 
-  watchdog('crealead_warnings', $message);
+  if ($sent_messages > 0) {
+    $message = "Warning email for node {$node->nid} ({$op}) sent to " . $sent_messages . " recipients.";
+    watchdog('crealead_warnings', $message);
+  }
 }
 
 /**

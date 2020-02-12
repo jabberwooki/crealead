@@ -16,10 +16,10 @@ projects[ds][version] = "2.13"
 projects[ds][patch][] = "https://www.drupal.org/files/issues/ds_extras_field_group_not_rendered-2221307-18.patch"
 
 projects[entity][subdir] = contrib
-projects[entity][version] = "1.31"
+projects[entity][version] = "1.6"
 
-projects[eu_cookie_compliance][subdir] = contrib
-projects[eu_cookie_compliance][version] = "1.6"
+#projects[eu_cookie_compliance][subdir] = contrib
+#projects[eu_cookie_compliance][version] = "1.6"
 
 projects[features][subdir] = contrib
 projects[features][version] = "2.7"
@@ -258,6 +258,9 @@ projects[site_map][version] = "1.3"
 
 projects[socialfield][subdir] = contrib
 projects[socialfield][version] = "1.4"
+
+projects[swiftmailer][subdir] = contrib
+projects[swiftmailer][version] = "1.7"
 
 projects[taxonomy_display][subdir] = contrib
 projects[taxonomy_display][version] = "1.1"
