@@ -1,3 +1,7 @@
+Hotfix structure-event-calendar-add-link / 2020-02-12
+-----------------------------------------------------
+  * Maj crealead_calendars : Correction du mauvais lien 'tchi' remplacé par 'Ajouter un événement'.
+
 Crealead 3.11.1 / 2020-02-12
 ============================
   * Maj de kcore : Ajout des paramétrages et des permissions du module swiftmailer.
