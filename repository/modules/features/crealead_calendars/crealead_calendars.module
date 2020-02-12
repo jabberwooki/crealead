@@ -59,9 +59,9 @@ function crealead_calendars_views_pre_render(&$view) {
   if ($view->name == 'structure_calendar') {
     if ($view->current_display == 'structure_month') {
       if (user_access('create structure_event content')) {
-        $add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
-  //      $add_link = '<a href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
-        $add_link = 'tchi';
+        //$add_link = '<a class="red-button-link" href="/node/add/structure-event">Ajouter un événement</a>';
+        $add_link = '<a class="red-button-link" href="/node/add/structure-event?destination=' . current_path() . '">Ajouter un événement</a>';
+        //$add_link = 'tchi';
       }
       else {
         $add_link = '';
