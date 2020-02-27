@@ -2456,6 +2456,9 @@ function crealead_profiles_views_default_views() {
 
   /* Display: Page Structure */
   $handler = $view->new_display('page', 'Page Structure', 'structure_profiles');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Profile: Type */
   $handler->display->display_options['relationships']['type']['id'] = 'type';
