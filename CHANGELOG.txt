@@ -1,3 +1,7 @@
+Hotfix support-team-unwanted-paging / 2020-02-27
+------------------------------------------------
+  * Maj crealead_profiles : suppression de la pagination dans la vue Equipe Structure/Page structure.
+
 Hotfix structure-event-calendar-add-link / 2020-02-12
 -----------------------------------------------------
   * Maj crealead_calendars : Correction du mauvais lien 'tchi' remplacé par 'Ajouter un événement'.
