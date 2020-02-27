@@ -2453,6 +2453,12 @@ function crealead_profiles_views_default_views() {
     'referent_page' => 'referent_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'user';
+  $handler->display->display_options['filters']['status']['value'] = '1';
 
   /* Display: Page Structure */
   $handler = $view->new_display('page', 'Page Structure', 'structure_profiles');
@@ -2557,6 +2563,11 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['type']['table'] = 'profile';
   $handler->display->display_options['relationships']['type']['field'] = 'type';
   $handler->display->display_options['relationships']['type']['label'] = 'Type de profil';
+  /* Relationship: Profile: User uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'profile';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
+  $handler->display->display_options['relationships']['user']['label'] = 'Utilisateur';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Profil: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
@@ -2594,6 +2605,12 @@ function crealead_profiles_views_default_views() {
     'referent_page' => 'referent_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'user';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['displays'] = array(
     'structure_profiles' => 'structure_profiles',
     'default' => 0,
