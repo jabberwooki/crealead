@@ -1,3 +1,7 @@
+Hotfix support-team-hide-blocked-users / 2020-02-27
+---------------------------------------------------
+  * Maj crealead_profiles : Ajout du filtre Utilisateur/Actif = oui pour pouvoir exclure de l'affichage les personnes qui ne sont plus à Crealead par simple désactivation de leur compte.
+
 Hotfix support-team-unwanted-paging / 2020-02-27
 ------------------------------------------------
   * Maj crealead_profiles : suppression de la pagination dans la vue Equipe Structure/Page structure.
