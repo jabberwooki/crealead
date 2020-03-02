@@ -1,3 +1,7 @@
+Hotfix structure_events_wrong_times / 2020-03-02
+------------------------------------------------
+  * Maj crealead_calendars : recalcul des heures début et fin des événements Structure pour afficher la bonne heure été/hiver et non l'heure UTC.
+
 Hotfix support-team-hide-blocked-users / 2020-02-27
 ---------------------------------------------------
   * Maj crealead_profiles : Ajout du filtre Utilisateur/Actif = oui pour pouvoir exclure de l'affichage les personnes qui ne sont plus à Crealead par simple désactivation de leur compte.
