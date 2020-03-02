@@ -242,8 +242,18 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
       $start_timestamp = strtotime($event_date['value']);
       $end_timestamp = strtotime($event_date['value2']);
       $start_date = date('d/m/y', $start_timestamp);
-      $start_time = date('H:i', $start_timestamp);
-      $end_time = date('H:i', $end_timestamp);
+//      $start_time = date('H:i', $start_timestamp);
+//      $end_time = date('H:i', $end_timestamp);
+
+      // $start_time et $end_time recalculés avec les fonctions procédurales de DateTime
+      // pour prendre en compte le bon fuseau horaire et l'heure été/hiver.
+      $date1 = date_create($event_date['value'], timezone_open($event_date['timezone_db']));
+      date_timezone_set($date1, timezone_open($event_date['timezone']));
+      $start_time = date_format($date1, 'H\hi');
+
+      $date2 = date_create($event_date['value2'], timezone_open($event_date['timezone_db']));
+      date_timezone_set($date2, timezone_open($event_date['timezone']));
+      $end_time = date_format($date2, 'H\hi');
 
       // On test à quel groupe appartient l'événement.
       $comparable_start_date = date('Y-m-d', $start_timestamp);
