@@ -1,3 +1,15 @@
+Crealead 3.12 / 2020-03-16
+--------------------------
+  * crealead_flashinfos up: All permissions on flashinfo content type added to administrateur and pole gestion roles.
+  * crealead_flashinfos up: Plus d'infos link removed when user is not connected.
+  * less and info up to manage info flash styles.
+  * Feature crealead_flashinfos created.
+  * Merge tag 'structure_events_wrong_times' into develop
+  * Merge tag 'support-team-hide-blocked-users' into develop
+  * Merge tag 'support-team-unwanted-paging' into develop
+  * Merge tag 'structure-event-calendar-add-link' into develop
+  * Merge tag 'v3.11.1' into develop
+
 Hotfix structure_events_wrong_times / 2020-03-02
 ------------------------------------------------
   * Maj crealead_calendars : recalcul des heures début et fin des événements Structure pour afficher la bonne heure été/hiver et non l'heure UTC.
