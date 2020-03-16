@@ -1,0 +1,39 @@
+#block-views-flashinfos-front-block {
+  background-color: #bf0e38 !important;
+  color: white;
+  a {
+    color: white !important;
+  }
+  .views-field-title {
+      a:before {
+
+      }
+    }
+  .views-field-view-node {
+      a:before {
+        .glyphicon();
+        content: "\e834";
+        color: white;
+        background-color: @rouge-crealead;
+        top: 2px;
+        font-size: 1em;
+        margin: 0;
+      }
+    }
+  .views-row {
+    position: relative;
+    &:before {
+      content: "Info flash";
+      font-size: 1.2em;
+      position: absolute;
+      top: -10px;
+      left: 5px;
+    }
+    display: flex;
+    justify-content: center;
+    > div {
+      margin: 0 20px;
+      font-size: 1.6em;
+    }
+  }
+}
