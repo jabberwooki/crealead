@@ -1,0 +1,25 @@
+<?php
+/**
+ * @file
+ * Code for the Flash infos feature.
+ */
+
+include_once 'crealead_flashinfos.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_flashinfos_init() {
+  drupal_add_css(drupal_get_path('module', 'crealead_flashinfos') . '/crealead_flashinfos.css');
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_flashinfos_views_query_alter(&$view, &$query) {
+  // Si bloc Flash infos et utilisateur non connecté,
+  if($view->name == 'flashinfos' && !user_is_logged_in()) {
+    // On supprime le lien Plus d'infos.
+    unset($view->field['view_node']);
+  }
+}
