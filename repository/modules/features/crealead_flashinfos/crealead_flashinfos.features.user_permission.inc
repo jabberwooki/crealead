@@ -14,6 +14,8 @@ function crealead_flashinfos_user_default_permissions() {
   $permissions['create flashinfo content'] = array(
     'name' => 'create flashinfo content',
     'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'redacteur flashinfos' => 'redacteur flashinfos',
     ),
     'module' => 'node',
@@ -23,6 +25,8 @@ function crealead_flashinfos_user_default_permissions() {
   $permissions['delete any flashinfo content'] = array(
     'name' => 'delete any flashinfo content',
     'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'redacteur flashinfos' => 'redacteur flashinfos',
     ),
     'module' => 'node',
@@ -32,6 +36,8 @@ function crealead_flashinfos_user_default_permissions() {
   $permissions['delete own flashinfo content'] = array(
     'name' => 'delete own flashinfo content',
     'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'redacteur flashinfos' => 'redacteur flashinfos',
     ),
     'module' => 'node',
@@ -41,6 +47,8 @@ function crealead_flashinfos_user_default_permissions() {
   $permissions['edit any flashinfo content'] = array(
     'name' => 'edit any flashinfo content',
     'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'redacteur flashinfos' => 'redacteur flashinfos',
     ),
     'module' => 'node',
@@ -50,6 +58,8 @@ function crealead_flashinfos_user_default_permissions() {
   $permissions['edit own flashinfo content'] = array(
     'name' => 'edit own flashinfo content',
     'roles' => array(
+      'administrateur' => 'administrateur',
+      'pôle gestion' => 'pôle gestion',
       'redacteur flashinfos' => 'redacteur flashinfos',
     ),
     'module' => 'node',
