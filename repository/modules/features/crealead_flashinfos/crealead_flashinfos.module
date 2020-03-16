@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Code for the Flash infos feature.
+ */
+
+include_once 'crealead_flashinfos.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function crealead_flashinfos_init() {
+  drupal_add_css(drupal_get_path('module', 'crealead_flashinfos') . '/crealead_flashinfos.css');
+}
