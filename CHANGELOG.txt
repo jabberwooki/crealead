@@ -1,3 +1,7 @@
+Hotfix associe-permission-on-documents / 2020-05-28
+---------------------------------------------------
+  * crealead_documents up: permission to see Documents added to 'associé' role.
+
 Crealead 3.12 / 2020-03-16
 --------------------------
   * crealead_flashinfos up: All permissions on flashinfo content type added to administrateur and pole gestion roles.
