@@ -1,3 +1,7 @@
+Hotfix teams-pages-made-public / 2020-05-29
+-------------------------------------------
+  * crealead_profiles up: Views displays instances/instances_profiles and structure_team/structure_profiles altered: Access permission to role 'authenticater user' removed.
+  
 Hotfix associe-permission-on-documents / 2020-05-28
 ---------------------------------------------------
   * crealead_documents up: permission to see Documents added to 'associé' role.
