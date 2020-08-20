@@ -392,3 +392,9 @@ function crealead_update_7023() {
  * le hook_update_7024() a déjà été appliqué.
  */
 
+/**
+ * Activate feature crealead_associates.
+ */
+function crealead_update_7025() {
+  module_enable(array('crealead_associates'));
+}
