@@ -190,6 +190,43 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['menu']['name'] = 'menu-coe-area';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Onglet associés */
+  $handler = $view->new_display('page', 'Onglet associés', 'page_4');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Description système d\'échange';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Description de l\'espace associés.
+Se paramètre dans Configuration > Crealead > Espace associés.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: View (Views field view) */
+  $handler->display->display_options['header']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['table'] = 'views';
+  $handler->display->display_options['header']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['label'] = '';
+  $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['header']['view_field']['view'] = 'needs';
+  $handler->display->display_options['header']['view_field']['display'] = 'ass_links_list';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_1']['content'] = 'Code HTML pour créer le lien "Ajouter un lien vers un document".
+Est codé dans crealead_needs.module, fonction crealead_needs_views_pre_view(),
+au moment de l\'interception et la ré-écriture du header.';
+  $handler->display->display_options['header']['area_1']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/espace-associes';
+  $handler->display->display_options['menu']['title'] = 'Accueil';
+  $handler->display->display_options['menu']['weight'] = '-10';
+  $handler->display->display_options['menu']['name'] = 'menu-coe-area';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['coes_area_home'] = array(
     t('Master'),
     t('more'),
@@ -218,6 +255,9 @@ Se paramètre dans Configuration > Crealead > Marques sectorielles.'),
     t('Code HTML pour créer le lien "Ajouter un lien vers un document".
 Est codé dans crealead_brands.module, fonction crealead_brands_views_pre_view(),
 au moment de l\'interception et la ré-écriture du header.'),
+    t('Onglet associés'),
+    t('Description de l\'espace associés.
+Se paramètre dans Configuration > Crealead > Espace associés.'),
   );
   $export['coes_area_home'] = $view;
 

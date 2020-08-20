@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_associates_menu() {
+    $items['admin/config/crealead/associates'] = array(
+        'title' => 'Espace associés',
+        'description' => 'Paramétrage de la page Espace associés (espace coes).',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('crealead_associates_settings_form'),
+        'access arguments' => array('administer crealead settings'),
+        'type' => MENU_NORMAL_ITEM,
+        'file' => 'crealead_associates.admin.inc',
+    );
+
+    return $items;
+}

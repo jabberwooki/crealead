@@ -1,0 +1,6 @@
+name = Espace associés
+core = 7.x
+package = App
+version = 7.x-1.0
+features[features_api][] = api:2
+project path = profiles/crealead/modules/features

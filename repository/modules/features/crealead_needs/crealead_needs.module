@@ -188,6 +188,37 @@ function crealead_needs_views_pre_view(&$view, &$display_id, &$args) {
       $header['area_2']['content'] = $header_area_2_content;
       $view->display_handler->set_option('header', $header);
     }
+    elseif ($view->current_display == 'page_4') { // RUBRIQUE ESPACE ASSOCIÉS
+        // Replace view's header default text by custom text set in the 'Espace associés' admin page.
+        // Configuration > Crealead > Espace associés.
+        $description_text = variable_get('associates_description_text', NULL);
+        if ($description_text) {
+            $header_area_content = $description_text['value'];
+        }
+        else {
+            $admin_link = '<a href="/admin/config/crealead/associates?destination=espace-co-entrepreneur/espace-associes">Configuration > Crealead > Espace associés</a>';
+            $header_area_content = 'Le descriptif de l\'espace associés est à rédiger dans ' . $admin_link . '.';
+        }
+        $header = $view->display_handler->get_option('header');
+        $header['area']['content'] = $header_area_content;
+
+        global $user;
+        $current_user_roles = $user->roles;
+        $allowed_roles = array('administrateur', 'webmaster', 'référent');
+        $current_user_allowed_roles = array_intersect($allowed_roles, $current_user_roles);
+        if (!$current_user_allowed_roles) {
+            $header_area_1_content = '';
+        }
+        else {
+            $destination = implode('/', arg());
+            $header_area_1_content = '<div class="doc-link-add">'
+                . '<a href="/node/add/link-to-doc?section=ass&destination=' . $destination . '">Ajouter un lien vers un document</a>'
+                . '</div>';
+        }
+
+        $header['area_1']['content'] = $header_area_1_content;
+        $view->display_handler->set_option('header', $header);
+    }
   }
 }
 
