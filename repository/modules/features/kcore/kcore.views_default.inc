@@ -25,7 +25,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
-    2 => '2',
+    157083709 => '157083709',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -73,6 +73,11 @@ function kcore_views_default_views() {
 
   /* Display: Onglet Echanges */
   $handler = $view->new_display('page', 'Onglet Echanges', 'page_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -110,6 +115,11 @@ au moment de l\'interception et la ré-écriture du header.';
 
   /* Display: Onglet COOP'INS */
   $handler = $view->new_display('page', 'Onglet COOP\'INS', 'page_2');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Solde en coopins */
   $handler->display->display_options['header']['area_2']['id'] = 'area_2';
@@ -156,6 +166,11 @@ au moment de l\'interception et la ré-écriture du header.';
 
   /* Display: Onglet Marques Sectorielles */
   $handler = $view->new_display('page', 'Onglet Marques Sectorielles', 'page_3');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -193,6 +208,11 @@ au moment de l\'interception et la ré-écriture du header.';
 
   /* Display: Onglet associés */
   $handler = $view->new_display('page', 'Onglet associés', 'page_4');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    157083709 => '157083709',
+  );
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
