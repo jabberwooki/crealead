@@ -15152,3 +15152,12 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   color: white;
   text-decoration: none;
 }
+.view-reports table th.views-field-field-meeting-date {
+  width: 10%;
+}
+.view-reports table th.views-field-field-report-theme {
+  width: 15%;
+}
+.view-reports table th.views-field-title {
+  width: 25%;
+}

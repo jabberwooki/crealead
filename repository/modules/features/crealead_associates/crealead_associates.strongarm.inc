@@ -150,5 +150,19 @@ function crealead_associates_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_report'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_report_pattern';
+  $strongarm->value = 'espace-co-entrepreneur/espace-associés/comptes-rendus/[node:title]';
+  $export['pathauto_node_report_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_report_themes_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_report_themes_pattern'] = $strongarm;
+
   return $export;
 }
