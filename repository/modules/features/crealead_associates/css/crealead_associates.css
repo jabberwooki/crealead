@@ -1,0 +1,50 @@
+/*.view-display-id-ass_links_list {*/
+/*    padding-top: 1rem;*/
+/*    margin-top: 1rem;*/
+/*    border-top: 1px solid #cccccc;*/
+/*}*/
+
+.view-display-id-ass_links_list .view-content {
+    display: table;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-display-id-ass_links_list .view-content .views-row {
+    display: table-row;
+}
+
+.view-display-id-ass_links_list .view-content .views-row .views-field {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.view-display-id-ass_links_list .view-content .views-row .views-field.views-field-field-pictogramme {
+    width: 4%;
+}
+
+.view-display-id-ass_links_list .view-content .views-row .views-field.views-field-edit-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-display-id-ass_links_list .view-content .views-row .views-field.views-field-delete-node {
+    width: 7%;
+    text-align: right;
+}
+
+.view-coes-area-home.view-display-id-page_4 .doc-link-add {
+    margin-top: 20px;
+}
+
+.view-display-id-ass_links_list .view-content .views-row:hover {
+    background-color: #efefef;
+}
+
+.view-display-id-ass_links_list {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}

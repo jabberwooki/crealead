@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Espace associés feature.
  */
+
+include_once 'crealead_associates.features.inc';
 
 /**
  * Implements hook_menu().
@@ -19,4 +21,13 @@ function crealead_associates_menu() {
     );
 
     return $items;
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function crealead_associates_views_pre_view(&$view, &$display_id, &$args) {
+    if ($view->name == 'needs' && $view->current_display == 'ass_links_list') { // Bloc Liens vers docs associés de la vue Demandes.
+        drupal_add_css(drupal_get_path('module', 'crealead_associates') . '/css/crealead_associates.css');
+    }
 }

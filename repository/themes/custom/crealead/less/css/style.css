@@ -15125,3 +15125,30 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   margin: 0 20px;
   font-size: 1.6em;
 }
+.node-report .field-name-field-report-theme,
+.node-report .field-name-author {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #cccccc;
+}
+.page-espace-co-entrepreneur-espace-associes .view-footer a {
+  float: right;
+  margin-top: -36px;
+  border: 1px solid #999999;
+  background-color: #ededed;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #000;
+  font-size: 0.8em;
+  font-family: arial, sans-serif;
+  display: block;
+  float: left;
+  margin-top: 5px;
+}
+.page-espace-co-entrepreneur-espace-associes .view-footer a:hover {
+  background-color: #bf0e38;
+  color: white;
+  text-decoration: none;
+}
