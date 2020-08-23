@@ -213,16 +213,16 @@ function crealead_calendars_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
@@ -317,6 +317,27 @@ function crealead_calendars_strongarm() {
   $strongarm->name = 'node_submitted_structure_event';
   $strongarm->value = 0;
   $export['node_submitted_structure_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_room_event_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_room_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_structure_event_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_structure_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_crealead_rooms_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_crealead_rooms_pattern'] = $strongarm;
 
   return $export;
 }
