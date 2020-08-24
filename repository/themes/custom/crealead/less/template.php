@@ -392,7 +392,7 @@ function crealead_preprocess_node(&$vars) {
 
 function crealead_calendar_stripe_stripe($vars) {
   $item = $vars['item'];
-  dpm($item);
+ //dpm($item);
   
   // IF ROOMS CALENDAR
   if ($item->entity->type == 'room_event') {
