@@ -430,7 +430,8 @@ function crealead_calendar_stripe_stripe($vars) {
     $output = '';
     $bg_color = $rooms_colors[$item->row->field_field_room[0]['raw']['tid']];
     $color = $rooms_colors[$item->row->field_field_room[0]['raw']['tid']];
-    $output .= '<div style="background-color:' . $bg_color . ';color:' . $color . '" class="stripe" title="Key: ' . $item->stripe_label[0] . '">&nbsp;</div>' . "\n";
+    $room_name = $item->row->field_field_room[0]['raw']['taxonomy_term']->name;
+    $output .= '<div style="background-color:' . $bg_color . ';color:' . $color . '" class="stripe" title="Key: ' . $room_name . '">&nbsp;</div>' . "\n";
   }
 
   // ELSE
