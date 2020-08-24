@@ -2751,7 +2751,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_business_sector',
-    'label' => 'Secteur d\'activité',
+    'label' => 'Domaine d\'intervention',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2759,7 +2759,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_buttons',
       'weight' => 5,
     ),
@@ -4178,6 +4180,7 @@ Le label doit être prouvé.',
   t('Courriel');
   t('Descriptif');
   t('Description');
+  t('Domaine d\'intervention');
   t('Email de contact');
   t('Email envoyé');
   t('Entrepreneur');
@@ -4210,7 +4213,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Photos');
   t('Phrase d\'accroche');
   t('Réalisations');
-  t('Secteur d\'activité');
   t('Site web');
   t('Solutions');
   t('Sujet de votre message');

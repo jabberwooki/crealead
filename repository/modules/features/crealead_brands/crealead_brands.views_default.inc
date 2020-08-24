@@ -1197,7 +1197,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'brand' => 'brand',
   );
-  /* Filter criterion: Content: Secteur d&#039;activité (field_business_sector) */
+  /* Filter criterion: Content: Domaine d&#039;intervention (field_business_sector) */
   $handler->display->display_options['filters']['field_business_sector_tid']['id'] = 'field_business_sector_tid';
   $handler->display->display_options['filters']['field_business_sector_tid']['table'] = 'field_data_field_business_sector';
   $handler->display->display_options['filters']['field_business_sector_tid']['field'] = 'field_business_sector_tid';
@@ -1488,25 +1488,36 @@ function crealead_brands_views_default_views() {
     'brand' => 'brand',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Secteur d&#039;activité (field_business_sector) */
+  /* Filter criterion: Content: Domaine d&#039;intervention (field_business_sector) */
   $handler->display->display_options['filters']['field_business_sector_tid']['id'] = 'field_business_sector_tid';
   $handler->display->display_options['filters']['field_business_sector_tid']['table'] = 'field_data_field_business_sector';
   $handler->display->display_options['filters']['field_business_sector_tid']['field'] = 'field_business_sector_tid';
   $handler->display->display_options['filters']['field_business_sector_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_business_sector_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator_id'] = 'field_business_sector_tid_op';
-  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['label'] = 'Cliquez sur un secteur d\'activité :';
+  $handler->display->display_options['filters']['field_business_sector_tid']['expose']['label'] = 'Cliquez sur un domaine d\'intervention :';
   $handler->display->display_options['filters']['field_business_sector_tid']['expose']['operator'] = 'field_business_sector_tid_op';
   $handler->display->display_options['filters']['field_business_sector_tid']['expose']['identifier'] = 'field_business_sector_tid';
   $handler->display->display_options['filters']['field_business_sector_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     14479344 => 0,
+    199363405 => 0,
     103860121 => 0,
-    191976793 => 0,
+    227964678 => 0,
+    157083709 => 0,
     7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
     231346920 => 0,
     193262079 => 0,
+    1936756 => 0,
   );
   $handler->display->display_options['filters']['field_business_sector_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_sector_tid']['vocabulary'] = 'business_sectors';
@@ -2480,7 +2491,7 @@ function crealead_brands_views_default_views() {
     t('Rechercher'),
     t('Absence de résultat'),
     t('Aucun résultat ne correspond à vos critères de recherche.'),
-    t('Cliquez sur un secteur d\'activité :'),
+    t('Cliquez sur un domaine d\'intervention :'),
     t('Mots-clés'),
     t('Marques d\'un coe'),
     t('field collection item from field_brand_coes'),
