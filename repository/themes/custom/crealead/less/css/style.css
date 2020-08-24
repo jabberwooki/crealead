@@ -14401,7 +14401,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   position: relative;
   color: #000;
   background-color: #F8F8F8;
-  padding: 1px 3px 3px 3px ;
+  padding: 1px 3px 3px 3px;
   font-size: 1.2em;
 }
 .page-espace-co-entrepreneur-calendrier-formations .calendar-calendar .month-view .full td.multi-day .inner div .date-display-range,
@@ -14668,6 +14668,29 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   margin-top: 20px;
   text-align: right;
 }
+/* Les 9 salles, avec tid dev, recette et prod lorsqu'ils sont différents */
+/* A distance */
+.form-item-edit-field-room-tid-3567 a,
+.form-item-edit-field-room-tid-2948 a,
+.form-item-edit-field-room-tid-3779 a {
+  border-bottom: 1px solid #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a:before,
+.form-item-edit-field-room-tid-2948 a:before,
+.form-item-edit-field-room-tid-3779 a:before {
+  color: #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a.active,
+.form-item-edit-field-room-tid-2948 a.active,
+.form-item-edit-field-room-tid-3779 a.active {
+  border-bottom: 2px solid #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a.active:before,
+.form-item-edit-field-room-tid-2948 a.active:before,
+.form-item-edit-field-room-tid-3779 a.active:before {
+  content: "\e879";
+}
+/* Bureau Don Camillo */
 .form-item-edit-field-room-tid-2106 a {
   border-bottom: 1px solid #bf0e38;
 }
@@ -14680,6 +14703,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2106 a.active:before {
   content: "\e879";
 }
+/* Bureau Le Placard */
 .form-item-edit-field-room-tid-2107 a {
   border-bottom: 1px solid #7db700;
 }
@@ -14692,18 +14716,87 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2107 a.active:before {
   content: "\e879";
 }
-.form-item-edit-field-room-tid-2108 a {
+/* Bureau URSCOOP */
+.form-item-edit-field-room-tid-2108 a,
+.form-item-edit-field-room-tid-3717 a {
   border-bottom: 1px solid #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a:before {
+.form-item-edit-field-room-tid-2108 a:before,
+.form-item-edit-field-room-tid-3717 a:before {
   color: #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a.active {
+.form-item-edit-field-room-tid-2108 a.active,
+.form-item-edit-field-room-tid-3717 a.active {
   border-bottom: 2px solid #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a.active:before {
+.form-item-edit-field-room-tid-2108 a.active:before,
+.form-item-edit-field-room-tid-3717 a.active:before {
   content: "\e879";
 }
+/* Grande salle URSCOOP */
+.form-item-edit-field-room-tid-3569 a,
+.form-item-edit-field-room-tid-2949 a,
+.form-item-edit-field-room-tid-3700 a {
+  border-bottom: 1px solid #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a:before,
+.form-item-edit-field-room-tid-2949 a:before,
+.form-item-edit-field-room-tid-3700 a:before {
+  color: #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a.active,
+.form-item-edit-field-room-tid-2949 a.active,
+.form-item-edit-field-room-tid-3700 a.active {
+  border-bottom: 2px solid #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a.active:before,
+.form-item-edit-field-room-tid-2949 a.active:before,
+.form-item-edit-field-room-tid-3700 a.active:before {
+  content: "\e879";
+}
+/* Petite salle URSCOOP */
+.form-item-edit-field-room-tid-3570 a,
+.form-item-edit-field-room-tid-2950 a,
+.form-item-edit-field-room-tid-3716 a {
+  border-bottom: 1px solid #fef207;
+}
+.form-item-edit-field-room-tid-3570 a:before,
+.form-item-edit-field-room-tid-2950 a:before,
+.form-item-edit-field-room-tid-3716 a:before {
+  color: #fef207;
+}
+.form-item-edit-field-room-tid-3570 a.active,
+.form-item-edit-field-room-tid-2950 a.active,
+.form-item-edit-field-room-tid-3716 a.active {
+  border-bottom: 2px solid #fef207;
+}
+.form-item-edit-field-room-tid-3570 a.active:before,
+.form-item-edit-field-room-tid-2950 a.active:before,
+.form-item-edit-field-room-tid-3716 a.active:before {
+  content: "\e879";
+}
+/* Realis */
+.form-item-edit-field-room-tid-3571 a,
+.form-item-edit-field-room-tid-2951 a,
+.form-item-edit-field-room-tid-3718 a {
+  border-bottom: 1px solid #795549;
+}
+.form-item-edit-field-room-tid-3571 a:before,
+.form-item-edit-field-room-tid-2951 a:before,
+.form-item-edit-field-room-tid-3718 a:before {
+  color: #795549;
+}
+.form-item-edit-field-room-tid-3571 a.active,
+.form-item-edit-field-room-tid-2951 a.active,
+.form-item-edit-field-room-tid-3718 a.active {
+  border-bottom: 2px solid #795549;
+}
+.form-item-edit-field-room-tid-3571 a.active:before,
+.form-item-edit-field-room-tid-2951 a.active:before,
+.form-item-edit-field-room-tid-3718 a.active:before {
+  content: "\e879";
+}
+/* Salle Le Grand Saut */
 .form-item-edit-field-room-tid-2109 a {
   border-bottom: 1px solid #009aa0;
 }
@@ -14716,6 +14809,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2109 a.active:before {
   content: "\e879";
 }
+/* Salle Playtime */
 .form-item-edit-field-room-tid-2110 a {
   border-bottom: 1px solid #44059c;
 }
