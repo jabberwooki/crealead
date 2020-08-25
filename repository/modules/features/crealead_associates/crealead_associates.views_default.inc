@@ -127,7 +127,9 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'lire plus';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<p> <br>';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
