@@ -208,6 +208,8 @@ au moment de l\'interception et la ré-écriture du header.';
 
   /* Display: Onglet associés */
   $handler = $view->new_display('page', 'Onglet associés', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Espace associés';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -276,6 +278,7 @@ Se paramètre dans Configuration > Crealead > Marques sectorielles.'),
 Est codé dans crealead_brands.module, fonction crealead_brands_views_pre_view(),
 au moment de l\'interception et la ré-écriture du header.'),
     t('Onglet associés'),
+    t('Espace associés'),
     t('Description de l\'espace associés.
 Se paramètre dans Configuration > Crealead > Espace associés.'),
   );
