@@ -10,6 +10,80 @@
 function crealead_groups_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-business_group-field_attached_file'.
+  $field_instances['node-business_group-field_attached_file'] = array(
+    'bundle' => 'business_group',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'download_file',
+        'settings' => array(),
+        'type' => 'direct_download_icon',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_attached_file',
+    'label' => 'Documents téléchargeables',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => 'business_groups_files',
+      'file_extensions' => 'txt pdf doc docx xls xlsx jpg jpeg png gif',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'label_help_description' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-business_group-field_group_desc'.
   $field_instances['node-business_group-field_group_desc'] = array(
     'bundle' => 'business_group',
@@ -29,9 +103,7 @@ function crealead_groups_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -117,9 +189,7 @@ function crealead_groups_field_default_field_instances() {
       'full' => array(
         'label' => 'inline',
         'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'list_default',
         'weight' => 0,
       ),
@@ -171,11 +241,9 @@ function crealead_groups_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -199,7 +267,7 @@ function crealead_groups_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -232,11 +300,10 @@ function crealead_groups_field_default_field_instances() {
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -260,7 +327,7 @@ function crealead_groups_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -283,9 +350,7 @@ function crealead_groups_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -374,11 +439,9 @@ function crealead_groups_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -427,7 +490,7 @@ function crealead_groups_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -435,6 +498,7 @@ function crealead_groups_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Collectifs liés');
   t('Descriptif');
+  t('Documents téléchargeables');
   t('Liens utiles');
   t('Mission');
   t('Thématiques qui nous intéressent');
