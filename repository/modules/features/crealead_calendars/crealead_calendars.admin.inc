@@ -38,6 +38,7 @@ function crealead_structure_events_manual_sending_form() {
 
   $form = array();
   $structure_events = crealead_structure_events_get_next();
+  $current_month_events = crealead_structure_events_get_current_month();
 
   if(empty($structure_events)) {
     $form['intro'] = array(
@@ -66,7 +67,10 @@ function crealead_structure_events_manual_sending_form() {
       '#title' => t('Période à couvrir'),
     );
 
-    $periods = array(0 => 'Une semaine', 1 => '2 semaines', 2 => '1 mois');
+    $current_month =  format_date(time(), 'custom', 'F Y');
+    $last_day_number_of_the_month = date('t', time());
+
+    $periods = array(0 => 'Une semaine', 1 => '2 semaines', 2 => '4 semaines', 3 => 'Tous les événements du mois en cours (1er au ' . $last_day_number_of_the_month . ' ' . $current_month . ')');
 
     $form['crealead_structure_events_sending_period']['structure_events_manual_sending_period'] = array(
       '#type' => 'radios',
@@ -130,10 +134,27 @@ function crealead_structure_events_manual_sending_form() {
     }
     $form['crealead_structure_events_2'] = array(
       '#type' => 'checkboxes',
-      '#title' => t('Evénements du mois'),
+      '#title' => t('Evénements des 4 prochaines semaines'),
       '#options' => $options3,
       '#default_value' => $default_value,
     );
+
+    $options4 = array();
+    foreach ($current_month_events as $event) {
+        $options4[$event['nid']] = $event['start_date']
+          . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
+          . ' --- ' . $event['title']
+          . ($event['location'] ? ' (' . $event['location'] . ')' : '');
+
+        array_push($default_value, $event['nid']);
+      }
+    $form['crealead_structure_events_3'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Evénements du mois de ' . $current_month),
+      '#options' => $options4,
+      '#default_value' => $default_value,
+    );
+
 
     $form['submit-container'] = array(
       '#type' => 'container',
@@ -148,33 +169,59 @@ function crealead_structure_events_manual_sending_form() {
 }
 
 function crealead_structure_events_manual_sending_form_submit($form, &$form_state) {
+  $is_current_month_wanted = FALSE;
+
   if(reset($form_state['values']['crealead_structure_events_0'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_0'];
   }
   elseif (reset($form_state['values']['crealead_structure_events_1'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_1'];
   }
-  else {
+  elseif (reset($form_state['values']['crealead_structure_events_2'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_2'];
   }
+  else {
+    $selected_events_nids = $form_state['values']['crealead_structure_events_3'];
+    $is_current_month_wanted = TRUE;
+  }
 
-  $structure_events = crealead_structure_events_get_next();
-  $day_grouped_events = crealead_get_day_grouped_events($structure_events, $selected_events_nids);
+  if ($is_current_month_wanted) {
+    $structure_events = crealead_structure_events_get_current_month();
+  }
+  else {
+    $structure_events = crealead_structure_events_get_next();
+  }
 
-  crealead_send_next_structure_events($day_grouped_events, $form_state['values']['structure_events_manual_sending_subject'], TRUE);
+  $events = crealead_get_day_grouped_events($structure_events, $selected_events_nids, $is_current_month_wanted);
+  crealead_send_next_structure_events($events, $form_state['values']['structure_events_manual_sending_subject'], TRUE);
+
+  // Ligne ci-dessous à conserver pour tests.
+  //crealead_send_next_structure_events($events, $form_state['values']['structure_events_manual_sending_subject'], FALSE, array('christophe.espiau@gmail.com'));
 }
 
-function crealead_get_day_grouped_events($structure_events, $selected_events_nids=NULL) {
+function crealead_get_day_grouped_events($structure_events, $selected_events_nids=NULL, $is_current_month_wanted=FALSE) {
   $day_grouped_events = array();
   $days_grouped_selected_events = array();
 
-  foreach ($structure_events as $event_group=>$events) {
-    foreach($events as $key=>$event) {
-      if (isset($selected_events_nids) && in_array($event['nid'], $selected_events_nids)) {
-        $days_grouped_selected_events[$event['start_date']][] = $event;
-      }
-      else {
-        $day_grouped_events[$event['start_date']][] = $event;
+  if ($is_current_month_wanted) {
+    foreach ($structure_events as $event) {
+        if (isset($selected_events_nids) && in_array($event['nid'], $selected_events_nids)) {
+            $days_grouped_selected_events[$event['start_date']][] = $event;
+        }
+        else {
+            $day_grouped_events[$event['start_date']][] = $event;
+        }
+    }
+  }
+  else {
+    foreach ($structure_events as $event_group=>$events) {
+      foreach($events as $key=>$event) {
+          if (isset($selected_events_nids) && in_array($event['nid'], $selected_events_nids)) {
+              $days_grouped_selected_events[$event['start_date']][] = $event;
+          }
+          else {
+              $day_grouped_events[$event['start_date']][] = $event;
+          }
       }
     }
   }

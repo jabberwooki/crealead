@@ -284,7 +284,68 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
   }
 }
 
-function crealead_send_next_structure_events($structure_events, $mail_subject=null, $real_sending=FALSE, $test_addresses=NULL) {
+function crealead_structure_events_get_current_month() {
+    // Récupère tous les événements Structure du mois en cours.
+    $date = new DateTime("first day of next month");
+    $first_day_of_next_month = $date->format('Y-m-d') . 'T00:00:00';
+    $data = new DateTime("last day of previous month");
+    $last_day_of_previous_month = $data->format('Y-m-d') . 'T23:59:59';
+
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'structure_event')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_gclal_date','value', $last_day_of_previous_month, '>')
+        ->fieldCondition('field_gclal_date','value2', $first_day_of_next_month, '<')
+        ->fieldOrderBy('field_gclal_date','value', 'ASC');
+    $result = $query->execute();
+
+    if (!isset($result['node'])) {
+        return array();
+    }
+    else {
+        $events_nids = array_keys($result['node']);
+        $events_details = [];
+
+        foreach ($events_nids as $nid) {
+//            if (!empty($selected_events)) {
+//                if (!in_array($nid, $selected_events)) {
+//                    continue;
+//                }
+//            }
+
+            $wrapper = entity_metadata_wrapper('node', $nid);
+            $event_date = $wrapper->field_gclal_date->value();
+
+            $start_timestamp = strtotime($event_date['value']);
+            $start_date = date('d/m/y', $start_timestamp);
+
+            // $start_time et $end_time recalculés avec les fonctions procédurales de DateTime
+            // pour prendre en compte le bon fuseau horaire et l'heure été/hiver.
+            $date1 = date_create($event_date['value'], timezone_open($event_date['timezone_db']));
+            date_timezone_set($date1, timezone_open($event_date['timezone']));
+            $start_time = date_format($date1, 'H\hi');
+
+            $date2 = date_create($event_date['value2'], timezone_open($event_date['timezone_db']));
+            date_timezone_set($date2, timezone_open($event_date['timezone']));
+            $end_time = date_format($date2, 'H\hi');
+
+            // On stocke les détails de chaque événement, en plaçant chaque événement dans son groupe.
+            $events_details[] = array(
+                'nid' => $nid,
+                'start_date' => $start_date,
+                'start_time' => $start_time,
+                'end_time' => $end_time,
+                'title' => $wrapper->title->value(),
+                'location' => $wrapper->field_gcal_location->value(),
+            );
+        }
+
+        return $events_details;
+    }
+}
+
+function crealead_send_next_structure_events($structure_events, $mail_subject=null, $real_sending=FALSE, $test_addresses=array()) {
   if ($real_sending) {
     $email_addresses = crealead_get_users_emails();
     $mail_subject = '[Crealead] ' . $mail_subject;
@@ -297,7 +358,7 @@ function crealead_send_next_structure_events($structure_events, $mail_subject=nu
     //$test_addresses = array('christophe.espiau@gmail.com');
 
     $email_addresses = $test_addresses;
-    $mail_subject = '[Crealead TEST] Evénements du mois à venir';
+    $mail_subject = '[Crealead TEST] ' . $mail_subject;
   }
 
   // Construction du message email

@@ -6,15 +6,16 @@
   Drupal.behaviors.structureEvents = {
     attach: function (context, settings) {
       // Gestion de l'affichage du formulaire d'envoi manuel des événements Structure //////////////////////////////////
-      // 1 - On récupére les trois champs de type case à cocher (1 semaine, 2 semaines, 1 mois)
+      // 1 - On récupére les trois champs de type case à cocher (1 semaine, 2 semaines, 4 semaines, le mois en cours)
       var period0 = $('.form-item-crealead-structure-events-0');
       var period1 = $('.form-item-crealead-structure-events-1');
       var period2 = $('.form-item-crealead-structure-events-2');
+      var period3 = $('.form-item-crealead-structure-events-3');
 
       // 2 - On stocke les sélecteurs dans le tableau periods
-      var periods = [period0, period1, period2];
+      var periods = [period0, period1, period2, period3];
       // et le contenu HTML de chaque champ dans le tableau periodMarkups
-      var periodMarkups = [period0.html(), period1.html(), period2.html()];
+      var periodMarkups = [period0.html(), period1.html(), period2.html(), period3.html()];
 
       // 3 - Au premier affichage du formulaire, on récupère la période cochée
       var checkedPeriod = $('#edit-structure-events-manual-sending-period input:checked').val();
