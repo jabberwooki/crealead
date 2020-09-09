@@ -1,0 +1,36 @@
+#kcore-profile2-delete-confirm .confirm-form-description {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+}
+
+#kcore-profile2-delete-confirm .confirm-form-description .profile-type,
+#kcore-profile2-delete-confirm .confirm-form-description .profile-user {
+    font-weight: bold;
+}
+
+#kcore-profile2-delete-confirm span.glyphicon {
+    display: none;
+}
+
+#kcore-profile2-delete-confirm .form-actions button {
+    border-radius: 0;
+    font-size: 1.5rem;
+}
+
+#kcore-profile2-delete-confirm #edit-submit {
+    padding: 0.5rem 1rem;
+    background-color: #b73939;
+    border-color: #b73939;
+}
+#kcore-profile2-delete-confirm #edit-cancel {
+    /*border: 1px solid red;*/
+    border-radius: 0;
+    padding: 0.6rem 1rem;
+    font-size: 1.5rem;
+    color: white;
+    vertical-align: middle;
+    background-color: #f69231;
+    border-color: #f69231;
+}
+
+/* f69231 */

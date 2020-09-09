@@ -58,7 +58,21 @@ function kcore_menu() {
     'file' => 'kcore.admin.inc',
   );
 
+    $items['crealead-profiles/%/delete'] = array(
+        'type' => MENU_CALLBACK,
+        'title' => 'Delete',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('kcore_profile2_delete_confirm', 1),
+        'access callback' => TRUE,
+        'file' => 'kcore.pages.inc',
+    );
+
   return $items;
+}
+
+function kcore_ma_page() {
+    $content = "Ma super page !";
+    return $content;
 }
 
 /**
@@ -98,6 +112,34 @@ function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   if ($user->uid != 1 && empty($user_allowed_roles)) {
 	$form['field_user_referent']['#access'] = FALSE;
   }
+
+    // Handling of the 'Delete Profile' button.
+    // Is current user already has the displayed profile, the button shows up.
+    // Only Structure and Instances profiles are concerned.
+    $structure_profile_types = array('assistant_page','direction_page','management_page','provider_page');
+    $instances_profile_types = array('ca_page','dup_page');
+    $all_handled_types = array_merge($structure_profile_types, $instances_profile_types);
+
+    if (in_array($form['#user_category'],$all_handled_types)) {
+        $profiles = profile2_load_by_user($form['#user']);
+
+        if (array_key_exists($form['#user_category'], $profiles) && user_access('administer profiles')) {
+            $current_profile = $profiles[$form['#user_category']];
+            $form_state['kcore_pid'] = $current_profile->pid;
+
+            $form['actions']['delete'] = array(
+              '#type' => 'submit',
+              '#value' => t('Delete profile'),
+              '#weight' => 45,
+              '#limit_validation_errors' => array(),
+              '#submit' => array('kcore_profile2_form_submit_delete')
+            );
+        }
+    }
+}
+
+function kcore_profile2_form_submit_delete($form, &$form_state) {
+    $form_state['redirect'] = 'crealead-profiles/' . $form_state['kcore_pid'] . '/delete';
 }
 
 /**
@@ -518,4 +560,33 @@ function kcore_mail($key, &$message, $params) {
             $message['body'][] = $params['body'];
             break;
     }
+}
+
+function kcore_user_roles() {
+    $query = db_select('role', 'r');
+    $query->fields('r', array('rid', 'name', 'machine_name'));
+    $result = $query->execute();
+
+    $roles = array();
+    foreach ($result as $role) {
+        $roles[$role->machine_name] = $role->name;
+    }
+
+    return $roles;
+}
+
+function kcore_get_profile2_role_name($profile_type) {
+    $profiles_roles = array(
+        'assistant_page' => 'assistant',
+        'direction_page' => 'direction',
+        'provider_page' => 'provider',
+        'management_page' => 'pole_gestion',
+        'referent_page' => 'referent',
+        'ca_page' => 'ca',
+        'dup_page' => 'dup',
+    );
+
+    $all_roles = kcore_user_roles();
+
+    return $all_roles[$profiles_roles[$profile_type]];
 }
