@@ -277,6 +277,9 @@ projects[term_reference_tree][version] = "1.10"
 projects[rules][subdir] = contrib
 projects[rules][version] = "2.9"
 
+projects[user_permissions][subdir] = contrib
+projects[user_permissions][version] = "3.1"
+
 projects[view_unpublished][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 

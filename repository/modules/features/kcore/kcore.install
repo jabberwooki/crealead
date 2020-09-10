@@ -100,3 +100,8 @@ function kcore_update_7013() {
 function kcore_update_7014() {
   module_enable(array('swiftmailer'));
 }
+
+function kcore_update_7015() {
+    module_enable(array('user_permissions'));
+}
+
