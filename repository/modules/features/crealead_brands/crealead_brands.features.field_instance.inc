@@ -819,7 +819,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1169,7 +1169,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label_help_description' => '',
       ),
       'type' => 'video_embed_field_video',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
