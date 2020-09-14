@@ -220,6 +220,9 @@ function crealead_profiles_views_pre_render(&$view) {
   if ($view->name == 'instances' && $view->current_display == 'instances_profiles') {
     drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_instances_profiles.js');
   }
+  if ($view->name == 'coe_directory' && $view->current_display == 'coes_entries') {
+    drupal_add_css(drupal_get_path('module', 'crealead_profiles') . '/css/crealead_profiles_entries_leavings.css');
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
@@ -377,4 +380,46 @@ function crealead_profiles_form_profile2_edit_coe_page_form_alter(&$form, &$form
 
     $form['profile_coe_page']['field_brands_order']['#weight'] = $field_brands_order_weight + 1;
   }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_profiles_views_query_alter(&$view, &$query) {
+    if ($view->name == 'coe_directory') {
+        // Liste des coes entrants - on utilise le nombre de mois qui a été paramétré via la page d'admin "Entrées/Sorties des coes".
+        if ($view->current_display == 'coes_entries') {
+            $entries_range = variable_get('crealead_entries_range');
+            $date = new DateTime();
+            $date->modify('- ' . $entries_range . ' months');
+
+            $query->where[1]['conditions'][3]['field'] = 'profile.created > ' . $date->getTimestamp();
+
+        }
+        // Liste des coes partis - on utilise le nombre de mois qui a été paramétré via la page d'admin "Entrées/Sorties des coes".
+        elseif ($view->current_display == 'coes_leavings') {
+            $leavings_range = variable_get('crealead_leavings_range');
+            $date = new DateTime();
+            $date->modify('- ' . $leavings_range . ' months');
+
+            $query->where[1]['conditions'][3]['value'][':field_data_field_leaving_date_field_leaving_date_value'] = $date->format('Y-m-d');
+        }
+    }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function crealead_profiles_menu() {
+    $items['admin/config/crealead/entries-leavings'] = array(
+        'title' => 'Entrées/Sorties des coes',
+        'description' => 'Paramétrage des entrées et sorties des coes.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('crealead_profiles_entries_leavings_settings_form'),
+        'access arguments' => array('administer crealead settings'),
+        'type' => MENU_NORMAL_ITEM,
+        'file' => 'crealead_profiles.admin.inc',
+    );
+
+    return $items;
 }

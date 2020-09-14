@@ -454,6 +454,18 @@ function kcore_user_cancel($edit, $account, $method) {
             // Attention, il faut passer en paramètre un tableau de nid seulement, donc $node_nids (voir au dessus).
             node_mass_update($node_nids, array('status' => 0));
 
+            // Enregistrement de la date de blocage du compte Drupal de l'utilisateur courant
+            // dans le champ "Date de départ de Crealead" de son profil coe, s'il en possède un.
+            if ($profile = profile2_load_by_user($account, 'coe_page')) {
+                dpm($profile->pid, 'pid : ');
+                dpm($profile->uid, 'uid : ');
+                $wrapper = entity_metadata_wrapper('profile2', $profile);
+                $current_time = time();
+                dpm(date('d/m/y'), $current_time);
+                $wrapper->field_leaving_date->set(time());
+                $wrapper->save();
+            }
+
             // Envoi des mails
             foreach ($email_data['brands'] as $brand_name => $coe_addresses) {
                 foreach ($coe_addresses as $address) {

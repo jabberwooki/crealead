@@ -1369,6 +1369,75 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
+  // Exported field_instance: 'profile2-coe_page-field_leaving_date'.
+  $field_instances['profile2-coe_page-field_leaving_date'] = array(
+    'bundle' => 'coe_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 13,
+      ),
+      'page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_leaving_date',
+    'label' => 'Date de départ de Crealead',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/y',
+        'input_format_custom' => '',
+        'label_help_description' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'profile2-coe_page-field_linked_groups'.
   $field_instances['profile2-coe_page-field_linked_groups'] = array(
     'bundle' => 'coe_page',
@@ -2216,6 +2285,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Compétences');
   t('Compétences et spécialités');
   t('Coordonnées');
+  t('Date de départ de Crealead');
   t('Email envoyé');
   t('Il s\'agit de mots-clés.<br />
 <ul>
