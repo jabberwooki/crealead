@@ -111,3 +111,9 @@ function kcore_update_7015() {
     module_enable(array('user_permissions'));
 }
 
+/**
+ * Activate video_embed_field module.
+ */
+function kcore_update_7016() {
+    module_enable(array('video_embed_field'));
+}

@@ -10937,6 +10937,12 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-contr
     padding-left: 75px;
   }
 }
+@media (min-width: 992px) {
+  body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-field-achievement-videos {
+    margin-top: 20px;
+    padding-left: 75px;
+  }
+}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title {
   text-align: left;
 }
@@ -13236,6 +13242,12 @@ body.not-logged-in .region-sector-brands-header {
 }
 .node-type-achievement .field-slideshow-pager > a.activeSlide {
   background: black;
+}
+.node-type-achievement .field-name-field-achievement-videos {
+  margin: 20px 0;
+}
+.node-type-achievement .field-name-field-achievement-videos .embedded-video .player {
+  text-align: center;
 }
 #filedepotNavTreeDiv > div > div > div:not(:last-child) {
   display: none;

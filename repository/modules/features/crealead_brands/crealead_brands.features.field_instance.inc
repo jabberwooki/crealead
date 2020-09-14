@@ -710,11 +710,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'block' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'certifications_labels_block' => array(
         'label' => 'hidden',
@@ -738,11 +736,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -838,7 +834,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'certifications_labels_block' => array(
         'label' => 'above',
@@ -858,11 +854,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'full' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -913,7 +907,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'field_slideshow',
         'settings' => array(
-          'field_formatter_class' => '',
           'slideshow_caption' => '',
           'slideshow_caption_link' => '',
           'slideshow_carousel_circular' => 0,
@@ -974,7 +967,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'field_slideshow',
         'settings' => array(
-          'field_formatter_class' => '',
           'slideshow_caption' => '',
           'slideshow_caption_link' => '',
           'slideshow_carousel_circular' => 0,
@@ -1091,6 +1083,96 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
+  // Exported field_instance: 'node-achievement-field_achievement_videos'.
+  $field_instances['node-achievement-field_achievement_videos'] = array(
+    'bundle' => 'achievement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'block' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'achievements_tab',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 1,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 2,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_achievement_videos',
+    'label' => 'Vidéos',
+    'required' => 0,
+    'settings' => array(
+      'allowed_providers' => array(
+        'vimeo' => 'vimeo',
+        'youtube' => 'youtube',
+      ),
+      'description_field' => 0,
+      'description_length' => 128,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'video_embed_field_video',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-achievement-field_landing_pages'.
   $field_instances['node-achievement-field_landing_pages'] = array(
     'bundle' => 'achievement',
@@ -1102,7 +1184,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'certifications_labels_block' => array(
         'label' => 'above',
@@ -1172,7 +1254,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'certifications_labels_block' => array(
         'label' => 'above',
@@ -1242,7 +1324,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'certifications_labels_block' => array(
         'label' => 'above',
@@ -4221,6 +4303,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Type de marque');
   t('Type de sauvegarde');
   t('Téléphone');
+  t('Vidéos');
   t('Votre adresse e-mail');
   t('Votre message');
   t('Votre nom');
