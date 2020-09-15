@@ -99,11 +99,7 @@ function crealead_structure_events_manual_sending_form() {
     foreach ($structure_events as $event_group=>$events) {
       if ($event_group == 'group1') {
         foreach ($events as $event) {
-          $options1[$event['nid']] = $event['start_date']
-            . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
-            . ' --- ' . $event['title']
-            . ($event['location'] ? ' (' . $event['location'] . ')' : '');
-
+          $options1[$event['nid']] = crealead_calendars_format_event_dates($event);
           array_push($default_value, $event['nid']);
         }
       }
@@ -119,11 +115,7 @@ function crealead_structure_events_manual_sending_form() {
     foreach ($structure_events as $event_group=>$events) {
       if ($event_group == 'group1' || $event_group == 'group2') {
         foreach ($events as $event) {
-          $options2[$event['nid']] = $event['start_date']
-            . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
-            . ' --- ' . $event['title']
-            . ($event['location'] ? ' (' . $event['location'] . ')' : '');
-
+          $options2[$event['nid']] = crealead_calendars_format_event_dates($event);
           array_push($default_value, $event['nid']);
         }
       }
@@ -138,11 +130,7 @@ function crealead_structure_events_manual_sending_form() {
     $options3 = array();
     foreach ($structure_events as $event_group) {
       foreach ($event_group as $event) {
-        $options3[$event['nid']] = $event['start_date']
-          . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
-          . ' --- ' . $event['title']
-          . ($event['location'] ? ' (' . $event['location'] . ')' : '');
-
+        $options3[$event['nid']] = crealead_calendars_format_event_dates($event);
         array_push($default_value, $event['nid']);
         ;
       }
@@ -156,11 +144,7 @@ function crealead_structure_events_manual_sending_form() {
 
     $options4 = array();
     foreach ($current_month_events as $event) {
-        $options4[$event['nid']] = $event['start_date']
-          . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
-          . ' --- ' . $event['title']
-          . ($event['location'] ? ' (' . $event['location'] . ')' : '');
-
+        $options4[$event['nid']] = crealead_calendars_format_event_dates($event);
         array_push($default_value, $event['nid']);
       }
     $form['crealead_structure_events_3'] = array(
@@ -172,11 +156,7 @@ function crealead_structure_events_manual_sending_form() {
 
     $options5 = array();
     foreach ($next_month_events as $event) {
-      $options5[$event['nid']] = $event['start_date']
-          . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
-          . ' --- ' . $event['title']
-          . ($event['location'] ? ' (' . $event['location'] . ')' : '');
-
+      $options5[$event['nid']] = crealead_calendars_format_event_dates($event);
       array_push($default_value, $event['nid']);
     }
     $form['crealead_structure_events_4'] = array(
@@ -196,6 +176,17 @@ function crealead_structure_events_manual_sending_form() {
   }
 
   return $form;
+}
+
+function crealead_calendars_format_event_dates($event) {
+    if ($event['end_date'] == $event['start_date']) {
+        $date_info = $event['start_date'] . ' (' . $event['start_time'] . ' - ' . $event['end_time'] . ') ';
+    }
+    else {
+        $date_info = $event['start_date'] . ' (' . $event['start_time'] . ') - ' . $event['end_date'] . ' (' . $event['end_time'] . ') ';
+    }
+    return $date_info . ' --- ' . $event['title']
+        . ($event['location'] ? ' (' . $event['location'] . ')' : '');
 }
 
 function crealead_structure_events_manual_sending_form_submit($form, &$form_state) {

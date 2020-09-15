@@ -242,6 +242,7 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
       $start_timestamp = strtotime($event_date['value']);
       $end_timestamp = strtotime($event_date['value2']);
       $start_date = date('d/m/y', $start_timestamp);
+      $end_date = date('d/m/y', $end_timestamp);
 //      $start_time = date('H:i', $start_timestamp);
 //      $end_time = date('H:i', $end_timestamp);
 
@@ -272,6 +273,7 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
         'nid' => $nid,
         'start_date' => $start_date,
         'start_time' => $start_time,
+        'end_date' => $end_date,
         'end_time' => $end_time,
         'title' => $wrapper->title->value(),
         'location' => $wrapper->field_gcal_location->value(),
@@ -308,8 +310,8 @@ function crealead_structure_events_get_month_events($which_month='current') {
     $query->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'structure_event')
         ->propertyCondition('status', NODE_PUBLISHED)
-        ->fieldCondition('field_gclal_date','value', $query_start_date, '>=')
-        ->fieldCondition('field_gclal_date','value2', $query_end_date, '<=')
+        ->fieldCondition('field_gclal_date','value', $query_end_date, '<=') // date début événement inférieure ou égale à fin de mois
+        ->fieldCondition('field_gclal_date','value2', $query_start_date, '>=') // date fin événement supérieure ou égale à debut de mois.
         ->fieldOrderBy('field_gclal_date','value', 'ASC');
     $result = $query->execute();
 
@@ -331,6 +333,8 @@ function crealead_structure_events_get_month_events($which_month='current') {
 
             $start_timestamp = strtotime($event_date['value']);
             $start_date = date('d/m/y', $start_timestamp);
+            $end_timestamp = strtotime($event_date['value2']);
+            $end_date = date('d/m/y', $end_timestamp);
 
             // $start_time et $end_time recalculés avec les fonctions procédurales de DateTime
             // pour prendre en compte le bon fuseau horaire et l'heure été/hiver.
@@ -347,6 +351,7 @@ function crealead_structure_events_get_month_events($which_month='current') {
                 'nid' => $nid,
                 'start_date' => $start_date,
                 'start_time' => $start_time,
+                'end_date' => $end_date,
                 'end_time' => $end_time,
                 'title' => $wrapper->title->value(),
                 'location' => $wrapper->field_gcal_location->value(),
