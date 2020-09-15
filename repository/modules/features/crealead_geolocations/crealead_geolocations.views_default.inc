@@ -347,6 +347,14 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     103860121 => '103860121',
   );
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'profile';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'coe_page' => 'coe_page',
+  );
 
   /* Display: Backup coes d'un point géo */
   $handler = $view->new_display('block', 'Backup coes d\'un point géo', 'block_1');
@@ -443,7 +451,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Secteur d'activité */
+  /* Field: Content: Domaine d'intervention */
   $handler->display->display_options['fields']['field_business_sector']['id'] = 'field_business_sector';
   $handler->display->display_options['fields']['field_business_sector']['table'] = 'field_data_field_business_sector';
   $handler->display->display_options['fields']['field_business_sector']['field'] = 'field_business_sector';
