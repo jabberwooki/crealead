@@ -11,11 +11,12 @@
       var period1 = $('.form-item-crealead-structure-events-1');
       var period2 = $('.form-item-crealead-structure-events-2');
       var period3 = $('.form-item-crealead-structure-events-3');
+      var period4 = $('.form-item-crealead-structure-events-4');
 
       // 2 - On stocke les sélecteurs dans le tableau periods
-      var periods = [period0, period1, period2, period3];
+      var periods = [period0, period1, period2, period3, period4];
       // et le contenu HTML de chaque champ dans le tableau periodMarkups
-      var periodMarkups = [period0.html(), period1.html(), period2.html(), period3.html()];
+      var periodMarkups = [period0.html(), period1.html(), period2.html(), period3.html(), period4.html()];
 
       // 3 - Au premier affichage du formulaire, on récupère la période cochée
       var checkedPeriod = $('#edit-structure-events-manual-sending-period input:checked').val();

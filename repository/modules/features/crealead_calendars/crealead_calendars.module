@@ -284,19 +284,32 @@ function crealead_structure_events_get_next($period=0, $selected_events = array(
   }
 }
 
-function crealead_structure_events_get_current_month() {
-    // Récupère tous les événements Structure du mois en cours.
-    $date = new DateTime("first day of next month");
-    $first_day_of_next_month = $date->format('Y-m-d') . 'T00:00:00';
-    $data = new DateTime("last day of previous month");
-    $last_day_of_previous_month = $data->format('Y-m-d') . 'T23:59:59';
+function crealead_structure_events_get_month_events($which_month='current') {
 
+    $events_details = [];
+
+    if ($which_month == 'current') {
+        $from_date = new DateTime("first day of this month");
+        $to_date = new DateTime("last day of this month");
+    }
+    elseif ($which_month == 'next') {
+        $from_date = new DateTime("first day of next month");
+        $to_date = new DateTime("last day of next month");
+    }
+    else {
+        return $events_details;
+    }
+
+    $query_start_date = $from_date->format('Y-m-d') . 'T00:00:00';
+    $query_end_date = $to_date->format('Y-m-d') . 'T23:59:59';
+
+    // Récupère tous les événements Structure du mois demandé (en cours si 'current', mois suivant si 'next').
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'structure_event')
         ->propertyCondition('status', NODE_PUBLISHED)
-        ->fieldCondition('field_gclal_date','value', $last_day_of_previous_month, '>')
-        ->fieldCondition('field_gclal_date','value2', $first_day_of_next_month, '<')
+        ->fieldCondition('field_gclal_date','value', $query_start_date, '>=')
+        ->fieldCondition('field_gclal_date','value2', $query_end_date, '<=')
         ->fieldOrderBy('field_gclal_date','value', 'ASC');
     $result = $query->execute();
 
@@ -305,7 +318,6 @@ function crealead_structure_events_get_current_month() {
     }
     else {
         $events_nids = array_keys($result['node']);
-        $events_details = [];
 
         foreach ($events_nids as $nid) {
 //            if (!empty($selected_events)) {
@@ -344,6 +356,7 @@ function crealead_structure_events_get_current_month() {
         return $events_details;
     }
 }
+
 
 function crealead_send_next_structure_events($structure_events, $mail_subject=null, $real_sending=FALSE, $test_addresses=array()) {
   if ($real_sending) {

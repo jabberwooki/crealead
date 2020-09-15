@@ -38,7 +38,8 @@ function crealead_structure_events_manual_sending_form() {
 
   $form = array();
   $structure_events = crealead_structure_events_get_next();
-  $current_month_events = crealead_structure_events_get_current_month();
+  $current_month_events = crealead_structure_events_get_month_events('current');
+  $next_month_events = crealead_structure_events_get_month_events('next');
 
   if(empty($structure_events)) {
     $form['intro'] = array(
@@ -67,14 +68,28 @@ function crealead_structure_events_manual_sending_form() {
       '#title' => t('Période à couvrir'),
     );
 
-    $current_month =  format_date(time(), 'custom', 'F Y');
-    $last_day_number_of_the_month = date('t', time());
 
-    $periods = array(0 => 'Une semaine', 1 => '2 semaines', 2 => '4 semaines', 3 => 'Tous les événements du mois en cours (1er au ' . $last_day_number_of_the_month . ' ' . $current_month . ')');
+    $current_month_name =  format_date(time(), 'custom', 'F Y');
+    $current_month_number = format_date(time(), 'custom', 'n');
+    $current_month_article = in_array($current_month_number, array(4, 8, 10)) ? 'd\'' : 'de ';
+
+    $next_month_name = format_date(strtotime('first day of next month'), 'custom', 'F Y');
+    $next_month_number = format_date(strtotime('first day of next month'), 'custom', 'n');
+    $next_month_article = in_array($next_month_number, array(4, 8, 10)) ? 'd\'' : 'de ';
+
+    $today_date = format_date(time(), 'custom', 'd F Y');
+
+    $periods = array(
+        0 => 'Une semaine',
+        1 => '2 semaines',
+        2 => '4 semaines',
+        3 => 'Tous les événements du mois en cours (' . $current_month_name . ')',
+        4 => 'Tous les événéments du mois suivant (' . $next_month_name . ')',
+    );
 
     $form['crealead_structure_events_sending_period']['structure_events_manual_sending_period'] = array(
       '#type' => 'radios',
-      '#description' => 'Sélectionner la période à couvrir pour l\'envoi des événements Structure.',
+      '#description' => 'Sélectionner la période à couvrir pour l\'envoi des événements Structure. Nous sommes aujourd\'hui le <b>' . $today_date . '</b>.',
       '#options' => $periods,
       '#default_value' => variable_get('structure_events_manual_sending_period', 0),
     );
@@ -150,11 +165,26 @@ function crealead_structure_events_manual_sending_form() {
       }
     $form['crealead_structure_events_3'] = array(
       '#type' => 'checkboxes',
-      '#title' => t('Evénements du mois de ' . $current_month),
+      '#title' => t('Evénements du mois ' .$current_month_article . $current_month_name),
       '#options' => $options4,
       '#default_value' => $default_value,
     );
 
+    $options5 = array();
+    foreach ($next_month_events as $event) {
+      $options5[$event['nid']] = $event['start_date']
+          . ' --- ' . $event['start_time'] . ' - ' . $event['end_time']
+          . ' --- ' . $event['title']
+          . ($event['location'] ? ' (' . $event['location'] . ')' : '');
+
+      array_push($default_value, $event['nid']);
+    }
+    $form['crealead_structure_events_4'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Evénements du mois ' .$next_month_article . $next_month_name),
+      '#options' => $options5,
+      '#default_value' => $default_value,
+    );
 
     $form['submit-container'] = array(
       '#type' => 'container',
@@ -169,7 +199,7 @@ function crealead_structure_events_manual_sending_form() {
 }
 
 function crealead_structure_events_manual_sending_form_submit($form, &$form_state) {
-  $is_current_month_wanted = FALSE;
+  $is_current_month_wanted = $is_next_month_wanted = $is_a_month_wanted = FALSE;
 
   if(reset($form_state['values']['crealead_structure_events_0'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_0'];
@@ -180,30 +210,39 @@ function crealead_structure_events_manual_sending_form_submit($form, &$form_stat
   elseif (reset($form_state['values']['crealead_structure_events_2'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_2'];
   }
-  else {
+  elseif (reset($form_state['values']['crealead_structure_events_3'])) {
     $selected_events_nids = $form_state['values']['crealead_structure_events_3'];
     $is_current_month_wanted = TRUE;
   }
+  else {
+    $selected_events_nids = $form_state['values']['crealead_structure_events_4'];
+    $is_next_month_wanted = TRUE;
+  }
 
   if ($is_current_month_wanted) {
-    $structure_events = crealead_structure_events_get_current_month();
+    $structure_events = crealead_structure_events_get_month_events('current');
+    $is_a_month_wanted = TRUE;
+  }
+  elseif ($is_next_month_wanted) {
+    $structure_events = crealead_structure_events_get_month_events('next');
+    $is_a_month_wanted = TRUE;
   }
   else {
     $structure_events = crealead_structure_events_get_next();
   }
 
-  $events = crealead_get_day_grouped_events($structure_events, $selected_events_nids, $is_current_month_wanted);
+  $events = crealead_get_day_grouped_events($structure_events, $selected_events_nids, $is_a_month_wanted);
   crealead_send_next_structure_events($events, $form_state['values']['structure_events_manual_sending_subject'], TRUE);
 
   // Ligne ci-dessous à conserver pour tests.
   //crealead_send_next_structure_events($events, $form_state['values']['structure_events_manual_sending_subject'], FALSE, array('christophe.espiau@gmail.com'));
 }
 
-function crealead_get_day_grouped_events($structure_events, $selected_events_nids=NULL, $is_current_month_wanted=FALSE) {
+function crealead_get_day_grouped_events($structure_events, $selected_events_nids=NULL, $is_a_month_wanted=FALSE) {
   $day_grouped_events = array();
   $days_grouped_selected_events = array();
 
-  if ($is_current_month_wanted) {
+  if ($is_a_month_wanted) {
     foreach ($structure_events as $event) {
         if (isset($selected_events_nids) && in_array($event['nid'], $selected_events_nids)) {
             $days_grouped_selected_events[$event['start_date']][] = $event;
