@@ -83,8 +83,8 @@ function crealead_structure_events_manual_sending_form() {
         0 => 'Une semaine',
         1 => '2 semaines',
         2 => '4 semaines',
-        3 => 'Tous les événements du mois en cours (' . $current_month_name . ')',
-        4 => 'Tous les événéments du mois suivant (' . $next_month_name . ')',
+        3 => 'Evénements du mois ' . $current_month_article . $current_month_name,
+        4 => 'Evénéments du mois ' . $next_month_article . $next_month_name,
     );
 
     $form['crealead_structure_events_sending_period']['structure_events_manual_sending_period'] = array(

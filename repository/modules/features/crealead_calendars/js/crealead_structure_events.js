@@ -13,6 +13,15 @@
       var period3 = $('.form-item-crealead-structure-events-3');
       var period4 = $('.form-item-crealead-structure-events-4');
 
+      var initialSubject = $('#edit-structure-events-manual-sending-subject').val();
+      var currentMonthLabel = $("[for=edit-structure-events-manual-sending-period-3]").text();
+      var nextMonthLabel = $("[for=edit-structure-events-manual-sending-period-4]").text();
+
+      $(window).on('beforeunload', function(){
+        $('#edit-structure-events-manual-sending-subject').val(initialSubject);
+        $('input:radio[name=structure_events_manual_sending_period]')[0].checked = true;
+      });
+
       // 2 - On stocke les sélecteurs dans le tableau periods
       var periods = [period0, period1, period2, period3, period4];
       // et le contenu HTML de chaque champ dans le tableau periodMarkups
@@ -29,6 +38,19 @@
         checkedPeriod = $('#edit-structure-events-manual-sending-period .form-type-radio input:checked').val();
         // et on affiche cette période.
         showSelectedPeriod(periods, periodMarkups, checkedPeriod);
+
+        // si l'option 4 (mois en cours) ou si l'option 5 (mois suivant) est sélectionné,
+        // changement de l'objet du message.
+        // si les options 1, 2 ou 3 sont sélectionnées, on remet l'objet initial.
+        if (checkedPeriod == 3) {
+          $('#edit-structure-events-manual-sending-subject').val(currentMonthLabel);
+        }
+        else if (checkedPeriod == 4){
+          $('#edit-structure-events-manual-sending-subject').val(nextMonthLabel);
+        }
+        else {
+          $('#edit-structure-events-manual-sending-subject').val(initialSubject);
+        }
       });
 
       // Fonction d'affichage de la période sélectionnée.
