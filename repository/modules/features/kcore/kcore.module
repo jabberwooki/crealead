@@ -116,7 +116,7 @@ function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
     // Handling of the 'Delete Profile' button.
     // Is current user already has the displayed profile, the button shows up.
     // Only Structure and Instances profiles are concerned.
-    $structure_profile_types = array('assistant_page','direction_page','management_page','provider_page');
+    $structure_profile_types = array('assistant_page','direction_page','management_page','provider_page','referent_page');
     $instances_profile_types = array('ca_page','dup_page');
     $all_handled_types = array_merge($structure_profile_types, $instances_profile_types);
 
