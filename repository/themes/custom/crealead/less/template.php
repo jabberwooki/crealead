@@ -425,6 +425,10 @@ function crealead_calendar_stripe_stripe($vars) {
       '2109' => '#009aa0',
       // Salle Playtime
       '2110' => '#44059c',
+      // Auberge Espagnole - dev, rec, prod
+      '3587' => '#c65b7c',
+      '2956' => '#c65b7c',
+      '3932' => '#c65b7c',
     );
     
     $output = '';

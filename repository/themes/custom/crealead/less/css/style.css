@@ -14834,6 +14834,27 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2110 a.active:before {
   content: "\e879";
 }
+/* Salle Augerge Espagnole */
+.form-item-edit-field-room-tid-3587 a,
+.form-item-edit-field-room-tid-2956 a,
+.form-item-edit-field-room-tid-3932 a {
+  border-bottom: 1px solid #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a:before,
+.form-item-edit-field-room-tid-2956 a:before,
+.form-item-edit-field-room-tid-3932 a:before {
+  color: #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a.active,
+.form-item-edit-field-room-tid-2956 a.active,
+.form-item-edit-field-room-tid-3932 a.active {
+  border-bottom: 2px solid #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a.active:before,
+.form-item-edit-field-room-tid-2956 a.active:before,
+.form-item-edit-field-room-tid-3932 a.active:before {
+  content: "\e879";
+}
 .node-type-book .book-navigation ul.dropdown-menu li:before {
   display: none !important;
 }
