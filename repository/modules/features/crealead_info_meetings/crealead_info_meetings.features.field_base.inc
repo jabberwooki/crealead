@@ -197,6 +197,7 @@ function crealead_info_meetings_field_default_field_bases() {
         'mo' => 'Montpellier',
         'ni' => 'Nîmes',
         'se' => 'Sète',
+        'di' => 'à distance',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

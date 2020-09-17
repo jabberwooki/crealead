@@ -32,8 +32,9 @@ function crealead_info_meetings_init() {
     }
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
     drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
+    drupal_add_js(array('crealead_info_meeting_location' => $node->field_meeting_location['und'][0]['value']), 'setting');
   }
-  elseif (NULL !== arg(1) && in_array(arg(1), array('mo','ni','se'))) {
+  elseif (NULL !== arg(1) && in_array(arg(1), array('mo','ni','se','di'))) {
     drupal_page_is_cacheable(FALSE);
     drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
   }
@@ -182,8 +183,16 @@ function crealead_info_meetings_entity_view_alter(&$build, $type) {
   }
 
   if ($type == 'node' && $build['#bundle'] == 'info_meeting' && $build['#view_mode'] == 'full') {
-    $location_name = crealead_info_meetings_get_location_name($build['#node']->field_meeting_location['und'][0]['value']);
-    drupal_set_title($build['#node']->title . ' à ' . $location_name);
+      if ($build['#node']->field_meeting_location['und'][0]['value'] == 'di') {
+          unset($build['#node']->field_info_meeting_map);
+          $location_name_article = ' ';
+      }
+      else {
+          //dpm('présentiel');
+          $location_name_article = ' à ';
+      }
+      $location_name = crealead_info_meetings_get_location_name($build['#node']->field_meeting_location['und'][0]['value']);
+      drupal_set_title($build['#node']->title . $location_name_article . $location_name);
   }
 }
 
@@ -405,6 +414,7 @@ function crealead_info_meetings_block_view($delta = '') {
         'mo' => 'Montpellier',
         'ni' => 'Nîmes',
         'se' => 'Sète',
+        'di' => 'une réunion à distance'
       );
       $content = '';
       foreach ($locations as $code => $location) {
@@ -457,6 +467,10 @@ function crealead_info_meetings_node_postinsert($node) {
           $map_default_value = str_replace('CITY', 'Sète', $warning_sentence);
         }
         break;
+
+      default:
+          $map_default_value = '';
+
     }
     $node->field_info_meeting_map['und'][0]['value'] = $map_default_value;
     node_save($node);
