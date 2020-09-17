@@ -8,7 +8,7 @@ function crealead_profiles_entries_leavings_settings_form() {
 
     // Entries
     $options = array();
-    for ($i=1; $i < 13; $i++) {
+    for ($i=1; $i < 25; $i++) {
         $options[$i] = $i . ' mois';
     }
     $form['crealead_entries_leavings']['crealead_entries_range'] = array(

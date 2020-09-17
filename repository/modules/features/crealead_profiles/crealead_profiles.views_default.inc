@@ -750,7 +750,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['label'] = 'Introduction';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h3>Ils viennent d\'arriver</h3>
-<p class="coes-entries-intro">Seuls apparaissent ici les co-entrepreneurs dont la fiche individuelle a été validée par leur référent.</p>';
+<p class="coes-entries-intro">Seules les fiches validées par les référents sont cliquables.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Profile: Photo */
@@ -771,6 +771,14 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'user';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Profile: Statut de publication */
+  $handler->display->display_options['fields']['field_coe_pub_status']['id'] = 'field_coe_pub_status';
+  $handler->display->display_options['fields']['field_coe_pub_status']['table'] = 'field_data_field_coe_pub_status';
+  $handler->display->display_options['fields']['field_coe_pub_status']['field'] = 'field_coe_pub_status';
+  $handler->display->display_options['fields']['field_coe_pub_status']['label'] = '';
+  $handler->display->display_options['fields']['field_coe_pub_status']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_coe_pub_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_coe_pub_status']['type'] = 'list_key';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Profile: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -787,14 +795,6 @@ function crealead_profiles_views_default_views() {
     'coe_page' => 'coe_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Profile: Statut de publication (field_coe_pub_status) */
-  $handler->display->display_options['filters']['field_coe_pub_status_value']['id'] = 'field_coe_pub_status_value';
-  $handler->display->display_options['filters']['field_coe_pub_status_value']['table'] = 'field_data_field_coe_pub_status';
-  $handler->display->display_options['filters']['field_coe_pub_status_value']['field'] = 'field_coe_pub_status_value';
-  $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -808,6 +808,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['operator'] = '>';
   $handler->display->display_options['filters']['created']['value']['value'] = '- 12 months';
+  $handler->display->display_options['filters']['created']['group'] = 1;
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/entrees-sorties';
 
   /* Display: Sorties */
@@ -921,7 +922,7 @@ function crealead_profiles_views_default_views() {
     t('Entrées'),
     t('Les Entrées et Sorties dans Crealead'),
     t('<h3>Ils viennent d\'arriver</h3>
-<p class="coes-entries-intro">Seuls apparaissent ici les co-entrepreneurs dont la fiche individuelle a été validée par leur référent.</p>'),
+<p class="coes-entries-intro">Seules les fiches validées par les référents sont cliquables.</p>'),
     t('Sorties'),
     t('<h3>Ils viennent de partir</h3>
 '),

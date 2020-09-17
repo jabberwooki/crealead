@@ -177,12 +177,6 @@ function crealead_profiles_form_views_exposed_form_alter(&$form, &$form_state, $
 /**
  * Implements hook_views_pre_render().
  */
-/**
- * Implements hook_views_pre_view().
- */
-/**
- * Implements hook_views_pre_render().
- */
 function crealead_profiles_views_pre_render(&$view) {
   if ($view->current_display == 'search_page') {
     $breadcrumb = array();
@@ -393,7 +387,17 @@ function crealead_profiles_views_query_alter(&$view, &$query) {
             $date = new DateTime();
             $date->modify('- ' . $entries_range . ' months');
 
-            $query->where[1]['conditions'][3]['field'] = 'profile.created > ' . $date->getTimestamp();
+            // On cherche à quel index est la condition 'Profil:Date de création > x mois'
+            // pour éviter le bug SQLSTATE[42S22]: Column not found: 1054 Unknown column 'profile.created1547717089' in 'where clause'
+            // si l'on change l'ordre des critères de filtrage dans l'admin de la vue coe_directory/coes_entries.
+            $created_condition_key = 0;
+            foreach($query->where[1]['conditions'] as $key=>$condition) {
+                if (strstr($condition['field'], 'profile.created')) {
+                    $created_condition_key = $key;
+                }
+            }
+            // On utilise l'index trouvé pour mettre dans la condition la valeur enregistrée dans l'écran de paramétrage.
+            $query->where[1]['conditions'][$created_condition_key]['field'] = 'profile.created > ' . $date->getTimestamp();
 
         }
         // Liste des coes partis - on utilise le nombre de mois qui a été paramétré via la page d'admin "Entrées/Sorties des coes".
@@ -402,7 +406,14 @@ function crealead_profiles_views_query_alter(&$view, &$query) {
             $date = new DateTime();
             $date->modify('- ' . $leavings_range . ' months');
 
-            $query->where[1]['conditions'][3]['value'][':field_data_field_leaving_date_field_leaving_date_value'] = $date->format('Y-m-d');
+            // On fait la meme recherche d'index que pour la vue coes_entries ci-dessus, pour la meme raison.
+            $leaving_condition_key = 0;
+            foreach ($query->where[1]['conditions'] as $key=>$condition) {
+                if (strstr($condition['field'], 'field_leaving_date_value')) {
+                    $leaving_condition_key = $key;
+                }
+            }
+            $query->where[1]['conditions'][$leaving_condition_key]['value'][':field_data_field_leaving_date_field_leaving_date_value'] = $date->format('Y-m-d');
         }
     }
 }
