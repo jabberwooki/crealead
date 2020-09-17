@@ -277,8 +277,8 @@ projects[term_reference_tree][version] = "1.10"
 projects[rules][subdir] = contrib
 projects[rules][version] = "2.9"
 
-projects[user_permissions][subdir] = contrib
-projects[user_permissions][version] = "3.1"
+;projects[user_permissions][subdir] = contrib
+;projects[user_permissions][version] = "3.1"
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][version] = "2.0-beta11"
