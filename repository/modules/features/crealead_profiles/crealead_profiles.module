@@ -84,12 +84,13 @@ function crealead_profiles_mail($key, &$message, $params) {
 function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
   switch($form['#user_category']) {
     case 'coe_page':
-      // Shows field_coe_pub_status to following roles only : administrateur, webmaster, referent.
+      // Shows field_coe_pub_status and field_leaving_date to following roles only : administrateur, webmaster, referent.
       global $user;
       $allowed_roles = array('administrateur','webmaster','référent');
       $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
       if ($user->uid != 1 && empty($user_allowed_roles)) {
         $form['profile_coe_page']['field_coe_pub_status']['#access'] = FALSE;
+        $form['profile_coe_page']['field_leaving_date']['#access'] = FALSE;
       }
 
       // If field field_saving_type equals 1, validation request email has been sent.
