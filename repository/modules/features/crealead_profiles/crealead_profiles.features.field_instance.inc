@@ -1414,7 +1414,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'label' => 'Date de départ de Crealead',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
