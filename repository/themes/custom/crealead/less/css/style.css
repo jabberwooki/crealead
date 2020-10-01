@@ -10937,6 +10937,12 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .carousel-contr
     padding-left: 75px;
   }
 }
+@media (min-width: 992px) {
+  body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-field-achievement-videos {
+    margin-top: 20px;
+    padding-left: 75px;
+  }
+}
 body.node-type-brand #bootstrap-fieldgroup-nav-item--ralisations .field-name-title {
   text-align: left;
 }
@@ -13237,6 +13243,12 @@ body.not-logged-in .region-sector-brands-header {
 .node-type-achievement .field-slideshow-pager > a.activeSlide {
   background: black;
 }
+.node-type-achievement .field-name-field-achievement-videos {
+  margin: 20px 0;
+}
+.node-type-achievement .field-name-field-achievement-videos .embedded-video .player {
+  text-align: center;
+}
 #filedepotNavTreeDiv > div > div > div:not(:last-child) {
   display: none;
 }
@@ -14401,7 +14413,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   position: relative;
   color: #000;
   background-color: #F8F8F8;
-  padding: 1px 3px 3px 3px ;
+  padding: 1px 3px 3px 3px;
   font-size: 1.2em;
 }
 .page-espace-co-entrepreneur-calendrier-formations .calendar-calendar .month-view .full td.multi-day .inner div .date-display-range,
@@ -14668,6 +14680,29 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   margin-top: 20px;
   text-align: right;
 }
+/* Les 9 salles, avec tid dev, recette et prod lorsqu'ils sont différents */
+/* A distance */
+.form-item-edit-field-room-tid-3567 a,
+.form-item-edit-field-room-tid-2948 a,
+.form-item-edit-field-room-tid-3779 a {
+  border-bottom: 1px solid #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a:before,
+.form-item-edit-field-room-tid-2948 a:before,
+.form-item-edit-field-room-tid-3779 a:before {
+  color: #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a.active,
+.form-item-edit-field-room-tid-2948 a.active,
+.form-item-edit-field-room-tid-3779 a.active {
+  border-bottom: 2px solid #3e50b4;
+}
+.form-item-edit-field-room-tid-3567 a.active:before,
+.form-item-edit-field-room-tid-2948 a.active:before,
+.form-item-edit-field-room-tid-3779 a.active:before {
+  content: "\e879";
+}
+/* Bureau Don Camillo */
 .form-item-edit-field-room-tid-2106 a {
   border-bottom: 1px solid #bf0e38;
 }
@@ -14680,6 +14715,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2106 a.active:before {
   content: "\e879";
 }
+/* Bureau Le Placard */
 .form-item-edit-field-room-tid-2107 a {
   border-bottom: 1px solid #7db700;
 }
@@ -14692,18 +14728,87 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2107 a.active:before {
   content: "\e879";
 }
-.form-item-edit-field-room-tid-2108 a {
+/* Bureau URSCOOP */
+.form-item-edit-field-room-tid-2108 a,
+.form-item-edit-field-room-tid-3717 a {
   border-bottom: 1px solid #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a:before {
+.form-item-edit-field-room-tid-2108 a:before,
+.form-item-edit-field-room-tid-3717 a:before {
   color: #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a.active {
+.form-item-edit-field-room-tid-2108 a.active,
+.form-item-edit-field-room-tid-3717 a.active {
   border-bottom: 2px solid #f2cc2b;
 }
-.form-item-edit-field-room-tid-2108 a.active:before {
+.form-item-edit-field-room-tid-2108 a.active:before,
+.form-item-edit-field-room-tid-3717 a.active:before {
   content: "\e879";
 }
+/* Grande salle URSCOOP */
+.form-item-edit-field-room-tid-3569 a,
+.form-item-edit-field-room-tid-2949 a,
+.form-item-edit-field-room-tid-3700 a {
+  border-bottom: 1px solid #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a:before,
+.form-item-edit-field-room-tid-2949 a:before,
+.form-item-edit-field-room-tid-3700 a:before {
+  color: #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a.active,
+.form-item-edit-field-room-tid-2949 a.active,
+.form-item-edit-field-room-tid-3700 a.active {
+  border-bottom: 2px solid #02a8f4;
+}
+.form-item-edit-field-room-tid-3569 a.active:before,
+.form-item-edit-field-room-tid-2949 a.active:before,
+.form-item-edit-field-room-tid-3700 a.active:before {
+  content: "\e879";
+}
+/* Petite salle URSCOOP */
+.form-item-edit-field-room-tid-3570 a,
+.form-item-edit-field-room-tid-2950 a,
+.form-item-edit-field-room-tid-3716 a {
+  border-bottom: 1px solid #fef207;
+}
+.form-item-edit-field-room-tid-3570 a:before,
+.form-item-edit-field-room-tid-2950 a:before,
+.form-item-edit-field-room-tid-3716 a:before {
+  color: #fef207;
+}
+.form-item-edit-field-room-tid-3570 a.active,
+.form-item-edit-field-room-tid-2950 a.active,
+.form-item-edit-field-room-tid-3716 a.active {
+  border-bottom: 2px solid #fef207;
+}
+.form-item-edit-field-room-tid-3570 a.active:before,
+.form-item-edit-field-room-tid-2950 a.active:before,
+.form-item-edit-field-room-tid-3716 a.active:before {
+  content: "\e879";
+}
+/* Realis */
+.form-item-edit-field-room-tid-3571 a,
+.form-item-edit-field-room-tid-2951 a,
+.form-item-edit-field-room-tid-3718 a {
+  border-bottom: 1px solid #795549;
+}
+.form-item-edit-field-room-tid-3571 a:before,
+.form-item-edit-field-room-tid-2951 a:before,
+.form-item-edit-field-room-tid-3718 a:before {
+  color: #795549;
+}
+.form-item-edit-field-room-tid-3571 a.active,
+.form-item-edit-field-room-tid-2951 a.active,
+.form-item-edit-field-room-tid-3718 a.active {
+  border-bottom: 2px solid #795549;
+}
+.form-item-edit-field-room-tid-3571 a.active:before,
+.form-item-edit-field-room-tid-2951 a.active:before,
+.form-item-edit-field-room-tid-3718 a.active:before {
+  content: "\e879";
+}
+/* Salle Le Grand Saut */
 .form-item-edit-field-room-tid-2109 a {
   border-bottom: 1px solid #009aa0;
 }
@@ -14716,6 +14821,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .form-item-edit-field-room-tid-2109 a.active:before {
   content: "\e879";
 }
+/* Salle Playtime */
 .form-item-edit-field-room-tid-2110 a {
   border-bottom: 1px solid #44059c;
 }
@@ -14726,6 +14832,27 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   border-bottom: 2px solid #44059c;
 }
 .form-item-edit-field-room-tid-2110 a.active:before {
+  content: "\e879";
+}
+/* Salle Augerge Espagnole */
+.form-item-edit-field-room-tid-3587 a,
+.form-item-edit-field-room-tid-2956 a,
+.form-item-edit-field-room-tid-3932 a {
+  border-bottom: 1px solid #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a:before,
+.form-item-edit-field-room-tid-2956 a:before,
+.form-item-edit-field-room-tid-3932 a:before {
+  color: #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a.active,
+.form-item-edit-field-room-tid-2956 a.active,
+.form-item-edit-field-room-tid-3932 a.active {
+  border-bottom: 2px solid #c65b7c;
+}
+.form-item-edit-field-room-tid-3587 a.active:before,
+.form-item-edit-field-room-tid-2956 a.active:before,
+.form-item-edit-field-room-tid-3932 a.active:before {
   content: "\e879";
 }
 .node-type-book .book-navigation ul.dropdown-menu li:before {
@@ -15072,6 +15199,47 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   width: 100%;
   margin: 25px auto;
 }
+.node-type-structure-event .field-name-field-attached-file {
+  position: relative;
+  margin-top: 20px;
+  border: 1px solid #999999;
+  padding: 20px;
+}
+.node-type-structure-event .field-name-field-attached-file:before {
+  position: relative;
+  top: 1px;
+  font-family: 'Glyphicons Halflings';
+  line-height: 1;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 10px;
+  text-align: center;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  color: #777777;
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e83b";
+  width: 30px;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  display: block;
+  border-right: 10px solid #fff;
+  border-left: 5px solid #fff;
+  background-color: #fff;
+  color: #ff3f18;
+}
 #block-views-flashinfos-front-block {
   background-color: #bf0e38 !important;
   color: white;
@@ -15124,4 +15292,40 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 #block-views-flashinfos-front-block .views-row > div {
   margin: 0 20px;
   font-size: 1.6em;
+}
+.node-report .field-name-field-report-theme,
+.node-report .field-name-author {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #cccccc;
+}
+.page-espace-co-entrepreneur-espace-associes .view-footer a {
+  float: right;
+  margin-top: -36px;
+  border: 1px solid #999999;
+  background-color: #ededed;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #000;
+  font-size: 0.8em;
+  font-family: arial, sans-serif;
+  display: block;
+  float: left;
+  margin-top: 5px;
+}
+.page-espace-co-entrepreneur-espace-associes .view-footer a:hover {
+  background-color: #bf0e38;
+  color: white;
+  text-decoration: none;
+}
+.view-reports table th.views-field-field-meeting-date {
+  width: 10%;
+}
+.view-reports table th.views-field-field-report-theme {
+  width: 15%;
+}
+.view-reports table th.views-field-title {
+  width: 25%;
 }

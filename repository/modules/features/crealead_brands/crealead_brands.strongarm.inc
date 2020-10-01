@@ -892,7 +892,7 @@ function crealead_brands_strongarm() {
     ),
     'googleplus' => array(
       'name' => 'Google+',
-      'icon' => 'icon-gplus',
+      'icon' => 'icon-googleplus',
       'validation_pattern' => '*plus.google.com/*',
     ),
     'linkedin' => array(
@@ -959,6 +959,11 @@ function crealead_brands_strongarm() {
       'name' => 'Viadeo',
       'icon' => 'icon-viadeo',
       'validation_pattern' => '*viadeo.com/*',
+    ),
+    'instagram' => array(
+      'name' => 'Instagram',
+      'icon' => 'icon-instagram',
+      'validation_pattern' => '*instagram.com/*',
     ),
   );
   $export['socialfield_services'] = $strongarm;

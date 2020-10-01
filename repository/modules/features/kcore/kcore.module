@@ -58,7 +58,21 @@ function kcore_menu() {
     'file' => 'kcore.admin.inc',
   );
 
+    $items['crealead-profiles/%/delete'] = array(
+        'type' => MENU_CALLBACK,
+        'title' => 'Delete',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('kcore_profile2_delete_confirm', 1),
+        'access callback' => TRUE,
+        'file' => 'kcore.pages.inc',
+    );
+
   return $items;
+}
+
+function kcore_ma_page() {
+    $content = "Ma super page !";
+    return $content;
 }
 
 /**
@@ -98,6 +112,34 @@ function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   if ($user->uid != 1 && empty($user_allowed_roles)) {
 	$form['field_user_referent']['#access'] = FALSE;
   }
+
+    // Handling of the 'Delete Profile' button.
+    // Is current user already has the displayed profile, the button shows up.
+    // Only Structure and Instances profiles are concerned.
+    $structure_profile_types = array('assistant_page','direction_page','management_page','provider_page','referent_page');
+    $instances_profile_types = array('ca_page','dup_page');
+    $all_handled_types = array_merge($structure_profile_types, $instances_profile_types);
+
+    if (in_array($form['#user_category'],$all_handled_types)) {
+        $profiles = profile2_load_by_user($form['#user']);
+
+        if (array_key_exists($form['#user_category'], $profiles) && user_access('administer profiles')) {
+            $current_profile = $profiles[$form['#user_category']];
+            $form_state['kcore_pid'] = $current_profile->pid;
+
+            $form['actions']['delete'] = array(
+              '#type' => 'submit',
+              '#value' => t('Delete profile'),
+              '#weight' => 45,
+              '#limit_validation_errors' => array(),
+              '#submit' => array('kcore_profile2_form_submit_delete')
+            );
+        }
+    }
+}
+
+function kcore_profile2_form_submit_delete($form, &$form_state) {
+    $form_state['redirect'] = 'crealead-profiles/' . $form_state['kcore_pid'] . '/delete';
 }
 
 /**
@@ -297,3 +339,266 @@ function kcore_form_views_exposed_form_coe_directory_page_alter(&$form, &$form_s
 
 }
 
+function kcore_user_cancel_methods_alter(&$methods) {
+  $custom_method = array(
+    'user_cancel_block_custom_unpublish' => array(
+      'title' => 'Désactiver le compte et dépublier son contenu de manière différenciée (option propre au site web Crealead)',
+      'description' => 'Le compte est bloqué. Certains contenus restent publiés, d\'autres sont dépubliés, d\'autres encore sont dépubliés de manière conditionnelle.',
+    )
+  );
+
+  $methods = $custom_method + $methods;
+}
+
+/**
+ * Implements hook_user_cancel().
+ *
+ * @param $edit
+ * @param $account
+ * @param $method
+ * @throws \EntityMetadataWrapperException
+ */
+function kcore_user_cancel($edit, $account, $method) {
+    switch ($method) {
+        case 'user_cancel_block_custom_unpublish':
+            module_load_include('inc', 'node', 'node.admin');
+
+            // - Dépublication des alertes, demandes, événements et offres sans rien faire d'autre
+            //
+            // - Déplublication des marques, formations, sessions de formation et produit en prévenant par mail les personnes concernées.
+            //
+            // - Tous les autres types de contenu restent publiés :
+            //   actus, articles, brèves, clients, collectifs, comptes-rendus, diapos, dossiers filedepot, flash infos, liens vers documents,
+            //   réalisations, événements salle, événements structure, faqs, gazettes, pages de base et réunions d'info.
+
+            $direct_unpublish_types = array(
+                'warning',
+                'need',
+                'event',
+                'offer'
+            );
+            $conditionnal_unpublish_types = array(
+                'brand',
+                'training',
+                'training_session',
+                'product'
+            );
+
+            $all_unpublish_types = array_merge($direct_unpublish_types, $conditionnal_unpublish_types);
+
+            // Récupération de tous les nodes dont le compte drupal en cours de désactivation est l'auteur.
+            $nodes = db_select('node', 'n')
+                ->fields('n', array('nid', 'type', 'title'))
+                ->condition('uid', $account->uid)
+                ->condition('type', $all_unpublish_types, 'IN')
+                ->execute()
+                //->fetchCol();
+                ->fetchAll();
+            //dpm($nodes);
+
+            // Tableau pour stocker les emails des personnes à avertir
+            $email_data = array(
+                'brands' => array(),
+                'trainings' => array(),
+                'products' => array(),
+            );
+            // Tableau pour stocker les nid des nodes seuls (voir Dépublication des nodes un peu plus bas dans ce traitement).
+            $node_nids = array();
+
+            // Récupération des données (email des coes, nom des marques, intitulés des formations et des produits) à envoyer par email.
+            foreach ($nodes as $node) {
+                if ($node->type == 'brand') {
+                    $brand = entity_metadata_wrapper('node', $node->nid);
+                    $brand_name = $brand->title->value();
+                    // S'il y a plus d'un coe (le propriétaire de la marque),
+                    if (sizeof($brand_coes = $brand->field_brand_coes->value()) > 1) {
+                        foreach ($brand_coes as $fci) { // fci = field_collection_item
+                            // il faut récupérer l'email des autres coes.
+                            if (($coe_id = $fci->field_brand_coe['und'][0]['target_id']) != $account->uid) {
+                                $coe = user_load($coe_id);
+                                $email_data['brands'][$brand_name][$coe_id] = $coe->mail;
+                            }
+                        }
+                    }
+                }
+                elseif (($node->type == 'training') || ($node->type == 'product')) {
+                    // Il faut récupérer le nid des marques qui ont affiché cette formation ou ce produit partagée.
+                    // Cette info est disponible dans la table crealead_shared_content.
+                    $brands_displaying_this_shared_content = db_select('crealead_shared_content', 'csc')
+                        ->fields('csc', array('brand_id'))
+                        ->condition('type', array('training', 'product'), 'IN')
+                        ->condition('nid', $node->nid)
+                        ->condition('status', 1)
+                        ->execute()
+                        ->fetchCol();
+                    // Puis il faut récupérer les emails des coes de ces marques
+                    foreach ($brands_displaying_this_shared_content as $brand_id) {
+                        $brand = entity_metadata_wrapper('node', $brand_id);
+                        $brand_name = $brand->title->value();
+                        $brand_coes = $brand->field_brand_coes->value();
+                        foreach ($brand_coes as $fci) { // fci = field_collection_item
+                            if (($coe_id = $fci->field_brand_coe['und'][0]['target_id']) != $account->uid) {
+                                $coe = user_load($coe_id);
+                                $email_data[$node->type . 's'][$node->title][$brand_name][$coe_id] = $coe->mail;
+                            }
+                        }
+                    }
+
+                }
+                // A la fin, on en profite pour stocker les nid.
+                $node_nids[] = $node->nid;
+            }
+            //dpm($email_data);
+
+            // Dépublication des nodes
+            // Attention, il faut passer en paramètre un tableau de nid seulement, donc $node_nids (voir au dessus).
+            node_mass_update($node_nids, array('status' => 0));
+
+            // Enregistrement de la date de blocage du compte Drupal de l'utilisateur courant
+            // dans le champ "Date de départ de Crealead" de son profil coe, s'il en possède un.
+            if ($profile = profile2_load_by_user($account, 'coe_page')) {
+                dpm($profile->pid, 'pid : ');
+                dpm($profile->uid, 'uid : ');
+                $wrapper = entity_metadata_wrapper('profile2', $profile);
+                $current_time = time();
+                dpm(date('d/m/y'), $current_time);
+                $wrapper->field_leaving_date->set(time());
+                $wrapper->save();
+            }
+
+            // Envoi des mails
+            foreach ($email_data['brands'] as $brand_name => $coe_addresses) {
+                foreach ($coe_addresses as $address) {
+                    kcore_send_content_unpublication_infos($account, $brand_name, $address, 'brand');
+                }
+            }
+
+            foreach ($email_data['trainings'] as $training_title => $concerned_brands) {
+                foreach ($concerned_brands as $brand_name => $coe_addresses) {
+                    foreach ($coe_addresses as $address) {
+                        kcore_send_content_unpublication_infos($account, $brand_name, $address, 'training', $training_title);
+                    }
+                }
+            }
+
+            foreach ($email_data['products'] as $product_title => $concerned_brands) {
+                foreach ($concerned_brands as $brand_name => $coe_addresses) {
+                    foreach ($coe_addresses as $address) {
+                        kcore_send_content_unpublication_infos($account, $brand_name, $address, 'product', $product_title);
+                    }
+                }
+            }
+
+            break;
+    }
+}
+
+/**
+ * Send an email to a person concerned by an unpublication type.
+ *
+ * @param $email_address string Email address of the concerned person.
+ * @param $info_type string Unpublication type (brand, training or product).
+ */
+function kcore_send_content_unpublication_infos($account, $brand_name, $email_address, $info_type, $content_title=null) {
+
+    $to = $email_address;
+    $from = "Crealead <contact@crealead.com>";
+    $reply_to = "contact@crealead.com";
+
+    $mail_subject = 'Départ de' . $account->name . ' de Crealead - Dépublication de ';
+
+    $mail_body = '<div id="crealead-email-body">' .
+        '<br/>' .
+        '<p>Bonjour,</p>';
+
+    switch ($info_type) {
+        case 'brand':
+            dpm('(' . $email_address . ') Suite au départ de ' . $account->name . ', la marque ' . $brand_name . ' a été dépubliée. Si vous souhaitez...');
+            $mail_subject .= 'marque.';
+            $mail_body .= '<p>Suite au départ de ' . $account->name . ', la marque <b>' . $brand_name . '</b> a été dépubliée.<br/>'
+                . 'Si vous souhaitez continuer à l\'afficher sur le site, contactez votre référent.</p>';
+            break;
+
+        case 'training':
+            dpm('(' . $email_address . ') Suite au départ de ' . $account->name . ', la formation partagée ' . $content_title . ' a été désactivée. Elle n\'est donc plus visible en tant que formation conseillée dans l\'onglet Solutions de la marque ' . $brand_name);
+            $mail_subject .= 'formation.';
+            $mail_body .='<p>Suite au départ de ' . $account->name . ', la formation partagée <b>' . $content_title . '</b> a été desactivée.<br/>'
+            . ' Elle n\'est donc plus visible en tant que formation conseillée dans l\'onglet Solutions de la marque <b>' . $brand_name . '</b></p>';
+            break;
+
+        case 'product':
+            dpm('(' . $email_address . ') Suite au départ de ' . $account->name . ', le produit partagé ' . $content_title . ' a été désactivé. Il n\'est donc plus visible en tant que produit conseillé dans l\'onglet Solutions de la marque ' . $brand_name);
+            $mail_subject .= 'produit.';
+            $mail_body .='<p>Suite au départ de ' . $account->name . ', le produit partagé <b>' . $content_title . '</b> a été desactivé.<br/>'
+                . ' Il n\'est donc plus visible en tant que produit conseillé dans l\'onglet Solutions de la marque <b>' . $brand_name . '</b></p>';
+            break;
+
+    }
+
+    $mail_body .= '</div>';
+
+    $footer_image_fullpath = 'https://www.crealead.com/profiles/crealead/modules/features/kcore/images/bandeau-crealead.jpg';
+    $mail_body .=
+        '<br/><br/>' .
+        '<p class="crealead-email-footer">' .
+        '<img src="' . $footer_image_fullpath . '">' .
+        '</p>';
+
+    $params = array(
+        'headers' => array(
+            'Reply-To' => $reply_to,
+        ),
+        'subject' => $mail_subject,
+        'body' => $mail_body,
+    );
+
+    if (drupal_mail('kcore', 'unpublished_content_email', $to, language_default(), $params, $from)) {
+        $message = t("Unpublished content email sent to %recipient_email.", array('%recipient_email' => $to));
+        watchdog('crealead_content_unpublication', $message);
+    }
+    else {
+        $message = t("Unpublished content email sending failed (destinataire: %recipient_email.", array('%recipient_email' => $to));
+        watchdog('crealead_content_unpublication', $message);
+    }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function kcore_mail($key, &$message, $params) {
+    switch ($key) {
+        case 'unpublished_content_email':
+            $message['subject'] = $params['subject'];
+            $message['body'][] = $params['body'];
+            break;
+    }
+}
+
+function kcore_user_roles() {
+    $query = db_select('role', 'r');
+    $query->fields('r', array('rid', 'name', 'machine_name'));
+    $result = $query->execute();
+
+    $roles = array();
+    foreach ($result as $role) {
+        $roles[$role->machine_name] = $role->name;
+    }
+
+    return $roles;
+}
+
+function kcore_get_profile2_role_name($profile_type) {
+    $profiles_roles = array(
+        'assistant_page' => 'assistant',
+        'direction_page' => 'direction',
+        'provider_page' => 'provider',
+        'management_page' => 'pole_gestion',
+        'referent_page' => 'referent',
+        'ca_page' => 'ca',
+        'dup_page' => 'dup',
+    );
+
+    $all_roles = kcore_user_roles();
+
+    return $all_roles[$profiles_roles[$profile_type]];
+}

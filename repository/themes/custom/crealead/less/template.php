@@ -388,3 +388,70 @@ function crealead_preprocess_node(&$vars) {
     drupal_add_html_head($og_image, 'og image');
   }
 }
+
+
+function crealead_calendar_stripe_stripe($vars) {
+  $item = $vars['item'];
+ //dpm($item);
+  
+  // IF ROOMS CALENDAR
+  if ($item->entity->type == 'room_event') {
+    $rooms_colors = array(
+      // A distance - dev, rec, prod
+      '3567' => '#3e50b4',
+      '2948' => '#3e50b4',
+      '3779' => '#3e50b4',
+      // Bureau Don Camillo
+      '2106' => '#bf0e38',
+      // Bureau Le Placard
+      '2107' => '#7db700',
+      // Bureau URSCOOP - dev, rec, prod
+      '2108' => '#ff6600',
+      '2108' => '#ff6600',
+      '3717' => '#ff6600',
+      // Grande salle URSCOOP - dev, rec, prod
+      '3569' => '#02a8f4',
+      '2949' => '#02a8f4',
+      '3700' => '#02a8f4',
+      // Petite salle URSCOOP - dev, rec, prod
+      '3570' => '#fef207',
+      '2950' => '#fef207',
+      '3716' => '#fef207',
+      // Realis - dev, rec, prod
+      '3571' => '#795549',
+      '2951' => '#795549',
+      '3718' => '#795549',
+      // Salle Le Grand Saut
+      '2109' => '#009aa0',
+      // Salle Playtime
+      '2110' => '#44059c',
+      // Auberge Espagnole - dev, rec, prod
+      '3587' => '#c65b7c',
+      '2956' => '#c65b7c',
+      '3932' => '#c65b7c',
+    );
+    
+    $output = '';
+    $bg_color = $rooms_colors[$item->row->field_field_room[0]['raw']['tid']];
+    $color = $rooms_colors[$item->row->field_field_room[0]['raw']['tid']];
+    $room_name = $item->row->field_field_room[0]['raw']['taxonomy_term']->name;
+    $output .= '<div style="background-color:' . $bg_color . ';color:' . $color . '" class="stripe" title="Key: ' . $room_name . '">&nbsp;</div>' . "\n";
+  }
+
+  // ELSE
+  else {
+    if (empty($item->stripe) || (!count($item->stripe))) {
+      return;
+    }
+    $output = '';
+    if (is_array($item->stripe_label)) {
+      foreach ($item->stripe_label as $k => $stripe_label) {
+        if (!empty($item->stripe[$k]) && !empty($stripe_label)) {
+          $output .= '<div style="background-color:' . $item->stripe[$k] . ';color:' . $item->stripe[$k] . '" class="stripe" title="Key: ' . $item->stripe_label[$k] . '">&nbsp;</div>' . "\n";
+        }
+      }
+    }
+  }
+
+  return $output;
+}

@@ -1,0 +1,26 @@
+.view-display-id-coes_entries .view-header,
+.view-display-id-coes_leavingss .view-header {
+    margin-bottom: 2em;
+}
+
+.view-display-id-coes_entries .view-header h3,
+.view-display-id-coes_leavingss .view-header h3 {
+    color: #bf0e38;
+}
+
+.view-display-id-coes_entries .views-field-name,
+.view-display-id-coes_leavings .views-field-name {
+    text-align: center;
+}
+
+
+
+.view-display-id-coes_entries .thumbnail img,
+.view-display-id-coes_leavings .thumbnail img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ {
+    text-align: center;
+}

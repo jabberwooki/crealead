@@ -1,43 +1,52 @@
 /* Global *************************************************************************************************************/
-.calendar-calendar td span.date-display-start, .calendar-calendar td span.date-display-end {
+.calendar-calendar td span.date-display-start,
+.calendar-calendar td span.date-display-end {
   //float:left;
 }
+
 .calendar-calendar .month-view .full td.multi-day .inner div,
-.calendar-calendar .month-view .full td .inner div.calendar.monthview div{
-  > span{
+.calendar-calendar .month-view .full td .inner div.calendar.monthview div {
+  >span {
     margin-right: 5px;
     float: left;
   }
 }
-.calendar.monthview{
-  > a {
+
+.calendar.monthview {
+  >a {
     margin-left: 5px;
   }
 }
+
 /* Calendrier crealead importé et formation interne *******************************************************************/
 .page-espace-co-entrepreneur-calendrier-formations,
 #block-views-structure-calendar-structure,
 .page-espace-co-entrepreneur-agenda-salles {
-  .views-widget-filter-field_room_tid{
-    > label{
+  .views-widget-filter-field_room_tid {
+    >label {
       float: left;
+
       &:after {
         content: " : ";
       }
     }
+
     .bef-select-as-links {
-      > .form-item {
+      >.form-item {
         @media (min-width: @screen-md) {
           width: 960px;
-          a{
-            &:before{
+
+          a {
+            &:before {
               .glyphicon();
               content: "\e879";
               color: @bleu-clair-crealead;
             }
-            &.active{
+
+            &.active {
               color: #000;
-              &:before{
+
+              &:before {
                 content: "";
               }
             }
@@ -47,20 +56,24 @@
       }
     }
   }
+
   #block-menu-menu-calendar-listing-switcher {
     ul.menu.nav {
-      > li.first {
+      >li.first {
         float: left;
-        > a {
+
+        >a {
           &:before {
             .glyphicon();
             content: "\e807";
           }
         }
       }
-      > li.last {
+
+      >li.last {
         float: left;
-        > a {
+
+        >a {
           &:before {
             .glyphicon();
             content: "\e86c";
@@ -69,41 +82,48 @@
       }
     }
   }
+
   #block-menu-menu-trainings-calendar {
     .nav-tabs {
       border: 0;
-      > li.active {
+
+      >li.active {
         border-bottom: 1px solid @rouge-crealead;
-        > a {
+
+        >a {
           border: 0;
         }
       }
-      > li.first {
-        > a {
+
+      >li.first {
+        >a {
           &:before {
             .glyphicon();
             content: "\e86e";
           }
         }
       }
-      > li:nth-child(2) {
-        > a {
+
+      >li:nth-child(2) {
+        >a {
           &:before {
             .glyphicon();
             content: "\e870";
           }
         }
       }
-      > li:nth-child(3) {
-        > a {
+
+      >li:nth-child(3) {
+        >a {
           &:before {
             .glyphicon();
             content: "\f0c8";
           }
         }
       }
-      > li.last {
-        > a {
+
+      >li.last {
+        >a {
           &:before {
             .glyphicon();
             content: "\e807";
@@ -112,6 +132,7 @@
       }
     }
   }
+
   .date-nav {
     ul.pager {
       @media (min-width: @screen-md) {
@@ -131,15 +152,18 @@
       }
     }
   }
+
   /* Liste ou vue calendaire ******************************************************************************************/
   .calendar-calendar {
     div.calendar {
       background-color: transparent !important;
     }
+
     .field-content {
       a {
         font-family: arial !important;
         color: #000 !important;
+
         &:before {
           .glyphicon();
           content: "\e834";
@@ -149,36 +173,42 @@
           top: -1px;
         }
       }
-      .funded-session{
+
+      .funded-session {
         a {
-          color: @rouge-crealead !important;
+          color: @rouge-crealead  !important;
+
           &:before {
             color: @rouge-crealead;
           }
         }
       }
     }
+
     .month-view .full td.multi-day .inner div,
     .month-view .full td .inner div.calendar.monthview div.date-display-range {
       /*background-color: #F8F8F8;
       height: 20px;*/
 
-      a{
+      a {
         position: relative;
         color: #000;
         background-color: #F8F8F8;
-        padding: 1px 3px 3px 3px ;
+        padding: 1px 3px 3px 3px;
         font-size: 1.2em;
       }
-      .date-display-range{
+
+      .date-display-range {
         margin-top: 3px;
       }
     }
-    td.multi-day{
-      a:before{
+
+    td.multi-day {
+      a:before {
         content: " - ";
       }
     }
+
     .month-view .full td.multi-day .inner .monthview .cutoff,
     .month-view .full td.multi-day .inner .monthview .cutoff {
       border-right: 2px solid black;
@@ -190,14 +220,16 @@
     .view-content {
       .calendar-listing-day-wrapper {
         display: table;
-        > div.views-row{
+
+        >div.views-row {
           a {
             position: relative;
             .quick();
             font-size: 1.3em;
             display: block;
             padding-top: 15px;
-            &:before{
+
+            &:before {
               .glyphicon();
               content: "\f0c8";
               position: absolute;
@@ -208,18 +240,22 @@
             }
           }
         }
-        > h3 {
+
+        >h3 {
           display: table-cell;
           margin: 0 10px 20px 0;
           padding: 20px;
+
           @media (min-width: @screen-md) {
             min-width: 210px;
           }
+
           &:before {
             .glyphicon();
             content: "\e834";
           }
         }
+
         &:after {
           content: "";
           display: block;
@@ -233,18 +269,21 @@
 
     }
   }
+
   .view-trainings-calendar-prod {
     .view-content {
       .calendar-listing-day-wrapper {
         display: table;
-        > div.views-row{
+
+        >div.views-row {
           a {
             position: relative;
             .quick();
             font-size: 1.3em;
             display: block;
             padding-top: 15px;
-            &:before{
+
+            &:before {
               .glyphicon();
               content: "\f0c8";
               position: absolute;
@@ -255,18 +294,22 @@
             }
           }
         }
-        > h3 {
+
+        >h3 {
           display: table-cell;
           margin: 0 10px 20px 0;
           padding: 20px;
+
           @media (min-width: @screen-md) {
             min-width: 210px;
           }
+
           &:before {
             .glyphicon();
             content: "\e834";
           }
         }
+
         &:after {
           content: "";
           display: block;
@@ -280,15 +323,19 @@
 
     }
   }
+
   .detail-session();
 }
+
 /* Calendrier structure ***********************************************************************************************/
 .calendar-calendar .month-view .full td.multi-day div.monthview {
   color: #777;
 }
+
 #block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner div a {
   position: static;
 }
+
 #block-views-structure-calendar-structure .calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff {
   border-right: none;
 }
@@ -316,17 +363,20 @@
 //  }
 //}
 #block-crealead-trainings-crealead-calendar-legend {
-  .calendar-legend{
+  .calendar-legend {
     color: @rouge-crealead;
   }
 }
+
 #block-views-structure-calendar-structure .views-field-title {
   clear: left;
 }
+
 #colorbox .node-structure-event .structure-events-links {
   margin-top: 20px;
   text-align: right;
 }
+
 #colorbox .node-structure-event .field-name-title {
   color: #a00c2f;
 }
@@ -337,67 +387,191 @@
   padding: 0 10px;
 
 }
+
 .node-room-event.view-mode-colorbox .structure-events-links {
-    margin-top: 20px;
-    text-align: right;
+  margin-top: 20px;
+  text-align: right;
 }
-.form-item-edit-field-room-tid-2106 a{
-  &:before{
+
+/* Les 9 salles, avec tid dev, recette et prod lorsqu'ils sont différents */
+/* A distance */
+.form-item-edit-field-room-tid-3567 a,
+.form-item-edit-field-room-tid-2948 a,
+.form-item-edit-field-room-tid-3779 a {
+  &:before {
+    color: @a-distance;
+  }
+
+  &.active {
+    border-bottom: 2px solid @a-distance;
+
+    &:before {
+      content: "\e879";
+    }
+  }
+
+  border-bottom: 1px solid @a-distance;
+}
+
+/* Bureau Don Camillo */
+.form-item-edit-field-room-tid-2106 a {
+  &:before {
     color: @rouge-crealead;
   }
-  &.active{
+
+  &.active {
     border-bottom: 2px solid @rouge-crealead;
-    &:before{
+
+    &:before {
       content: "\e879";
     }
   }
+
   border-bottom: 1px solid @rouge-crealead
 }
-.form-item-edit-field-room-tid-2107 a{
-  &:before{
+
+/* Bureau Le Placard */
+.form-item-edit-field-room-tid-2107 a {
+  &:before {
     color: @vert-crealead;
   }
-  &.active{
+
+  &.active {
     border-bottom: 2px solid @vert-crealead;
-    &:before{
+
+    &:before {
       content: "\e879";
     }
   }
+
   border-bottom: 1px solid @vert-crealead;
 }
-.form-item-edit-field-room-tid-2108 a{
-  &:before{
+
+/* Bureau URSCOOP */
+.form-item-edit-field-room-tid-2108 a,
+.form-item-edit-field-room-tid-3717 a {
+  &:before {
     color: @jaune-crealead;
   }
-  &.active{
+
+  &.active {
     border-bottom: 2px solid @jaune-crealead;
-    &:before{
+
+    &:before {
       content: "\e879";
     }
   }
+
   border-bottom: 1px solid @jaune-crealead;
 }
-.form-item-edit-field-room-tid-2109 a{
-  &:before{
+
+/* Grande salle URSCOOP */
+.form-item-edit-field-room-tid-3569 a,
+.form-item-edit-field-room-tid-2949 a,
+.form-item-edit-field-room-tid-3700 a {
+  &:before {
+    color: @grande-salle-urscoop;
+  }
+
+  &.active {
+    border-bottom: 2px solid @grande-salle-urscoop;
+
+    &:before {
+      content: "\e879";
+    }
+  }
+
+  border-bottom: 1px solid @grande-salle-urscoop;
+}
+
+/* Petite salle URSCOOP */
+.form-item-edit-field-room-tid-3570 a,
+.form-item-edit-field-room-tid-2950 a,
+.form-item-edit-field-room-tid-3716 a {
+  &:before {
+    color: @petite-salle-urscoop;
+  }
+
+  &.active {
+    border-bottom: 2px solid @petite-salle-urscoop;
+
+    &:before {
+      content: "\e879";
+    }
+  }
+
+  border-bottom: 1px solid @petite-salle-urscoop;
+}
+
+/* Realis */
+.form-item-edit-field-room-tid-3571 a,
+.form-item-edit-field-room-tid-2951 a,
+.form-item-edit-field-room-tid-3718 a {
+  &:before {
+    color: @realis;
+  }
+
+  &.active {
+    border-bottom: 2px solid @realis;
+
+    &:before {
+      content: "\e879";
+    }
+  }
+
+  border-bottom: 1px solid @realis;
+}
+
+/* Salle Le Grand Saut */
+.form-item-edit-field-room-tid-2109 a {
+  &:before {
     color: @bleu-clair-crealead;
   }
-  &.active{
+
+  &.active {
     border-bottom: 2px solid @bleu-clair-crealead;
-    &:before{
+
+    &:before {
       content: "\e879";
     }
   }
+
   border-bottom: 1px solid @bleu-clair-crealead;
 }
-.form-item-edit-field-room-tid-2110 a{
-  &:before{
+
+/* Salle Playtime */
+.form-item-edit-field-room-tid-2110 a {
+  &:before {
     color: @bleu-fonce-crealead;
   }
-  &.active{
+
+  &.active {
     border-bottom: 2px solid @bleu-fonce-crealead;
-    &:before{
+
+    &:before {
       content: "\e879";
     }
   }
+
   border-bottom: 1px solid @bleu-fonce-crealead;
+}
+
+
+/* Salle Augerge Espagnole */
+.form-item-edit-field-room-tid-3587 a,
+.form-item-edit-field-room-tid-2956 a,
+.form-item-edit-field-room-tid-3932 a {
+  &:before {
+    color: @auberge-espagnole;
+  }
+
+  &.active {
+    border-bottom: 2px solid @auberge-espagnole;
+
+    &:before {
+      content: "\e879";
+    }
+  }
+
+  border-bottom: 1px solid @auberge-espagnole;
 }

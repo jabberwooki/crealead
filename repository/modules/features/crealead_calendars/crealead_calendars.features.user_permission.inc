@@ -132,6 +132,7 @@ function crealead_calendars_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',

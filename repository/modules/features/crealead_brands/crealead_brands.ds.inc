@@ -18,7 +18,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'block';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -26,6 +26,11 @@ function crealead_brands_ds_field_settings_info() {
         'wrapper' => 'h3',
         'class' => '',
         'exclude node title settings' => '0',
+        'ft' => array(),
+      ),
+    ),
+    'field_achievement_videos' => array(
+      'formatter_settings' => array(
         'ft' => array(),
       ),
     ),
@@ -62,7 +67,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'achievement_brand' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'inline',
       'format' => 'default',
     ),
@@ -70,11 +75,6 @@ function crealead_brands_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_achievement_photos' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
     ),
   );
   $export['node|achievement|full'] = $ds_fieldsetting;
@@ -808,14 +808,16 @@ function crealead_brands_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'field_achievement_photos',
+        1 => 'field_achievement_videos',
       ),
       'right' => array(
-        1 => 'title',
-        2 => 'body',
+        2 => 'title',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'field_achievement_photos' => 'left',
+      'field_achievement_videos' => 'left',
       'title' => 'right',
       'body' => 'right',
     ),
@@ -829,6 +831,7 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|achievement|block'] = $ds_layout;
 
@@ -883,14 +886,16 @@ function crealead_brands_ds_layout_settings_info() {
       'central' => array(
         0 => 'title',
         1 => 'field_achievement_photos',
-        2 => 'body',
-        3 => 'field_achiev_authors',
-        4 => 'achievement_brand',
+        2 => 'field_achievement_videos',
+        3 => 'body',
+        4 => 'field_achiev_authors',
+        5 => 'achievement_brand',
       ),
     ),
     'fields' => array(
       'title' => 'central',
       'field_achievement_photos' => 'central',
+      'field_achievement_videos' => 'central',
       'body' => 'central',
       'field_achiev_authors' => 'central',
       'achievement_brand' => 'central',

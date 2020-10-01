@@ -331,6 +331,7 @@ function crealead_needs_field_default_field_bases() {
         'dup' => 'DUP',
         'sec' => 'Marques sectorielles',
         'col' => 'Collectifs',
+        'ass' => 'Espace associés',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

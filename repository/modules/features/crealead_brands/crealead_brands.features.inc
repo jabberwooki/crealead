@@ -26,6 +26,9 @@ function crealead_brands_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "taxonomy_display" && $api == "taxonomy_display") {
     return array("version" => "1");
   }
+  if ($module == "video_embed_field" && $api == "default_video_embed_styles") {
+    return array("version" => "1");
+  }
 }
 
 /**

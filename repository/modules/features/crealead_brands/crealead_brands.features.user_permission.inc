@@ -341,7 +341,9 @@ function crealead_brands_user_default_permissions() {
   // Exported permission: 'edit terms in sector_brands'.
   $permissions['edit terms in sector_brands'] = array(
     'name' => 'edit terms in sector_brands',
-    'roles' => array(),
+    'roles' => array(
+      'référent' => 'référent',
+    ),
     'module' => 'taxonomy',
   );
 

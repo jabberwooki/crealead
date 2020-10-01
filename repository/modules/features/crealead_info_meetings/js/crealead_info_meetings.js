@@ -6,6 +6,11 @@
   Drupal.behaviors.info_meetings = {
     attach: function (context, settings) {
       // console.log(settings.crealead_registration_display);
+
+      // Suppression du bloc dépliant 'Voir le plan' si on est dans une réunion à distance.
+      if (settings.crealead_info_meeting_location == 'di') {
+        $('.group-plan-photo').remove();
+      }
       
       ////////// Reorganisation of STATUT checkboxes field + complementary info fields in registration create/edit forms. //////////
       if (settings.crealead_registration_display == 'create-form' || settings.crealead_registration_display == 'edit-form') {

@@ -251,12 +251,14 @@ function crealead_calendars_ds_layout_settings_info() {
         0 => 'field_gclal_date',
         1 => 'field_gcal_location',
         2 => 'field_gcal_description',
+        3 => 'field_attached_file',
       ),
     ),
     'fields' => array(
       'field_gclal_date' => 'central',
       'field_gcal_location' => 'central',
       'field_gcal_description' => 'central',
+      'field_attached_file' => 'central',
     ),
     'classes' => array(),
     'wrappers' => array(
