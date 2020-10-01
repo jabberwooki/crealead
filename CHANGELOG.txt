@@ -1,3 +1,46 @@
+Crealead v3.13 (Sprint V3-10) / 2020-10-01
+------------------------------------------
+  * crealead_profiles up: field_leaving_date only visible by referent, webmaster and admin roles.
+  * crealead_profiles up: field_leaving_date's default value in coe profile changed from current date to blank.
+  * crealead_info_meetings up: 10F-1: Remote location (à distance) added to field_meeting_location.
+  * crealead_calendars up: 10F-2: Edit permission on structure events added to role referent.
+  * crealead_profiles up: 10-15 again: In coes entries list, only coes whose profile has been published by referent are clickable.
+  * crealead_brands and kcore up: 10-14 again: Contrib module user_permissions removed. 'Marques sectorielles' vocabulary edit permission added to referent role.
+  * kcore up: 10-13 again: Referent profile added to deletable profiles.
+  * crealead_calendars up: 10-12 again: Next Structure events mail subject now changes depending on which option is selected.
+  * Custom theme up: CSS Color added to new room 'Auberge Espagnole' for dev, rec and prod instances.
+  * crealead_brands up: 10-5 again: Google Plus removed from and Instagram added to field_social_links settings.
+  * Fontello library up: 10-5 again: Library rebuilt from fontello.com, including now Instagram item.
+  * crealead_geolocations up: 10-3: Bux fix: Coes show up only once on coes location map (espace-co-entrepreneur/localisation-entrepreneurs).
+  * crealead_calendars up: 10-12 again: Structure events manual sending now takes into account straddling months.
+  * crealead_calendars up: 10-12 again: Current month AND next month Structure events are now available for email sending.
+  * crealead_brands up: 10-16 again: Field Vidéos place between fields Photos and Descriptif.
+  * crealead_brands up: 10-16: New field Vidéos (field_achievement_videos) added to achievement content type.
+  * crealead_profiles and kcore up: 10-15: New page 'Co-entrepreneurs > Entrées-Sorties' created.
+  * kcore up: Missing hook_update_N function description added to hooks 7014 and 7015.
+  * kcore and crealead_brands up: 10-14: Edit permission on vocabulaire 'Marques sectorielles' added to Sébastien André.
+  * kcore up: 10-13: Structure and Instances profiles can now be deleted from the corresponding user's profile form.
+  * crealead_calendars up: 10-12: Structure events now can be manually sent for the current month whole period.
+  * crealead_groups up: 10-11: New field 'Documents téléchargeables' added to business_group content type.
+  * crealead_groups up: 10-10: 'Collectifs' list back to 100% wide instead of 80%.
+  * seo.make file up: new patch declaration for page_title contrib module.
+  * kcore up: 10-9: info emails sent to coes when content is unpublished after user account disabling.
+  * crealead_associates up: 'Espace associés' title added to view coes_area_home/page_4 (onglet Espace associés).
+  * crealead_associates up: HTML tags removed from field body in reports view displays.
+  * crealead_brands up: 10-8: 'secteur d'activité' renamed 'domaine d'intervention'.
+  * theme up: dpm() debug fonction removed from template.php file.
+  * theme up: function crealead_calendar_stripe_stripe() updated to remove bug 'Notice : Undefined offset: 0 dans crealead_calendar_stripe_stripe() (ligne 433 dans /www/dev/repository/themes/custom/crealead/less/template.php)'.
+  * theme up: function crealead_calendar_stripe_stripe() updated in template.php.
+  * theme up: calendar module's theme function theme_calendar_stripe_stripe() overriden in crealead custom theme to handle rooms colors in rooms_calendar view. HTML color codes in Calendar entities format settings are no longer used.
+  * crealead_calendars up: 10-7: room_calendar's new rooms colors added.
+  * crealead_social up: Google+ service removed.
+  * crealead_calendar up: 10-4: Attached files field added to structure_event node type.
+  * crealead_associates up: report view displays improved.
+  * crealead_associates up: S10-2: Content type report and View reports created.
+  * kcore up: access restriction applied to 'Espace associés', only role 'associé' can access.
+  * crealead profile up : crealead_associates feature enabled in .install file.
+  * Feature crealead_associates created : New page 'Espace associés' created along with admin page.
+
 Hotfix teams-pages-made-public / 2020-05-29
 -------------------------------------------
   * crealead_profiles up: Views displays instances/instances_profiles and structure_team/structure_profiles altered: Access permission to role 'authenticater user' removed.
