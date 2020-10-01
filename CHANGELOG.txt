@@ -1,3 +1,7 @@
+Hotfix video_embed_field_enabling / 2020-10-01
+----------------------------------------------
+  * kcore up: Activation of video_embed_field contrib module in kcore.install file.
+
 Crealead v3.13 (Sprint V3-10) / 2020-10-01
 ------------------------------------------
   * crealead_profiles up: field_leaving_date only visible by referent, webmaster and admin roles.
