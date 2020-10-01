@@ -104,16 +104,16 @@ function kcore_update_7014() {
   module_enable(array('swiftmailer'));
 }
 
-/**
- * Activate user_permissions module.
- */
-function kcore_update_7015() {
-    module_enable(array('user_permissions'));
-}
-
 ///**
-// * Activate video_embed_field module.
+// * Activate user_permissions module.
 // */
-//function kcore_update_7016() {
-//    module_enable(array('video_embed_field'));
+//function kcore_update_7015() {
+//    module_enable(array('user_permissions'));
 //}
+
+/**
+ * Activate video_embed_field module.
+ */
+function kcore_update_7016() {
+    module_enable(array('video_embed_field'));
+}
