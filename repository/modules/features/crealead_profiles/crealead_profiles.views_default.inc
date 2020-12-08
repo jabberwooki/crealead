@@ -2572,6 +2572,15 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['user']['field'] = 'user';
   $handler->display->display_options['relationships']['user']['label'] = 'Utilisateur';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'user';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
   /* Field: Profil: Type --- caché */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'profile';
@@ -2580,6 +2589,15 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: (Type de profil) Nom système -- caché */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'profile_type';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['relationship'] = 'type';
+  $handler->display->display_options['fields']['type_1']['ui_name'] = '(Type de profil) Nom système -- caché';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
   /* Field: Prénom --- caché */
   $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
@@ -2624,7 +2642,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username">[field_user_firstname] [field_user_lastname]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username"><a href="/user/[uid]?profile=[type_1]">[field_user_firstname] [field_user_lastname]</a></div>
 <div class="competencies">[field_competencies]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -2718,6 +2736,8 @@ function crealead_profiles_views_default_views() {
     t('Page Instances'),
     t('more'),
     t('Utilisateur'),
+    t('<div class="username"><a href="/user/[uid]?profile=[type_1]">[field_user_firstname] [field_user_lastname]</a></div>
+<div class="competencies">[field_competencies]</div>'),
     t('Onglets Instances'),
     t('.'),
     t(','),
@@ -2863,6 +2883,23 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['relationships']['user']['field'] = 'user';
   $handler->display->display_options['relationships']['user']['label'] = 'Utilisateur';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'user';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Profile type: Machine-readable name */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'profile_type';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['relationship'] = 'type';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
   /* Field: Profil: Type --- caché */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'profile';
@@ -2910,14 +2947,30 @@ function crealead_profiles_views_default_views() {
     'image_style' => 'photo_utilisateur',
     'image_link' => '',
   );
-  /* Field: Global: Custom text */
+  /* Field: Texte personnalisé sans lien */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Texte personnalisé sans lien';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="username">[field_user_firstname] [field_user_lastname]</div>
+<div class="competencies">[field_competencies]</div>';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Field: Texte personnalisé avec lien */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Texte personnalisé avec lien';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username">[field_user_firstname] [field_user_lastname]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username"><a href="/user/[uid]?profile=[type_1]">[field_user_firstname] [field_user_lastname]</a></div>
 <div class="competencies">[field_competencies]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Profile: Petit texte de présentation */
+  $handler->display->display_options['fields']['field_profile_text']['id'] = 'field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['table'] = 'field_data_field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['field'] = 'field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Profile type: Label */
   $handler->display->display_options['sorts']['label']['id'] = 'label';
@@ -3023,6 +3076,8 @@ function crealead_profiles_views_default_views() {
     t('Page Structure'),
     t('more'),
     t('Utilisateur'),
+    t('<div class="username"><a href="/user/[uid]?profile=[type_1]">[field_user_firstname] [field_user_lastname]</a></div>
+<div class="competencies">[field_competencies]</div>'),
     t('Onglets page Structure'),
     t('.'),
     t(','),

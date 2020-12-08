@@ -218,6 +218,16 @@ function crealead_profiles_views_pre_render(&$view) {
   if ($view->name == 'coe_directory' && $view->current_display == 'coes_entries') {
     drupal_add_css(drupal_get_path('module', 'crealead_profiles') . '/css/crealead_profiles_entries_leavings.css');
   }
+
+  // Modif requise par la carte Trello V3 S11-3 :
+  // https://trello.com/c/RXeJ37B8/522-11-3-compl%C3%A9ter-les-profils-autres-que-coe-et-ouvrir-les-fiches-depuis-les-pages-instances-et-%C3%A9quipe
+  // Dans la page d'un utilisateur (/users/uid), on affiche les marques de cet utilisateur
+  // seulement si c'est son profil coe qui est demandé (profile_coe_page), c'est-à-dire si aucun paramètre GET n'est passé.
+  // Sinon, dès qu'on a .../user/username?profile=blablabla, on vide la vue des marques du coe.
+  if ($view->current_display == 'coe_brands') {
+      if ('user' == arg(0) && drupal_get_query_parameters())
+      $view->result = array();
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
@@ -434,4 +444,28 @@ function crealead_profiles_menu() {
     );
 
     return $items;
+}
+
+/**
+ * Implements hook_user_view_alter().
+ */
+function crealead_profiles_user_view_alter(&$build) {
+    // On récupère les paramètres GET de l'url.
+    $params = drupal_get_query_parameters();
+    // Si le parametre 'profile' est passé dans l'url, on affiche seulement le profil correspondant
+    if (isset($params['profile']) ) {
+        foreach($build as $key => $value) {
+            if ((strpos($key, 'profile_') !== FALSE) && ($key != 'profile_' . $params['profile'])) {
+                unset($build[$key]);
+            }
+        }
+    }
+    // Sinon, si n'y a pas de parametre GET, c'est qu'on veut le profil coe.
+    else {
+        foreach($build as $key => $value) {
+            if (strpos($key, 'profile_') !== FALSE && $key != 'profile_coe_page') {
+                unset($build[$key]);
+            }
+        }
+    }
 }
