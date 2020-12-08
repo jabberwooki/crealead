@@ -2637,14 +2637,30 @@ function crealead_profiles_views_default_views() {
     'image_style' => 'photo_utilisateur',
     'image_link' => '',
   );
-  /* Field: Global: Custom text */
+  /* Field: Texte personnalisé avec lien */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Texte personnalisé avec lien';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="username"><a href="/user/[uid]?profile=[type_1]">[field_user_firstname] [field_user_lastname]</a></div>
 <div class="competencies">[field_competencies]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Texte personnalisé sans lien */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Texte personnalisé sans lien';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="username">[field_user_firstname] [field_user_lastname]</div>
+<div class="competencies">[field_competencies]</div>';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Field: Profile: Petit texte de présentation */
+  $handler->display->display_options['fields']['field_profile_text']['id'] = 'field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['table'] = 'field_data_field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['field'] = 'field_profile_text';
+  $handler->display->display_options['fields']['field_profile_text']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Profile type: Label */
   $handler->display->display_options['sorts']['label']['id'] = 'label';
