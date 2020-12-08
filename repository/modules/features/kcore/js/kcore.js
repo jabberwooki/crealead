@@ -30,7 +30,7 @@
       if ($("#block-menu-menu-coe-area").length){
         $("body").addClass("coe-area");
         $("#block-menu-menu-coe-area ul li.dropdown ul").hide(0);
-        // $("#block-menu-menu-coe-area ul li.dropdown.active-trail ul").show(0);
+        $("#block-menu-menu-coe-area ul li.dropdown.active-trail ul").show(0);
 
         $( "#block-menu-menu-coe-area ul li.dropdown > a" ).click(function(e){
           e.preventDefault();
