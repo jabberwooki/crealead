@@ -8116,6 +8116,8 @@ div.service-links a {
     top: 170px;
     width: 184px;
     display: block;
+    background-color: white;
+    z-index: 10000;
   }
   .coe-area #block-menu-menu-coe-area > ul.nav-pills > li > a,
   .coe-area #block-views-newsflashes-coes-area-block > ul.nav-pills > li > a {

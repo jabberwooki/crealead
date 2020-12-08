@@ -11,7 +11,9 @@ include_once 'crealead_calendars.features.inc';
  */
 function crealead_calendars_init() {
   $request_path = request_path();
-  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-') || $request_path == 'espace-co-entrepreneur/informations') {
+  if (strstr($request_path, 'espace-co-entrepreneur/calendrier-')
+      || $request_path == 'espace-co-entrepreneur/informations'
+      || strstr($request_path, 'espace-co-entrepreneur/evenements-vie-cooperative/')) {
     drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars.css');
   }
 }

@@ -66,10 +66,92 @@ function crealead_groups_views_default_views() {
     'business_group' => 'business_group',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'groups_list');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['path'] = 'espace-co-entrepreneur/collectifs-obsolete';
+  /* Display: Page collectifs territoriaux */
+  $handler = $view->new_display('page', 'Page collectifs territoriaux', 'groups_list');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Les collectifs territoriaux';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_group' => 'business_group',
+  );
+  /* Filter criterion: Field: Type de collectif (field_group_type) */
+  $handler->display->display_options['filters']['field_group_type_value']['id'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['table'] = 'field_data_field_group_type';
+  $handler->display->display_options['filters']['field_group_type_value']['field'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['value'] = array(
+    'ct' => 'ct',
+  );
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/collectifs-territoriaux';
+
+  /* Display: Page comités techniques */
+  $handler = $view->new_display('page', 'Page comités techniques', 'committees_list');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Les comités techniques';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_group' => 'business_group',
+  );
+  /* Filter criterion: Field: Type de collectif (field_group_type) */
+  $handler->display->display_options['filters']['field_group_type_value']['id'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['table'] = 'field_data_field_group_type';
+  $handler->display->display_options['filters']['field_group_type_value']['field'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['value'] = array(
+    'tec' => 'tec',
+  );
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/comites-techniques';
+
+  /* Display: Page collectifs pôles d'activité */
+  $handler = $view->new_display('page', 'Page collectifs pôles d\'activité', 'activities_list');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Les collectifs de Pôle d\'activités';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_group' => 'business_group',
+  );
+  /* Filter criterion: Field: Type de collectif (field_group_type) */
+  $handler->display->display_options['filters']['field_group_type_value']['id'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['table'] = 'field_data_field_group_type';
+  $handler->display->display_options['filters']['field_group_type_value']['field'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['value'] = array(
+    'cm' => 'cm',
+  );
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/collectifs-pole-activites';
 
   /* Display: Bloc */
   $handler = $view->new_display('block', 'Bloc', 'bg_block');
@@ -213,7 +295,12 @@ au moment de l\'interception et la ré-écriture du header.';
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Page'),
+    t('Page collectifs territoriaux'),
+    t('Les collectifs territoriaux'),
+    t('Page comités techniques'),
+    t('Les comités techniques'),
+    t('Page collectifs pôles d\'activité'),
+    t('Les collectifs de Pôle d\'activités'),
     t('Bloc'),
     t('Onglet Collectifs'),
     t('Page visible depuis le sous-menu Vie Crealead de l\'espace coe'),

@@ -30,11 +30,12 @@
       if ($("#block-menu-menu-coe-area").length){
         $("body").addClass("coe-area");
         $("#block-menu-menu-coe-area ul li.dropdown ul").hide(0);
-        $("#block-menu-menu-coe-area ul li.dropdown.active-trail ul").show(0);
+        // $("#block-menu-menu-coe-area ul li.dropdown.active-trail ul").show(0);
 
         $( "#block-menu-menu-coe-area ul li.dropdown > a" ).click(function(e){
           e.preventDefault();
           var context_li = $(this).closest( "li" );
+console.log(context_li);
           $(".dropdown-menu",context_li).toggle();
         });
         $("#block-menu-menu-top ul.menu.nav>li:nth-of-type(3)").click(function(e){
@@ -45,7 +46,7 @@
         // manage menu coE when coming from top link "espace coE"
         var hash = window.location.hash.substr(1);
         if(hash && hash == "from-top-menu") {
-          $( "#block-menu-menu-coe-area .dropdown-menu" ).slideUp(3000);
+          // $( "#block-menu-menu-coe-area .dropdown-menu" ).slideUp(3000);
         }
         // manage menu coE when the screen is small
         if ($( window ).width() < 769) {
