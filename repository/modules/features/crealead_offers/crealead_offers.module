@@ -67,7 +67,7 @@ function crealead_offers_form_offer_node_form_alter(&$form, &$form_state, $form_
  * Implements hook_views_pre_render().
  */
 function crealead_offers_views_pre_render(&$view) {
-  if ($view->name == 'offers' && $view->current_display == 'offers_list') {
+  if ($view->name == 'offers' && $view->current_display == 'offers_page') {
     // Gestion du bouton "Ajouter un besoin"
     // Dans la vue offers/offers_list, header contient un texte d'infos à laisser intact.
     // et footer contient un texte provisoire à modifier.

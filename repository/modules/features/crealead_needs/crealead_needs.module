@@ -226,7 +226,7 @@ function crealead_needs_views_pre_view(&$view, &$display_id, &$args) {
  * Implements hook_views_pre_render().
  */
 function crealead_needs_views_pre_render(&$view) {
-  if ($view->name == 'needs' && $view->current_display == 'needs_list') {
+  if ($view->name == 'needs' && $view->current_display == 'needs_page') {
     // 1 - Gestion du bouton "Ajouter un besoin"
     // Dans la vue needs/needs_list, header et footer contiennent un texte provisoire qui est modifié par le code ci-dessous.
     //

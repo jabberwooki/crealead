@@ -244,6 +244,100 @@ function crealead_newsflashes_views_default_views() {
   );
   $handler->display->display_options['filters']['field_related_population_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_related_population_tid']['vocabulary'] = 'populations';
+
+  /* Display: Page espace coes */
+  $handler = $view->new_display('page_with_page_title', 'Page espace coes', 'coe_area_page');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'newsflash' => 'newsflash',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
+  $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
+  $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
+  $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
+  $handler->display->display_options['filters']['field_display_end_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_display_end_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_display_end_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Thème (field_theme_breve) */
+  $handler->display->display_options['filters']['field_theme_breve_tid']['id'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['table'] = 'field_data_field_theme_breve';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['field'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['operator_id'] = 'field_theme_breve_tid_op';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['label'] = 'Thème';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['operator'] = 'field_theme_breve_tid_op';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['identifier'] = 'field_theme_breve_tid';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_theme_breve_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+    1936756 => 0,
+  );
+  $handler->display->display_options['filters']['field_theme_breve_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_theme_breve_tid']['vocabulary'] = 'th_mes_br_ve';
+  /* Filter criterion: Content: Population concernée (field_related_population) */
+  $handler->display->display_options['filters']['field_related_population_tid']['id'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['table'] = 'field_data_field_related_population';
+  $handler->display->display_options['filters']['field_related_population_tid']['field'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['operator_id'] = 'field_related_population_tid_op';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['label'] = 'Population concernée';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['operator'] = 'field_related_population_tid_op';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['identifier'] = 'field_related_population_tid';
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_related_population_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+    1936756 => 0,
+  );
+  $handler->display->display_options['filters']['field_related_population_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_related_population_tid']['vocabulary'] = 'populations';
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/breves';
   $translatables['newsflashes'] = array(
     t('Master'),
     t('Brèves'),
@@ -271,6 +365,7 @@ function crealead_newsflashes_views_default_views() {
     t('Réinitialiser'),
     t('Trier par'),
     t('Thème'),
+    t('Page espace coes'),
   );
   $export['newsflashes'] = $view;
 

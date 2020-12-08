@@ -132,7 +132,7 @@ voir crealead_offers_views_pre_render()';
   $handler->display->display_options['filters']['type']['value'] = array(
     'offer' => 'offer',
   );
-  /* Filter criterion: Content: Limite de validité (field_display_end_date) */
+  /* Filter criterion: Content: Date de fin d&#039;affichage (field_display_end_date) */
   $handler->display->display_options['filters']['field_display_end_date_value']['id'] = 'field_display_end_date_value';
   $handler->display->display_options['filters']['field_display_end_date_value']['table'] = 'field_data_field_display_end_date';
   $handler->display->display_options['filters']['field_display_end_date_value']['field'] = 'field_display_end_date_value';
@@ -141,6 +141,10 @@ voir crealead_offers_views_pre_render()';
 
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'offers_list');
+
+  /* Display: Page (with Page Title) */
+  $handler = $view->new_display('page_with_page_title', 'Page (with Page Title)', 'offers_page');
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/offres';
   $translatables['offers'] = array(
     t('Master'),
     t('Offres'),
@@ -167,6 +171,7 @@ voir crealead_offers_views_pre_render()'),
     t('Type d\'offre'),
     t('Date'),
     t('Bloc espace coes'),
+    t('Page (with Page Title)'),
   );
   $export['offers'] = $view;
 

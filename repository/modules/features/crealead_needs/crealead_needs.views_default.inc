@@ -181,6 +181,10 @@ voir crealead_needs_views_pre_render()';
   $handler = $view->new_display('block', 'Bloc espace coes', 'needs_list');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
 
+  /* Display: Page espace coes */
+  $handler = $view->new_display('page_with_page_title', 'Page espace coes', 'needs_page');
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/demandes';
+
   /* Display: Bloc liens vers docs échanges */
   $handler = $view->new_display('block', 'Bloc liens vers docs échanges', 'links_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -416,6 +420,7 @@ voir crealead_needs_views_pre_render()'),
     t('Prises de contact'),
     t('Action'),
     t('Bloc espace coes'),
+    t('Page espace coes'),
     t('Bloc liens vers docs échanges'),
     t('Documents à consulter'),
     t('Bloc liens vers docs coopins'),
