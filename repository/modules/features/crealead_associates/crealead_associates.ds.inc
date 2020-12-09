@@ -93,6 +93,35 @@ function crealead_associates_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_attached_file' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-col' => TRUE,
+          'lbw' => 1,
+          'lbw-el' => 'div',
+          'lbw-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-attached-file',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => TRUE,
+          'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|report|full'] = $ds_fieldsetting;
 
@@ -156,9 +185,10 @@ function crealead_associates_ds_layout_settings_info() {
         1 => 'field_meeting_date',
         2 => 'field_report_theme',
         3 => 'author',
+        4 => 'field_attached_file',
       ),
       'right' => array(
-        4 => 'body',
+        5 => 'body',
       ),
     ),
     'fields' => array(
@@ -166,6 +196,7 @@ function crealead_associates_ds_layout_settings_info() {
       'field_meeting_date' => 'left',
       'field_report_theme' => 'left',
       'author' => 'left',
+      'field_attached_file' => 'left',
       'body' => 'right',
     ),
     'classes' => array(),

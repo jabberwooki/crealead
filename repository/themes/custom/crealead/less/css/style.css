@@ -15326,10 +15326,17 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   font-size: 1.6em;
 }
 .node-report .field-name-field-report-theme,
-.node-report .field-name-author {
+.node-report .field-name-author,
+.node-report .field-name-field-attached-file {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #cccccc;
+}
+.node-report .field-items .download-file {
+  margin-top: 1rem;
+}
+.node-report .field-items .download-file .file-icon {
+  margin-right: 0.5rem;
 }
 .page-espace-co-entrepreneur-espace-associes .view-footer a {
   float: right;

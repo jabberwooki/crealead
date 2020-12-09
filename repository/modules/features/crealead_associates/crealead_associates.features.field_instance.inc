@@ -29,7 +29,7 @@ function crealead_associates_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -100,6 +100,80 @@ function crealead_associates_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-report-field_attached_file'.
+  $field_instances['node-report-field_attached_file'] = array(
+    'bundle' => 'report',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'download_file',
+        'settings' => array(),
+        'type' => 'direct_download_icon',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_attached_file',
+    'label' => 'Fichiers',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => 'report-files',
+      'file_extensions' => 'txt pdf doc docx xls xlsx odt ods jpg jpeg png gif',
+      'max_filesize' => '10 MB',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'scald' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'label_help_description' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 5,
     ),
   );
 
@@ -274,6 +348,7 @@ function crealead_associates_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Catégorie');
   t('Date de la réunion');
+  t('Fichiers');
   t('Texte du compte-rendu');
   t('Thématique');
 
