@@ -27,7 +27,6 @@
 
 <?php if ($title): ?>
     <?php
-dpm($title);
         $titles = array(
             'Profil assistant' => 'Accueil et communication',
             'Profil entrepreneur' => 'Mon profil co-entrepreneur',
