@@ -36,7 +36,7 @@ dpm($title);
             'Profil entrepreneur prestataire' => 'Entrepreneur prestataire pour Crealead',
             'Profil référent' => 'Référent d\'activités',
             'Profil CA' => 'Membre du conseil d\'administration',
-            'Profil CSE' => 'Membre du CSE',
+            'Profil DUP' => 'Membre du CSE',
         );
         $title = (array_key_exists($title, $titles) ? $titles[$title]: $title) ;
     ?>
