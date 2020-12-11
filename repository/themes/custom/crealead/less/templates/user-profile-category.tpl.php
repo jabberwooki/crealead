@@ -27,11 +27,12 @@
 
 <?php if ($title): ?>
     <?php
+dpm($title);
         $titles = array(
             'Profil assistant' => 'Accueil et communication',
             'Profil entrepreneur' => 'Mon profil co-entrepreneur',
             'Profil direction' => 'Direction',
-            'Profil pôle gestion ' => 'Gestionnaire',
+            'Profil pôle gestion' => 'Gestionnaire',
             'Profil entrepreneur prestataire' => 'Entrepreneur prestataire pour Crealead',
             'Profil référent' => 'Référent d\'activités',
             'Profil CA' => 'Membre du conseil d\'administration',
