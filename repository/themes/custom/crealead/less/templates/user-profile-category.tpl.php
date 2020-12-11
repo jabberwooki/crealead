@@ -28,8 +28,14 @@
 <?php if ($title): ?>
     <?php
         $titles = array(
-            'Profil assistant' => 'Profil accueil et communication',
-            'Profil CA' => 'Profil administrateur',
+            'Profil assistant' => 'Accueil et communication',
+            'Profil entrepreneur' => 'Mon profil co-entrepreneur',
+            'Profil direction' => 'Direction',
+            'Profil pôle gestion ' => 'Gestionnaire',
+            'Profil entrepreneur prestataire' => 'Entrepreneur prestataire pour Crealead',
+            'Profil référent' => 'Référent d\'activités',
+            'Profil CA' => 'Membre du conseil d\'administration',
+            'Profil CSE' => 'Membre du CSE',
         );
         $title = (array_key_exists($title, $titles) ? $titles[$title]: $title) ;
     ?>
