@@ -16,6 +16,9 @@ function crealead_calendars_init() {
       || strstr($request_path, 'espace-co-entrepreneur/evenements-vie-cooperative/')) {
     drupal_add_css(drupal_get_path('module', 'crealead_calendars') . '/css/crealead_calendars.css');
   }
+  if ($request_path == 'espace-co-entrepreneur/evenements-vie-cooperative/liste') {
+      drupal_add_js(drupal_get_path('module', 'crealead_calendars') . '/js/cooperative_events.js');
+  }
 }
 /**
  * Implements hook_feeds_after_save().
