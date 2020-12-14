@@ -247,6 +247,14 @@ function crealead_newsflashes_views_default_views() {
 
   /* Display: Page espace coes */
   $handler = $view->new_display('page_with_page_title', 'Page espace coes', 'coe_area_page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '&nbsp;';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -366,6 +374,7 @@ function crealead_newsflashes_views_default_views() {
     t('Trier par'),
     t('Thème'),
     t('Page espace coes'),
+    t('&nbsp;'),
   );
   $export['newsflashes'] = $view;
 

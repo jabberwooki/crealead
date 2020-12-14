@@ -142,8 +142,8 @@ voir crealead_offers_views_pre_render()';
   /* Display: Bloc espace coes */
   $handler = $view->new_display('block', 'Bloc espace coes', 'offers_list');
 
-  /* Display: Page (with Page Title) */
-  $handler = $view->new_display('page_with_page_title', 'Page (with Page Title)', 'offers_page');
+  /* Display: Page espace coes */
+  $handler = $view->new_display('page_with_page_title', 'Page espace coes', 'offers_page');
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/offres';
   $translatables['offers'] = array(
     t('Master'),
@@ -171,7 +171,7 @@ voir crealead_offers_views_pre_render()'),
     t('Type d\'offre'),
     t('Date'),
     t('Bloc espace coes'),
-    t('Page (with Page Title)'),
+    t('Page espace coes'),
   );
   $export['offers'] = $view;
 
