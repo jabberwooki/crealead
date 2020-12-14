@@ -17,6 +17,10 @@ function kcore_init() {
     'type' => 'file',
     'group' => JS_THEME,
   ));
+
+  if (request_path() == 'espace-co-entrepreneur/dup') {
+    drupal_add_js(drupal_get_path('module','kcore') . '/js/cse.js');
+  }
 }
 
 /**
