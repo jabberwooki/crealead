@@ -79,7 +79,18 @@ function crealead_offers_views_pre_render(&$view) {
     $button = l('Ajouter une offre', '/node/add/offer', array('query' => array('destination' => current_path())));
     $header_info = $view->header['area']->options['content'];
 
-    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . '<p>' . $button . '</p>';
+    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . //'<p>' . $button . '</p>';
+      '<div class="offer-actions clearfix">' .
+            '<div class="offer-add-link pull-left">' .
+                $button .
+            '</div>' .
+            '<div class="warning-links offer-warning-link pull-right">' .
+                '&nbsp;' .
+            '</div>' .
+      '</div>';
+
+
+
     $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
 
 

@@ -202,7 +202,7 @@ function crealead_warnings_views_pre_render(&$view) {
       $type = $content_types[$view->name];
 
       $warning_links = '';
-      if (in_array('need', $warning_content_types)) {
+      if (in_array($type, $warning_content_types)) {
           global $user;
           $user_warnings_count = crealead_warnings_get_user_warnings($user->uid, TRUE);
           $warning_links = '<span class="warning-add-link">'
@@ -216,15 +216,21 @@ function crealead_warnings_views_pre_render(&$view) {
           }
       }
 
-      $view->header['area']->options['content'] =
-        '<div class="' . $type . '-actions clearfix">' .
-            '<div class="' . $type . '-add-link pull-left">' .
-            $view->header['area']->options['content'] .
-            '</div>' .
-            '<div class="warning-links ' . $type . '-warning-link pull-right">' .
-            $warning_links .
-            '</div>' .
-        '</div>';
+      if ($view->name != 'offers') {
+          $view->header['area']->options['content'] =
+              '<div class="' . $type . '-actions clearfix">' .
+                  '<div class="' . $type . '-add-link pull-left">' .
+                  $view->header['area']->options['content'] .
+                  '</div>' .
+                  '<div class="warning-links ' . $type . '-warning-link pull-right">' .
+                  $warning_links .
+                  '</div>' .
+              '</div>';
+      }
+      else {
+          $view->header['area']->options['content'] =
+              str_replace('&nbsp;', $warning_links, $view->header['area']->options['content']);
+      }
   }
 }
 

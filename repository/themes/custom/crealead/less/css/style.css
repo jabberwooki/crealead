@@ -13940,8 +13940,8 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   padding-top: 20px;
   position: relative;
 }
-#block-views-offers-offers-list .view-header > p > a,
-.view-display-id-offers_page .view-header > p > a {
+#block-views-offers-offers-list .view-header .offer-add-link a,
+.view-display-id-offers_page .view-header .offer-add-link a {
   display: inline-block;
   background-color: #bf0e38;
   padding: 6px 12px;
@@ -13953,14 +13953,14 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   height: 35px;
   overflow: hidden;
   /*
-    position: absolute;
-    top : 35px;
-    left: 200px;
-    */
+      position: absolute;
+      top : 35px;
+      left: 200px;
+      */
   padding-right: 45px;
 }
-#block-views-offers-offers-list .view-header > p > a:before,
-.view-display-id-offers_page .view-header > p > a:before {
+#block-views-offers-offers-list .view-header .offer-add-link a:before,
+.view-display-id-offers_page .view-header .offer-add-link a:before {
   position: relative;
   top: 1px;
   font-family: 'Glyphicons Halflings';
@@ -13988,21 +13988,23 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   /* icon arrow right */
   color: white;
 }
-#block-views-offers-offers-list .view-header > p > a:hover,
-.view-display-id-offers_page .view-header > p > a:hover {
+#block-views-offers-offers-list .view-header .offer-add-link a:hover,
+.view-display-id-offers_page .view-header .offer-add-link a:hover {
   text-decoration: none;
   background-color: #1d1e19;
   color: #FFF;
 }
-#block-views-offers-offers-list .view-header > p > a:hover:before,
-.view-display-id-offers_page .view-header > p > a:hover:before {
+#block-views-offers-offers-list .view-header .offer-add-link a:hover:before,
+.view-display-id-offers_page .view-header .offer-add-link a:hover:before {
   color: #f2cc2b;
 }
 #block-views-offers-offers-list div.warning-links,
 .view-display-id-offers_page div.warning-links {
-  position: absolute;
-  top: 40px;
-  left: 430px;
+  /*
+    position: absolute;
+    top: 40px;
+    left: 430px;
+     */
 }
 #block-views-offers-offers-list .views-table,
 .view-display-id-offers_page .views-table {
