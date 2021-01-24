@@ -15607,6 +15607,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   padding-left: 20px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-photo {
+  padding-left: 0;
   margin-bottom: 15px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content {
