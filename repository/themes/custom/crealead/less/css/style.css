@@ -15470,11 +15470,17 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   font-weight: bold;
   text-transform: uppercase;
 }
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-type-text-long {
+  font-size: 90%;
+}
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-col-content {
   padding: 0 10px 0 15px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-col-content .field-type-text-long {
   line-height: 1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-col-right-content {
+  padding: 0 0 0 5px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .visible-md-block.visible-lg-block {
   margin-bottom: 50px;

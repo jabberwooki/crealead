@@ -353,7 +353,7 @@ function crealead_newsletters_field_group_info() {
       'label' => 'Contenu',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-col-content group-col-right-content field-group-div col-md-8',
+        'classes' => 'group-col-content group-col-right-content field-group-div col-md-9',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -839,7 +839,7 @@ function crealead_newsletters_field_group_info() {
       'label' => 'Pictogramme',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-picto-right field-group-div col-md-4',
+        'classes' => 'group-picto-right field-group-div col-md-3',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
