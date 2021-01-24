@@ -65,20 +65,26 @@ else {
 ?>
 
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class="field-items col-md-10 col-md-offset-1"<?php print $content_attributes; ?>>
+  <div class="field-items"<?php print $content_attributes; ?>>
 
-      <div class="items-wrapper col-md-10 col-md-offset-1">
-        <?php foreach ($items as $delta => $item): ?>
-        <?php //dpm($delta); ?>
-          <div class="field-item col-md-12 <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-        <?php endforeach; ?>
+    <!--    Colonne d'espacement pour les affichages md et lg.-->
+    <div class="nl-column-spacer col-md-1 visible-md-block visible-lg-block">&nbsp;</div>
+
+    <div class="items-wrapper col-md-9">
+      <?php foreach ($items as $delta => $item): ?>
+      <?php //dpm($delta); ?>
+        <div class="field-item col-md-12 <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+      <?php endforeach; ?>
+    </div>
+
+    <?php if (!empty($footer_item)): ?>
+      <div class="clearfix col-md-1 visible-md-block visible-lg-block">&nbsp;</div>
+      <div class="nl-column-spacer col-md-1 visible-md-block visible-lg-block">&nbsp;</div>
+      <div class="footer-item-wrapper col-md-9">
+        <div class="field-item col-md-12"<?php print $item_attributes[$footer_delta]; ?>><?php print render($footer_item); ?></div>
       </div>
+    <?php endif; ?>
 
-      <?php if (!empty($footer_item)): ?>
-        <div class="footer-item-wrapper col-md-10 col-md-offset-1">
-          <div class="field-item col-md-12"<?php print $item_attributes[$footer_delta]; ?>><?php print render($footer_item); ?></div>
-        </div>
-      <?php endif; ?>
 
   </div>
 </div>
