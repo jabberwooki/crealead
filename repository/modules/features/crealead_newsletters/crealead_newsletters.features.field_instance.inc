@@ -139,7 +139,7 @@ function crealead_newsletters_field_default_field_instances() {
         'whatsnew' => -12,
         'zoom' => -14,
       ),
-      'default_edit_mode' => 'closed',
+      'default_edit_mode' => 'open',
       'title' => 'Paragraph',
       'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
@@ -588,7 +588,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1012,7 +1012,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1370,7 +1370,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2060,7 +2060,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2149,7 +2149,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2238,7 +2238,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2827,7 +2827,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4320,7 +4320,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4938,7 +4938,7 @@ function crealead_newsletters_field_default_field_instances() {
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5573,20 +5573,59 @@ function crealead_newsletters_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_zoom_text',
     'label' => 'Texte',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'context' => '',
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
