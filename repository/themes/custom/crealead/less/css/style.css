@@ -15410,6 +15410,9 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   margin: 0 0 20px 0;
 }
 /* Page newsletters */
+.node.node-newsletter .field-type-paragraphs {
+  font-family: 'Arial', sans-serif;
+}
 .node.node-newsletter .field-type-paragraphs .items-wrapper {
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
