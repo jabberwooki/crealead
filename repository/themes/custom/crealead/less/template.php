@@ -455,3 +455,46 @@ function crealead_calendar_stripe_stripe($vars) {
 
   return $output;
 }
+
+function crealead_preprocess_field(&$vars) {
+    if (!empty($vars['element'])) {
+        $name = $vars['element']['#field_name'];
+        $bundle = $vars['element']['#bundle'];
+        $mode = $vars['element']['#view_mode'];
+
+        switch ($name) {
+            case 'field-dg_title':
+                $vars['classes_array'][] = 'nl-paragraph-title';
+                break;
+
+            case 'field_dg_photo':
+                $vars['classes_array'][] = 'col-md-3 col-md-push-9';
+                break;
+
+            case 'field_dg_text':
+                $vars['classes_array'][] = 'col-md-9 col-md-pull-3';
+                break;
+
+            case 'field_zoom_photo':
+                $vars['classes_array'][] = 'col-md-3';
+                break;
+
+            case 'field_zoom_text':
+                $vars['classes_array'][] = 'col-md-12';
+                break;
+
+            case 'field_p_link':
+                $vars['classes_array'][] = 'col-md-12';
+                break;
+
+            case 'field_newsfocus_photo':
+                $vars['classes_array'][] = 'col-md-3 col-md-push-9';
+                break;
+
+            case 'field_newsfocus_text':
+                $vars['classes_array'][] = 'col-md-9 col-md-pull-3';
+
+            default:
+        }
+    }
+}

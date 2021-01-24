@@ -15383,3 +15383,553 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .view-reports table th.views-field-title {
   width: 25%;
 }
+/* Custom mixins */
+.paragraph-title {
+  padding: 0 0 10px 0;
+}
+.paragraph-title-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.rounded-image {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.text-font {
+  font-size: 110%;
+  line-height: 1.1;
+}
+/* Custom variables */
+/* Vue newsletters */
+.view-id-newsletters .col > div {
+  border: 1px solid grey;
+  padding: 10px 20px 40px 20px;
+  margin: 0 0 20px 0;
+}
+/* Page newsletters */
+.node.node-newsletter .field-type-paragraphs .items-wrapper {
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  /* DATE */
+  /* INFOS FLASH 3 COLONNES (STRUCTURE ET COES) */
+  /* SEPARATEUR */
+  /* LE MOT DU DG */
+  /* QUOI DE NEUF */
+  /* ZOOM SUR */
+  /* ÉVÈNEMENTS À VENIR */
+  /* INFORMATIONS */
+  /* COMITES TECHNIQUES */
+  /* EQUIPE */
+  /* FOCUS */
+  /* BOITE A IDEES */
+  /* MERCI RESEAU */
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-date {
+  padding: 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #666666;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-date .field-item {
+  display: inline;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-date .field-item:before,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-date .field-item:after {
+  content: url('../images/black-dash2.jpg');
+  padding: 0 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols {
+  padding: 15px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-group-fieldset {
+  padding-left: 10px;
+  border-right: 2px solid #0d0c0c;
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-group-fieldset:last-of-type {
+  border: none;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-picto-left,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-picto-center,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-picto-right {
+  padding: 5px 0 0 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-name-field-title-left,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-name-field-title-center,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .field-name-field-title-right {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-col-content {
+  padding: 0 10px 0 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-col-content .field-type-text-long {
+  line-height: 1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .visible-md-block.visible-lg-block {
+  margin-bottom: 50px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-infoflash-link {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-infoflash-link .field-item {
+  padding: 5px 15px;
+  background-color: #e5e8e9;
+  border-radius: 15px;
+  font-size: 105%;
+  font-weight: 600;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos-flash-3-cols .content .group-infoflash-link .field-item a {
+  color: black;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-spacer {
+  padding: 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words {
+  padding: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words .field-name-field-dg-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words .field-name-field-dg-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words .field-name-field-dg-title .field-item:after {
+  content: url('../images/encrier.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words .field-name-field-dg-photo {
+  padding-right: 0;
+  margin-bottom: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-dg-words .field-name-field-dg-text {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #e5e8e9;
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew {
+  padding: 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-wathsnew-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-wathsnew-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-wathsnew-title .field-item:after {
+  content: url('../images/question-rouge.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-subtitle-left,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-subtitle-right {
+  text-align: center;
+  font-weight: 600;
+  font-size: 115%;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-subtitle-left:after,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .field-name-field-subtitle-right:after {
+  content: "";
+  display: block;
+  width: 12%;
+  margin: 0 auto;
+  padding-top: 7px;
+  border-bottom: 2px solid #c6093b;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew-left {
+  padding: 10px 20px 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew-right {
+  padding: 10px 0 10px 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew {
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items {
+  padding-top: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper {
+  font-size: 120%;
+  color: #080808;
+  padding: 0 10px;
+  line-height: 1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper > div {
+  text-align: center;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper .field-name-field-p-photo {
+  padding: 0px 10px 5px 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper .field-name-field-p-photo img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper .field-name-field-p-name {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew .group-wathsnew .paragraphs-items .paragraphs-item-person .group-p-wrapper .field-name-field-p-function {
+  font-style: italic;
+  font-size: 90%;
+  color: #6048f0;
+  margin-top: 5px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-title .field-item:after {
+  content: url('../images/magnifier.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-photo {
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content {
+  background-color: #e5e8e9;
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle {
+  display: inline;
+  font-size: 120%;
+  font-weight: 600;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle .field-item {
+  float: left;
+  margin-top: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle .field-item:after {
+  content: "";
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 5px;
+  border-bottom: 2px solid #c6093b;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-text {
+  padding: 10px 0;
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-title .field-item:after {
+  content: url('../images/calendar.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text {
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .field-item {
+  padding-left: 30px;
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .field-item:before {
+  content: url('../images/fleche-droite.jpg');
+  position: absolute;
+  left: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .clearfix,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .dl-horizontal dd,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .container,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .container-fluid,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .row,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .form-horizontal .form-group,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .btn-toolbar,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .btn-group-vertical > .btn-group,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .nav,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .navbar,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .navbar-header,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .navbar-collapse,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .pager,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .panel-body,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .modal-header,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-event-text .modal-footer {
+  margin-bottom: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-p-link {
+  padding-right: 0;
+  margin: 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-p-link .field-item {
+  float: right;
+  background-color: #c6093b;
+  padding: 0.5rem 0 0.5rem 1rem;
+  -moz-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-p-link .field-item a {
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-p-link .field-item:after {
+  content: ">";
+  font-weight: 900;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0 10px 0 5px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-title .field-item:after {
+  content: url('../images/info.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-text {
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-list .field-item.left-col {
+  padding: 0 15px 0 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-list .field-item.center-col {
+  padding: 0 8px 0 8px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-list .field-item.right-col {
+  padding: 0 0 0 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .paragraphs-item-techcom {
+  margin-bottom: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .paragraphs-item-techcom .field-name-field-techcom-title {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .paragraphs-item-techcom .field-name-field-techcom-text {
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .field-name-field-team-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .field-name-field-team-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .field-name-field-team-title .field-item:after {
+  content: url('../images/equipe.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group {
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group div[class*="-title"] {
+  font-size: 120%;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group div[class*="-members-full"] {
+  border: 1px solid #edeff0;
+  padding-left: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name {
+  font-weight: 600;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name .field-item {
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name .field-item:before {
+  content: url('../images/fleche-droite-petite.jpg');
+  position: absolute;
+  left: -12px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email {
+  font-size: 90%;
+  font-style: italic;
+  color: grey;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper {
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper .field-item {
+  position: relative;
+  cursor: help;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper .email-tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: -30px;
+  left: 50px;
+  background-color: white;
+  padding: 5px;
+  color: red;
+  font-size: 150%;
+  z-index: 9999;
+  opacity: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper #tooltip-control:hover ~ #tooltip-target {
+  visibility: visible;
+  border: 1px solid grey;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  opacity: 1;
+  z-index: 9999;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-management {
+  padding: 0 15px 0 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-advisors {
+  padding: 0 10px 0 5px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-pole-g {
+  padding: 0 5px 0 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-communication {
+  padding: 0 0 0 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-title .field-item:after {
+  content: url('../images/focus-actus.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-photo {
+  padding-right: 0;
+  margin-bottom: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-text {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #e5e8e9;
+  font-size: 110%;
+  line-height: 1.1;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-ideas-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-ideas-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-ideas-title .field-item:after {
+  content: url('../images/question-jaune.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-question {
+  padding: 15px;
+  margin: 0 40px 0 25px;
+  background-color: #e5e8e9;
+  position: relative;
+  z-index: 10;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-nl-answer {
+  padding: 25px 15px 15px 15px;
+  margin: -15px 0 15px 65px;
+  border: 2px solid #fada25;
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-title .field-item:after {
+  content: url('../images/reseau.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list {
+  padding: 10px 65px;
+  margin: 15px 0;
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list:before {
+  content: url("../images/guillemets-gauche.jpg");
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list:after {
+  content: url("../images/guillemets-droite.jpg");
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list .field-name-field-thanks-text {
+  font-size: 110%;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list .field-name-field-thanks-author {
+  font-size: 110%;
+  line-height: 1.1;
+  font-style: italic;
+  color: #9a9898;
+  margin-bottom: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-thanks .field-name-field-thanks-list .field-name-field-thanks-author .field-item {
+  text-align: right;
+}
+.node.node-newsletter .field-type-paragraphs .footer-item-wrapper {
+  padding: 20px 0;
+  background-color: #c41d47;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}

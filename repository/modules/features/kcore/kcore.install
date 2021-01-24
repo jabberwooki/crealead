@@ -117,3 +117,10 @@ function kcore_update_7014() {
 function kcore_update_7016() {
     module_enable(array('video_embed_field'));
 }
+
+/**
+ * Activate paragraphs module.
+ */
+function kcore_update_7017() {
+    module_enable(array('paragraphs'));
+}

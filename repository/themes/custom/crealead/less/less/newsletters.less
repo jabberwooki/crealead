@@ -1,0 +1,687 @@
+/* Custom mixins */
+.paragraph-title {
+  padding: 0 0 10px 0;
+}
+.paragraph-title-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.rounded-image {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.partial-border-bottom(@width: 12%, @padding-top: 7px) {
+  content: "";
+  display: block;
+  width: @width;
+  margin: 0 auto;
+  padding-top: @padding-top;
+  border-bottom: 2px solid #c6093b;
+}
+.text-font {
+  font-size: 110%;
+  line-height: 1.1;
+}
+
+.button-border-radius(@radius: 1em;) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+
+}
+
+/* Custom variables */
+@nl-text-background: #e5e8e9;
+
+/* Vue newsletters */
+.view-id-newsletters .col > div {
+  border: 1px solid grey;
+  padding: 10px 20px 40px 20px;
+  margin: 0 0 20px 0;
+}
+
+/* Page newsletters */
+.node.node-newsletter .field-type-paragraphs {
+
+  .items-wrapper {
+    //border: 1px solid #cccccc;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    /* DATE */
+
+    .paragraphs-item-date {
+      padding: 15px 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      color: #666666;
+
+      .field-item {
+        display: inline;
+      }
+
+      .field-item:before,
+      .field-item:after {
+        content: url('../images/black-dash2.jpg');
+        padding: 0 10px;
+      }
+    }
+
+    /* INFOS FLASH 3 COLONNES (STRUCTURE ET COES) */
+
+    .paragraphs-item-infos-flash-3-cols {
+      padding: 15px 0;
+
+      .content {
+        .field-group-fieldset {
+          padding-left: 10px;
+          border-right: 2px solid #0d0c0c;
+          position: relative;
+        }
+
+        .field-group-fieldset:last-of-type {
+          border: none;
+        }
+
+        .group-picto-left,
+        .group-picto-center,
+        .group-picto-right {
+          padding: 5px 0 0 0;
+        }
+
+        .field-name-field-title-left,
+        .field-name-field-title-center,
+        .field-name-field-title-right {
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        .group-col-content {
+          padding: 0 10px 0 15px;
+
+          .field-type-text-long {
+            line-height: 1;
+          }
+        }
+
+        .visible-md-block.visible-lg-block {
+          margin-bottom: 50px;
+        }
+
+        .group-infoflash-link {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%);
+
+          .field-item {
+            padding: 5px 15px;
+            background-color: #e5e8e9;
+            border-radius: 15px;
+            font-size: 105%;
+            font-weight: 600;
+
+            a {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    /* SEPARATEUR */
+
+    .paragraphs-item-spacer {
+      padding: 10px 0;
+    }
+
+    /* LE MOT DU DG */
+
+    .paragraphs-item-dg-words {
+      padding: 0;
+
+      .field-name-field-dg-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/encrier.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-dg-photo {
+        padding-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .field-name-field-dg-text {
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: @nl-text-background;
+        .text-font;
+      }
+    }
+
+    /* QUOI DE NEUF */
+
+    .paragraphs-item-whatsnew {
+      padding: 10px 0;
+
+      .field-name-field-wathsnew-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/question-rouge.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-subtitle-left,
+      .field-name-field-subtitle-right {
+        text-align: center;
+        font-weight: 600;
+        font-size: 115%;
+      }
+
+      .field-name-field-subtitle-left:after,
+      .field-name-field-subtitle-right:after {
+        .partial-border-bottom();
+      }
+
+      .group-wathsnew-left {
+        padding: 10px 20px 10px 0;
+      }
+
+      .group-wathsnew-right {
+        padding: 10px 0 10px 20px;
+      }
+
+      .group-wathsnew {
+        padding-top: 10px;
+        margin-bottom: 15px;
+
+        .paragraphs-items {
+          padding-top: 10px;
+
+          .paragraphs-item-person {
+
+            .group-p-wrapper {
+              font-size: 120%;
+              color: #080808;
+              padding: 0 10px;
+              line-height: 1;
+
+              & > div {
+                text-align: center;
+              }
+
+              .field-name-field-p-photo {
+                padding: 0px 10px 5px 10px;
+
+                img {
+                  .rounded-image;
+                }
+              }
+
+              .field-name-field-p-firstname {
+              }
+
+              .field-name-field-p-name {
+                text-transform: uppercase;
+                font-weight: 600;
+              }
+
+              .field-name-field-p-function {
+                font-style: italic;
+                font-size: 90%;
+                color: #6048f0;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* ZOOM SUR */
+
+    .paragraphs-item-zoom {
+
+      .field-name-field-zoom-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/magnifier.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-zoom-photo {
+        margin-bottom: 15px;
+      }
+
+      .group-zoom-content {
+        background-color: @nl-text-background;
+        margin-bottom: 15px;
+
+        .field-name-field-zoom-subtitle {
+          display: inline;
+          font-size: 120%;
+          font-weight: 600;
+
+          .field-item {
+            float: left;
+            margin-top: 10px;
+
+            &:after {
+              .partial-border-bottom(@width: 30%; @padding-top: 5px;);
+            }
+          }
+        }
+
+        .field-name-field-zoom-text {
+          padding: 10px 0;
+          .text-font;
+        }
+
+      }
+    }
+
+    /* ÉVÈNEMENTS À VENIR */
+
+    .paragraphs-item-events {
+
+      .field-name-field-event-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/calendar.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-event-text {
+        .text-font;
+
+        .field-item {
+          padding-left: 30px;
+          position: relative;
+
+
+          &:before {
+            content: url('../images/fleche-droite.jpg');
+            position: absolute;
+            left: 0;
+          }
+        }
+
+        .clearfix {
+          margin-bottom: 10px;
+        }
+      }
+
+      .field-name-field-p-link {
+        padding-right: 0;
+        margin: 10px 0;
+
+        .field-item {
+          float: right;
+          background-color: #c6093b;
+          padding: 0.5rem 0 0.5rem 1rem;
+          .button-border-radius(@radius: 2rem);
+          //line-height: 2rem;
+
+          a {
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            //line-height: 2rem;
+            //padding: 0.5rem;
+          }
+
+          &:after {
+            content: ">";
+            font-weight: 900;
+            color: white;
+            font-size: 1.6rem;
+            padding: 0 10px 0 5px;
+          }
+        }
+      }
+    }
+
+    /* INFORMATIONS */
+
+    .paragraphs-item-infos {
+
+      .field-name-field-infos-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/info.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-infos-text {
+        .text-font;
+      }
+    }
+
+    /* COMITES TECHNIQUES */
+
+    .paragraphs-item-techcoms {
+
+      .field-name-field-techcoms-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+      }
+
+      .field-name-field-techcoms-list {
+        .field-item.left-col {
+          padding: 0 15px 0 0;
+        }
+
+        .field-item.center-col {
+          padding: 0 8px 0 8px;
+        }
+
+        .field-item.right-col {
+          padding: 0 0 0 15px;
+        }
+      }
+
+      .paragraphs-item-techcom {
+        margin-bottom: 20px;
+
+        .field-name-field-techcom-title {
+          font-style: italic;
+          font-weight: 600;
+          font-size: 1.6rem;
+          margin-bottom: 20px;
+        }
+
+        .field-name-field-techcom-text {
+          .text-font;
+        }
+      }
+
+    }
+
+    /* EQUIPE */
+
+    .paragraphs-item-team {
+
+      .field-name-field-team-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/equipe.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .team-group {
+        margin-bottom: 15px;
+
+        div[class*="-title"] {
+          font-size: 120%;
+          font-weight: 600;
+          font-style: italic;
+          text-transform: uppercase;
+        }
+
+        div[class*="-members-full"] {
+          border: 1px solid #edeff0;
+          padding-left: 15px;
+        }
+
+        .field-name-field-member-name {
+          font-weight: 600;
+
+          .field-item {
+            position: relative;
+
+            &:before {
+              content: url('../images/fleche-droite-petite.jpg');
+              position: absolute;
+              left: -12px;
+            }
+          }
+        }
+
+        .field-name-field-member-email {
+          font-size: 90%;
+          font-style: italic;
+          color: grey;
+
+          .field-items {
+
+            .email-wrapper {
+              position: relative;
+
+              .field-item {
+                position: relative;
+                cursor: help;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+              }
+
+              .email-tooltip {
+                visibility: hidden;
+                position: absolute;
+                top: -30px;
+                left: 50px;
+                background-color: white;
+                padding: 5px;
+                color: red;
+                font-size: 150%;
+                z-index: 9999;
+                opacity: 0;
+              }
+
+              #tooltip-control:hover ~ #tooltip-target {
+                visibility: visible;
+                border: 1px solid grey;
+                //box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+                opacity: 1;
+                z-index: 9999;
+              }
+            }
+          }
+        }
+      }
+
+      .group-management {
+        padding: 0 15px 0 0;
+      }
+
+      .group-advisors {
+        padding: 0 10px 0 5px;
+
+      }
+
+      .group-pole-g {
+        padding: 0 5px 0 10px;
+
+      }
+
+      .group-communication {
+        padding: 0 0 0 15px;
+
+      }
+    }
+
+    /* FOCUS */
+
+    .paragraphs-item-news-focus {
+
+      .field-name-field-newsfocus-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/focus-actus.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-newsfocus-photo {
+        padding-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .field-name-field-newsfocus-text {
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: @nl-text-background;
+        .text-font;
+      }
+    }
+
+    /* BOITE A IDEES */
+
+    .paragraphs-item-ideas-box {
+
+      .field-name-field-ideas-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/question-jaune.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-question {
+        padding: 15px;
+        margin: 0 40px 0 25px;
+        background-color: @nl-text-background;
+        position: relative;
+        z-index: 10;
+      }
+
+      .field-name-field-nl-answer {
+        padding: 25px 15px 15px 15px;
+        margin: -15px 0 15px 65px;
+        border: 2px solid #fada25;
+        position: relative;
+      }
+    }
+
+    /* MERCI RESEAU */
+
+    .paragraphs-item-thanks {
+
+      .field-name-field-thanks-title {
+        .paragraph-title;
+
+        .field-item {
+          .paragraph-title-item;
+
+        }
+
+        .field-item:after {
+          content: url('../images/reseau.jpg');
+          padding-left: 20px;
+        }
+      }
+
+      .field-name-field-thanks-list {
+        padding: 10px 65px;
+        margin: 15px 0;
+        position: relative;
+
+        &:before {
+          content: url("../images/guillemets-gauche.jpg");
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        &:after {
+          content: url("../images/guillemets-droite.jpg");
+          position: absolute;
+          right: 0px;
+          bottom: 0;
+        }
+
+        .field-name-field-thanks-text {
+          .text-font;
+          margin-bottom: 10px;
+        }
+
+        .field-name-field-thanks-author {
+          .text-font;
+          font-style: italic;
+          color: #9a9898;
+          margin-bottom: 20px;
+
+          .field-item {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+  }
+
+  .footer-item-wrapper {
+    padding: 20px 0;
+    background-color: #c41d47;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+
+}
+
