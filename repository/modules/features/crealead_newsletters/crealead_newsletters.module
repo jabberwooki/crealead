@@ -17,8 +17,43 @@ function crealead_newsletters_field_group_pre_render_alter(&$element, $group, &$
 }
 
 /**
- * Implements hook_access().
+ * Implements hook_views_pre_render().
  */
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_newsletters_views_pre_render(&$view) {
+    if ($view->name == 'newsletters' && $view->current_display == 'nl_structure') {
+        // Impossible de créer une vue affichant à la fois :
+        // - les gazettes
+        // - et les newsletters filtrées sur le type 'structure'.
+        // Dès qu'on ajoute ce filtre, les gazettes disparaissent.
+        // Solution ici :
+
+        // 1 - récupération du tableau des nids des newsletters de type CA.
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'newsletter')
+            ->propertyCondition('status', 1)
+            ->fieldCondition('field_newsletter_type', 'value', 'ca');
+        $query_result = $query->execute();
+        $ca_nids = [];
+        if (isset($query_result['node'])) {
+            $ca_nids = array_keys($query_result['node']);
+        }
+
+        // 2 - Si ce tableau n'est pas vide
+        if (!empty($ca_nids)) {
+            foreach ($view->result as $key => $item) {
+                // Si le nid d'un item de $result appartient à une newsletter CA, on l'exclue de $result.
+                if (in_array($item->nid, $ca_nids)) {
+                    unset($view->result[$key]);
+                }
+            }
+        }
+    }
+}
+
 /**
  * Implements hook_form_alter().
  */
@@ -73,3 +108,4 @@ function crealead_newsletters_form_newsletter_node_form_alter(&$form, &$form_sta
 //    );
 //    array_splice($form, $field_paragraphs_key, 0, $field_bundle_list);
 }
+
