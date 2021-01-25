@@ -109,6 +109,11 @@ function crealead_newsletters_paragraphs_info() {
       'bundle' => 'person',
       'locked' => '1',
     ),
+    'single_text' => array(
+      'name' => 'Texte simple',
+      'bundle' => 'single_text',
+      'locked' => '1',
+    ),
     'spacer' => array(
       'name' => 'Séparateur',
       'bundle' => 'spacer',
@@ -127,6 +132,11 @@ function crealead_newsletters_paragraphs_info() {
     'techcoms' => array(
       'name' => 'Comités techniques',
       'bundle' => 'techcoms',
+      'locked' => '1',
+    ),
+    'text_image' => array(
+      'name' => 'Texte / Image',
+      'bundle' => 'text_image',
       'locked' => '1',
     ),
     'thanks' => array(
