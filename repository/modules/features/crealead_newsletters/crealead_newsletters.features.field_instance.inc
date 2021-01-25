@@ -1320,8 +1320,8 @@ function crealead_newsletters_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-infos-field_infos_text'.
-  $field_instances['paragraphs_item-infos-field_infos_text'] = array(
+  // Exported field_instance: 'paragraphs_item-infos-field_infos_content'.
+  $field_instances['paragraphs_item-infos-field_infos_content'] = array(
     'bundle' => 'infos',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1329,16 +1329,20 @@ function crealead_newsletters_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
         'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
         'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
@@ -1350,60 +1354,71 @@ function crealead_newsletters_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_infos_text',
-    'label' => 'Texte',
+    'field_name' => 'field_infos_content',
+    'label' => 'Contenu',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => 12,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'banner' => -1,
+        'date' => -1,
+        'dg_words' => -1,
+        'events' => -1,
+        'idea' => -1,
+        'ideas_box' => -1,
+        'infos' => -1,
+        'infos_flash_3_cols' => -1,
+        'member' => -1,
+        'news_focus' => -1,
+        'nl_footer' => -1,
+        'person' => -1,
+        'single_text' => 'single_text',
+        'spacer' => -1,
+        'team' => -1,
+        'techcom' => -1,
+        'techcoms' => -1,
+        'text_image' => 'text_image',
+        'thanks' => -1,
+        'thanks_item' => -1,
+        'whatsnew' => -1,
+        'zoom' => -1,
       ),
-      'context' => 'title',
-      'context_default' => 'sdl_editor_representation',
-      'dnd_enabled' => 0,
-      'linkit' => array(
-        'button_text' => 'Rechercher',
-        'enable' => 0,
-        'profile' => '',
+      'bundle_weights' => array(
+        'banner' => 2,
+        'date' => 3,
+        'dg_words' => 4,
+        'events' => 5,
+        'idea' => 6,
+        'ideas_box' => 7,
+        'infos' => 8,
+        'infos_flash_3_cols' => 9,
+        'member' => 10,
+        'news_focus' => 11,
+        'nl_footer' => 12,
+        'person' => 13,
+        'single_text' => 14,
+        'spacer' => 15,
+        'team' => 16,
+        'techcom' => 17,
+        'techcoms' => 18,
+        'text_image' => 19,
+        'thanks' => 20,
+        'thanks_item' => 21,
+        'whatsnew' => 22,
+        'zoom' => 23,
       ),
-      'mee_enabled' => 0,
-      'text_processing' => 1,
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
+      'active' => 0,
+      'module' => 'paragraphs',
       'settings' => array(
         'label_help_description' => '',
-        'rows' => 5,
       ),
-      'type' => 'text_textarea',
+      'type' => 'paragraphs_embed',
       'weight' => 2,
     ),
   );
@@ -5749,6 +5764,7 @@ function crealead_newsletters_field_default_field_instances() {
   t('Auteur');
   t('Bouton cliquable');
   t('Comités');
+  t('Contenu');
   t('Courrier');
   t('Date');
   t('Evènement');

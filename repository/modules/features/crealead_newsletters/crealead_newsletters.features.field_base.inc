@@ -398,25 +398,21 @@ function crealead_newsletters_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_infos_text'.
-  $field_bases['field_infos_text'] = array(
+  // Exported field_base: 'field_infos_content'.
+  $field_bases['field_infos_content'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_infos_text',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
+    'field_name' => 'field_infos_content',
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'paragraphs',
     'settings' => array(
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'paragraphs',
   );
 
   // Exported field_base: 'field_infos_title'.

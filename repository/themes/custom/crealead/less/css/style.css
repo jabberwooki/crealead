@@ -15727,7 +15727,18 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   content: url('../images/info.jpg');
   padding-left: 20px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-text {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item {
+  margin-bottom: 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item .paragraphs-item-text-image .txt-left,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item .paragraphs-item-text-image .img-left {
+  padding-left: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item .paragraphs-item-text-image .txt-right,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item .paragraphs-item-text-image .img-right {
+  padding-right: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item .paragraphs-item-text-image .field-name-field-single-text {
   font-size: 110%;
   line-height: 1.1;
 }
