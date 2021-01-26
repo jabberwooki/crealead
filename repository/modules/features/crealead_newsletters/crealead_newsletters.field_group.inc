@@ -18,10 +18,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Référents',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_advisor_members',
       1 => 'field_advisors_title',
@@ -51,10 +51,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'full';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Référents',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_advisor_members',
       1 => 'field_advisors_title',
@@ -468,13 +468,14 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Communication',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_com_members',
       1 => 'field_communication_title',
+      2 => 'field_nl_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -501,13 +502,14 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'full';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Communication',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_com_members',
       1 => 'field_communication_title',
+      2 => 'field_nl_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -597,10 +599,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Direction',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_management_members',
       1 => 'field_management_title',
@@ -631,10 +633,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'full';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Direction',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_management_members',
       1 => 'field_management_title',
@@ -859,10 +861,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Pôle G',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_pole_g_members',
       1 => 'field_pole_g_title',
@@ -892,10 +894,10 @@ function crealead_newsletters_field_group_info() {
   $field_group->entity_type = 'paragraphs_item';
   $field_group->bundle = 'team';
   $field_group->mode = 'full';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_team_content';
   $field_group->data = array(
     'label' => 'Pôle G',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_pole_g_members',
       1 => 'field_pole_g_title',
@@ -916,6 +918,76 @@ function crealead_newsletters_field_group_info() {
     ),
   );
   $field_groups['group_pole_g|paragraphs_item|team|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_team_content|paragraphs_item|team|form';
+  $field_group->group_name = 'group_team_content';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'team';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Contenu',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_management',
+      1 => 'group_advisors',
+      2 => 'group_pole_g',
+      3 => 'group_communication',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'open',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-team-content field-group-div',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_team_content|paragraphs_item|team|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_team_content|paragraphs_item|team|full';
+  $field_group->group_name = 'group_team_content';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'team';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Contenu',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_management',
+      1 => 'group_advisors',
+      2 => 'group_pole_g',
+      3 => 'group_communication',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Contenu',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-team-content field-group-div row row-eq-height',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_team_content|paragraphs_item|team|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

@@ -15383,7 +15383,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .view-reports table th.views-field-title {
   width: 25%;
 }
-/* Custom mixins */
+/*********************** Custom mixins ************************/
 .paragraph-title {
   padding: 0 0 10px 0;
 }
@@ -15402,14 +15402,35 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   font-size: 110%;
   line-height: 1.1;
 }
-/* Custom variables */
-/* Vue newsletters */
+.button-background {
+  float: right;
+  background-color: #c6093b;
+  padding: 0.5rem 0 0.5rem 1rem;
+  -moz-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+}
+.button-text {
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.button-text-after {
+  content: ">";
+  font-weight: 900;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0 10px 0 5px;
+}
+/*********************** Custom variables ************************/
+/*********************** VUE NEWSLETTERS ************************/
 .view-id-newsletters .col > div {
   border: 1px solid grey;
   padding: 10px 20px 40px 20px;
   margin: 0 0 20px 0;
 }
-/* Page newsletters */
+/*********************** PAGE NEWSLETTERS ************************/
 .node.node-newsletter .field-type-paragraphs {
   font-family: 'Arial', sans-serif;
 }
@@ -15705,7 +15726,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   color: white;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-events .field-name-field-p-link .field-item:after {
   content: ">";
@@ -15786,46 +15807,50 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   content: url('../images/equipe.jpg');
   padding-left: 20px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content {
+  padding: 0 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group {
   margin-bottom: 15px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group div[class*="-title"] {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group div[class*="-title"] {
   font-size: 120%;
   font-weight: 600;
   font-style: italic;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group div[class*="-members-full"] {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group div[class*="-members-full"] {
   border: 1px solid #edeff0;
   padding-left: 15px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-name {
   font-weight: 600;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name .field-item {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-name .field-item {
   position: relative;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-name .field-item:before {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-name .field-item:before {
   content: url('../images/fleche-droite-petite.jpg');
   position: absolute;
   left: -12px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-email {
   font-size: 90%;
   font-style: italic;
   color: grey;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-email .field-items .email-wrapper {
   position: relative;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper .field-item {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-email .field-items .email-wrapper .field-item {
   position: relative;
   cursor: help;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper .email-tooltip {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-email .field-items .email-wrapper .email-tooltip {
   visibility: hidden;
   position: absolute;
   top: -30px;
@@ -15837,24 +15862,51 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   z-index: 9999;
   opacity: 0;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .team-group .field-name-field-member-email .field-items .email-wrapper #tooltip-control:hover ~ #tooltip-target {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .team-group .field-name-field-member-email .field-items .email-wrapper #tooltip-control:hover ~ #tooltip-target {
   visibility: visible;
   border: 1px solid grey;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   opacity: 1;
   z-index: 9999;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-management {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-management {
   padding: 0 15px 0 0;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-advisors {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-advisors {
   padding: 0 10px 0 5px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-pole-g {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-pole-g {
   padding: 0 5px 0 10px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-communication {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-communication {
   padding: 0 0 0 15px;
+  position: relative;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-communication .field-name-field-nl-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-communication .field-name-field-nl-link .field-item {
+  float: right;
+  background-color: #c6093b;
+  padding: 0.5rem 0 0.5rem 1rem;
+  -moz-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-communication .field-name-field-nl-link .field-item a {
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-team .group-team-content .group-communication .field-name-field-nl-link .field-item:after {
+  content: ">";
+  font-weight: 900;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0 10px 0 5px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-news-focus .field-name-field-newsfocus-title {
   padding: 0 0 10px 0;
