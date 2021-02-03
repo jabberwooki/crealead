@@ -15745,7 +15745,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   display: inline-block;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-title .field-item:after {
-  content: url('../images/info.jpg');
+  content: url('../images/sujet.png');
   padding-left: 20px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-infos .field-name-field-infos-content > .field-items > .field-item {
@@ -15771,6 +15771,10 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   font-size: 120%;
   font-weight: 600;
   display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-title .field-item:after {
+  content: url('../images/info.jpg');
+  padding-left: 20px;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-techcoms .field-name-field-techcoms-list .field-item.left-col {
   padding: 0 15px 0 0;
