@@ -606,3 +606,45 @@ function kcore_get_profile2_role_name($profile_type) {
 
     return $all_roles[$profiles_roles[$profile_type]];
 }
+
+
+/**
+ * Les deux fonctions ci-dessous permettent de cloner un affichage de vue de type page
+ * en affichage de type bloc.
+ *
+ * Trouvé dans ce ticket du projet Views :
+ * https://www.drupal.org/project/views/issues/1208282
+ * Merci à ufku.
+ */
+
+/**
+ * Implements hook_views_ui_display_tab_alter().
+ */
+function kcore_views_ui_display_tab_alter(&$build, $view, $display_id) {
+    // Add Clone as buttons for all display types
+    if (isset($build['details']['top']['actions']['duplicate'])) {
+        $copy = $build['details']['top']['actions']['duplicate'];
+        $copy['#submit'][0] = 'kcore_views_ui_clone_as_submit';
+        foreach (views_fetch_plugin_names('display', NULL, array($view->base_table)) as $type => $label) {
+            $build['details']['top']['actions']["clone_as_$type"] = array(
+                    '#value' => "Clone as $label",
+                    '#display_type' => $type,
+                ) + $copy;
+        }
+    }
+}
+
+/**
+ * Submit handler for views "clone as" button.
+ */
+function kcore_views_ui_clone_as_submit($form, &$form_state) {
+    $view = $form_state['view'];
+    $current_display = $view->display[$form_state['display_id']];
+    $display_type = $form_state['clicked_button']['#display_type'];
+    $display_id = $view->add_display($display_type);
+    $display = $view->display[$display_id];
+    $display->display_options = $current_display->display_options;
+    $view->current_display = $display_id;
+    views_ui_cache_set($view);
+    $form_state['redirect'] = 'admin/structure/views/view/' . $view->name . '/edit/' . $display_id;
+}
