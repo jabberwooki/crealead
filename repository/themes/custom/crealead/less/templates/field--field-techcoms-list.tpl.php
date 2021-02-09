@@ -47,13 +47,18 @@
  */
 ?>
 <?php
-$col_number = $element['#object']->field_col_number['und'][0]['value'];
+if (isset($element['#object']->field_col_number['und'][0]['value'])) {
+  $col_number = $element['#object']->field_col_number['und'][0]['value'];
 
-if ($col_number == 2) {
-  $item_class = 'col-md-6';
+  if ($col_number == 2) {
+      $item_class = 'col-md-6';
+  }
+  elseif ($col_number == 3) {
+      $item_class = 'col-md-4';
+  }
 }
-elseif ($col_number == 3) {
-  $item_class = 'col-md-4';
+else {
+  $col_number = 3; // Valeur par defaut
 }
 ?>
 
