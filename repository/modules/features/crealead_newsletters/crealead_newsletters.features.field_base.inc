@@ -72,6 +72,32 @@ function crealead_newsletters_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_col_number'.
+  $field_bases['field_col_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_col_number',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        2 => '2 colonnes',
+        3 => '3 colonnes',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_com_members'.
   $field_bases['field_com_members'] = array(
     'active' => 1,

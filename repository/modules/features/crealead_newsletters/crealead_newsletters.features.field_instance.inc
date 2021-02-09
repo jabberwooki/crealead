@@ -4621,6 +4621,56 @@ function crealead_newsletters_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-techcoms-field_col_number'.
+  $field_instances['paragraphs_item-techcoms-field_col_number'] = array(
+    'bundle' => 'techcoms',
+    'default_value' => array(
+      0 => array(
+        'value' => 3,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_col_number',
+    'label' => 'Nombre de colonnes',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-techcoms-field_techcoms_list'.
   $field_instances['paragraphs_item-techcoms-field_techcoms_list'] = array(
     'bundle' => 'techcoms',
@@ -4786,7 +4836,7 @@ function crealead_newsletters_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -6180,6 +6230,7 @@ function crealead_newsletters_field_default_field_instances() {
   t('Membres gestion');
   t('Membres référents');
   t('Nom');
+  t('Nombre de colonnes');
   t('Paragraphes');
   t('Personnes');
   t('Photo');

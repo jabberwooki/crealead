@@ -46,6 +46,18 @@
  * @ingroup themeable
  */
 ?>
+<?php
+$col_number = $element['#object']->field_col_number['und'][0]['value'];
+
+if ($col_number == 2) {
+  $item_class = 'col-md-6';
+}
+elseif ($col_number == 3) {
+  $item_class = 'col-md-4';
+}
+?>
+
+
 <!--
 This file is not used by Drupal core, which uses theme functions instead.
 See http://api.drupal.org/api/function/theme_field/7 for details.
@@ -59,7 +71,7 @@ HTML comment.
     <div class="field-items"<?php print $content_attributes; ?>>
         <?php foreach ($items as $delta => $item): ?>
             <?php
-            $index = $delta%3;
+            $index = $delta % $col_number;
             switch ($index) {
                 case 0 :
                   $position = 'left-col';
@@ -100,7 +112,7 @@ HTML comment.
             }
             ?>
 
-            <div class="field-item col-md-4 <?php print $delta % 2 ? 'odd' : 'even'; print ' ' . $position; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+            <div class="field-item <?php print $item_class; ?> <?php print $delta % 2 ? 'odd' : 'even'; print ' ' . $position; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
         <?php endforeach; ?>
     </div>
 </div>
