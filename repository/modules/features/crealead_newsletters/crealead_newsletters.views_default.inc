@@ -60,8 +60,8 @@ function crealead_newsletters_views_default_views() {
     'newsletter' => 'newsletter',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'nl_structure');
+  /* Display: Page Structure */
+  $handler = $view->new_display('page', 'Page Structure', 'nl_structure');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Newsletters Structure';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -84,6 +84,37 @@ function crealead_newsletters_views_default_views() {
   );
   $handler->display->display_options['filters']['type_1']['group'] = 1;
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/newsletters-structure';
+
+  /* Display: Page CA */
+  $handler = $view->new_display('page', 'Page CA', 'nl_ca');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Newsletters Gouvernance';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'newsletter' => 'newsletter',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
+  /* Filter criterion: Content: Type de newsletter (field_newsletter_type) */
+  $handler->display->display_options['filters']['field_newsletter_type_value']['id'] = 'field_newsletter_type_value';
+  $handler->display->display_options['filters']['field_newsletter_type_value']['table'] = 'field_data_field_newsletter_type';
+  $handler->display->display_options['filters']['field_newsletter_type_value']['field'] = 'field_newsletter_type_value';
+  $handler->display->display_options['filters']['field_newsletter_type_value']['value'] = array(
+    'ca' => 'ca',
+  );
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/newsletters-ca';
   $translatables['newsletters'] = array(
     t('Master'),
     t('Newsletters Structure'),
@@ -100,7 +131,9 @@ function crealead_newsletters_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Page'),
+    t('Page Structure'),
+    t('Page CA'),
+    t('Newsletters Gouvernance'),
   );
   $export['newsletters'] = $view;
 
