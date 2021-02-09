@@ -15955,6 +15955,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   background-color: #e5e8e9;
   position: relative;
   z-index: 10;
+  font-weight: 600;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-ideas-box .field-name-field-nl-answer {
   padding: 25px 15px 15px 15px;
