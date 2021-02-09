@@ -315,6 +315,34 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['filters']['field_section_value']['value'] = array(
     'col' => 'col',
   );
+
+  /* Display: Bloc collectifs pôles d'activités */
+  $handler = $view->new_display('block', 'Bloc collectifs pôles d\'activités', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Les collectifs';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_group' => 'business_group',
+  );
+  /* Filter criterion: Field: Type de collectif (field_group_type) */
+  $handler->display->display_options['filters']['field_group_type_value']['id'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['table'] = 'field_data_field_group_type';
+  $handler->display->display_options['filters']['field_group_type_value']['field'] = 'field_group_type_value';
+  $handler->display->display_options['filters']['field_group_type_value']['value'] = array(
+    'cm' => 'cm',
+  );
   $translatables['business_groups'] = array(
     t('Master'),
     t('Les collectifs Crealead'),
@@ -343,6 +371,8 @@ Est codé dans crealead_groups.module, fonction crealead_groups_views_pre_view()
 au moment de l\'interception et la ré-écriture du header.'),
     t('Bloc liens vers docs collectifs'),
     t('Documents à consulter'),
+    t('Bloc collectifs pôles d\'activités'),
+    t('Les collectifs'),
   );
   $export['business_groups'] = $view;
 
