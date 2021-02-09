@@ -58,7 +58,7 @@ if (isset($element['#object']->field_col_number['und'][0]['value'])) {
   }
 }
 else {
-  $col_number = 3; // Valeur par defaut
+    $item_class = 'col-md-4'; // Valeur par defaut
 }
 ?>
 
