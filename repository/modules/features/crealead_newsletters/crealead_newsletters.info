@@ -201,6 +201,7 @@ features[field_instance][] = paragraphs_item-whatsnew-field_people_list_right
 features[field_instance][] = paragraphs_item-whatsnew-field_subtitle_left
 features[field_instance][] = paragraphs_item-whatsnew-field_subtitle_right
 features[field_instance][] = paragraphs_item-whatsnew-field_wathsnew_title
+features[field_instance][] = paragraphs_item-zoom-field_textimage_position
 features[field_instance][] = paragraphs_item-zoom-field_zoom_photo
 features[field_instance][] = paragraphs_item-zoom-field_zoom_subtitle
 features[field_instance][] = paragraphs_item-zoom-field_zoom_text

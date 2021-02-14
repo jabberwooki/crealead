@@ -15636,24 +15636,28 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   content: url('../images/magnifier.jpg');
   padding-left: 20px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-photo {
-  padding-left: 0;
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-photo.img-right {
+  padding: 0 0 0 15px;
   margin-bottom: 15px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-photo.img-left {
+  padding: 0 15px 0 0;
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-text {
   background-color: #e5e8e9;
   margin-bottom: 15px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-text .field-name-field-zoom-subtitle {
   display: inline;
   font-size: 120%;
   font-weight: 600;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle .field-item {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-text .field-name-field-zoom-subtitle .field-item {
   float: left;
   margin-top: 10px;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-subtitle .field-item:after {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-text .field-name-field-zoom-subtitle .field-item:after {
   content: "";
   display: block;
   width: 30%;
@@ -15661,7 +15665,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   padding-top: 5px;
   border-bottom: 2px solid #c6093b;
 }
-.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .group-zoom-content .field-name-field-zoom-text {
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .zoom-text .field-name-field-zoom-text {
   padding: 10px 0;
   font-size: 110%;
   line-height: 1.1;

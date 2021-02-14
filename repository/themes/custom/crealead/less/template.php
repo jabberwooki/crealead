@@ -475,10 +475,6 @@ function crealead_preprocess_field(&$vars) {
                 $vars['classes_array'][] = 'col-md-9 col-md-pull-3';
                 break;
 
-            case 'field_zoom_photo':
-                $vars['classes_array'][] = 'col-md-3';
-                break;
-
             case 'field_zoom_text':
                 $vars['classes_array'][] = 'col-md-12';
                 break;
