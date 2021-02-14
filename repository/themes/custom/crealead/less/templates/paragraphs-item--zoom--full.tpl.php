@@ -27,7 +27,6 @@
  */
 ?>
 <?php
-dpm($content);
 //dpm($content['field_textimage_position']['#items'][0]['value']);
 $text_positioning_class = $image_positioning_class = '';
 $image_position = $content['field_textimage_position']['#items'][0]['value'];
