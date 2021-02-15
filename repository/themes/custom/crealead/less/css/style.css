@@ -15445,6 +15445,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   /* SEPARATEUR */
   /* LE MOT DU DG */
   /* QUOI DE NEUF */
+  /* QUOI DE NEUF CA */
   /* ZOOM SUR */
   /* ÉVÈNEMENTS À VENIR */
   /* INFORMATIONS */
@@ -15622,6 +15623,42 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   font-size: 90%;
   color: #6048f0;
   margin-top: 5px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-zoom-title {
+  padding: 0 0 10px 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-zoom-title .field-item {
+  text-transform: uppercase;
+  font-size: 120%;
+  font-weight: 600;
+  display: inline-block;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-zoom-title .field-item:after {
+  content: url('../images/question-rouge.jpg');
+  padding-left: 20px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-novelties .field-item.left-col {
+  padding: 0 10px 0 0;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-novelties .field-item.center-col {
+  padding: 0 5px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-novelties .field-item.right-col {
+  padding: 0 0 0 10px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-novelties .visible-lg-block,
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-novelties .visible-md-block {
+  margin-bottom: 15px;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-zoom-subtitle {
+  padding: 5px 0;
+  font-weight: 600;
+  font-size: 110%;
+}
+.node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-whatsnew-ca .field-name-field-zoom-text {
+  padding: 0;
+  font-size: 110%;
+  line-height: 1.1;
 }
 .node.node-newsletter .field-type-paragraphs .items-wrapper .paragraphs-item-zoom .field-name-field-zoom-title {
   padding: 0 0 10px 0;

@@ -104,6 +104,11 @@ function crealead_newsletters_paragraphs_info() {
       'bundle' => 'nl_footer',
       'locked' => '1',
     ),
+    'novelty' => array(
+      'name' => 'Nouveauté',
+      'bundle' => 'novelty',
+      'locked' => '1',
+    ),
     'person' => array(
       'name' => 'Personne',
       'bundle' => 'person',
@@ -152,6 +157,11 @@ function crealead_newsletters_paragraphs_info() {
     'whatsnew' => array(
       'name' => 'Quoi de neuf',
       'bundle' => 'whatsnew',
+      'locked' => '1',
+    ),
+    'whatsnew_ca' => array(
+      'name' => 'Quoi de neuf CA',
+      'bundle' => 'whatsnew_ca',
       'locked' => '1',
     ),
     'zoom' => array(

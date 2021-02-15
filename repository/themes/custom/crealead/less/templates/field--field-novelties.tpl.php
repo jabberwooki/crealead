@@ -46,12 +46,19 @@
  * @ingroup themeable
  */
 ?>
+<!--
+This file is not used by Drupal core, which uses theme functions instead.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+
 <?php
 if (isset($element['#object']->field_col_number['und'][0]['value'])) {
-  $col_number = $element['#object']->field_col_number['und'][0]['value'];
+    $col_number = $element['#object']->field_col_number['und'][0]['value'];
 }
 else {
-    $col_number = 3; // Valeur par defaut
+    $col_number = 2; // Valeur par defaut
 }
 
 if ($col_number == 2) {
@@ -63,22 +70,16 @@ elseif ($col_number == 3) {
 ?>
 
 
-<!--
-This file is not used by Drupal core, which uses theme functions instead.
-See http://api.drupal.org/api/function/theme_field/7 for details.
-After copying this file to your theme's folder and customizing it, remove this
-HTML comment.
--->
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    <?php if (!$label_hidden): ?>
-        <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-    <?php endif; ?>
-    <div class="field-items"<?php print $content_attributes; ?>>
-        <?php foreach ($items as $delta => $item): ?>
-            <?php
-            $index = $delta % $col_number;
-            switch ($index) {
-                case 0 :
+  <?php if (!$label_hidden): ?>
+    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
+  <?php endif; ?>
+  <div class="field-items"<?php print $content_attributes; ?>>
+      <?php foreach ($items as $delta => $item): ?>
+          <?php
+          $index = $delta % $col_number;
+          switch ($index) {
+              case 0 :
                   $position = 'left-col';
 
                   // Et dans le cas 0 seulement, et si $delta <> 0,
@@ -109,15 +110,16 @@ HTML comment.
                       print ('<div class="clearfix visible-md-block "></div>');
                   }
                   break;
-                case 1 :
-                    $col_number == 3 ? $position = 'center-col' : $position = 'right-col';
+              case 1 :
+                  $col_number == 3 ? $position = 'center-col' : $position = 'right-col';
                   break;
-                case 2 :
+              case 2 :
                   $position = 'right-col';
-            }
-            ?>
+          }
+          ?>
 
-            <div class="field-item <?php print $item_class; ?> <?php print $delta % 2 ? 'odd' : 'even'; print ' ' . $position; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-        <?php endforeach; ?>
-    </div>
+          <div class="field-item <?php print $item_class; ?> <?php print $delta % 2 ? 'odd' : 'even'; print ' ' . $position; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+      <?php endforeach; ?>
+    <div class="clearfix visible-md-block visible-lg-block"></div>
+  </div>
 </div>
