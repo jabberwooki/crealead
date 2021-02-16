@@ -2980,7 +2980,18 @@ function crealead_newsletters_field_default_field_instances() {
   // Exported field_instance: 'paragraphs_item-nl_footer-field_footer_text'.
   $field_instances['paragraphs_item-nl_footer-field_footer_text'] = array(
     'bundle' => 'nl_footer',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<p class="rtecenter"><a class="picto-facebook" href="https://www.facebook.com/Crealead/" target="_blank" title="Facebook Crealead"><span class="sr-only">Facebook Crealead</span></a> <a class="picto-linkedin" href="https://www.linkedin.com/company/10597004/" target="_blank" title="LinkedIn Crealead"><span class="sr-only">LinkedIn Crealead</span></a></p>
+
+<p class="rtecenter"><strong>Crealead</strong><br />
+Hôtel de la Coopération - 55, rue Saint Cléophas - 34070 MONTPELLIER<br />
+SIRET : 438 076 200 00023 - TVA Intracommunautaire: FR56438076200<br />
+SA SCOOP à capital variable</p>
+',
+        'format' => 'full_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
