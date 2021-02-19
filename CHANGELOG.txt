@@ -1,5 +1,6 @@
 Crealead v3.14 (Sprint V3-11) / 2021-02-19
 ------------------------------------------
+  * Mise à jour du changelog.
   * Mise en forme de la page de maintenance.
   * crealead_newsletters: paragraphe Pied de page: ajout d'une valeur par defaut dans le champ field_footer_text.
   * crealead_newsletters: paragraphe Pied de page: ajout des réseaux Facebook et LinkedIn.
@@ -67,6 +68,8 @@ Crealead v3.14 (Sprint V3-11) / 2021-02-19
   * crealead_profiles up: S11-3: Name of person linked to their profile enabled only if profile text is not empty. Coded for  Structure Team members.
   * crealead_profiles up: S11-3: first step - new field field_profile_text added to all profiles, but coe.
   * crealead_groups up: S11-1: change made in field field_group_type of business_group content type 'Collectif'.
+  * Merge tag 'video_embed_field_enabling' into develop
+  * Merge tag 'v3.13' into develop
 
 Hotfix video_embed_field_enabling / 2020-10-01
 ----------------------------------------------
