@@ -1,3 +1,73 @@
+Crealead v3.14 (Sprint V3-11) / 2021-02-19
+------------------------------------------
+  * Mise en forme de la page de maintenance.
+  * crealead_newsletters: paragraphe Pied de page: ajout d'une valeur par defaut dans le champ field_footer_text.
+  * crealead_newsletters: paragraphe Pied de page: ajout des réseaux Facebook et LinkedIn.
+  * crealead_newsletters: création des types de paragraphe Nouveauté et Quoi de neuf CA.
+  * crealead_newsletters: suppressiom dpm().
+  * crealead_newsletters: paragraphe Zoom Sur: ajout du champ Position de l'image.
+  * crealead_newsletters: Création de la page Newsletters Gouvernance.
+  * Feuille de style newsletters: items questions du type de paragraphe Boite à idées mise en gras.
+  * crealead_newsletters: correction troisième bug dans field--field-techcoms-list.tpl.php.
+  * crealead_newsletters: correction second bug dans field--field-techcoms-list.tpl.php
+  * crealead_newsletters: correction de bug dans field--field-techcoms-list.tpl.php
+  * crealead_newsletters: création du template node--newsletter.tpl.php pour injecter le nom de classe correspondant au type de newsletter (ojbectif de différentiation CSS en fonction du type de newsletter.
+  * crealead_newsletters: Ajout d'un champ Nombre de colonnes dans le type de paragraphe Comités techniques pour permettre à l'utilisateur de choisir 2 ou 3 colonnes pour l'affichage des infos comités.
+  * crealead_groups: modification de la page Poles d'activités: En dessous de l'info et des documents, création du bloc des collectifs de pôles d'activité.
+  * kcore: ajout de 2 fonctions permettant de cloner une vue page en une vue bloc.
+  * kcore: suppression du lien .../espace-co-entrepreneur/informations devenu obsolète.
+  * crealead_newsletters: création du menu de navigation spécial paragraphes dans le formulaire de créa/modif d'une newsletter.
+  * crealead_newsflashes: modif filtre avancé de la vue des brèves.
+  * crealead_gazette : modification du motif pathauto après déplacement de leur affichage dans la vue des newsletters Structure.
+  * crealead_newsletters: Modification feuille de style newsletters.less: ajout du picto sujet.png au paragraphe Sujet (ancien Informations) et déplacement du picto info.png au paragraphe Comités Techniques.
+  * crealead_newsletters: Paragraphe ZOOM SUR: Modif poids du fieldgroup group_people_left (passé de 4 à 2) pour qu'il apparaisse avant le group_people_right et non après dans le formulaire de création/modif.
+  * crealead_faqs: Correction du bug de non accès à la FAQ privée. Le lien est à nouveau cliquable après modif css.
+  * crealead_newsletters: Paragraphe 'Equipe': Ajout du bouton manquant 'LA SUITE'.
+  * Petit test d'accès par token.
+  * crealead_newsletters: Ajout des paragraphs bundles manquants single_text et text_image.
+  * crealead_newsletters: Ajout des field instances manquantes (single_text, textimage_image, textimage_text, textimage_position).
+  * crealead_newsletters: Ajout des permissions, rajout du paramétrage oublié pour l'affichage DS teaser.
+  * crealead_newsletters: Ajout des variables strongarm manquantes pour tous les bundles Paragraphs.
+  * Profil crealead : Ajout du module paragraphs dans drupal-org.make.
+  * crealead_newsletters : Paragraphe Informations : Il est maintenant possible d'ajouter des sous-paragraphes 'texte simple' et des sous-paragraphes 'texte-image' avec positionnement de l'image à droite ou à gauche.
+  * crealead_newsletters: Ajout des nodes Gazette à la vue des nodes Newsletter de type structure.
+  * crealead_newsletters : Ajout du motif pathauto.
+  * crealead_newsletters : Paragraphe Info flash 3 colonnes : Plus de largeur donné au texte de la 3ème colonne et taille police passée à 90%.
+  * crealead_newsletters : Largeur de la newsletter modifiée pour se rapprocher au maximum de celle de la maquette d'Andréa.
+  * crealead_newsletters : Paragraphe Zoom sur : Suppression padding-left de la photo.
+  * crealead_newsletters : champ Résumé passé à non obligatoire.
+  * crealead_newsletters : field_paragraphs réglé à ouvert par défaut et les champs texte de tous les types de paragraphes passés de 'brut' à 'filtré'.
+  * crealead_newsletters : Ajout de la police Arial.
+  * Création de la feature newsletters. Première version livrée.
+  * kcore up: Layout of webforms submit button changed to make it to appear white on red.
+  * crealead_newsflashes up: S11-6: Class btn-primary applied to the exposed filter submit button to make it red.
+  * crealead_needs up: S11-9: 'Marques sectorielles' renamed as 'Pôles activités' in field field_section (link-to-doc content type).
+  * crealead_calendars, crealead_newsflashes and crealead_offers up: S11-6: Missing views modifications added.
+  * crealead_offers and crealead_warnings up: S11-6: warning links HTML code changed to fix links display in offers page.
+  * crealead_warnings up: S11-6: Missing display of warning links re-added to newsflashes, needs and offers view pages.
+  * crealead_calendars up: S11-6: Missing layout and button red color added to 'Evévenement vie coopérative' list display.
+  * S11-3: dpm() removed from custom profile template.
+  * S11-3: Type fixed in custom profile template, again.
+  * S11-3: Type fixed in custom profile template.
+  * S11-3: Custom profile template completed to alter all 8 profile titles.
+  * crealead_groups up: S11-6: field_group_type removed from crealead_group's ds teaser mode.
+  * S11-3: Customm profile template added to conditionnally alter profile title.
+  * crealead_groups up: S11-6: Missing view display crealead_groups/auto_list (collectifs auto-gérés) added.
+  * crealead_calendars up: S11-6: Export of the missing context entrepreneur_area_coop_event.
+  * crealead_calendars up: S11-6: Export of missing menu-calendrier links.
+  * crealead_associates up: S11-7: New field field_attached_file added to report content-type.
+  * crealead_needs, crealead_newsflashes, crealead_offers and kcore up: Block replaced by pages for needs, offers and newsflashes.
+  * kcore up: S11-6: Title added to view coes_area_home/page_3 (Pôles d'activités).
+  * crealead_brands up: 'Marques sectorielles' replaced by 'Pôles activités' in Crealead config page.
+  * kcore.js up: S11-6: coE menu behavior altered.
+  * crealead_calendars, crealead_groups, crealead_newsflashes and kcore up : S11-6: Main refurbishment of coes area menu.
+  * crealead_gazette up: S11-4: Gazette page renamed 'Newsletters internes de Crealead'.
+  * crealead_profiles up: S11-3: Profile pages layout set to bootstrap two columns 8-4.
+  * crealead_profiles up: S11-3: Name of person linked to their profile enabled only if profile text is not empty. Coded for Instances members.
+  * crealead_profiles up: S11-3: Name of person linked to their profile enabled only if profile text is not empty. Coded for  Structure Team members.
+  * crealead_profiles up: S11-3: first step - new field field_profile_text added to all profiles, but coe.
+  * crealead_groups up: S11-1: change made in field field_group_type of business_group content type 'Collectif'.
+
 Hotfix video_embed_field_enabling / 2020-10-01
 ----------------------------------------------
   * kcore up: Activation of video_embed_field contrib module in kcore.install file.
