@@ -16063,3 +16063,12 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   content: url('../images/picto-linkedin.png');
   padding: 0 10px;
 }
+.maintenance-page #page {
+  text-align: center;
+}
+.maintenance-page #page #name-and-slogan {
+  display: none;
+}
+.maintenance-page #page #content-content {
+  font-size: 120%;
+}
