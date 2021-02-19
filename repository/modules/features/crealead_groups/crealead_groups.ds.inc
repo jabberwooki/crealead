@@ -130,13 +130,11 @@ function crealead_groups_ds_layout_settings_info() {
     'regions' => array(
       'central' => array(
         0 => 'title',
-        1 => 'field_group_type',
-        2 => 'field_purpose',
+        1 => 'field_purpose',
       ),
     ),
     'fields' => array(
       'title' => 'central',
-      'field_group_type' => 'central',
       'field_purpose' => 'central',
     ),
     'classes' => array(),

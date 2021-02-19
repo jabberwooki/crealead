@@ -187,6 +187,51 @@ function crealead_warnings_views_pre_render(&$view) {
       $item->field_field_content_type_value[0]['rendered']['#markup'] = $warnable_content_types[$markup];
     }
   }
+  elseif (($view->name == 'needs' && $view->current_display == 'needs_page')
+            || ($view->name == 'offers' && $view->current_display == 'offers_page')
+            || ($view->name == 'newsflashes' && $view->current_display == 'coe_area_page')) {
+
+      // Get the content types that users can create warnings on
+      $warning_content_types = array_filter(variable_get('warning_content_types', array()));
+
+      $content_types = array(
+          'needs' => 'need',
+          'offers' => 'offer',
+          'newsflashes' => 'newsflash',
+      );
+      $type = $content_types[$view->name];
+
+      $warning_links = '';
+      if (in_array($type, $warning_content_types)) {
+          global $user;
+          $user_warnings_count = crealead_warnings_get_user_warnings($user->uid, TRUE);
+          $warning_links = '<span class="warning-add-link">'
+              . '<a href="/node/add/warning?type=' . $type . '&destination=/' . request_path() . '">Ajouter une alerte</a>'
+              . '</span>';
+
+          if ($user_warnings_count > 0) {
+              $warning_links .= ' | <span class="warning-list-link">'
+                  . '<a href="/user/' . $user->uid . '/warnings">Gérer mes alertes</a>'
+                  . '</span>';
+          }
+      }
+
+      if ($view->name != 'offers') {
+          $view->header['area']->options['content'] =
+              '<div class="' . $type . '-actions clearfix">' .
+                  '<div class="' . $type . '-add-link pull-left">' .
+                  $view->header['area']->options['content'] .
+                  '</div>' .
+                  '<div class="warning-links ' . $type . '-warning-link pull-right">' .
+                  $warning_links .
+                  '</div>' .
+              '</div>';
+      }
+      else {
+          $view->header['area']->options['content'] =
+              str_replace('&nbsp;', $warning_links, $view->header['area']->options['content']);
+      }
+  }
 }
 
 function crealead_warnings_get_user_warnings($uid, $count=false) {

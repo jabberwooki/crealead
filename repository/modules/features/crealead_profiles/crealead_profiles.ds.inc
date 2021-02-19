@@ -94,6 +94,82 @@ function crealead_profiles_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|assistant_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'assistant_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|assistant_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|ca_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'ca_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|ca_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'profile2|coe_page|block';
   $ds_layout->entity_type = 'profile2';
   $ds_layout->bundle = 'coe_page';
@@ -167,6 +243,196 @@ function crealead_profiles_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['profile2|coe_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|direction_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'direction_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|direction_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|dup_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'dup_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|dup_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|management_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'management_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|management_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|provider_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'provider_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|provider_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'profile2|referent_page|default';
+  $ds_layout->entity_type = 'profile2';
+  $ds_layout->bundle = 'referent_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'bootstrap_8_4';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'field_coe_photo',
+        1 => 'field_competencies',
+      ),
+      'left' => array(
+        2 => 'field_profile_text',
+      ),
+    ),
+    'fields' => array(
+      'field_coe_photo' => 'right',
+      'field_competencies' => 'right',
+      'field_profile_text' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['profile2|referent_page|default'] = $ds_layout;
 
   return $export;
 }

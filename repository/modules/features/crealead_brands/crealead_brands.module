@@ -55,8 +55,8 @@ function crealead_brands_menu() {
   );
 
   $items['admin/config/crealead/sector_brands'] = array(
-    'title' => 'Marques sectorielles',
-    'description' => 'Paramétrage de la page Marques Sectorielles (espace coes).',
+    'title' => 'Pôles d\'activités',
+    'description' => 'Paramétrage de la page Pôles d\'activités (espace coes).',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('crealead_sector_brands_settings_form'),
     'access arguments' => array('administer crealead settings'),

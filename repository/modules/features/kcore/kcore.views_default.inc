@@ -62,6 +62,7 @@ function kcore_views_default_views() {
 
   /* Display: Onglet Informations */
   $handler = $view->new_display('page', 'Onglet Informations', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['path'] = 'espace-co-entrepreneur/informations';
@@ -73,6 +74,8 @@ function kcore_views_default_views() {
 
   /* Display: Onglet Echanges */
   $handler = $view->new_display('page', 'Onglet Echanges', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Système d\'échanges';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -166,6 +169,8 @@ au moment de l\'interception et la ré-écriture du header.';
 
   /* Display: Onglet Marques Sectorielles */
   $handler = $view->new_display('page', 'Onglet Marques Sectorielles', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Pôles d\'activités';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -259,6 +264,7 @@ au moment de l\'interception et la ré-écriture du header.';
     t('Desc'),
     t('Onglet Informations'),
     t('Onglet Echanges'),
+    t('Système d\'échanges'),
     t('Description système d\'échange'),
     t('Description du système d\'échanges.
 Se paramètre dans Configuration > Crealead > Système d\'échange.'),
@@ -271,6 +277,7 @@ Cet affichage est construit dans crealead_needs.module, fonction crealead_needs_
     t('Description de la monnaie d\'échange.
 Se paramètre dans Configuration > Crealead > Système d\'échange.'),
     t('Onglet Marques Sectorielles'),
+    t('Pôles d\'activités'),
     t('Description marques sectorielles'),
     t('Les marques sectorielles de Crealead
 Se paramètre dans Configuration > Crealead > Marques sectorielles.'),

@@ -407,3 +407,12 @@ function crealead_newsflashes_node_prev_next($direction, $node) {
     return FALSE;
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_newsflashes_views_pre_render(&$view) {
+    if ($view->name == 'newsflashes' && $view->current_display == 'coe_area_page') {
+        drupal_add_js(drupal_get_path('module','crealead_newsflashes') . '/js/crealead_newsflashes_list.js');
+    }
+}

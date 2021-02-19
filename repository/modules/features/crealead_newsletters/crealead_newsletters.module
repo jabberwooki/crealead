@@ -1,0 +1,111 @@
+<?php
+/**
+ * @file
+ * Code for the Newsletters feature.
+ */
+
+include_once 'crealead_newsletters.features.inc';
+
+/**
+ * Implements hook_field_group_pre_render_alter().
+ */
+
+function crealead_newsletters_field_group_pre_render_alter(&$element, $group, &$form) {
+    if (in_array($group->group_name, ['group_col_left_link', 'group_col_center_link', 'group_col_right_link'])) {
+        $element['#prefix'] = '<div class="clearfix visible-xs-block visible-sm-block visible-md-block visible-lg-block "></div>' . $element['#prefix'];
+    }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+/**
+ * Implements hook_views_pre_render().
+ */
+function crealead_newsletters_views_pre_render(&$view) {
+    if ($view->name == 'newsletters' && $view->current_display == 'nl_structure') {
+        // Impossible de créer une vue affichant à la fois :
+        // - les gazettes
+        // - et les newsletters filtrées sur le type 'structure'.
+        // Dès qu'on ajoute ce filtre, les gazettes disparaissent.
+        // Solution ici :
+
+        // 1 - récupération du tableau des nids des newsletters de type CA.
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'newsletter')
+            ->propertyCondition('status', 1)
+            ->fieldCondition('field_newsletter_type', 'value', 'ca');
+        $query_result = $query->execute();
+        $ca_nids = [];
+        if (isset($query_result['node'])) {
+            $ca_nids = array_keys($query_result['node']);
+        }
+
+        // 2 - Si ce tableau n'est pas vide
+        if (!empty($ca_nids)) {
+            foreach ($view->result as $key => $item) {
+                // Si le nid d'un item de $result appartient à une newsletter CA, on l'exclue de $result.
+                if (in_array($item->nid, $ca_nids)) {
+                    unset($view->result[$key]);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function crealead_newsletters_form_alter(&$form, &$form_state, $form_id) {
+//    dpm($form_id);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crealead_newsletters_form_newsletter_node_form_alter(&$form, &$form_state, $form_id) {
+    drupal_add_css(drupal_get_path('module', 'crealead_newsletters') . '/css/crealead_newsletter_create_edit_form.css');
+
+    // Création d'un menu de navigation sous forme d'une liste le liens
+    //  vers les différents paragraphes présents dans le formulaire de modification d'une newsletter.
+    $bundles_listing_markup =
+        '<div class="paragraphs-bundles-listing">' .
+            '<div class="paragraphs-bundles-list">' .
+                '<ul class="bundle-list">';
+
+    foreach ($form['field_paragraphs']['und'] as $key => $bundle) {
+        if (is_array($bundle) && isset($bundle['paragraph_bundle_title'])) {
+
+            // 1 - Ajout d'un div autour du titre d'un paragraphe pour des besoins CSS.
+            $form['field_paragraphs']['und'][$key]['paragraph_bundle_title']['info']['#markup'] =
+                '<div class="paragraph-bundle-title">' .
+                    $form['field_paragraphs']['und'][$key]['paragraph_bundle_title']['info']['#markup'] .
+                '</div>';
+
+            // 2 - Ajout d'un <li> pointant vers le titre du paragraph dans le menu (tiroir de droite).
+            $bundles_listing_markup .= '<li>' . $key . ' - <a href="#edit-field-paragraphs-und-' . $key . '-paragraph-bundle-title" class="target_bundle">'
+            . str_replace('Paragraph type: ', '', strip_tags($bundle['paragraph_bundle_title']['info']['#markup']))
+            . '</a></li>';
+        }
+    }
+    $bundles_listing_markup .=
+                '</ul>' .
+                '<div class="top-page-link">' .
+                '<a href="#skip-link">Retour en haut de page</a>' .
+                '</div>' .
+            '</div>' .
+        '</div>';
+
+    // Ajout de ce menu en tant que champ "markup" du formulaire.
+    // Le menu est ensuite mis en forme et positionné par la feuille de style
+    // (voir repository/modules/features/crealead_newsletters/css/crealead_newsletter_create_edit_form.less)
+    $field_paragraphs_key = array_search('field_paragraphs', array_keys($form));
+    $field_bundle_list = array(
+        'field_bundle_list' => array(
+            '#markup' => $bundles_listing_markup,
+        ),
+    );
+    array_splice($form, $field_paragraphs_key, 0, $field_bundle_list);
+}
+

@@ -329,7 +329,7 @@ function crealead_needs_field_default_field_bases() {
         'ech' => 'Echanges',
         'coo' => 'COOP\'INS',
         'dup' => 'DUP',
-        'sec' => 'Marques sectorielles',
+        'sec' => 'Pôles d\'activités',
         'col' => 'Collectifs',
         'ass' => 'Espace associés',
       ),

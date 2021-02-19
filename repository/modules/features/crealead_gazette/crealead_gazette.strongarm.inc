@@ -135,7 +135,7 @@ function crealead_gazette_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_gazette_pattern';
-  $strongarm->value = 'espace-co-entrepreneur/gazettes/[node:title]';
+  $strongarm->value = 'espace-co-entrepreneur/newsletters-structure/[node:title]';
   $export['pathauto_node_gazette_pattern'] = $strongarm;
 
   return $export;

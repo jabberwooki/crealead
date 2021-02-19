@@ -104,6 +104,10 @@ function crealead_groups_strongarm() {
             'weight' => '4',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

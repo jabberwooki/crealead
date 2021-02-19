@@ -1,6 +1,7 @@
 /* Faqs private faq link */
 .private-faq-link {
-    float: right;
+    /*float: right;*/
+    text-align: right;
 }
 
 /* Faqs view filters */

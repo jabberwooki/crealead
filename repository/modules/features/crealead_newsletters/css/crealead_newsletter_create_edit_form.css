@@ -1,0 +1,57 @@
+/* Page de création/modification d'une newsletter */
+.paragraphs-bundles-listing {
+  border: 1px solid grey;
+  position: fixed;
+  top: 300px;
+  right: 0;
+  margin-top: -140px;
+  margin-right: -180px;
+  background-color: white;
+}
+.paragraphs-bundles-listing:hover {
+  margin-right: 0;
+}
+.paragraphs-bundles-listing:hover .paragraphs-bundles-list:before {
+  content: "";
+}
+.paragraphs-bundles-listing .paragraphs-bundles-list {
+  padding: 10px;
+}
+.paragraphs-bundles-listing .paragraphs-bundles-list:before {
+  content: url("../../../../themes/custom/crealead/less/images/picto-hamburger_gris.png");
+  position: absolute;
+}
+.paragraphs-bundles-listing .paragraphs-bundles-list .bundle-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0  50px;
+}
+.paragraphs-bundles-listing .top-page-link {
+  margin-top: 20px;
+  padding: 0 0 0  50px;
+}
+#skip-link :target:before {
+  content: "";
+  display: block;
+  height: 80px;
+}
+#field-paragraphs-values :target:before {
+  content: "";
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}
+#field-paragraphs-values > tbody > .draggable > td > div[id$="-paragraph-bundle-title"] .paragraph-bundle-title {
+  padding: 10px;
+  font-weight: 900;
+  font-size: 150%;
+  color: white;
+  background-color: #333333;
+}
+#field-paragraphs-values > tbody > .draggable > td > fieldset div[id$="-paragraph-bundle-title"] {
+  padding: 10px;
+  font-weight: 900;
+  font-size: 120%;
+  color: white;
+  background-color: #888888;
+}

@@ -67,7 +67,7 @@ function crealead_offers_form_offer_node_form_alter(&$form, &$form_state, $form_
  * Implements hook_views_pre_render().
  */
 function crealead_offers_views_pre_render(&$view) {
-  if ($view->name == 'offers' && $view->current_display == 'offers_list') {
+  if ($view->name == 'offers' && $view->current_display == 'offers_page') {
     // Gestion du bouton "Ajouter un besoin"
     // Dans la vue offers/offers_list, header contient un texte d'infos à laisser intact.
     // et footer contient un texte provisoire à modifier.
@@ -79,7 +79,18 @@ function crealead_offers_views_pre_render(&$view) {
     $button = l('Ajouter une offre', '/node/add/offer', array('query' => array('destination' => current_path())));
     $header_info = $view->header['area']->options['content'];
 
-    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . '<p>' . $button . '</p>';
+    $view->header['area']->options['content'] = (!$header_button) ? $header_info : $header_info . //'<p>' . $button . '</p>';
+      '<div class="offer-actions clearfix">' .
+            '<div class="offer-add-link pull-left">' .
+                $button .
+            '</div>' .
+            '<div class="warning-links offer-warning-link pull-right">' .
+                '&nbsp;' .
+            '</div>' .
+      '</div>';
+
+
+
     $view->footer['area']->options['content'] = (!$footer_button) ? '' : $button;
 
 

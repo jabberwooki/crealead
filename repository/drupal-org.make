@@ -225,6 +225,9 @@ projects[mimemail][subdir] = contrib
 projects[mimemail][version] = "1.0"
 projects[mimemail][patch][] = "https://www.drupal.org/files/issues/2018-04-11/notice_mimemail_html_body-2883745-25.patch"
 
+projects[paragraphs][subdir] = contrib
+projects[paragraphs][version] = "1.0-rc5"
+
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = "1.12"
 
