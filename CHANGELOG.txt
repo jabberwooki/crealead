@@ -1,3 +1,7 @@
+Hotfix prevent_sharing_training_with_parent_brand / 2021-02-24
+--------------------------------------------------------------
+  * crealead_trainings: Correction du bug de partage d'une formation avec la marque qui possède cette formation.
+
 Crealead v3.14 (Sprint V3-11) / 2021-02-19
 ------------------------------------------
   * Mise à jour du changelog.
