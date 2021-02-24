@@ -682,6 +682,50 @@ function crealead_trainings_node_presave($node) {
       $node->field_training_search['und'][0] = $search_array;
     }
     // --- End of technical field_training_search field handling --- //
+
+      // --- Gestion du partage d'une formation avec d'autres marques --- //
+      // Si l'utilisateur essaie de partager la formation avec la marque à laquelle est rattachée cette formation, il faut interdire ce partage et avertir l'utilisateur.
+      if (!empty($node->field_allowed_brands['und'])) {
+          $related_brand_id = isset($node->field_training_related_brands['und'][0]['target_id']) ?
+              $node->field_training_related_brands['und'][0]['target_id'] : 0;
+          $previous_related_brand_id = isset($node->original->field_training_related_brands['und'][0]['target_id']) ?
+              $node->original->field_training_related_brands['und'][0]['target_id'] : 0;
+
+          foreach ($node->field_allowed_brands['und'] as $key => $brand) {
+              if ($brand['target_id'] == $related_brand_id) {
+                  unset($node->field_allowed_brands['und'][$key]);
+
+                  $related_brand_title = db_select('node', 'n')
+                      ->fields('n', array('title'))
+                      ->condition('nid', $related_brand_id)
+                      ->execute()
+                      ->fetchField();
+
+                  if ($related_brand_id != $previous_related_brand_id) {
+                      $previous_related_brand_title = db_select('node', 'n')
+                          ->fields('n', array('title'))
+                          ->condition('nid', $previous_related_brand_id)
+                          ->execute()
+                          ->fetchField();
+
+                      $msg = '<p><b>ATTENTION  !</b><br/>'
+                          . 'Vous avez détaché cette formation de la marque ' . strtoupper($previous_related_brand_title) . ' pour la rattacher à la marque ' . strtoupper($related_brand_title)
+                          . ' alors qu\'elle était précédemment partagée avec cette marque.<br/>'
+                          . 'Le rattachement à la marque ' . strtoupper($related_brand_title) . ' a bien été enregistrée et le partage a été supprimé.'
+                          . '</p>';
+                  }
+                  else {
+                      $msg = '<p id="blink"><b>ATTENTION  !</b><br/>'
+                          . 'Vous avez essayé de partager cette formation avec la marque ' . strtoupper($related_brand_title) . ' alors qu\'elle est rattachée ou que vous venez de la rattacher à cette marque.<br/>'
+                          . 'Ce partage n\'a pas été enregistré.<br/>'
+                          . '</p>';
+                  }
+
+                  drupal_set_message($msg, 'error');
+              }
+          }
+      }
+      // --- Fin de gestion du partage d'une formation avec d'autres marques --- //
   }
 }
 
