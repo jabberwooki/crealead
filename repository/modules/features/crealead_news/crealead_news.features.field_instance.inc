@@ -1255,7 +1255,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_pole',
-    'label' => 'Actualité visible à la Une :',
+    'label' => 'Actualité visible à la Une de :',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1606,7 +1606,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Actualité visible à la Une :');
+  t('Actualité visible à la Une de :');
   t('Auteur');
   t('Certification(s) ou label(s) concerné(s)');
   t('Cette date n\'est pas modifiable manuellement. Elle est (re)calculée automatiquement à la sauvegarde de la fiche Actualité.');
