@@ -203,6 +203,7 @@ features[field_instance][] = node-achievement-field_achievement_photos
 features[field_instance][] = node-achievement-field_achievement_videos
 features[field_instance][] = node-achievement-field_landing_pages
 features[field_instance][] = node-achievement-field_related_certifs_labels
+features[field_instance][] = node-achievement-field_related_pole
 features[field_instance][] = node-achievement-field_related_sector_brands
 features[field_instance][] = node-brand-body
 features[field_instance][] = node-brand-field_brand_achievements

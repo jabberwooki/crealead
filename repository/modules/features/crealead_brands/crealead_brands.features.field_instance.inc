@@ -819,7 +819,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -893,7 +893,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1079,7 +1079,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1169,7 +1169,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label_help_description' => '',
       ),
       'type' => 'video_embed_field_video',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1239,7 +1239,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1309,7 +1309,78 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-achievement-field_related_pole'.
+  $field_instances['node-achievement-field_related_pole'] = array(
+    'bundle' => 'achievement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'La réalisation sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
+Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_pole',
+    'label' => 'Réalisation visible à la Une de :',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 1,
     ),
   );
 
@@ -1318,7 +1389,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'bundle' => 'achievement',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'L\'actualité sera visible dans l\'onglet <b>Réalisations</b> du ou des pôles sélectionnés.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -1369,7 +1440,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_sector_brands',
-    'label' => 'Marque(s) sectorielle(s) concernée(s)',
+    'label' => 'Pôle(s) d\'activités concerné(s)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1377,9 +1448,11 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -4281,6 +4354,9 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
 </li>
 </ul>');
   t('Indiquez la ville et/ou le pays.');
+  t('L\'actualité sera visible dans l\'onglet <b>Réalisations</b> du ou des pôles sélectionnés.');
+  t('La réalisation sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
+Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.');
   t('Le contenu des champs Nom et Compétences ci-dessus sera utilisé dans la recherche des marques.');
   t('Le contenu du champ Descripton ci-dessus sera utilisé dans la recherche des marques.');
   t('Le contenu du champ Mots-clés ci-dessus sera utilisé dans la recherche des marques.');
@@ -4297,6 +4373,8 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
   t('Mots-clés');
   t('Photos');
   t('Phrase d\'accroche');
+  t('Pôle(s) d\'activités concerné(s)');
+  t('Réalisation visible à la Une de :');
   t('Réalisations');
   t('Site web');
   t('Solutions');

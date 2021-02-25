@@ -753,15 +753,47 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
     $options[$item->nid] = $item->title;
   }
 
-  $form['related_brands'] = array(
-    '#type' => 'checkboxes',
-    '#title' => 'Rattacher la réalisation à l\'une des marques suivantes',
-    '#options' => $options,
-    '#default_value' => array_keys($parent_brands),
-  );
-
-  // Add custom submit handler.
+  if(!empty($options)) {
+      $form['related_brands'] = array(
+          '#type' => 'checkboxes',
+          '#title' => 'Marque(s) concernée(s)',
+          '#options' => $options,
+          '#default_value' => array_keys($parent_brands),
+          '#weight' => 2,
+      );
+  }
+  // Add custom submit handler to manage this related_brands field.
   $form['actions']['submit']['#submit'][] = 'crealead_achievement_submit';
+
+    // Gestion de l'ordre des champ du formulaire.
+    // Le champ  $form['related_brands'] rajouté manuellement (voir ci-dessus)
+    // doit etre inséré en seconde position.
+    foreach ($form as $key => $element) {
+      if (substr($key,0,6) == 'field_' && $key != 'field_related_pole') {
+          $form[$key]['#weight'] = $form[$key]['#weight'] +1;
+      }
+    }
+
+    // Gestion du champ field_related_pole (Réalisation visible à la Une de :).
+    global $user;
+    if ($user->uid != 1 && !in_array('administrateur', $user->roles)) {
+        if (!in_array('responsable de pôle', $user->roles)) {
+            $form['field_related_pole']['#access'] = FALSE;
+        }
+        else {
+            $full_user = user_load($user->uid);
+            if (isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                foreach ($form['field_related_pole']['und']['#options'] as $pole_tid => $pole_name) {
+                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+                        unset($form['field_related_pole']['und']['#options'][$pole_tid]);
+                    }
+                }
+            }
+            else {
+                $form['field_related_pole']['#access'] = FALSE;
+            }
+        }
+    }
 }
 
 function crealead_achievements_get_parent_brands($achiev_id) {
