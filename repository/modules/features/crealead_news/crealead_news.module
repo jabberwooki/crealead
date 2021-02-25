@@ -114,6 +114,29 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
 
   // Summary is now in plain text. We must remove html tags for nodes saved prior to this modification.
   $form['body']['und'][0]['summary']['#default_value'] = strip_tags($form['body']['und'][0]['summary']['#default_value']);
+
+  // Rattachement à un pole d'activité.
+//    $pole_handling_allowed_roles = array('administrateur','responsable de pôle');
+//    $current_user_allowed_roles = array_intersect($pole_handling_allowed_roles, $current_user_roles);
+    if ($user->uid != 1 && !in_array('administrateur', $current_user_roles)) {
+        if (!in_array('responsable de pôle', $current_user_roles)) {
+            $form['field_related_pole']['#access'] = FALSE;
+        }
+        else {
+            $full_user = user_load($user->uid);
+            if (isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                foreach ($form['field_related_pole']['und']['#options'] as $pole_tid => $pole_name) {
+                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+                        unset($form['field_related_pole']['und']['#options'][$pole_tid]);
+                    }
+                }
+            }
+            else {
+                dpm('il a zéro pole');
+                $form['field_related_pole']['#access'] = FALSE;
+            }
+        }
+    }
 }
 
 /**
