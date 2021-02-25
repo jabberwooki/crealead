@@ -1187,7 +1187,7 @@ function crealead_news_field_default_field_instances() {
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles sélectionnés.<br/>
+    'description' => 'L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
 Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.',
     'display' => array(
       'block' => array(
@@ -1617,7 +1617,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Homepage of the Author');
   t('Image');
   t('L\'actualité sera visible dans l\'onglet <b>Actualités</b> du ou des pôles sélectionnés.');
-  t('L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles sélectionnés.<br/>
+  t('L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
 Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
