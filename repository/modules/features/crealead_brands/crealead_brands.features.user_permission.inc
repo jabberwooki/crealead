@@ -342,6 +342,7 @@ function crealead_brands_user_default_permissions() {
   $permissions['edit terms in sector_brands'] = array(
     'name' => 'edit terms in sector_brands',
     'roles' => array(
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
     ),
     'module' => 'taxonomy',
