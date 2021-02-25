@@ -27,7 +27,7 @@ function kcore_user_default_roles() {
   // Exported role: administrateur.
   $roles['administrateur'] = array(
     'name' => 'administrateur',
-    'weight' => 17,
+    'weight' => 19,
     'machine_name' => '',
   );
 
@@ -87,6 +87,13 @@ function kcore_user_default_roles() {
     'machine_name' => 'pole_gestion',
   );
 
+  // Exported role: responsable de pôle.
+  $roles['responsable de pôle'] = array(
+    'name' => 'responsable de pôle',
+    'weight' => 17,
+    'machine_name' => 'pole_manager',
+  );
+
   // Exported role: rédacteur.
   $roles['rédacteur'] = array(
     'name' => 'rédacteur',
@@ -104,7 +111,7 @@ function kcore_user_default_roles() {
   // Exported role: webmaster.
   $roles['webmaster'] = array(
     'name' => 'webmaster',
-    'weight' => 16,
+    'weight' => 18,
     'machine_name' => '',
   );
 

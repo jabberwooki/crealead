@@ -231,6 +231,7 @@ features[user_role][] = direction
 features[user_role][] = entrepreneur
 features[user_role][] = entrepreneur prestataire
 features[user_role][] = pôle gestion
+features[user_role][] = responsable de pôle
 features[user_role][] = rédacteur
 features[user_role][] = référent
 features[user_role][] = webmaster

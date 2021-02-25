@@ -218,40 +218,40 @@ function crealead_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '11',
-        ),
-        'metatags' => array(
-          'weight' => '13',
-        ),
-        'password_policy' => array(
-          'weight' => '6',
-        ),
-        'redirect' => array(
           'weight' => '12',
         ),
+        'metatags' => array(
+          'weight' => '14',
+        ),
+        'password_policy' => array(
+          'weight' => '7',
+        ),
+        'redirect' => array(
+          'weight' => '13',
+        ),
         'account' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'timezone' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'locale' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'masquerade' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'picture' => array(
           'weight' => '5',
         ),
         'googleanalytics' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'contact' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'mimemail' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(

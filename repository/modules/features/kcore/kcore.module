@@ -110,12 +110,20 @@ function empty_front_page_callback() {
 function kcore_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   // Shows Referent select field to following roles only : administrateur, webmaster, referent.
   global $user;
-  $allowed_roles = array('administrateur','webmaster','référent');
-  $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
 
-  if ($user->uid != 1 && empty($user_allowed_roles)) {
-	$form['field_user_referent']['#access'] = FALSE;
-  }
+  // Accès au champ référent
+    $allowed_roles = array('administrateur','webmaster','référent');
+    $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+    if ($user->uid != 1 && empty($user_allowed_roles)) {
+    $form['field_user_referent']['#access'] = FALSE;
+    }
+
+    // Accès au champ Responsable de pole.
+    $allowed_roles = array('administrateur');
+    $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
+    if ($user->uid != 1 && empty($user_allowed_roles)) {
+        $form['field_pole_manager']['#access'] = FALSE;
+    }
 
     // Handling of the 'Delete Profile' button.
     // Is current user already has the displayed profile, the button shows up.
@@ -647,4 +655,24 @@ function kcore_views_ui_clone_as_submit($form, &$form_state) {
     $view->current_display = $display_id;
     views_ui_cache_set($view);
     $form_state['redirect'] = 'admin/structure/views/view/' . $view->name . '/edit/' . $display_id;
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+    // Gestion des onglets VOIR | MODIFIER | GERER L'AFFICHAGE lorsqu'on est sur une page Pole d'activité.
+    // Si l'utilisateur a le role "Responsable de pole" et qu'il est rattaché au pole affiché,
+    // on lui laisse la barre d'onglet pour qu'il puisse modifier le pole
+    // sinon on vide la barre (= array()) pour ne plus rien afficher.
+    if ($root_path == 'taxonomy/term/%' && $router_item['map'][2]->vocabulary_machine_name == 'sector_brands') {
+        global $user;
+        $full_user = user_load($user->uid);
+
+        if (user_is_logged_in()
+            && isset($full_user->field_pole_manager['und'][0]['tid'])
+            && $full_user->field_pole_manager['und'][0]['tid'] != $router_item['map'][2]->tid) {
+            $data = array();
+        }
+    }
 }
