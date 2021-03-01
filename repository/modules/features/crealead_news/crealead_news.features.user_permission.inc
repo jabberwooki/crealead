@@ -89,6 +89,7 @@ function crealead_news_user_default_permissions() {
     'name' => 'edit any news content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
