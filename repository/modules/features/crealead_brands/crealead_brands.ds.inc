@@ -1492,41 +1492,35 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'news_articles_anchor',
-        1 => 'group_sectorbrands_news_articles',
-        2 => 'brands_products_anchor',
-        3 => 'achievements_sector_brand_achievs',
-        4 => 'group_sectorbrands_brands_prods',
-        5 => 'group_sectorbrands_brands',
-        6 => 'group_sectorbrands_products',
-        7 => 'achievements_anchor',
-        8 => 'group_sectorbrands_news',
-        9 => 'group_sectorbrands_achievments',
-        10 => 'news_sector_brand_news',
-        11 => 'group_sectorbrands_articles',
-        12 => 'brands_sector_brand_brands_form',
-        13 => 'articles_sector_brand_articles',
-        14 => 'brands_sector_brand_brands',
-        15 => 'trainings_sector_brand_trainings',
+        0 => 'group_pole_tabs',
+        1 => 'achievements_sector_brand_achievs',
+        2 => 'news_sector_brand_news',
+        3 => 'brands_sector_brand_brands_form',
+        4 => 'trainings_sector_brand_trainings',
+        5 => 'brands_sector_brand_brands',
+        6 => 'articles_sector_brand_articles',
+        7 => 'group_pole_front_tab',
+        8 => 'group_pole_solutions_tab',
+        9 => 'group_pole_achiev_tab',
+        10 => 'group_pole_coes_tab',
+        11 => 'group_pole_news_tab',
+        12 => 'group_pole_articles_tab',
       ),
     ),
     'fields' => array(
-      'news_articles_anchor' => 'ds_content',
-      'group_sectorbrands_news_articles' => 'ds_content',
-      'brands_products_anchor' => 'ds_content',
+      'group_pole_tabs' => 'ds_content',
       'achievements_sector_brand_achievs' => 'ds_content',
-      'group_sectorbrands_brands_prods' => 'ds_content',
-      'group_sectorbrands_brands' => 'ds_content',
-      'group_sectorbrands_products' => 'ds_content',
-      'achievements_anchor' => 'ds_content',
-      'group_sectorbrands_news' => 'ds_content',
-      'group_sectorbrands_achievments' => 'ds_content',
       'news_sector_brand_news' => 'ds_content',
-      'group_sectorbrands_articles' => 'ds_content',
       'brands_sector_brand_brands_form' => 'ds_content',
-      'articles_sector_brand_articles' => 'ds_content',
-      'brands_sector_brand_brands' => 'ds_content',
       'trainings_sector_brand_trainings' => 'ds_content',
+      'brands_sector_brand_brands' => 'ds_content',
+      'articles_sector_brand_articles' => 'ds_content',
+      'group_pole_front_tab' => 'ds_content',
+      'group_pole_solutions_tab' => 'ds_content',
+      'group_pole_achiev_tab' => 'ds_content',
+      'group_pole_coes_tab' => 'ds_content',
+      'group_pole_news_tab' => 'ds_content',
+      'group_pole_articles_tab' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1542,6 +1536,43 @@ function crealead_brands_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['taxonomy_term|sector_brands|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|sector_brands|pole_header';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'sector_brands';
+  $ds_layout->view_mode = 'pole_header';
+  $ds_layout->layout = 'bootstrap_2_8_2';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_brand_logo',
+      ),
+      'central' => array(
+        1 => 'title',
+        2 => 'description',
+      ),
+    ),
+    'fields' => array(
+      'field_brand_logo' => 'left',
+      'title' => 'central',
+      'description' => 'central',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'central' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|sector_brands|pole_header'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1656,6 +1687,15 @@ function crealead_brands_ds_view_modes_info() {
     'taxonomy_term' => 'taxonomy_term',
   );
   $export['logo'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'pole_header';
+  $ds_view_mode->label = 'En-tête page de pôle';
+  $ds_view_mode->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $export['pole_header'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

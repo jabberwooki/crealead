@@ -494,3 +494,22 @@ function crealead_preprocess_field(&$vars) {
         }
     }
 }
+
+//function crealead_preprocess_taxonomy_term(&$vars) {
+////    dpm($vars['theme_hook_suggestions']);
+//    $vars['theme_hook_suggestions'][] = 'taxonomy_term__' . $vars['vocabulary_machine_name'] . '__' . $vars['view_mode'];
+////    dpm($vars['theme_hook_suggestions']);
+//}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function crealead_preprocess_page(&$variables) {
+    if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+        $vocabulary_machine_name = $variables['page']['content']['system_main']['term_heading']['term']['#bundle'];
+        $variables['theme_hook_suggestions'][] = 'page__taxonomy__term__' . $vocabulary_machine_name . '__full';
+    }
+//    dpm($variables);
+}
+
+

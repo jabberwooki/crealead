@@ -3087,7 +3087,7 @@ function crealead_brands_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Marques sectorielles';
+  $view->human_name = 'Pôles d\'activités';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -3132,9 +3132,19 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'marques-sectorielles';
 
-  /* Display: En-tête de marque sectorielle */
-  $handler = $view->new_display('block', 'En-tête de marque sectorielle', 'sector_brand_header');
+  /* Display: En-tête de pôle d'activité */
+  $handler = $view->new_display('block', 'En-tête de pôle d\'activité', 'sector_brand_header');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'pole_header';
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'pole_header';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Logo */
   $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
@@ -3148,6 +3158,13 @@ function crealead_brands_views_default_views() {
     'image_link' => '',
     'field_formatter_class' => 'pull-left',
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'h2';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
@@ -3176,7 +3193,7 @@ function crealead_brands_views_default_views() {
     t('Desc'),
     t('Page'),
     t('more'),
-    t('En-tête de marque sectorielle'),
+    t('En-tête de pôle d\'activité'),
     t('Tout'),
   );
   $export['sector_brands'] = $view;

@@ -487,6 +487,21 @@ function crealead_brands_strongarm() {
       'block' => array(
         'custom_settings' => FALSE,
       ),
+      'pole_header' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'certifications_labels_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'logo' => array(
+        'custom_settings' => FALSE,
+      ),
+      'landing_page_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -513,10 +528,14 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '8',
+            'weight' => '3',
             'visible' => FALSE,
           ),
           'block' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
             'weight' => '1',
             'visible' => TRUE,
           ),
@@ -527,6 +546,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'block' => NULL,
+          'pole_header' => NULL,
         ),
         'news_sector_brand_news' => array(
           'full' => array(
@@ -540,6 +560,10 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'articles_sector_brand_articles' => array(
@@ -555,6 +579,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'achievements_sector_brand_achievs' => array(
           'full' => array(
@@ -568,6 +596,10 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'brands_sector_brand_brands' => array(
@@ -583,6 +615,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brands_sector_brand_brands_form' => array(
           'full' => array(
@@ -597,6 +633,10 @@ function crealead_brands_strongarm() {
             'weight' => '9',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_sector_brand_trainings' => array(
           'full' => array(
@@ -610,6 +650,10 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),

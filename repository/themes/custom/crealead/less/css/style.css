@@ -12982,43 +12982,45 @@ body.front #block-views-articles-testimonials-front {
   display: block;
 }
 /* brand navigation ***************************************************************************************************/
-#sector_brands_navigation {
-  background-color: #009aa0;
-}
-#sector_brands_navigation #block-crealead-brands-crealead-sector-brand-nav a {
-  color: white;
-  text-transform: uppercase;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-}
 /* Brand introduction *************************************************************************************************/
 #introduction.sector-brands-header {
-  margin-top: 80px;
-  height: 240px;
+  margin-top: 40px;
   overflow: hidden;
   position: relative;
-  padding-bottom: 30px;
 }
 #introduction.sector-brands-header.sector-brands-desc-open {
   height: auto;
   padding-bottom: 30px;
 }
-#introduction.sector-brands-header .views-field-field-brand-logo img {
+#introduction.sector-brands-header .view-display-id-sector_brand_header {
+  padding: 20px;
+}
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #999999;
+}
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .views-field-field-brand-logo img {
   max-height: 180px;
   max-width: 180px;
   margin: 10px 25px 30px 0;
-  float: left;
 }
-#introduction.sector-brands-header .views-field-description {
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-title h2 {
+  color: #bf0e38;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Quicksand, sans-serif;
+  margin-top: 0;
+}
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .views-field-description {
   margin-top: 20px;
-  height: 200px;
   overflow: hidden;
 }
-#introduction.sector-brands-header .views-field-description h3 {
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .views-field-description h3 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #bf0e38;
 }
-#introduction.sector-brands-header .views-field-description.sector-brands-desc-open {
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .views-field-description.sector-brands-desc-open {
   height: auto;
 }
 body.not-logged-in .region-sector-brands-header {
