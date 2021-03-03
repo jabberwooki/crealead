@@ -293,6 +293,99 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<a href="/espace-co-entrepreneur/espace-associes/comptes-rendus-ca">Voir tous les comptes-rendus de CA</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
+
+  /* Display: CR comités d'étude */
+  $handler = $view->new_display('page', 'CR comités d\'étude', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Comptes-rendus de Comités d\'Étude';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'report' => 'report',
+  );
+  /* Filter criterion: Content: Catégorie (field_report_category) */
+  $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
+  $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
+  $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
+  $handler->display->display_options['filters']['field_report_category_value']['value'] = array(
+    'ce' => 'ce',
+  );
+  /* Filter criterion: Content: Date de la réunion (field_meeting_date) */
+  $handler->display->display_options['filters']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
+  $handler->display->display_options['filters']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
+  $handler->display->display_options['filters']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
+  $handler->display->display_options['filters']['field_meeting_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_meeting_date_value']['expose']['operator_id'] = 'field_meeting_date_value_op';
+  $handler->display->display_options['filters']['field_meeting_date_value']['expose']['label'] = 'Date de la réunion';
+  $handler->display->display_options['filters']['field_meeting_date_value']['expose']['operator'] = 'field_meeting_date_value_op';
+  $handler->display->display_options['filters']['field_meeting_date_value']['expose']['identifier'] = 'field_meeting_date_value';
+  $handler->display->display_options['filters']['field_meeting_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
+    1936756 => 0,
+    36071687 => 0,
+    231346920 => 0,
+    193262079 => 0,
+  );
+  $handler->display->display_options['filters']['field_meeting_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: Thématique (field_report_theme) */
+  $handler->display->display_options['filters']['field_report_theme_tid']['id'] = 'field_report_theme_tid';
+  $handler->display->display_options['filters']['field_report_theme_tid']['table'] = 'field_data_field_report_theme';
+  $handler->display->display_options['filters']['field_report_theme_tid']['field'] = 'field_report_theme_tid';
+  $handler->display->display_options['filters']['field_report_theme_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_report_theme_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_report_theme_tid']['expose']['operator_id'] = 'field_report_theme_tid_op';
+  $handler->display->display_options['filters']['field_report_theme_tid']['expose']['label'] = 'Thématique';
+  $handler->display->display_options['filters']['field_report_theme_tid']['expose']['operator'] = 'field_report_theme_tid_op';
+  $handler->display->display_options['filters']['field_report_theme_tid']['expose']['identifier'] = 'field_report_theme_tid';
+  $handler->display->display_options['filters']['field_report_theme_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    14479344 => 0,
+    199363405 => 0,
+    103860121 => 0,
+    227964678 => 0,
+    157083709 => 0,
+    7178059 => 0,
+    259028912 => 0,
+    157297110 => 0,
+    191976793 => 0,
+    8998634 => 0,
+    31497918 => 0,
+    65237971 => 0,
+    58920180 => 0,
+    155486910 => 0,
+    231346920 => 0,
+    193262079 => 0,
+    1936756 => 0,
+  );
+  $handler->display->display_options['filters']['field_report_theme_tid']['vocabulary'] = 'report_themes';
+  $handler->display->display_options['path'] = 'espace-co-entrepreneur/espace-associes/cr-comites-etude';
   $translatables['reports'] = array(
     t('Master'),
     t('Comptes-rendus de CA'),
@@ -324,6 +417,9 @@ function crealead_associates_views_default_views() {
     t('Options avancées'),
     t('Select any filter and click on Apply to see results'),
     t('<a href="/espace-co-entrepreneur/espace-associes/comptes-rendus-ca">Voir tous les comptes-rendus de CA</a>'),
+    t('CR comités d\'étude'),
+    t('Comptes-rendus de Comités d\'Étude'),
+    t('Date de la réunion'),
   );
   $export['reports'] = $view;
 
