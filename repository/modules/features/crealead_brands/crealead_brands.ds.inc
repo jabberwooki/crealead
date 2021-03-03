@@ -1553,13 +1553,17 @@ function crealead_brands_ds_layout_settings_info() {
       'left' => array(
         0 => 'field_brand_logo',
       ),
+      'right' => array(
+        1 => 'field_social_links',
+      ),
       'central' => array(
-        1 => 'title',
-        2 => 'description',
+        2 => 'title',
+        3 => 'description',
       ),
     ),
     'fields' => array(
       'field_brand_logo' => 'left',
+      'field_social_links' => 'right',
       'title' => 'central',
       'description' => 'central',
     ),

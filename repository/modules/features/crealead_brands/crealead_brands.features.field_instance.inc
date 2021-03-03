@@ -4329,6 +4329,73 @@ Le label doit être prouvé.',
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-sector_brands-field_social_links'.
+  $field_instances['taxonomy_term-sector_brands-field_social_links'] = array(
+    'bundle' => 'sector_brands',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'pole_header' => array(
+        'label' => 'hidden',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_social_links',
+    'label' => 'Liens réseaux sociaux',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'used_services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'socialfield_widget',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Auteurs');

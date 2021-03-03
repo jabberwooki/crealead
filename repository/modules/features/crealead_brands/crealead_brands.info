@@ -245,6 +245,7 @@ features[field_instance][] = node-training-field_allowed_brands
 features[field_instance][] = taxonomy_term-certifications_labels-field_cl_category
 features[field_instance][] = taxonomy_term-certifications_labels-field_cl_logo
 features[field_instance][] = taxonomy_term-sector_brands-field_brand_logo
+features[field_instance][] = taxonomy_term-sector_brands-field_social_links
 features[image][] = achievements_280x210
 features[image][] = brand_logo
 features[image][] = certif_label_logo
