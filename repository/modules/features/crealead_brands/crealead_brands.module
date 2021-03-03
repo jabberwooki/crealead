@@ -25,6 +25,9 @@ function crealead_brands_init() {
     drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brands_similar_clients.js');
     drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands_clients.css');
   }
+  elseif (sizeof(arg()) > 2 && strpos(request_uri(), '/marques-sectorielles/', 0) !== FALSE) {
+      drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js');
+  }
 
   drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }

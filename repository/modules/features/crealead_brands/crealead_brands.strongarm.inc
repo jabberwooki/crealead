@@ -269,6 +269,10 @@ function crealead_brands_strongarm() {
             'weight' => '26',
             'visible' => FALSE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brands_calendar_entity_view_1' => array(
           'full' => array(
@@ -305,11 +309,19 @@ function crealead_brands_strongarm() {
             'weight' => '45',
             'visible' => TRUE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_allowed_articles' => array(
           'full' => array(
             'weight' => '1',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'products_entity_view_1' => array(
@@ -317,11 +329,19 @@ function crealead_brands_strongarm() {
             'weight' => '67',
             'visible' => TRUE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_allowed_trainings' => array(
           'full' => array(
             'weight' => '31',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'products_entity_view_2' => array(
@@ -334,6 +354,10 @@ function crealead_brands_strongarm() {
           'full' => array(
             'weight' => '71',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -640,7 +664,7 @@ function crealead_brands_strongarm() {
         ),
         'trainings_sector_brand_trainings' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -654,6 +678,24 @@ function crealead_brands_strongarm() {
           'pole_header' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+        ),
+        'news_sector_brands_front_news' => array(
+          'full' => array(
+            'weight' => '11',
+            'visible' => TRUE,
+          ),
+        ),
+        'achievements_sector_brands_front_achievs' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'products_sector_brands_products' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
       ),

@@ -137,7 +137,7 @@
     </div>
 <?php endif; ?>
 
-<div class="main-container container
+<div id="taxonomy-term-sector-brand-container" class="main-container container
   <?php if (!empty($page['content_header']) || !empty($page['full_content_header'])) echo 'main-container-with-header ' ?>
   <?php if ($logged_in) echo 'main-container-logged-in' ?>">
 

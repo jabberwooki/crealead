@@ -37,6 +37,12 @@ function crealead_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'sector_brand_block' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -98,6 +104,12 @@ function crealead_products_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -162,6 +174,12 @@ function crealead_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -214,6 +232,13 @@ function crealead_products_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -309,6 +334,12 @@ function crealead_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -362,6 +393,12 @@ function crealead_products_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -458,6 +495,12 @@ function crealead_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 18,
       ),
+      'sector_brand_block' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -502,6 +545,12 @@ function crealead_products_field_default_field_instances() {
         'weight' => 2,
       ),
       'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -596,6 +645,12 @@ function crealead_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -647,6 +702,12 @@ function crealead_products_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

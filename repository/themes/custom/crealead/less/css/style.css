@@ -12794,34 +12794,6 @@ body.node-type-training .field-name-recommendation-action {
   overflow: hidden;
   padding-right: 100px;
 }
-.page-taxonomy-term .view-id-trainings h3 {
-  color: white;
-  text-transform: uppercase;
-  background-color: #009aa0;
-  padding: 20px;
-  line-height: 1.3em;
-  margin-bottom: 0;
-}
-.page-taxonomy-term .view-id-trainings .field-name-title {
-  background-color: #ededed;
-  padding: 0 10px 10px 10px;
-  margin: 0;
-}
-.page-taxonomy-term .view-id-trainings .field-name-title h4 {
-  padding: 0;
-  margin: 0;
-}
-.page-taxonomy-term .view-id-trainings .field-name-title h4 a {
-  color: #000;
-  border-bottom: 1px solid #009aa0;
-  display: block;
-  padding: 30px 0 15px 0;
-  min-height: 100px;
-}
-.page-taxonomy-term .view-id-articles .row {
-  background-color: #ededed;
-  border-bottom: 10px solid #ededed;
-}
 .page-taxonomy-term .view-id-articles .row .field-type-image img {
   max-height: 220px;
   float: left;
@@ -12981,8 +12953,7 @@ body.front #block-views-articles-testimonials-front {
 .view-id-gazettes .col-md-4 > div h3 a {
   display: block;
 }
-/* brand navigation ***************************************************************************************************/
-/* Brand introduction *************************************************************************************************/
+/* Introduction Pole d'activité ***************************************************************************************/
 #introduction.sector-brands-header {
   margin-top: 40px;
   overflow: hidden;
@@ -13027,143 +12998,88 @@ body.not-logged-in .region-sector-brands-header {
   margin-top: 20px;
 }
 /* bouton open-close **************************************************************************************************/
-#open-close-sector-brand {
-  display: block;
-  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 100%;
-  z-index: 10;
-  position: static;
-}
-#open-close-sector-brand.sector-brands-desc-open {
-  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 0;
-  margin-top: -33px;
-  position: relative;
-  z-index: 3;
-}
-/* main container *****************************************************************************************************/
-.title-3-sect-brand {
-  text-transform: uppercase;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-  color: #bf0e38;
-}
-.main-container.main-container-sector-brands {
+/* Pole d'activité main container *****************************************************************************************************/
+#taxonomy-term-sector-brand-container {
   margin-top: 0;
   padding-top: 0;
 }
-.main-container.main-container-sector-brands .group-sectorbrands-news .field-name-body h3 {
-  font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  text-transform: none;
-  color: #333 !important;
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs {
+  border-bottom: none;
 }
-.main-container.main-container-sector-brands h3 {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #bf0e38;
-}
-@media (min-width: 992px) {
-  .main-container.main-container-sector-brands .third-effect .mask {
-    margin-top: 5px;
-  }
-}
-.main-container.main-container-sector-brands .group-sectorbrands-brands h3 {
-  text-transform: uppercase;
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li a {
   font-family: Quicksand, sans-serif;
-  font-weight: bold;
-  color: #bf0e38;
-}
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings h3 {
-  color: white;
   text-transform: uppercase;
-  background-color: #009aa0;
-  padding: 20px;
-  line-height: 1.3em;
-  margin-bottom: 0;
-}
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content {
+  font-weight: bold;
+  padding: 7px 19px;
+  margin: 0;
   background-color: #ededed;
-  padding: 20px;
+  color: #555555;
+  border-radius: unset;
 }
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content.row {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li:first-child a {
+  border-radius: 8px 0 0 8px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li:last-child a {
+  border-radius: 0 8px 8px 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li.active a {
+  background-color: #bf0e38;
+  color: white;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li:hover a {
+  background-color: #999999;
+  color: white;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs .tab-pane .view-content {
+  padding: 20px 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs .tab-pane .view-content .row {
+  margin-bottom: 20px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .col .node-achievement .field-group-div {
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_news .col .node-news .field-group-div {
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_news .col .node-news .field-name-body {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bf0e38;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-content.row {
   margin: 0;
 }
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a {
-  display: block;
-  color: #1d1e19;
-  font-size: 0.8em;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #009aa0;
-  height: 178px;
-  overflow: hidden;
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-display-id-sector_brands_products .col .node-product {
+  padding: 10px;
+  border: 1px solid #999999;
 }
-.main-container.main-container-sector-brands .view-display-id-sector_brand_trainings .view-content h4 a:hover {
-  color: #bf0e38;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-achievments {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #999999;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-achievments > h3 {
-  text-transform: uppercase;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-  color: #bf0e38;
-  padding-top: 35px;
-  border-top: 1px solid #999999;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body {
-  height: 80px;
-  overflow: hidden;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h3,
-.main-container.main-container-sector-brands .group-sectorbrands-achievments .field-name-body h4 {
-  font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  text-transform: none;
-  color: #333 !important;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-news > h3 {
-  text-transform: uppercase;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-  color: #bf0e38;
-  padding-top: 35px;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-news .view-news .position-relative .field-type-taxonomy-term-reference {
-  background-color: #bf0e38;
-  padding: 5px 10px;
-  color: white;
-  font-family: Quicksand, sans-serif;
-  text-transform: uppercase;
-  display: table;
-  font-weight: 700;
-  font-size: 0.8em;
-  position: absolute;
-  top: 10px;
-  left: 5px;
-}
-.main-container.main-container-sector-brands .group-sectorbrands-articles {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-display-id-sector_brand_trainings .view-content.row .views-bootstrap-grid-plugin-style .col .node-training {
+  padding: 20px;
   background-color: #ededed;
-  padding-bottom: 20px;
-  margin-top: 80px;
 }
-.main-container.main-container-sector-brands .group-sectorbrands-articles > h3 {
-  color: #009aa0;
-  text-transform: uppercase;
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--ralisations .view-mode-sector_brand_block .field-group-div {
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-css-effect {
+  box-shadow: none;
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .info {
+  text-align: center;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--actualits .col .node-news .field-group-div {
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--actualits .col .node-news .field-name-field-image {
+  border: 1px solid #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--actualits .col .node-news .field-name-body {
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #bf0e38;
 }
-.main-container.main-container-sector-brands .group-sectorbrands-articles h4 > a {
-  color: #009aa0;
-}
-.main-container.main-container-sector-brands a#intro,
-.main-container.main-container-sector-brands a#brands-products,
-.main-container.main-container-sector-brands a#achievements,
-.main-container.main-container-sector-brands a#news-articles {
-  margin-top: -200px;
-  float: right;
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--articles .node-article {
+  padding: 10px;
+  border: 1px solid #999999;
 }
 .getlocations_map_canvas div.gm-style > div > div > div > div > div > img[src*="mapcnt6"] {
   max-height: none;

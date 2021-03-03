@@ -444,15 +444,17 @@ function crealead_trainings_views_default_views() {
   /* Display: Formations d'une marque sectorielle */
   $handler = $view->new_display('entity_view', 'Formations d\'une marque sectorielle', 'sector_brand_trainings');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Produits et formations';
+  $handler->display->display_options['title'] = 'Formations';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'col-md-6';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'pagerer';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['quantity'] = '3';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
@@ -460,9 +462,9 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
-  $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';
@@ -473,12 +475,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Solutions</h3>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
@@ -508,7 +504,7 @@ function crealead_trainings_views_default_views() {
     0 => 'sector_brands',
   );
   $handler->display->display_options['argument_mode'] = 'none';
-  $handler->display->display_options['show_title'] = 0;
+  $handler->display->display_options['show_title'] = 1;
 
   /* Display: Catalogue des formations */
   $handler = $view->new_display('page', 'Catalogue des formations', 'list_page');
@@ -1169,7 +1165,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation concernée (field_related_training) */
+  /* Contextual filter: Content: Formation (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1207,7 +1203,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation concernée (field_related_training) */
+  /* Contextual filter: Content: Formation (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1385,7 +1381,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Formation concernée (field_related_training) */
+  /* Contextual filter: Content: Formation (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1476,7 +1472,6 @@ function crealead_trainings_views_default_views() {
     t('Produits et formations'),
     t('<h3>Nos formations et produits</h3>'),
     t('Formations d\'une marque sectorielle'),
-    t('<h3>Solutions</h3>'),
     t('term from field_related_sector_brands'),
     t('Catalogue des formations'),
     t('Nos formations'),
@@ -1561,7 +1556,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Content: Formation concernée */
+  /* Field: Content: Formation */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -1866,7 +1861,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Content: Formation concernée */
+  /* Field: Content: Formation */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';

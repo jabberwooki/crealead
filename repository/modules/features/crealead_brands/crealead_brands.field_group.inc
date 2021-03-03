@@ -930,7 +930,7 @@ function crealead_brands_field_group_info() {
       'label' => 'group css effect 3',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-css-effect-3 field-group-div view-css-effect third-effect',
+        'classes' => 'group-css-effect-3 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -1098,13 +1098,15 @@ function crealead_brands_field_group_info() {
   $field_group->data = array(
     'label' => 'À la une',
     'weight' => '13',
-    'children' => array(),
+    'children' => array(
+      0 => 'news_sector_brands_front_news',
+      1 => 'achievements_sector_brands_front_achievs',
+    ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'À la une',
       'instance_settings' => array(
-        'classes' => 'group-pole-front-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
+        'classes' => 'group-pole-front-tab field-group-bootstrap_fieldgroup_nav_item ',
       ),
     ),
   );
@@ -1150,6 +1152,7 @@ function crealead_brands_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'trainings_sector_brand_trainings',
+      1 => 'products_sector_brands_products',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(

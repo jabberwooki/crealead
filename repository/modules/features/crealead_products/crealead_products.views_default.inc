@@ -188,6 +188,63 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Produits d'un pôle d'activités */
+  $handler = $view->new_display('entity_view', 'Produits d\'un pôle d\'activités', 'sector_brands_products');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'col-md-6';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '3';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['relationships']['field_related_sector_brands_tid']['label'] = 'terme à partir de field_related_sector_brands';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_sector_brands_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'sector_brands',
+  );
+  $handler->display->display_options['show_title'] = 1;
   $translatables['products'] = array(
     t('Master'),
     t('Produits'),
@@ -211,6 +268,14 @@ function crealead_products_views_default_views() {
     t('Produits partagés avec une marque'),
     t('brand_name vous conseille ces produits de marques partenaires'),
     t('Produits d\'un coe'),
+    t('Produits d\'un pôle d\'activités'),
+    t('Éléments par page'),
+    t('Décalage'),
+    t('« premier'),
+    t('‹ précédent'),
+    t('suivant ›'),
+    t('dernier »'),
+    t('terme à partir de field_related_sector_brands'),
   );
   $export['products'] = $view;
 

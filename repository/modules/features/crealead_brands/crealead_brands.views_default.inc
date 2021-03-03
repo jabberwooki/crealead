@@ -312,8 +312,8 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'pagerer';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -324,7 +324,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
-  $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '4';
@@ -412,6 +411,54 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'certifications_labels',
   );
+
+  /* Display: Réalisations à la Une d'une marque sectorielle */
+  $handler = $view->new_display('entity_view', 'Réalisations à la Une d\'une marque sectorielle', 'sector_brands_front_achievs');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'col-md-6';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'sector_brands',
+  );
+  $handler->display->display_options['show_title'] = 1;
   $translatables['achievements'] = array(
     t('Master'),
     t('Réalisations'),
@@ -445,6 +492,8 @@ function crealead_brands_views_default_views() {
     t('term from field_related_sector_brands'),
     t('Réalisations d\'une certif/label'),
     t('terme à partir de field_related_certifs_labels'),
+    t('Réalisations à la Une d\'une marque sectorielle'),
+    t('terme à partir de field_related_pole'),
   );
   $export['achievements'] = $view;
 
@@ -2140,7 +2189,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '1';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2153,7 +2202,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_options']['columns'] = '4';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';

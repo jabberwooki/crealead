@@ -754,7 +754,6 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => '',
           'trim_length' => 100,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -1016,9 +1015,8 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'achievements_280x210',
+          'image_style' => 'realisation',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -1724,9 +1722,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'sector_brand_block' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -2029,7 +2025,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => 'content',
           'image_style' => 'brand_logo',
         ),

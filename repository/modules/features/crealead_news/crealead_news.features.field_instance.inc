@@ -89,7 +89,6 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => 'line-bottom-red',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -355,9 +354,8 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'carre_large',
+          'image_style' => 'realisation',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -732,7 +730,6 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'field_formatter_class' => '',
           'format_type' => 'news_medium',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -955,9 +952,7 @@ function crealead_news_field_default_field_instances() {
       'sector_brand_block' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
@@ -1425,9 +1420,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'sector_brand_block' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),

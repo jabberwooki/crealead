@@ -125,7 +125,7 @@ function crealead_brands_taxonomy_default_vocabularies() {
       ),
     ),
     'sector_brands' => array(
-      'name' => 'Marques sectorielles',
+      'name' => 'Pôles d\'actitivités',
       'machine_name' => 'sector_brands',
       'description' => '',
       'hierarchy' => 0,
