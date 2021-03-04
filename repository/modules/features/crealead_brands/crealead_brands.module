@@ -28,7 +28,11 @@ function crealead_brands_init() {
   elseif (sizeof(arg()) > 2 && strpos(request_uri(), '/marques-sectorielles/', 0) !== FALSE) {
       drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js');
   }
-
+  elseif (sizeof(arg()) > 2 && arg(0) =='user' && arg(2) == 'edit') {
+      $pole_manager_role = user_role_load_by_name('responsable de pôle');
+      drupal_add_js(array('crealead_pole_manager' => array('role_id' => $pole_manager_role->rid)), 'setting');
+      drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_manager_role_handling.js');
+  }
 
   drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }
