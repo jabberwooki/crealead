@@ -29,6 +29,7 @@ function crealead_brands_init() {
       drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js');
   }
 
+
   drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }
 
@@ -606,14 +607,58 @@ function crealead_brands_mail($key, &$message, $params) {
  */
 function crealead_brands_views_pre_render(&$view) {
 
-  if ($view->name == 'brands' && $view->current_display == 'brands_list') {
+  if ($view->name == 'brands') {
+      if ($view->current_display == 'brands_list') {
+          drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/check_label.js', array(
+              'type' => 'file',
+              'group' => JS_THEME,
+          ));
+      }
+      elseif ($view->current_display == 'coe_brands') {
+          $user_id = arg(1);
+          $user_coe_profile = profile2_load_by_user($user_id, 'coe_page');
 
-    drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/check_label.js', array(
-      'type' => 'file',
-      'group' => JS_THEME,
-    ));
+          if (!empty($user_coe_profile->field_brands_order)) {
+              $user_ordered_brand_ids = explode('|', $user_coe_profile->field_brands_order['und'][0]['value']);
+
+              $user_ordered_brands = [];
+              foreach ($user_ordered_brand_ids as $brand_id) {
+                  foreach ($view->result as $item) {
+                      if ($item->nid == $brand_id) {
+                          $user_ordered_brands[] = $item;
+                      }
+                  }
+              }
+              $view->result = $user_ordered_brands;
+          }
+      }
+      elseif ($view->current_display == 'sector_brand_brands') {
+          global $user;
+          $allowed_roles = array('administrateur', 'webmaster');
+          dpm($user->roles, 'user roles');
+          dpm($allowed_roles, 'roles autorisés');
+          dpm(array_intersect($allowed_roles, $user->roles));
+
+          if ($user->uid != 1 && empty(array_intersect($allowed_roles, $user->roles))) {
+              dpm('ni admin ni webmaster');
+              $full_user = user_load($user->uid);
+
+              if (!isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                $view->header = array();
+              }
+              else {
+                  $current_sector_brand_id = arg(2);
+                  if ($full_user->field_pole_manager['und'][0]['tid'] != $current_sector_brand_id) {
+                      $view->header = array();
+                  }
+              }
+          }
+          else {
+              dpm('admin ou webmaster ou les deux');
+          }
+      }
   }
-  if ($view->name == 'field_collection_coes' && $view->current_display == 'brand_coes') {
+  elseif ($view->name == 'field_collection_coes' && $view->current_display == 'brand_coes') {
     drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-brand-height.js', array(
       'type' => 'file',
       'group' => JS_THEME,
@@ -641,7 +686,7 @@ function crealead_brands_views_pre_render(&$view) {
     }
   }
 
-  if ($view->name == 'brands_calendar' && $view->current_display == 'agenda_listing') {
+  elseif ($view->name == 'brands_calendar' && $view->current_display == 'agenda_listing') {
     foreach ($view->result as $key => $item) {
       if ($item->node_type == 'training_session') {
         $delta = $item->field_data_field_session_dates_delta;
@@ -650,7 +695,7 @@ function crealead_brands_views_pre_render(&$view) {
     }
   }
 
-  if ($view->name == 'trainings' && $view->current_display == 'allowed_trainings') {
+  elseif ($view->name == 'trainings' && $view->current_display == 'allowed_trainings') {
     // If referer is the ajax call, brand_nid can be found as argument 4, otherwise
     if(arg(4)) {
       $query = db_select('node', 'n')->fields('n', array('title'));
@@ -662,26 +707,6 @@ function crealead_brands_views_pre_render(&$view) {
     }
 
     $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
-  }
-
-  if ($view->name == 'brands' && $view->current_display == 'coe_brands') {
-
-    $user_id = arg(1);
-    $user_coe_profile = profile2_load_by_user($user_id, 'coe_page');
-
-    if (!empty($user_coe_profile->field_brands_order)) {
-      $user_ordered_brand_ids = explode('|', $user_coe_profile->field_brands_order['und'][0]['value']);
-
-      $user_ordered_brands = [];
-      foreach ($user_ordered_brand_ids as $brand_id) {
-        foreach ($view->result as $item) {
-          if ($item->nid == $brand_id) {
-            $user_ordered_brands[] = $item;
-          }
-        }
-      }
-      $view->result = $user_ordered_brands;
-    }
   }
 }
 
