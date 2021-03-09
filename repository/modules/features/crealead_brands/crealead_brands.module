@@ -421,6 +421,11 @@ function crealead_brands_entity_view_alter(&$build, $type) {
     $build['#entity']->label = '';
     $build['#entity']->data['redirect_path'] = substr($_SERVER['REDIRECT_URL'], 1);
   }
+  elseif ($build['#entity_type'] == 'entityform' && $build['#entity']->type == 'pole_coes_contact' && $build['#view_mode'] == 'full') {
+    $submission_date = $build['submission_date']['#items'][0]['value'];
+    $submission_date = date('d-m-Y à H:i', strtotime(substr($submission_date, strpos($submission_date, ',') + 2)));
+    $build['submission_date'][0]['#markup'] = $submission_date;
+  }
 
   if ($build['#entity_type'] == 'node' && $build['#bundle'] == 'brand' && $build['#view_mode'] == 'full') {
     if (empty($build['#node']->field_brand_email)) {

@@ -69,8 +69,10 @@
         focusedInput.val('');
         focusedInput.val(focusedInputVal);
         focusedInput.focus();
-
       });
+
+      let coesEmails = $('#edit-field-pole-coes-emails input').val();
+      $('#edit-field-pole-coes-emails input').after('<div class="coes-emails">' + coesEmails + '</div>');
     }
   };
 }(jQuery));
