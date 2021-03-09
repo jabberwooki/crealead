@@ -487,7 +487,6 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
   }
   elseif($form_id == 'taxonomy_form_term') {
       if ($form['vocabulary_machine_name']['#value'] == 'sector_brands') {
-          dpm($form);
           foreach ($form['field_pole_email_form']['und']['#options'] as $key=>$option) {
               if ($option == 'Contact' || $option == 'Nous contacter') {
                   unset($form['field_pole_email_form']['und']['#options'][$key]);
