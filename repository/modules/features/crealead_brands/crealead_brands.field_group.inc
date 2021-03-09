@@ -1044,7 +1044,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '18',
+    'weight' => '19',
     'children' => array(
       0 => 'articles_sector_brand_articles',
     ),
@@ -1089,6 +1089,35 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_email_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_email_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Envoi de messages',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_pole_email_form',
+      1 => 'pole_emails',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-pole-email-tab field-group-fieldset',
+        'id' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_email_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_pole_front_tab|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_pole_front_tab';
   $field_group->entity_type = 'taxonomy_term';
@@ -1123,7 +1152,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '17',
+    'weight' => '18',
     'children' => array(
       0 => 'news_sector_brand_news',
     ),
@@ -1184,6 +1213,7 @@ function crealead_brands_field_group_info() {
       3 => 'group_pole_coes_tab',
       4 => 'group_pole_news_tab',
       5 => 'group_pole_articles_tab',
+      6 => 'group_pole_email_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
@@ -1823,6 +1853,7 @@ function crealead_brands_field_group_info() {
   t('Enveloppe articles partagés');
   t('Enveloppe formations partagées');
   t('Enveloppe produits partagés');
+  t('Envoi de messages');
   t('Equipe');
   t('Formations');
   t('Informations Générales');

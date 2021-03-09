@@ -588,6 +588,478 @@ function crealead_brands_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_pole_coes_emails'.
+  $field_instances['entityform-pole_coes_contact-field_pole_coes_emails'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_coes_emails',
+    'label' => 'Destinataires',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_pole_coes_from'.
+  $field_instances['entityform-pole_coes_contact-field_pole_coes_from'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'colorbox_field_formatter',
+        'settings' => array(
+          'colorbox_field_formatter_anchor' => '',
+          'colorbox_field_formatter_class' => '',
+          'colorbox_field_formatter_height' => 500,
+          'colorbox_field_formatter_iframe' => 0,
+          'colorbox_field_formatter_image_style' => '',
+          'colorbox_field_formatter_link' => '',
+          'colorbox_field_formatter_link_type' => 'content',
+          'colorbox_field_formatter_style' => 'colorbox-load',
+          'colorbox_field_formatter_width' => 500,
+        ),
+        'type' => 'colorbox_field_formatter_linked',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_coes_from',
+    'label' => 'De',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_pole_coes_message'.
+  $field_instances['entityform-pole_coes_contact-field_pole_coes_message'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_coes_message',
+    'label' => 'Message',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 'full_html',
+          'php_code' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'rows' => 10,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_pole_coes_sender'.
+  $field_instances['entityform-pole_coes_contact-field_pole_coes_sender'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_coes_sender',
+    'label' => 'Expéditeur',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_pole_coes_subject'.
+  $field_instances['entityform-pole_coes_contact-field_pole_coes_subject'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => array(
+      0 => array(
+        'value' => 'POLE_NAME',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_coes_subject',
+    'label' => 'Sujet',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-pole_coes_contact-field_pole_tid'.
+  $field_instances['entityform-pole_coes_contact-field_pole_tid'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_pole_tid',
+    'label' => 'Identifiant du pole',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'number',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_brand_coes-field_brand_coe'.
   $field_instances['field_collection_item-field_brand_coes-field_brand_coe'] = array(
     'bundle' => 'field_brand_coes',
@@ -4253,7 +4725,7 @@ Le label doit être prouvé.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 8,
       ),
       'pole_header' => array(
         'label' => 'hidden',
@@ -4329,6 +4801,67 @@ Le label doit être prouvé.',
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-sector_brands-field_pole_email_form'.
+  $field_instances['taxonomy_term-sector_brands-field_pole_email_form'] = array(
+    'bundle' => 'sector_brands',
+    'default_value' => array(
+      0 => array(
+        'target_id' => 4,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'full',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 11,
+      ),
+      'pole_header' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_pole_email_form',
+    'label' => 'Formulaire d\'envoi de courriel',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-sector_brands-field_social_links'.
   $field_instances['taxonomy_term-sector_brands-field_social_links'] = array(
     'bundle' => 'sector_brands',
@@ -4349,7 +4882,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'pole_header' => array(
         'label' => 'hidden',
@@ -4407,14 +4940,19 @@ Le label doit être prouvé.',
   t('Co-entrepreneurs');
   t('Compétences');
   t('Courriel');
+  t('De');
   t('Descriptif');
   t('Description');
+  t('Destinataires');
   t('Domaine d\'intervention');
   t('Email de contact');
   t('Email envoyé');
   t('Entrepreneur');
+  t('Expéditeur');
+  t('Formulaire d\'envoi de courriel');
   t('Formulaire de contact');
   t('Identifiant de la marque');
+  t('Identifiant du pole');
   t('Il s\'agit de mots-clés.<br />
 <ul>
 <li>
@@ -4441,6 +4979,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Marque validée');
   t('Marque(s) sectorielle(s) concernée(s)');
   t('Marques qui peuvent utiliser cette formation');
+  t('Message');
   t('Mots-clés');
   t('Photos');
   t('Phrase d\'accroche');
@@ -4449,6 +4988,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Réalisations');
   t('Site web');
   t('Solutions');
+  t('Sujet');
   t('Sujet de votre message');
   t('Thématique(s) concernée(s)');
   t('Type de client');

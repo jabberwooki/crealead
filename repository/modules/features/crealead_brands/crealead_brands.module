@@ -25,8 +25,9 @@ function crealead_brands_init() {
     drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_brands_similar_clients.js');
     drupal_add_css(drupal_get_path('module', 'crealead_brands') . '/css/crealead_brands_clients.css');
   }
-  elseif (sizeof(arg()) > 2 && strpos(request_uri(), '/marques-sectorielles/', 0) !== FALSE) {
+  elseif (sizeof(arg()) > 2 && strpos(request_uri(), '/poles-activites/', 0) !== FALSE) {
       drupal_add_js(drupal_get_path('theme', 'crealead') . '/js/match-actu-height.js');
+      drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
   }
   elseif (sizeof(arg()) > 2 && arg(0) =='user' && arg(2) == 'edit') {
       $pole_manager_role = user_role_load_by_name('responsable de pôle');
@@ -34,7 +35,7 @@ function crealead_brands_init() {
       drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_manager_role_handling.js');
   }
 
-  drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
+//    drupal_add_js(drupal_get_path('module', 'crealead_brands') . '/js/crealead_sector_brands_menu.js');
 }
 
 /**
@@ -467,6 +468,33 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
       }
     }
   }
+  elseif ($form_id == 'pole_coes_contact_entityform_edit_form') {
+      if (arg(2) != 'edit') {
+          $pole = taxonomy_term_load(arg(2));
+          $form['field_pole_coes_subject']['und'][0]['value']['#default_value'] = "[$pole->name] ";
+          $form['field_pole_tid']['und'][0]['value']['#default_value'] = arg(2);
+
+          list($user_email, $user_name, $coes_emails) = crealead_brands_get_sector_brand_coes_emails(arg(2));
+          $form['field_pole_coes_emails']['und'][0]['value']['#default_value'] = implode(', ', $coes_emails);
+          $form['field_pole_coes_from']['und'][0]['value']['#default_value'] = $user_email;
+          $form['field_pole_coes_sender']['und'][0]['value']['#default_value'] = $user_name;
+
+          $form['field_pole_tid']['#disabled'] = TRUE;
+          $form['field_pole_coes_from']['#disabled'] = TRUE;
+          $form['field_pole_coes_emails']['#disabled'] = TRUE;
+          $form['field_pole_coes_sender']['#disabled'] = TRUE;
+      }
+  }
+  elseif($form_id == 'taxonomy_form_term') {
+      if ($form['vocabulary_machine_name']['#value'] == 'sector_brands') {
+          dpm($form);
+          foreach ($form['field_pole_email_form']['und']['#options'] as $key=>$option) {
+              if ($option == 'Contact' || $option == 'Nous contacter') {
+                  unset($form['field_pole_email_form']['und']['#options'][$key]);
+              }
+          }
+      }
+  }
 }
 
 /**
@@ -639,12 +667,8 @@ function crealead_brands_views_pre_render(&$view) {
       elseif ($view->current_display == 'sector_brand_brands') {
           global $user;
           $allowed_roles = array('administrateur', 'webmaster');
-          dpm($user->roles, 'user roles');
-          dpm($allowed_roles, 'roles autorisés');
-          dpm(array_intersect($allowed_roles, $user->roles));
 
           if ($user->uid != 1 && empty(array_intersect($allowed_roles, $user->roles))) {
-              dpm('ni admin ni webmaster');
               $full_user = user_load($user->uid);
 
               if (!isset($full_user->field_pole_manager['und'][0]['tid'])) {
@@ -656,9 +680,6 @@ function crealead_brands_views_pre_render(&$view) {
                       $view->header = array();
                   }
               }
-          }
-          else {
-              dpm('admin ou webmaster ou les deux');
           }
       }
   }
@@ -1141,4 +1162,50 @@ function crealead_brands_views_pre_view(&$view, &$display_id, &$args) {
 
     $view->display_handler->set_option('header', $header);
   }
+}
+
+function crealead_brands_get_sector_brand_coes_emails($sector_brand_tid) {
+    // Récup de toutes la marques attachées au pole passé en paramètre.
+    $query = new EntityFieldQueryExtraFields();
+    $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'brand')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_related_sector_brands', 'tid', $sector_brand_tid)
+        ->addExtraField('', 'title', 'title', 'node')
+        ->addExtraField('field_brand_coes', 'value');
+    $result = $query->execute();
+
+    // Récup de tous les mails des coes via les field  collections.
+    if (isset($result['node'])) {
+        $coe_uids = array();
+        global $user;
+
+        foreach ($result['node'] as $brand) {
+            $fc_item_ids = $brand->extraFields->field_brand_coes_;
+            if (is_string($fc_item_ids)) {
+                $wrapper = entity_metadata_wrapper('field_collection_item', $fc_item_ids);
+                if ($wrapper->field_brand_coe->mail->value() != $user->mail) {
+                    $coe_uids[$wrapper->field_brand_coe->mail->value()] = strtolower($wrapper->field_brand_coe->mail->value()); // . ', ';
+                }
+
+            }
+            else {
+                foreach ($fc_item_ids as $item_id) {
+                    $wrapper = entity_metadata_wrapper('field_collection_item', $item_id);
+                    if ($wrapper->field_brand_coe->mail->value() != $user->mail) {
+                        $coe_uids[$wrapper->field_brand_coe->mail->value()] = strtolower($wrapper->field_brand_coe->mail->value()); // . ', ';
+                    }
+                }
+            }
+        }
+    }
+    sort($coe_uids);
+
+    // il faut supprimer la chaine ', ' ajoutée aussi au dernier email.
+    $last_key = count($coe_uids) -1;
+    $coe_uids[$last_key] = str_replace(', ', '', $coe_uids[$last_key]);
+
+    global $user;
+
+    return [$user->mail, $user->name, $coe_uids];
 }

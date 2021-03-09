@@ -2215,6 +2215,13 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Lien vers email aux coes';
+  $handler->display->display_options['header']['area']['content'] = '<a id="coes-message-form-link">Envoyer un message aux co-entrepreneurs</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -2566,6 +2573,8 @@ function crealead_brands_views_default_views() {
     t('Marque à afficher dans le formulaire de création/modification d\'une formation.'),
     t('Marques d\'une marque sectorielle'),
     t('Les marques'),
+    t('Lien vers email aux coes'),
+    t('<a id="coes-message-form-link">Envoyer un message aux co-entrepreneurs</a>'),
     t('Aucune marque ne correspond à vos critères de recherche.'),
     t('term from field_related_sector_brands'),
     t('Marques d\'une certification/label'),
@@ -3130,6 +3139,119 @@ function crealead_brands_views_default_views() {
     t('more'),
   );
   $export['field_collection_coes'] = $view;
+
+  $view = new view();
+  $view->name = 'pole_coes_emails';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'Emails aux coes d\'un pôle';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Emails envoyés';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Aucun email n\'a encore été envoyé aux co-entrepreneurs du pôle.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Expéditeur */
+  $handler->display->display_options['fields']['field_pole_coes_sender']['id'] = 'field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['table'] = 'field_data_field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['field'] = 'field_pole_coes_sender';
+  /* Field: Entityform Submission: De */
+  $handler->display->display_options['fields']['field_pole_coes_from']['id'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['table'] = 'field_data_field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['field'] = 'field_pole_coes_from';
+  /* Field: Entityform Submission: Sujet */
+  $handler->display->display_options['fields']['field_pole_coes_subject']['id'] = 'field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['table'] = 'field_data_field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['field'] = 'field_pole_coes_subject';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Contextual filter: Entityform Submission: Identifiant du pole (field_pole_tid) */
+  $handler->display->display_options['arguments']['field_pole_tid_value']['id'] = 'field_pole_tid_value';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['table'] = 'field_data_field_pole_tid';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['field'] = 'field_pole_tid_value';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pole_coes_contact' => 'pole_coes_contact',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'pole_emails_page');
+  $handler->display->display_options['path'] = 'emails-aux-coes-d-un-p-le';
+
+  /* Display: Bloc */
+  $handler = $view->new_display('block', 'Bloc', 'pole_emails');
+  $translatables['pole_coes_emails'] = array(
+    t('Master'),
+    t('Emails envoyés'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Aucun email n\'a encore été envoyé aux co-entrepreneurs du pôle.'),
+    t('.'),
+    t(','),
+    t('Date d\'envoi'),
+    t('Expéditeur'),
+    t('De'),
+    t('Sujet'),
+    t('Tout'),
+    t('Page'),
+    t('Bloc'),
+  );
+  $export['pole_coes_emails'] = $view;
 
   $view = new view();
   $view->name = 'sector_brands';

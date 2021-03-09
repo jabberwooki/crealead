@@ -12953,7 +12953,8 @@ body.front #block-views-articles-testimonials-front {
 .view-id-gazettes .col-md-4 > div h3 a {
   display: block;
 }
-/* Introduction Pole d'activité ***************************************************************************************/
+/* 1 - PAGE D'UN POLE D'ACTIVITÉ **************************************************************************************/
+/* 1.1 - Introduction Pole d'activité ***************************************************************************************/
 #introduction.sector-brands-header {
   margin-top: 40px;
   overflow: hidden;
@@ -12999,6 +13000,7 @@ body.not-logged-in .region-sector-brands-header {
 }
 /* bouton open-close **************************************************************************************************/
 /* Pole d'activité main container *****************************************************************************************************/
+/* 1.2 - Contenu de la page *******************************************************************************************/
 #taxonomy-term-sector-brand-container {
   margin-top: 0;
   padding-top: 0;
@@ -13034,11 +13036,15 @@ body.not-logged-in .region-sector-brands-header {
   background-color: #999999;
   color: white;
 }
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li.group-pole-email-tab {
+  display: none;
+}
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs {
   /* A LA UNE */
   /* SOLUTIONS */
   /* RÉALISATIONS */
   /* LES CO-ENTREPRENEURS */
+  /* ENVOI DE MESSAGES (onglet caché en css) */
   /* ACTUALITES */
   /* ARTICLES */
 }
@@ -13075,12 +13081,75 @@ body.not-logged-in .region-sector-brands-header {
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-header p {
   text-align: right;
 }
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-header p a {
+  display: inline-block;
+  background-color: #bf0e38;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  height: 35px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-header p a:before {
+  font-family: "fontello";
+  content: "\e834";
+  position: relative;
+  width: 1em;
+  color: white;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-header p a:hover {
+  cursor: pointer;
+}
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .view-css-effect {
   box-shadow: none;
   border: 1px solid #999999;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs .info {
   text-align: center;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages {
+  /* Le formulaire */
+  /* La liste des emails précédemment envoyés */
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form {
+  border-bottom: 1px dashed #999999;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type h3 {
+  font-family: Quicksand, sans-serif;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-tid {
+  visibility: hidden;
+  height: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-sender {
+  float: left;
+  width: 250px;
+  margin-right: 20px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-from {
+  float: left;
+  width: 250px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-from label {
+  visibility: hidden;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-emails {
+  clear: both;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-message .ckeditor_links {
+  display: none;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-message .filter-wrapper {
+  display: none;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--actualits .col .node-news .field-group-div {
   border: 1px solid #999999;
@@ -13095,6 +13164,16 @@ body.not-logged-in .region-sector-brands-header {
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--articles .node-article {
   padding: 10px;
   border: 1px solid #999999;
+}
+/* 2 - PAGE D'UN MESSAGE ENVOYÉ AUX CO-ENTREPRENEURS ******************************************************************/
+.entityform-pole-coes-contact.view-mode-full .field-name-field-pole-coes-from,
+.entityform-pole-coes-contact.view-mode-full .field-name-submission-date {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 10px;
+}
+.entityform-pole-coes-contact.view-mode-full .field-name-field-pole-coes-subject {
+  margin-bottom: 20px;
 }
 .getlocations_map_canvas div.gm-style > div > div > div > div > div > img[src*="mapcnt6"] {
   max-height: none;

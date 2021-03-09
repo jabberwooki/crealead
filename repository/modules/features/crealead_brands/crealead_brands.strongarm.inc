@@ -552,7 +552,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '3',
+            'weight' => '9',
             'visible' => FALSE,
           ),
           'block' => array(
@@ -970,7 +970,7 @@ function crealead_brands_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_sector_brands_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'poles-activites/[term:name]';
   $export['pathauto_taxonomy_term_sector_brands_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

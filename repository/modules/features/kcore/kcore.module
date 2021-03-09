@@ -327,7 +327,7 @@ function kcore_admin_menu_output_alter(&$content) {
 /**
  * Implements hook_node_access().
  */
-function kcore_node_access($node, $op, $account) {watchdog('kcore', 'op = ' . $op);
+function kcore_node_access($node, $op, $account) {
   if (isset($node->type) && $node->type == 'webform' && !user_is_logged_in()) {
     return NODE_ACCESS_DENY;
   }

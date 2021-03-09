@@ -29,5 +29,37 @@ function crealead_brands_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_rules_email_to_pole_coes'] = entity_import('rules_config', '{ "rules_rules_email_to_pole_coes" : {
+      "LABEL" : "Email aux coE d\\u0027un p\\u00f4le",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "mimemail", "entityform" ],
+      "ON" : { "entityform_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "pole_coes_contact" : "pole_coes_contact" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "mimemail" : {
+            "USING" : {
+              "key" : "pole_coes_email",
+              "to" : [ "entityform:field-pole-coes-from" ],
+              "bcc" : [ "entityform:field-pole-coes-emails" ],
+              "from_name" : [ "entityform:field-pole-coes-sender" ],
+              "from_mail" : [ "entityform:field-pole-coes-from" ],
+              "subject" : [ "entityform:field-pole-coes-subject" ],
+              "body" : [ "entityform:field-pole-coes-message:value" ],
+              "language" : [ "" ]
+            },
+            "PROVIDE" : { "send_status" : { "send_status" : "Send status" } }
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
