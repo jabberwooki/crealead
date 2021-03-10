@@ -1078,6 +1078,14 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
+  /* Field: Registration: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['created']['label'] = 'Date inscription';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Registration: Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
@@ -2159,6 +2167,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.'),
     t('Options avancées'),
     t('dd-mm-yy'),
     t('Date réunion'),
+    t('Date inscription'),
     t('Projet d\'activité'),
     t('Ville (ex : mont|sete|sète)'),
     t('La barre verticale "|" signifie "ou".'),
