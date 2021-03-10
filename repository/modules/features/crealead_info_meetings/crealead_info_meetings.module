@@ -32,7 +32,9 @@ function crealead_info_meetings_init() {
     }
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
     drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
-    drupal_add_js(array('crealead_info_meeting_location' => $node->field_meeting_location['und'][0]['value']), 'setting');
+    if (isset($node)) {
+        drupal_add_js(array('crealead_info_meeting_location' => $node->field_meeting_location['und'][0]['value']), 'setting');
+    }
   }
   elseif (NULL !== arg(1) && in_array(arg(1), array('mo','ni','se','di'))) {
     drupal_page_is_cacheable(FALSE);
