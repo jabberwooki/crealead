@@ -3161,6 +3161,57 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entityform_id' => 'entityform_id',
+    'created' => 'created',
+    'field_pole_coes_sender' => 'field_pole_coes_sender',
+    'field_pole_coes_from' => 'field_pole_coes_sender',
+    'field_pole_coes_subject' => 'field_pole_coes_subject',
+    'link_entityform' => 'link_entityform',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_sender' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_from' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_subject' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_entityform' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -3190,6 +3241,8 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['field_pole_coes_from']['id'] = 'field_pole_coes_from';
   $handler->display->display_options['fields']['field_pole_coes_from']['table'] = 'field_data_field_pole_coes_from';
   $handler->display->display_options['fields']['field_pole_coes_from']['field'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['text'] = '([field_pole_coes_from])';
   /* Field: Entityform Submission: Sujet */
   $handler->display->display_options['fields']['field_pole_coes_subject']['id'] = 'field_pole_coes_subject';
   $handler->display->display_options['fields']['field_pole_coes_subject']['table'] = 'field_data_field_pole_coes_subject';
@@ -3246,6 +3299,7 @@ function crealead_brands_views_default_views() {
     t('Date d\'envoi'),
     t('Expéditeur'),
     t('De'),
+    t('([field_pole_coes_from])'),
     t('Sujet'),
     t('Tout'),
     t('Page'),
