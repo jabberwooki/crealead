@@ -279,11 +279,15 @@ function crealead_articles_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Nature de l&#039;article (field_article_kind) */
+  $handler->display->display_options['filters']['field_article_kind_value']['id'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['table'] = 'field_data_field_article_kind';
+  $handler->display->display_options['filters']['field_article_kind_value']['field'] = 'field_article_kind_value';
+  $handler->display->display_options['filters']['field_article_kind_value']['value'] = array(
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_article_kind_value']['group'] = 1;
 
   /* Display: Articles d'une marque sectorielle */
   $handler = $view->new_display('entity_view', 'Articles d\'une marque sectorielle', 'sector_brand_articles');
