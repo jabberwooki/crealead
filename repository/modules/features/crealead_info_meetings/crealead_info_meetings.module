@@ -239,9 +239,11 @@ function crealead_info_meetings_views_pre_render(&$view) {
                     $modified_markup = '<span class="applicant-not-processed">' . $markup . '</span>';
                     break;
                 case '1':
+//                    dpm('applicant-processed-yes');
                     $modified_markup = '<span class="applicant-processed-yes">' . $markup . '</span>';
                     break;
                 case '2':
+//                    dpm('applicant-processed-no');
                     $modified_markup = '<span class="applicant-processed-no">' . $markup . '</span>';
             }
             $result->field_field_applicant[0]['rendered']['#markup'] = $modified_markup;
@@ -357,7 +359,7 @@ function crealead_check_registrants_as_present(&$entity, $context) {
  * @param $context
  */
 function crealead_check_registrants_as_absent(&$entity, $context) {
-  crealead_field_attendance_value_alter($entity->registration_id, 2);
+    crealead_field_attendance_value_alter($entity->registration_id, 2);
 }
 
 /**
@@ -423,11 +425,16 @@ function crealead_check_registrants_as_non_cape(&$entity, $context) {
  * @param integer $value Value to be given to field_attendee (1 to mark as present, 2 to mark as absent).
  */
 function crealead_field_attendance_value_alter($registration_id, $value) {
-  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
-  if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
-    $registration_wrapper->field_attendance->set($value);
-    $registration_wrapper->save();
-  }
+    $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
+    if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
+        if ($value == 2)  {
+            $registration_wrapper->field_cape->set($value);
+            $registration_wrapper->field_applicant->set($value);
+        }
+        $registration_wrapper->field_attendance->set($value);
+        $registration_wrapper->save();
+    }
 }
 
 /**
@@ -438,7 +445,14 @@ function crealead_field_attendance_value_alter($registration_id, $value) {
  */
 function crealead_field_applicant_value_alter($registration_id, $value) {
     $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
     if (isset($registration_wrapper->field_applicant) && !empty($registration_wrapper->field_applicant)) {
+        if ($value == 2) {
+            $registration_wrapper->field_cape->set($value);
+        }
+        else {
+            $registration_wrapper->field_attendance->set($value);
+        }
         $registration_wrapper->field_applicant->set($value);
         $registration_wrapper->save();
     }
@@ -452,7 +466,12 @@ function crealead_field_applicant_value_alter($registration_id, $value) {
  */
 function crealead_field_cape_value_alter($registration_id, $value) {
     $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
     if (isset($registration_wrapper->field_cape) && !empty($registration_wrapper->field_cape)) {
+        if ($value == 1) {
+            $registration_wrapper->field_attendance->set($value);
+            $registration_wrapper->field_applicant->set($value);
+        }
         $registration_wrapper->field_cape->set($value);
         $registration_wrapper->save();
     }
