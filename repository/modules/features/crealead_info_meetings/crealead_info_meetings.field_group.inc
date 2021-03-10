@@ -21,7 +21,7 @@ function crealead_info_meetings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Infos dépendantes',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(

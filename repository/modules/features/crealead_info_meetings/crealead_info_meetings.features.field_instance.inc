@@ -542,6 +542,45 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
   );
 
   // Exported field_instance:
+  // 'registration-info_meeting_registration-field_applicant'.
+  $field_instances['registration-info_meeting_registration-field_applicant'] = array(
+    'bundle' => 'info_meeting_registration',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'registration',
+    'field_name' => 'field_applicant',
+    'label' => 'A candidaté',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
   // 'registration-info_meeting_registration-field_attendance'.
   $field_instances['registration-info_meeting_registration-field_attendance'] = array(
     'bundle' => 'info_meeting_registration',
@@ -700,6 +739,45 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
       ),
       'type' => 'text_textfield',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-info_meeting_registration-field_cape'.
+  $field_instances['registration-info_meeting_registration-field_cape'] = array(
+    'bundle' => 'info_meeting_registration',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'registration',
+    'field_name' => 'field_cape',
+    'label' => 'A signé un CAPE',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
@@ -1622,6 +1700,8 @@ Au moment de la sauvegarde, le présent texte sera automatiquement remplacé par
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A candidaté');
+  t('A signé un CAPE');
   t('Acceptation politique de confidentialité');
   t('Civilité');
   t('Code postal');
