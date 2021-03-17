@@ -188,7 +188,14 @@ function crealead_profiles_strongarm() {
           'weight' => '11',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'users_eva_user_infos' => array(
+          'default' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_profile2__coe_page'] = $strongarm;
@@ -343,7 +350,7 @@ function crealead_profiles_strongarm() {
         ),
         'mimemail' => array(
           'full' => array(
-            'weight' => '8',
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),

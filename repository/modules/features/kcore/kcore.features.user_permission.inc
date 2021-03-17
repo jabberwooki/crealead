@@ -90,6 +90,7 @@ function kcore_user_default_permissions() {
     'name' => 'access devel information',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'debug' => 'debug',
     ),
     'module' => 'devel',
   );

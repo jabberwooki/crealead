@@ -104,6 +104,74 @@ function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
 
       // Field field_email_sent must be hidden systematically (technical field).
       $form['profile_coe_page']['field_email_sent']['#access'] = FALSE;
+
+        /////////////////// Gestion du widget Socialfield //////////////////////
+        // Tant qu'aucun réseau n'a été enregistré, le formulaire affiche les x champs vides,
+        // soit un par réseau activé dans le paramétrage du module socialfield.
+        // Dès qu'on a enregistré un premier réseau, le formulaire n'affiche plus que le champ de ce réseau
+        // + un SELECT pour ajouter un autre réseau qui fonctionne avec un callback Ajax.
+        // La suppression d'un réseau via le bouton RETIRER  fonctionne aussi avec ajax.
+        //
+        // PB : Ces deux mécanismes (ajout/retrait) fonctionnent bien pour une marque et un pole.
+        // Ils ne fonctionnent pas du tout pour le profil entrepreneur.
+        // Donc on fait en sorte que les x champs de réseau sociaux soient toujours tous affichés
+        // (ceux qui sont déjà enregistrés + un champ vide pour chaque réseau encore disponible).
+        // et on désactive le SELECT.
+
+//        // On récupère le champ Réseaux sociaux.
+//        $social_buttons = $form['profile_coe_page']['field_social_links']['und']['social_buttons'];
+//        // On récupère la liste des réseaux qu'il est possible de rajouter
+//        $options = $social_buttons['add_one_social']['#options'];
+//
+//        // Si on a accès au SELECT, c'est qu'au moins un réseau a déjà été enregistré.
+//        // Donc par défaut, on n'a plus que le ou les réseaux déjà enregistrés + le SELECT pour en ajouter d'autres.
+//        if ($social_buttons['add_one_social']['#access']) {
+//            // on récupère les réseaux enregistrés.
+//            $registered_networks = array_filter($social_buttons, function ($key) {
+//                return (substr($key,0, 8) == 'element_') ? true : false;
+//            }, ARRAY_FILTER_USE_KEY);
+//
+//            // on récupère le poids du dernier de la liste
+//            $last_current_element = end($registered_networks);
+//            $last_weight = $last_current_element['weight']['#default_value'];
+//
+//            // On vire la première entrée de la liste des réseaux disponibles (c'est l'option "Ajouter").
+//            array_shift($options);
+//
+//            if (count($options) > 0 ) {
+//                $index = count($registered_networks); // pour connaitre le prochain 'element_x' à ajouter.
+//                $weight = $last_weight + 1; // poids du prochain élement = poids du dernier enregistré + 1
+//
+//                foreach ($options as $key => $option) {
+//                    // on commence par faire une copie du premier réseau enregistré (peu importe qui il est)
+//                    $social_buttons['element_' . $index] = $social_buttons['element_0'];
+//                    // puis on ajuste 4 données pour le réseau à ajouter.
+//                    $social_buttons['element_' . $index]['url']['#default_value'] = ''; // pas encore d'url
+//                    $social_buttons['element_' . $index]['weight']['#default_value'] = $weight; // son poids
+//                    $social_buttons['element_' . $index]['#service'] = $key; // son nom (en minuscule)
+//                    $form_state['services'][] = $key;
+//                    $social_buttons['element_' . $index]['operation']['#name'] = 'element_' . $index; // ça devrait pas servir puisqu'on va cacher le bouton RETIRER.
+//                    $index++;
+//                    $weight += 1;
+//                }
+//            }
+//            // On indique le nombre total d'elements à afficher.
+//            // Si on ne touche pas à cette valeur, seuls les réseaux déjà enregistrés s'afficheront
+//            // meme si $social_buttons contient tous les réseaux disponibles.
+//            $social_buttons['#num_elements'] = $form_state['num_elements'] = count($registered_networks) + count($options);
+//
+////            $form_state['num_elements'] = count($registered_networks) + count($options);
+//
+//            // On vire le SELECT
+//            unset($social_buttons['add_one_social']);
+//
+//            $form['profile_coe_page']['field_social_links']['und']['social_buttons'] = $social_buttons;
+//
+//            // IMPORTANT ! Il faut aussi agir sur le $form_state.
+//            dpm($form_state);
+//
+//        }
+        ////////////// fin de  Gestion du widget Socialfield ///////////////////
       break;
 
     default:

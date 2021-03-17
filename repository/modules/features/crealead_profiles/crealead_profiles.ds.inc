@@ -75,11 +75,6 @@ function crealead_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_coopins_balance' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['profile2|coe_page|default'] = $ds_fieldsetting;
 
@@ -217,6 +212,8 @@ function crealead_profiles_ds_layout_settings_info() {
       'right' => array(
         5 => 'field_coe_photo',
         6 => 'field_competencies',
+        7 => 'field_coe_social',
+        8 => 'users_eva_user_infos',
       ),
     ),
     'fields' => array(
@@ -227,6 +224,8 @@ function crealead_profiles_ds_layout_settings_info() {
       'field_coopins_balance' => 'left',
       'field_coe_photo' => 'right',
       'field_competencies' => 'right',
+      'field_coe_social' => 'right',
+      'users_eva_user_infos' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
