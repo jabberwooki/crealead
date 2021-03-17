@@ -85,6 +85,7 @@ features[field_instance][] = entityform-site_contact-field_contact_subject
 features[field_instance][] = taxonomy_term-business_groups-field_group_type
 features[field_instance][] = user-user-field_interested_users_warning
 features[field_instance][] = user-user-field_pole_manager
+features[field_instance][] = user-user-field_social_links
 features[field_instance][] = user-user-field_user_firstname
 features[field_instance][] = user-user-field_user_lastname
 features[field_instance][] = user-user-field_user_referent

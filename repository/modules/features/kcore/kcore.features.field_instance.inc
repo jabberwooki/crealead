@@ -426,6 +426,64 @@ function kcore_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_social_links'.
+  $field_instances['user-user-field_social_links'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_social_links',
+    'label' => 'Liens réseaux sociaux',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'used_services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'socialfield_widget',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_user_firstname'.
   $field_instances['user-user-field_user_firstname'] = array(
     'bundle' => 'user',
@@ -667,6 +725,7 @@ function kcore_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alertes sessions de formation');
   t('Je veux recevoir un courriel chaque fois qu\'un utilisateur est intéressé par une de mes sessions de formation.');
+  t('Liens réseaux sociaux');
   t('Nom');
   t('Prénom');
   t('Responsable de pôle');
