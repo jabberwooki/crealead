@@ -1170,6 +1170,39 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_solutions_products|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_solutions_products';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_solutions_tab';
+  $field_group->data = array(
+    'label' => 'Produits',
+    'weight' => '25',
+    'children' => array(
+      0 => 'products_sector_brands_products',
+      1 => 'products_sector_brands_products_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Produits',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-pole-solutions-products field-group-bootstrap_grid_col col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_pole_solutions_products|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_pole_solutions_tab|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_pole_solutions_tab';
   $field_group->entity_type = 'taxonomy_term';
@@ -1193,6 +1226,39 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_pole_solutions_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_solutions_trainings|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_solutions_trainings';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_solutions_tab';
+  $field_group->data = array(
+    'label' => 'Formations',
+    'weight' => '26',
+    'children' => array(
+      0 => 'trainings_sector_brand_trainings',
+      1 => 'trainings_sector_brand_trainings_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Formations',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-pole-solutions-trainings field-group-bootstrap_grid_col col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_pole_solutions_trainings|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
