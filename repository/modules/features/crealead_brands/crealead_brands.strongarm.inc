@@ -709,7 +709,7 @@ function crealead_brands_strongarm() {
         ),
         'trainings_sector_brand_trainings' => array(
           'full' => array(
-            'weight' => '11',
+            'weight' => '10',
             'visible' => TRUE,
           ),
           'default' => array(
@@ -747,12 +747,24 @@ function crealead_brands_strongarm() {
         ),
         'products_sector_brands_products' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '24',
             'visible' => TRUE,
           ),
           'pole_header' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+        ),
+        'products_sector_brands_products_form' => array(
+          'full' => array(
+            'weight' => '23',
+            'visible' => TRUE,
+          ),
+        ),
+        'trainings_sector_brand_trainings_form' => array(
+          'full' => array(
+            'weight' => '9',
+            'visible' => TRUE,
           ),
         ),
       ),

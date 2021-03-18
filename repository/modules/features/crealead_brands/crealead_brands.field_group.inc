@@ -1180,8 +1180,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Solutions',
     'weight' => '14',
     'children' => array(
-      0 => 'trainings_sector_brand_trainings',
-      1 => 'products_sector_brands_products',
+      0 => 'group_pole_solutions_products',
+      1 => 'group_pole_solutions_trainings',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
