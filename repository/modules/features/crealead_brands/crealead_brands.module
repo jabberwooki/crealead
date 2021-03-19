@@ -429,30 +429,55 @@ function crealead_brands_entity_view_alter(&$build, $type) {
     elseif ($build['#entity_type'] == 'entityform_type' && $build['#entity']->type == 'pole_contact' && $build['#view_mode'] == 'full') {
         $build['#entity']->label = 'Formulaire de contact';
     }
-    elseif ($build['#entity_type'] == 'taxonomy_term' && $build['#bundle'] == 'sector_brands' && $build['#view_mode'] == 'pole_header') {
-        // Si le formulaire de contact du pole n'est pas sélectionné ou s'il n'y a encore aucun responsable de pole,
-        // on n'affiche pas le lien vers le formulaire de contact dans l'en-tete de page du pole.
-        if (empty($build['#term']->field_pole_contact_form) || empty(crealead_brands_get_sector_brand_managers_emails($build['#term']->tid))) {
-            unset($build['field_lien_formulaire_contact']);
+    elseif ($build['#entity_type'] == 'taxonomy_term' && $build['#bundle'] == 'sector_brands') {
+        if ($build['#view_mode'] == 'pole_header') {
+            // Si le formulaire de contact du pole n'est pas sélectionné ou s'il n'y a encore aucun responsable de pole,
+            // on n'affiche pas le lien vers le formulaire de contact dans l'en-tete de page du pole.
+            if (empty($build['#term']->field_pole_contact_form) || empty(crealead_brands_get_sector_brand_managers_emails($build['#term']->tid))) {
+                unset($build['field_lien_formulaire_contact']);
+            }
+            // sinon, on affiche la valeur du lien enregistrée
+            // ou si aucune valeur n'est enregistrée, on affiche par défaut "Contact", avec les balises html qui vont bien.
+            else {
+                if (isset($build['field_lien_formulaire_contact'][0]['#markup'])) {
+                    $build['field_lien_formulaire_contact'][0]['#markup'] =
+                        '<a href="#bootstrap-fieldgroup-nav-item--contact">'
+                        . $build['field_lien_formulaire_contact'][0]['#markup']
+                        . '</a>';
+                }
+                else {
+                    $build['field_lien_formulaire_contact'][0]['#markup'] =
+                        '<div class="field field-name-field-lien-formulaire-contact field-type-text field-label-hidden">'
+                        . '<div class="field-items">'
+                        . '<div class="field-items">'
+                        . '<a href="#bootstrap-fieldgroup-nav-item--contact">Contact</a>'
+                        . '</div>'
+                        . '</div>'
+                        . '</div>';
+                }
+            }
         }
-        // sinon, on affiche la valeur du lien enregistrée
-        // ou si aucune valeur n'est enregistrée, on affiche par défaut "Contact", avec les balises html qui vont bien.
-        else {
-            if (isset($build['field_lien_formulaire_contact'][0]['#markup'])) {
-                $build['field_lien_formulaire_contact'][0]['#markup'] =
-                    '<a href="#bootstrap-fieldgroup-nav-item--contact">'
-                    . $build['field_lien_formulaire_contact'][0]['#markup']
-                    . '</a>';
+        elseif ($build['#view_mode'] == 'full') {
+            // Gestion de l'affichage des contacts reçus par le pole
+            // Pour pouvoir les voir, il faut :
+            // - etre connecté
+            // ET
+            // - etre superadmin ou adminstrateur ou webmaster
+            // OU
+            // - etre responsable du pole visité.
+            if (!user_is_logged_in()) {
+                unset($build['pole_contacts']);
             }
             else {
-                $build['field_lien_formulaire_contact'][0]['#markup'] =
-                    '<div class="field field-name-field-lien-formulaire-contact field-type-text field-label-hidden">'
-                        . '<div class="field-items">'
-                            . '<div class="field-items">'
-                                . '<a href="#bootstrap-fieldgroup-nav-item--contact">Contact</a>'
-                            . '</div>'
-                        . '</div>'
-                    . '</div>';
+                global $user;
+                $allowed_roles = array('administrateur', 'webmaster');
+
+                if ($user->uid != 1 && sizeof(array_intersect($allowed_roles, $user->roles)) == 0) {
+                    $full_user = user_load($user->uid);
+                    if (empty($full_user->field_pole_manager) || $full_user->field_pole_manager['und'][0]['tid'] != $build['#term']->tid) {
+                        unset($build['pole_contacts']);
+                    }
+                }
             }
         }
     }
@@ -1210,6 +1235,9 @@ function crealead_brands_views_pre_view(&$view, &$display_id, &$args) {
 
         $view->display_handler->set_option('header', $header);
     }
+//    elseif ($view->name == 'pole_coes_emails' && $view->current_display == 'pole_contacts') {
+//        dpm('emails reçus');dpm($view->name); dpm($display_id);
+//    }
 }
 
 function crealead_brands_get_sector_brand_coes_emails($sector_brand_tid) {
