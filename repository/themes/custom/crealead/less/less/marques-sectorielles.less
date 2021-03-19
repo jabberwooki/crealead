@@ -46,6 +46,25 @@
           height: auto;
         }
       }
+
+      .field-name-field-lien-formulaire-contact {
+        position: relative;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid @gris-fonce-crealead;
+
+        &:before {
+          position: absolute;
+          font-family: fontello;
+          color: #777777;
+          content: "\e820";
+          left: 0;
+        }
+      }
+
+      .field-name-field-social-links {
+      }
     }
   }
 }
@@ -219,7 +238,8 @@ body.not-logged-in {
       background-color: @gris-fonce-crealead;
       color: white;
     }
-    li.group-pole-email-tab {
+    li.group-pole-email-tab,
+    li.group-pole-contact-tab {
       display: none;
     }
   }
@@ -397,6 +417,26 @@ body.not-logged-in {
       }
       /* La liste des emails précédemment envoyés */
       .field-name-pole-emails {
+        h3 {
+          font-family: Quicksand, sans-serif;
+          font-size: 24px;
+          margin: 20px 0 10px 0;
+        }
+
+        .view-display-id-pole_emails {
+          .view-content {
+            padding-top: 0;
+
+            button.form-submit {
+              margin-left: 20px;
+              background-color: @rouge-crealead;
+              border-color: @rouge-crealead;
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+
         th.views-field-created {
           width: 10%;
         }
@@ -407,6 +447,49 @@ body.not-logged-in {
         }
         th.views-field-link-entityform {
           width: 5%;
+        }
+      }
+    }
+
+    /* FORMULAIRE DE CONTACT */
+    #bootstrap-fieldgroup-nav-item--contact {
+      h3 {
+        font-family: Quicksand, sans-serif;
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+      }
+      /* Le formulaire */
+      .field-name-field-pole-tid,
+      .field-name-field-contact-pole-emails,
+      .field-name-field-contact-pole-name {
+        margin-bottom: 0;
+        label {
+          display: none;
+        }
+        input {
+          height: 0;
+          padding: 0;
+          border: 0;
+        }
+      }
+      /* La liste des emails reçus */
+      .field-name-pole-contacts {
+        margin-top: 30px;
+        //padding-top: 20px;
+        border-top: 1px dashed @gris-fonce-crealead;
+
+        .view-display-id-pole_contacts {
+          .view-content {
+            padding-top: 0;
+
+            button.form-submit {
+              margin-left: 20px;
+              background-color: @rouge-crealead;
+              border-color: @rouge-crealead;
+              color: white;
+              font-weight: bold;
+            }
+          }
         }
       }
     }

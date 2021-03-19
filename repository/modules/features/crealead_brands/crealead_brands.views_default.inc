@@ -3275,8 +3275,175 @@ function crealead_brands_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'pole_emails_page');
   $handler->display->display_options['path'] = 'emails-aux-coes-d-un-p-le';
 
-  /* Display: Bloc */
-  $handler = $view->new_display('block', 'Bloc', 'pole_emails');
+  /* Display: Emails aux coes */
+  $handler = $view->new_display('block', 'Emails aux coes', 'pole_emails');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Emails envoyés aux co-entrepreneurs</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Expéditeur */
+  $handler->display->display_options['fields']['field_pole_coes_sender']['id'] = 'field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['table'] = 'field_data_field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['field'] = 'field_pole_coes_sender';
+  /* Field: Entityform Submission: De */
+  $handler->display->display_options['fields']['field_pole_coes_from']['id'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['table'] = 'field_data_field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['field'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['text'] = '([field_pole_coes_from])';
+  /* Field: Entityform Submission: Sujet */
+  $handler->display->display_options['fields']['field_pole_coes_subject']['id'] = 'field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['table'] = 'field_data_field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['field'] = 'field_pole_coes_subject';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Delete Link */
+  $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['delete_entityform']['field'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['label'] = '';
+  $handler->display->display_options['fields']['delete_entityform']['element_label_colon'] = FALSE;
+
+  /* Display: Emails aux managers */
+  $handler = $view->new_display('block', 'Emails aux managers', 'pole_contacts');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Emails reçus';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Prises de contact</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Vous n\'avez aucune demande de contact à traiter.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Vous voulez */
+  $handler->display->display_options['fields']['field_contact_type']['id'] = 'field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['table'] = 'field_data_field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['field'] = 'field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['label'] = 'Type';
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Votre nom */
+  $handler->display->display_options['fields']['field_contact_name']['id'] = 'field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['table'] = 'field_data_field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['field'] = 'field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['label'] = 'Nom';
+  /* Field: Entityform Submission: Sujet de votre message */
+  $handler->display->display_options['fields']['field_contact_subject']['id'] = 'field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['table'] = 'field_data_field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['field'] = 'field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['label'] = 'Sujet';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Delete Link */
+  $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['delete_entityform']['field'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['label'] = '';
+  $handler->display->display_options['fields']['delete_entityform']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Entityform Submission: Date submitted */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'entityform';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pole_contact' => 'pole_contact',
+  );
   $translatables['pole_coes_emails'] = array(
     t('Master'),
     t('Emails envoyés'),
@@ -3303,7 +3470,15 @@ function crealead_brands_views_default_views() {
     t('Sujet'),
     t('Tout'),
     t('Page'),
-    t('Bloc'),
+    t('Emails aux coes'),
+    t('<h3>Emails envoyés aux co-entrepreneurs</h3>'),
+    t('- Choose an operation -'),
+    t('Emails aux managers'),
+    t('Emails reçus'),
+    t('<h3>Prises de contact</h3>'),
+    t('Vous n\'avez aucune demande de contact à traiter.'),
+    t('Type'),
+    t('Nom'),
   );
   $export['pole_coes_emails'] = $view;
 

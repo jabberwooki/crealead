@@ -470,10 +470,18 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'sector_brands';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'pole_contacts' => array(
+      'weight' => '9',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'pole_emails' => array(
       'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['taxonomy_term|sector_brands|full'] = $ds_fieldsetting;
@@ -486,7 +494,7 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'pole_header';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -708,6 +716,21 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'pole_contacts';
+  $ds_field->label = 'Emails au pôle';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = 'sector_brands|*';
+  $ds_field->properties = array(
+    'block' => 'views|pole_coes_emails-pole_contacts',
+    'block_render' => '3',
+  );
+  $export['pole_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'pole_emails';
   $ds_field->label = 'Emails de Pôles';
   $ds_field->field_type = 6;
@@ -717,7 +740,7 @@ function crealead_brands_ds_custom_fields_info() {
   $ds_field->ui_limit = 'sector_brands|full';
   $ds_field->properties = array(
     'block' => 'views|pole_coes_emails-pole_emails',
-    'block_render' => '2',
+    'block_render' => '3',
   );
   $export['pole_emails'] = $ds_field;
 
@@ -1585,46 +1608,52 @@ function crealead_brands_ds_layout_settings_info() {
         0 => 'group_pole_tabs',
         1 => 'achievements_sector_brand_achievs',
         2 => 'news_sector_brand_news',
-        3 => 'trainings_sector_brand_trainings_form',
-        4 => 'brands_sector_brand_brands_form',
-        5 => 'achievements_sector_brands_front_achievs',
-        6 => 'brands_sector_brand_brands',
-        7 => 'articles_sector_brand_articles',
-        8 => 'trainings_sector_brand_trainings',
-        9 => 'field_pole_email_form',
-        10 => 'news_sector_brands_front_news',
-        11 => 'pole_emails',
-        12 => 'group_pole_front_tab',
-        13 => 'group_pole_solutions_tab',
-        14 => 'group_pole_achiev_tab',
-        15 => 'group_pole_coes_tab',
-        16 => 'group_pole_email_tab',
-        17 => 'group_pole_news_tab',
-        18 => 'group_pole_articles_tab',
-        19 => 'products_sector_brands_products_form',
-        20 => 'products_sector_brands_products',
-        21 => 'group_pole_solutions_products',
-        22 => 'group_pole_solutions_trainings',
+        3 => 'field_pole_contact_form',
+        4 => 'pole_contacts',
+        5 => 'trainings_sector_brand_trainings_form',
+        6 => 'brands_sector_brand_brands_form',
+        7 => 'trainings_sector_brand_trainings',
+        8 => 'articles_sector_brand_articles',
+        9 => 'brands_sector_brand_brands',
+        10 => 'achievements_sector_brands_front_achievs',
+        11 => 'news_sector_brands_front_news',
+        12 => 'field_pole_email_form',
+        13 => 'pole_emails',
+        14 => 'group_pole_front_tab',
+        15 => 'group_pole_solutions_tab',
+        16 => 'group_pole_achiev_tab',
+        17 => 'group_pole_coes_tab',
+        18 => 'group_pole_email_tab',
+        19 => 'group_pole_contact_tab',
+        20 => 'group_pole_news_tab',
+        21 => 'group_pole_articles_tab',
+        22 => 'products_sector_brands_products_form',
+        23 => 'products_sector_brands_products',
+        24 => 'group_pole_solutions_products',
+        25 => 'group_pole_solutions_trainings',
       ),
     ),
     'fields' => array(
       'group_pole_tabs' => 'ds_content',
       'achievements_sector_brand_achievs' => 'ds_content',
       'news_sector_brand_news' => 'ds_content',
+      'field_pole_contact_form' => 'ds_content',
+      'pole_contacts' => 'ds_content',
       'trainings_sector_brand_trainings_form' => 'ds_content',
       'brands_sector_brand_brands_form' => 'ds_content',
-      'achievements_sector_brands_front_achievs' => 'ds_content',
-      'brands_sector_brand_brands' => 'ds_content',
-      'articles_sector_brand_articles' => 'ds_content',
       'trainings_sector_brand_trainings' => 'ds_content',
-      'field_pole_email_form' => 'ds_content',
+      'articles_sector_brand_articles' => 'ds_content',
+      'brands_sector_brand_brands' => 'ds_content',
+      'achievements_sector_brands_front_achievs' => 'ds_content',
       'news_sector_brands_front_news' => 'ds_content',
+      'field_pole_email_form' => 'ds_content',
       'pole_emails' => 'ds_content',
       'group_pole_front_tab' => 'ds_content',
       'group_pole_solutions_tab' => 'ds_content',
       'group_pole_achiev_tab' => 'ds_content',
       'group_pole_coes_tab' => 'ds_content',
       'group_pole_email_tab' => 'ds_content',
+      'group_pole_contact_tab' => 'ds_content',
       'group_pole_news_tab' => 'ds_content',
       'group_pole_articles_tab' => 'ds_content',
       'products_sector_brands_products_form' => 'ds_content',
@@ -1659,19 +1688,21 @@ function crealead_brands_ds_layout_settings_info() {
       'left' => array(
         0 => 'field_brand_logo',
       ),
-      'right' => array(
-        1 => 'field_social_links',
-      ),
       'central' => array(
-        2 => 'title',
-        3 => 'description',
+        1 => 'title',
+        2 => 'description',
+      ),
+      'right' => array(
+        3 => 'field_lien_formulaire_contact',
+        4 => 'field_social_links',
       ),
     ),
     'fields' => array(
       'field_brand_logo' => 'left',
-      'field_social_links' => 'right',
       'title' => 'central',
       'description' => 'central',
+      'field_lien_formulaire_contact' => 'right',
+      'field_social_links' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -16,7 +16,7 @@ function crealead_brands_default_rules_configuration() {
       "REQUIRES" : [ "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },
       "IF" : [
-        { "entity_has_field" : { "entity" : [ "entityform" ], "field" : "field_contact_type" } }
+        { "entity_has_field" : { "entity" : [ "entityform" ], "field" : "field_contact_brand_name" } }
       ],
       "DO" : [
         { "mail" : {

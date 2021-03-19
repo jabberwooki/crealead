@@ -13015,6 +13015,20 @@ body.front #block-views-articles-testimonials-front {
 #introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .views-field-description.sector-brands-desc-open {
   height: auto;
 }
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact {
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #999999;
+}
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact:before {
+  position: absolute;
+  font-family: fontello;
+  color: #777777;
+  content: "\e820";
+  left: 0;
+}
 body.not-logged-in .region-sector-brands-header {
   margin-top: 20px;
 }
@@ -13056,7 +13070,8 @@ body.not-logged-in .region-sector-brands-header {
   background-color: #999999;
   color: white;
 }
-.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li.group-pole-email-tab {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li.group-pole-email-tab,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full ul.group-pole-tabs li.group-pole-contact-tab {
   display: none;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs {
@@ -13065,6 +13080,7 @@ body.not-logged-in .region-sector-brands-header {
   /* RÉALISATIONS */
   /* LES CO-ENTREPRENEURS */
   /* ENVOI DE MESSAGES (onglet caché en css) */
+  /* FORMULAIRE DE CONTACT */
   /* ACTUALITES */
   /* ARTICLES */
 }
@@ -13185,6 +13201,21 @@ body.not-logged-in .region-sector-brands-header {
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-field-pole-email-form .entity-entityform-type .content form.entitytype-pole_coes_contact-form .field-name-field-pole-coes-message .filter-wrapper {
   display: none;
 }
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-pole-emails h3 {
+  font-family: Quicksand, sans-serif;
+  font-size: 24px;
+  margin: 20px 0 10px 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-pole-emails .view-display-id-pole_emails .view-content {
+  padding-top: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-pole-emails .view-display-id-pole_emails .view-content button.form-submit {
+  margin-left: 20px;
+  background-color: #bf0e38;
+  border-color: #bf0e38;
+  color: white;
+  font-weight: bold;
+}
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-pole-emails th.views-field-created {
   width: 10%;
 }
@@ -13193,6 +13224,46 @@ body.not-logged-in .region-sector-brands-header {
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--envoi-de-messages .field-name-pole-emails th.views-field-link-entityform {
   width: 5%;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact {
+  /* Le formulaire */
+  /* La liste des emails reçus */
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact h3 {
+  font-family: Quicksand, sans-serif;
+  font-size: 24px;
+  margin: 20px 0 10px 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-pole-tid,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-emails,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-name {
+  margin-bottom: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-pole-tid label,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-emails label,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-name label {
+  display: none;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-pole-tid input,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-emails input,
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-field-contact-pole-name input {
+  height: 0;
+  padding: 0;
+  border: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-pole-contacts {
+  margin-top: 30px;
+  border-top: 1px dashed #999999;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-pole-contacts .view-display-id-pole_contacts .view-content {
+  padding-top: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--contact .field-name-pole-contacts .view-display-id-pole_contacts .view-content button.form-submit {
+  margin-left: 20px;
+  background-color: #bf0e38;
+  border-color: #bf0e38;
+  color: white;
+  font-weight: bold;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--actualits .col .node-news .field-group-div {
   border: 1px solid #999999;

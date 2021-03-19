@@ -1044,7 +1044,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
     'label' => 'Articles',
-    'weight' => '19',
+    'weight' => '20',
     'children' => array(
       0 => 'articles_sector_brand_articles',
     ),
@@ -1085,6 +1085,33 @@ function crealead_brands_field_group_info() {
     ),
   );
   $field_groups['group_pole_coes_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_contact_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_contact_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Contact',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_pole_contact_form',
+      1 => 'pole_contacts',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-contact-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_contact_tab|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1152,7 +1179,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
     'label' => 'Actualités',
-    'weight' => '18',
+    'weight' => '19',
     'children' => array(
       0 => 'news_sector_brand_news',
     ),
@@ -1280,6 +1307,7 @@ function crealead_brands_field_group_info() {
       4 => 'group_pole_news_tab',
       5 => 'group_pole_articles_tab',
       6 => 'group_pole_email_tab',
+      7 => 'group_pole_contact_tab',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
