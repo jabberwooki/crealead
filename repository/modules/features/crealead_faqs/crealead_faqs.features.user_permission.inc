@@ -15,6 +15,7 @@ function crealead_faqs_user_default_permissions() {
     'name' => 'create faq content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -27,6 +28,7 @@ function crealead_faqs_user_default_permissions() {
     'name' => 'delete any faq content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -37,7 +39,9 @@ function crealead_faqs_user_default_permissions() {
   // Exported permission: 'delete own faq content'.
   $permissions['delete own faq content'] = array(
     'name' => 'delete own faq content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 
@@ -46,6 +50,7 @@ function crealead_faqs_user_default_permissions() {
     'name' => 'edit any faq content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -56,7 +61,9 @@ function crealead_faqs_user_default_permissions() {
   // Exported permission: 'edit own faq content'.
   $permissions['edit own faq content'] = array(
     'name' => 'edit own faq content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 
