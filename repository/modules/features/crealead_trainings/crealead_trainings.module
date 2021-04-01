@@ -641,6 +641,7 @@ function crealead_trainings_node_presave($node) {
     }
 
     // --- Technical field_training_search field handling --- //
+    $brand_name = '';
     $training_intro = '';
     $training_public = '';
     $training_aims = '';
@@ -648,15 +649,25 @@ function crealead_trainings_node_presave($node) {
     $title = $node->title . ' ';
     $training_content = strip_tags($node->body['und'][0]['value']) . ' ';
 
+    if (!empty($node->field_training_related_brands['und'])) {
+        $brand_id = $node->field_training_related_brands['und'][0]['target_id'];
+        $brand_name .= db_select('node', 'n')
+            ->fields('n', array('title'))
+            ->condition('nid', $brand_id)
+            ->execute()
+            ->fetchField()
+            . ' ';
+    }
+
     if (!empty($node->field_introduction['und'])) {
-      $training_intro .= strip_tags($node->field_introduction['und'][0]['value']);
+      $training_intro .= strip_tags($node->field_introduction['und'][0]['value']) . ' ';
     }
 
     if (!empty($node->field_training_public['und'])) {
-      $training_public .= strip_tags($node->field_training_public['und'][0]['value']);
+      $training_public .= strip_tags($node->field_training_public['und'][0]['value']) . ' ';
     }
     if (!empty($node->field_training_aims['und'])) {
-      $training_aims = strip_tags($node->field_training_aims['und'][0]['value']);
+      $training_aims = strip_tags($node->field_training_aims['und'][0]['value']) . ' ';
     }
 
     if (isset($node->field_training_related_brands['und'])) {
@@ -672,7 +683,7 @@ function crealead_trainings_node_presave($node) {
       }
     }
     // Store training intro, content, public and objectives into field_training_search technical field.
-    $search_data =  $title . $training_intro . $training_content . $training_public . $training_aims . $certifs_labels_names;
+    $search_data =  $brand_name . $title . $training_intro . $training_content . $training_public . $training_aims . $certifs_labels_names;
 
     $search_array = array('value' => $search_data, 'format' => 'plain_text');
     if (!isset($node->field_training_search['und'][0])) {
