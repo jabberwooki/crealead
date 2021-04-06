@@ -570,6 +570,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = 'Courriel :';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   /* Field: Field: Liens réseaux sociaux */
   $handler->display->display_options['fields']['field_social_links']['id'] = 'field_social_links';
