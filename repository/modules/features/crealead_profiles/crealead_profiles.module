@@ -333,11 +333,25 @@ function crealead_assignable_roles(&$form, &$form_state) {
 }
 
 function crealead_profiles_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  $user_allowed_profiles = crealead_profiles_get_allowed_profiles($form['#user']);
-  $params = array('user_allowed_profiles' => $user_allowed_profiles);
+    $user_allowed_profiles = crealead_profiles_get_allowed_profiles($form['#user']);
+    $params = array('user_allowed_profiles' => $user_allowed_profiles);
 
-  drupal_add_js(array('crealead_profiles' => $params), 'setting');
-  drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_user_profiles.js');
+    drupal_add_js(array('crealead_profiles' => $params), 'setting');
+    drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/crealead_user_profiles.js');
+
+    //////// Gestion de l'affichage du champ Paramètres de contact /////////////
+    //////// (formulaire de création/modification d'un utilisateur /////////////
+    global $user;
+    $allowed_roles = array(
+        'administrateur',
+        'webmaster',
+    );
+
+    // Pour l'instant, on fait en sorte que seul le superadmin ait accès au champ
+    // if ($user->uid != 1 && sizeof(array_intersect($allowed_roles, $user->roles)) == 0) {
+    if ($user->uid != 1) {
+        $form['contact']['#access'] = FALSE;
+    }
 }
 
 
