@@ -13090,15 +13090,28 @@ body.not-logged-in .region-sector-brands-header {
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs .tab-pane .view-content .row {
   margin-bottom: 20px;
 }
-.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .col .node-achievement .field-group-div {
-  border: 1px solid #999999;
-}
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_news .col .node-news .field-group-div {
   border: 1px solid #999999;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_news .col .node-news .field-name-body {
   padding-bottom: 10px;
   border-bottom: 1px solid #bf0e38;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs {
+  padding: 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs h3 {
+  padding-left: 20px;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .view-content {
+  padding: 10px 0;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .view-content .views-bootstrap-grid-plugin-style {
+  padding: 10px;
+  background-color: #efefef;
+}
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .view-content .col .node-achievement .field-group-div {
+  border: 1px solid #999999;
 }
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-content.row {
   margin: 0;
