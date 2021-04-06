@@ -737,7 +737,7 @@ function crealead_brands_strongarm() {
         ),
         'achievements_sector_brands_front_achievs' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '12',
             'visible' => TRUE,
           ),
           'pole_header' => array(
