@@ -1270,3 +1270,29 @@ function crealead_trainings_mail($key, &$message, $params) {
       break;
   }
 }
+
+function crealead_trainings_fill_search_field() {
+    $query = new EntityFieldQueryExtraFields();
+    $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'training')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->addExtraField('', 'title', 'title', 'node');
+    $result = $query->execute();
+
+    $count = 0;
+    if (isset($result['node'])) {
+        $trainings = node_load_multiple(array_keys($result['node']));
+        foreach ($trainings as $training) {
+//            if (isset($training->field_crealead_funded['und'][0]['value'])) {
+//                dpm($training->field_crealead_funded['und'][0]['value']);
+//            }
+//            else {
+//                dpm('non défini' . ' -  ' . $training->title . ' - ' . $training->nid);
+//            }
+
+            node_save($training);
+            $count++;
+        }
+    }
+    dpm($count . ' nodes de type training enregistrés');
+}
