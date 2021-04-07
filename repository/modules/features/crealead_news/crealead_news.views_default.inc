@@ -807,6 +807,13 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['footer']['area_1']['table'] = 'views';
+  $handler->display->display_options['footer']['area_1']['field'] = 'area';
+  $handler->display->display_options['footer']['area_1']['label'] = 'Lien réordonnacement actus';
+  $handler->display->display_options['footer']['area_1']['content'] = 'Réordonner les actualités';
+  $handler->display->display_options['footer']['area_1']['format'] = 'full_html';
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -814,13 +821,6 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
   $handler->display->display_options['footer']['area']['content'] = '&nbsp;';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area_1']['id'] = 'area_1';
-  $handler->display->display_options['footer']['area_1']['table'] = 'views';
-  $handler->display->display_options['footer']['area_1']['field'] = 'area';
-  $handler->display->display_options['footer']['area_1']['label'] = 'Lien réordonnacement actus';
-  $handler->display->display_options['footer']['area_1']['content'] = 'Réordonner les actualités';
-  $handler->display->display_options['footer']['area_1']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
   $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
