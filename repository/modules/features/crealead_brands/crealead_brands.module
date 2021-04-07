@@ -844,6 +844,44 @@ function crealead_brands_views_pre_render(&$view) {
 
         $view->footer['area_1']->options['content'] = $markup;
     }
+
+    elseif ($view->name == 'achievements' && $view->current_display == 'sector_brands_front_achievs') {
+        // Gestion du lien vers la vue draggableviews des réalisations à la une
+        // Pour avoir accès à ce lien, il faut soit :
+        // - etre superadmin
+        // - posséder le role administrateur ou webmaster
+        // - etre gestionnaire du pole affiché
+        $is_allowed_to_order = FALSE;
+        $pole_tid = arg(2);
+
+        if (user_is_logged_in()) {
+            global $user;
+
+            if ($user->uid == 1) {
+                $is_allowed_to_order = TRUE;
+            }
+            else {
+                $allowed_roles = array('administrateur', 'webmaster');
+                if (sizeof(array_intersect($allowed_roles, $user->roles)) > 0) {
+                    $is_allowed_to_order = TRUE;
+                }
+                else {
+                    $full_user = user_load($user->uid);
+                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+                        $is_allowed_to_order = TRUE;
+                    }
+                }
+            }
+        }
+
+        $markup = '';
+        if ($is_allowed_to_order) {
+            $order_view_url = '/tri_realisations_a_la_une/' . $pole_tid . '?destination=taxonomy/term/' . $pole_tid;
+            $markup = '<a href="' . $order_view_url . '">' . $view->footer['area']->options['content'] . '</a>';
+        }
+
+        $view->footer['area']->options['content'] = $markup;
+    }
 }
 
 /**
