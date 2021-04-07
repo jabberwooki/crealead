@@ -450,7 +450,7 @@ function crealead_brands_entity_view_alter(&$build, $type) {
                         '<div class="field field-name-field-lien-formulaire-contact field-type-text field-label-hidden">'
                         . '<div class="field-items">'
                         . '<div class="field-items">'
-                        . '<a href="#bootstrap-fieldgroup-nav-item--contact">Contact</a>'
+                        . '<a href="#bootstrap-fieldgroup-nav-item--contact">Contactez-nous</a>'
                         . '</div>'
                         . '</div>'
                         . '</div>';
@@ -805,6 +805,44 @@ function crealead_brands_views_pre_render(&$view) {
         }
 
         $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
+    }
+
+    elseif ($view->name == 'news' && $view->current_display == 'sector_brands_front_news') {
+        // Gestion du lien vers la vue draggableviews des actus à la une
+        // Pour avoir accès à ce lien, il faut soit :
+        // - etre superadmin
+        // - posséder le role administrateur ou webmaster
+        // - etre gestionnaire du pole affiché
+        $is_allowed_to_order = FALSE;
+        $pole_tid = arg(2);
+
+        if (user_is_logged_in()) {
+            global $user;
+
+            if ($user->uid == 1) {
+                $is_allowed_to_order = TRUE;
+            }
+            else {
+                $allowed_roles = array('administrateur', 'webmaster');
+                if (sizeof(array_intersect($allowed_roles, $user->roles)) > 0) {
+                    $is_allowed_to_order = TRUE;
+                }
+                else {
+                    $full_user = user_load($user->uid);
+                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+                        $is_allowed_to_order = TRUE;
+                    }
+                }
+            }
+        }
+
+        $markup = '';
+        if ($is_allowed_to_order) {
+            $order_view_url = '/tri_actualites_a_la_une/' . $pole_tid . '?destination=taxonomy/term/' . $pole_tid;
+            $markup = '<a href="' . $order_view_url . '">' . $view->footer['area_1']->options['content'] . '</a>';
+        }
+
+        $view->footer['area_1']->options['content'] = $markup;
     }
 }
 
@@ -1303,3 +1341,4 @@ function crealead_brands_get_sector_brand_managers_emails($sector_brand_tid) {
 
     return $managers_emails;
 }
+
