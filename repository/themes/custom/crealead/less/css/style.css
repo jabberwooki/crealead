@@ -13016,18 +13016,27 @@ body.front #block-views-articles-testimonials-front {
   height: auto;
 }
 #introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact {
-  position: relative;
-  padding-left: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #999999;
+  margin-bottom: 15px;
 }
-#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact:before {
-  position: absolute;
-  font-family: fontello;
-  color: #777777;
-  content: "\e820";
-  left: 0;
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact a {
+  background-color: #bf0e38;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 110%;
+  text-align: center;
+  height: 35px;
+  text-transform: capitalize;
+}
+#introduction.sector-brands-header .view-display-id-sector_brand_header .view-content .field-name-field-lien-formulaire-contact a::before {
+  font-family: "fontello";
+  content: "\e834";
+  position: relative;
+  width: 1em;
+  color: white;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 body.not-logged-in .region-sector-brands-header {
   margin-top: 20px;
