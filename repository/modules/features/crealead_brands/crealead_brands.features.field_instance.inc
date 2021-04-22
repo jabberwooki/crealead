@@ -5400,7 +5400,7 @@ Le label doit être prouvé.',
         'profile' => '',
       ),
       'mee_enabled' => 0,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
