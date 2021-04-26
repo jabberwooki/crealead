@@ -695,6 +695,11 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date de l&#039;événement (field_news_date) */
   $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
@@ -713,6 +718,17 @@ function crealead_news_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['arguments']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid_1']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid_1']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['entity_type'] = 'taxonomy_term';
   $handler->display->display_options['bundles'] = array(
     0 => 'sector_brands',
@@ -986,12 +1002,12 @@ function crealead_news_views_default_views() {
     t('Nids actu 2 et 3'),
     t('Actus d\'une marque sectorielle'),
     t('term from field_related_sector_brands'),
+    t('terme à partir de field_related_pole'),
     t('Actus d\'une certif/label'),
     t('terme à partir de field_related_certifs_labels'),
     t('Actus à la une d\'une marque sectorielle'),
     t('Lien réordonnacement actus'),
     t('Réordonner les actualités'),
-    t('terme à partir de field_related_pole'),
     t('Tri actus à la Une'),
     t('Tri des actualités à la Une'),
   );

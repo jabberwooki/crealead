@@ -337,6 +337,11 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random seed */
   $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
@@ -356,6 +361,17 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['arguments']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid_1']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid_1']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['entity_type'] = 'taxonomy_term';
   $handler->display->display_options['bundles'] = array(
     0 => 'sector_brands',
@@ -566,12 +582,12 @@ function crealead_brands_views_default_views() {
     t('suivant ›'),
     t('dernier »'),
     t('term from field_related_sector_brands'),
+    t('terme à partir de field_related_pole'),
     t('Réalisations d\'une certif/label'),
     t('terme à partir de field_related_certifs_labels'),
     t('Réalisations à la Une d\'une marque sectorielle'),
     t('Lien tri réalisations'),
     t('Réordonner les réalisations'),
-    t('terme à partir de field_related_pole'),
     t('Tri réalisations à la Une'),
     t('Tri des réalisations à la Une'),
   );
@@ -858,7 +874,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Formation */
+  /* Field: Content: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
