@@ -310,6 +310,18 @@ function crealead_brands_node_presave($node) {
             }
         }
     }
+    elseif ($node->type == 'achievement') {
+        $node->is_pushed_to_front = false;
+        if (!empty($node->field_related_pole) && empty($node->original->field_related_pole)) {
+            $node->is_pushed_to_front = true;
+        }
+
+        $node->is_removed_from_front = false;
+        if (empty($node->field_related_pole['und']) && !empty($node->original->field_related_pole)) {
+            $node->is_removed_from_front = true;
+            $node->pole_id = $node->original->field_related_pole['und'][0]['tid'];
+        }
+    }
 }
 
 /**
@@ -837,7 +849,7 @@ function crealead_brands_views_pre_render(&$view) {
         }
 
         $markup = '';
-        if ($is_allowed_to_order) {
+        if (sizeof($view->result) > 1 && $is_allowed_to_order) {
             $order_view_url = '/tri_actualites_a_la_une/' . $pole_tid . '?destination=taxonomy/term/' . $pole_tid;
             $markup = '<a href="' . $order_view_url . '">' . $view->footer['area_1']->options['content'] . '</a>';
         }
@@ -875,7 +887,7 @@ function crealead_brands_views_pre_render(&$view) {
         }
 
         $markup = '';
-        if ($is_allowed_to_order) {
+        if (sizeof($view->result) > 1 && $is_allowed_to_order) {
             $order_view_url = '/tri_realisations_a_la_une/' . $pole_tid . '?destination=taxonomy/term/' . $pole_tid;
             $markup = '<a href="' . $order_view_url . '">' . $view->footer['area']->options['content'] . '</a>';
         }
@@ -1394,27 +1406,73 @@ function crealead_brands_node_postinsert($node) {
     // il faut incrémenter de +1 le poids des autres realisations à la une de ce pole dans la table draggableviews_structure
     // puis insérer cette réalisation avec le poids 0 dans cette meme table.
     if ($node->type == 'achievement' && $node->status == '1' && !empty($node->field_related_pole)) {
-        // Incrémentation du poids des réalisations déjà présentes dans draggableviews_structure
-        $number_updated = db_update('draggableviews_structure')
-            ->expression('weight', 'weight + :weight', array(':weight' => 1))
-            ->condition('view_display', 'front_achievements_sorting')
-            ->condition('args', '["' . $node->field_related_pole['und'][0]['tid'] . '"]')
-            ->execute();
+//        // Incrémentation du poids des réalisations déjà présentes dans draggableviews_structure
+//        $number_updated = db_update('draggableviews_structure')
+//            ->expression('weight', 'weight + :weight', array(':weight' => 1))
+//            ->condition('view_display', 'front_achievements_sorting')
+//            ->condition('args', '["' . $node->field_related_pole['und'][0]['tid'] . '"]')
+//            ->execute();
+//
+//        // Insertion de l'actu nouvellement créée dans draggableviews_structure.
+//        $dvid = db_insert('draggableviews_structure')
+//            ->fields(array(
+//                'view_name' => 'achievement',
+//                'view_display' => 'front_achievements_sorting',
+//                'args' => '["' . $node->field_related_pole['und'][0]['tid'] . '"]',
+//                'entity_id' => $node->nid,
+//                'weight' => 0
+//            ))
+//            ->execute();
 
-        // Insertion de l'actu nouvellement créée dans draggableviews_structure.
-        $dvid = db_insert('draggableviews_structure')
-            ->fields(array(
-                'view_name' => 'achievement',
-                'view_display' => 'front_achievements_sorting',
-                'args' => '["' . $node->field_related_pole['und'][0]['tid'] . '"]',
-                'entity_id' => $node->nid,
-                'weight' => 0
-            ))
-            ->execute();
+        $number_updated = crealead_update_draggableviews_table('achievements', 'front_achievements_sorting', $node->field_related_pole['und'][0]['tid'], $node->nid);
 
         if ($is_watchdog_on) {
             watchdog('crealead_brands', 'Weight increased by +1 in table draggableviews_structure for ' . $number_updated . ' achievement nodes.');
             watchdog('crealead_brands', 'Node ' . $node->nid . ' inserted into table draggableviews_structure with weight 0.');
+        }
+    }
+}
+
+/**
+ * Implements hook_node_postupdate().
+ */
+function crealead_brands_node_postupdate($node) {
+    $is_watchdog_on = FALSE;
+
+    if ($node->type == 'achievement' && $node->status == '1') {
+        if ($node->is_pushed_to_front) {
+            $number_updated = crealead_update_draggableviews_table('achievements', 'front_achievements_sorting', $node->field_related_pole['und'][0]['tid'], $node->nid);
+
+            if ($is_watchdog_on) {
+                watchdog('crealead_brands', 'Weight increased by +1 in table draggableviews_structure for ' . $number_updated . ' achievement nodes.');
+                watchdog('crealead_brands', 'Achievement node ' . $node->nid . ' inserted into table draggableviews_structure with weight 0.');
+            }
+        }
+        elseif ($node->is_removed_from_front) {
+            $number_deleted = db_delete('draggableviews_structure')
+                ->condition('view_display','front_achievements_sorting')
+                ->condition('args', '["' . $node->pole_id . '"]')
+                ->condition('entity_id', $node->nid)
+                ->execute();
+
+            if ($is_watchdog_on) {
+                watchdog('crealead_brands', 'Achievement node ' . $node->nid . ' removed from table draggableviews_structure.');
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_node_postdelete().
+ */
+function crealead_brands_node_postdelete($node) {
+    if ($node->type == 'achievement') {
+        if (!empty($node->field_related_pole['und'][0]['tid'])) {
+            $number_deleted = db_delete('draggableviews_structure')
+                ->condition('view_display', 'front_achievements_sorting')
+                ->condition('args', '["' . $node->field_related_pole['und'][0]['tid'] . '"]')
+                ->condition('entity_id', $node->nid)
+                ->execute();
         }
     }
 }
