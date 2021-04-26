@@ -100,6 +100,7 @@ function kcore_user_default_permissions() {
     'name' => 'access draggableviews',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'responsable de pôle' => 'responsable de pôle',
       'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
