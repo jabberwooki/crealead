@@ -235,3 +235,38 @@ function crealead_news_node_view($node, $view_mode, $langcode) {
     }
   }
 }
+
+/**
+ * Implements hook_node_postinsert().
+ */
+function crealead_news_node_postinsert($node) {
+    $is_watchdog_on = FALSE;
+
+    // Si une actu vient d'etre créée et cochée comme visible dans l'onglet A la une d'un pole d'activités,
+    // il faut incrémenter de +1 le poids des autres actus à la une de ce pole dans la table draggableviews_structure
+    // puis insérer cette actu avec le poids 0 dans cette meme table.
+    if ($node->type == 'news' && $node->status == '1' && !empty($node->field_related_pole)) {
+        // Incrémentation du poids des actus déjà présentes dans draggableviews_structure
+        $number_updated = db_update('draggableviews_structure')
+            ->expression('weight', 'weight + :weight', array(':weight' => 1))
+            ->condition('view_display', 'page_front_news_sorting')
+            ->condition('args', '["' . $node->field_related_pole['und'][0]['tid'] . '"]')
+            ->execute();
+
+        // Insertion de l'actu nouvellement créée dans draggableviews_structure.
+        $dvid = db_insert('draggableviews_structure')
+            ->fields(array(
+                'view_name' => 'news',
+                'view_display' => 'page_front_news_sorting',
+                'args' => '["' . $node->field_related_pole['und'][0]['tid'] . '"]',
+                'entity_id' => $node->nid,
+                'weight' => 0
+            ))
+            ->execute();
+
+        if ($is_watchdog_on) {
+            watchdog('crealead_news', 'Weight increased by +1 in table draggableviews_structure for ' . $number_updated . ' news nodes.');
+            watchdog('crealead_news', 'Node ' . $node->nid . ' inserted into table draggableviews_structure with weight 0.');
+        }
+    }
+}
