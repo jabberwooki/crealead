@@ -899,6 +899,10 @@ function crealead_brands_views_query_alter(&$view, &$query) {
             unset($query->orderby[0]);
         }
     }
+    elseif ($view->current_display == 'sector_brand_achievs') {
+        $query->where[0]['type'] = 'OR';
+        $query->distinct = TRUE;
+    }
 }
 
 /**

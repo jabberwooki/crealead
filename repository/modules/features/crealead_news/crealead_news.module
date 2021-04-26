@@ -270,3 +270,17 @@ function crealead_news_node_postinsert($node) {
         }
     }
 }
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_news_views_query_alter(&$view, &$query) {
+    // Si on est dans l'onglet Actualités d'un pole, il y a 2 filtres contextuels.
+    // Pour éviter d'utiliser le module views_contextual_filters_or,
+    // on passe manuellement de AND (valeur par défaut) à OR.
+    // On en profite pour ajouter DISTINCT.
+    if ($view->current_display == 'sector_brand_news') {
+        $query->where[0]['type'] = 'OR';
+        $query->distinct = TRUE;
+    }
+}
