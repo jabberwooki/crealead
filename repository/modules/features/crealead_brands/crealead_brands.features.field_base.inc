@@ -54,6 +54,28 @@ function crealead_brands_field_default_field_bases() {
     'type' => 'video_embed_field',
   );
 
+  // Exported field_base: 'field_all_emails'.
+  $field_bases['field_all_emails'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_all_emails',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 10000,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_brand_achievements'.
   $field_bases['field_brand_achievements'] = array(
     'active' => 1,
@@ -805,6 +827,28 @@ function crealead_brands_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_others_emails'.
+  $field_bases['field_others_emails'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_others_emails',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 7200,
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,

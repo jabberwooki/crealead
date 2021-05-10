@@ -587,6 +587,174 @@ function crealead_brands_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-pole_coes_contact-field_all_emails'.
+  $field_instances['entityform-pole_coes_contact-field_all_emails'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => array(
+      0 => array(
+        'value' => 'test@example.com',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_all_emails',
+    'label' => 'Tous les destinataires',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-pole_coes_contact-field_others_emails'.
+  $field_instances['entityform-pole_coes_contact-field_others_emails'] = array(
+    'bundle' => 'pole_coes_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Saisir une ou plusieurs adresses email supplémentaires, séparées par une virgule et un espace, comme dans le champ Destinaires précédent.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'entityform',
+    'field_name' => 'field_others_emails',
+    'label' => 'Autres destinataires',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance:
   // 'entityform-pole_coes_contact-field_pole_coes_emails'.
   $field_instances['entityform-pole_coes_contact-field_pole_coes_emails'] = array(
@@ -603,7 +771,7 @@ function crealead_brands_field_default_field_instances() {
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -613,7 +781,7 @@ function crealead_brands_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'entityform',
     'field_name' => 'field_pole_coes_emails',
-    'label' => 'Destinataires',
+    'label' => 'Destinataires (co-entrepreneurs du pôle)',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -783,7 +951,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -842,7 +1010,7 @@ function crealead_brands_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -953,7 +1121,7 @@ function crealead_brands_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1012,7 +1180,7 @@ function crealead_brands_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1033,7 +1201,7 @@ function crealead_brands_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -5607,6 +5775,7 @@ Le label doit être prouvé.',
   // Translatables
   // Included for use with string extractors like potx.
   t('Auteurs');
+  t('Autres destinataires');
   t('Catégorie');
   t('Certification(s) ou label(s) concerné(s)');
   t('Certifications et labels');
@@ -5618,7 +5787,7 @@ Le label doit être prouvé.',
   t('De');
   t('Descriptif');
   t('Description');
-  t('Destinataires');
+  t('Destinataires (co-entrepreneurs du pôle)');
   t('Domaine d\'intervention');
   t('Email de contact');
   t('Email envoyé');
@@ -5663,11 +5832,13 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Pôle(s) d\'activités concerné(s)');
   t('Réalisation visible à la Une de :');
   t('Réalisations');
+  t('Saisir une ou plusieurs adresses email supplémentaires, séparées par une virgule et un espace, comme dans le champ Destinaires précédent.');
   t('Site web');
   t('Solutions');
   t('Sujet');
   t('Sujet de votre message');
   t('Thématique(s) concernée(s)');
+  t('Tous les destinataires');
   t('Type de client');
   t('Type de marque');
   t('Type de sauvegarde');

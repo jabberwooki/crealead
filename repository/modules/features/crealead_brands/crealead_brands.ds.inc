@@ -849,10 +849,11 @@ function crealead_brands_ds_layout_settings_info() {
         1 => 'field_pole_coes_from',
         2 => 'submission_date',
         3 => 'field_pole_coes_emails',
+        4 => 'field_others_emails',
       ),
       'right' => array(
-        4 => 'field_pole_coes_subject',
-        5 => 'field_pole_coes_message',
+        5 => 'field_pole_coes_subject',
+        6 => 'field_pole_coes_message',
       ),
     ),
     'fields' => array(
@@ -860,6 +861,7 @@ function crealead_brands_ds_layout_settings_info() {
       'field_pole_coes_from' => 'left',
       'submission_date' => 'left',
       'field_pole_coes_emails' => 'left',
+      'field_others_emails' => 'left',
       'field_pole_coes_subject' => 'right',
       'field_pole_coes_message' => 'right',
     ),

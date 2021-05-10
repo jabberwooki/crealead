@@ -48,7 +48,7 @@ function crealead_brands_default_rules_configuration() {
             "USING" : {
               "key" : "pole_coes_email",
               "to" : [ "entityform:field-pole-coes-from" ],
-              "bcc" : [ "entityform:field-pole-coes-emails" ],
+              "bcc" : [ "entityform:field-all-emails" ],
               "from_name" : [ "entityform:field-pole-coes-sender" ],
               "from_mail" : [ "entityform:field-pole-coes-from" ],
               "subject" : [ "entityform:field-pole-coes-subject" ],
