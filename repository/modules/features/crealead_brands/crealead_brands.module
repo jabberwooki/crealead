@@ -1438,7 +1438,7 @@ function crealead_brands_entity_presave($entity, $type) {
 
 function crealead_clean_emails_string($to_be_cleaned) {
     $cleaned_emails = str_replace(array(',',';'), ' ', trim($to_be_cleaned));
-    $cleaned_emails = preg_replace("/[[:blank:]]+/",", ",$cleaned_emails);
+    $cleaned_emails = preg_replace("/[[:blank:]]+/",", ",trim($cleaned_emails));
 
     return $cleaned_emails;
 }
