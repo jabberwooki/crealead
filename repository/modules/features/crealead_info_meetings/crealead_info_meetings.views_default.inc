@@ -129,9 +129,17 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::crealead_check_registrants_as_present' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::crealead_check_registrants_as_absent' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -139,7 +147,28 @@ function crealead_info_meetings_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'action::crealead_check_registrants_as_present' => array(
+    'action::crealead_check_registrants_as_applicant' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::crealead_check_registrants_as_non_applicant' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::crealead_check_registrants_as_cape' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::crealead_check_registrants_as_non_cape' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
@@ -195,6 +224,7 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
+  $handler->display->display_options['fields']['field_attendee']['exclude'] = TRUE;
   /* Field: Registration: Présence */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
@@ -203,6 +233,14 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['fields']['field_attendance']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Registration: A candidaté */
+  $handler->display->display_options['fields']['field_applicant']['id'] = 'field_applicant';
+  $handler->display->display_options['fields']['field_applicant']['table'] = 'field_data_field_applicant';
+  $handler->display->display_options['fields']['field_applicant']['field'] = 'field_applicant';
+  /* Field: Registration: A signé un CAPE */
+  $handler->display->display_options['fields']['field_cape']['id'] = 'field_cape';
+  $handler->display->display_options['fields']['field_cape']['table'] = 'field_data_field_cape';
+  $handler->display->display_options['fields']['field_cape']['field'] = 'field_cape';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -243,6 +281,8 @@ function crealead_info_meetings_views_default_views() {
     t('Delete link'),
     t('Présent'),
     t('Présence'),
+    t('A candidaté'),
+    t('A signé un CAPE'),
     t('Tout'),
     t('Page'),
     t('more'),
@@ -1078,6 +1118,14 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
+  /* Field: Registration: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'registration_rel';
+  $handler->display->display_options['fields']['created']['label'] = 'Date inscription';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Registration: Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
@@ -2159,6 +2207,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.'),
     t('Options avancées'),
     t('dd-mm-yy'),
     t('Date réunion'),
+    t('Date inscription'),
     t('Projet d\'activité'),
     t('Ville (ex : mont|sete|sète)'),
     t('La barre verticale "|" signifie "ou".'),

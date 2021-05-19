@@ -13,6 +13,51 @@ function crealead_brands_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_entityform__pole_coes_contact';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'email' => array(
+        'custom_settings' => FALSE,
+      ),
+      'confirmation' => array(
+        'custom_settings' => FALSE,
+      ),
+      'download' => array(
+        'custom_settings' => FALSE,
+      ),
+      'table' => array(
+        'custom_settings' => FALSE,
+      ),
+      'review' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '7',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_entityform__pole_coes_contact'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__brand';
   $strongarm->value = array(
     'view_modes' => array(
@@ -269,6 +314,10 @@ function crealead_brands_strongarm() {
             'weight' => '26',
             'visible' => FALSE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'brands_calendar_entity_view_1' => array(
           'full' => array(
@@ -305,11 +354,19 @@ function crealead_brands_strongarm() {
             'weight' => '45',
             'visible' => TRUE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'articles_allowed_articles' => array(
           'full' => array(
             'weight' => '1',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'products_entity_view_1' => array(
@@ -317,11 +374,19 @@ function crealead_brands_strongarm() {
             'weight' => '67',
             'visible' => TRUE,
           ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_allowed_trainings' => array(
           'full' => array(
             'weight' => '31',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'products_entity_view_2' => array(
@@ -334,6 +399,10 @@ function crealead_brands_strongarm() {
           'full' => array(
             'weight' => '71',
             'visible' => TRUE,
+          ),
+          'sector_brand_block' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -487,17 +556,32 @@ function crealead_brands_strongarm() {
       'block' => array(
         'custom_settings' => FALSE,
       ),
+      'pole_header' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'certifications_labels_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'logo' => array(
+        'custom_settings' => FALSE,
+      ),
+      'landing_page_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '9',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '7',
         ),
         'name' => array(
           'weight' => '0',
@@ -513,11 +597,15 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '8',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'block' => array(
             'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
@@ -527,6 +615,7 @@ function crealead_brands_strongarm() {
             'visible' => TRUE,
           ),
           'block' => NULL,
+          'pole_header' => NULL,
         ),
         'news_sector_brand_news' => array(
           'full' => array(
@@ -540,6 +629,10 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '20',
+            'visible' => FALSE,
           ),
         ),
         'articles_sector_brand_articles' => array(
@@ -555,6 +648,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
         ),
         'achievements_sector_brand_achievs' => array(
           'full' => array(
@@ -568,6 +665,10 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '16',
+            'visible' => FALSE,
           ),
         ),
         'brands_sector_brand_brands' => array(
@@ -583,6 +684,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
         ),
         'brands_sector_brand_brands_form' => array(
           'full' => array(
@@ -597,6 +702,10 @@ function crealead_brands_strongarm() {
             'weight' => '9',
             'visible' => TRUE,
           ),
+          'pole_header' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
         ),
         'trainings_sector_brand_trainings' => array(
           'full' => array(
@@ -610,6 +719,60 @@ function crealead_brands_strongarm() {
           'block' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+        ),
+        'news_sector_brands_front_news' => array(
+          'full' => array(
+            'weight' => '11',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+        ),
+        'achievements_sector_brands_front_achievs' => array(
+          'full' => array(
+            'weight' => '12',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+        ),
+        'products_sector_brands_products' => array(
+          'full' => array(
+            'weight' => '24',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+        ),
+        'products_sector_brands_products_form' => array(
+          'full' => array(
+            'weight' => '23',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'trainings_sector_brand_trainings_form' => array(
+          'full' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+          'pole_header' => array(
+            'weight' => '12',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -872,7 +1035,7 @@ function crealead_brands_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_sector_brands_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'poles-activites/[term:name]';
   $export['pathauto_taxonomy_term_sector_brands_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -255,6 +255,33 @@ function crealead_brands_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-pole_coes_emails-pole_emails'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'pole_coes_emails-pole_emails',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'crealead' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'crealead',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-themes-theme_page_header'] = array(
     'cache' => -1,
     'css_class' => '',

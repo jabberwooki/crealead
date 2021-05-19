@@ -43,11 +43,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['advanced'] = 0;
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['reverse_field_coe_references_profile2']['id'] = 'reverse_field_coe_references_profile2';
-  $handler->display->display_options['relationships']['reverse_field_coe_references_profile2']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_coe_references_profile2']['field'] = 'reverse_field_coe_references_profile2';
-  $handler->display->display_options['relationships']['reverse_field_coe_references_profile2']['label'] = 'Profil';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -312,8 +307,8 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'pagerer';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -324,7 +319,6 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
-  $handler->display->display_options['pager']['options']['preset'] = 'pagerer_mini';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '4';
@@ -343,6 +337,11 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random seed */
   $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
@@ -362,6 +361,17 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['arguments']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid_1']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid_1']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['entity_type'] = 'taxonomy_term';
   $handler->display->display_options['bundles'] = array(
     0 => 'sector_brands',
@@ -412,6 +422,138 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'certifications_labels',
   );
+
+  /* Display: Réalisations à la Une d'une marque sectorielle */
+  $handler = $view->new_display('entity_view', 'Réalisations à la Une d\'une marque sectorielle', 'sector_brands_front_achievs');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'col-md-6';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Lien tri réalisations';
+  $handler->display->display_options['footer']['area']['content'] = 'Réordonner les réalisations';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'achievements:front_achievements_sorting';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'taxonomy_term';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'sector_brands',
+  );
+  $handler->display->display_options['show_title'] = 1;
+
+  /* Display: Tri réalisations à la Une */
+  $handler = $view->new_display('page', 'Tri réalisations à la Une', 'front_achievements_sorting');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Tri des réalisations à la Une';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Actualité visible à la Une de : (field_related_pole) */
+  $handler->display->display_options['relationships']['field_related_pole_tid']['id'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['table'] = 'field_data_field_related_pole';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['field'] = 'field_related_pole_tid';
+  $handler->display->display_options['relationships']['field_related_pole_tid']['label'] = 'terme à partir de field_related_pole';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Photos */
+  $handler->display->display_options['fields']['field_achievement_photos']['id'] = 'field_achievement_photos';
+  $handler->display->display_options['fields']['field_achievement_photos']['table'] = 'field_data_field_achievement_photos';
+  $handler->display->display_options['fields']['field_achievement_photos']['field'] = 'field_achievement_photos';
+  $handler->display->display_options['fields']['field_achievement_photos']['label'] = '';
+  $handler->display->display_options['fields']['field_achievement_photos']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_achievement_photos']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_achievement_photos']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_achievement_photos']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_achievement_photos']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Draggableviews: Content */
+  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
+  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['label'] = '';
+  $handler->display->display_options['fields']['draggableviews']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'achievements:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'field_related_pole_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'tri_realisations_a_la_une';
   $translatables['achievements'] = array(
     t('Master'),
     t('Réalisations'),
@@ -421,7 +563,6 @@ function crealead_brands_views_default_views() {
     t('Trier par'),
     t('Asc'),
     t('Desc'),
-    t('Profil'),
     t('Réalisations fiche marque'),
     t('more'),
     t('<div class="slide-counter"></div>'),
@@ -443,8 +584,14 @@ function crealead_brands_views_default_views() {
     t('suivant ›'),
     t('dernier »'),
     t('term from field_related_sector_brands'),
+    t('terme à partir de field_related_pole'),
     t('Réalisations d\'une certif/label'),
     t('terme à partir de field_related_certifs_labels'),
+    t('Réalisations à la Une d\'une marque sectorielle'),
+    t('Lien tri réalisations'),
+    t('Réordonner les réalisations'),
+    t('Tri réalisations à la Une'),
+    t('Tri des réalisations à la Une'),
   );
   $export['achievements'] = $view;
 
@@ -729,7 +876,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
-  /* Field: Content: Formation concernée */
+  /* Field: Content: Formation */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -2140,7 +2287,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '1';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2153,7 +2300,7 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_options']['columns'] = '4';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';
@@ -2166,6 +2313,13 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'sector_brand_block';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Lien vers email aux coes';
+  $handler->display->display_options['header']['area']['content'] = '<a id="coes-message-form-link">Envoyer un message aux co-entrepreneurs</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -2517,6 +2671,8 @@ function crealead_brands_views_default_views() {
     t('Marque à afficher dans le formulaire de création/modification d\'une formation.'),
     t('Marques d\'une marque sectorielle'),
     t('Les marques'),
+    t('Lien vers email aux coes'),
+    t('<a id="coes-message-form-link">Envoyer un message aux co-entrepreneurs</a>'),
     t('Aucune marque ne correspond à vos critères de recherche.'),
     t('term from field_related_sector_brands'),
     t('Marques d\'une certification/label'),
@@ -3083,11 +3239,353 @@ function crealead_brands_views_default_views() {
   $export['field_collection_coes'] = $view;
 
   $view = new view();
+  $view->name = 'pole_coes_emails';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'Emails aux coes d\'un pôle';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Emails envoyés';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entityform_id' => 'entityform_id',
+    'created' => 'created',
+    'field_pole_coes_sender' => 'field_pole_coes_sender',
+    'field_pole_coes_from' => 'field_pole_coes_sender',
+    'field_pole_coes_subject' => 'field_pole_coes_subject',
+    'link_entityform' => 'link_entityform',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_sender' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_from' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pole_coes_subject' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_entityform' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Aucun email n\'a encore été envoyé aux co-entrepreneurs du pôle.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Expéditeur */
+  $handler->display->display_options['fields']['field_pole_coes_sender']['id'] = 'field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['table'] = 'field_data_field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['field'] = 'field_pole_coes_sender';
+  /* Field: Entityform Submission: De */
+  $handler->display->display_options['fields']['field_pole_coes_from']['id'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['table'] = 'field_data_field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['field'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['text'] = '([field_pole_coes_from])';
+  /* Field: Entityform Submission: Sujet */
+  $handler->display->display_options['fields']['field_pole_coes_subject']['id'] = 'field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['table'] = 'field_data_field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['field'] = 'field_pole_coes_subject';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Contextual filter: Entityform Submission: Identifiant du pole (field_pole_tid) */
+  $handler->display->display_options['arguments']['field_pole_tid_value']['id'] = 'field_pole_tid_value';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['table'] = 'field_data_field_pole_tid';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['field'] = 'field_pole_tid_value';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_pole_tid_value']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pole_coes_contact' => 'pole_coes_contact',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'pole_emails_page');
+  $handler->display->display_options['path'] = 'emails-aux-coes-d-un-p-le';
+
+  /* Display: Emails aux coes */
+  $handler = $view->new_display('block', 'Emails aux coes', 'pole_emails');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Emails envoyés aux co-entrepreneurs</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Expéditeur */
+  $handler->display->display_options['fields']['field_pole_coes_sender']['id'] = 'field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['table'] = 'field_data_field_pole_coes_sender';
+  $handler->display->display_options['fields']['field_pole_coes_sender']['field'] = 'field_pole_coes_sender';
+  /* Field: Entityform Submission: De */
+  $handler->display->display_options['fields']['field_pole_coes_from']['id'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['table'] = 'field_data_field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['field'] = 'field_pole_coes_from';
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pole_coes_from']['alter']['text'] = '([field_pole_coes_from])';
+  /* Field: Entityform Submission: Sujet */
+  $handler->display->display_options['fields']['field_pole_coes_subject']['id'] = 'field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['table'] = 'field_data_field_pole_coes_subject';
+  $handler->display->display_options['fields']['field_pole_coes_subject']['field'] = 'field_pole_coes_subject';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Delete Link */
+  $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['delete_entityform']['field'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['label'] = '';
+  $handler->display->display_options['fields']['delete_entityform']['element_label_colon'] = FALSE;
+
+  /* Display: Emails aux managers */
+  $handler = $view->new_display('block', 'Emails aux managers', 'pole_contacts');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Emails reçus';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Prises de contact</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Vous n\'avez aucune demande de contact à traiter.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Entityform Submission */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'entityform';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Vous voulez */
+  $handler->display->display_options['fields']['field_contact_type']['id'] = 'field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['table'] = 'field_data_field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['field'] = 'field_contact_type';
+  $handler->display->display_options['fields']['field_contact_type']['label'] = 'Type';
+  /* Field: Entityform Submission: Date submitted */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entityform';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Date d\'envoi';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Entityform Submission: Votre nom */
+  $handler->display->display_options['fields']['field_contact_name']['id'] = 'field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['table'] = 'field_data_field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['field'] = 'field_contact_name';
+  $handler->display->display_options['fields']['field_contact_name']['label'] = 'Nom';
+  /* Field: Entityform Submission: Sujet de votre message */
+  $handler->display->display_options['fields']['field_contact_subject']['id'] = 'field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['table'] = 'field_data_field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['field'] = 'field_contact_subject';
+  $handler->display->display_options['fields']['field_contact_subject']['label'] = 'Sujet';
+  /* Field: Entityform Submission: Link */
+  $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
+  $handler->display->display_options['fields']['link_entityform']['label'] = '';
+  $handler->display->display_options['fields']['link_entityform']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Delete Link */
+  $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
+  $handler->display->display_options['fields']['delete_entityform']['field'] = 'delete_entityform';
+  $handler->display->display_options['fields']['delete_entityform']['label'] = '';
+  $handler->display->display_options['fields']['delete_entityform']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Entityform Submission: Date submitted */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'entityform';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pole_contact' => 'pole_contact',
+  );
+  $translatables['pole_coes_emails'] = array(
+    t('Master'),
+    t('Emails envoyés'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Aucun email n\'a encore été envoyé aux co-entrepreneurs du pôle.'),
+    t('.'),
+    t(','),
+    t('Date d\'envoi'),
+    t('Expéditeur'),
+    t('De'),
+    t('([field_pole_coes_from])'),
+    t('Sujet'),
+    t('Tout'),
+    t('Page'),
+    t('Emails aux coes'),
+    t('<h3>Emails envoyés aux co-entrepreneurs</h3>'),
+    t('- Choose an operation -'),
+    t('Emails aux managers'),
+    t('Emails reçus'),
+    t('<h3>Prises de contact</h3>'),
+    t('Vous n\'avez aucune demande de contact à traiter.'),
+    t('Type'),
+    t('Nom'),
+  );
+  $export['pole_coes_emails'] = $view;
+
+  $view = new view();
   $view->name = 'sector_brands';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Marques sectorielles';
+  $view->human_name = 'Pôles d\'activités';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -3132,9 +3630,19 @@ function crealead_brands_views_default_views() {
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'marques-sectorielles';
 
-  /* Display: En-tête de marque sectorielle */
-  $handler = $view->new_display('block', 'En-tête de marque sectorielle', 'sector_brand_header');
+  /* Display: En-tête de pôle d'activité */
+  $handler = $view->new_display('block', 'En-tête de pôle d\'activité', 'sector_brand_header');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'pole_header';
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'pole_header';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Logo */
   $handler->display->display_options['fields']['field_brand_logo']['id'] = 'field_brand_logo';
@@ -3148,6 +3656,13 @@ function crealead_brands_views_default_views() {
     'image_link' => '',
     'field_formatter_class' => 'pull-left',
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'h2';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
@@ -3176,7 +3691,7 @@ function crealead_brands_views_default_views() {
     t('Desc'),
     t('Page'),
     t('more'),
-    t('En-tête de marque sectorielle'),
+    t('En-tête de pôle d\'activité'),
     t('Tout'),
   );
   $export['sector_brands'] = $view;

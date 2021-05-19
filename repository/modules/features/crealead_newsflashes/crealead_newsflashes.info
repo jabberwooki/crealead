@@ -4,7 +4,6 @@ package = App
 version = 7.x-1.0
 dependencies[] = context
 dependencies[] = crealead_news
-dependencies[] = crealead_newsflashes
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = download_file

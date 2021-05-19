@@ -157,5 +157,19 @@ function crealead_faqs_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_faq'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_faq_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_faq_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_faq_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_faq_categories_pattern'] = $strongarm;
+
   return $export;
 }

@@ -114,6 +114,28 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
 
   // Summary is now in plain text. We must remove html tags for nodes saved prior to this modification.
   $form['body']['und'][0]['summary']['#default_value'] = strip_tags($form['body']['und'][0]['summary']['#default_value']);
+
+  // Gestion du champ field_related_pole (Actualité visible à la Une de :).
+//    $pole_handling_allowed_roles = array('administrateur','responsable de pôle');
+//    $current_user_allowed_roles = array_intersect($pole_handling_allowed_roles, $current_user_roles);
+    if ($user->uid != 1 && !in_array('administrateur', $current_user_roles)) {
+        if (!in_array('responsable de pôle', $current_user_roles)) {
+            $form['field_related_pole']['#access'] = FALSE;
+        }
+        else {
+            $full_user = user_load($user->uid);
+            if (isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                foreach ($form['field_related_pole']['und']['#options'] as $pole_tid => $pole_name) {
+                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+                        unset($form['field_related_pole']['und']['#options'][$pole_tid]);
+                    }
+                }
+            }
+            else {
+                $form['field_related_pole']['#access'] = FALSE;
+            }
+        }
+    }
 }
 
 /**
@@ -126,6 +148,17 @@ function crealead_news_node_presave($node) {
     }
     else {
       $node->field_sorting_date['und'][0]['value'] = $node->created;
+    }
+
+    $node->is_pushed_to_front = false;
+    if (!empty($node->field_related_pole) && empty($node->original->field_related_pole)) {
+        $node->is_pushed_to_front = true;
+    }
+
+    $node->is_removed_from_front = false;
+    if (empty($node->field_related_pole['und']) && !empty($node->original->field_related_pole)) {
+        $node->is_removed_from_front = true;
+        $node->pole_id = $node->original->field_related_pole['und'][0]['tid'];
     }
   }
 }
@@ -212,4 +245,101 @@ function crealead_news_node_view($node, $view_mode, $langcode) {
       $node->content['body'][0]['#markup'] = strip_tags($node->content['body'][0]['#markup']);
     }
   }
+}
+
+/**
+ * Implements hook_node_postinsert().
+ */
+function crealead_news_node_postinsert($node) {
+    $is_watchdog_on = true;
+
+    // Si une actu vient d'etre créée et cochée comme visible dans l'onglet A la une d'un pole d'activités,
+    // il faut incrémenter de +1 le poids des autres actus à la une de ce pole dans la table draggableviews_structure
+    // puis insérer cette actu avec le poids 0 dans cette meme table.
+    if ($node->type == 'news' && $node->status == '1' && !empty($node->field_related_pole)) {
+        $number_updated = crealead_update_draggableviews_table('news', 'page_front_news_sorting', $node->field_related_pole['und'][0]['tid'], $node->nid);
+
+        if ($is_watchdog_on) {
+            watchdog('crealead_news', 'Weight increased by +1 in table draggableviews_structure for ' . $number_updated . ' news nodes.');
+            watchdog('crealead_news', 'News node ' . $node->nid . ' inserted into table draggableviews_structure with weight 0.');
+        }
+    }
+}
+
+/**
+ * Implements hook_node_postupdate().
+ */
+function crealead_news_node_postupdate($node) {
+    $is_watchdog_on = FALSE;
+
+    if ($node->type == 'news' && $node->status == '1') {
+        if ($node->is_pushed_to_front) {
+            $number_updated = crealead_update_draggableviews_table('news', 'page_front_news_sorting', $node->field_related_pole['und'][0]['tid'], $node->nid);
+
+            if ($is_watchdog_on) {
+                watchdog('crealead_news', 'Weight increased by +1 in table draggableviews_structure for ' . $number_updated . ' news nodes.');
+                watchdog('crealead_news', 'News node ' . $node->nid . ' inserted into table draggableviews_structure with weight 0.');
+            }
+        }
+        elseif ($node->is_removed_from_front) {
+            $number_deleted = db_delete('draggableviews_structure')
+                ->condition('view_display','page_front_news_sorting')
+                ->condition('args', '["' . $node->pole_id . '"]')
+                ->condition('entity_id', $node->nid)
+                ->execute();
+
+            if ($is_watchdog_on) {
+                watchdog('crealead_news', 'News node ' . $node->nid . ' removed from table draggableviews_structure.');
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_node_postdelete().
+ */
+function crealead_news_node_postdelete($node) {
+    if ($node->type == 'news') {
+        if (!empty($node->field_related_pole['und'][0]['tid'])) {
+            $number_deleted = db_delete('draggableviews_structure')
+                ->condition('view_display', 'page_front_news_sorting')
+                ->condition('args', '["' . $node->field_related_pole['und'][0]['tid'] . '"]')
+                ->condition('entity_id', $node->nid)
+                ->execute();
+        }
+    }
+}
+
+function crealead_update_draggableviews_table($view_name, $view_display, $pole_id, $entity_id) {
+    // Incrémentation du poids des éléments déjà présentes dans draggableviews_structure
+    $number_updated = db_update('draggableviews_structure')
+        ->expression('weight', 'weight + :weight', array(':weight' => 1))
+        ->condition('view_display', $view_display)
+        ->condition('args', '["' . $pole_id . '"]')
+        ->execute();
+
+    // Insertion de l'élément nouvellement créée dans draggableviews_structure.
+    $dvid = db_insert('draggableviews_structure')
+        ->fields(array(
+            'view_name' => $view_name,
+            'view_display' => $view_display,
+            'args' => '["' . $pole_id . '"]',
+            'entity_id' => $entity_id,
+            'weight' => 0
+        ))
+        ->execute();
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function crealead_news_views_query_alter(&$view, &$query) {
+    // Si on est dans l'onglet Actualités d'un pole, il y a 2 filtres contextuels.
+    // Pour éviter d'utiliser le module views_contextual_filters_or,
+    // on passe manuellement de AND (valeur par défaut) à OR.
+    // On en profite pour ajouter DISTINCT.
+    if ($view->current_display == 'sector_brand_news') {
+        $query->where[0]['type'] = 'OR';
+        $query->distinct = TRUE;
+    }
 }

@@ -29,7 +29,7 @@
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h2 class="title"><?php print $title; ?></h2>
+    <h3 class="title"><?php print $title; ?></h3>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 

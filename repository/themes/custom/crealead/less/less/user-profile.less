@@ -1,15 +1,42 @@
 body.page-user{
-  .user-skills{
-    float: left;
-    margin: 5px 5px 5px 0;
-    font-weight: bold;
-    background-color: @gris-clair-crealead;
-    border: 1px solid @gray-dark;
-    padding: 2px 5px;
-  }
-  h4.h4-user{
-    .quick();
-    color: @rouge-crealead;
+  #bootstrap-fieldgroup-nav-item--ma-page-entrepreneur {
+    .user-skills{
+      float: left;
+      margin: 5px 5px 5px 0;
+      font-weight: bold;
+      background-color: @gris-clair-crealead;
+      border: 1px solid @gray-dark;
+      padding: 2px 5px;
+    }
+    h4.h4-user{
+      .quick();
+      color: @rouge-crealead;
+    }
+
+    .view-display-id-eva_user_infos {
+      clear: both;
+      padding-top: 20px;
+
+      .views-field-mail {
+        .views-label-mail {
+          font-weight: bold;
+        }
+      }
+      .field-name-field-social-links {
+        clear: both;
+        padding: 20px 0;
+        ul {
+          padding: 10px 0;
+          border-top: 1px solid @gris-fonce-crealead;
+          border-bottom: 1px solid @gris-fonce-crealead;
+
+          li:before {
+            content: '';
+            width: 0;
+          }
+        }
+      }
+    }
   }
 }
 .page-espace-co-entrepreneur-trombinoscope{

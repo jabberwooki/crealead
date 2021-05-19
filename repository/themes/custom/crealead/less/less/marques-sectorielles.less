@@ -1,44 +1,80 @@
-/* brand navigation ***************************************************************************************************/
-#sector_brands_navigation{
-  background-color: @bleu-clair-crealead;
-  #block-crealead-brands-crealead-sector-brand-nav{
-    a{
-      color: white;
-      text-transform: uppercase;
-      .quick();
-      font-weight: bold;
-    }
-  }
-}
-/* Brand introduction *************************************************************************************************/
+/* 1 - PAGE D'UN POLE D'ACTIVITÉ **************************************************************************************/
+
+/* 1.1 - Introduction Pole d'activité ***************************************************************************************/
 #introduction.sector-brands-header{
-  margin-top: 80px;
-  height: 240px;
+  margin-top: 40px;
   overflow: hidden;
   position: relative;
-  padding-bottom: 30px;
   &.sector-brands-desc-open{
     height:auto;
     padding-bottom:30px;
   }
-  .views-field-field-brand-logo{
-    img{
-      max-height: 180px;
-      max-width: 180px;
-      margin: 10px 25px 30px 0;
-      float: left;
-    }
-  }
-  .views-field-description{
-    margin-top: 20px;
-    height: 200px;
-    overflow: hidden;
-    h3{
-      .source();
-      color: @rouge-crealead;
-    }
-    &.sector-brands-desc-open{
-      height: auto;
+  .view-display-id-sector_brand_header {
+    padding: 20px;
+
+    .view-content {
+      padding: 20px;
+      background-color: white;
+      border: 1px solid #999999;
+
+      .views-field-field-brand-logo{
+        img{
+          max-height: 180px;
+          max-width: 180px;
+          margin: 10px 25px 30px 0;
+          //float: left;
+        }
+      }
+
+      .field-name-title h2 {
+        color: #bf0e38;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: Quicksand, sans-serif;
+        margin-top: 0;
+      }
+
+      .views-field-description{
+        margin-top: 20px;
+        //height: 200px;
+        overflow: hidden;
+        h3{
+          .source();
+          color: @rouge-crealead;
+        }
+        &.sector-brands-desc-open{
+          height: auto;
+        }
+      }
+
+      .field-name-field-lien-formulaire-contact {
+        margin-bottom: 15px;
+        a {
+          //font-family: fontello;
+          background-color: #bf0e38;
+          padding: 6px 12px;
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          font-size: 110%;
+          text-align: center;
+          height: 35px;
+          text-transform: capitalize;
+        }
+
+        //a::before {
+        //  font-family: "fontello";
+        //  content: "\e834";
+        //  position: relative;
+        //  width: 1em;
+        //  color: white;
+        //  margin-right: 10px;
+        //  vertical-align: middle;
+        //}
+      }
+
+      .field-name-field-social-links {
+      }
     }
   }
 }
@@ -49,119 +85,492 @@ body.not-logged-in {
 }
 
 /* bouton open-close **************************************************************************************************/
-#open-close-sector-brand {
-  display: block;
-  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 100%;
-  z-index: 10;
-  position: static;
-  &.sector-brands-desc-open{
-    background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 0;
-    margin-top: -33px;
-    position: relative;
-    z-index: 3;
-  }
-}
-/* main container *****************************************************************************************************/
-.title-3-sect-brand{
-  text-transform: uppercase;
-  .quick();
-  font-weight: bold;
-  color: @rouge-crealead;
-}
-.main-container.main-container-sector-brands {
+//#open-close-sector-brand {
+//  display: block;
+//  background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 100%;
+//  z-index: 10;
+//  position: static;
+//  &.sector-brands-desc-open{
+//    background: url('../../../../../modules/features/crealead_brands/img/arrows_up_down.png') no-repeat 50% 0;
+//    margin-top: -33px;
+//    position: relative;
+//    z-index: 3;
+//  }
+//}
+
+
+/* Pole d'activité main container *****************************************************************************************************/
+//.title-3-sect-brand{
+//  text-transform: uppercase;
+//  .quick();
+//  font-weight: bold;
+//  color: @rouge-crealead;
+//}
+//.main-container.main-container-sector-brands {
+//  margin-top: 0;
+//  padding-top: 0;
+//  .group-sectorbrands-news .field-name-body{
+//    h3{
+//      .text-normal();
+//    }
+//  }
+//  h3 {
+//    .source();
+//    color: @rouge-crealead;
+//  }
+//  @media (min-width: @screen-md) {
+//    .third-effect .mask {
+//      margin-top: 5px;
+//    }
+//  }
+//  .group-sectorbrands-brands{
+//    h3{
+//      .title-3-sect-brand();
+//    }
+//  }
+//  .view-display-id-sector_brand_trainings{
+//    h3{
+//      .title-blue-bg();
+//    }
+//    .view-content{
+//      background-color: @gris-clair-crealead;
+//      &.row {
+//        margin: 0;
+//      }
+//      padding: 20px;
+//      h4{
+//        a{
+//          display: block;
+//          color: @noir-crealead;
+//          font-size: 0.8em;
+//          padding-bottom: 20px;
+//          margin-bottom: 20px;
+//          border-bottom: 1px solid @bleu-clair-crealead;
+//          height: 178px;
+//          overflow: hidden;
+//          &:hover{
+//            color: @rouge-crealead;
+//          }
+//        }
+//      }
+//    }
+//  }
+//  .group-sectorbrands-achievments{
+//     > h3{
+//      .title-3-sect-brand();
+//      padding-top: 35px;
+//      border-top: 1px solid @gris-fonce-crealead;
+//    }
+//    .field-name-body {
+//      height: 80px;
+//      overflow: hidden;
+//      h3, h4{
+//        .text-normal();
+//      }
+//    }
+//    padding-bottom: 20px;
+//    border-bottom: 1px solid @gris-fonce-crealead;
+//  }
+//  .group-sectorbrands-news{
+//    > h3{
+//      .title-3-sect-brand();
+//      padding-top: 35px;
+//    }
+//    .view-news .position-relative .field-type-taxonomy-term-reference{
+//      .cartouche-rouge();
+//      .position-cartouche-rouge();
+//    }
+//  }
+//  .group-sectorbrands-articles{
+//    background-color: @gris-clair-crealead;
+//    padding-bottom: 20px;
+//    margin-top: 80px;
+//    > h3 {
+//      color: @bleu-clair-crealead;
+//      text-transform: uppercase;
+//      padding-bottom: 10px;
+//      border-bottom: 1px solid black;
+//    }
+//    h4 > a {
+//      color: @bleu-clair-crealead;
+//    }
+//  }
+//  a#intro, a#brands-products, a#achievements, a#news-articles{
+//    margin-top: -200px;
+//    float:right;
+//  }
+//}
+
+/* 1.2 - Contenu de la page *******************************************************************************************/
+#taxonomy-term-sector-brand-container {
   margin-top: 0;
   padding-top: 0;
-  .group-sectorbrands-news .field-name-body{
-    h3{
-      .text-normal();
-    }
-  }
-  h3 {
-    .source();
-    color: @rouge-crealead;
-  }
-  @media (min-width: @screen-md) {
-    .third-effect .mask {
-      margin-top: 5px;
-    }
-  }
-  .group-sectorbrands-brands{
-    h3{
-      .title-3-sect-brand();
-    }
-  }
-  .view-display-id-sector_brand_trainings{
-    h3{
-      .title-blue-bg();
-    }
-    .view-content{
-      background-color: @gris-clair-crealead;
-      &.row {
+}
+
+.taxonomy-term.vocabulary-sector-brands.view-mode-full {
+  /* BARRE D'ONGLETS */
+  ul.group-pole-tabs {
+    border-bottom: none;
+    li {
+      a {
+        font-family: Quicksand, sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 7px 19px;
         margin: 0;
+        //border-top: 1px solid @gris-fonce-crealead;
+        //border-bottom: 1px solid @gris-fonce-crealead;
+        //border-left: 1px solid @gris-fonce-crealead;
+        background-color: @gris-clair-crealead;
+        color: #555555;
+        border-radius: unset;
+        //fon-size: 130%;
+        //line-height: 1.5rem;
       }
-      padding: 20px;
-      h4{
-        a{
-          display: block;
-          color: @noir-crealead;
-          font-size: 0.8em;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-          border-bottom: 1px solid @bleu-clair-crealead;
-          height: 178px;
-          overflow: hidden;
-          &:hover{
-            color: @rouge-crealead;
+    }
+    li:first-child {
+      a {
+        border-radius: 8px 0 0 8px;
+      }
+    }
+    li:last-child {
+      a {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    li.active {
+      a {
+        background-color: @rouge-crealead;
+        color: white;
+      }
+    }
+    li:hover a {
+      background-color: @gris-fonce-crealead;
+      color: white;
+    }
+    li.group-pole-email-tab,
+    li.group-pole-contact-tab {
+      display: none;
+    }
+  }
+
+  /* ONGLETS */
+  div.group-pole-tabs {
+    .tab-pane .view-content {
+      padding: 20px 0;
+      .row {
+
+        margin-bottom: 20px;
+      }
+    }
+
+    /* A LA UNE */
+    #bootstrap-fieldgroup-nav-item---la-une {
+      //border: 1px solid @gris-fonce-crealead;
+      .view-display-id-sector_brands_front_news {
+        .col {
+          .node-news {
+            .field-group-div {
+              border: 1px solid @gris-fonce-crealead;
+            }
+            .field-name-body {
+              padding-bottom: 10px;
+              border-bottom: 1px solid @rouge-crealead;
+            }
+          }
+        }
+      }
+
+      .view-display-id-sector_brands_front_achievs {
+        padding: 0;
+
+        h3 {
+          padding-left: 20px;
+        }
+        .view-content {
+          padding: 10px 0;
+
+          .views-bootstrap-grid-plugin-style {
+            padding: 10px;
+            background-color: #efefef;
+          }
+
+          .col {
+            .node-achievement {
+              .field-group-div {
+                border: 1px solid @gris-fonce-crealead;
+              }
+            }
           }
         }
       }
     }
-  }
-  .group-sectorbrands-achievments{
-     > h3{
-      .title-3-sect-brand();
-      padding-top: 35px;
-      border-top: 1px solid @gris-fonce-crealead;
-    }
-    .field-name-body {
-      height: 80px;
-      overflow: hidden;
-      h3, h4{
-        .text-normal();
+
+    /* SOLUTIONS */
+    #bootstrap-fieldgroup-nav-item--solutions {
+      .view-content.row {
+        margin: 0;
+      }
+      .view-display-id-sector_brands_products {
+        .col .node-product {
+          padding: 10px;
+          border: 1px solid @gris-fonce-crealead;
+        }
+      }
+      .view-display-id-sector_brand_trainings {
+        .view-content.row {
+          .views-bootstrap-grid-plugin-style {
+            .col {
+                .node-training {
+                  padding: 20px;
+                  background-color: @gris-clair-crealead;
+                }
+            }
+          }
+        }
       }
     }
-    padding-bottom: 20px;
-    border-bottom: 1px solid @gris-fonce-crealead;
-  }
-  .group-sectorbrands-news{
-    > h3{
-      .title-3-sect-brand();
-      padding-top: 35px;
+
+    /* RÉALISATIONS */
+    #bootstrap-fieldgroup-nav-item--ralisations {
+      .view-mode-sector_brand_block {
+        .field-group-div {
+          border: 1px solid @gris-fonce-crealead;
+        }
+      }
     }
-    .view-news .position-relative .field-type-taxonomy-term-reference{
-      .cartouche-rouge();
-      .position-cartouche-rouge();
+
+    /* LES CO-ENTREPRENEURS */
+    #bootstrap-fieldgroup-nav-item--les-co-entrepreneurs {
+      .view-header p {
+        text-align: right;
+        a {
+          display: inline-block;
+          background-color: #bf0e38;
+          padding: 6px 12px;
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          text-align: center;
+          height: 35px;
+        }
+        //a:before {
+        //  font-family: "fontello";
+        //  content: "\e834";
+        //  position: relative;
+        //  width: 1em;
+        //  color: white;
+        //  margin-right: 10px;
+        //  vertical-align: middle;
+        //}
+        a:hover {
+
+          cursor: pointer;
+        }
+      }
+      .view-css-effect {
+        box-shadow: none;
+        border: 1px solid @gris-fonce-crealead;
+      }
+      .info {
+        text-align: center;
+      }
     }
-  }
-  .group-sectorbrands-articles{
-    background-color: @gris-clair-crealead;
-    padding-bottom: 20px;
-    margin-top: 80px;
-    > h3 {
-      color: @bleu-clair-crealead;
-      text-transform: uppercase;
-      padding-bottom: 10px;
-      border-bottom: 1px solid black;
+
+    /* ENVOI DE MESSAGES (onglet caché en css) */
+    #bootstrap-fieldgroup-nav-item--envoi-de-messages {
+      /* Le formulaire */
+      .field-name-field-pole-email-form {
+        border-bottom: 1px dashed @gris-fonce-crealead;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+
+        .entity-entityform-type {
+          h3 {
+            font-family: Quicksand, sans-serif;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-weight: 500;
+          }
+          .content {
+            form.entitytype-pole_coes_contact-form {
+              .field-name-field-pole-tid {
+                visibility: hidden;
+                height: 0;
+              }
+              .field-name-field-pole-coes-sender {
+                float: left;
+                width: 250px;
+                margin-right: 20px;
+              }
+              .field-name-field-pole-coes-from {
+                float: left;
+                width: 250px;
+                label {
+                  visibility: hidden;
+                }
+              }
+              .field-name-field-pole-coes-emails {
+                clear: both;
+                input {
+                  visibility: hidden;
+                  height: 0;
+                  padding: 0;
+                }
+                .coes-emails {
+                  height: 60px;
+                  overflow-y: scroll;
+                  border: 1px solid #cccccc;
+                  color: #555555;
+                  background-color: #eeeeee;
+                  padding: 0 10px;
+                }
+              }
+              .field-name-field-pole-coes-message {
+                #switch_edit-field-pole-coes-message-und-0-value {
+                  border: 1px solid red;
+                  visibility: hidden;
+                }
+                .filter-wrapper {
+                  display: none;
+                }
+              }
+              .field-name-field-all-emails {
+                visibility: hidden;
+                height: 0;
+              }
+            }
+          }
+        }
+      }
+      /* La liste des emails précédemment envoyés */
+      .field-name-pole-emails {
+        h3 {
+          font-family: Quicksand, sans-serif;
+          font-size: 24px;
+          margin: 20px 0 10px 0;
+        }
+
+        .view-display-id-pole_emails {
+          .view-content {
+            padding-top: 0;
+
+            button.form-submit {
+              margin-left: 20px;
+              background-color: @rouge-crealead;
+              border-color: @rouge-crealead;
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+
+        th.views-field-created {
+          width: 10%;
+        }
+        th.views-field-field-pole-coes-sender {
+          width: 30%;
+        }
+        th.views-field-field-pole-coes-subject {
+        }
+        th.views-field-link-entityform {
+          width: 5%;
+        }
+      }
     }
-    h4 > a {
-      color: @bleu-clair-crealead;
+
+    /* FORMULAIRE DE CONTACT */
+    #bootstrap-fieldgroup-nav-item--contact {
+      h3 {
+        font-family: Quicksand, sans-serif;
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+      }
+      /* Le formulaire */
+      .field-name-field-pole-tid,
+      .field-name-field-contact-pole-emails,
+      .field-name-field-contact-pole-name {
+        margin-bottom: 0;
+        label {
+          display: none;
+        }
+        input {
+          height: 0;
+          padding: 0;
+          border: 0;
+        }
+      }
+      /* La liste des emails reçus */
+      .field-name-pole-contacts {
+        margin-top: 30px;
+        //padding-top: 20px;
+        border-top: 1px dashed @gris-fonce-crealead;
+
+        .view-display-id-pole_contacts {
+          .view-content {
+            padding-top: 0;
+
+            button.form-submit {
+              margin-left: 20px;
+              background-color: @rouge-crealead;
+              border-color: @rouge-crealead;
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+      }
     }
-  }
-  a#intro, a#brands-products, a#achievements, a#news-articles{
-    margin-top: -200px;
-    float:right;
+
+    /* ACTUALITES */
+    #bootstrap-fieldgroup-nav-item--actualits {
+      .col {
+        .node-news {
+          .field-group-div {
+            border: 1px solid @gris-fonce-crealead;
+          }
+          .field-name-field-image {
+            border: 1px solid @gris-fonce-crealead;
+          }
+          .field-name-body {
+            padding-bottom: 10px;
+            border-bottom: 1px solid @rouge-crealead;
+          }
+        }
+      }
+    }
+
+    /* ARTICLES */
+    #bootstrap-fieldgroup-nav-item--articles {
+      .node-article {
+        padding: 10px;
+        border: 1px solid @gris-fonce-crealead;
+      }
+    }
   }
 }
 
-
-
+/* 2 - PAGE D'UN MESSAGE ENVOYÉ AUX CO-ENTREPRENEURS ******************************************************************/
+.entityform-pole-coes-contact.view-mode-full {
+  .field-name-field-pole-coes-from,
+  .field-name-submission-date {
+    padding-bottom: 10px;
+    border-bottom: 1px solid @gris-fonce-crealead;
+    margin-bottom: 10px;
+  }
+  .field-name-field-pole-coes-emails {
+    margin-bottom: 10px;
+    .field-label {
+      margin-bottom: 5px;
+    }
+    .field-items {
+      height: 150px;
+      overflow-y: scroll;
+      border: 1px solid @gris-fonce-crealead;
+    }
+  }
+  .field-name-field-pole-coes-subject {
+    margin-bottom: 20px;
+  }
+}

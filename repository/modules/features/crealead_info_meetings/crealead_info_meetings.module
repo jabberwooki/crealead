@@ -32,7 +32,9 @@ function crealead_info_meetings_init() {
     }
     drupal_add_js(array('crealead_registrant_statuses' => $params), 'setting');
     drupal_add_js(drupal_get_path('module', 'crealead_info_meetings') . '/js/crealead_info_meetings.js');
-    drupal_add_js(array('crealead_info_meeting_location' => $node->field_meeting_location['und'][0]['value']), 'setting');
+    if (isset($node)) {
+        drupal_add_js(array('crealead_info_meeting_location' => $node->field_meeting_location['und'][0]['value']), 'setting');
+    }
   }
   elseif (NULL !== arg(1) && in_array(arg(1), array('mo','ni','se','di'))) {
     drupal_page_is_cacheable(FALSE);
@@ -96,12 +98,16 @@ function crealead_info_meetings_form_registration_form_alter(&$form, &$form_stat
   $form['field_registrant_status']['#suffix'] =
     '<div class="description">' . $form['field_registrant_status']['und']['#description'] . '</div>';
 
+  unset($form['field_attendee']); // must be removed... some day.
+
   // If anonymous user
   if (!user_is_logged_in()) {
-    // field attendee is hidden
-    unset($form['field_attendee']);
-    // field attendance is hidden
+    // field to be hidden
     unset($form['field_attendance']);
+    unset($form['field_applicant']);
+    unset($form['field_cape']);
+
+
     // field email is made required visually (char *  close to label).
     $form['anon_mail']['#required'] = 1;
 
@@ -205,26 +211,60 @@ function crealead_info_meetings_views_pre_render(&$view) {
       || $view->current_display == 'registration_export')
   ) {
     drupal_add_css(drupal_get_path('module', 'crealead_info_meetings') . '/css/crealead_info_meetings.css');
+
     foreach ($view->result as $result) {
       // Old field attendee
 //      $result->field_field_attendee[0]['rendered']['#markup'] =
 //        ($result->field_field_attendee[0]['raw']['value'] == 1) ? 'oui' : 'non';
 
-      // New field attendance
-      if (isset($result->field_field_attendance) && !empty($result->field_field_attendance)) {
-        $markup = $result->field_field_attendance[0]['rendered']['#markup'];
-        $modified_markup = '';
-        switch ($result->field_field_attendance[0]['raw']['value']) {
-          case '0':
-            $modified_markup = '<span class="presence-not-processed">' . $markup . '</span>';
-            break;
-          case '1':
-            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
-            break;
-          case '2':
-            $modified_markup = '<span class="presence-yes">' . $markup . '</span>';
+        // New field attendance
+        if (isset($result->field_field_attendance) && !empty($result->field_field_attendance)) {
+            $markup = $result->field_field_attendance[0]['rendered']['#markup'];
+            $modified_markup = '';
+            switch ($result->field_field_attendance[0]['raw']['value']) {
+              case '0':
+                $modified_markup = '<span class="presence-not-processed">' . $markup . '</span>';
+                break;
+              case '1':
+                $modified_markup = '<span class="presence-processed-yes">' . $markup . '</span>';
+                break;
+              case '2':
+                $modified_markup = '<span class="presence-processed-no">' . $markup . '</span>';
+            }
+            $result->field_field_attendance[0]['rendered']['#markup'] = $modified_markup;
         }
-      }
+        if (isset($result->field_field_applicant) && !empty($result->field_field_applicant)) {
+            $markup = $result->field_field_applicant[0]['rendered']['#markup'];
+            $modified_markup = '';
+            switch ($result->field_field_applicant[0]['raw']['value']) {
+                case '0':
+                    $modified_markup = '<span class="applicant-not-processed">' . $markup . '</span>';
+                    break;
+                case '1':
+//                    dpm('applicant-processed-yes');
+                    $modified_markup = '<span class="applicant-processed-yes">' . $markup . '</span>';
+                    break;
+                case '2':
+//                    dpm('applicant-processed-no');
+                    $modified_markup = '<span class="applicant-processed-no">' . $markup . '</span>';
+            }
+            $result->field_field_applicant[0]['rendered']['#markup'] = $modified_markup;
+        }
+        if (isset($result->field_field_cape) && !empty($result->field_field_cape)) {
+            $markup = $result->field_field_cape[0]['rendered']['#markup'];
+            $modified_markup = '';
+            switch ($result->field_field_cape[0]['raw']['value']) {
+                case '0':
+                    $modified_markup = '<span class="cape-not-processed">' . $markup . '</span>';
+                    break;
+                case '1':
+                    $modified_markup = '<span class="cape-processed-yes">' . $markup . '</span>';
+                    break;
+                case '2':
+                    $modified_markup = '<span class="cape-processed-no">' . $markup . '</span>';
+            }
+            $result->field_field_cape[0]['rendered']['#markup'] = $modified_markup;
+        }
     }
   }
 }
@@ -238,7 +278,7 @@ function crealead_info_meetings_views_pre_view(&$view, &$display_id, &$args) {
     $localized_title = $view->display['meeting_dates_list']->display_options['title'] .= ' à ' . crealead_info_meetings_get_location_name(arg(1));
     $view->display_handler->set_option('title', $localized_title);
   }
-  if ($view->name == 'info_meetings' && $view->current_display == 'info_meetings_prog') {
+  elseif ($view->name == 'info_meetings' && $view->current_display == 'info_meetings_prog') {
     // Fetch info meetings programme text from administrator settings.
     $programme_text = variable_get('programme_default_text', null);
     if ($programme_text) {
@@ -281,6 +321,26 @@ function crealead_info_meetings_action_info() {
       'label' => 'Marquer comme présent',
       'configurable' => FALSE,
     ),
+    'crealead_check_registrants_as_non_applicant' => array(
+      'type' => 'registration',
+      'label' => 'Marquer comme non candidat',
+      'configurable' => FALSE,
+    ),
+    'crealead_check_registrants_as_applicant' => array(
+      'type' => 'registration',
+      'label' => 'Marquer comme candidat',
+      'configurable' => FALSE,
+    ),
+      'crealead_check_registrants_as_non_cape' => array(
+          'type' => 'registration',
+          'label' => 'Marquer comme non CAPE',
+          'configurable' => FALSE,
+      ),
+      'crealead_check_registrants_as_cape' => array(
+          'type' => 'registration',
+          'label' => 'Marquer comme CAPE',
+          'configurable' => FALSE,
+      ),
   );
 }
 
@@ -291,7 +351,6 @@ function crealead_info_meetings_action_info() {
  * @param $context
  */
 function crealead_check_registrants_as_present(&$entity, $context) {
-//  crealead_field_attendee_value_alter($entity->registration_id, 1);
   crealead_field_attendance_value_alter($entity->registration_id, 1);
 }
 
@@ -302,23 +361,63 @@ function crealead_check_registrants_as_present(&$entity, $context) {
  * @param $context
  */
 function crealead_check_registrants_as_absent(&$entity, $context) {
-//  crealead_field_attendee_value_alter($entity->registration_id, 0);
-  crealead_field_attendance_value_alter($entity->registration_id, 2);
+    crealead_field_attendance_value_alter($entity->registration_id, 2);
 }
 
 /**
- * Helper function for VBO callback actions on field_attendee.
+ * Callback function for VBO action on registrations. Mark a registrant as applicant.
  *
- * @param integer $entity_id ID of the entity to alter.
- * @param integer $value Value to be given to field_attendee (1 to mark as present, 0 to mark as absent).
+ * @param $entity
+ * @param $context
  */
-function crealead_field_attendee_value_alter($registration_id, $value) {
-  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
-  if (isset($registration_wrapper->field_attendee) && !empty($registration_wrapper->field_attendee)) {
-    $registration_wrapper->field_attendee = $value;
-    $registration_wrapper->save();
-  }
+function crealead_check_registrants_as_applicant(&$entity, $context) {
+    crealead_field_applicant_value_alter($entity->registration_id, 1);
 }
+
+/**
+ * Callback function for VBO action on registrations. Mark a registrant as non applicant.
+ *
+ * @param $entity
+ * @param $context
+ */
+function crealead_check_registrants_as_non_applicant(&$entity, $context) {
+    crealead_field_applicant_value_alter($entity->registration_id, 2);
+}
+
+/**
+ * Callback function for VBO action on registrations. Mark a registrant as cape.
+ *
+ * @param $entity
+ * @param $context
+ */
+function crealead_check_registrants_as_cape(&$entity, $context) {
+    crealead_field_cape_value_alter($entity->registration_id, 1);
+}
+
+/**
+ * Callback function for VBO action on registrations. Mark a registrant as non cape.
+ *
+ * @param $entity
+ * @param $context
+ */
+function crealead_check_registrants_as_non_cape(&$entity, $context) {
+    crealead_field_cape_value_alter($entity->registration_id, 2);
+}
+
+
+///**
+// * Helper function for VBO callback actions on field_attendee.
+// *
+// * @param integer $entity_id ID of the entity to alter.
+// * @param integer $value Value to be given to field_attendee (1 to mark as present, 0 to mark as absent).
+// */
+//function crealead_field_attendee_value_alter($registration_id, $value) {
+//  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+//  if (isset($registration_wrapper->field_attendee) && !empty($registration_wrapper->field_attendee)) {
+//    $registration_wrapper->field_attendee = $value;
+//    $registration_wrapper->save();
+//  }
+//}
 
 /**
  * Helper function for VBO callback actions on field_attendance.
@@ -328,11 +427,56 @@ function crealead_field_attendee_value_alter($registration_id, $value) {
  * @param integer $value Value to be given to field_attendee (1 to mark as present, 2 to mark as absent).
  */
 function crealead_field_attendance_value_alter($registration_id, $value) {
-  $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
-  if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
-    $registration_wrapper->field_attendance->set($value);
-    $registration_wrapper->save();
-  }
+    $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
+    if (isset($registration_wrapper->field_attendance) && !empty($registration_wrapper->field_attendance)) {
+        if ($value == 2)  {
+            $registration_wrapper->field_cape->set($value);
+            $registration_wrapper->field_applicant->set($value);
+        }
+        $registration_wrapper->field_attendance->set($value);
+        $registration_wrapper->save();
+    }
+}
+
+/**
+ * Helper function for VBO callback actions on field_applicant.
+ *
+ * @param integer $entity_id ID of the entity to alter.
+ * @param integer $value Value to be given to field_applicant (1 to mark as applicant, 2 to mark as non applicant).
+ */
+function crealead_field_applicant_value_alter($registration_id, $value) {
+    $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
+    if (isset($registration_wrapper->field_applicant) && !empty($registration_wrapper->field_applicant)) {
+        if ($value == 2) {
+            $registration_wrapper->field_cape->set($value);
+        }
+        else {
+            $registration_wrapper->field_attendance->set($value);
+        }
+        $registration_wrapper->field_applicant->set($value);
+        $registration_wrapper->save();
+    }
+}
+
+/**
+ * Helper function for VBO callback actions on field_cape.
+ *
+ * @param integer $entity_id ID of the entity to alter.
+ * @param integer $value Value to be given to field_cape (1 to mark as cape, 2 to mark as non cape).
+ */
+function crealead_field_cape_value_alter($registration_id, $value) {
+    $registration_wrapper = entity_metadata_wrapper('registration', $registration_id);
+
+    if (isset($registration_wrapper->field_cape) && !empty($registration_wrapper->field_cape)) {
+        if ($value == 1) {
+            $registration_wrapper->field_attendance->set($value);
+            $registration_wrapper->field_applicant->set($value);
+        }
+        $registration_wrapper->field_cape->set($value);
+        $registration_wrapper->save();
+    }
 }
 
 /**

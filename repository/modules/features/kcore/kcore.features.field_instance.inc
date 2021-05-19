@@ -363,7 +363,7 @@ function kcore_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -383,6 +383,104 @@ function kcore_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_pole_manager'.
+  $field_instances['user-user-field_pole_manager'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_pole_manager',
+    'label' => 'Responsable de pôle',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_social_links'.
+  $field_instances['user-user-field_social_links'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_social_links',
+    'label' => 'Liens réseaux sociaux',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'used_services' => array(
+        'facebook' => 'facebook',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'twitter' => 'twitter',
+        'viadeo' => 'viadeo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'socialfield_widget',
+      'weight' => 8,
     ),
   );
 
@@ -627,8 +725,10 @@ function kcore_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alertes sessions de formation');
   t('Je veux recevoir un courriel chaque fois qu\'un utilisateur est intéressé par une de mes sessions de formation.');
+  t('Liens réseaux sociaux');
   t('Nom');
   t('Prénom');
+  t('Responsable de pôle');
   t('Référent');
   t('Sujet de votre message');
   t('Type de collectif');

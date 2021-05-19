@@ -62,6 +62,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'create room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -73,6 +74,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'create structure_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -84,6 +86,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'delete any room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -95,6 +98,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'delete any structure_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -104,14 +108,18 @@ function crealead_calendars_user_default_permissions() {
   // Exported permission: 'delete own room_event content'.
   $permissions['delete own room_event content'] = array(
     'name' => 'delete own room_event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own structure_event content'.
   $permissions['delete own structure_event content'] = array(
     'name' => 'delete own structure_event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 
@@ -120,6 +128,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'edit any room_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -131,6 +140,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'edit any structure_event content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -141,14 +151,18 @@ function crealead_calendars_user_default_permissions() {
   // Exported permission: 'edit own room_event content'.
   $permissions['edit own room_event content'] = array(
     'name' => 'edit own room_event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own structure_event content'.
   $permissions['edit own structure_event content'] = array(
     'name' => 'edit own structure_event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+    ),
     'module' => 'node',
   );
 

@@ -559,6 +559,49 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     0 => 'business_group',
   );
   $handler->display->display_options['show_title'] = 1;
+
+  /* Display: infos utilisateur */
+  $handler = $view->new_display('entity_view', 'infos utilisateur', 'eva_user_infos');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Infos utilisateur';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = 'Courriel :';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  /* Field: Field: Liens réseaux sociaux */
+  $handler->display->display_options['fields']['field_social_links']['id'] = 'field_social_links';
+  $handler->display->display_options['fields']['field_social_links']['table'] = 'field_data_field_social_links';
+  $handler->display->display_options['fields']['field_social_links']['field'] = 'field_social_links';
+  $handler->display->display_options['fields']['field_social_links']['label'] = '';
+  $handler->display->display_options['fields']['field_social_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_social_links']['click_sort_column'] = 'service';
+  $handler->display->display_options['fields']['field_social_links']['settings'] = array(
+    'link_text' => 0,
+  );
+  $handler->display->display_options['fields']['field_social_links']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_social_links']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['entity_type'] = 'profile2';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'coe_page',
+  );
+  $handler->display->display_options['argument_mode'] = 'token';
+  $handler->display->display_options['default_argument'] = '[profile2:user:uid]';
   $translatables['users'] = array(
     t('Master'),
     t('Référents Crealead'),
@@ -580,6 +623,9 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     t('Membres du collectif'),
     t('Profil'),
     t('Tout'),
+    t('infos utilisateur'),
+    t('Infos utilisateur'),
+    t('Courriel :'),
   );
   $export['users'] = $view;
 

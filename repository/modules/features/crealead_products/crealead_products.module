@@ -78,6 +78,12 @@ function crealead_products_form_product_node_form_alter(&$form, &$form_state, $f
   if (empty(array_intersect($allowed_roles, $current_user_roles))) {
     $form['field_is_structure']['#access'] = FALSE;
   }
+
+    // GESTION DU CHAMP TECHNIQUE DE RECHERCHE
+    // 1 - Déplacement de l'onglet vertical "Champs Crealed" vers la dernière position.
+    $form['#groups']['group_crealead_fields']->weight = 200;
+    // 2 - Champ en lecture seule
+    $form['field_product_search']['und'][0]['value']['#attributes']['readonly'] = 'readonly';
 }
 
 
@@ -151,5 +157,71 @@ function crealead_products_views_pre_render(&$view) {
 
     $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function crealead_products_node_presave($node) {
+  if ($node->type == 'product') {
+    $product_name = $node->title . ' ';
+    $product_intro = $product_earnings = $product_description = $product_who = $product_brands = '';
+
+    if (isset($node->field_introduction['und'][0]['value'])) {
+        $product_intro = strip_tags($node->field_introduction['und'][0]['value']) . ' ';
+    }
+    if (isset($node->field_product_earnings['und'][0]['value'])) {
+        $product_earnings = strip_tags($node->field_product_earnings['und'][0]['value']) . ' ';
+    }
+    if (isset($node->body['und'][0]['value'])) {
+        $product_description = strip_tags($node->body['und'][0]['value']) . ' ';
+    }
+    if (isset($node->field_product_to_whom['und'][0]['value'])) {
+        $product_who = strip_tags($node->field_product_to_whom['und'][0]['value']) . ' ';
+    }
+
+    if (!empty($node->field_product_related_brands['und'])) {
+        foreach ($node->field_product_related_brands['und'] as $brand) {
+            $query = db_select('node', 'n');
+            $query->fields('n', array('title'))
+                ->condition('n.nid', $brand['target_id']);
+            $result = $query->execute()->fetchField();
+            $product_brands .= $result;
+        }
+    }
+
+    $search_data = $product_name
+        . $product_intro
+        . $product_earnings
+        . $product_description
+        . $product_brands;
+    $search_array = array('value' => $search_data, 'format' => 'plain_text');
+
+    if (!isset($node->field_product_search['und'][0])) {
+        $node->field_product_search['und'][] = $search_array;
+    }
+    else {
+        $node->field_product_search['und'][0] = $search_array;
+    }
+  }
+}
+
+function crealead_products_fill_search_field() {
+    $query = new EntityFieldQueryExtraFields();
+    $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'product')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->addExtraField('', 'title', 'title', 'node');
+    $result = $query->execute();
+
+    $count = 0;
+    if (isset($result['node'])) {
+        $products = node_load_multiple(array_keys($result['node']));
+        foreach ($products as $product) {
+            node_save($product);
+            $count++;
+        }
+    }
+    dpm($count . ' nodes de type product enregistrés');
 }
 

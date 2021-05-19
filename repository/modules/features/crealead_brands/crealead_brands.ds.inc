@@ -12,6 +12,31 @@ function crealead_brands_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'entityform|pole_coes_contact|full';
+  $ds_fieldsetting->entity_type = 'entityform';
+  $ds_fieldsetting->bundle = 'pole_coes_contact';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'submission_date' => array(
+      'weight' => '2',
+      'label' => 'above',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:8:"sanitize";i:1;s:7:"context";s:31:"argument_entity_id:entityform_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"token";s:7:"subtype";s:18:"entityform:created";}',
+        'load_terms' => 0,
+        'ft' => array(
+          'lb' => 'Date d\'envoi',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+  );
+  $export['entityform|pole_coes_contact|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|achievement|block';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'achievement';
@@ -93,7 +118,7 @@ function crealead_brands_ds_field_settings_info() {
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => 'h4',
-        'class' => 'mask',
+        'class' => '',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'fis' => TRUE,
@@ -102,7 +127,6 @@ function crealead_brands_ds_field_settings_info() {
           'fis-at' => '',
           'fis-def-at' => FALSE,
         ),
-        'field_formatter_class' => '',
       ),
     ),
     'field_achievement_photos' => array(
@@ -321,8 +345,8 @@ function crealead_brands_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h3',
-        'class' => 'mask',
+        'wrapper' => 'h4',
+        'class' => '',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'fis' => TRUE,
@@ -331,7 +355,6 @@ function crealead_brands_ds_field_settings_info() {
           'fis-at' => '',
           'fis-def-at' => FALSE,
         ),
-        'field_formatter_class' => '',
       ),
     ),
     'field_brand_logo' => array(
@@ -447,44 +470,36 @@ function crealead_brands_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'sector_brands';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'achievements_anchor' => array(
-      'weight' => '4',
+    'pole_contacts' => array(
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-          'lb-col' => TRUE,
-        ),
-        'field_formatter_class' => '',
-      ),
     ),
-    'brands_products_anchor' => array(
-      'weight' => '2',
+    'pole_emails' => array(
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-          'lb-col' => TRUE,
-        ),
-        'field_formatter_class' => '',
-      ),
-    ),
-    'news_articles_anchor' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-          'lb-col' => TRUE,
-        ),
-        'field_formatter_class' => '',
+        'ft' => array(),
       ),
     ),
   );
   $export['taxonomy_term|sector_brands|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|sector_brands|pole_header';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'sector_brands';
+  $ds_fieldsetting->view_mode = 'pole_header';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['taxonomy_term|sector_brands|pole_header'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -701,6 +716,62 @@ function crealead_brands_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'pole_contacts';
+  $ds_field->label = 'Emails au pôle';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = 'sector_brands|*';
+  $ds_field->properties = array(
+    'block' => 'views|pole_coes_emails-pole_contacts',
+    'block_render' => '3',
+  );
+  $export['pole_contacts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'pole_emails';
+  $ds_field->label = 'Emails de Pôles';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = 'sector_brands|full';
+  $ds_field->properties = array(
+    'block' => 'views|pole_coes_emails-pole_emails',
+    'block_render' => '3',
+  );
+  $export['pole_emails'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'submission_date';
+  $ds_field->label = 'Date d\'envoi';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'entityform' => 'entityform',
+  );
+  $ds_field->ui_limit = 'pole_coes_contact|full';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Ex. : h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['submission_date'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'title_brand';
   $ds_field->label = 'Title brand';
   $ds_field->field_type = 5;
@@ -763,6 +834,50 @@ function crealead_brands_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['entityform|contact|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'entityform|pole_coes_contact|full';
+  $ds_layout->entity_type = 'entityform';
+  $ds_layout->bundle = 'pole_coes_contact';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'bootstrap_3_9';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_pole_coes_sender',
+        1 => 'field_pole_coes_from',
+        2 => 'submission_date',
+        3 => 'field_pole_coes_emails',
+        4 => 'field_others_emails',
+      ),
+      'right' => array(
+        5 => 'field_pole_coes_subject',
+        6 => 'field_pole_coes_message',
+      ),
+    ),
+    'fields' => array(
+      'field_pole_coes_sender' => 'left',
+      'field_pole_coes_from' => 'left',
+      'submission_date' => 'left',
+      'field_pole_coes_emails' => 'left',
+      'field_others_emails' => 'left',
+      'field_pole_coes_subject' => 'right',
+      'field_pole_coes_message' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['entityform|pole_coes_contact|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1492,41 +1607,61 @@ function crealead_brands_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'news_articles_anchor',
-        1 => 'group_sectorbrands_news_articles',
-        2 => 'brands_products_anchor',
-        3 => 'achievements_sector_brand_achievs',
-        4 => 'group_sectorbrands_brands_prods',
-        5 => 'group_sectorbrands_brands',
-        6 => 'group_sectorbrands_products',
-        7 => 'achievements_anchor',
-        8 => 'group_sectorbrands_news',
-        9 => 'group_sectorbrands_achievments',
-        10 => 'news_sector_brand_news',
-        11 => 'group_sectorbrands_articles',
-        12 => 'brands_sector_brand_brands_form',
-        13 => 'articles_sector_brand_articles',
-        14 => 'brands_sector_brand_brands',
-        15 => 'trainings_sector_brand_trainings',
+        0 => 'group_pole_tabs',
+        1 => 'achievements_sector_brand_achievs',
+        2 => 'news_sector_brand_news',
+        3 => 'field_pole_contact_form',
+        4 => 'brands_sector_brand_brands_form',
+        5 => 'trainings_sector_brand_trainings_form',
+        6 => 'pole_contacts',
+        7 => 'brands_sector_brand_brands',
+        8 => 'trainings_sector_brand_trainings',
+        9 => 'articles_sector_brand_articles',
+        10 => 'news_sector_brands_front_news',
+        11 => 'field_pole_email_form',
+        12 => 'pole_emails',
+        13 => 'achievements_sector_brands_front_achievs',
+        14 => 'group_pole_front_tab',
+        15 => 'group_pole_solutions_tab',
+        16 => 'group_pole_achiev_tab',
+        17 => 'group_pole_coes_tab',
+        18 => 'group_pole_email_tab',
+        19 => 'group_pole_contact_tab',
+        20 => 'group_pole_news_tab',
+        21 => 'group_pole_articles_tab',
+        22 => 'products_sector_brands_products_form',
+        23 => 'products_sector_brands_products',
+        24 => 'group_pole_solutions_products',
+        25 => 'group_pole_solutions_trainings',
       ),
     ),
     'fields' => array(
-      'news_articles_anchor' => 'ds_content',
-      'group_sectorbrands_news_articles' => 'ds_content',
-      'brands_products_anchor' => 'ds_content',
+      'group_pole_tabs' => 'ds_content',
       'achievements_sector_brand_achievs' => 'ds_content',
-      'group_sectorbrands_brands_prods' => 'ds_content',
-      'group_sectorbrands_brands' => 'ds_content',
-      'group_sectorbrands_products' => 'ds_content',
-      'achievements_anchor' => 'ds_content',
-      'group_sectorbrands_news' => 'ds_content',
-      'group_sectorbrands_achievments' => 'ds_content',
       'news_sector_brand_news' => 'ds_content',
-      'group_sectorbrands_articles' => 'ds_content',
+      'field_pole_contact_form' => 'ds_content',
       'brands_sector_brand_brands_form' => 'ds_content',
-      'articles_sector_brand_articles' => 'ds_content',
+      'trainings_sector_brand_trainings_form' => 'ds_content',
+      'pole_contacts' => 'ds_content',
       'brands_sector_brand_brands' => 'ds_content',
       'trainings_sector_brand_trainings' => 'ds_content',
+      'articles_sector_brand_articles' => 'ds_content',
+      'news_sector_brands_front_news' => 'ds_content',
+      'field_pole_email_form' => 'ds_content',
+      'pole_emails' => 'ds_content',
+      'achievements_sector_brands_front_achievs' => 'ds_content',
+      'group_pole_front_tab' => 'ds_content',
+      'group_pole_solutions_tab' => 'ds_content',
+      'group_pole_achiev_tab' => 'ds_content',
+      'group_pole_coes_tab' => 'ds_content',
+      'group_pole_email_tab' => 'ds_content',
+      'group_pole_contact_tab' => 'ds_content',
+      'group_pole_news_tab' => 'ds_content',
+      'group_pole_articles_tab' => 'ds_content',
+      'products_sector_brands_products_form' => 'ds_content',
+      'products_sector_brands_products' => 'ds_content',
+      'group_pole_solutions_products' => 'ds_content',
+      'group_pole_solutions_trainings' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1542,6 +1677,49 @@ function crealead_brands_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['taxonomy_term|sector_brands|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|sector_brands|pole_header';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'sector_brands';
+  $ds_layout->view_mode = 'pole_header';
+  $ds_layout->layout = 'bootstrap_2_8_2';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_brand_logo',
+      ),
+      'central' => array(
+        1 => 'title',
+        2 => 'description',
+      ),
+      'right' => array(
+        3 => 'field_lien_formulaire_contact',
+        4 => 'field_social_links',
+      ),
+    ),
+    'fields' => array(
+      'field_brand_logo' => 'left',
+      'title' => 'central',
+      'description' => 'central',
+      'field_lien_formulaire_contact' => 'right',
+      'field_social_links' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'central' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|sector_brands|pole_header'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1656,6 +1834,15 @@ function crealead_brands_ds_view_modes_info() {
     'taxonomy_term' => 'taxonomy_term',
   );
   $export['logo'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'pole_header';
+  $ds_view_mode->label = 'En-tête page de pôle';
+  $ds_view_mode->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $export['pole_header'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

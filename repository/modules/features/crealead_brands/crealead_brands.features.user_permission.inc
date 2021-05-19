@@ -224,6 +224,7 @@ function crealead_brands_user_default_permissions() {
     'name' => 'edit any achievement content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -342,6 +343,7 @@ function crealead_brands_user_default_permissions() {
   $permissions['edit terms in sector_brands'] = array(
     'name' => 'edit terms in sector_brands',
     'roles' => array(
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
     ),
     'module' => 'taxonomy',

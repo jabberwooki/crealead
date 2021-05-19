@@ -12,24 +12,67 @@
     /*margin-top: 50px;*/
 }
 
-.views-field-field-attendee {
-    color: #cccc99;
+/*.views-field-field-attendee {*/
+/*    color: #cccc99;*/
+/*}*/
+/*.view-display-id-registrations_list th.views-field-field-attendee {*/
+/*    color: #aaaaaa;*/
+/*}*/
+
+.view-display-id-registrations_list .views-field-field-attendance,
+.view-display-id-registrations_list .views-field-field-applicant,
+.view-display-id-registrations_list .views-field-field-cape {
+    text-align: center;
 }
-.view-display-id-registrations_list th.views-field-field-attendee {
-    color: #aaaaaa;
+.view-display-id-registrations_list .panel-body button:nth-child(2n+1) {
+    border: 1px solid #bf0e38;
+    background-color: #bf0e38;
+    color: white;
 }
-.presence-yes {
-    font-weight: 600;
-    font-size: 110%;
+.view-display-id-registrations_list .panel-body button:nth-child(2n+1):hover {
+    border: 1px solid #bf0e38;
+    background-color: #c1798a;
 }
-.presence-no {
-    color: #aaa;
+.view-display-id-registrations_list .panel-body button:nth-child(3) {
+    margin-left: 15px;
+}
+.view-display-id-registrations_list .panel-body button:nth-child(5) {
+    margin-left: 15px;
 }
 
+span[class$="-not-processed"] {
+    font-style: italic;
+    color: #999999;
+}
+span[class$="-processed-yes"] {
+    color: #008000;
+    font-weight: bold;
+}
+span[class$="-processed-no"] {
+    color: #bf0e38;
+    font-weight: bold;
+}
+
+/*.presence-yes {*/
+/*    font-weight: 600;*/
+/*    font-size: 110%;*/
+/*}*/
+/*.presence-no {*/
+/*    color: #aaa;*/
+/*}*/
+
 /* Formulaire inscription réunion */
-.node-info-meeting.view-mode-full #edit-field-attendance {
+.node-info-meeting.view-mode-full #edit-field-attendance,
+.node-info-meeting.view-mode-full #edit-field-applicant,
+.node-info-meeting.view-mode-full #edit-field-cape {
     clear: both;
 }
+.node-info-meeting.view-mode-full #edit-field-attendance label,
+.node-info-meeting.view-mode-full #edit-field-applicant label,
+.node-info-meeting.view-mode-full #edit-field-cape label {
+    width: 120px;
+}
+
 .node-info-meeting.view-mode-full .form-item-state {
     clear: both;
 }

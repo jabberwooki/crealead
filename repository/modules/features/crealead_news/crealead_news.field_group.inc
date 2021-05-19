@@ -92,7 +92,7 @@ function crealead_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Paramètres Crealead',
-    'weight' => '16',
+    'weight' => '17',
     'children' => array(
       0 => 'field_sorting_date',
     ),

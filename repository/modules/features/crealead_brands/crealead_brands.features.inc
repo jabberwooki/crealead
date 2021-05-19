@@ -86,6 +86,114 @@ function crealead_brands_default_entityform_type() {
     "rdf_mapping" : [],
     "paths" : []
   }');
+  $items['pole_coes_contact'] = entity_import('entityform_type', '{
+    "type" : "pole_coes_contact",
+    "label" : "Envoi d\\u0027un message aux co-entrepreneurs du p\\u00f4le",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "full_html" },
+      "submit_button_text" : "Envoyer",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "Envoi d\\u0027un courriel aux co-entrepreneurs",
+      "submission_text" : {
+        "value" : "\\u003Cp\\u003EVotre message a bien \\u00e9t\\u00e9 envoy\\u00e9.\\u003C\\/p\\u003E\\r\\n",
+        "format" : "full_html"
+      },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : {
+        "36071687" : "36071687",
+        "231346920" : "231346920",
+        "193262079" : "193262079",
+        "1" : 0,
+        "2" : 0,
+        "14479344" : 0,
+        "199363405" : 0,
+        "103860121" : 0,
+        "227964678" : 0,
+        "157083709" : 0,
+        "7178059" : 0,
+        "259028912" : 0,
+        "157297110" : 0,
+        "191976793" : 0,
+        "8998634" : 0,
+        "31497918" : 0,
+        "65237971" : 0,
+        "58920180" : 0,
+        "155486910" : 0,
+        "1936756" : 0
+      },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url]",
+      "instruction_pre" : { "value" : "", "format" : "full_html" }
+    },
+    "weight" : "0",
+    "rdf_mapping" : [],
+    "paths" : []
+  }');
+  $items['pole_contact'] = entity_import('entityform_type', '{
+    "type" : "pole_contact",
+    "label" : "Contact p\\u00f4le",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "full_html" },
+      "submit_button_text" : "Envoyer",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "Envoi du formulaire de contact ",
+      "submission_text" : {
+        "value" : "\\u003Cp\\u003EVotre demande a bien \\u00e9t\\u00e9 envoy\\u00e9e.\\u003C\\/p\\u003E\\r\\n",
+        "format" : "full_html"
+      },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : {
+        "1" : "1",
+        "2" : "2",
+        "14479344" : 0,
+        "199363405" : 0,
+        "103860121" : 0,
+        "227964678" : 0,
+        "157083709" : 0,
+        "7178059" : 0,
+        "259028912" : 0,
+        "157297110" : 0,
+        "191976793" : 0,
+        "8998634" : 0,
+        "31497918" : 0,
+        "65237971" : 0,
+        "58920180" : 0,
+        "155486910" : 0,
+        "1936756" : 0,
+        "36071687" : 0,
+        "231346920" : 0,
+        "193262079" : 0
+      },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url]",
+      "instruction_pre" : { "value" : "", "format" : "full_html" }
+    },
+    "weight" : "0",
+    "rdf_mapping" : [],
+    "paths" : []
+  }');
   return $items;
 }
 

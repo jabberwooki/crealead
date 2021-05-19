@@ -89,7 +89,6 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'field_formatter_class' => 'line-bottom-red',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -160,7 +159,7 @@ function crealead_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -264,7 +263,7 @@ function crealead_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -355,9 +354,8 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => 'content',
-          'image_style' => 'carre_large',
+          'image_style' => 'realisation',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -450,7 +448,7 @@ function crealead_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -538,7 +536,7 @@ function crealead_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -631,7 +629,7 @@ function crealead_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -732,7 +730,6 @@ function crealead_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'field_formatter_class' => '',
           'format_type' => 'news_medium',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -790,7 +787,7 @@ function crealead_news_field_default_field_instances() {
         'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -955,9 +952,7 @@ function crealead_news_field_default_field_instances() {
       'sector_brand_block' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
@@ -1093,7 +1088,7 @@ function crealead_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1178,7 +1173,96 @@ function crealead_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_related_pole'.
+  $field_instances['node-news-field_related_pole'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
+Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.',
+    'display' => array(
+      'block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'news_2_3' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'news_brand' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'zoom_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_pole',
+    'label' => 'Actualité visible à la Une de :',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'options_buttons',
+      'weight' => 4,
     ),
   );
 
@@ -1187,7 +1271,7 @@ function crealead_news_field_default_field_instances() {
     'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'L\'actualité sera visible dans l\'onglet <b>Actualités</b> du ou des pôles sélectionnés.',
     'display' => array(
       'block' => array(
         'label' => 'above',
@@ -1253,7 +1337,7 @@ function crealead_news_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_sector_brands',
-    'label' => 'Marque(s) sectorielle(s) concernée(s)',
+    'label' => 'Pôle(s) d\'activités concerné(s)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1261,9 +1345,11 @@ function crealead_news_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'label_help_description' => '',
+      ),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1334,9 +1420,7 @@ function crealead_news_field_default_field_instances() {
       'sector_brand_block' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),
@@ -1515,6 +1599,7 @@ function crealead_news_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Actualité visible à la Une de :');
   t('Auteur');
   t('Certification(s) ou label(s) concerné(s)');
   t('Cette date n\'est pas modifiable manuellement. Elle est (re)calculée automatiquement à la sauvegarde de la fiche Actualité.');
@@ -1524,10 +1609,13 @@ function crealead_news_field_default_field_instances() {
   t('Date de tri');
   t('Homepage of the Author');
   t('Image');
+  t('L\'actualité sera visible dans l\'onglet <b>Actualités</b> du ou des pôles sélectionnés.');
+  t('L\'actualité sera visible dans l\'onglet <b>À la une</b> du ou des pôles d\'activités sélectionnés.<br/>
+Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour apparaître.');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
   t('Marque(s) concernée(s)');
-  t('Marque(s) sectorielle(s) concernée(s)');
   t('Nature de l\'actualité');
+  t('Pôle(s) d\'activités concerné(s)');
   t('Secteur');
   t('Thématique(s) concernée(s)');
   t('Type d\'actualité');

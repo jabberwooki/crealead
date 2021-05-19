@@ -950,7 +950,7 @@ Please go to [password-policy:password-edit-url] to change your password.';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'swiftmailer_smtp_password';
-  $strongarm->value = 'patate12312--';
+  $strongarm->value = 'hu676tgYtrThG';
   $export['swiftmailer_smtp_password'] = $strongarm;
 
   $strongarm = new stdClass();

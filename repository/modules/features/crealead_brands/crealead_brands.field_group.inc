@@ -930,7 +930,7 @@ function crealead_brands_field_group_info() {
       'label' => 'group css effect 3',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-css-effect-3 field-group-div view-css-effect third-effect',
+        'classes' => 'group-css-effect-3 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -1010,6 +1010,322 @@ function crealead_brands_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_achiev_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_achiev_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Réalisations',
+    'weight' => '15',
+    'children' => array(
+      0 => 'achievements_sector_brand_achievs',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-achiev-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_achiev_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_articles_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_articles_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Articles',
+    'weight' => '20',
+    'children' => array(
+      0 => 'articles_sector_brand_articles',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-articles-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_articles_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_coes_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_coes_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Les co-entrepreneurs',
+    'weight' => '16',
+    'children' => array(
+      0 => 'brands_sector_brand_brands',
+      1 => 'brands_sector_brand_brands_form',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-coes-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_coes_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_contact_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_contact_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Contact',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_pole_contact_form',
+      1 => 'pole_contacts',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-contact-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_contact_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_email_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_email_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Envoi de messages',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_pole_email_form',
+      1 => 'pole_emails',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-pole-email-tab field-group-fieldset',
+        'id' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_email_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_front_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_front_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'À la une',
+    'weight' => '13',
+    'children' => array(
+      0 => 'news_sector_brands_front_news',
+      1 => 'achievements_sector_brands_front_achievs',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'label' => 'À la une',
+      'instance_settings' => array(
+        'classes' => 'group-pole-front-tab field-group-bootstrap_fieldgroup_nav_item ',
+      ),
+    ),
+  );
+  $field_groups['group_pole_front_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_news_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_news_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Actualités',
+    'weight' => '19',
+    'children' => array(
+      0 => 'news_sector_brand_news',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-news-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_news_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_solutions_products|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_solutions_products';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_solutions_tab';
+  $field_group->data = array(
+    'label' => 'Produits',
+    'weight' => '25',
+    'children' => array(
+      0 => 'products_sector_brands_products',
+      1 => 'products_sector_brands_products_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Produits',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-pole-solutions-products field-group-bootstrap_grid_col col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_pole_solutions_products|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_solutions_tab|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_solutions_tab';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_tabs';
+  $field_group->data = array(
+    'label' => 'Solutions',
+    'weight' => '14',
+    'children' => array(
+      0 => 'group_pole_solutions_products',
+      1 => 'group_pole_solutions_trainings',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-solutions-tab field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_solutions_tab|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_solutions_trainings|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_solutions_trainings';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_pole_solutions_tab';
+  $field_group->data = array(
+    'label' => 'Formations',
+    'weight' => '26',
+    'children' => array(
+      0 => 'trainings_sector_brand_trainings',
+      1 => 'trainings_sector_brand_trainings_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Formations',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-pole-solutions-trainings field-group-bootstrap_grid_col col-md-6',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_pole_solutions_trainings|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pole_tabs|taxonomy_term|sector_brands|full';
+  $field_group->group_name = 'group_pole_tabs';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'sector_brands';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Onglets',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_pole_front_tab',
+      1 => 'group_pole_solutions_tab',
+      2 => 'group_pole_achiev_tab',
+      3 => 'group_pole_coes_tab',
+      4 => 'group_pole_news_tab',
+      5 => 'group_pole_articles_tab',
+      6 => 'group_pole_email_tab',
+      7 => 'group_pole_contact_tab',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-pole-tabs field-group-bootstrap_fieldgroup_nav',
+        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_stacked' => 0,
+        'bootstrap_orientation' => 0,
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_pole_tabs|taxonomy_term|sector_brands|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_row_1|node|brand|full';
   $field_group->group_name = 'group_row_1';
   $field_group->entity_type = 'node';
@@ -1042,7 +1358,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_row_1|node|brand|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_achievments|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_achievments';
@@ -1074,7 +1390,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_achievments|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_articles|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_articles';
@@ -1106,7 +1422,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_articles|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_brands_prods';
@@ -1139,7 +1455,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_brands_prods|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_brands|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_brands';
@@ -1172,7 +1488,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_brands|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_news_articles|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_news_articles';
@@ -1205,7 +1521,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_news_articles|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_news|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_news';
@@ -1237,7 +1553,7 @@ function crealead_brands_field_group_info() {
   $field_groups['group_sectorbrands_news|taxonomy_term|sector_brands|full'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sectorbrands_products|taxonomy_term|sector_brands|full';
   $field_group->group_name = 'group_sectorbrands_products';
@@ -1631,11 +1947,13 @@ function crealead_brands_field_group_info() {
   t('Enveloppe articles partagés');
   t('Enveloppe formations partagées');
   t('Enveloppe produits partagés');
+  t('Envoi de messages');
   t('Equipe');
   t('Formations');
   t('Informations Générales');
   t('Infos 1');
   t('Infos 2');
+  t('Les co-entrepreneurs');
   t('Marques');
   t('Marques associées');
   t('Marques et produits');
@@ -1655,6 +1973,7 @@ function crealead_brands_field_group_info() {
   t('group css effect 3');
   t('group row 1');
   t('group titre et accroche');
+  t('À la une');
 
   return $field_groups;
 }
