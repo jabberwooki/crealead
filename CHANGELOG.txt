@@ -1,3 +1,66 @@
+Crealead v3.15 (Sprint 3.12) / 2021-05-19
+-----------------------------------------
+  * crealead_brands: S12-dev-complémentaires: Amélioration du code de nettoyage des emails 'Autres destinataires'.
+  * crealead_brands: S12-dev-complémentaires: Ajout du code de nettoyage du champ 'Autres destinataires'.
+  * crealead_brands: S12-dev-complémentaires: Ajout des champs Autres destinataires (field_other_emails) et Tous les destinataires (field_all_emails) et modif de la Rule 'Envoi message aux co-entrepreneurs' pour utiliser field_all_emails dans BCC.
+  * crealead_brands: S12-dev-complémentaires: Pôles d'activités: Ajout des emails de tous les responsables aux destinaires des emails aux coes.
+  * Custom theme: S12-debug: Suppression du caractère chevron au début des boutons 'Contactez-nous' et 'Envoyer un message aux coE'.
+  * crealead_brands, crealead_news: S12: Modifs supplémentaires pour corriger le dysfonctionnement du tri draggableviews.
+  * crealead_brands: S12-dev-complémentaires: Ajout code custom dans le hook crealead_brands_node_postinsert() pour Afficher dans l'onglet 'A la une' toute réalisation nouvellement créée et cochée à la Une.
+  * crealead_brands, crealead_news: S12-debug: Complément du commit précédent, export des modifs de vue (filtre exposé sur Visible à la une de).
+  * crealead_news, crealead_brands: S12-debug: Utilisation du hook_views_query_alter() pour les onglets Réalisations et Actualités d'un pole (AND passé à OR et ajout de DISTINCT) pour pouvoir afficher les éléments qui sont soit rattachés à une marque du pôle soit directement créés dans le pôle sans être attaché à une marque.
+  * kcore: S12-debug : Ajout de la permission d'utiliser draggableviews au rôle 'responsable de pôle'.
+  * crealead_news: S12-dev-complémentaires: Ajout code custom dans le hook crealead_news_node_postinsert() pour afficher dans l'ongle 'A la Une' toute actu nouvellement créée et cochée à la Une.
+  * crealead_brands : S12-debug : Format du champ 'Lien formulaire de contact' des pôles passé à Plain text.
+  * crealead_associates: S12-debug-complémentaires: Suppression de l'affichage d'un message d'erreur lorsque la recherche de comptes-rendus par thématique est infructueuse.
+  * crealead_news: S12-dev-complémentaires: Modif de l'ordre des liens (ajouter actu, réordonner actus) dans le footer de la vue des actus à la Une.
+  * crealead_brands: S12-dev-complementaires: Création d'un outil de tri draggableviews pour les réalisations de l'onglet A la une des poles d'activités.
+  * crealead_news: S12-dev-complémentaires: Modification de la vue draggableviews de tri (page_news_sorting remplacé par page_front_news_sorting) pour les actus à la Une.
+  * crealead_brands: S12-dev-complémentaires: Création d'un outil de tri draggableviews pour les actus de l'onglet A la une des poles d'activités.
+  * Custom theme: S12-14: Transformation du lien Contact en bouton Contactez-nous.
+  * crealead_trainings: S12-13: Script de mise à jour du champ de recherche d'une formation ajouté au fichier crealead_trainings.module.
+  * kcore: S12-12: Pour l'instant, l'adresse email utilisateur n'est plus affichée dans le profil co-entrepreneur (cachée dans la vue users/eva_user_infos).
+  * crealead_profiles: S12-12: Le champ 'Paramètres de contact' n'est plus visible dans le formulaire utilisateur.
+  * crealead_products: S12-3: Ajout du champ Introduction au bloc de vue Produits dans l'onglet Solutions des pôles d'activités.
+  * custom theme: S12-3: Ajout d'un fond grisé pour les Réalisations dans l'onglet A la une des pôles d'activités.
+  * crealead_brands: S12-3: Dans l'onglet A la une des pôles, Actus placés à gauche et Réalisations à droite.
+  * crealead_news: S12-12: Suppression de la pagination de la vue news/sector_brands_front_news, affichage de 2 éléments seulement.
+  * kcore: Debug S12-12: Suppression du message d'erreur 'undefined index und...' lorsqu'un gestionnaire de pole crée une actu/realisation sans la rattacher à un pole.
+  * crealed_trainings: S12-13: Nom de la marque ajouté au champ de recherche technique des formations.
+  * crealead_calendars crealead_faqs crealead_news crealead_newsflashes: Ajout des permissions nécessaires au rôle 'direction'.
+  * crealead_brands: S12-14: Interdiction de voir la liste des contacts reçus par un pôle au personnes non autorisées.
+  * crealead_brands: S12-14: Création du formulaire de contact des pôles d'activités.
+  * crealead_brands: S12-13: ajout des fieldgroups group_pole_solutions_products et group_pole_solutions_trainings oubliés dans le commit précédent.
+  * crealead_brands, crealead_products, crealead_trainings: S12-13: Moteurs de recherche dans l'onglet Solutions des pôles d'activités.
+  * kcore: S12-12: Ajout du champ field_social_links au compte utilisateur. Oublié dans le commit précédent.
+  * crealead_profiles, kcore: S12-12: Affichage de l'adresse email et des réseaux sociaux dans la page coE.
+  * crealead_info_meetings: Correction d'un bug d'affichage sur le formulaire de modif d'une inscription.
+  * crealead_info_meetings: S12-10: Ajout de la logique sur les changements d'états (présent/absent, candidat/non candidat, cape/non cape).
+  * crealead_info_meetings: S12-10: Ajout des champs 'A candidaté' et 'A signé un CAPE' et création des traitements qui vont avec.
+  * crealead_info_meetings: S12-10: Ajout date d'inscription dans la page Statistiques réunions.
+  * crealead_articles: Modif du mécanisme d'affichage sur la page d'accueil.
+  * crealead_brands, crealead_products: intervention technique: remise au propre des features.
+  * crealead_brands: s12-9: Améliorations (format de date, css).
+  * crealead_brands: S12-9: Export du ds mode full du formulaire de contact des coes.
+  * crealead_brands: Suppression d'un dpm().
+  * crealead_brands: 12-9: Création du formulaire d'envoi d'infos aux coes d'un pôle, création de la règle d'envoi de mail aux coes.
+  * crealead_brands: Création d'un script jquery pour gérer en cohérence les champs 'Responsable de pôle' et 'Rôles' dans le formulaire utilisateur.
+  * crealead_brands: S12-9: Affichage du lien vers le formulaire email dans l'onglet Les co-entrepreneurs d'un pôle. Ce lien s'affiche seulement si l'utilisateur est superadmin, administrateur, webmaster ou responsable du pôle.
+  * crealead_associates: S12-8: création de la page Comptes-rendus de Comités d'Étude.
+  * crealead_brands: S12-4: Ajout des réseaux sociaux aux pôles d'activités.
+  * crealead_news: S12-3: Pagination dans onglet Actualités d'un pôle passé de 8 à 20 (oubli du commit précédent).
+  * crealead_articles, crealead_brands, crealead_news, crealead_products, crealead_trainings and crealead theme: S12-3: Réorganisation complète et modif intégration graphique des pôles d'activités.
+  * crealead_newsflashes: Modif page brèves  (vue newsflashes/coe_area_page): pagination passée de 5 à 15 items.
+  * crealead_brands, crealead_news, kcore: S12-2: Les responsables de pole peuvent désormais par défaut modifier toutes les actus et toutes les réalisations. Mais ils ne peuvent le faire en réalité que si actu ou réalisation à été rattachée à leur pole par l'auteur.
+  * crealead_brands : S12-2 : Actualités et réalisations visibles à la Une - S12-3 : Réorganisation de la page Pôle d'activité.
+  * crealead_brands : Ajout du champ 'Réalisation visible à la Une' et gestion de l'affichage de ce champ dans le formulaire en fonction des roles.
+  * crealead_news : Modif de la description du champ field_related_poles.
+  * crealead_news: Modif label du champ field_related_pole.
+  * crealead_news : Ajout du champ 'Actualité visible à la Une' et gestion de l'affichage de ce champ dans le formulaire en fonction des roles.
+  * kcore : S12-1 : On laisse le droit au role 'administrateur' de modifier tous les poles, même s'il n'est pas gestionnaire de pole.
+  * crealead_flashinfos, crealead_profiles, kcore : S12-1 : Ajout champ de base, instance de champ et permission manquants.
+  * crealead_flashinfos, crealead_profiles, kcore : S12-1 : Ajout de la gestion des responsables de pôles d'activités.
+
 Hotfix prevent_sharing_training_with_parent_brand / 2021-02-24
 --------------------------------------------------------------
   * crealead_trainings: Correction du bug de partage d'une formation avec la marque qui possède cette formation.
