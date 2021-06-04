@@ -275,7 +275,11 @@ function crealead_info_meetings_views_pre_render(&$view) {
 function crealead_info_meetings_views_pre_view(&$view, &$display_id, &$args) {
   if ($view->name == 'info_meetings' && $view->current_display == 'meeting_dates_list') {
     // Add location name (Monptellier, Nimes, Sète) to the meetings view title.
-    $localized_title = $view->display['meeting_dates_list']->display_options['title'] .= ' à ' . crealead_info_meetings_get_location_name(arg(1));
+    $article = 'à';
+    if(arg(1) == 'di') {
+        $article = '';
+    }
+    $localized_title = $view->display['meeting_dates_list']->display_options['title'] .= ' ' . $article . ' ' . crealead_info_meetings_get_location_name(arg(1));
     $view->display_handler->set_option('title', $localized_title);
   }
   elseif ($view->name == 'info_meetings' && $view->current_display == 'info_meetings_prog') {
