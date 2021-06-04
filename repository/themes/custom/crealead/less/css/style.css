@@ -16217,3 +16217,84 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .maintenance-page #page #content-content {
   font-size: 120%;
 }
+.landing-page-shadow {
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
+}
+.page-node-1000000 .field-name-service-links-displays-group {
+  display: none;
+}
+.page-node-1000000 .field-name-body .title {
+  font-size: 1.9em;
+  font-weight: 700;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.page-node-1000000 .field-name-body .reminder {
+  padding-left: 0;
+  padding-right: 60px;
+  text-align: center;
+}
+.page-node-1000000 .field-name-body .reminder .reminder-title {
+  text-align: center;
+}
+.page-node-1000000 .field-name-body .reminder .reminder-title::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #c6093b;
+  width: 75px;
+  margin: 0 auto;
+}
+.page-node-1000000 .field-name-body .reminder .when-where {
+  padding: 50px 15px 50px 15px;
+  background-color: #f0f1f2;
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
+}
+.page-node-1000000 .field-name-body .reminder .when-where .subtitle {
+  font-style: italic;
+  font-size: 1.7em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.page-node-1000000 .field-name-body .reminder .when-where .text {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.page-node-1000000 .field-name-body .details {
+  padding-left: 0;
+}
+.page-node-1000000 .field-name-body .details .subscription {
+  float: right;
+}
+.page-node-1000000 .field-name-body .details .subscription a {
+  font-size: 1.9em;
+  font-weight: 700;
+  color: white;
+  background-color: #c11f39;
+  padding: 12px 20px 23px 20px;
+  margin-left: 10px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+.page-node-1000000 .field-name-body .details .text {
+  font-size: 1.5em;
+  padding: 15px;
+  border-top: 2px solid #f1f2f3;
+  border-left: 2px solid #f1f2f3;
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
+}
+.page-node-1000000 .field-name-body .details .text li {
+  padding: 0 0 20px 0 !important;
+}
+.page-node-1000000 .field-name-body .details .who-title {
+  margin-top: 20px;
+}
+.page-node-1000000 .field-name-body .details .what-title::after,
+.page-node-1000000 .field-name-body .details .who-title::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #c6093b;
+  width: 75px;
+  margin-left: 25px;
+}
