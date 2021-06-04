@@ -16246,6 +16246,7 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 }
 .page-node-1000000 .field-name-body .reminder .when-where {
   padding: 50px 15px 50px 15px;
+  margin-bottom: 25px;
   background-color: #f0f1f2;
   box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
 }
