@@ -1,6 +1,19 @@
+/* Custom mixins */
 .landing-page-shadow {
   box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
 }
+
+.formatted-button {
+  font-size: 1.9em;
+  font-weight: 700;
+  color: white;
+  background-color: #c11f39;
+  padding: 12px 20px 23px 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+/* End of custom mixins */
 
 .page-node-1000000 {
 
@@ -61,15 +74,8 @@
         float: right;
 
         a {
-          font-size: 1.9em;
-          font-weight: 700;
-          color: white;
-          background-color: #c11f39;
-          padding: 12px 20px 23px 20px;
+          .formatted-button;
           margin-left: 10px;
-          -moz-border-radius: 15px;
-          -webkit-border-radius: 15px;
-          border-radius: 15px;
         }
       }
 
@@ -98,5 +104,29 @@
         //margin-top: 3px;
       }
     }
+
+    .subscription-block {
+      //border: 1px solid red;
+      .text-before {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .picto {
+        text-align: center;
+      }
+      .subscription-button {
+        text-align: center;
+        margin: 30px 0 50px 0;
+        a {
+          .formatted-button;
+        }
+      }
+      .covid-infos {
+        text-align: center;
+        font-weight: 700;
+      }
+    }
   }
 }
+

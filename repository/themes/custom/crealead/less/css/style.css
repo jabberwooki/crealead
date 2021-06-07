@@ -16217,9 +16217,21 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .maintenance-page #page #content-content {
   font-size: 120%;
 }
+/* Custom mixins */
 .landing-page-shadow {
   box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 3px;
 }
+.formatted-button {
+  font-size: 1.9em;
+  font-weight: 700;
+  color: white;
+  background-color: #c11f39;
+  padding: 12px 20px 23px 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+/* End of custom mixins */
 .page-node-1000000 .field-name-service-links-displays-group {
   display: none;
 }
@@ -16273,10 +16285,10 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   color: white;
   background-color: #c11f39;
   padding: 12px 20px 23px 20px;
-  margin-left: 10px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  margin-left: 10px;
 }
 .page-node-1000000 .field-name-body .details .text {
   font-size: 1.5em;
@@ -16298,4 +16310,30 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
   border-bottom: 2px solid #c6093b;
   width: 75px;
   margin-left: 25px;
+}
+.page-node-1000000 .field-name-body .subscription-block .text-before {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.page-node-1000000 .field-name-body .subscription-block .picto {
+  text-align: center;
+}
+.page-node-1000000 .field-name-body .subscription-block .subscription-button {
+  text-align: center;
+  margin: 30px 0 50px 0;
+}
+.page-node-1000000 .field-name-body .subscription-block .subscription-button a {
+  font-size: 1.9em;
+  font-weight: 700;
+  color: white;
+  background-color: #c11f39;
+  padding: 12px 20px 23px 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+.page-node-1000000 .field-name-body .subscription-block .covid-infos {
+  text-align: center;
+  font-weight: 700;
 }
