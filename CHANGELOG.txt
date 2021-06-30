@@ -1,3 +1,11 @@
+Crealead v3.15.1 (demande urgente) / 2021-06-30
+-----------------------------------------------
+  * Page d'atterrissage Réunions d'info : ajout de la mise en forme CSS du bloc d'inscription de bas de page.
+  * crealead_info_meetings : Correction du bug d'affichage 'PROCHAINES RÉUNIONS D'INFORMATION À À DISTANCE'.
+  * Modification de la feuille de style de la landing page Réunions d'info.
+  * Création de la page d'atterrissage des réunions d'info.
+  * Merge tag 'v3.15' into develop
+
 Crealead v3.15 (Sprint 3.12) / 2021-05-19
 -----------------------------------------
   * crealead_brands: S12-dev-complémentaires: Amélioration du code de nettoyage des emails 'Autres destinataires'.
