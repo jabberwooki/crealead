@@ -44,6 +44,7 @@ function crealead_newsletters_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'assistant' => 'assistant',
+      'éditeur gazette' => 'éditeur gazette',
     ),
     'module' => 'node',
   );
@@ -58,7 +59,9 @@ function crealead_newsletters_user_default_permissions() {
   // Exported permission: 'view any unpublished newsletter content'.
   $permissions['view any unpublished newsletter content'] = array(
     'name' => 'view any unpublished newsletter content',
-    'roles' => array(),
+    'roles' => array(
+      'éditeur gazette' => 'éditeur gazette',
+    ),
     'module' => 'view_unpublished',
   );
 
