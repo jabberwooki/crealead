@@ -387,6 +387,10 @@ function crealead_preprocess_node(&$vars) {
 
     drupal_add_html_head($og_image, 'og image');
   }
+  else if ($vars['nid'] == 1000000) {
+//      dpm($vars);
+      $vars['central'] = str_replace('group-col8 field-group-div col-md-8 col-md-offset-2','field-group-div', $vars['central']);
+    }
 }
 
 
