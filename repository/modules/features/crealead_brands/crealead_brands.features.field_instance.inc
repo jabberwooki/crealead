@@ -2087,6 +2087,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'slideshow_colorbox_slideshow_speed' => 4000,
           'slideshow_colorbox_speed' => 350,
           'slideshow_colorbox_transition' => 'elastic',
+          'slideshow_content_type' => 'image',
           'slideshow_controls' => 0,
           'slideshow_controls_pause' => 0,
           'slideshow_controls_position' => 'after',
@@ -2102,6 +2103,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'slideshow_speed' => 1000,
           'slideshow_start_on_hover' => 0,
           'slideshow_timeout' => 0,
+          'slideshow_view_mode' => 'full',
         ),
         'type' => 'slideshow',
         'weight' => 0,
@@ -2147,6 +2149,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'slideshow_colorbox_slideshow_speed' => 4000,
           'slideshow_colorbox_speed' => 350,
           'slideshow_colorbox_transition' => 'elastic',
+          'slideshow_content_type' => 'image',
           'slideshow_controls' => 1,
           'slideshow_controls_pause' => 0,
           'slideshow_controls_position' => 'after',
@@ -2162,6 +2165,7 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
           'slideshow_speed' => 1000,
           'slideshow_start_on_hover' => 0,
           'slideshow_timeout' => 4000,
+          'slideshow_view_mode' => 'full',
         ),
         'type' => 'slideshow',
         'weight' => 1,
@@ -3925,6 +3929,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'label' => 'above',
         'module' => 'link',
         'settings' => array(
+          'custom_title' => '',
           'field_formatter_class' => '',
         ),
         'type' => 'link_default',
@@ -3933,7 +3938,9 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'full' => array(
         'label' => 'inline',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 38,
       ),
@@ -3977,6 +3984,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
