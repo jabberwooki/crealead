@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_products.views_default.inc
@@ -51,7 +52,7 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Marque(s) concernée(s) (field_product_related_brands) */
+  /* Contextual filter: Nœud: Marque(s) concernée(s) (field_product_related_brands) */
   $handler->display->display_options['arguments']['field_product_related_brands_target_id']['id'] = 'field_product_related_brands_target_id';
   $handler->display->display_options['arguments']['field_product_related_brands_target_id']['table'] = 'field_data_field_product_related_brands';
   $handler->display->display_options['arguments']['field_product_related_brands_target_id']['field'] = 'field_product_related_brands_target_id';
@@ -148,7 +149,7 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Marques qui peuvent utiliser ce produit (field_allowed_brands) */
+  /* Contextual filter: Nœud: Marques qui peuvent utiliser ce produit (field_allowed_brands) */
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
@@ -204,12 +205,6 @@ function crealead_products_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Options avancées',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_product_search_value' => array(
       'bef_format' => 'default',
@@ -220,55 +215,14 @@ function crealead_products_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -298,7 +252,7 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
+  /* Relationship: Nœud: Marque(s) sectorielle(s) concernée(s) (field_related_sector_brands) */
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['id'] = 'field_related_sector_brands_tid';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['table'] = 'field_data_field_related_sector_brands';
   $handler->display->display_options['relationships']['field_related_sector_brands_tid']['field'] = 'field_related_sector_brands_tid';
@@ -331,7 +285,7 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'product' => 'product',
   );
-  /* Filter criterion: Content: Champ de recherche (field_product_search) */
+  /* Filter criterion: Nœud: Champ de recherche (field_product_search) */
   $handler->display->display_options['filters']['field_product_search_value']['id'] = 'field_product_search_value';
   $handler->display->display_options['filters']['field_product_search_value']['table'] = 'field_data_field_product_search';
   $handler->display->display_options['filters']['field_product_search_value']['field'] = 'field_product_search_value';
@@ -401,7 +355,6 @@ function crealead_products_views_default_views() {
     t('Réinitialiser'),
     t('Trier par'),
     t('Options avancées'),
-    t('Select any filter and click on Apply to see results'),
     t('Éléments par page'),
     t('Décalage'),
     t('« premier'),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_info_meetings.views_default.inc
@@ -105,23 +106,23 @@ function crealead_info_meetings_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Footer: Global: Result summary */
+  /* Pied de page: Global : Résumé des résultats */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
   $handler->display->display_options['footer']['result']['content'] = 'Nombre total d\'inscriptions : @total';
-  /* Relationship: Registration: Registration to Node */
+  /* Relation: Inscription : Registration to Nœud */
   $handler->display->display_options['relationships']['registration_related_node']['id'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_related_node']['table'] = 'registration';
   $handler->display->display_options['relationships']['registration_related_node']['field'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_related_node']['label'] = 'Réunion info';
-  /* Relationship: Registration Settings: Node to Registration Settings */
+  /* Relation: Registration Settings : Nœud to Registration Settings */
   $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['relationship'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
-  /* Field: Bulk operations: Registration */
+  /* Champ: Bulk operations : Inscription */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'registration';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -176,56 +177,56 @@ function crealead_info_meetings_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: Registration: Registration ID */
+  /* Champ: Inscription : Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
   $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['label'] = '';
   $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
-  /* Field: Registration: Date created */
+  /* Champ: Inscription : Date de création */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Registration: View link */
+  /* Champ: Inscription : Lien d'affichage */
   $handler->display->display_options['fields']['view_registration']['id'] = 'view_registration';
   $handler->display->display_options['fields']['view_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['view_registration']['field'] = 'view_registration';
   $handler->display->display_options['fields']['view_registration']['label'] = 'Actions';
-  /* Field: Registration: Edit link */
+  /* Champ: Inscription : Lien de modification */
   $handler->display->display_options['fields']['edit_registration']['id'] = 'edit_registration';
   $handler->display->display_options['fields']['edit_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['edit_registration']['field'] = 'edit_registration';
-  /* Field: Registration: Delete link */
+  /* Champ: Inscription : Lien de suppression */
   $handler->display->display_options['fields']['delete_registration']['id'] = 'delete_registration';
   $handler->display->display_options['fields']['delete_registration']['table'] = 'registration';
   $handler->display->display_options['fields']['delete_registration']['field'] = 'delete_registration';
-  /* Field: Registration: Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
   $handler->display->display_options['fields']['field_attendee']['exclude'] = TRUE;
-  /* Field: Registration: Présence */
+  /* Champ: Inscription : Présence */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
@@ -233,15 +234,15 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['fields']['field_attendance']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: A candidaté */
+  /* Champ: Inscription : A candidaté */
   $handler->display->display_options['fields']['field_applicant']['id'] = 'field_applicant';
   $handler->display->display_options['fields']['field_applicant']['table'] = 'field_data_field_applicant';
   $handler->display->display_options['fields']['field_applicant']['field'] = 'field_applicant';
-  /* Field: Registration: A signé un CAPE */
+  /* Champ: Inscription : A signé un CAPE */
   $handler->display->display_options['fields']['field_cape']['id'] = 'field_cape';
   $handler->display->display_options['fields']['field_cape']['table'] = 'field_data_field_cape';
   $handler->display->display_options['fields']['field_cape']['field'] = 'field_cape';
-  /* Contextual filter: Content: Nid */
+  /* Filtre contextuel: Contenu : Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -268,24 +269,23 @@ function crealead_info_meetings_views_default_views() {
     t('Nombre total d\'inscriptions : @total'),
     t('Réunion info'),
     t('Paramètres inscription'),
-    t('- Choose an operation -'),
+    t('Choisir une action'),
     t('.'),
     t(','),
-    t('Date created'),
+    t('Date de création'),
     t('Nom'),
     t('Prénom'),
     t('Courriel'),
     t('Statut'),
     t('Actions'),
-    t('Edit link'),
-    t('Delete link'),
+    t('Lien de modification'),
+    t('Lien de suppression'),
     t('Présent'),
     t('Présence'),
     t('A candidaté'),
     t('A signé un CAPE'),
     t('Tout'),
     t('Page'),
-    t('more'),
   );
   $export['crealead_registrations'] = $view;
 
@@ -315,7 +315,7 @@ function crealead_info_meetings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -332,7 +332,7 @@ Quel statut ? Quel compatibilité avec mes indemnités Pôle Emploi, mon RSA ?
 Les animations réseaux de Crealead
 Quel intérêt par rapport au statut de l\'autoentrepreneur ?';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Footer: Global: Text area */
+  /* Pied de page: Global : Zone de texte */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -341,14 +341,14 @@ contact@crealead.com
 55, rue Saint Cléophas 34000 Montpellier 
 Téléphone : 04-67-06-96-72';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
-  /* Field: Content: Path */
+  /* Champ: Contenu : Chemin */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date']['id'] = 'field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
@@ -363,18 +363,18 @@ Téléphone : 04-67-06-96-72';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Sort criterion: Content: Post date */
+  /* Critère de tri: Contenu : Date de publication */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -397,7 +397,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Pied de page: Global : Zone de texte */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -408,7 +408,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
+  /* Champ: Contenu : Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -420,7 +420,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -428,7 +428,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Nid */
+  /* Critère de filtrage: Contenu : Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -557,28 +557,28 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Result summary */
+  /* Entête: Global : Résumé des résultats */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['content'] = '<h3>Total des inscriptions :  @total</h3>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'Inscriptions';
   $handler->display->display_options['relationships']['registration_rel']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Path */
+  /* Champ: Contenu : Chemin */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date']['id'] = 'field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
@@ -594,13 +594,13 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Registration: Registration ID */
+  /* Champ: Inscription : Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
   $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['registration_id']['label'] = 'N°';
-  /* Field: Registration: Date created */
+  /* Champ: Inscription : Date de création */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -608,52 +608,52 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['created']['label'] = 'Date d\'inscription';
   $handler->display->display_options['fields']['created']['date_format'] = 'info_meeting_medium';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['relationship'] = 'registration_rel';
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Registration: Projet d'activité */
+  /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_project_domain']['label'] = 'Domaine d\'activité';
-  /* Field: Registration: Ville */
+  /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
-  /* Field: Registration: Comment avez-vous connu Crealead */
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
   $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_attendee']['label'] = 'Présent';
-  /* Field: Registration: Présence */
+  /* Champ: Inscription : Présence */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
@@ -663,25 +663,25 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'field_formatter_class' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
-  /* Sort criterion: Registration: Registration ID */
+  /* Critère de tri: Inscription : Registration ID */
   $handler->display->display_options['sorts']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['sorts']['registration_id']['table'] = 'registration';
   $handler->display->display_options['sorts']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['sorts']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -972,8 +972,6 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1081,28 +1079,28 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Result summary */
+  /* Entête: Global : Résumé des résultats */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['content'] = '<h3>Total des inscriptions :  @total</h3>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'Inscriptions';
   $handler->display->display_options['relationships']['registration_rel']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Path */
+  /* Champ: Contenu : Chemin */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date']['id'] = 'field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
@@ -1118,7 +1116,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Registration: Date created */
+  /* Champ: Inscription : Date de création */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1126,82 +1124,82 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['created']['label'] = 'Date inscription';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Registration: Registration ID */
+  /* Champ: Inscription : Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
   $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['registration_id']['label'] = 'N°';
   $handler->display->display_options['fields']['registration_id']['exclude'] = TRUE;
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['relationship'] = 'registration_rel';
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Registration: Domaine d'activité */
+  /* Champ: Inscription : Domaine d'activité */
   $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Registration: Projet d'activité */
+  /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  /* Field: Registration: Ville */
+  /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
-  /* Field: Registration: Comment avez-vous connu Crealead */
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
   $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: Présence */
+  /* Champ: Inscription : Présence */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
-  /* Sort criterion: Registration: Registration ID */
+  /* Critère de tri: Inscription : Registration ID */
   $handler->display->display_options['sorts']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['sorts']['registration_id']['table'] = 'registration';
   $handler->display->display_options['sorts']['registration_id']['field'] = 'registration_id';
   $handler->display->display_options['sorts']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1209,7 +1207,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Registration: Présence (field_attendance) */
+  /* Critère de filtrage: Inscription : Présence (field_attendance) */
   $handler->display->display_options['filters']['field_attendance_value']['id'] = 'field_attendance_value';
   $handler->display->display_options['filters']['field_attendance_value']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['filters']['field_attendance_value']['field'] = 'field_attendance_value';
@@ -1239,7 +1237,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     231346920 => 0,
     193262079 => 0,
   );
-  /* Filter criterion: Registration: Ville (field_registrant_city) */
+  /* Critère de filtrage: Inscription : Ville (field_registrant_city) */
   $handler->display->display_options['filters']['field_registrant_city_value']['id'] = 'field_registrant_city_value';
   $handler->display->display_options['filters']['field_registrant_city_value']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['filters']['field_registrant_city_value']['field'] = 'field_registrant_city_value';
@@ -1272,7 +1270,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Registration: Comment avez-vous connu Crealead (field_registrant_how) */
+  /* Critère de filtrage: Inscription : Comment avez-vous connu Crealead (field_registrant_how) */
   $handler->display->display_options['filters']['field_registrant_how_value']['id'] = 'field_registrant_how_value';
   $handler->display->display_options['filters']['field_registrant_how_value']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['filters']['field_registrant_how_value']['field'] = 'field_registrant_how_value';
@@ -1305,7 +1303,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['filters']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
@@ -1332,7 +1330,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   );
   $handler->display->display_options['filters']['field_info_meeting_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['default_date'] = '1 year ago';
-  /* Filter criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['id'] = 'field_info_meeting_date_value_1';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['field'] = 'field_info_meeting_date_value';
@@ -1358,7 +1356,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     193262079 => 0,
   );
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Registration: Domaine d&#039;activité (field_registrant_dom_activite) */
+  /* Critère de filtrage: Inscription : Domaine d&#039;activité (field_registrant_dom_activite) */
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['id'] = 'field_registrant_dom_activite_tid';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['field'] = 'field_registrant_dom_activite_tid';
@@ -1401,18 +1399,18 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'inscriptions';
-  /* Relationship: Registration Settings: Node to Registration Settings */
+  /* Relation: Registration Settings : Nœud to Registration Settings */
   $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date_1']['id'] = 'field_info_meeting_date_1';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['field'] = 'field_info_meeting_date';
@@ -1425,7 +1423,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
@@ -1433,54 +1431,54 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_registrant_lastname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_lastname']['element_label_colon'] = FALSE;
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['text'] = '[field_registrant_lastname] [field_registrant_firstname]';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_registrant_status']['delta_offset'] = '0';
-  /* Field: Registration: Domaine d'activité */
+  /* Champ: Inscription : Domaine d'activité */
   $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
-  /* Field: Registration: Projet d'activité */
+  /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  /* Field: Registration: Ville */
+  /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
-  /* Field: Registration: Comment avez-vous connu Crealead */
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
   $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
@@ -1504,18 +1502,18 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['style_options']['filename'] = 'stats-inscriptions_%timestamp-yyyy-%timestamp-mm-%timestamp-dd_%timestamp-hh-%timestamp-ii.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'inscriptions';
-  /* Relationship: Registration Settings: Node to Registration Settings */
+  /* Relation: Registration Settings : Nœud to Registration Settings */
   $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date_1']['id'] = 'field_info_meeting_date_1';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['field'] = 'field_info_meeting_date';
@@ -1528,7 +1526,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
@@ -1536,20 +1534,20 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_registrant_lastname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_lastname']['element_label_colon'] = FALSE;
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['text'] = '[field_registrant_lastname] [field_registrant_firstname]';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Content: Téléphone */
+  /* Champ: Contenu : Téléphone */
   $handler->display->display_options['fields']['field_brand_phone']['id'] = 'field_brand_phone';
   $handler->display->display_options['fields']['field_brand_phone']['table'] = 'field_data_field_brand_phone';
   $handler->display->display_options['fields']['field_brand_phone']['field'] = 'field_brand_phone';
@@ -1558,7 +1556,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_brand_phone']['delta_offset'] = '0';
-  /* Field: Registration: Date de naissance */
+  /* Champ: Inscription : Date de naissance */
   $handler->display->display_options['fields']['field_registrant_birthday']['id'] = 'field_registrant_birthday';
   $handler->display->display_options['fields']['field_registrant_birthday']['table'] = 'field_data_field_registrant_birthday';
   $handler->display->display_options['fields']['field_registrant_birthday']['field'] = 'field_registrant_birthday';
@@ -1567,7 +1565,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_birthday']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Sexe */
+  /* Champ: Inscription : Sexe */
   $handler->display->display_options['fields']['field_registrant_gender']['id'] = 'field_registrant_gender';
   $handler->display->display_options['fields']['field_registrant_gender']['table'] = 'field_data_field_registrant_gender';
   $handler->display->display_options['fields']['field_registrant_gender']['field'] = 'field_registrant_gender';
@@ -1576,7 +1574,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_gender']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Code postal */
+  /* Champ: Inscription : Code postal */
   $handler->display->display_options['fields']['field_registrant_postal_code']['id'] = 'field_registrant_postal_code';
   $handler->display->display_options['fields']['field_registrant_postal_code']['table'] = 'field_data_field_registrant_postal_code';
   $handler->display->display_options['fields']['field_registrant_postal_code']['field'] = 'field_registrant_postal_code';
@@ -1585,35 +1583,35 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_postal_code']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Ville */
+  /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_registrant_status']['delta_offset'] = '0';
-  /* Field: Registration: Domaine d'activité */
+  /* Champ: Inscription : Domaine d'activité */
   $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
-  /* Field: Registration: Projet d'activité */
+  /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  /* Field: Registration: Comment avez-vous connu Crealead */
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
   $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: N° d'allocataire */
+  /* Champ: Inscription : N° d'allocataire */
   $handler->display->display_options['fields']['field_beneficiary_number']['id'] = 'field_beneficiary_number';
   $handler->display->display_options['fields']['field_beneficiary_number']['table'] = 'field_data_field_beneficiary_number';
   $handler->display->display_options['fields']['field_beneficiary_number']['field'] = 'field_beneficiary_number';
@@ -1621,7 +1619,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_beneficiary_number']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Depuis quelle date */
+  /* Champ: Inscription : Depuis quelle date */
   $handler->display->display_options['fields']['field_unemployment_date']['id'] = 'field_unemployment_date';
   $handler->display->display_options['fields']['field_unemployment_date']['table'] = 'field_data_field_unemployment_date';
   $handler->display->display_options['fields']['field_unemployment_date']['field'] = 'field_unemployment_date';
@@ -1629,7 +1627,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_unemployment_date']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Préciser */
+  /* Champ: Inscription : Préciser */
   $handler->display->display_options['fields']['field_other_specify']['id'] = 'field_other_specify';
   $handler->display->display_options['fields']['field_other_specify']['table'] = 'field_data_field_other_specify';
   $handler->display->display_options['fields']['field_other_specify']['field'] = 'field_other_specify';
@@ -1638,7 +1636,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_other_specify']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
@@ -1648,7 +1646,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'field_formatter_class' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
@@ -1672,18 +1670,18 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['style_options']['filename'] = 'stats-inscriptions_%timestamp-yyyy-%timestamp-mm-%timestamp-dd_%timestamp-hh-%timestamp-ii.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'inscriptions';
-  /* Relationship: Registration Settings: Node to Registration Settings */
+  /* Relation: Registration Settings : Nœud to Registration Settings */
   $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date_1']['id'] = 'field_info_meeting_date_1';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date_1']['field'] = 'field_info_meeting_date';
@@ -1696,7 +1694,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Registration: Nom */
+  /* Champ: Inscription : Nom */
   $handler->display->display_options['fields']['field_registrant_lastname']['id'] = 'field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['table'] = 'field_data_field_registrant_lastname';
   $handler->display->display_options['fields']['field_registrant_lastname']['field'] = 'field_registrant_lastname';
@@ -1704,20 +1702,20 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_lastname']['label'] = '';
   $handler->display->display_options['fields']['field_registrant_lastname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_lastname']['element_label_colon'] = FALSE;
-  /* Field: Registration: Prénom */
+  /* Champ: Inscription : Prénom */
   $handler->display->display_options['fields']['field_registrant_firstname']['id'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['table'] = 'field_data_field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['field'] = 'field_registrant_firstname';
   $handler->display->display_options['fields']['field_registrant_firstname']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_registrant_firstname']['alter']['text'] = '[field_registrant_lastname] [field_registrant_firstname]';
-  /* Field: Registration: Anonymous e-mail */
+  /* Champ: Inscription : Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Courriel';
-  /* Field: Content: Téléphone */
+  /* Champ: Contenu : Téléphone */
   $handler->display->display_options['fields']['field_brand_phone']['id'] = 'field_brand_phone';
   $handler->display->display_options['fields']['field_brand_phone']['table'] = 'field_data_field_brand_phone';
   $handler->display->display_options['fields']['field_brand_phone']['field'] = 'field_brand_phone';
@@ -1726,7 +1724,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_brand_phone']['delta_offset'] = '0';
-  /* Field: Registration: Date de naissance */
+  /* Champ: Inscription : Date de naissance */
   $handler->display->display_options['fields']['field_registrant_birthday']['id'] = 'field_registrant_birthday';
   $handler->display->display_options['fields']['field_registrant_birthday']['table'] = 'field_data_field_registrant_birthday';
   $handler->display->display_options['fields']['field_registrant_birthday']['field'] = 'field_registrant_birthday';
@@ -1735,7 +1733,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_birthday']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Sexe */
+  /* Champ: Inscription : Sexe */
   $handler->display->display_options['fields']['field_registrant_gender']['id'] = 'field_registrant_gender';
   $handler->display->display_options['fields']['field_registrant_gender']['table'] = 'field_data_field_registrant_gender';
   $handler->display->display_options['fields']['field_registrant_gender']['field'] = 'field_registrant_gender';
@@ -1744,7 +1742,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_gender']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Code postal */
+  /* Champ: Inscription : Code postal */
   $handler->display->display_options['fields']['field_registrant_postal_code']['id'] = 'field_registrant_postal_code';
   $handler->display->display_options['fields']['field_registrant_postal_code']['table'] = 'field_data_field_registrant_postal_code';
   $handler->display->display_options['fields']['field_registrant_postal_code']['field'] = 'field_registrant_postal_code';
@@ -1753,35 +1751,35 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_registrant_postal_code']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Ville */
+  /* Champ: Inscription : Ville */
   $handler->display->display_options['fields']['field_registrant_city']['id'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['field'] = 'field_registrant_city';
   $handler->display->display_options['fields']['field_registrant_city']['relationship'] = 'registration_rel';
-  /* Field: Registration: Statut */
+  /* Champ: Inscription : Statut */
   $handler->display->display_options['fields']['field_registrant_status']['id'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['table'] = 'field_data_field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['field'] = 'field_registrant_status';
   $handler->display->display_options['fields']['field_registrant_status']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_registrant_status']['delta_offset'] = '0';
-  /* Field: Registration: Domaine d'activité */
+  /* Champ: Inscription : Domaine d'activité */
   $handler->display->display_options['fields']['field_registrant_dom_activite']['id'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['field'] = 'field_registrant_dom_activite';
   $handler->display->display_options['fields']['field_registrant_dom_activite']['relationship'] = 'registration_rel';
-  /* Field: Registration: Projet d'activité */
+  /* Champ: Inscription : Projet d'activité */
   $handler->display->display_options['fields']['field_registrant_project_domain']['id'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['table'] = 'field_data_field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['field'] = 'field_registrant_project_domain';
   $handler->display->display_options['fields']['field_registrant_project_domain']['relationship'] = 'registration_rel';
-  /* Field: Registration: Comment avez-vous connu Crealead */
+  /* Champ: Inscription : Comment avez-vous connu Crealead */
   $handler->display->display_options['fields']['field_registrant_how']['id'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['field'] = 'field_registrant_how';
   $handler->display->display_options['fields']['field_registrant_how']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['field_registrant_how']['label'] = 'Prescripteur';
-  /* Field: Registration: N° d'allocataire */
+  /* Champ: Inscription : N° d'allocataire */
   $handler->display->display_options['fields']['field_beneficiary_number']['id'] = 'field_beneficiary_number';
   $handler->display->display_options['fields']['field_beneficiary_number']['table'] = 'field_data_field_beneficiary_number';
   $handler->display->display_options['fields']['field_beneficiary_number']['field'] = 'field_beneficiary_number';
@@ -1789,7 +1787,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_beneficiary_number']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Depuis quelle date */
+  /* Champ: Inscription : Depuis quelle date */
   $handler->display->display_options['fields']['field_unemployment_date']['id'] = 'field_unemployment_date';
   $handler->display->display_options['fields']['field_unemployment_date']['table'] = 'field_data_field_unemployment_date';
   $handler->display->display_options['fields']['field_unemployment_date']['field'] = 'field_unemployment_date';
@@ -1798,7 +1796,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_unemployment_date']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Préciser */
+  /* Champ: Inscription : Préciser */
   $handler->display->display_options['fields']['field_other_specify']['id'] = 'field_other_specify';
   $handler->display->display_options['fields']['field_other_specify']['table'] = 'field_data_field_other_specify';
   $handler->display->display_options['fields']['field_other_specify']['field'] = 'field_other_specify';
@@ -1807,7 +1805,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['field_other_specify']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Registration: Présent à la réunion */
+  /* Champ: Inscription : Présent à la réunion */
   $handler->display->display_options['fields']['field_attendee']['id'] = 'field_attendee';
   $handler->display->display_options['fields']['field_attendee']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['fields']['field_attendee']['field'] = 'field_attendee';
@@ -1817,28 +1815,28 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'field_formatter_class' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'info_meeting' => 'info_meeting',
   );
-  /* Filter criterion: Registration: Comment avez-vous connu Crealead (field_registrant_how) */
+  /* Critère de filtrage: Inscription : Comment avez-vous connu Crealead (field_registrant_how) */
   $handler->display->display_options['filters']['field_registrant_how_value']['id'] = 'field_registrant_how_value';
   $handler->display->display_options['filters']['field_registrant_how_value']['table'] = 'field_data_field_registrant_how';
   $handler->display->display_options['filters']['field_registrant_how_value']['field'] = 'field_registrant_how_value';
@@ -1870,7 +1868,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_registrant_how_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['filters']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
@@ -1897,7 +1895,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   );
   $handler->display->display_options['filters']['field_info_meeting_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_info_meeting_date_value']['default_date'] = ' 1 year ago';
-  /* Filter criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de filtrage: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['id'] = 'field_info_meeting_date_value_1';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['field'] = 'field_info_meeting_date_value';
@@ -1923,7 +1921,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     193262079 => 0,
   );
   $handler->display->display_options['filters']['field_info_meeting_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Registration: Présent à la réunion (field_attendee) */
+  /* Critère de filtrage: Inscription : Présent à la réunion (field_attendee) */
   $handler->display->display_options['filters']['field_attendee_value']['id'] = 'field_attendee_value';
   $handler->display->display_options['filters']['field_attendee_value']['table'] = 'field_data_field_attendee';
   $handler->display->display_options['filters']['field_attendee_value']['field'] = 'field_attendee_value';
@@ -1948,7 +1946,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     231346920 => 0,
     193262079 => 0,
   );
-  /* Filter criterion: Registration: Ville (field_registrant_city) */
+  /* Critère de filtrage: Inscription : Ville (field_registrant_city) */
   $handler->display->display_options['filters']['field_registrant_city_value']['id'] = 'field_registrant_city_value';
   $handler->display->display_options['filters']['field_registrant_city_value']['table'] = 'field_data_field_registrant_city';
   $handler->display->display_options['filters']['field_registrant_city_value']['field'] = 'field_registrant_city_value';
@@ -1980,7 +1978,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_registrant_city_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Registration: Domaine d&#039;activité (field_registrant_dom_activite) */
+  /* Critère de filtrage: Inscription : Domaine d&#039;activité (field_registrant_dom_activite) */
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['id'] = 'field_registrant_dom_activite_tid';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['table'] = 'field_data_field_registrant_dom_activite';
   $handler->display->display_options['filters']['field_registrant_dom_activite_tid']['field'] = 'field_registrant_dom_activite_tid';
@@ -2024,7 +2022,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -2033,7 +2031,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
+  /* Comportement en l'absence de résultats: Global : Zone de texte */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -2042,38 +2040,38 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['empty']['area']['content'] = 'Aucune réunion n\'est programmée actuellement.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Registration: Node to Registration */
+  /* Relation: Inscription : Nœud to Registration */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['label'] = 'Inscriptions';
-  /* Relationship: Registration Settings: Node to Registration Settings */
+  /* Relation: Registration Settings : Nœud to Registration Settings */
   $handler->display->display_options['relationships']['registration_settings_rel']['id'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_settings_rel']['field'] = 'registration_settings_rel';
   $handler->display->display_options['relationships']['registration_settings_rel']['label'] = 'Paramètres inscription';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Path */
+  /* Champ: Contenu : Chemin */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Registration: Slots consumed */
+  /* Champ: Inscription : Slots consumed */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'registration';
   $handler->display->display_options['fields']['count']['field'] = 'count';
   $handler->display->display_options['fields']['count']['relationship'] = 'registration_rel';
   $handler->display->display_options['fields']['count']['group_type'] = 'sum';
   $handler->display->display_options['fields']['count']['exclude'] = TRUE;
-  /* Field: Registration Settings: Slots Total */
+  /* Champ: Registration Settings : Slots Total */
   $handler->display->display_options['fields']['capacity_total']['id'] = 'capacity_total';
   $handler->display->display_options['fields']['capacity_total']['table'] = 'registration_entity';
   $handler->display->display_options['fields']['capacity_total']['field'] = 'capacity_total';
   $handler->display->display_options['fields']['capacity_total']['relationship'] = 'registration_settings_rel';
   $handler->display->display_options['fields']['capacity_total']['exclude'] = TRUE;
-  /* Field: Content: Date */
+  /* Champ: Contenu : Date */
   $handler->display->display_options['fields']['field_info_meeting_date']['id'] = 'field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['fields']['field_info_meeting_date']['field'] = 'field_info_meeting_date';
@@ -2087,14 +2085,14 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'show_remaining_days' => 0,
     'field_formatter_class' => '',
   );
-  /* Field: Global: Math expression */
+  /* Champ: Global : Expression mathématique */
   $handler->display->display_options['fields']['expression']['id'] = 'expression';
   $handler->display->display_options['fields']['expression']['table'] = 'views';
   $handler->display->display_options['fields']['expression']['field'] = 'expression';
   $handler->display->display_options['fields']['expression']['label'] = 'Places restantes';
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['expression'] = '[capacity_total] - [count]';
-  /* Field: Content: Link */
+  /* Champ: Contenu : Lien */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -2102,12 +2100,12 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 's\'inscrire';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_info_meeting_date) */
+  /* Critère de tri: Contenu : Date - date de début (field_info_meeting_date) */
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['id'] = 'field_info_meeting_date_value';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['table'] = 'field_data_field_info_meeting_date';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['field'] = 'field_info_meeting_date_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Lieu (field_meeting_location) */
+  /* Filtre contextuel: Contenu : Lieu (field_meeting_location) */
   $handler->display->display_options['arguments']['field_meeting_location_value']['id'] = 'field_meeting_location_value';
   $handler->display->display_options['arguments']['field_meeting_location_value']['table'] = 'field_data_field_meeting_location';
   $handler->display->display_options['arguments']['field_meeting_location_value']['field'] = 'field_meeting_location_value';
@@ -2122,14 +2120,14 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['arguments']['field_meeting_location_value']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -2137,7 +2135,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
     'info_meeting' => 'info_meeting',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Registration Settings: Open Date */
+  /* Critère de filtrage: Registration Settings : Date d'ouverture */
   $handler->display->display_options['filters']['open']['id'] = 'open';
   $handler->display->display_options['filters']['open']['table'] = 'registration_entity';
   $handler->display->display_options['filters']['open']['field'] = 'open';
@@ -2145,7 +2143,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['filters']['open']['operator'] = '<=';
   $handler->display->display_options['filters']['open']['value']['value'] = 'now';
   $handler->display->display_options['filters']['open']['value']['type'] = 'offset';
-  /* Filter criterion: Registration Settings: Close Date */
+  /* Critère de filtrage: Registration Settings : Date de clôture */
   $handler->display->display_options['filters']['close']['id'] = 'close';
   $handler->display->display_options['filters']['close']['table'] = 'registration_entity';
   $handler->display->display_options['filters']['close']['field'] = 'close';
@@ -2180,7 +2178,6 @@ contact@crealead.com
 55, rue Saint Cléophas 34000 Montpellier 
 Téléphone : 04-67-06-96-72'),
     t('Programme réunions'),
-    t('more'),
     t('Programme'),
     t('Programme d\'une réunion.
 Se paramètre dans Configuration > Crealead > Réunions d\'information.'),

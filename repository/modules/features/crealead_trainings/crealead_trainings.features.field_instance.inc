@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_trainings.features.field_instance.inc
@@ -114,6 +115,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -128,6 +130,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -142,6 +145,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -952,6 +956,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -966,6 +971,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
@@ -2438,6 +2444,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'logo',
         ),
         'type' => 'entityreference_entity_view',
@@ -2454,6 +2461,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'logo',
         ),
         'type' => 'entityreference_entity_view',
@@ -3339,6 +3347,7 @@ function crealead_trainings_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'sessions',
         ),
         'type' => 'entityreference_entity_view',
@@ -3348,6 +3357,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -3362,6 +3372,7 @@ function crealead_trainings_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,

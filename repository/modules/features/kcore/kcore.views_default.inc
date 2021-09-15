@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.views_default.inc
@@ -324,11 +325,11 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Nom */
+  /* Field: Utilisateur: Nom */
   $handler->display->display_options['fields']['field_user_lastname']['id'] = 'field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['table'] = 'field_data_field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['field'] = 'field_user_lastname';
-  /* Field: User: Prénom */
+  /* Field: Utilisateur: Prénom */
   $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['field'] = 'field_user_firstname';
@@ -507,13 +508,12 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Profile */
+  /* Relationship: User: Profil */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['label'] = 'Profil';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Profile: Photo */
+  /* Field: Profil: Photo */
   $handler->display->display_options['fields']['field_coe_photo']['id'] = 'field_coe_photo';
   $handler->display->display_options['fields']['field_coe_photo']['table'] = 'field_data_field_coe_photo';
   $handler->display->display_options['fields']['field_coe_photo']['field'] = 'field_coe_photo';

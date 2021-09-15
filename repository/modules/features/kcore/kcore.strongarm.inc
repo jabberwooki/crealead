@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.strongarm.inc
@@ -65,109 +66,6 @@ function kcore_strongarm() {
   $strongarm->name = 'ds_extras_field_template';
   $strongarm->value = 1;
   $export['ds_extras_field_template'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'eu_cookie_compliance';
-  $strongarm->value = array(
-    'popup_enabled' => 1,
-    'method' => 'opt_in',
-    'info_template' => 'new',
-    'cookie_categories' => '',
-    'enable_save_preferences_button' => 1,
-    'save_preferences_button_label' => 'Enregistrer les préférences',
-    'accept_all_categories_button_label' => 'Accepter tous les cookies',
-    'fix_first_cookie_category' => 1,
-    'select_all_categories_by_default' => 0,
-    'disabled_javascripts' => '',
-    'whitelisted_cookies' => '',
-    'consent_storage_method' => 'do_not_store',
-    'popup_clicking_confirmation' => FALSE,
-    'popup_info' => array(
-      'value' => '<h2>Ce site utilise des cookies pour améliorer votre expérience utilisateur.</h2>
-
-<p>En cliquant sur le bouton Accepter, vous acceptez ce fonctionnement.</p>
-',
-      'format' => 'full_html',
-    ),
-    'use_mobile_message' => 0,
-    'mobile_popup_info' => array(
-      'value' => '<h2>We use cookies on this site to enhance your user experience</h2><p>By tapping the Accept button, you agree to us doing so.</p>',
-      'format' => 'plain_text',
-    ),
-    'mobile_breakpoint' => '768',
-    'popup_agree_button_message' => 'J\'accepte les cookies',
-    'show_disagree_button' => TRUE,
-    'popup_disagree_button_message' => 'Non, je veux avoir plus d\'information',
-    'disagree_button_label' => 'Non, merci',
-    'withdraw_enabled' => 1,
-    'withdraw_button_on_info_popup' => 0,
-    'withdraw_message' => array(
-      'value' => '<h2>Ce site utilise des cookies pour améliorer votre expérience utilisateur.</h2>
-
-<p>Vous avez donné votre accord pour enregistrer des cookies.</p>
-',
-      'format' => 'full_html',
-    ),
-    'withdraw_tab_button_label' => 'Réglages confidentialité',
-    'withdraw_action_button_label' => 'Retirer votre accord',
-    'popup_agreed_enabled' => 0,
-    'popup_hide_agreed' => 0,
-    'popup_agreed' => array(
-      'value' => '<h2>Merci d\'accepter les cookies</h2>
-
-<p>Vous pouvez maintenant cacher ce message ou en savoir plus sur les cookies.</p>
-',
-      'format' => 'full_html',
-    ),
-    'popup_find_more_button_message' => 'Plus d\'infos',
-    'popup_hide_button_message' => 'Cacher',
-    'popup_link' => 'politique-de-confidentialite',
-    'popup_link_new_window' => 0,
-    'popup_position' => FALSE,
-    'use_bare_css' => 0,
-    'popup_text_hex' => 'ffffff',
-    'popup_bg_hex' => 'A12740',
-    'popup_height' => '80',
-    'popup_width' => '100%',
-    'fixed_top_position' => 1,
-    'popup_delay' => '700',
-    'disagree_do_not_show_popup' => 0,
-    'reload_page' => 0,
-    'popup_scrolling_confirmation' => FALSE,
-    'cookie_name' => 'crealead_cookie_agrement',
-    'domains_option' => '1',
-    'domains_list' => '',
-    'exclude_paths' => '',
-    'exclude_admin_pages' => 1,
-    'exclude_uid_1' => 0,
-    'script_scope' => 'footer',
-    'better_support_for_screen_readers' => 0,
-    'cookie_session' => 0,
-  );
-  $export['eu_cookie_compliance'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'eu_cookie_compliance_cookie_lifetime';
-  $strongarm->value = '100';
-  $export['eu_cookie_compliance_cookie_lifetime'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'eu_cookie_compliance_domain';
-  $strongarm->value = '';
-  $export['eu_cookie_compliance_domain'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'eu_cookie_compliance_domain_all_sites';
-  $strongarm->value = 0;
-  $export['eu_cookie_compliance_domain_all_sites'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

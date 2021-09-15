@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_geolocations.views_default.inc
@@ -24,69 +25,72 @@ function crealead_geolocations_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Carte des co-entrepreneurs';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'getlocations';
-  /* Relationship: User: Profile */
+  /* Relation: Utilisateur : Profil */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['label'] = 'Profil';
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Getlocations Fields: Glid */
+  /* Champ: Getlocations Fields : Glid */
   $handler->display->display_options['fields']['glid']['id'] = 'glid';
   $handler->display->display_options['fields']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['glid']['field'] = 'glid';
-  /* Field: Getlocations Fields: Latitude */
+  /* Champ: Getlocations Fields : Latitude */
   $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
   $handler->display->display_options['fields']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
   $handler->display->display_options['fields']['latitude']['label'] = '';
   $handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
   $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Longitude */
+  /* Champ: Getlocations Fields : Longitude */
   $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
   $handler->display->display_options['fields']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
   $handler->display->display_options['fields']['longitude']['label'] = '';
   $handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
   $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Postal Code */
+  /* Champ: Getlocations Fields : Postal Code */
   $handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['label'] = '';
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: City */
+  /* Champ: Getlocations Fields : Ville */
   $handler->display->display_options['fields']['city']['id'] = 'city';
   $handler->display->display_options['fields']['city']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['city']['field'] = 'city';
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Postal Code */
+  /* Champ: Getlocations Fields : Postal Code */
   $handler->display->display_options['fields']['postal_code_1']['id'] = 'postal_code_1';
   $handler->display->display_options['fields']['postal_code_1']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['postal_code_1']['field'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code_1']['label'] = '';
   $handler->display->display_options['fields']['postal_code_1']['element_label_colon'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Actif */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Profile: Statut de publication (field_coe_pub_status) */
+  /* Critère de filtrage: Profil : Statut de publication (field_coe_pub_status) */
   $handler->display->display_options['filters']['field_coe_pub_status_value']['id'] = 'field_coe_pub_status_value';
   $handler->display->display_options['filters']['field_coe_pub_status_value']['table'] = 'field_data_field_coe_pub_status';
   $handler->display->display_options['filters']['field_coe_pub_status_value']['field'] = 'field_coe_pub_status_value';
@@ -94,18 +98,18 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Getlocations Fields: Glid */
+  /* Critère de filtrage: Getlocations Fields : Glid */
   $handler->display->display_options['filters']['glid']['id'] = 'glid';
   $handler->display->display_options['filters']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['glid']['field'] = 'glid';
   $handler->display->display_options['filters']['glid']['operator'] = 'not empty';
-  /* Filter criterion: Getlocations Fields: Latitude */
+  /* Critère de filtrage: Getlocations Fields : Latitude */
   $handler->display->display_options['filters']['latitude']['id'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['latitude']['field'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['operator'] = '!=';
   $handler->display->display_options['filters']['latitude']['value']['value'] = '0';
-  /* Filter criterion: Getlocations Fields: Longitude */
+  /* Critère de filtrage: Getlocations Fields : Longitude */
   $handler->display->display_options['filters']['longitude']['id'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
@@ -143,38 +147,38 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Getlocations Fields: Glid */
+  /* Champ: Getlocations Fields : Glid */
   $handler->display->display_options['fields']['glid']['id'] = 'glid';
   $handler->display->display_options['fields']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['glid']['field'] = 'glid';
   $handler->display->display_options['fields']['glid']['group_type'] = 'count';
   $handler->display->display_options['fields']['glid']['label'] = '';
   $handler->display->display_options['fields']['glid']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Latitude */
+  /* Champ: Getlocations Fields : Latitude */
   $handler->display->display_options['fields']['latitude']['id'] = 'latitude';
   $handler->display->display_options['fields']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['latitude']['field'] = 'latitude';
   $handler->display->display_options['fields']['latitude']['label'] = '';
   $handler->display->display_options['fields']['latitude']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Longitude */
+  /* Champ: Getlocations Fields : Longitude */
   $handler->display->display_options['fields']['longitude']['id'] = 'longitude';
   $handler->display->display_options['fields']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
   $handler->display->display_options['fields']['longitude']['label'] = '';
   $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Postal Code */
+  /* Champ: Getlocations Fields : Postal Code */
   $handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['label'] = '';
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: City */
+  /* Champ: Getlocations Fields : Ville */
   $handler->display->display_options['fields']['city']['id'] = 'city';
   $handler->display->display_options['fields']['city']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['city']['field'] = 'city';
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Liste coes par point geo */
+  /* Champ: Liste coes par point geo */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -186,34 +190,34 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['view']['arguments'] = '[%latitude]/[%longitude]';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Actif */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Getlocations Fields: Glid */
+  /* Critère de filtrage: Getlocations Fields : Glid */
   $handler->display->display_options['filters']['glid']['id'] = 'glid';
   $handler->display->display_options['filters']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['glid']['field'] = 'glid';
   $handler->display->display_options['filters']['glid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['glid']['group'] = 1;
-  /* Filter criterion: Getlocations Fields: Latitude */
+  /* Critère de filtrage: Getlocations Fields : Latitude */
   $handler->display->display_options['filters']['latitude']['id'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['latitude']['field'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['operator'] = '!=';
   $handler->display->display_options['filters']['latitude']['value']['value'] = '0';
   $handler->display->display_options['filters']['latitude']['group'] = 1;
-  /* Filter criterion: Getlocations Fields: Longitude */
+  /* Critère de filtrage: Getlocations Fields : Longitude */
   $handler->display->display_options['filters']['longitude']['id'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['operator'] = '!=';
   $handler->display->display_options['filters']['longitude']['value']['value'] = '0';
   $handler->display->display_options['filters']['longitude']['group'] = 1;
-  /* Filter criterion: User: Roles */
+  /* Critère de filtrage: Utilisateur : Rôles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -235,7 +239,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Ville (CP) */
+  /* Entête: Ville (CP) */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -246,20 +250,19 @@ function crealead_geolocations_views_default_views() {
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Header: Nombre de coes */
+  /* Entête: Nombre de coes */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['ui_name'] = 'Nombre de coes';
   $handler->display->display_options['header']['result']['content'] = '<p class="coes-number">@total co-entrepreneurs</p>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Profile */
+  /* Relation: Utilisateur : Profil */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['label'] = 'Profil';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Uid */
+  /* Champ: Utilisateur : Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -267,7 +270,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -278,21 +281,21 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_type'] = 'h4';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: City */
+  /* Champ: Getlocations Fields : Ville */
   $handler->display->display_options['fields']['city']['id'] = 'city';
   $handler->display->display_options['fields']['city']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['city']['field'] = 'city';
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Postal Code */
+  /* Champ: Getlocations Fields : Postal Code */
   $handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['label'] = '';
   $handler->display->display_options['fields']['postal_code']['exclude'] = TRUE;
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
-  /* Field: Profile: Statut de publication */
+  /* Champ: Profil : Statut de publication */
   $handler->display->display_options['fields']['field_coe_pub_status']['id'] = 'field_coe_pub_status';
   $handler->display->display_options['fields']['field_coe_pub_status']['table'] = 'field_data_field_coe_pub_status';
   $handler->display->display_options['fields']['field_coe_pub_status']['field'] = 'field_coe_pub_status';
@@ -306,48 +309,48 @@ function crealead_geolocations_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: User: Name */
+  /* Critère de tri: Utilisateur : Nom */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'users';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Actif */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Getlocations Fields: Glid */
+  /* Critère de filtrage: Getlocations Fields : Glid */
   $handler->display->display_options['filters']['glid']['id'] = 'glid';
   $handler->display->display_options['filters']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['glid']['field'] = 'glid';
   $handler->display->display_options['filters']['glid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['glid']['group'] = 1;
-  /* Filter criterion: Getlocations Fields: Latitude */
+  /* Critère de filtrage: Getlocations Fields : Latitude */
   $handler->display->display_options['filters']['latitude']['id'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['latitude']['field'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['operator'] = '!=';
   $handler->display->display_options['filters']['latitude']['value']['value'] = '0';
   $handler->display->display_options['filters']['latitude']['group'] = 1;
-  /* Filter criterion: Getlocations Fields: Longitude */
+  /* Critère de filtrage: Getlocations Fields : Longitude */
   $handler->display->display_options['filters']['longitude']['id'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['operator'] = '!=';
   $handler->display->display_options['filters']['longitude']['value']['value'] = '0';
   $handler->display->display_options['filters']['longitude']['group'] = 1;
-  /* Filter criterion: User: Roles */
+  /* Critère de filtrage: Utilisateur : Rôles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['value'] = array(
     103860121 => '103860121',
   );
-  /* Filter criterion: Profile: Type */
+  /* Critère de filtrage: Profil : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'profile';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -377,7 +380,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Ville (CP) */
+  /* Entête: Ville (CP) */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -385,30 +388,29 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<span class="city">[city]</span> <span class="cp">([postal_code])</span>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Header: Nombre de coes */
+  /* Entête: Nombre de coes */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['ui_name'] = 'Nombre de coes';
   $handler->display->display_options['header']['result']['content'] = '@total co-entrepreneur(s)';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Profile */
+  /* Relation: Utilisateur : Profil */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['label'] = 'Profil';
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relation: Entity Reference : Entité référante */
   $handler->display->display_options['relationships']['reverse_field_brand_coe_field_collection_item']['id'] = 'reverse_field_brand_coe_field_collection_item';
   $handler->display->display_options['relationships']['reverse_field_brand_coe_field_collection_item']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_brand_coe_field_collection_item']['field'] = 'reverse_field_brand_coe_field_collection_item';
   $handler->display->display_options['relationships']['reverse_field_brand_coe_field_collection_item']['label'] = 'Élément Field collection référençant Utilisateur depuis field_brand_coe';
-  /* Relationship: Field collection item: Entity with the Co-entrepreneurs (field_brand_coes) */
+  /* Relation: Field collection item : Entity with the Co-entrepreneurs (field_brand_coes) */
   $handler->display->display_options['relationships']['field_brand_coes_node']['id'] = 'field_brand_coes_node';
   $handler->display->display_options['relationships']['field_brand_coes_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_brand_coes_node']['field'] = 'field_brand_coes_node';
   $handler->display->display_options['relationships']['field_brand_coes_node']['relationship'] = 'reverse_field_brand_coe_field_collection_item';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Uid */
+  /* Champ: Utilisateur : Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -416,7 +418,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -430,7 +432,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Nid marque */
+  /* Champ: Nid marque */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -439,7 +441,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Marque */
+  /* Champ: Marque */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -451,7 +453,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Domaine d'intervention */
+  /* Champ: Contenu : Domaine d'intervention */
   $handler->display->display_options['fields']['field_business_sector']['id'] = 'field_business_sector';
   $handler->display->display_options['fields']['field_business_sector']['table'] = 'field_data_field_business_sector';
   $handler->display->display_options['fields']['field_business_sector']['field'] = 'field_business_sector';
@@ -463,14 +465,14 @@ function crealead_geolocations_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_business_sector']['delta_offset'] = '0';
-  /* Field: Getlocations Fields: City */
+  /* Champ: Getlocations Fields : Ville */
   $handler->display->display_options['fields']['city']['id'] = 'city';
   $handler->display->display_options['fields']['city']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['city']['field'] = 'city';
   $handler->display->display_options['fields']['city']['label'] = '';
   $handler->display->display_options['fields']['city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  /* Field: Getlocations Fields: Postal Code */
+  /* Champ: Getlocations Fields : Postal Code */
   $handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code']['table'] = 'getlocations_fields';
   $handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
@@ -478,21 +480,21 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['postal_code']['exclude'] = TRUE;
   $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: User: Name */
+  /* Critère de tri: Utilisateur : Nom */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'users';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Actif */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Profile: Statut de publication (field_coe_pub_status) */
+  /* Critère de filtrage: Profil : Statut de publication (field_coe_pub_status) */
   $handler->display->display_options['filters']['field_coe_pub_status_value']['id'] = 'field_coe_pub_status_value';
   $handler->display->display_options['filters']['field_coe_pub_status_value']['table'] = 'field_data_field_coe_pub_status';
   $handler->display->display_options['filters']['field_coe_pub_status_value']['field'] = 'field_coe_pub_status_value';
@@ -500,24 +502,24 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Getlocations Fields: Glid */
+  /* Critère de filtrage: Getlocations Fields : Glid */
   $handler->display->display_options['filters']['glid']['id'] = 'glid';
   $handler->display->display_options['filters']['glid']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['glid']['field'] = 'glid';
   $handler->display->display_options['filters']['glid']['operator'] = 'not empty';
-  /* Filter criterion: Getlocations Fields: Latitude */
+  /* Critère de filtrage: Getlocations Fields : Latitude */
   $handler->display->display_options['filters']['latitude']['id'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['latitude']['field'] = 'latitude';
   $handler->display->display_options['filters']['latitude']['operator'] = '!=';
   $handler->display->display_options['filters']['latitude']['value']['value'] = '0';
-  /* Filter criterion: Getlocations Fields: Longitude */
+  /* Critère de filtrage: Getlocations Fields : Longitude */
   $handler->display->display_options['filters']['longitude']['id'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['table'] = 'getlocations_fields';
   $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['operator'] = '!=';
   $handler->display->display_options['filters']['longitude']['value']['value'] = '0';
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -526,10 +528,10 @@ function crealead_geolocations_views_default_views() {
   $translatables['users_geolocation'] = array(
     t('Master'),
     t('Carte des co-entrepreneurs'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
     t('Asc'),
     t('Desc'),
     t('Profil'),

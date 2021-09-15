@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_brands.features.field_instance.inc
@@ -2759,6 +2760,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -3366,6 +3368,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -4190,6 +4193,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -4205,6 +4209,7 @@ Le label doit être prouvé.',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
@@ -5152,6 +5157,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -5599,6 +5605,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -5613,6 +5620,7 @@ Le label doit être prouvé.',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
@@ -5660,6 +5668,7 @@ Le label doit être prouvé.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -5674,6 +5683,7 @@ Le label doit être prouvé.',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',

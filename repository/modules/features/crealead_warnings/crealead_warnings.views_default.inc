@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_warnings.views_default.inc
@@ -24,12 +25,23 @@ function crealead_warnings_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Mes alertes';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
@@ -103,7 +115,7 @@ function crealead_warnings_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Field: Content: Title */
+  /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -113,7 +125,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Mots-clés */
+  /* Champ: Contenu : Mots-clés */
   $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['field'] = 'field_warning_keywords';
@@ -121,7 +133,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_keywords']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Email de réception de l'alerte */
+  /* Champ: Contenu : Email de réception de l'alerte */
   $handler->display->display_options['fields']['field_recipient_email']['id'] = 'field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['table'] = 'field_data_field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['field'] = 'field_recipient_email';
@@ -129,7 +141,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_recipient_email']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: M'avertir en cas de */
+  /* Champ: Contenu : M'avertir en cas de */
   $handler->display->display_options['fields']['field_warning_when']['id'] = 'field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['table'] = 'field_data_field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['field'] = 'field_warning_when';
@@ -137,7 +149,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Fréquence des alertes */
+  /* Champ: Contenu : Fréquence des alertes */
   $handler->display->display_options['fields']['field_warning_frequency']['id'] = 'field_warning_frequency';
   $handler->display->display_options['fields']['field_warning_frequency']['table'] = 'field_data_field_warning_frequency';
   $handler->display->display_options['fields']['field_warning_frequency']['field'] = 'field_warning_frequency';
@@ -145,22 +157,21 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_frequency']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Edit link */
+  /* Champ: Contenu : Lien de modification */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Action';
-  /* Field: Content: Delete link */
+  /* Champ: Contenu : Lien de suppression */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
-  $handler->display->display_options['fields']['delete_node']['label'] = 'Lien de suppression';
-  /* Sort criterion: Content: Post date */
+  /* Critère de tri: Contenu : Date de publication */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Author uid */
+  /* Filtre contextuel: Contenu : uid de l'auteur */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -170,14 +181,14 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -190,7 +201,7 @@ function crealead_warnings_views_default_views() {
   $handler = $view->new_display('block', 'Alertes utilisateur', 'user_warnings');
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -201,7 +212,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '300';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Type de contenu (valeur) */
+  /* Champ: Contenu : Type de contenu (valeur) */
   $handler->display->display_options['fields']['field_content_type_value']['id'] = 'field_content_type_value';
   $handler->display->display_options['fields']['field_content_type_value']['table'] = 'field_data_field_content_type_value';
   $handler->display->display_options['fields']['field_content_type_value']['field'] = 'field_content_type_value';
@@ -210,14 +221,14 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_content_type_value']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Type de sélection */
+  /* Champ: Contenu : Type de sélection */
   $handler->display->display_options['fields']['field_selection_type']['id'] = 'field_selection_type';
   $handler->display->display_options['fields']['field_selection_type']['table'] = 'field_data_field_selection_type';
   $handler->display->display_options['fields']['field_selection_type']['field'] = 'field_selection_type';
   $handler->display->display_options['fields']['field_selection_type']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Mots-clés */
+  /* Champ: Contenu : Mots-clés */
   $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['field'] = 'field_warning_keywords';
@@ -225,7 +236,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_keywords']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Email de réception de l'alerte */
+  /* Champ: Contenu : Email de réception de l'alerte */
   $handler->display->display_options['fields']['field_recipient_email']['id'] = 'field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['table'] = 'field_data_field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['field'] = 'field_recipient_email';
@@ -233,7 +244,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_recipient_email']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: M'avertir en cas de */
+  /* Champ: Contenu : M'avertir en cas de */
   $handler->display->display_options['fields']['field_warning_when']['id'] = 'field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['table'] = 'field_data_field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['field'] = 'field_warning_when';
@@ -241,16 +252,15 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Edit link */
+  /* Champ: Contenu : Lien de modification */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Action';
-  /* Field: Content: Delete link */
+  /* Champ: Contenu : Lien de suppression */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
-  $handler->display->display_options['fields']['delete_node']['label'] = 'Lien de suppression';
 
   /* Display: Liste des alertes */
   $handler = $view->new_display('page', 'Liste des alertes', 'full_list');
@@ -384,17 +394,13 @@ function crealead_warnings_views_default_views() {
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required'] = 'Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats';
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Author */
+  /* Relation: Contenu : Auteur */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['label'] = 'auteur';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Type de contenu (valeur) */
+  /* Champ: Contenu : Type de contenu (valeur) */
   $handler->display->display_options['fields']['field_content_type_value']['id'] = 'field_content_type_value';
   $handler->display->display_options['fields']['field_content_type_value']['table'] = 'field_data_field_content_type_value';
   $handler->display->display_options['fields']['field_content_type_value']['field'] = 'field_content_type_value';
@@ -402,7 +408,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_content_type_value']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Title */
+  /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -412,13 +418,12 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'users';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Nom';
-  /* Field: Content: M'avertir en cas de */
+  /* Champ: Contenu : M'avertir en cas de */
   $handler->display->display_options['fields']['field_warning_when']['id'] = 'field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['table'] = 'field_data_field_warning_when';
   $handler->display->display_options['fields']['field_warning_when']['field'] = 'field_warning_when';
@@ -426,7 +431,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Fréquence des alertes */
+  /* Champ: Contenu : Fréquence des alertes */
   $handler->display->display_options['fields']['field_warning_frequency']['id'] = 'field_warning_frequency';
   $handler->display->display_options['fields']['field_warning_frequency']['table'] = 'field_data_field_warning_frequency';
   $handler->display->display_options['fields']['field_warning_frequency']['field'] = 'field_warning_frequency';
@@ -434,7 +439,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_frequency']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Mots-clés */
+  /* Champ: Contenu : Mots-clés */
   $handler->display->display_options['fields']['field_warning_keywords']['id'] = 'field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['table'] = 'field_data_field_warning_keywords';
   $handler->display->display_options['fields']['field_warning_keywords']['field'] = 'field_warning_keywords';
@@ -442,7 +447,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_keywords']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Email de réception de l'alerte */
+  /* Champ: Contenu : Email de réception de l'alerte */
   $handler->display->display_options['fields']['field_recipient_email']['id'] = 'field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['table'] = 'field_data_field_recipient_email';
   $handler->display->display_options['fields']['field_recipient_email']['field'] = 'field_recipient_email';
@@ -450,7 +455,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_recipient_email']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Edit link */
+  /* Champ: Contenu : Lien de modification */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -458,14 +463,14 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Publié */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -490,7 +495,7 @@ function crealead_warnings_views_default_views() {
     231346920 => 0,
     193262079 => 0,
   );
-  /* Filter criterion: User: Name */
+  /* Critère de filtrage: Utilisateur : Nom */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -519,19 +524,19 @@ function crealead_warnings_views_default_views() {
   $translatables['warnings'] = array(
     t('Master'),
     t('Mes alertes'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('Éléments par page'),
+    t('Tout'),
+    t('Décalage'),
+    t('« premier'),
+    t('‹ précédent'),
+    t('suivant ›'),
+    t('dernier »'),
     t('Intitulé'),
     t('Mots-clés'),
     t('Email de réception de l\'alerte'),
@@ -539,17 +544,12 @@ function crealead_warnings_views_default_views() {
     t('Fréquence'),
     t('Action'),
     t('Lien de suppression'),
-    t('Tout'),
     t('Alertes utilisateur'),
     t('Type de contenu'),
     t('Type de sélection'),
     t('Liste des alertes'),
     t('Liste de toutes les alertes'),
-    t('Appliquer'),
-    t('Réinitialiser'),
-    t('Trier par'),
     t('Options avancées'),
-    t('Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats'),
     t('auteur'),
     t('Sur'),
     t('Nom'),
