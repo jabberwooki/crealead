@@ -15,7 +15,7 @@ projects[filter_perms][subdir] = contrib
 projects[filter_perms][version] = "1.0"
 
 projects[module_filter][subdir] = contrib
-projects[module_filter][version] = "2.0"
+projects[module_filter][version] = "2.2"
 
 ;=== Goodies ========================================================
 ;projects[coffee][subdir] = contrib
