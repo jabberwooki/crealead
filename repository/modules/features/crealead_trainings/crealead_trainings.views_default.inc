@@ -205,6 +205,8 @@ function crealead_trainings_views_default_views() {
     t('Contact'),
     t('Identifiant de Élément field collection'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('Modifier'),
     t('Supprimer'),
     t('Ajouter'),
@@ -255,7 +257,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -432,7 +434,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['arguments']['field_training_theme_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -541,7 +543,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -668,7 +670,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['table'] = 'field_data_field_training_related_brands';
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['field'] = 'field_training_related_brands_target_id';
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['label'] = 'Marque référencée';
-  /* Relationship: Content: Author */
+  /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -709,7 +711,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = 'custom';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -925,7 +927,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['table'] = 'field_data_field_training_related_brands';
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['field'] = 'field_training_related_brands_target_id';
   $handler->display->display_options['relationships']['field_training_related_brands_target_id']['label'] = 'Marque référencée';
-  /* Relationship: Content: Author */
+  /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -951,7 +953,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1258,7 +1260,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1270,7 +1272,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['arguments']['field_related_training_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1296,7 +1298,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1308,7 +1310,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['arguments']['field_related_training_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1474,7 +1476,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1486,7 +1488,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['arguments']['field_related_training_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1524,7 +1526,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Marques qui peuvent utiliser ce produit (field_allowed_brands) */
+  /* Contextual filter: Nœud: Marques qui peuvent utiliser cet article (field_allowed_brands) */
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
@@ -1654,7 +1656,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Nœud: Formation */
+  /* Field: Nœud: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -1687,7 +1689,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['sorts']['field_session_dates_value']['id'] = 'field_session_dates_value';
   $handler->display->display_options['sorts']['field_session_dates_value']['table'] = 'field_data_field_session_dates';
   $handler->display->display_options['sorts']['field_session_dates_value']['field'] = 'field_session_dates_value';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1918,7 +1920,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1964,7 +1966,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Nœud: Formation */
+  /* Field: Nœud: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -2045,6 +2047,8 @@ function crealead_trainings_views_default_views() {
     t('Desc'),
     t('Nœud referencing Nœud from field_related_brands'),
     t('.'),
+    t('1'),
+    t('@count'),
     t('[field_related_training] '),
     t('Month'),
     t('more'),

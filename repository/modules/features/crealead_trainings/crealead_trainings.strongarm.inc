@@ -104,16 +104,16 @@ function crealead_trainings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '29',
+          'weight' => '32',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '27',
+          'weight' => '30',
         ),
         'redirect' => array(
-          'weight' => '28',
+          'weight' => '31',
         ),
       ),
       'display' => array(),
