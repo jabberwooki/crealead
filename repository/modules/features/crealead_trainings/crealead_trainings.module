@@ -234,7 +234,14 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
     drupal_add_css(drupal_get_path('module', 'crealead_trainings') . '/css/crealead_trainings.css');
 
     if ($build['#view_mode'] == 'full') {
-      ////////////////// CONTACTEZ-NOUS //////////////////////////////////////////
+        ////////////////// PICTO CHAISE ROULANTE ///////////////////////////////
+        if ($build['field_disabilities_commitment'][0]['#markup'] == 1) {
+            $build['field_disabilities_commitment'][0]['#markup'] = '<img typeof="foaf:Image" src="/profiles/crealead/themes/custom/crealead/less/images/wheelchair_50x50.png" alt="Pictogramme fauteuil roulant" title="Accessible aux personnes handicapées sur demande">';
+        }
+        else {
+            $build['field_disabilities_commitment'][0]['#markup'] = '';
+        }
+        ////////////////// CONTACTEZ-NOUS //////////////////////////////////////
       if (!empty($build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'])) {
         $email = $build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'];
         $link = '/' . drupal_get_path_alias('node/' . $build['field_training_related_brands']['#items'][0]['entity']->nid)
