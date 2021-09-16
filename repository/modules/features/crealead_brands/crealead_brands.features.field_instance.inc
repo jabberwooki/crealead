@@ -5234,7 +5234,7 @@ Le label doit être prouvé.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 

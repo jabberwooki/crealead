@@ -317,14 +317,14 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
     }
     elseif ($build['#view_mode'] == 'list' || $build['#view_mode'] == 'teaser') {
       if (!empty($build['#node']->field_crealead_funded) && $build['#node']->field_crealead_funded['und'][0]['value'] == 1) {
-        $type_markup = $build['field_training_type'][0]['#markup'];
+        //$type_markup = $build['field_training_type'][0]['#markup']; Le champ field_training_type a été supprimé (voir sprint 13-2).
         $logo_markup = crealead_trainings_get_funded_logo_markup();
 
         $build['field_training_type'][0]['#markup'] =
           '<div class="training-funded-logo">' .
           $logo_markup .
-          '</div>' .
-          $type_markup;
+          '</div>'; // .
+          //$type_markup;
       }
     }
   }

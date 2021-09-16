@@ -31,3 +31,9 @@ function crealead_trainings_update_7002() {
     }
   }
 }
+
+function crealead_trainings_update_7003() {
+    // Sprint 13, carte 2 : suppression du champ Type
+    field_delete_field('field_training_type');
+    field_purge_batch(100000);
+}
