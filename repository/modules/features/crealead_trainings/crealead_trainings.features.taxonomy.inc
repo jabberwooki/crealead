@@ -56,6 +56,29 @@ function crealead_trainings_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'teaching_modes' => array(
+      'name' => 'Modalités pédagogiques',
+      'machine_name' => 'teaching_modes',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'training_domains' => array(
       'name' => 'Domaines de formation',
       'machine_name' => 'training_domains',
