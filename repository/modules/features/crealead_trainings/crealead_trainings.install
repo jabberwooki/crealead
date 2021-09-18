@@ -37,3 +37,9 @@ function crealead_trainings_update_7003() {
     field_delete_field('field_training_type');
     field_purge_batch(100000);
 }
+
+function crealead_trainings_update_7004() {
+    // Sprint 13, carte 2 : suppression du champ Dispositif de financement
+    field_delete_field('field_training_funding');
+    field_purge_batch(100000);
+}
