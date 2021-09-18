@@ -2787,82 +2787,6 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_training_funding'.
-  $field_instances['node-training-field_training_funding'] = array(
-    'bundle' => 'training',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'certifications_labels_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 23,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'landing_page_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sector_brand_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'sessions' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_training_funding',
-    'label' => 'Dispositif de financement',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-training-field_training_method'.
   $field_instances['node-training-field_training_method'] = array(
     'bundle' => 'training',
@@ -4312,7 +4236,6 @@ function crealead_trainings_field_default_field_instances() {
   t('Contact');
   t('Contenu');
   t('Dates');
-  t('Dispositif de financement');
   t('Domaine');
   t('Durée');
   t('Engagement accessibilité handicapés');

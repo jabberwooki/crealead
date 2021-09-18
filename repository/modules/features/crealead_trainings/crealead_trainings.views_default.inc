@@ -307,12 +307,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_training_type']['id'] = 'field_training_type';
-  $handler->display->display_options['fields']['field_training_type']['table'] = 'field_data_field_training_type';
-  $handler->display->display_options['fields']['field_training_type']['field'] = 'field_training_type';
-  $handler->display->display_options['fields']['field_training_type']['label'] = '';
-  $handler->display->display_options['fields']['field_training_type']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1518,7 +1512,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['label'] = 'Entité Contenu réferencée par field_allowed_brands';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Marques qui peuvent utiliser cette formation (field_allowed_brands) */
+  /* Contextual filter: Nœud: Marques qui peuvent utiliser cet article (field_allowed_brands) */
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
