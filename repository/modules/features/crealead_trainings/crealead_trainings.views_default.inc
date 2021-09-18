@@ -1252,7 +1252,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1290,7 +1290,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1468,7 +1468,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Nœud: Formation (field_related_training) */
+  /* Contextual filter: Nœud: Formation concernée (field_related_training) */
   $handler->display->display_options['arguments']['field_related_training_target_id']['id'] = 'field_related_training_target_id';
   $handler->display->display_options['arguments']['field_related_training_target_id']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['arguments']['field_related_training_target_id']['field'] = 'field_related_training_target_id';
@@ -1648,7 +1648,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Nœud: Formation */
+  /* Field: Nœud: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';
@@ -1958,7 +1958,7 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['delta']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Nœud: Formation */
+  /* Field: Nœud: Formation concernée */
   $handler->display->display_options['fields']['field_related_training']['id'] = 'field_related_training';
   $handler->display->display_options['fields']['field_related_training']['table'] = 'field_data_field_related_training';
   $handler->display->display_options['fields']['field_related_training']['field'] = 'field_related_training';

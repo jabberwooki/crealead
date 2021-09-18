@@ -22,7 +22,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '35',
+    'weight' => '39',
     'children' => array(
       0 => 'field_training_search',
       1 => 'field_previous_status',
@@ -363,6 +363,7 @@ function crealead_trainings_field_group_info() {
     'children' => array(
       0 => 'field_training_price',
       1 => 'field_training_crealead_price',
+      2 => 'field_cpf_eligible',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -404,6 +405,9 @@ function crealead_trainings_field_group_info() {
       7 => 'field_subscription_method',
       8 => 'field_teaching_mode',
       9 => 'field_training_action_categories',
+      10 => 'field_rncp_code',
+      11 => 'field_official_title',
+      12 => 'field_cpf_public_record',
     ),
     'format_type' => 'div',
     'format_settings' => array(

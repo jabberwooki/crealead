@@ -289,7 +289,7 @@ function crealead_trainings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 19,
+      'weight' => 23,
     ),
   );
 
@@ -317,7 +317,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -401,7 +401,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 27,
+      'weight' => 31,
     ),
   );
 
@@ -482,7 +482,197 @@ function crealead_trainings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_cpf_eligible'.
+  $field_instances['node-training-field_cpf_eligible'] = array(
+    'bundle' => 'training',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 37,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
+        'weight' => 5,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_cpf_eligible',
+    'label' => 'Éligible au CPF',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'label_help_description' => '',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_cpf_public_record'.
+  $field_instances['node-training-field_cpf_public_record'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Vous pouvez saisir l\'url de la fiche publique CPF de la formation.',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'custom_title' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 40,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'custom_title' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_cpf_public_record',
+    'label' => 'Fiche publique CPF',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'convert_aliases' => 0,
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'Voir la fiche CPF',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(
+        'label_help_description' => '',
+      ),
+      'type' => 'link_field',
+      'weight' => 14,
     ),
   );
 
@@ -564,7 +754,7 @@ function crealead_trainings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -843,6 +1033,124 @@ function crealead_trainings_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_official_title'.
+  $field_instances['node-training-field_official_title'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Vous devez saisir l\'intitulé officiel de la formation.',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 39,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_official_title',
+    'label' => 'Intitulé officiel',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
     ),
   );
 
@@ -1128,7 +1436,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 35,
     ),
   );
 
@@ -1278,6 +1586,124 @@ function crealead_trainings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-training-field_rncp_code'.
+  $field_instances['node-training-field_rncp_code'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Vous devez saisir le code RCNP de la formation.',
+    'display' => array(
+      'certifications_labels_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 38,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 0,
+      ),
+      'landing_page_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sector_brand_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'sessions' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_rncp_code',
+    'label' => 'Code RNCP',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'linkit' => array(
+        'button_text' => 'Rechercher',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'label_help_description' => '',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-training-field_scheduled_sessions'.
   $field_instances['node-training-field_scheduled_sessions'] = array(
     'bundle' => 'training',
@@ -1386,7 +1812,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 22,
     ),
   );
 
@@ -1415,7 +1841,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1504,7 +1930,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 28,
+      'weight' => 32,
     ),
   );
 
@@ -1577,7 +2003,7 @@ function crealead_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 25,
     ),
   );
 
@@ -1606,7 +2032,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1654,7 +2080,7 @@ function crealead_trainings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_select',
-      'weight' => 29,
+      'weight' => 33,
     ),
   );
 
@@ -1683,7 +2109,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1731,7 +2157,7 @@ function crealead_trainings_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 30,
+      'weight' => 34,
     ),
   );
 
@@ -1759,7 +2185,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -1847,7 +2273,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 27,
     ),
   );
 
@@ -1959,7 +2385,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 18,
     ),
   );
 
@@ -2155,7 +2581,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 20,
     ),
   );
 
@@ -2238,7 +2664,7 @@ function crealead_trainings_field_default_field_instances() {
         'track_list' => 0,
       ),
       'type' => 'term_reference_tree',
-      'weight' => 12,
+      'weight' => 16,
     ),
   );
 
@@ -2357,7 +2783,7 @@ function crealead_trainings_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 17,
     ),
   );
 
@@ -2461,7 +2887,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2545,7 +2971,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 28,
     ),
   );
 
@@ -2658,7 +3084,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -2686,7 +3112,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2770,7 +3196,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 24,
     ),
   );
 
@@ -2881,7 +3307,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -2965,7 +3391,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 26,
     ),
   );
 
@@ -3104,7 +3530,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -3191,7 +3617,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 29,
     ),
   );
 
@@ -3294,7 +3720,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -3378,7 +3804,7 @@ function crealead_trainings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 30,
     ),
   );
 
@@ -3881,6 +4307,7 @@ function crealead_trainings_field_default_field_instances() {
   t('Certification(s) ou label(s) concerné(s)');
   t('Champ de recherche');
   t('Cible(s)');
+  t('Code RNCP');
   t('Commentaire');
   t('Contact');
   t('Contenu');
@@ -3889,8 +4316,10 @@ function crealead_trainings_field_default_field_instances() {
   t('Domaine');
   t('Durée');
   t('Engagement accessibilité handicapés');
+  t('Fiche publique CPF');
   t('Formateur(s)');
   t('Formation');
+  t('Intitulé officiel');
   t('Introduction');
   t('Je m\'engage sur demande à chercher une solution pour rendre ma formation accessible aux personnes  handicapées.');
   t('Les "thématiques concernées" permettent de mettre en valeur sur le site web de Crealead des actualités qui concernent les dîtes thématiques. Merci de cocher une thématique que si votre actualité y est clairement liée.');
@@ -3921,7 +4350,11 @@ function crealead_trainings_field_default_field_instances() {
   t('Tarif public');
   t('Thématique(s) concernée(s)');
   t('Validation');
+  t('Vous devez saisir l\'intitulé officiel de la formation.');
+  t('Vous devez saisir le code RCNP de la formation.');
   t('Vous pouvez préciser si cette formation peut être prise en charge par les OPCA, ou autre mode de financement.');
+  t('Vous pouvez saisir l\'url de la fiche publique CPF de la formation.');
+  t('Éligible au CPF');
 
   return $field_instances;
 }
