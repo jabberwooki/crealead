@@ -30,3 +30,14 @@
 .view-display-id-list_page .text-center {
     margin-top: 20px;
 }
+
+.cpf-eligible {
+    display: inline-block;
+    padding: 7px;
+    font-weight: bold;
+    color: white;
+    background-color: #999999;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
