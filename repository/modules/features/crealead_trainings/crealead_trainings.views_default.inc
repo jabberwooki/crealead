@@ -673,10 +673,6 @@ function crealead_trainings_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_training_type']['id'] = 'field_training_type';
-  $handler->display->display_options['fields']['field_training_type']['table'] = 'field_data_field_training_type';
-  $handler->display->display_options['fields']['field_training_type']['field'] = 'field_training_type';
   /* Field: Taxonomy term: Terme de taxonomie UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'taxonomy_term_data';
@@ -1562,7 +1558,6 @@ function crealead_trainings_views_default_views() {
     t('term'),
     t('Marque référencée'),
     t('Auteur'),
-    t('Broken handler field_data_field_training_type.field_training_type'),
     t('Identifiant universel unique (UUID)'),
     t('Publié'),
     t('Domaine'),
