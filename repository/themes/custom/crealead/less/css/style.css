@@ -12417,17 +12417,38 @@ body.node-type-training .field-name-recommendation-action {
   content: '\e834';
 }
 /* page de formation **************************************************************************************************/
-.page-formations .views-exposed-widget {
-  width: 210px;
-}
 .page-formations .views-exposed-widget.views-submit-button {
   width: 40px;
 }
 .page-formations .views-exposed-widget.views-reset-button {
   width: 40px;
 }
-.page-formations #edit-title {
-  width: 190px;
+.page-formations #edit-field-training-domain-tid-wrapper {
+  width: 20%;
+}
+.page-formations #edit-field-cpf-eligible-value-wrapper {
+  width: 12%;
+}
+.page-formations #edit-field-training-search-value-wrapper {
+  width: 20%;
+}
+.page-formations #edit-field-training-action-categories-tid-wrapper {
+  width: 20%;
+}
+.page-formations #edit-custom-coopins-value-wrapper {
+  width: 20%;
+}
+.page-formations input[id^="edit-field-training-action-categories-tid-"] {
+  border: 1px solid red;
+  display: inline;
+  width: auto;
+  height: auto;
+}
+.page-formations .form-item-field-training-action-categories-tid .form-control {
+  height: auto;
+}
+.page-formations .form-item-field-training-action-categories-tid .form-control label {
+  display: inline;
 }
 .page-formations .views-exposed-form #edit-submit-trainings,
 .page-formations .views-exposed-form #edit-reset {

@@ -685,6 +685,7 @@ function crealead_trainings_node_presave($node) {
 
     // --- Technical field_training_search field handling --- //
     $brand_name = '';
+    $coe_name = '';
     $training_intro = '';
     $training_public = '';
     $training_aims = '';
@@ -701,6 +702,9 @@ function crealead_trainings_node_presave($node) {
             ->fetchField()
             . ' ';
     }
+
+    $coe = user_load($node->uid);
+    $coe_name = $coe->name . ' ';
 
     if (!empty($node->field_introduction['und'])) {
       $training_intro .= strip_tags($node->field_introduction['und'][0]['value']) . ' ';
@@ -726,7 +730,7 @@ function crealead_trainings_node_presave($node) {
       }
     }
     // Store training intro, content, public and objectives into field_training_search technical field.
-    $search_data =  $brand_name . $title . $training_intro . $training_content . $training_public . $training_aims . $certifs_labels_names;
+    $search_data =  $brand_name . $coe_name . $title . $training_intro . $training_content . $training_public . $training_aims . $certifs_labels_names;
 
     $search_array = array('value' => $search_data, 'format' => 'plain_text');
     if (!isset($node->field_training_search['und'][0])) {
@@ -908,7 +912,9 @@ function crealead_trainings_views_pre_render(&$view) {
 function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
   // Filtres exposés du catalogue Formations.
   if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
-    $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
+      // Le champ Marque est retiré du filtre exposé lors du sprint 13-3,
+      // donc le commentaire du champ title ci-dessous n'a plus lieu d'etre.
+      // $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
 
     // COMMENT PERDRE 1,5 JOUR COMPLET POUR AFFICHER UNE CASE ON/OFF DANS LE FILTRE EXPOSÉ.
     // **********************************************************************************
@@ -1318,8 +1324,8 @@ function crealead_trainings_fill_search_field() {
     $query = new EntityFieldQueryExtraFields();
     $query->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'training')
-        ->propertyCondition('status', NODE_PUBLISHED)
-        ->addExtraField('', 'title', 'title', 'node');
+        ->propertyCondition('status', NODE_PUBLISHED);
+//        ->addExtraField('', 'title', 'title', 'node');
     $result = $query->execute();
 
     $count = 0;

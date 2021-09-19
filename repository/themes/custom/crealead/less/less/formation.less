@@ -202,7 +202,8 @@ body.node-type-training {
 /* page de formation **************************************************************************************************/
 .page-formations {
   .views-exposed-widget {
-    width: 210px;
+    //width: 210px;
+    //width: 10%;
     &.views-submit-button {
       width: 40px;
     }
@@ -210,9 +211,43 @@ body.node-type-training {
       width: 40px;
     }
   }
-  #edit-title {
-    width: 190px;
+  #edit-field-training-domain-tid-wrapper {
+    width: 20%;
   }
+  #edit-field-cpf-eligible-value-wrapper {
+    width: 12%;
+
+  }
+  #edit-field-training-search-value-wrapper {
+    width: 20%;
+
+  }
+  #edit-field-training-action-categories-tid-wrapper {
+    width: 20%;
+
+  }
+  #edit-custom-coopins-value-wrapper {
+    width: 20%;
+  }
+
+  input[id^="edit-field-training-action-categories-tid-"] {
+    border: 1px solid red;
+    display: inline;
+    width: auto;
+    height: auto;
+  }
+  .form-item-field-training-action-categories-tid {
+    .form-control {
+      height: auto;
+      label {
+        display: inline;
+      }
+    }
+  }
+
+  //#edit-title {
+  //  width: 190px;
+  //}
   .views-exposed-form {
     #edit-submit-trainings, #edit-reset {
       width: 30px;
@@ -241,7 +276,6 @@ body.node-type-training {
         }
       }
     }
-
   }
   .form-item-title {
     width: 200px;
