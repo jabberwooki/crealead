@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Formations feature.
@@ -175,7 +176,13 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 
   // Hide recommended by field to all users, but admin and superadmin.
   if (!in_array('administrateur', $current_user_roles) && $user->uid != 1) {
-    unset($form['field_recommended_by']);
+    //unset($form['field_recommended_by']);
+    //
+    // Attention !
+    // Dans un formulaire drupal, il ne faut pas utilser unset() mais ['#access'] = FALSE;
+    // Sinon, ça peut provoquer des bugs du module Locale comme dans le sprint 13, signalé par André.
+    // Voir issue suivante : https://www.drupal.org/project/drupal/issues/2356283, commentaire #18
+    $form['field_recommended_by']['#access'] = FALSE;
   }
 
   // Handling of field_structure_training display
@@ -210,20 +217,20 @@ function crealead_trainings_form_training_node_form_alter(&$form, &$form_state, 
 // Fonction de validation des champs field_cpf_code et field_official_title.
 // Si la case "Eligibilité CPF est cochée, ces deux champs deviennent obligatoires.
 function crealead_trainings_cpf_data_validate($form, &$form_state) {
-    if ($form_state['values']['field_cpf_eligible']['und'][0]['value']) {
-        $cpf_field_stylesheet = false;
-        if ($form_state['values']['field_rncp_code']['und'][0]['value'] == '') {
-            form_set_error('field_rncp_code', 'Éligibilité CPF : Le code RNCP de la formation doit etre renseigné.');
-            $cpf_field_stylesheet = true;
-        }
-        if ($form_state['values']['field_official_title']['und'][0]['value'] == '') {
-            form_set_error('field_official_title', 'Éligibilité CPF : Le titre officiel de la formation doit etre renseigné.');
-            $cpf_field_stylesheet = true;
-        }
-        if ($cpf_field_stylesheet) {
-            drupal_add_css(drupal_get_path('module','crealead_trainings') . '/css/crealead_trainings_form.css');
-        }
+  if ($form_state['values']['field_cpf_eligible']['und'][0]['value']) {
+    $cpf_field_stylesheet = false;
+    if ($form_state['values']['field_rncp_code']['und'][0]['value'] == '') {
+      form_set_error('field_rncp_code', 'Éligibilité CPF : Le code RNCP de la formation doit etre renseigné.');
+      $cpf_field_stylesheet = true;
     }
+    if ($form_state['values']['field_official_title']['und'][0]['value'] == '') {
+      form_set_error('field_official_title', 'Éligibilité CPF : Le titre officiel de la formation doit etre renseigné.');
+      $cpf_field_stylesheet = true;
+    }
+    if ($cpf_field_stylesheet) {
+      drupal_add_css(drupal_get_path('module', 'crealead_trainings') . '/css/crealead_trainings_form.css');
+    }
+  }
 }
 
 function crealead_trainings_training_submit_handler($form, &$form_state) {
@@ -252,32 +259,30 @@ function crealead_trainings_after_build($form, &$form_state) {
  * Implements hook_entity_view_alter().
  */
 function crealead_trainings_entity_view_alter(&$build, $type) {
-//  if ($type == 'node' && $build['#bundle'] == 'training' && $build['#view_mode'] == 'full') {
+  //  if ($type == 'node' && $build['#bundle'] == 'training' && $build['#view_mode'] == 'full') {
   if ($type == 'node' && $build['#bundle'] == 'training') {
     drupal_add_css(drupal_get_path('module', 'crealead_trainings') . '/css/crealead_trainings.css');
 
     if ($build['#view_mode'] == 'full') {
-        ////////////////// PICTO CHAISE ROULANTE ///////////////////////////////
-        if(isset($build['field_disabilities_commitment'][0]['#markup'])) {
-            if ($build['field_disabilities_commitment'][0]['#markup'] == 1) {
-                $build['field_disabilities_commitment'][0]['#markup'] = '<img typeof="foaf:Image" src="/profiles/crealead/themes/custom/crealead/less/images/wheelchair_50x50.png" alt="Pictogramme fauteuil roulant" title="Accessible aux personnes handicapées sur demande">';
-            }
-            else {
-                $build['field_disabilities_commitment'][0]['#markup'] = '';
-            }
+      ////////////////// PICTO CHAISE ROULANTE ///////////////////////////////
+      if (isset($build['field_disabilities_commitment'][0]['#markup'])) {
+        if ($build['field_disabilities_commitment'][0]['#markup'] == 1) {
+          $build['field_disabilities_commitment'][0]['#markup'] = '<img typeof="foaf:Image" src="/profiles/crealead/themes/custom/crealead/less/images/wheelchair_50x50.png" alt="Pictogramme fauteuil roulant" title="Accessible aux personnes handicapées sur demande">';
+        } else {
+          $build['field_disabilities_commitment'][0]['#markup'] = '';
         }
+      }
 
-        ////////////////// PICTO FINANÇABLE CPF ////////////////////////////////
-        if(isset($build['field_cpf_eligible'][0]['#markup'])) {
-            if ($build['field_cpf_eligible'][0]['#markup'] == 1) {
-                $build['field_cpf_eligible'][0]['#markup'] ='<div class="cpf-eligible">Finançable CFP</div><div>&nbsp;</div>';
-            }
-            else {
-                $build['field_cpf_eligible'][0]['#markup'] = '';
-            }
+      ////////////////// PICTO FINANÇABLE CPF ////////////////////////////////
+      if (isset($build['field_cpf_eligible'][0]['#markup'])) {
+        if ($build['field_cpf_eligible'][0]['#markup'] == 1) {
+          $build['field_cpf_eligible'][0]['#markup'] = '<div class="cpf-eligible">Finançable CFP</div><div>&nbsp;</div>';
+        } else {
+          $build['field_cpf_eligible'][0]['#markup'] = '';
         }
+      }
 
-        ////////////////// CONTACTEZ-NOUS //////////////////////////////////////
+      ////////////////// CONTACTEZ-NOUS //////////////////////////////////////
       if (!empty($build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'])) {
         $email = $build['field_training_related_brands']['#items'][0]['entity']->field_brand_email['und'][0]['email'];
         $link = '/' . drupal_get_path_alias('node/' . $build['field_training_related_brands']['#items'][0]['entity']->nid)
@@ -320,8 +325,8 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
         $trainings_view->pre_execute();
         $sessions_list .= $trainings_view->render('next_sessions');
 
-  //      // New version of sessions list, but eventually discarded (see function crealead_trainings_get_next_sessions() below).
-  //      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
+        //      // New version of sessions list, but eventually discarded (see function crealead_trainings_get_next_sessions() below).
+        //      $sessions_list = crealead_trainings_get_next_sessions($build['#node']);
 
         // At the moment we know that at least one training session exists,
         // we can remove the mention "Nous contacter"
@@ -330,7 +335,7 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
           $previous_sessions_markup = '';
         }
 
-        if ($sessions_number > 3 ) {
+        if ($sessions_number > 3) {
           $sessions_list_link = l('Voir toutes les sessions', '/formations/toutes-les-sessions/' . $build['#node']->nid);
           $sessions_list .= '<div class="session-list-link">' . $sessions_list_link . '</div>';
         }
@@ -371,7 +376,7 @@ function crealead_trainings_get_funded_logo_markup() {
   $alt = "Prise en charge partielle du financement par Crealead pour les Crealeadiens";
   $title = "Prise en charge partielle du financement par Crealead pour les Crealeadiens";
 
-  return '<img typeof="foaf:Image"  src="'. $funded_logo_fullpath . '" alt="' . $alt . '" title="' . $title . '"/>';
+  return '<img typeof="foaf:Image"  src="' . $funded_logo_fullpath . '" alt="' . $alt . '" title="' . $title . '"/>';
 }
 
 /**
@@ -387,7 +392,7 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_full.js');
 
       global $user;
-      if(!user_is_logged_in() || $node->uid == $user->uid) {
+      if (!user_is_logged_in() || $node->uid == $user->uid) {
         unset($node->content['recommendation_action']);
       }
       else {
@@ -424,7 +429,7 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       }
 
       global $user;
-      if(!user_is_logged_in() || $node->uid == $user->uid) {
+      if (!user_is_logged_in() || $node->uid == $user->uid) {
         unset($node->content['recommendation_action']);
       }
       else {
@@ -463,7 +468,7 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
       }
 
       global $user;
-      if(!user_is_logged_in() || $node->uid == $user->uid) {
+      if (!user_is_logged_in() || $node->uid == $user->uid) {
         unset($node->content['recommendation_action']);
       }
       else {
@@ -527,8 +532,7 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
     // If current user is the session author, the switch is not displayed.
     if ($user->uid == $node->uid) {
       unset($node->content['interested_switch']);
-    }
-    else {
+    } else {
       // Table of interested users if visible only to allowed rôles (Trello V3 S6-5).
       $current_user_roles = $user->roles;
       $crealead_trainings_allowed_roles = array('administrateur','webmaster','pôle gestion');
@@ -552,18 +556,18 @@ function crealead_trainings_node_view($node, $view_mode, $langcode) {
         }
       }
       $node->content['interested_switch'][0]['#markup'] = crealead_trainings_get_interest_widget($is_already_interested, $node, $user);
-     ///////// End of Interested/Not interested switch link handling. //////////
+      ///////// End of Interested/Not interested switch link handling. //////////
     }
   }
 }
 
-function crealead_trainings_get_interest_widget($is_already_interested=true, $session, $user) {
+function crealead_trainings_get_interest_widget($is_already_interested = true, $session, $user) {
   if ($is_already_interested) {
     $output =
       '<div id="session-switch-wrapper">' .
-        '<a href="/remove_user_from_session/' . $session->nid .'/nojs" class="use-ajax">' .
-          REMOVE_FROM_SESSION_TEXT .
-        '</a>' .
+      '<a href="/remove_user_from_session/' . $session->nid . '/nojs" class="use-ajax">' .
+      REMOVE_FROM_SESSION_TEXT .
+      '</a>' .
       '</div>';
   }
   else {
@@ -571,10 +575,10 @@ function crealead_trainings_get_interest_widget($is_already_interested=true, $se
 
     $output =
       '<div id="session-switch-wrapper">' .
-        '<a class="btn btn-primary add-to-session-open-close">' . ADD_TO_SESSION_TEXT . '</a>' .
-        '<div class="user-details" style="display: none">' .
-            drupal_render(drupal_get_form('crealead_trainings_add_user_to_session_form', $vars)) .
-        '</div>'.
+      '<a class="btn btn-primary add-to-session-open-close">' . ADD_TO_SESSION_TEXT . '</a>' .
+      '<div class="user-details" style="display: none">' .
+      drupal_render(drupal_get_form('crealead_trainings_add_user_to_session_form', $vars)) .
+      '</div>' .
       '</div>';
   }
 
@@ -667,7 +671,6 @@ function crealead_trainings_add_user_to_session($form, $form_state) {
 
   // Then, we change the session's colorbox switch link.
   return crealead_trainings_get_interest_widget(true, $session_nid, $user);
-
 }
 
 /**
@@ -675,7 +678,7 @@ function crealead_trainings_add_user_to_session($form, $form_state) {
  */
 function crealead_trainings_node_presave($node) {
   if ($node->type == 'training') {
-     // If Sessions programmmées field is empty, the default content is "Nous contacter".
+    // If Sessions programmmées field is empty, the default content is "Nous contacter".
     if (empty($node->field_scheduled_sessions['und'])) {
       $node->field_scheduled_sessions['und'][] = array(
         'value' => '<p>Nous contacter</p>',
@@ -694,13 +697,13 @@ function crealead_trainings_node_presave($node) {
     $training_content = strip_tags($node->body['und'][0]['value']) . ' ';
 
     if (!empty($node->field_training_related_brands['und'])) {
-        $brand_id = $node->field_training_related_brands['und'][0]['target_id'];
-        $brand_name .= db_select('node', 'n')
-            ->fields('n', array('title'))
-            ->condition('nid', $brand_id)
-            ->execute()
-            ->fetchField()
-            . ' ';
+      $brand_id = $node->field_training_related_brands['und'][0]['target_id'];
+      $brand_name .= db_select('node', 'n')
+        ->fields('n', array('title'))
+        ->condition('nid', $brand_id)
+        ->execute()
+        ->fetchField()
+        . ' ';
     }
 
     $coe = user_load($node->uid);
@@ -720,7 +723,7 @@ function crealead_trainings_node_presave($node) {
     if (isset($node->field_training_related_brands['und'])) {
       foreach ($node->field_training_related_brands['und'] as $brand) {
         $wrapper = entity_metadata_wrapper('node', $brand['target_id']);
-        if(isset($wrapper->field_certifications_labels)) {
+        if (isset($wrapper->field_certifications_labels)) {
           $certifs_labels = $wrapper->field_certifications_labels->value();
           foreach ($certifs_labels as $certif_label) {
             $term = taxonomy_term_load($certif_label->tid);
@@ -741,49 +744,49 @@ function crealead_trainings_node_presave($node) {
     }
     // --- End of technical field_training_search field handling --- //
 
-      // --- Gestion du partage d'une formation avec d'autres marques --- //
-      // Si l'utilisateur essaie de partager la formation avec la marque à laquelle est rattachée cette formation, il faut interdire ce partage et avertir l'utilisateur.
-      if (!empty($node->field_allowed_brands['und'])) {
-          $related_brand_id = isset($node->field_training_related_brands['und'][0]['target_id']) ?
-              $node->field_training_related_brands['und'][0]['target_id'] : 0;
-          $previous_related_brand_id = isset($node->original->field_training_related_brands['und'][0]['target_id']) ?
-              $node->original->field_training_related_brands['und'][0]['target_id'] : 0;
+    // --- Gestion du partage d'une formation avec d'autres marques --- //
+    // Si l'utilisateur essaie de partager la formation avec la marque à laquelle est rattachée cette formation, il faut interdire ce partage et avertir l'utilisateur.
+    if (!empty($node->field_allowed_brands['und'])) {
+      $related_brand_id = isset($node->field_training_related_brands['und'][0]['target_id']) ?
+        $node->field_training_related_brands['und'][0]['target_id'] : 0;
+      $previous_related_brand_id = isset($node->original->field_training_related_brands['und'][0]['target_id']) ?
+        $node->original->field_training_related_brands['und'][0]['target_id'] : 0;
 
-          foreach ($node->field_allowed_brands['und'] as $key => $brand) {
-              if ($brand['target_id'] == $related_brand_id) {
-                  unset($node->field_allowed_brands['und'][$key]);
+      foreach ($node->field_allowed_brands['und'] as $key => $brand) {
+        if ($brand['target_id'] == $related_brand_id) {
+          unset($node->field_allowed_brands['und'][$key]);
 
-                  $related_brand_title = db_select('node', 'n')
-                      ->fields('n', array('title'))
-                      ->condition('nid', $related_brand_id)
-                      ->execute()
-                      ->fetchField();
+          $related_brand_title = db_select('node', 'n')
+            ->fields('n', array('title'))
+            ->condition('nid', $related_brand_id)
+            ->execute()
+            ->fetchField();
 
-                  if ($related_brand_id != $previous_related_brand_id) {
-                      $previous_related_brand_title = db_select('node', 'n')
-                          ->fields('n', array('title'))
-                          ->condition('nid', $previous_related_brand_id)
-                          ->execute()
-                          ->fetchField();
+          if ($related_brand_id != $previous_related_brand_id) {
+            $previous_related_brand_title = db_select('node', 'n')
+              ->fields('n', array('title'))
+              ->condition('nid', $previous_related_brand_id)
+              ->execute()
+              ->fetchField();
 
-                      $msg = '<p><b>ATTENTION  !</b><br/>'
-                          . 'Vous avez détaché cette formation de la marque ' . strtoupper($previous_related_brand_title) . ' pour la rattacher à la marque ' . strtoupper($related_brand_title)
-                          . ' alors qu\'elle était précédemment partagée avec cette marque.<br/>'
-                          . 'Le rattachement à la marque ' . strtoupper($related_brand_title) . ' a bien été enregistrée et le partage a été supprimé.'
-                          . '</p>';
-                  }
-                  else {
-                      $msg = '<p id="blink"><b>ATTENTION  !</b><br/>'
-                          . 'Vous avez essayé de partager cette formation avec la marque ' . strtoupper($related_brand_title) . ' alors qu\'elle est rattachée ou que vous venez de la rattacher à cette marque.<br/>'
-                          . 'Ce partage n\'a pas été enregistré.<br/>'
-                          . '</p>';
-                  }
-
-                  drupal_set_message($msg, 'error');
-              }
+            $msg = '<p><b>ATTENTION  !</b><br/>'
+              . 'Vous avez détaché cette formation de la marque ' . strtoupper($previous_related_brand_title) . ' pour la rattacher à la marque ' . strtoupper($related_brand_title)
+              . ' alors qu\'elle était précédemment partagée avec cette marque.<br/>'
+              . 'Le rattachement à la marque ' . strtoupper($related_brand_title) . ' a bien été enregistrée et le partage a été supprimé.'
+              . '</p>';
           }
+          else {
+            $msg = '<p id="blink"><b>ATTENTION  !</b><br/>'
+              . 'Vous avez essayé de partager cette formation avec la marque ' . strtoupper($related_brand_title) . ' alors qu\'elle est rattachée ou que vous venez de la rattacher à cette marque.<br/>'
+              . 'Ce partage n\'a pas été enregistré.<br/>'
+              . '</p>';
+          }
+
+          drupal_set_message($msg, 'error');
+        }
       }
-      // --- Fin de gestion du partage d'une formation avec d'autres marques --- //
+    }
+    // --- Fin de gestion du partage d'une formation avec d'autres marques --- //
   }
 }
 
@@ -843,7 +846,7 @@ function crealead_trainings_views_pre_render(&$view) {
     $view->result = $sessions;
   }
   elseif ($view->name == 'trainings' && ($view->current_display == 'next_sessions' || $view->current_display == 'all_sessions')) {
-    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_trainings_sessions.js');
+    drupal_add_js(drupal_get_path('module', 'crealead_trainings') . '/js/crealead_trainings_sessions.js');
 
     /*
      * The 2 view displays 'next_sessions' and 'all_sessions' have been build
@@ -866,7 +869,7 @@ function crealead_trainings_views_pre_render(&$view) {
      * RULE 3 - the session list must be sorted by first date ascending value.     *
      */
     $coming_sessions = array();
-    foreach ($view->result as $key=>$item) {
+    foreach ($view->result as $key => $item) {
       $first_session_date = date('Ymd', strtotime($item->field_field_session_dates[0]['raw']['value']));
       $last_session_date = date('Ymd', strtotime($item->field_field_session_dates_1[0]['raw']['value']));
       $current_date = date('Ymd');
@@ -885,13 +888,13 @@ function crealead_trainings_views_pre_render(&$view) {
     foreach ($view->result as $key => $item) {
       $delta = $item->field_data_field_session_dates_delta;
 
-//      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
-//      $ellipsis = ' ';
-//      $nb_chars = 20;
-//      if (strlen($markup) > $nb_chars) {
-//        $ellipsis = '... ';
-//      }
-//      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(jour ' . ($delta + 1) . ')';
+      //      $markup = $view->result[$key]->field_field_related_training[0]['rendered']['#markup'];
+      //      $ellipsis = ' ';
+      //      $nb_chars = 20;
+      //      if (strlen($markup) > $nb_chars) {
+      //        $ellipsis = '... ';
+      //      }
+      //      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(jour ' . ($delta + 1) . ')';
 
       $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (jour ' . ($delta + 1) . ')';
     }
@@ -912,9 +915,9 @@ function crealead_trainings_views_pre_render(&$view) {
 function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
   // Filtres exposés du catalogue Formations.
   if ($form['#id'] == 'views-exposed-form-trainings-list-page') {
-      // Le champ Marque est retiré du filtre exposé lors du sprint 13-3,
-      // donc le commentaire du champ title ci-dessous n'a plus lieu d'etre.
-      // $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
+    // Le champ Marque est retiré du filtre exposé lors du sprint 13-3,
+    // donc le commentaire du champ title ci-dessous n'a plus lieu d'etre.
+    // $form['title']['#field_suffix'] = 'Vous ne vous souvenez plus exactement du libellé ?<br /> Une lettre suffit pour lancer la recherche.';
 
     // COMMENT PERDRE 1,5 JOUR COMPLET POUR AFFICHER UNE CASE ON/OFF DANS LE FILTRE EXPOSÉ.
     // **********************************************************************************
@@ -947,7 +950,7 @@ function crealead_trainings_form_alter(&$form, &$form_state, $form_id) {
     );
   }
   elseif ($form_id == 'training_session_node_form') {
-    drupal_add_js(drupal_get_path('module','crealead_trainings') . '/js/crealead_training_sessions_add.js');
+    drupal_add_js(drupal_get_path('module', 'crealead_trainings') . '/js/crealead_training_sessions_add.js');
 
     // Current user trainings
     global $user;
@@ -1063,7 +1066,7 @@ function crealead_trainings_form_training_session_node_form_alter(&$form, &$form
     $options = array();
     if (!empty($session_author_trainings)) {
       foreach ($session_author_trainings as $training) {
-          $options[$training->nid] = $training->node_title;
+        $options[$training->nid] = $training->node_title;
       }
     }
 
@@ -1186,7 +1189,7 @@ function crealead_trainings_get_training_sessions($training_nid) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'training_session')
-    ->fieldCondition('field_related_training','target_id', $training_nid);
+    ->fieldCondition('field_related_training', 'target_id', $training_nid);
 
   $result = $query->execute();
   if (isset($result['node'])) {
@@ -1203,7 +1206,7 @@ function crealead_trainings_get_user_trainings($uid) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->propertyCondition('uid', $uid)
     ->addExtraField('', 'title', 'title', 'node')
-    ->addExtraField('field_crealead_funded','value')
+    ->addExtraField('field_crealead_funded', 'value')
     ->execute();
 
   $trainings = array();
@@ -1233,7 +1236,7 @@ function crealead_trainings_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
-    case 'crealead_calendar_legend' :
+    case 'crealead_calendar_legend':
       $block['content'] = '<span class="calendar-legend">Sessions en rouge = Prise en charge partielle du financement par Crealead pour les Crealeadiens</span>';
   }
 
@@ -1247,11 +1250,11 @@ function crealead_trainings_entity_postinsert($entity, $entity_type) {
 
   // Si un utilisateur vient de cliquer "Je suis intéressé" dans la fenêtre popup d'une session...
   if ($entity_type == 'field_collection_item' && $entity->field_name == 'field_interested_users') {
-//    watchdog('crealead_trainings', 'item_id = ' . $entity->item_id);
-//    watchdog('crealead_trainings', 'session_nid  = ' . $entity->session_nid);
-//    watchdog('crealead_trainings', 'session_title  = ' . $entity->session_title);
-//    watchdog('crealead_trainings', 'author_mail  = ' . $entity->author_mail);
-//    watchdog('crealead_trainings', 'warning  = ' . $entity->warning);
+    //    watchdog('crealead_trainings', 'item_id = ' . $entity->item_id);
+    //    watchdog('crealead_trainings', 'session_nid  = ' . $entity->session_nid);
+    //    watchdog('crealead_trainings', 'session_title  = ' . $entity->session_title);
+    //    watchdog('crealead_trainings', 'author_mail  = ' . $entity->author_mail);
+    //    watchdog('crealead_trainings', 'warning  = ' . $entity->warning);
 
     // et que l'auteur de la session souhaite être prévenu (case à cocher "Alertes sessions de formation" dans son compte utilisateur).
     if ($entity->warning) {
@@ -1274,21 +1277,21 @@ function crealead_trainings_send_interested_user_email($email, $session_nid, $se
 
   $mail_body =
     '<div id="crealead-email-body">' .
-      '<br/>' .
-      '<p>Bonjour,</p>'.
+    '<br/>' .
+    '<p>Bonjour,</p>' .
 
-      '<p>'.
-        'Une personne est intéressée par votre session de formation ' .
-        '<b><a href="' . $protocol . '://' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
-      '</p>'.
+    '<p>' .
+    'Une personne est intéressée par votre session de formation ' .
+    '<b><a href="' . $protocol . '://' . $host . '/node/' . $session_nid . '">' . $session_title . '</a></b>' .
+    '</p>' .
     '</div>';
 
-  $footer_image_fullpath = drupal_get_path('module','kcore') . '/images/bandeau-crealead.jpg';
+  $footer_image_fullpath = drupal_get_path('module', 'kcore') . '/images/bandeau-crealead.jpg';
 
   $mail_body .=
     '<br/><br/>' .
     '<p class="crealead-email-footer">' .
-      '<img src="' . $footer_image_fullpath . '">' .
+    '<img src="' . $footer_image_fullpath . '">' .
     '</p>';
 
   $params = array(
@@ -1321,27 +1324,27 @@ function crealead_trainings_mail($key, &$message, $params) {
 }
 
 function crealead_trainings_fill_search_field() {
-    $query = new EntityFieldQueryExtraFields();
-    $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'training')
-        ->propertyCondition('status', NODE_PUBLISHED);
-//        ->addExtraField('', 'title', 'title', 'node');
-    $result = $query->execute();
+  $query = new EntityFieldQueryExtraFields();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'training')
+    ->propertyCondition('status', NODE_PUBLISHED);
+  //        ->addExtraField('', 'title', 'title', 'node');
+  $result = $query->execute();
 
-    $count = 0;
-    if (isset($result['node'])) {
-        $trainings = node_load_multiple(array_keys($result['node']));
-        foreach ($trainings as $training) {
-//            if (isset($training->field_crealead_funded['und'][0]['value'])) {
-//                dpm($training->field_crealead_funded['und'][0]['value']);
-//            }
-//            else {
-//                dpm('non défini' . ' -  ' . $training->title . ' - ' . $training->nid);
-//            }
+  $count = 0;
+  if (isset($result['node'])) {
+    $trainings = node_load_multiple(array_keys($result['node']));
+    foreach ($trainings as $training) {
+      //            if (isset($training->field_crealead_funded['und'][0]['value'])) {
+      //                dpm($training->field_crealead_funded['und'][0]['value']);
+      //            }
+      //            else {
+      //                dpm('non défini' . ' -  ' . $training->title . ' - ' . $training->nid);
+      //            }
 
-            node_save($training);
-            $count++;
-        }
+      node_save($training);
+      $count++;
     }
-    dpm($count . ' nodes de type training enregistrés');
+  }
+  dpm($count . ' nodes de type training enregistrés');
 }
