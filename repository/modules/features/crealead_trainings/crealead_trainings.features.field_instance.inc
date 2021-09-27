@@ -787,7 +787,7 @@ function crealead_trainings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_key',
-        'weight' => 32,
+        'weight' => 8,
       ),
       'landing_page_block' => array(
         'label' => 'above',
