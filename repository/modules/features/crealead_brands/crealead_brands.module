@@ -1296,7 +1296,7 @@ function crealead_brands_block_view_alter(&$data, $block) {
     if ($block->bid == "ds_extras-content_header_brand") {
         if (arg(0) == 'node' && is_numeric(arg(1)) && !arg(2)) {
             $node = node_load(arg(1));
-            if (count($node->field_contact_form)) {
+            if (isset($node->field_contact_form['und']) && !empty($node->field_contact_form['und'])) {
                 $data['content']['field_lien_formulaire_contact'][0]['#markup'] = '<a id="link-form-brand" href="#bootstrap-fieldgroup-nav-item--contact">Formulaire de contact</a>';
             }
             else {
