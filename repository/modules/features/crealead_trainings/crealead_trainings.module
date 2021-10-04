@@ -276,7 +276,7 @@ function crealead_trainings_entity_view_alter(&$build, $type) {
       ////////////////// PICTO FINANÇABLE CPF ////////////////////////////////
       if (isset($build['field_cpf_eligible'][0]['#markup'])) {
         if ($build['field_cpf_eligible'][0]['#markup'] == 1) {
-          $build['field_cpf_eligible'][0]['#markup'] = '<div class="cpf-eligible">Finançable CFP</div><div>&nbsp;</div>';
+          $build['field_cpf_eligible'][0]['#markup'] = '<div class="cpf-eligible">Finançable CPF</div><div>&nbsp;</div>';
         } else {
           $build['field_cpf_eligible'][0]['#markup'] = '';
         }
