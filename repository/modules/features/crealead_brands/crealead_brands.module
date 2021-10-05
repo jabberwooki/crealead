@@ -804,7 +804,9 @@ function crealead_brands_views_pre_render(&$view) {
                     // Coe picture made not clickable.
                     unset($coe->field_field_coe_photo[0]['rendered']['#path']);
                     // Coe name made not clickable.
-                    $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
+                    if (isset($coe->field_field_brand_coe[0]['rendered']['#markup'])) {
+                      $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
+                    }
                 }
             }
             // And if coe profile pid is null, the best to do is to remove the field collection item from view.
