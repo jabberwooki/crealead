@@ -896,7 +896,9 @@ function crealead_trainings_views_pre_render(&$view) {
       //      }
       //      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] = substr($markup, 0, 20) . $ellipsis . '(jour ' . ($delta + 1) . ')';
 
-      $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (jour ' . ($delta + 1) . ')';
+      if (isset($view->result[$key]->field_field_related_training[0]['rendered']['#markup'])) {
+        $view->result[$key]->field_field_related_training[0]['rendered']['#markup'] .= ' (jour ' . ($delta + 1) . ')';
+      }
     }
   }
   elseif ($view->name == 'trainings_calendar_prod') {
