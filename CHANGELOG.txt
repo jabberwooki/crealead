@@ -1,3 +1,7 @@
+Hotfix brand_full_node_Undefined_index_#markup / 2021-10-05
+-----------------------------------------------------------
+  * Correction du bug 'Undefined index: #markup dans crealead_brands_views_pre_render() (ligne 807...' dans la page d'une marque.
+
 Hotfix trainings_view_Undefined_index_#markup / 2021-10-05
 ----------------------------------------------------------
   * Correction du bug 'Undefined index: #markup dans crealead_trainings_views_pre_render() (ligne 899...' dans la vue 'Nos formations'.
