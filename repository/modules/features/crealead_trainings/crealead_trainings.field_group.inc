@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_trainings.field_group.inc
@@ -21,7 +22,7 @@ function crealead_trainings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Champs Crealead',
-    'weight' => '32',
+    'weight' => '39',
     'children' => array(
       0 => 'field_training_search',
       1 => 'field_previous_status',
@@ -195,8 +196,7 @@ function crealead_trainings_field_group_info() {
     'weight' => '31',
     'children' => array(
       0 => 'field_introduction',
-      1 => 'field_training_type',
-      2 => 'title',
+      1 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -260,7 +260,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'En-tête droit',
     'weight' => '32',
     'children' => array(
-      0 => 'training_contact',
+      0 => 'field_disabilities_commitment',
+      1 => 'training_contact',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -362,6 +363,7 @@ function crealead_trainings_field_group_info() {
     'children' => array(
       0 => 'field_training_price',
       1 => 'field_training_crealead_price',
+      2 => 'field_cpf_eligible',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -400,6 +402,12 @@ function crealead_trainings_field_group_info() {
       4 => 'field_training_requirements',
       5 => 'field_training_teachers',
       6 => 'field_training_validation',
+      7 => 'field_subscription_method',
+      8 => 'field_teaching_mode',
+      9 => 'field_training_action_categories',
+      10 => 'field_rncp_code',
+      11 => 'field_official_title',
+      12 => 'field_cpf_public_record',
     ),
     'format_type' => 'div',
     'format_settings' => array(

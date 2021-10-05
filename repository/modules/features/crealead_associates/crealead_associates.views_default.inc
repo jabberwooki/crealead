@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_associates.views_default.inc
@@ -89,7 +90,7 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Date de la réunion */
+  /* Field: Nœud: Date de la réunion */
   $handler->display->display_options['fields']['field_meeting_date']['id'] = 'field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['field'] = 'field_meeting_date';
@@ -103,7 +104,7 @@ function crealead_associates_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Thématique */
+  /* Field: Nœud: Thématique */
   $handler->display->display_options['fields']['field_report_theme']['id'] = 'field_report_theme';
   $handler->display->display_options['fields']['field_report_theme']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['fields']['field_report_theme']['field'] = 'field_report_theme';
@@ -118,7 +119,7 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Content: Body */
+  /* Field: Nœud: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -153,7 +154,7 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Content: Catégorie (field_report_category) */
+  /* Filter criterion: Nœud: Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
@@ -173,12 +174,6 @@ function crealead_associates_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Options avancées',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_meeting_date_value' => array(
       'bef_format' => 'default',
@@ -189,44 +184,12 @@ function crealead_associates_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_report_theme_tid' => array(
       'bef_format' => 'default',
@@ -238,55 +201,14 @@ function crealead_associates_views_default_views() {
           'available' => array(
             0 => 'global_types',
             1 => 'vocabulary',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -303,14 +225,14 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Content: Catégorie (field_report_category) */
+  /* Filter criterion: Nœud: Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['value'] = array(
     'ca' => 'ca',
   );
-  /* Filter criterion: Content: Date de la réunion (field_meeting_date) */
+  /* Filter criterion: Nœud: Date de la réunion (field_meeting_date) */
   $handler->display->display_options['filters']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
   $handler->display->display_options['filters']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['filters']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
@@ -341,7 +263,7 @@ function crealead_associates_views_default_views() {
     1936756 => 0,
   );
   $handler->display->display_options['filters']['field_meeting_date_value']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Thématique (field_report_theme) */
+  /* Filter criterion: Nœud: Thématique (field_report_theme) */
   $handler->display->display_options['filters']['field_report_theme_tid']['id'] = 'field_report_theme_tid';
   $handler->display->display_options['filters']['field_report_theme_tid']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['filters']['field_report_theme_tid']['field'] = 'field_report_theme_tid';
@@ -398,17 +320,8 @@ function crealead_associates_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Options avancées',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
     ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -434,12 +347,6 @@ function crealead_associates_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Options avancées',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_meeting_date_value' => array(
       'bef_format' => 'default',
@@ -450,44 +357,12 @@ function crealead_associates_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_report_theme_tid' => array(
       'bef_format' => 'default',
@@ -499,55 +374,14 @@ function crealead_associates_views_default_views() {
           'available' => array(
             0 => 'global_types',
             1 => 'vocabulary',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -564,14 +398,14 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Content: Catégorie (field_report_category) */
+  /* Filter criterion: Nœud: Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['value'] = array(
     'ce' => 'ce',
   );
-  /* Filter criterion: Content: Date de la réunion (field_meeting_date) */
+  /* Filter criterion: Nœud: Date de la réunion (field_meeting_date) */
   $handler->display->display_options['filters']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
   $handler->display->display_options['filters']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['filters']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
@@ -603,7 +437,7 @@ function crealead_associates_views_default_views() {
     193262079 => 0,
   );
   $handler->display->display_options['filters']['field_meeting_date_value']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Thématique (field_report_theme) */
+  /* Filter criterion: Nœud: Thématique (field_report_theme) */
   $handler->display->display_options['filters']['field_report_theme_tid']['id'] = 'field_report_theme_tid';
   $handler->display->display_options['filters']['field_report_theme_tid']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['filters']['field_report_theme_tid']['field'] = 'field_report_theme_tid';
@@ -664,7 +498,6 @@ function crealead_associates_views_default_views() {
     t('Réinitialiser'),
     t('Trier par'),
     t('Options avancées'),
-    t('Select any filter and click on Apply to see results'),
     t('Date du CA'),
     t('Bloc CA'),
     t('Derniers comptes-rendus de CA'),

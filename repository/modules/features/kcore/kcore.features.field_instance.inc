@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.features.field_instance.inc
@@ -679,6 +680,7 @@ function kcore_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -694,6 +696,7 @@ function kcore_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,

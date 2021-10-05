@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.features.user_permission.inc

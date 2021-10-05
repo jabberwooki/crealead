@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_calendars.views_default.inc
@@ -50,7 +51,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -67,7 +68,7 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
-  /* Sort criterion: Content: Date -  start date (field_gclal_date) */
+  /* Sort criterion: Nœud: Date -  start date (field_gclal_date) */
   $handler->display->display_options['sorts']['field_gclal_date_value']['id'] = 'field_gclal_date_value';
   $handler->display->display_options['sorts']['field_gclal_date_value']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['sorts']['field_gclal_date_value']['field'] = 'field_gclal_date_value';
@@ -166,9 +167,6 @@ function crealead_calendars_views_default_views() {
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required'] = 'Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats';
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
@@ -241,7 +239,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/room_event">LIEN_AJOUTER</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -260,7 +258,7 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
-  /* Field: Content: Salle */
+  /* Field: Nœud: Salle */
   $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
@@ -311,7 +309,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'room_event' => 'room_event',
   );
-  /* Filter criterion: Content: Salle (field_room) */
+  /* Filter criterion: Nœud: Salle (field_room) */
   $handler->display->display_options['filters']['field_room_tid']['id'] = 'field_room_tid';
   $handler->display->display_options['filters']['field_room_tid']['table'] = 'field_data_field_room';
   $handler->display->display_options['filters']['field_room_tid']['field'] = 'field_room_tid';
@@ -493,7 +491,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -649,7 +647,6 @@ function crealead_calendars_views_default_views() {
     t('Réinitialiser'),
     t('Trier par'),
     t('Options avancées'),
-    t('Sélectionnez n\'importe quel filtre et cliquez sur Appliquer pour voir les résultats'),
     t('<a href="/node/add/room_event">LIEN_AJOUTER</a>'),
     t('All'),
     t('Salle'),
@@ -705,7 +702,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -722,7 +719,7 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
-  /* Sort criterion: Content: Date -  start date (field_gclal_date) */
+  /* Sort criterion: Nœud: Date -  start date (field_gclal_date) */
   $handler->display->display_options['sorts']['field_gclal_date_value']['id'] = 'field_gclal_date_value';
   $handler->display->display_options['sorts']['field_gclal_date_value']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['sorts']['field_gclal_date_value']['field'] = 'field_gclal_date_value';
@@ -770,7 +767,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/structure_event">LIEN_AJOUTER</a> ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -828,7 +825,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<a href="/node/add/structure_event">LIEN_AJOUTER</a> ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -1018,7 +1015,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -1169,7 +1166,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -1198,7 +1195,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date_1']['id'] = 'field_gclal_date_1';
   $handler->display->display_options['fields']['field_gclal_date_1']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date_1']['field'] = 'field_gclal_date';
@@ -1213,7 +1210,7 @@ function crealead_calendars_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Lieu */
+  /* Field: Nœud: Lieu */
   $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
@@ -1247,7 +1244,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
   );
-  /* Filter criterion: Content: Thème (field_theme_breve) */
+  /* Filter criterion: Nœud: Thème (field_theme_breve) */
   $handler->display->display_options['filters']['field_theme_breve_tid']['id'] = 'field_theme_breve_tid';
   $handler->display->display_options['filters']['field_theme_breve_tid']['table'] = 'field_data_field_theme_breve';
   $handler->display->display_options['filters']['field_theme_breve_tid']['field'] = 'field_theme_breve_tid';
@@ -1314,7 +1311,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date_1']['id'] = 'field_gclal_date_1';
   $handler->display->display_options['fields']['field_gclal_date_1']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date_1']['field'] = 'field_gclal_date';
@@ -1339,7 +1336,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Nœud: Date */
   $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
   $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
@@ -1357,7 +1354,7 @@ function crealead_calendars_views_default_views() {
   );
   $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
-  /* Field: Content: Lieu */
+  /* Field: Nœud: Lieu */
   $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
   $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
@@ -1389,7 +1386,7 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
   );
-  /* Filter criterion: Content: Thème (field_theme_breve) */
+  /* Filter criterion: Nœud: Thème (field_theme_breve) */
   $handler->display->display_options['filters']['field_theme_breve_tid']['id'] = 'field_theme_breve_tid';
   $handler->display->display_options['filters']['field_theme_breve_tid']['table'] = 'field_data_field_theme_breve';
   $handler->display->display_options['filters']['field_theme_breve_tid']['field'] = 'field_theme_breve_tid';

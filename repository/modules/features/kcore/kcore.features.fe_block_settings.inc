@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.features.fe_block_settings.inc

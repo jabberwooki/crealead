@@ -251,13 +251,13 @@ function crealead_pager($variables) {
   // Si les cases à cocher "Si vous êtes à Crealead" ne sont pas cochées on les élimine des paramètres de la requète,
   // sinon, gros bug -> quand on passe à la page suivante, elle sont toutes cochées par défaut.
   if (isset($variables['parameters']['field_training_domain_tid'])) {
-    if ($variables['parameters']['field_custom_coopins_value'] == 0) {
+    if (isset($variables['parameters']['field_custom_coopins_value']) && $variables['parameters']['field_custom_coopins_value'] == 0) {
       unset($variables['parameters']['field_custom_coopins_value']);
     }
-    if ($variables['parameters']['field_custom_crealead_price_value'] == 0) {
+    if (isset ($variables['parameters']['field_custom_crealead_price_value']) && $variables['parameters']['field_custom_crealead_price_value'] == 0) {
       unset($variables['parameters']['field_custom_crealead_price_value']);
     }
-    if ($variables['parameters']['field_custom_crealead_funded_value'] == 0) {
+    if (isset($variables['parameters']['field_custom_crealead_funded_value']) && $variables['parameters']['field_custom_crealead_funded_value'] == 0) {
       unset($variables['parameters']['field_custom_crealead_funded_value']);
     }
   }

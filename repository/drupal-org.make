@@ -16,13 +16,13 @@ projects[ds][version] = "2.13"
 projects[ds][patch][] = "https://www.drupal.org/files/issues/ds_extras_field_group_not_rendered-2221307-18.patch"
 
 projects[entity][subdir] = contrib
-projects[entity][version] = "1.6"
+projects[entity][version] = "1.9"
 
 #projects[eu_cookie_compliance][subdir] = contrib
 #projects[eu_cookie_compliance][version] = "1.6"
 
 projects[features][subdir] = contrib
-projects[features][version] = "2.7"
+projects[features][version] = "2.13"
 
 projects[features_extra][subdir] = contrib
 projects[features_extra][version] = "1.0"
@@ -44,13 +44,13 @@ projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
 
 projects[l10n_update][subdir] = contrib
-projects[l10n_update][version] = "2.0"
+projects[l10n_update][version] = "2.4"
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.2"
 
 projects[link][subdir] = contrib
-projects[link][version] = "1.4"
+projects[link][version] = "1.9"
 
 projects[linkit][subdir] = contrib
 projects[linkit][version] = "3.5"
@@ -80,20 +80,20 @@ projects[user_settings_access][subdir] = contrib
 projects[user_settings_access][version] = "1.0"
 
 projects[uuid][subdir] = contrib
-projects[uuid][version] = "1.0-beta1"
+projects[uuid][version] = "1.3"
 
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.0-alpha4"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.14"
+projects[views][version] = "3.25"
 
 projects[webform][subdir] = contrib
-projects[webform][version] = "4.1"
+projects[webform][version] = "4.24"
 
 ;=== Modules - optional =======================================================
 projects[admin_views][subdir] = contrib
-projects[admin_views][version] = "1.6"
+projects[admin_views][version] = "1.8"
 
 projects[autocomplete_deluxe][subdir] = contrib
 projects[autocomplete_deluxe][version] = "2.2"
@@ -102,7 +102,7 @@ projects[autocomplete_deluxe][version] = "2.2"
 ;projects[bean][version] = ""
 
 projects[better_exposed_filters][subdir] = contrib
-projects[better_exposed_filters][version] = "3.2"
+projects[better_exposed_filters][version] = "3.6"
 
 projects[views_data_export][subdir] = contrib
 projects[views_data_export][version] = "3.1"
@@ -161,8 +161,8 @@ projects[entityform][subdir] = contrib
 projects[entityform][version] = "2.0-rc1"
 
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.1"
-projects[entityreference][patch][] = "https://www.drupal.org/files/issues/entityreference_1836106_48.patch"
+projects[entityreference][version] = "1.5"
+;projects[entityreference][patch][] = "https://www.drupal.org/files/issues/entityreference_1836106_48.patch"
 
 projects[entityreference_views_formatter][subdir] = contrib
 projects[entityreference_views_formatter][version] = "1.x-dev"
@@ -186,16 +186,16 @@ projects[field_formatter_settings][subdir] = contrib
 projects[field_formatter_settings][version] = "1.1"
 
 projects[field_slideshow][subdir] = contrib
-projects[field_slideshow][version] = "1.82"
+projects[field_slideshow][version] = "1.83"
 
 projects[filedepot][subdir] = contrib
 projects[filedepot][version] = "1.3"
 
 projects[filefield_sources][subdir] = contrib
-projects[filefield_sources][version] = "1.10"
+projects[filefield_sources][version] = "1.11"
 
 projects[imagecache_actions][subdir] = contrib
-projects[imagecache_actions][version] = "1.7"
+projects[imagecache_actions][version] = "1.12"
 
 projects[isotope][subdir] = contrib
 projects[isotope][version] = "2.0"
@@ -222,14 +222,14 @@ projects[manualcrop][version] = "1.5"
 ;projects[migrate_extras][version] = "2.5"
 
 projects[mimemail][subdir] = contrib
-projects[mimemail][version] = "1.0"
+projects[mimemail][version] = "1.1"
 projects[mimemail][patch][] = "https://www.drupal.org/files/issues/2018-04-11/notice_mimemail_html_body-2883745-25.patch"
 
 projects[paragraphs][subdir] = contrib
 projects[paragraphs][version] = "1.0-rc5"
 
 projects[password_policy][subdir] = contrib
-projects[password_policy][version] = "1.12"
+projects[password_policy][version] = "1.16"
 
 projects[pagerer][subdir] = contrib
 projects[pagerer][version] = "1.1"
@@ -247,7 +247,7 @@ projects[profile2][subdir] = contrib
 projects[profile2][version] = "1.3"
 
 projects[print][subdir] = contrib
-projects[print][version] = "2.0"
+projects[print][version] = "2.2"
 
 projects[references_dialog][subdir] = contrib
 projects[references_dialog][version] = "1.0-beta2"
@@ -272,7 +272,7 @@ projects[taxonomy_menu][subdir] = contrib
 projects[taxonomy_menu][version] = "1.5"
 
 projects[term_reference_tree][subdir] = contrib
-projects[term_reference_tree][version] = "1.10"
+projects[term_reference_tree][version] = "1.11"
 
 ;projects[tvi][subdir] = contrib
 ;projects[tvi][version] = "1.0-beta5"

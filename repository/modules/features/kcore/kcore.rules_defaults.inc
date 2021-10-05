@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kcore.rules_defaults.inc

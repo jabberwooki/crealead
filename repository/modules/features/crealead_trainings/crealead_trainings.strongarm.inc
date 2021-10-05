@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_trainings.strongarm.inc
@@ -103,16 +104,16 @@ function crealead_trainings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '29',
+          'weight' => '38',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '27',
+          'weight' => '36',
         ),
         'redirect' => array(
-          'weight' => '28',
+          'weight' => '37',
         ),
       ),
       'display' => array(),

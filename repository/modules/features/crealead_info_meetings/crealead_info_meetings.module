@@ -560,8 +560,8 @@ function crealead_info_meetings_block_view($delta = '') {
     case 'crealead_meetings_locations' :
       $locations = array(
         'mo' => 'Montpellier',
-        'ni' => 'Nîmes',
-        'se' => 'Sète',
+//        'ni' => 'Nîmes',
+//        'se' => 'Sète',
         'di' => 'une réunion à distance'
       );
       $content = '';
