@@ -1,3 +1,36 @@
+Hotfix brand_full_node_Undefined_index_#markup / 2021-10-05
+-----------------------------------------------------------
+  * Correction du bug 'Undefined index: #markup dans crealead_brands_views_pre_render() (ligne 807...' dans la page d'une marque.
+
+Hotfix trainings_view_Undefined_index_#markup / 2021-10-05
+----------------------------------------------------------
+  * Correction du bug 'Undefined index: #markup dans crealead_trainings_views_pre_render() (ligne 899...' dans la vue 'Nos formations'.
+
+Crealead v3.16 (Sprint V3-13) / 2021-10-05
+------------------------------------------
+  * 13-5 : Modifs recette : Correction du bug Formulaire de contact.
+  * 13-2 : Modifs recette : 'Finançable CFP' corrigé en 'Finançable CPF'.
+  * 13-3 : Modifs recette : Correction du bug 'Array to string conversion...' dans le template views-bootstrap-grid-plugin-style--training--list-page.tpl.php'.
+  * 13-2 : Modifs recette : Correction du bug 'Undefined index: field_recommended_by' repéré par Andréa (Voir https://www.drupal.org/project/drupal/issues/2356283).
+  * 13-2 : Modifs recette : Le picto 'Chaise roulante' est déplacé du côté droit de l'en-tête de la fiche Formation.
+  * 13-1 : Retrait de l'affichage des liens d'inscription à Nimes et à Sète.
+  * 13-3 :  Modif du moteur de recherche Formations.
+  * Suppression d'une triple notice PHP 'undefined index' pour les champs field_custom_coopins_value, field_custom_crealead_price_value et field_custom_crealead_funded_value dans la fonction crealead_page() du fichier template.php.
+  * 13-2 : Modif fiche formation : Mise à jour automatique de la vue traingins par Drupal : Suppression du view handler concernant le champ field_training_type supprimé dans cette même story 13-2.
+  * 13-2 : Modif fiche formation : Suppression du champ Dispositif de financement (field_training_funding).
+  * 13-2 : Modif fiche formation : Suppression du champ Dispositif de financement (field_training_funding).
+  * 13-2 : Modif fiche formation : Export des modifs de la feature crealead_trainings oublié dans le commit précédent.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Éligibilité au CPF' et ses sous-champs 'Code RNCP', 'Titre officiel' et 'Fiche publique CPF'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Catégories d'action de formation'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Modalités pédagogiques'.
+  * 13-2 : Modif fiche formation : Suppression du champ Type (field_training_type).
+  * 13-2 : Modif fiche formation : Ajout du champ 'Engagement accessibilité handicapés'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Modalités d\'inscription'.
+  * Mises à jour de sécurité : export des modifs de la feature crealead_brands dues à la mise à jour du module field_slideshow.
+  * Mises à jour de sécurité : export de toutes les modifs de fichiers de features dues à la mise à jour du module Features (11 features concernées).
+  * Mises à jour de sécurité : remplacement des numéros de version core et contrib dans les fichiers make.
+  * Modif de paramétrage de roleassign et de view_unpublished : ajout du rôle 'editeur gazette' à la liste des rôles attribuables et ajout de la permission 'voir les newsletter non publiées' au rôle 'éditeur gazette'."
+
 Crealead v3.15.1 (demande urgente) / 2021-06-30
 -----------------------------------------------
   * Page d'atterrissage Réunions d'info : ajout de la mise en forme CSS du bloc d'inscription de bas de page.

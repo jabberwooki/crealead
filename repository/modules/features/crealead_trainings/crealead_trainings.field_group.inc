@@ -229,7 +229,6 @@ function crealead_trainings_field_group_info() {
     'weight' => '30',
     'children' => array(
       0 => 'field_training_related_brands',
-      1 => 'field_disabilities_commitment',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -261,7 +260,8 @@ function crealead_trainings_field_group_info() {
     'label' => 'En-tête droit',
     'weight' => '32',
     'children' => array(
-      0 => 'training_contact',
+      0 => 'field_disabilities_commitment',
+      1 => 'training_contact',
     ),
     'format_type' => 'div',
     'format_settings' => array(

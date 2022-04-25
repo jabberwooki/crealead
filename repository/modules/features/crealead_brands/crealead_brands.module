@@ -804,7 +804,9 @@ function crealead_brands_views_pre_render(&$view) {
                     // Coe picture made not clickable.
                     unset($coe->field_field_coe_photo[0]['rendered']['#path']);
                     // Coe name made not clickable.
-                    $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
+                    if (isset($coe->field_field_brand_coe[0]['rendered']['#markup'])) {
+                      $coe->field_field_brand_coe[0]['rendered']['#markup'] = strip_tags($coe->field_field_brand_coe[0]['rendered']['#markup']);
+                    }
                 }
             }
             // And if coe profile pid is null, the best to do is to remove the field collection item from view.
@@ -1296,7 +1298,7 @@ function crealead_brands_block_view_alter(&$data, $block) {
     if ($block->bid == "ds_extras-content_header_brand") {
         if (arg(0) == 'node' && is_numeric(arg(1)) && !arg(2)) {
             $node = node_load(arg(1));
-            if (count($node->field_contact_form)) {
+            if (isset($node->field_contact_form['und']) && !empty($node->field_contact_form['und'])) {
                 $data['content']['field_lien_formulaire_contact'][0]['#markup'] = '<a id="link-form-brand" href="#bootstrap-fieldgroup-nav-item--contact">Formulaire de contact</a>';
             }
             else {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: ubuntu
@@ -27,24 +28,32 @@ $request = '';
 
 if (empty($_REQUEST)) {
   $request = '?recommended=DESC';
-}
-else {
-  //dpm($_REQUEST);
+} else {
+//  dpm($_REQUEST);
   if (isset($_REQUEST['recommended'])) {
     $text = 'Annuler le tri par popularité';
     unset($_REQUEST['recommended']);
-  }
-  else {
+  } else {
     $_REQUEST['recommended'] = 'DESC';
   }
 
-  if (!empty($_REQUEST)) {
-    $request = array();
-    foreach ($_REQUEST as $param => $value) {
+  // if (!empty($_REQUEST)) {
+  $request = array();
+  foreach ($_REQUEST as $param => $value) {
+    // Chaque valeur du tableau $_REQUEST peut être soit un tableau 
+    // (c'est le cas du champ Catégories d'action de formation),
+    if (is_array($value)) {
+      foreach ($value as $string_value) {
+        $request[] = $param . "[]=" . $string_value;
+      }
+    }
+    // soit une chaine de caractères (c'est le cas des autres champs).
+    else {
       $request[] = $param . '=' . $value;
     }
-    $request = '?' . implode('&', $request);
   }
+  $request = '?' . implode('&', $request);
+  // }
 }
 
 $url = 'http://' . $host . '/formations' . $request;
@@ -55,11 +64,11 @@ $url = 'http://' . $host . '/formations' . $request;
 </div>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
-  <?php if ($options['alignment'] == 'horizontal'): ?>
+  <?php if ($options['alignment'] == 'horizontal') : ?>
 
-    <?php foreach ($items as $row): ?>
+    <?php foreach ($items as $row) : ?>
       <div class="row">
-        <?php foreach ($row['content'] as $column): ?>
+        <?php foreach ($row['content'] as $column) : ?>
           <div class="col col-lg-<?php print $column_type ?>">
             <?php print $column['content'] ?>
           </div>
@@ -67,12 +76,12 @@ $url = 'http://' . $host . '/formations' . $request;
       </div>
     <?php endforeach ?>
 
-  <?php else: ?>
+  <?php else : ?>
 
     <div class="row">
-      <?php foreach ($items as $column): ?>
+      <?php foreach ($items as $column) : ?>
         <div class="col col-lg-<?php print $column_type ?>">
-          <?php foreach ($column['content'] as $row): ?>
+          <?php foreach ($column['content'] as $row) : ?>
             <?php print $row['content'] ?>
           <?php endforeach ?>
         </div>
