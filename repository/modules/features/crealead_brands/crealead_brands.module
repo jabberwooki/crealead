@@ -492,7 +492,14 @@ function crealead_brands_entity_view_alter(&$build, $type) {
 
                 if ($user->uid != 1 && sizeof(array_intersect($allowed_roles, $user->roles)) == 0) {
                     $full_user = user_load($user->uid);
-                    if (empty($full_user->field_pole_manager) || $full_user->field_pole_manager['und'][0]['tid'] != $build['#term']->tid) {
+                    $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
+
+//                    if (empty($full_user->field_pole_manager) || $full_user->field_pole_manager['und'][0]['tid'] != $build['#term']->tid) {
+//                        unset($build['pole_contacts']);
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (empty($full_user->field_pole_manager) || !in_array($build['#term']->tid, $cleaned_user_pole_ids)) {
                         unset($build['pole_contacts']);
                     }
                 }
@@ -773,13 +780,19 @@ function crealead_brands_views_pre_render(&$view) {
 
             if ($user->uid != 1 && empty(array_intersect($allowed_roles, $user->roles))) {
                 $full_user = user_load($user->uid);
+                $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
 
                 if (!isset($full_user->field_pole_manager['und'][0]['tid'])) {
                     $view->header = array();
                 }
                 else {
                     $current_sector_brand_id = arg(2);
-                    if ($full_user->field_pole_manager['und'][0]['tid'] != $current_sector_brand_id) {
+//                    if ($full_user->field_pole_manager['und'][0]['tid'] != $current_sector_brand_id) {
+//                        $view->header = array();
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (!in_array($current_sector_brand_id, $cleaned_user_pole_ids)) {
                         $view->header = array();
                     }
                 }
@@ -861,7 +874,14 @@ function crealead_brands_views_pre_render(&$view) {
                 }
                 else {
                     $full_user = user_load($user->uid);
-                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+                    $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
+
+//                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+//                        $is_allowed_to_order = TRUE;
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && in_array($pole_tid, $cleaned_user_pole_ids)) {
                         $is_allowed_to_order = TRUE;
                     }
                 }
@@ -899,7 +919,13 @@ function crealead_brands_views_pre_render(&$view) {
                 }
                 else {
                     $full_user = user_load($user->uid);
-                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+                    $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
+//                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && $full_user->field_pole_manager['und'][0]['tid'] == $pole_tid) {
+//                        $is_allowed_to_order = TRUE;
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (isset($full_user->field_pole_manager['und'][0]['tid']) && in_array($pole_tid, $cleaned_user_pole_ids)) {
                         $is_allowed_to_order = TRUE;
                     }
                 }
@@ -1021,8 +1047,19 @@ function crealead_brands_form_achievement_node_form_alter(&$form, &$form_state, 
         else {
             $full_user = user_load($user->uid);
             if (isset($full_user->field_pole_manager['und'][0]['tid'])) {
+
+                $cleaned_user_pole_ids = array_map(
+                    function ($item) { return $item['tid']; },
+                    $full_user->field_pole_manager['und']
+                );
+
                 foreach ($form['field_related_pole']['und']['#options'] as $pole_tid => $pole_name) {
-                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+//                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+//                        unset($form['field_related_pole']['und']['#options'][$pole_tid]);
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (!in_array($pole_tid, $cleaned_user_pole_ids)) {
                         unset($form['field_related_pole']['und']['#options'][$pole_tid]);
                     }
                 }

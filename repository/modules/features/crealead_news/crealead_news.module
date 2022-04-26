@@ -125,8 +125,19 @@ function crealead_news_form_news_node_form_alter(&$form, &$form_state, $form_id)
         else {
             $full_user = user_load($user->uid);
             if (isset($full_user->field_pole_manager['und'][0]['tid'])) {
+
+                $cleaned_user_pole_ids = array_map(
+                    function ($item) { return $item['tid']; },
+                    $full_user->field_pole_manager['und']
+                );
+
                 foreach ($form['field_related_pole']['und']['#options'] as $pole_tid => $pole_name) {
-                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+//                    if ($pole_tid != $full_user->field_pole_manager['und'][0]['tid'] && $pole_tid != '_none') {
+//                        unset($form['field_related_pole']['und']['#options'][$pole_tid]);
+//                    }
+                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                    // Un utilisateur peut-être responsable de plusieurs pôles.
+                    if (!in_array($pole_tid, $cleaned_user_pole_ids)) {
                         unset($form['field_related_pole']['und']['#options'][$pole_tid]);
                     }
                 }
