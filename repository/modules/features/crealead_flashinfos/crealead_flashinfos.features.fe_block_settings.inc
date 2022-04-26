@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_flashinfos.features.fe_block_settings.inc

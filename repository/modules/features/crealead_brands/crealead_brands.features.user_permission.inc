@@ -37,6 +37,16 @@ function crealead_brands_user_default_permissions() {
     'name' => 'add terms in certifications_labels',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'certifications et labels' => 'certifications et labels',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in cl_categories'.
+  $permissions['add terms in cl_categories'] = array(
+    'name' => 'add terms in cl_categories',
+    'roles' => array(
+      'certifications et labels' => 'certifications et labels',
     ),
     'module' => 'taxonomy_access_fix',
   );
@@ -199,6 +209,16 @@ function crealead_brands_user_default_permissions() {
     'name' => 'delete terms in certifications_labels',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'certifications et labels' => 'certifications et labels',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in cl_categories'.
+  $permissions['delete terms in cl_categories'] = array(
+    'name' => 'delete terms in cl_categories',
+    'roles' => array(
+      'certifications et labels' => 'certifications et labels',
     ),
     'module' => 'taxonomy',
   );
@@ -326,6 +346,16 @@ function crealead_brands_user_default_permissions() {
     'name' => 'edit terms in certifications_labels',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'certifications et labels' => 'certifications et labels',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in cl_categories'.
+  $permissions['edit terms in cl_categories'] = array(
+    'name' => 'edit terms in cl_categories',
+    'roles' => array(
+      'certifications et labels' => 'certifications et labels',
     ),
     'module' => 'taxonomy',
   );
