@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_multimedia.features.user_permission.inc
@@ -15,7 +16,6 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'access scald dnd library',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -94,7 +94,6 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'create atom of any type',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -143,7 +142,6 @@ function crealead_multimedia_user_default_permissions() {
   $permissions['delete own atom'] = array(
     'name' => 'delete own atom',
     'roles' => array(
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'éditeur gazette' => 'éditeur gazette',
     ),
@@ -185,7 +183,6 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'edit own atom',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -218,7 +215,6 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'fetch any atom',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -240,7 +236,6 @@ function crealead_multimedia_user_default_permissions() {
     'name' => 'import flickr images',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),

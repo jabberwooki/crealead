@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_articles.features.field_instance.inc
@@ -196,6 +197,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
@@ -210,6 +212,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -224,6 +227,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -238,6 +242,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => 0,
@@ -413,6 +418,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -427,6 +433,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -441,6 +448,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
@@ -455,6 +463,7 @@ Pour retirer une marque, videz le champ qui la contient.',
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'colorbox_node_classes' => '',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,

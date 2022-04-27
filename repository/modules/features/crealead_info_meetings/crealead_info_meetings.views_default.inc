@@ -272,6 +272,8 @@ function crealead_info_meetings_views_default_views() {
     t('Choisir une action'),
     t('.'),
     t(','),
+    t('1'),
+    t('@count'),
     t('Date de création'),
     t('Nom'),
     t('Prénom'),
@@ -367,7 +369,7 @@ Téléphone : 04-67-06-96-72';
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -674,7 +676,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['sorts']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1192,7 +1194,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['sorts']['registration_id']['relationship'] = 'registration_rel';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1822,7 +1824,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['sorts']['field_info_meeting_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2092,7 +2094,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['fields']['expression']['label'] = 'Places restantes';
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['expression'] = '[capacity_total] - [count]';
-  /* Champ: Contenu : Lien */
+  /* Champ: Contenu : Lier au contenu */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -2120,7 +2122,7 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.';
   $handler->display->display_options['arguments']['field_meeting_location_value']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2189,6 +2191,8 @@ Se paramètre dans Configuration > Crealead > Réunions d\'information.'),
     t('N°'),
     t('.'),
     t(','),
+    t('1'),
+    t('@count'),
     t('Date d\'inscription'),
     t('Nom'),
     t('Prénom'),

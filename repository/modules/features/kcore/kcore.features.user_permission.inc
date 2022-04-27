@@ -18,7 +18,6 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -31,7 +30,6 @@ function kcore_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -78,7 +76,6 @@ function kcore_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -102,7 +99,6 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'responsable de pôle' => 'responsable de pôle',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -709,7 +705,6 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -819,7 +814,6 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
-      'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
     ),
@@ -1005,7 +999,6 @@ function kcore_user_default_permissions() {
     'name' => 'show format selection for node',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
     'module' => 'better_formats',
@@ -1016,7 +1009,6 @@ function kcore_user_default_permissions() {
     'name' => 'show format selection for registration',
     'roles' => array(
       'administrateur' => 'administrateur',
-      'rédacteur' => 'rédacteur',
       'webmaster' => 'webmaster',
     ),
     'module' => 'better_formats',
@@ -1127,7 +1119,6 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -1142,7 +1133,6 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -1202,7 +1192,6 @@ function kcore_user_default_permissions() {
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
