@@ -2646,9 +2646,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -2687,7 +2685,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Description',
+    'label' => 'Vos besoins',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -2695,6 +2693,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
           'ds_code' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'php_code' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
@@ -2709,6 +2708,9 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
             ),
             'full_html' => array(
               'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -2733,6 +2735,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 10,
         'summary_rows' => 5,
       ),
@@ -2769,7 +2772,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -2862,9 +2864,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -2984,7 +2984,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
           'delete' => 'Supprimer',
           'description' => TRUE,
           'edit' => 'Modifier',
-          'field_formatter_class' => '',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -3065,9 +3064,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'email',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'email_default',
         'weight' => 4,
       ),
@@ -3153,7 +3150,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
-          'field_formatter_class' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -3290,9 +3286,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'phone',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'phone',
         'weight' => 3,
       ),
@@ -3377,7 +3371,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -3465,9 +3458,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 16,
       ),
@@ -3574,9 +3565,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 10,
       ),
@@ -3615,7 +3604,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_solutions',
-    'label' => 'Solutions',
+    'label' => 'Pourquoi faire appel à nous ?',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -3623,6 +3612,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
           'ds_code' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'php_code' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 1,
@@ -3637,6 +3627,9 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
             ),
             'full_html' => array(
               'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => 11,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -3660,6 +3653,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'label_help_description' => '',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -3689,9 +3683,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 11,
       ),
@@ -3773,9 +3765,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'list_default',
         'weight' => 13,
       ),
@@ -3853,9 +3843,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'list_default',
         'weight' => 18,
       ),
@@ -3930,7 +3918,6 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
         'module' => 'link',
         'settings' => array(
           'custom_title' => '',
-          'field_formatter_class' => '',
         ),
         'type' => 'link_default',
         'weight' => 5,
@@ -4036,9 +4023,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
@@ -4116,9 +4101,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 22,
       ),
@@ -4206,7 +4189,6 @@ Le label doit être prouvé.',
           'colorbox_node_height' => 600,
           'colorbox_node_link' => FALSE,
           'colorbox_node_width' => 600,
-          'field_formatter_class' => '',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -4291,9 +4273,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'list_default',
         'weight' => 20,
       ),
@@ -4366,9 +4346,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 7,
       ),
@@ -4446,9 +4424,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 23,
       ),
@@ -4571,9 +4547,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 21,
       ),
@@ -4651,9 +4625,7 @@ Le label doit être prouvé.',
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
+        'settings' => array(),
         'type' => 'list_default',
         'weight' => 19,
       ),
@@ -4727,7 +4699,6 @@ Le label doit être prouvé.',
         'label' => 'above',
         'module' => 'socialfield',
         'settings' => array(
-          'field_formatter_class' => '',
           'link_text' => FALSE,
         ),
         'type' => 'socialfield_formatter',
@@ -5846,13 +5817,13 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Mots-clés');
   t('Photos');
   t('Phrase d\'accroche');
+  t('Pourquoi faire appel à nous ?');
   t('Pôle contacté');
   t('Pôle(s) d\'activités concerné(s)');
   t('Réalisation visible à la Une de :');
   t('Réalisations');
   t('Saisir une ou plusieurs adresses email supplémentaires, séparées par une virgule et un espace, comme dans le champ Destinaires précédent.');
   t('Site web');
-  t('Solutions');
   t('Sujet');
   t('Sujet de votre message');
   t('Thématique(s) concernée(s)');
@@ -5862,6 +5833,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Type de sauvegarde');
   t('Téléphone');
   t('Vidéos');
+  t('Vos besoins');
   t('Votre adresse e-mail');
   t('Votre message');
   t('Votre nom');

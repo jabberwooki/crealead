@@ -11,7 +11,6 @@ dependencies[] = crealead_news
 dependencies[] = email
 dependencies[] = entityform
 dependencies[] = entityreference_views_formatter
-dependencies[] = features
 dependencies[] = field_collection_views
 dependencies[] = field_group
 dependencies[] = font_icons
