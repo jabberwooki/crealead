@@ -1626,7 +1626,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_solutions_rows';
   $field_group->data = array(
     'label' => 'Produits',
-    'weight' => '15',
+    'weight' => '17',
     'children' => array(
       0 => 'group_brand_products',
     ),
