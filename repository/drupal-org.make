@@ -64,6 +64,9 @@ projects[options_element][version] = "1.12"
 projects[role_export][subdir] = contrib
 projects[role_export][version] = "1.0"
 
+projects[roles_for_menu][subdir] = contrib
+projects[roles_for_menu][version] = "1.1"
+
 projects[roleassign][subdir] = contrib
 projects[roleassign][version] = "1.0"
 

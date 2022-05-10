@@ -31,3 +31,21 @@ function crealead_associates_views_pre_view(&$view, &$display_id, &$args) {
         drupal_add_css(drupal_get_path('module', 'crealead_associates') . '/css/crealead_associates.css');
     }
 }
+
+function crealead_associates_init() {
+//    dpm(current_path());
+    if (user_is_logged_in() && 'espace-co-entrepreneur/breves' == current_path()) {
+        global $user;
+
+        if (crealead_associates_is_current_user_external_associate($user)) {
+            drupal_goto('espace-co-entrepreneur/espace-associes');
+        }
+    }
+}
+
+function crealead_associates_is_current_user_external_associate($user) {
+    if (count($user->roles) == 2 && in_array('associé', $user->roles)) {
+        return true;
+    }
+    return false;
+}

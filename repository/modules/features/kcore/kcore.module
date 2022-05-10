@@ -332,6 +332,37 @@ function kcore_node_access($node, $op, $account) {
     return NODE_ACCESS_DENY;
   }
 
+  $current_user_roles = $account->roles;
+
+  unset($current_user_roles[array_search('debug', $current_user_roles)]);
+  unset($current_user_roles[array_search('authenticated user', $current_user_roles)]);
+
+  // Paramétrage de ce qu'un associé externe ne doit pas voir comme contenu.
+  if (count($current_user_roles) == 1 && current($current_user_roles) == 'associé') {
+
+    // Types de contenu non autorisés aux associés externes
+    $forbidden_content_types = [
+      'business_group',
+      'gazette',
+      'link_to_doc',
+      'need',
+      'offer',
+      'room_event',
+      'structure_event',
+      'newsflash',
+      'webform',
+    ];
+
+    if (isset($node->type) && in_array($node->type, $forbidden_content_types)) {
+      return NODE_ACCESS_DENY;
+    }
+
+    // Un associé externe ne peut voir que les lettres d'info du CA (Gouvernance).
+    if (isset($node->type) && $node->type == 'newsletter' && $node->field_newsletter_type['und'][0]['value'] == 'st') {
+      return NODE_ACCESS_DENY;
+    }
+  }
+
   // A décommenter et completer s'il faut vraiment interdire à l'utilisateur
   // de modifier un node actu ou réalisation via /node/nid/edit.
 //  if (isset($node->type)) {
@@ -771,3 +802,4 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         }
     }
 }
+
