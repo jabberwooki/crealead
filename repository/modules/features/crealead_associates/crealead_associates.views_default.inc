@@ -34,8 +34,18 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Éléments par page';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Tout';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Décalage';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« premier';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ précédent';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suivant ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'dernier »';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_meeting_date' => 'field_meeting_date',
@@ -80,7 +90,7 @@ function crealead_associates_views_default_views() {
     'hover' => 0,
     'condensed' => 0,
   );
-  /* Field: Content: Nid */
+  /* Champ: Contenu : Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -90,7 +100,7 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
-  /* Field: Nœud: Date de la réunion */
+  /* Champ: Contenu : Date de la réunion */
   $handler->display->display_options['fields']['field_meeting_date']['id'] = 'field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['fields']['field_meeting_date']['field'] = 'field_meeting_date';
@@ -104,22 +114,21 @@ function crealead_associates_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Nœud: Thématique */
+  /* Champ: Contenu : Thématique */
   $handler->display->display_options['fields']['field_report_theme']['id'] = 'field_report_theme';
   $handler->display->display_options['fields']['field_report_theme']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['fields']['field_report_theme']['field'] = 'field_report_theme';
   $handler->display->display_options['fields']['field_report_theme']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Title */
+  /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Titre';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Field: Nœud: Body */
+  /* Champ: Contenu : Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -135,26 +144,26 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
   );
-  /* Sort criterion: Content: Post date */
+  /* Critère de tri: Contenu : Date de publication */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Nœud: Catégorie (field_report_category) */
+  /* Critère de filtrage: Contenu : Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
@@ -164,6 +173,8 @@ function crealead_associates_views_default_views() {
 
   /* Display: Page CA */
   $handler = $view->new_display('page', 'Page CA', 'page');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -211,28 +222,28 @@ function crealead_associates_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Nœud: Catégorie (field_report_category) */
+  /* Critère de filtrage: Contenu : Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['value'] = array(
     'ca' => 'ca',
   );
-  /* Filter criterion: Nœud: Date de la réunion (field_meeting_date) */
+  /* Critère de filtrage: Contenu : Date de la réunion (field_meeting_date) */
   $handler->display->display_options['filters']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
   $handler->display->display_options['filters']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['filters']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
@@ -263,7 +274,7 @@ function crealead_associates_views_default_views() {
     1936756 => 0,
   );
   $handler->display->display_options['filters']['field_meeting_date_value']['form_type'] = 'date_popup';
-  /* Filter criterion: Nœud: Thématique (field_report_theme) */
+  /* Critère de filtrage: Contenu : Thématique (field_report_theme) */
   $handler->display->display_options['filters']['field_report_theme_tid']['id'] = 'field_report_theme_tid';
   $handler->display->display_options['filters']['field_report_theme_tid']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['filters']['field_report_theme_tid']['field'] = 'field_report_theme_tid';
@@ -326,7 +337,7 @@ function crealead_associates_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
+  /* Pied de page: Global : Zone de texte */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -337,6 +348,8 @@ function crealead_associates_views_default_views() {
   $handler = $view->new_display('page', 'CR comités d\'étude', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Comptes-rendus de Comités d\'Étude';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
@@ -384,28 +397,28 @@ function crealead_associates_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'report' => 'report',
   );
-  /* Filter criterion: Nœud: Catégorie (field_report_category) */
+  /* Critère de filtrage: Contenu : Catégorie (field_report_category) */
   $handler->display->display_options['filters']['field_report_category_value']['id'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['table'] = 'field_data_field_report_category';
   $handler->display->display_options['filters']['field_report_category_value']['field'] = 'field_report_category_value';
   $handler->display->display_options['filters']['field_report_category_value']['value'] = array(
     'ce' => 'ce',
   );
-  /* Filter criterion: Nœud: Date de la réunion (field_meeting_date) */
+  /* Critère de filtrage: Contenu : Date de la réunion (field_meeting_date) */
   $handler->display->display_options['filters']['field_meeting_date_value']['id'] = 'field_meeting_date_value';
   $handler->display->display_options['filters']['field_meeting_date_value']['table'] = 'field_data_field_meeting_date';
   $handler->display->display_options['filters']['field_meeting_date_value']['field'] = 'field_meeting_date_value';
@@ -437,7 +450,7 @@ function crealead_associates_views_default_views() {
     193262079 => 0,
   );
   $handler->display->display_options['filters']['field_meeting_date_value']['form_type'] = 'date_popup';
-  /* Filter criterion: Nœud: Thématique (field_report_theme) */
+  /* Critère de filtrage: Contenu : Thématique (field_report_theme) */
   $handler->display->display_options['filters']['field_report_theme_tid']['id'] = 'field_report_theme_tid';
   $handler->display->display_options['filters']['field_report_theme_tid']['table'] = 'field_data_field_report_theme';
   $handler->display->display_options['filters']['field_report_theme_tid']['field'] = 'field_report_theme_tid';
@@ -476,27 +489,23 @@ function crealead_associates_views_default_views() {
     t('Master'),
     t('Comptes-rendus de CA'),
     t('plus'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('Éléments par page'),
+    t('Tout'),
+    t('Décalage'),
+    t('« premier'),
+    t('‹ précédent'),
+    t('suivant ›'),
+    t('dernier »'),
     t('Date réunion'),
     t('Thématique'),
     t('Titre'),
     t('lire plus'),
     t('Page CA'),
-    t('more'),
-    t('Appliquer'),
-    t('Réinitialiser'),
-    t('Trier par'),
     t('Options avancées'),
     t('Date du CA'),
     t('Bloc CA'),

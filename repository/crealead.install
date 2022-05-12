@@ -400,7 +400,7 @@ function crealead_update_7025() {
 }
 
 /**
- * Activate feature crealead_associates.
+ * Activate contrib module roles_per_menu.
  */
 function crealead_update_7026() {
   module_enable(array('roles_per_menu'));

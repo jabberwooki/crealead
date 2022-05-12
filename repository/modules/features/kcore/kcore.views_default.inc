@@ -221,10 +221,7 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Espace associés';
   $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    157083709 => '157083709',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
