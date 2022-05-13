@@ -1238,7 +1238,7 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
-    'label' => 'Solutions',
+    'label' => 'Offre',
     'weight' => '14',
     'children' => array(
       0 => 'group_pole_solutions_products',
@@ -1246,10 +1246,9 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Offre',
       'instance_settings' => array(
         'classes' => 'group-pole-solutions-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
