@@ -226,28 +226,28 @@ function crealead_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
         'metatags' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
         'password_policy' => array(
           'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '15',
         ),
         'account' => array(
           'weight' => '5',
         ),
         'timezone' => array(
-          'weight' => '11',
+          'weight' => '13',
         ),
         'locale' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
         'masquerade' => array(
-          'weight' => '15',
+          'weight' => '17',
         ),
         'picture' => array(
           'weight' => '5',
@@ -256,7 +256,7 @@ function crealead_profiles_strongarm() {
           'weight' => '6',
         ),
         'contact' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'mimemail' => array(
           'weight' => '8',

@@ -544,7 +544,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['sorts']['name_1']['table'] = 'users';
   $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtre contextuel: Champ : Collectifs liés (field_linked_groups) */
+  /* Filtre contextuel: Champ : Collectifs auxquels j&#039;appartiens (field_linked_groups) */
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['table'] = 'field_data_field_linked_groups';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['field'] = 'field_linked_groups_target_id';
@@ -570,8 +570,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['label'] = 'Courriel :';
-  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   /* Champ: Champ : Liens réseaux sociaux */
   $handler->display->display_options['fields']['field_social_links']['id'] = 'field_social_links';
@@ -585,6 +584,12 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   );
   $handler->display->display_options['fields']['field_social_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_social_links']['field_api_classes'] = TRUE;
+  /* Champ: Utilisateur : Affichage de mon adresse email */
+  $handler->display->display_options['fields']['field_email_display']['id'] = 'field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['table'] = 'field_data_field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['field'] = 'field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['label'] = '';
+  $handler->display->display_options['fields']['field_email_display']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Filtre contextuel: Utilisateur : Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -625,7 +630,6 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     t('Tout'),
     t('infos utilisateur'),
     t('Infos utilisateur'),
-    t('Courriel :'),
   );
   $export['users'] = $view;
 

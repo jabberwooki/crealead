@@ -296,6 +296,13 @@ function crealead_profiles_views_pre_render(&$view) {
       if ('user' == arg(0) && drupal_get_query_parameters())
       $view->result = array();
   }
+
+  if ($view->current_display == 'eva_user_infos') {
+    if (empty($view->result[0]->field_field_email_display)
+      || $view->result[0]->field_field_email_display[0]['raw']['value'] == 0) {
+      $view->result[0]->users_mail = null;
+    }
+  }
 }
 
 function crealead_profiles_block_view_alter(&$data, $block) {
