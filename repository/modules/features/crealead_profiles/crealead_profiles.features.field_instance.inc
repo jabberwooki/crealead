@@ -2877,10 +2877,57 @@ Saisissez les premières lettres d\'un mot, une liste des mots-clés déjà conn
     ),
   );
 
+  // Exported field_instance: 'user-user-field_email_display'.
+  $field_instances['user-user-field_email_display'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Cochez cette case si vous souhaitez que l\'adresse e-mail de votre compte apparaisse dans votre fiche individuelle.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_email_display',
+    'label' => 'Affichage de mon adresse email',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'label_help_description' => '',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 9,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Affichage de mon adresse email');
   t('Biographie');
   t('Centres d\'intérêt');
+  t('Cochez cette case si vous souhaitez que l\'adresse e-mail de votre compte apparaisse dans votre fiche individuelle.');
   t('Collectifs auxquels j\'appartiens');
   t('Compétences');
   t('Compétences et spécialités');
