@@ -30,7 +30,7 @@ function crealead_products_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -99,7 +99,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -168,7 +168,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -225,9 +225,10 @@ function crealead_products_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'landing_page_block' => array(
         'label' => 'hidden',
@@ -328,7 +329,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -388,7 +389,7 @@ function crealead_products_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -490,7 +491,7 @@ function crealead_products_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'landing_page_block' => array(
         'label' => 'inline',
@@ -544,7 +545,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -739,7 +740,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'landing_page_block' => array(
         'label' => 'above',
@@ -797,7 +798,7 @@ function crealead_products_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'landing_page_block' => array(
         'label' => 'above',
