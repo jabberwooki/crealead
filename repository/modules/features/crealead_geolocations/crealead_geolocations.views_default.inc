@@ -83,7 +83,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['postal_code_1']['field'] = 'postal_code';
   $handler->display->display_options['fields']['postal_code_1']['label'] = '';
   $handler->display->display_options['fields']['postal_code_1']['element_label_colon'] = FALSE;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -133,8 +133,37 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['style_options']['user_map_marker'] = 'creandrea';
   $handler->display->display_options['style_options']['term_map_marker'] = 'creandrea';
   $handler->display->display_options['style_options']['controltype'] = 'default';
-  $handler->display->display_options['style_options']['mtc'] = 'none';
-  $handler->display->display_options['style_options']['scrollwheel'] = 0;
+  $handler->display->display_options['style_options']['maptype'] = 'OSM';
+  $handler->display->display_options['style_options']['baselayers'] = array(
+    'Map' => 0,
+    'Satellite' => 0,
+    'Hybrid' => 0,
+    'Physical' => 0,
+    'OSM' => 1,
+    'OSMBW' => 0,
+    'OSMDE' => 0,
+    'OCM' => 0,
+    'OCMT' => 0,
+    'OCML' => 0,
+    'OCMO' => 0,
+    'Stamen' => 0,
+    'StamenBG' => 0,
+    'StamenHY' => 0,
+    'StamenLI' => 0,
+    'StamenLA' => 0,
+    'StamenLT' => 0,
+    'Watercolor' => 0,
+    'ESRI' => 0,
+    'DeLorme' => 0,
+    'WorldTopoMap' => 0,
+    'WorldImagery' => 0,
+    'WorldTerrain' => 0,
+    'WorldShadedRelief' => 0,
+    'WorldPhysical' => 0,
+    'OceanBasemap' => 0,
+    'NatGeoWorldMap' => 0,
+    'WorldGrayCanvas' => 0,
+  );
   $handler->display->display_options['style_options']['usemarkermanager'] = 0;
   $handler->display->display_options['style_options']['useclustermanager'] = 0;
   $handler->display->display_options['style_options']['custom_content_enable'] = 1;
@@ -142,6 +171,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['style_options']['category_method'] = '0';
   $handler->display->display_options['style_options']['category_term_reference_field'] = 'scald_authors';
   $handler->display->display_options['style_options']['zoomcontrolposition'] = 'tl';
+  $handler->display->display_options['style_options']['mapcontrolposition'] = 'tr';
   $handler->display->display_options['style_options']['empty_result'] = 1;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -190,7 +220,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['view']['arguments'] = '[%latitude]/[%longitude]';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -316,7 +346,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -487,7 +517,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -519,7 +549,7 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['filters']['longitude']['field'] = 'longitude';
   $handler->display->display_options['filters']['longitude']['operator'] = '!=';
   $handler->display->display_options['filters']['longitude']['value']['value'] = '0';
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
