@@ -12,7 +12,6 @@
         $('.page-user div#navigation div ul ul.secondary li:gt(0) a').each(function() {
           var hrefParts = $(this).attr('href').split("/");
           var profile = hrefParts.pop();
-          console.log(profile);
 
           if (profile !== 'edit' && userAllowedProfiles.indexOf(profile) === -1) {
             $(this).parent().hide();
