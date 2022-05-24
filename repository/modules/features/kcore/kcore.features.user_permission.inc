@@ -31,6 +31,7 @@ function kcore_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'certifications et labels' => 'certifications et labels',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
       'webmaster' => 'webmaster',

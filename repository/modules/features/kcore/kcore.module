@@ -96,12 +96,25 @@ function kcore_permission() {
  * Thanks to pfournier, creator of module Empty Front Page (https://www.drupal.org/project/empty_front_page)
  */
 function kcore_menu_alter(&$items) {
-	$items['node']['page callback'] = 'empty_front_page_callback';
+  // Génère une page d'accueil vide.
+  $items['node']['page callback'] = 'empty_front_page_callback';
+
+  // Empêche les non admin d'accéder à la page Admin > Configuration > Rédaction de contenu > Link
+  $items['admin/config/content/link']['access callback'] = 'kcore_link_settings_access';
 }
 
 function empty_front_page_callback() {
 	drupal_set_title('');
 	return array();
+}
+
+function kcore_link_settings_access() {
+  global $user;
+  if ($user->uid != 1 && !in_array('administrateur', $user->roles)) {
+    return false;
+  }
+
+  return true;
 }
 
 /**
