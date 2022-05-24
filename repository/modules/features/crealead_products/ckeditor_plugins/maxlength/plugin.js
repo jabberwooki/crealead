@@ -21,8 +21,8 @@
 			setTimeout(function () {
 				// var charCount = editor.getData().length;
 				var data = editor.getData();
-				var jqData = $('<jqdata>' + data + '</jqdata>');
-				var charCount = jqData.text().length;
+				var rawData = $('<p>' + data + '</p>').text();
+				var charCount = rawData.length;
 				var remainingCounter = $("span#cke_maxlength_" + editor.id + " .remaining-chars");
 
 				if (editor.config.max_length > 0) {

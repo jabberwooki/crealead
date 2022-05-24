@@ -186,6 +186,9 @@ function crealead_products_views_pre_render(&$view) {
 
     $view->build_info['title'] = str_replace('brand_name', $brand_name, $view->build_info['title']);
   }
+  elseif ($view->name == 'products' && $view->current_display == 'sector_brands_products') {
+    drupal_add_js(drupal_get_path('theme','crealead') . '/js/match-product-height.js');
+  }
 }
 
 function crealead_products_node_view($node, $view_mode, $langcode) {
@@ -194,7 +197,7 @@ function crealead_products_node_view($node, $view_mode, $langcode) {
     if ($view_mode == 'sector_brand_block' || $view_mode == 'teaser') {
 
       $node->content['field_introduction'][0]['#markup'] =
-        crealead_products_truncate($node->content['field_introduction'][0]['#markup'], INTRO_CAR_LIMIT, $ending = '...',  $exact=true, $considerHTML=true);
+        crealead_products_truncate($node->content['field_introduction'][0]['#markup'], INTRO_CAR_LIMIT + 3, $ending = '',  $exact=true, $considerHTML=true);
     }
   }
 }
