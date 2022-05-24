@@ -777,6 +777,7 @@ function crealead_brands_views_pre_render(&$view) {
             }
         }
         elseif ($view->current_display == 'sector_brand_brands') {
+          if (user_is_logged_in()) {
             global $user;
             $allowed_roles = array('administrateur', 'webmaster');
 
@@ -784,21 +785,21 @@ function crealead_brands_views_pre_render(&$view) {
                 $full_user = user_load($user->uid);
                 $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
 
-                if (!isset($full_user->field_pole_manager['und'][0]['tid'])) {
-                    $view->header = array();
-                }
-                else {
-                    $current_sector_brand_id = arg(2);
+              if (!isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                $view->header = array();
+              } else {
+                $current_sector_brand_id = arg(2);
 //                    if ($full_user->field_pole_manager['und'][0]['tid'] != $current_sector_brand_id) {
 //                        $view->header = array();
 //                    }
-                    // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
-                    // Un utilisateur peut-être responsable de plusieurs pôles.
-                    if (!in_array($current_sector_brand_id, $cleaned_user_pole_ids)) {
-                        $view->header = array();
-                    }
+                // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                // Un utilisateur peut-être responsable de plusieurs pôles.
+                if (!in_array($current_sector_brand_id, $cleaned_user_pole_ids)) {
+                  $view->header = array();
                 }
+              }
             }
+          }
         }
     }
     elseif ($view->name == 'field_collection_coes' && $view->current_display == 'brand_coes') {
