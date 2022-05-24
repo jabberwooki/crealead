@@ -147,7 +147,7 @@ function crealead_products_views_pre_render(&$view) {
       }
       else {
         $view->header['area']->options['content'] = l(
-          'Ajouter un produit',
+          'Ajouter une prestation',
           '/node/add/product/' . $current_brand->nid,
           array('query' => array('destination' => current_path() . '#bootstrap-fieldgroup-nav-item--solutions'))
         );

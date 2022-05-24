@@ -139,7 +139,7 @@ function crealead_products_views_default_views() {
   /* Display: Produits partagés avec une marque */
   $handler = $view->new_display('entity_view', 'Produits partagés avec une marque', 'allowed_products');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'brand_name vous conseille ces produits de marques partenaires';
+  $handler->display->display_options['title'] = 'brand_name vous conseille ces prestations de marques partenaires';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -158,7 +158,7 @@ function crealead_products_views_default_views() {
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['relationships']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtre contextuel: Contenu : Marques qui peuvent utiliser ce produit (field_allowed_brands) */
+  /* Filtre contextuel: Contenu : Marques qui peuvent utiliser cet article (field_allowed_brands) */
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['id'] = 'field_allowed_brands_target_id';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['table'] = 'field_data_field_allowed_brands';
   $handler->display->display_options['arguments']['field_allowed_brands_target_id']['field'] = 'field_allowed_brands_target_id';
@@ -355,7 +355,7 @@ function crealead_products_views_default_views() {
     t('Entité Contenu réferencée par field_allowed_brands'),
     t('Produits d\'une marque'),
     t('Produits partagés avec une marque'),
-    t('brand_name vous conseille ces produits de marques partenaires'),
+    t('brand_name vous conseille ces prestations de marques partenaires'),
     t('Produits d\'un coe'),
     t('Produits d\'un pôle d\'activités'),
     t('Rechercher'),

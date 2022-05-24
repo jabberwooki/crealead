@@ -3604,7 +3604,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_brand_solutions',
-    'label' => 'Pourquoi faire appel à nous ?',
+    'label' => 'Pourquoi faire appel à nous',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -5817,7 +5817,7 @@ Elle n\'a pas besoin d\'être rattachée à une marque ou à un pôle pour appar
   t('Mots-clés');
   t('Photos');
   t('Phrase d\'accroche');
-  t('Pourquoi faire appel à nous ?');
+  t('Pourquoi faire appel à nous');
   t('Pôle contacté');
   t('Pôle(s) d\'activités concerné(s)');
   t('Réalisation visible à la Une de :');

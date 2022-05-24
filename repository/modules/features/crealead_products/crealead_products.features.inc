@@ -33,11 +33,11 @@ function crealead_products_views_api($module = NULL, $api = NULL) {
 function crealead_products_node_info() {
   $items = array(
     'product' => array(
-      'name' => t('Produit'),
+      'name' => t('Prestation'),
       'base' => 'node_content',
-      'description' => t('Tout produit que vous offrez à vos client formation mise à part.'),
+      'description' => t('Tout produit que vous proposez à vos clients, autres que formation.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titre'),
       'help' => '',
     ),
   );
