@@ -27,3 +27,23 @@
     font-style: italic;
     color: #aaa;
 }
+
+/*Champ coordonnées du formulaire Profil entrepreneur*/
+.getlocations_fields_latlon_wrapper {
+    margin-bottom: 20px;
+}
+.getlocations_fields_lon_wrapper {
+    float: left !important;
+}
+#edit-profile-coe-page-field-coordinates-und-0-osm-geobutton,
+#edit-profile-coe-page-field-coordinates-und-0-osm-clearbutton {
+    padding: 5px 10px;
+    background: #e3e3e3;
+    font-size: 1.1em;    cursor: pointer;
+    color: #555;
+}
+
+#edit-profile-coe-page-field-coordinates-und-0-osm-geobutton:hover,
+#edit-profile-coe-page-field-coordinates-und-0-osm-clearbutton:hover {
+    text-decoration: none;
+}

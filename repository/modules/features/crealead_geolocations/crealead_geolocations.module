@@ -32,3 +32,39 @@ function crealead_geolocations_views_query_alter(&$view, &$query) {
     );
   }
 }
+
+function crealead_geolocations_form_profile2_form_alter(&$form, &$form_state) {
+  switch($form['#user_category']) {
+    case 'coe_page':
+      ///////// Modification du champ Coordonnées (getlocations_field) //////////
+      // La géolocatisation ne fonctionne plus (bouton "Geocode this address")
+      // parce que la clé d'API Google est obsolète et on ne veut plus utiliser l'API Gmaps.
+      // On géocode maintenant via l'API OpenStreetMap.
+      unset($form['profile_coe_page']['field_coordinates']['und'][0]['geobutton']);
+      unset($form['profile_coe_page']['field_coordinates']['und'][0]['clear_button']);
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['osm_geobutton'] = array(
+        '#markup' => '<p><a id="edit-profile-coe-page-field-coordinates-und-0-osm-geobutton">Géocoder l\'adresse</a></p>',
+        '#attributes' => array(
+          'class' => array('form-submit'),
+        ),
+      );
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['osm_clearbutton'] = array(
+        '#markup' => '<p><a id="edit-profile-coe-page-field-coordinates-und-0-osm-clearbutton">Effacer</a></p>',
+        '#attributes' => array(
+          'class' => array('form-submit'),
+        ),
+      );
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['latitude']['#weight'] = 100;
+      $form['profile_coe_page']['field_coordinates']['und'][0]['longitude']['#weight'] = 101;
+
+      drupal_add_js(drupal_get_path('module','crealead_geolocations') . '/js/crealead_geolocations.js', array('group' => CSS_THEME));
+      drupal_add_css(drupal_get_path('module','crealead_geolocations') . '/css/crealead_geolocations.css');
+      break;
+
+    default:
+      break;
+  }
+}
