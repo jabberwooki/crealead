@@ -281,7 +281,7 @@ travailler ensemble.</span></div>';
         ),
         'qualiopi' => array(
           'url' => '',
-          'logo-file' => 'qualiopi_346x135.png'
+          'logo-file' => 'qualiopi_641x250.png'
         ),
       );
 
