@@ -286,7 +286,7 @@ travailler ensemble.</span></div>';
         ),
         'qualiopi' => array(
           'url' => '',
-          'logo-file' => 'qualiopi_641x250.png',
+          'logo-file' => 'qualiopi_269x105.png',
           'image-title' =>
           '
           La certification qualité a été délivrée au titre des catégories d\'action suivantes
