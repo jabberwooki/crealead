@@ -261,27 +261,38 @@ travailler ensemble.</span></div>';
         'fond-social-europeen' => array(
           'url' => '',
           //'logo-file' => 'fds-social-europeen_506x130.png',
-          'logo-file' => 'fds-social-europeen_506x105_transparent.png'
+          'logo-file' => 'fds-social-europeen_506x105_transparent.png',
+          'image-title' => ''
         ),
         'caisse-epargne' => array(
           'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
-          'logo-file' => 'ca-lr_263x57.png'
+          'logo-file' => 'ca-lr_263x57.png',
+          'image-title' => ''
         ),
         'prefecture' => array(
           'url' => '',
-          'logo-file' => 'prefecture_78x100.jpg'
+          'logo-file' => 'prefecture_78x100.jpg',
+          'image-title' => ''
         ),
         'montpellier-metropole' => array(
           'url' => 'http://www.montpellier3m.fr/',
-          'logo-file' => 'montpellier-metropole_100x100.png'
+          'logo-file' => 'montpellier-metropole_100x100.png',
+          'image-title' => ''
         ),
         'cd34' => array(
           'url' => 'http://www.herault.fr/',
-          'logo-file' => 'CD34_134x63.png'
+          'logo-file' => 'CD34_134x63.png',
+          'image-title' => ''
         ),
         'qualiopi' => array(
           'url' => '',
-          'logo-file' => 'qualiopi_641x250.png'
+          'logo-file' => 'qualiopi_641x250.png',
+          'image-title' =>
+          '
+          La certification qualité a été délivrée au titre des catégories d\'action suivantes
+          ACTIONS DE FORMATION
+          BILANS DE COMPÉTENCES
+          VALIDATION DES ACQUIS DE L\' EXPÉRIENCE'
         ),
       );
 
@@ -289,7 +300,10 @@ travailler ensemble.</span></div>';
       $content = '<div id="crealead-sponsor">';
       foreach ($sponsors as $name=>$sponsor) {
         $content .= '<span id="' . $name . '">';
-        $img = theme('image', array('path' => $path . $sponsor['logo-file']));
+        $img = theme('image', array(
+          'path' => $path . $sponsor['logo-file'],
+          'title' => $sponsor['image-title'],
+        ));
         if ($sponsor['url'] != '') {
           $logo = l($img,$sponsor['url'], array('html' => TRUE));
         }
