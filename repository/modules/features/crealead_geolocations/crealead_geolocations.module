@@ -68,3 +68,92 @@ function crealead_geolocations_form_profile2_form_alter(&$form, &$form_state) {
       break;
   }
 }
+
+function crealead_geolocations_get_localized_coes($with_details=false) {
+  if($with_details) {
+    $select = "select u.uid, u.name, mail, pid, field_coordinates_glid, city, postal_code, country, latitude, longitude";
+  }
+  else {
+    $select = "select count(u.uid)";
+  }
+
+  $from = "from users u 
+        inner join profile p on u.uid=p.uid 
+        inner join field_data_field_coordinates fc on p.pid=fc.entity_id 
+        inner join getlocations_fields gf on fc.field_coordinates_glid=gf.glid";
+
+  $where = "where p.type='coe_page'";
+
+  $sql_query = "$select $from $where";
+//  dpm($sql_query);
+
+  $query = db_query($sql_query);
+  if($with_details) {
+    dpm($query->fetchAll());
+  }
+  else {
+    dpm("Le nombre de coes localisés est de " . $query->fetchField());
+  }
+
+}
+
+function crealead_geolocations_update_coes_coordinates($limit=20, $offset=0) {
+  $sql_query = "
+    select u.uid, u.name, mail, pid, field_coordinates_glid, city, postal_code, country, latitude, longitude 
+    from users u 
+        inner join profile p on u.uid=p.uid 
+        inner join field_data_field_coordinates fc on p.pid=fc.entity_id 
+        inner join getlocations_fields gf on fc.field_coordinates_glid=gf.glid 
+    where p.type='coe_page' limit $limit";
+
+  if($offset > 0) {
+    $sql_query .= " offset $offset";
+  }
+
+  $query = db_query($sql_query);
+  $coes = $query->fetchAll();
+//  dpm($coes);
+
+  $base_url = "https://nominatim.openstreetmap.org/search?format=json";
+
+  foreach ($coes as $coe) {
+    $glid = $coe->field_coordinates_glid;
+    dpm('*******');
+    dpm($coe->name . ', glid = ' . $glid);
+    $params = "&city=" . str_replace(' ', '+', $coe->city) . "&postalcode=" . $coe->postal_code . "&country=" . str_replace(' ', '+', $coe->country);
+    $url = $base_url . $params;
+    dpm($url);
+
+    $response = drupal_http_request($url);
+//    dpm($response);
+    if ($response->status_message == 'OK' && $response->data != '[]') {
+      $data = json_decode($response->data);
+      $latitude = $data[0]->lat;
+      $longitude = $data[0]->lon;
+      dpm($latitude . ' / ' . $longitude);
+
+      $num_updated = db_update('getlocations_fields')
+        ->fields(array(
+          'latitude' => $latitude,
+          'longitude' => $longitude,
+        ))
+          ->condition('glid', $glid)
+          ->execute();
+
+      if ($num_updated) {
+        dpm("Coordonnées de $coe->name (uid = $coe->uid, glid = $glid) mises à jour.");
+      }
+      else {
+        dpm("Coordonnées de $coe->name (uid = $coe->uid, glid = $glid) NON mises à jour.");
+      }
+    }
+    else {
+      if(!is_numeric($coe->postal_code)) {
+        dpm("$coe->name (uid = $coe->uid, glid = $glid) : Le code postal enregistré dans l'adresse n'est pas un nombre");
+      }
+      else {
+        dpm("$coe->name (uid = $coe->uid, glid = $glid) : Vérifier que l'adresse postale est correcte");
+      }
+    }
+  }
+}
