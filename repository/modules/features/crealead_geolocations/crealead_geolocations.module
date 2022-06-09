@@ -183,7 +183,7 @@ function crealead_geolocations_cleanup($real_cleanup = false) {
   if (!empty($multi_localized_coes)) {
     $base_url = "https://nominatim.openstreetmap.org/search?format=json";
     foreach ($multi_localized_coes as $coe) {
-      dpm("===> $coe[0]['name']");
+      dpm("===> " . $coe[0]['name']);
       dpm("Adresse : " . $coe[0]['postal_code'] . ' ' . $coe[0]['city'] . ' ' . $coe[0]['country']);
 
       $params = "&city=" . str_replace(' ', '+', $coe[0]['city']) . "&postalcode=" . $coe[0]['postal_code'] . "&country=" . str_replace(' ', '+', $coe[0]['country']);
