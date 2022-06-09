@@ -192,11 +192,14 @@ function crealead_products_views_pre_render(&$view) {
 }
 
 function crealead_products_node_view($node, $view_mode, $langcode) {
+//  dpm($node->type . ' --- ' . $view_mode . ' --- ' . $node->title);
 
   if ($node->type == 'product') {
     if ($view_mode == 'sector_brand_block' || $view_mode == 'teaser') {
-      $node->content['field_introduction'][0]['#markup'] =
-        truncate_html($node->content['field_introduction'][0]['#markup'], INTRO_CAR_LIMIT, $ending = '');
+      if(!empty($node->content['field_introduction'])) {
+        $node->content['field_introduction'][0]['#markup'] =
+          truncate_html($node->content['field_introduction'][0]['#markup'], INTRO_CAR_LIMIT, $ending = '');
+      }
     }
   }
 }
