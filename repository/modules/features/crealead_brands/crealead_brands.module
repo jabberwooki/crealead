@@ -584,6 +584,27 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
             $form['field_all_emails']['#disabled'] = TRUE;
         }
     }
+    elseif ($form_id == 'taxonomy_overview_terms') {
+      // Dans la page d'admin du vocabulaire Pôles d'activités, il faut cacher à l'utilisateur
+      // les pôles dont il n'est pas responsable.
+      global $user;
+      $full_user = user_load($user->uid);
+      $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
+
+      $listed_poles = array_filter(
+        $form,
+        function($k) {
+          return substr($k,0,4) == 'tid:';
+        },
+        ARRAY_FILTER_USE_KEY
+      );
+
+      foreach ($listed_poles as $key => $pole) {
+        if (!in_array(str_replace(['tid:', ':0'], ['',''], $key), $cleaned_user_pole_ids)) {
+          unset($form[$key]);
+        }
+      }
+    }
     elseif($form_id == 'taxonomy_form_term') {
         if ($form['vocabulary_machine_name']['#value'] == 'sector_brands') {
             foreach ($form['field_pole_email_form']['und']['#options'] as $key=>$option) {

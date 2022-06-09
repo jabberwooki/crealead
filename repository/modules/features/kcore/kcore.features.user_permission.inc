@@ -17,8 +17,10 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'associé' => 'associé',
+      'certifications et labels' => 'certifications et labels',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
@@ -32,7 +34,9 @@ function kcore_user_default_permissions() {
     'roles' => array(
       'administrateur' => 'administrateur',
       'certifications et labels' => 'certifications et labels',
+      'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
+      'responsable de pôle' => 'responsable de pôle',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',
