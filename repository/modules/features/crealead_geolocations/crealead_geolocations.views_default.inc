@@ -196,18 +196,6 @@ function crealead_geolocations_views_default_views() {
   $handler->display->display_options['fields']['longitude']['field'] = 'longitude';
   $handler->display->display_options['fields']['longitude']['label'] = '';
   $handler->display->display_options['fields']['longitude']['element_label_colon'] = FALSE;
-  /* Champ: Getlocations Fields : Postal Code */
-  $handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
-  $handler->display->display_options['fields']['postal_code']['table'] = 'getlocations_fields';
-  $handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
-  $handler->display->display_options['fields']['postal_code']['label'] = '';
-  $handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
-  /* Champ: Getlocations Fields : Ville */
-  $handler->display->display_options['fields']['city']['id'] = 'city';
-  $handler->display->display_options['fields']['city']['table'] = 'getlocations_fields';
-  $handler->display->display_options['fields']['city']['field'] = 'city';
-  $handler->display->display_options['fields']['city']['label'] = '';
-  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
   /* Champ: Liste coes par point geo */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
