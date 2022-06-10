@@ -85,6 +85,10 @@ function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
   switch($form['#user_category']) {
     case 'coe_page':
       // Shows field_coe_pub_status and field_leaving_date to following roles only : administrateur, webmaster, referent.
+      if (empty($form['#user']->field_user_referent)) {
+        drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/coe_page_profile.js');
+      }
+
       global $user;
       $allowed_roles = array('administrateur','webmaster','référent');
       $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
