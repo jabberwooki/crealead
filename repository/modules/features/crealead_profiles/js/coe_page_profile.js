@@ -3,7 +3,7 @@
  */
 
 (function ($) {
-  Drupal.behaviors.userProfiles = {
+  Drupal.behaviors.coeProfile = {
     attach: function (context, settings) {
       // Ce ficher est chargé dans le formulaire Profil Entrepreneur
       // lorsque le coe n'a pas de référent enregistré dans son compte drupal.

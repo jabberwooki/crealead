@@ -85,10 +85,6 @@ function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
   switch($form['#user_category']) {
     case 'coe_page':
       // Shows field_coe_pub_status and field_leaving_date to following roles only : administrateur, webmaster, referent.
-      if (empty($form['#user']->field_user_referent)) {
-        drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/coe_page_profile.js');
-      }
-
       global $user;
       $allowed_roles = array('administrateur','webmaster','référent');
       $user_allowed_roles = array_intersect($allowed_roles, $user->roles);
@@ -109,7 +105,14 @@ function crealead_profiles_form_profile2_form_alter(&$form, &$form_state) {
       // Field field_email_sent must be hidden systematically (technical field).
       $form['profile_coe_page']['field_email_sent']['#access'] = FALSE;
 
-        /////////////////// Gestion du widget Socialfield //////////////////////
+      // Si le coe n'a pas encore de référent enregistré, il faut charger le fichier js ci-dessous.
+      // Il contient le code jquery pour désactiver le bouton radio "Soumettre à la validation par le référent".
+      if (empty($form['#user']->field_user_referent)) {
+        drupal_add_js(drupal_get_path('module', 'crealead_profiles') . '/js/coe_page_profile.js');
+
+      }
+
+      /////////////////// Gestion du widget Socialfield //////////////////////
         // Tant qu'aucun réseau n'a été enregistré, le formulaire affiche les x champs vides,
         // soit un par réseau activé dans le paramétrage du module socialfield.
         // Dès qu'on a enregistré un premier réseau, le formulaire n'affiche plus que le champ de ce réseau
