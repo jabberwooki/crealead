@@ -7,22 +7,29 @@
     /////////////////////////////////// INITIAL HTML CODE PROCESSING ///////////////////////////////////////////////////
     attach: function (context, settings) {
       // Creates the HTML zone dedicated to Client similarity processing.
-      $("#edit-title").parent().append(
+
+      // if ($("similarity-wrapper"))
+      var myAjaxUrl = Drupal.settings.crealead_similar_clients.ajaxUrl;
+      console.log("url = " + myAjaxUrl);
+
+      if (!$("#similarity-wrapper").length) {
+        $("#edit-title").parent().append(
           '<div id="similarity-wrapper">' +
-            '<div id="similar-clients-check-link"><a>Vérifier si ce client n\'existe pas déjà</a></div>' +
-            '<div id="similar-clients-list" class="clearfix"></div>' +
-            '<div id="similar-clients-list-error-msg"></div>' +
-            '<div id="similarity-yes-no">' +
-            '<a class="yes">OUI</a> <a class="no">NON</a>' +
-            '</div>' +
-            '<div id="similarity-instructions">' +
-            '<p>Cliquez sur le nom du client voulu dans la liste ci-dessus et il sera automatiquement rattaché aux marques sélectionnées.</p>' +
-            '</div>' +
-            '<div id="similarity-continue">' +
-            '<a class="continue">CONTINUER</a>' +
-            '</div>' +
+          '<div id="similar-clients-check-link"><a>Vérifier si ce client n\'existe pas déjà</a></div>' +
+          '<div id="similar-clients-list" class="clearfix"></div>' +
+          '<div id="similar-clients-list-error-msg"></div>' +
+          '<div id="similarity-yes-no">' +
+          '<a class="yes">OUI</a> <a class="no">NON</a>' +
+          '</div>' +
+          '<div id="similarity-instructions">' +
+          '<p>Cliquez sur le nom du client voulu dans la liste ci-dessus et il sera automatiquement rattaché aux marques sélectionnées.</p>' +
+          '</div>' +
+          '<div id="similarity-continue">' +
+          '<a class="continue">CONTINUER</a>' +
+          '</div>' +
           '</div>'
         );
+      }
 
       // Handles display/hiding of HTML elements on first arrival.
       $('#similarity-yes-no').hide();
