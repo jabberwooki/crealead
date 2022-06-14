@@ -24,6 +24,7 @@ function kcore_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     157083709 => '157083709',
@@ -31,31 +32,34 @@ function kcore_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
+  /* Champ: Contenu : Titre */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Critère de filtrage: Contenu : Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'page' => 'page',
   );
-  /* Filter criterion: Content: Nid */
+  /* Critère de filtrage: Contenu : Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -83,7 +87,7 @@ function kcore_views_default_views() {
     2 => '2',
   );
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -92,7 +96,7 @@ function kcore_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = 'Description du système d\'échanges.
 Se paramètre dans Configuration > Crealead > Système d\'échange.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: View (Views field view) */
+  /* Entête: Global : View (Views field view) */
   $handler->display->display_options['header']['view_field']['id'] = 'view_field';
   $handler->display->display_options['header']['view_field']['table'] = 'views';
   $handler->display->display_options['header']['view_field']['field'] = 'view_field';
@@ -100,7 +104,7 @@ Se paramètre dans Configuration > Crealead > Système d\'échange.';
   $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['header']['view_field']['view'] = 'needs';
   $handler->display->display_options['header']['view_field']['display'] = 'links_list';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -125,7 +129,7 @@ au moment de l\'interception et la ré-écriture du header.';
     2 => '2',
   );
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Solde en coopins */
+  /* Entête: Solde en coopins */
   $handler->display->display_options['header']['area_2']['id'] = 'area_2';
   $handler->display->display_options['header']['area_2']['table'] = 'views';
   $handler->display->display_options['header']['area_2']['field'] = 'area';
@@ -134,7 +138,7 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['header']['area_2']['content'] = 'Solde utilisateur connecté.
 Cet affichage est construit dans crealead_needs.module, fonction crealead_needs_views_pre_view().';
   $handler->display->display_options['header']['area_2']['format'] = 'full_html';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -143,7 +147,7 @@ Cet affichage est construit dans crealead_needs.module, fonction crealead_needs_
   $handler->display->display_options['header']['area']['content'] = 'Description de la monnaie d\'échange.
 Se paramètre dans Configuration > Crealead > Système d\'échange.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: View (Views field view) */
+  /* Entête: Global : View (Views field view) */
   $handler->display->display_options['header']['view_field']['id'] = 'view_field';
   $handler->display->display_options['header']['view_field']['table'] = 'views';
   $handler->display->display_options['header']['view_field']['field'] = 'view_field';
@@ -151,7 +155,7 @@ Se paramètre dans Configuration > Crealead > Système d\'échange.';
   $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['header']['view_field']['view'] = 'needs';
   $handler->display->display_options['header']['view_field']['display'] = 'coo_links_list';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -178,7 +182,7 @@ au moment de l\'interception et la ré-écriture du header.';
     2 => '2',
   );
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -187,7 +191,7 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['header']['area']['content'] = 'Les marques sectorielles de Crealead
 Se paramètre dans Configuration > Crealead > Marques sectorielles.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: View (Views field view) */
+  /* Entête: Global : View (Views field view) */
   $handler->display->display_options['header']['view_field']['id'] = 'view_field';
   $handler->display->display_options['header']['view_field']['table'] = 'views';
   $handler->display->display_options['header']['view_field']['field'] = 'view_field';
@@ -195,7 +199,7 @@ Se paramètre dans Configuration > Crealead > Marques sectorielles.';
   $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['header']['view_field']['view'] = 'sector_brands_coes_area';
   $handler->display->display_options['header']['view_field']['display'] = 'sector_brands_links_list';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -217,12 +221,9 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Espace associés';
   $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    157083709 => '157083709',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -231,7 +232,7 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['header']['area']['content'] = 'Description de l\'espace associés.
 Se paramètre dans Configuration > Crealead > Espace associés.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: View (Views field view) */
+  /* Entête: Global : View (Views field view) */
   $handler->display->display_options['header']['view_field']['id'] = 'view_field';
   $handler->display->display_options['header']['view_field']['table'] = 'views';
   $handler->display->display_options['header']['view_field']['field'] = 'view_field';
@@ -239,7 +240,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.';
   $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['header']['view_field']['view'] = 'needs';
   $handler->display->display_options['header']['view_field']['display'] = 'ass_links_list';
-  /* Header: Global: Text area */
+  /* Entête: Global : Zone de texte */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -257,10 +258,10 @@ au moment de l\'interception et la ré-écriture du header.';
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['coes_area_home'] = array(
     t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
     t('Asc'),
     t('Desc'),
     t('Onglet Informations'),
@@ -318,22 +319,22 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Utilisateur: Nom */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['field_user_lastname']['id'] = 'field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['table'] = 'field_data_field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['field'] = 'field_user_lastname';
-  /* Field: Utilisateur: Prénom */
+  /* Champ: Utilisateur : Prénom */
   $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['field'] = 'field_user_firstname';
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -369,7 +370,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -377,14 +378,14 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
+  /* Critère de filtrage: Utilisateur : Rôles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -421,7 +422,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -431,14 +432,14 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
+  /* Critère de filtrage: Utilisateur : Rôles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -475,7 +476,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -485,7 +486,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -508,12 +509,12 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Profil */
+  /* Relation: Utilisateur : Profil */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Profil: Photo */
+  /* Champ: Profil : Photo */
   $handler->display->display_options['fields']['field_coe_photo']['id'] = 'field_coe_photo';
   $handler->display->display_options['fields']['field_coe_photo']['table'] = 'field_data_field_coe_photo';
   $handler->display->display_options['fields']['field_coe_photo']['field'] = 'field_coe_photo';
@@ -526,7 +527,7 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
-  /* Field: User: Name */
+  /* Champ: Utilisateur : Nom */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -534,16 +535,16 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Getlocations Fields: Name */
+  /* Critère de tri: Getlocations Fields : Nom */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'getlocations_fields';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
-  /* Sort criterion: User: Name */
+  /* Critère de tri: Utilisateur : Nom */
   $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
   $handler->display->display_options['sorts']['name_1']['table'] = 'users';
   $handler->display->display_options['sorts']['name_1']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Collectifs liés (field_linked_groups) */
+  /* Filtre contextuel: Champ : Collectifs liés (field_linked_groups) */
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['id'] = 'field_linked_groups_target_id';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['table'] = 'field_data_field_linked_groups';
   $handler->display->display_options['arguments']['field_linked_groups_target_id']['field'] = 'field_linked_groups_target_id';
@@ -565,14 +566,13 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Infos utilisateur';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: E-mail */
+  /* Champ: Utilisateur : Courriel */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['label'] = 'Courriel :';
-  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
-  /* Field: Field: Liens réseaux sociaux */
+  /* Champ: Champ : Liens réseaux sociaux */
   $handler->display->display_options['fields']['field_social_links']['id'] = 'field_social_links';
   $handler->display->display_options['fields']['field_social_links']['table'] = 'field_data_field_social_links';
   $handler->display->display_options['fields']['field_social_links']['field'] = 'field_social_links';
@@ -584,8 +584,14 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
   );
   $handler->display->display_options['fields']['field_social_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_social_links']['field_api_classes'] = TRUE;
+  /* Champ: Utilisateur : Affichage de mon adresse email */
+  $handler->display->display_options['fields']['field_email_display']['id'] = 'field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['table'] = 'field_data_field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['field'] = 'field_email_display';
+  $handler->display->display_options['fields']['field_email_display']['label'] = '';
+  $handler->display->display_options['fields']['field_email_display']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User: Uid */
+  /* Filtre contextuel: Utilisateur : Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -615,7 +621,6 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     t('Prénom'),
     t('Noms référents (ER)'),
     t('Nom des référents'),
-    t('more'),
     t('Noms entrepreneurs (ER)'),
     t('Nom des entrepreneurs'),
     t('Noms utilisateurs (ER)'),
@@ -625,7 +630,6 @@ Se paramètre dans Configuration > Crealead > Espace associés.'),
     t('Tout'),
     t('infos utilisateur'),
     t('Infos utilisateur'),
-    t('Courriel :'),
   );
   $export['users'] = $view;
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_flashinfos.features.user_role.inc
@@ -13,7 +14,7 @@ function crealead_flashinfos_user_default_roles() {
   // Exported role: redacteur flashinfos.
   $roles['redacteur flashinfos'] = array(
     'name' => 'redacteur flashinfos',
-    'weight' => 16,
+    'weight' => 17,
     'machine_name' => 'redacteur_flashinfos',
   );
 

@@ -32,3 +32,204 @@ function crealead_geolocations_views_query_alter(&$view, &$query) {
     );
   }
 }
+
+function crealead_geolocations_form_profile2_form_alter(&$form, &$form_state) {
+  switch($form['#user_category']) {
+    case 'coe_page':
+      ///////// Modification du champ Coordonnées (getlocations_field) //////////
+      // La géolocatisation ne fonctionne plus (bouton "Geocode this address")
+      // parce que la clé d'API Google est obsolète et on ne veut plus utiliser l'API Gmaps.
+      // On géocode maintenant via l'API OpenStreetMap.
+      unset($form['profile_coe_page']['field_coordinates']['und'][0]['geobutton']);
+      unset($form['profile_coe_page']['field_coordinates']['und'][0]['clear_button']);
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['osm_geobutton'] = array(
+        '#markup' => '<p><a id="edit-profile-coe-page-field-coordinates-und-0-osm-geobutton">Géocoder l\'adresse</a></p>',
+        '#attributes' => array(
+          'class' => array('form-submit'),
+        ),
+      );
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['osm_clearbutton'] = array(
+        '#markup' => '<p><a id="edit-profile-coe-page-field-coordinates-und-0-osm-clearbutton">Effacer</a></p>',
+        '#attributes' => array(
+          'class' => array('form-submit'),
+        ),
+      );
+
+      $form['profile_coe_page']['field_coordinates']['und'][0]['latitude']['#weight'] = 100;
+      $form['profile_coe_page']['field_coordinates']['und'][0]['longitude']['#weight'] = 101;
+
+      drupal_add_js(drupal_get_path('module','crealead_geolocations') . '/js/crealead_geolocations.js', array('group' => CSS_THEME));
+      drupal_add_css(drupal_get_path('module','crealead_geolocations') . '/css/crealead_geolocations.css');
+      break;
+
+    default:
+      break;
+  }
+}
+
+function crealead_geolocations_get_localized_coes($with_details=false) {
+  if($with_details) {
+    $select = "select u.uid, u.name, mail, pid, field_coordinates_glid, city, postal_code, country, latitude, longitude";
+  }
+  else {
+    $select = "select count(u.uid)";
+  }
+
+  $from = "from users u 
+        inner join profile p on u.uid=p.uid 
+        inner join field_data_field_coordinates fc on p.pid=fc.entity_id 
+        inner join getlocations_fields gf on fc.field_coordinates_glid=gf.glid";
+
+  $where = "where p.type='coe_page'";
+
+  $sql_query = "$select $from $where";
+//  dpm($sql_query);
+
+  $query = db_query($sql_query);
+  if($with_details) {
+    dpm($query->fetchAll());
+  }
+  else {
+    dpm("Le nombre de coes localisés est de " . $query->fetchField());
+  }
+
+}
+
+function crealead_geolocations_update_coes_coordinates($limit=20, $offset=0) {
+  $sql_query = "
+    select u.uid, u.name, mail, pid, field_coordinates_glid, city, postal_code, country, latitude, longitude 
+    from users u 
+        inner join profile p on u.uid=p.uid 
+        inner join field_data_field_coordinates fc on p.pid=fc.entity_id 
+        inner join getlocations_fields gf on fc.field_coordinates_glid=gf.glid 
+    where p.type='coe_page' limit $limit";
+
+  if($offset > 0) {
+    $sql_query .= " offset $offset";
+  }
+
+  $query = db_query($sql_query);
+  $coes = $query->fetchAll();
+//  dpm($coes);
+
+  $base_url = "https://nominatim.openstreetmap.org/search?format=json";
+
+  foreach ($coes as $coe) {
+    $glid = $coe->field_coordinates_glid;
+    dpm('*******');
+    dpm($coe->name . ', glid = ' . $glid);
+    $params = "&city=" . str_replace(' ', '+', $coe->city) . "&postalcode=" . $coe->postal_code . "&country=" . str_replace(' ', '+', $coe->country);
+    $url = $base_url . $params;
+    dpm($url);
+
+    $response = drupal_http_request($url);
+//    dpm($response);
+    if ($response->status_message == 'OK' && $response->data != '[]') {
+      $data = json_decode($response->data);
+      $latitude = $data[0]->lat;
+      $longitude = $data[0]->lon;
+      dpm($latitude . ' / ' . $longitude);
+
+      $num_updated = db_update('getlocations_fields')
+        ->fields(array(
+          'latitude' => $latitude,
+          'longitude' => $longitude,
+        ))
+          ->condition('glid', $glid)
+          ->execute();
+
+      if ($num_updated) {
+        dpm("Coordonnées de $coe->name (uid = $coe->uid, glid = $glid) mises à jour.");
+      }
+      else {
+        dpm("Coordonnées de $coe->name (uid = $coe->uid, glid = $glid) NON mises à jour.");
+      }
+    }
+    else {
+      if(!is_numeric($coe->postal_code)) {
+        dpm("$coe->name (uid = $coe->uid, glid = $glid) : Le code postal enregistré dans l'adresse n'est pas un nombre");
+      }
+      else {
+        dpm("$coe->name (uid = $coe->uid, glid = $glid) : Vérifier que l'adresse postale est correcte");
+      }
+    }
+  }
+}
+
+function crealead_geolocations_cleanup($real_cleanup = false) {
+  $sql_query = "
+    select gfe.uid, gfe.glid, gf.postal_code, gf.city, gf.country, gf.latitude, gf.longitude, u.name
+    from getlocations_fields_entities gfe 
+        inner join getlocations_fields gf on gfe.glid=gf.glid 
+        inner join users u on gfe.uid=u.uid
+    ";
+
+  $query = db_query($sql_query);
+  $geolocs = $query->fetchAllAssoc('glid', PDO::FETCH_ASSOC);
+  dpm('Nombre total de geoloc = ' . count($geolocs));
+
+  $uids = [];
+  foreach ($geolocs as $geoloc) {
+    $uids[$geoloc['uid']][] = $geoloc;
+  }
+
+  $multi_localized_coes = array_filter($uids, function($value) {
+    return count($value) > 1;
+  });
+  dpm($multi_localized_coes);
+
+  if (!empty($multi_localized_coes)) {
+    $base_url = "https://nominatim.openstreetmap.org/search?format=json";
+    foreach ($multi_localized_coes as $coe) {
+      dpm("===> " . $coe[0]['name']);
+      dpm("Adresse : " . $coe[0]['postal_code'] . ' ' . $coe[0]['city'] . ' ' . $coe[0]['country']);
+
+      $params = "&city=" . str_replace(' ', '+', $coe[0]['city']) . "&postalcode=" . $coe[0]['postal_code'] . "&country=" . str_replace(' ', '+', $coe[0]['country']);
+      $url = $base_url . $params;
+//    dpm($url);
+
+      $response = drupal_http_request($url);
+//    dpm($response);
+      if ($response->status_message == 'OK' && $response->data != '[]') {
+        $data = json_decode($response->data);
+        $latitude = round($data[0]->lat,6, PHP_ROUND_HALF_UP);
+        $longitude = round($data[0]->lon,6, PHP_ROUND_HALF_UP);
+        dpm("Résultat requête OSM : " . $latitude . ' / ' . $longitude);
+
+        foreach ($coe as $key => $location) {
+          $count = $key + 1;
+          $msg = "différent";
+          $is_different = true;
+          if ($location['latitude'] == $latitude && $location['longitude'] == $longitude) {
+            $msg = "identique";
+            $is_different = false;
+          }
+          dpm("Localisation $count : " . $location['latitude'] . ' / ' . $location['longitude'] . '(' . $msg . ').');
+
+          if ($real_cleanup) {
+            if($is_different) {
+              $relations = array(
+                'field_name' => 'field_coordinates',
+                'uid' => $location->uid
+              );
+
+              getlocations_fields_delete_record($location, $relations);
+              $glid = $location['glid'];
+              $coe_name = $location['name'];
+              dpm("Localisation $glid du coe $coe_name supprimée.");
+            }
+          }
+        }
+      }
+      else {
+        dpm('Echec de la requete vers l\'API OSM.');
+      }
+    }
+  }
+  else {
+    dpm("Il n'y a pas de coe avec plusieurs localisations.");
+  }
+}
+

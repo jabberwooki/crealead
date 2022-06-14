@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_articles.features.user_permission.inc
@@ -14,6 +15,7 @@ function crealead_articles_user_default_permissions() {
   $permissions['create article content'] = array(
     'name' => 'create article content',
     'roles' => array(
+      'CA' => 'CA',
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'référent' => 'référent',
@@ -59,6 +61,7 @@ function crealead_articles_user_default_permissions() {
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
     'roles' => array(
+      'CA' => 'CA',
       'administrateur' => 'administrateur',
       'entrepreneur' => 'entrepreneur',
       'webmaster' => 'webmaster',

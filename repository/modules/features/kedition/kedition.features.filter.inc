@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kedition.features.filter.inc

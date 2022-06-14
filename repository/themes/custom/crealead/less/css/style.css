@@ -11262,7 +11262,8 @@ body.node-type-brand .radio input[type="radio"] {
   margin-left: 0;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre div.view-header a {
   display: inline-block;
   background-color: #bf0e38;
   padding: 6px 12px;
@@ -11277,7 +11278,8 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a
   margin-bottom: 0;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a:before,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:before {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:before,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre div.view-header a:before {
   position: relative;
   top: 1px;
   font-family: 'Glyphicons Halflings';
@@ -11306,27 +11308,33 @@ body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a
   color: white;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a:hover,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:hover {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:hover,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre div.view-header a:hover {
   text-decoration: none;
   background-color: #1d1e19;
   color: #FFF;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations div.view-header a:hover:before,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:hover:before {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions div.view-header a:hover:before,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre div.view-header a:hover:before {
   color: #f2cc2b;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .group-brand-formations .group-wrapper-teaser,
 body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .group-brand-formations .group-wrapper-teaser,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre .group-brand-formations .group-wrapper-teaser,
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .group-brand-products .group-wrapper-teaser,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .group-brand-products .group-wrapper-teaser {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .group-brand-products .group-wrapper-teaser,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre .group-brand-products .group-wrapper-teaser {
   box-shadow: 0 0 5px #999999;
   padding: 20px;
   margin-bottom: 20px;
 }
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-training .row .field-name-field-introduction,
 body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-training .row .field-name-field-introduction,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre .node-training .row .field-name-field-introduction,
 body.node-type-brand #bootstrap-fieldgroup-nav-item--formations .node-product .row .field-name-field-introduction,
-body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-product .row .field-name-field-introduction {
+body.node-type-brand #bootstrap-fieldgroup-nav-item--solutions .node-product .row .field-name-field-introduction,
+body.node-type-brand #bootstrap-fieldgroup-nav-item--offre .node-product .row .field-name-field-introduction {
   max-height: none !important;
   background-color: transparent;
   border-radius: 0;
@@ -13134,14 +13142,14 @@ body.not-logged-in .region-sector-brands-header {
 .taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item---la-une .view-display-id-sector_brands_front_achievs .view-content .col .node-achievement .field-group-div {
   border: 1px solid #999999;
 }
-.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-content.row {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--offre .view-content.row {
   margin: 0;
 }
-.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-display-id-sector_brands_products .col .node-product {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--offre .view-display-id-sector_brands_products .col .node-product {
   padding: 10px;
   border: 1px solid #999999;
 }
-.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--solutions .view-display-id-sector_brand_trainings .view-content.row .views-bootstrap-grid-plugin-style .col .node-training {
+.taxonomy-term.vocabulary-sector-brands.view-mode-full div.group-pole-tabs #bootstrap-fieldgroup-nav-item--offre .view-display-id-sector_brand_trainings .view-content.row .views-bootstrap-grid-plugin-style .col .node-training {
   padding: 20px;
   background-color: #ededed;
 }
@@ -16357,4 +16365,8 @@ body.node-type-need #node-need-full-wrapper .row > .col-sm-6 > div.field > div.f
 .page-node-1000000 .field-name-body .subscription-block .covid-infos {
   text-align: center;
   font-weight: 700;
+}
+/* Page produit ******************************************************************************************************/
+body.node-type-product .field-name-field-introduction {
+  margin-bottom: 30px;
 }

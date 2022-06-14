@@ -106,7 +106,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -361,7 +361,7 @@ function crealead_profiles_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_coe_pub_status_value']['group'] = 1;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -791,7 +791,7 @@ function crealead_profiles_views_default_views() {
     'coe_page' => 'coe_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -868,7 +868,7 @@ function crealead_profiles_views_default_views() {
   $handler->display->display_options['filters']['field_coe_pub_status_value']['value'] = array(
     1 => '1',
   );
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2389,6 +2389,8 @@ function crealead_profiles_views_default_views() {
     t('Utilisateur'),
     t('.'),
     t(','),
+    t('1'),
+    t('@count'),
     t('%1'),
     t('Page recherche'),
     t('Rechercher des co-entrepreneurs de Crealead'),
@@ -2732,6 +2734,8 @@ function crealead_profiles_views_default_views() {
     t('Onglets Instances'),
     t('.'),
     t(','),
+    t('1'),
+    t('@count'),
   );
   $export['instances'] = $view;
 
@@ -2849,7 +2853,7 @@ function crealead_profiles_views_default_views() {
     'referent_page' => 'referent_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -3030,7 +3034,7 @@ function crealead_profiles_views_default_views() {
     'referent_page' => 'referent_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Critère de filtrage: Utilisateur : Actif */
+  /* Critère de filtrage: Utilisateur : Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -3066,6 +3070,8 @@ function crealead_profiles_views_default_views() {
     t('Onglets page Structure'),
     t('.'),
     t(','),
+    t('1'),
+    t('@count'),
   );
   $export['structure_team'] = $view;
 

@@ -64,7 +64,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['sorts']['field_event_dates_value']['id'] = 'field_event_dates_value';
   $handler->display->display_options['sorts']['field_event_dates_value']['table'] = 'field_data_field_event_dates';
   $handler->display->display_options['sorts']['field_event_dates_value']['field'] = 'field_event_dates_value';
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -301,7 +301,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -441,7 +441,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -522,7 +522,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -618,7 +618,7 @@ function crealead_events_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

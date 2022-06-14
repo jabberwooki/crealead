@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_documents.features.user_permission.inc
@@ -15,11 +16,12 @@ function crealead_documents_user_default_permissions() {
     'name' => 'access filedepot',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
       'associé' => 'associé',
       'certif LR' => 'certif LR',
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
-      'rédacteur' => 'rédacteur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
       'éditeur gazette' => 'éditeur gazette',

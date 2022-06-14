@@ -16,6 +16,7 @@ function crealead_warnings_user_default_permissions() {
     'name' => 'create warning content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
       'référent' => 'référent',
@@ -29,6 +30,7 @@ function crealead_warnings_user_default_permissions() {
     'name' => 'delete any warning content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -39,6 +41,7 @@ function crealead_warnings_user_default_permissions() {
   $permissions['delete own warning content'] = array(
     'name' => 'delete own warning content',
     'roles' => array(
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
     ),
@@ -50,6 +53,7 @@ function crealead_warnings_user_default_permissions() {
     'name' => 'edit any warning content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -60,6 +64,7 @@ function crealead_warnings_user_default_permissions() {
   $permissions['edit own warning content'] = array(
     'name' => 'edit own warning content',
     'roles' => array(
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
       'pôle gestion' => 'pôle gestion',
     ),

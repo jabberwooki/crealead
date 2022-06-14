@@ -119,6 +119,15 @@ function crealead_brands_strongarm() {
       'list' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sessions' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -319,6 +328,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'brands_calendar_entity_view_1' => array(
           'full' => array(
@@ -359,6 +372,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'articles_allowed_articles' => array(
           'full' => array(
@@ -368,6 +385,10 @@ function crealead_brands_strongarm() {
           'sector_brand_block' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
         'products_entity_view_1' => array(
@@ -379,6 +400,10 @@ function crealead_brands_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'trainings_allowed_trainings' => array(
           'full' => array(
@@ -388,6 +413,10 @@ function crealead_brands_strongarm() {
           'sector_brand_block' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
         'products_entity_view_2' => array(
@@ -404,6 +433,10 @@ function crealead_brands_strongarm() {
           'sector_brand_block' => array(
             'weight' => '10',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
       ),

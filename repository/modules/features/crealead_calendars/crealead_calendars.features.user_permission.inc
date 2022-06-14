@@ -65,6 +65,7 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -77,6 +78,7 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -89,6 +91,7 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -101,6 +104,7 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -111,6 +115,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'delete own room_event content',
     'roles' => array(
       'direction' => 'direction',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -120,6 +125,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'delete own structure_event content',
     'roles' => array(
       'direction' => 'direction',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -131,6 +137,7 @@ function crealead_calendars_user_default_permissions() {
       'administrateur' => 'administrateur',
       'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
+      'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -154,6 +161,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'edit own room_event content',
     'roles' => array(
       'direction' => 'direction',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -163,6 +171,7 @@ function crealead_calendars_user_default_permissions() {
     'name' => 'edit own structure_event content',
     'roles' => array(
       'direction' => 'direction',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );

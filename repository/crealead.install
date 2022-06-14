@@ -398,3 +398,10 @@ function crealead_update_7023() {
 function crealead_update_7025() {
   module_enable(array('crealead_associates'));
 }
+
+/**
+ * Activate contrib module roles_per_menu.
+ */
+function crealead_update_7026() {
+  module_enable(array('roles_per_menu'));
+}

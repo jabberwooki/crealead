@@ -524,8 +524,8 @@ function crealead_brands_field_group_info() {
     'label' => 'Actualités',
     'weight' => '31',
     'children' => array(
-      0 => 'brand_agenda_eva_brandagenda',
-      1 => 'news_brand_news',
+      0 => 'news_brand_news',
+      1 => 'brand_agenda_eva_brandagenda',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -608,7 +608,7 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_solution_col2';
   $field_group->data = array(
-    'label' => 'Produits',
+    'label' => 'Prestations',
     'weight' => '1',
     'children' => array(
       0 => 'products_entity_view_1',
@@ -617,7 +617,7 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Produits',
+      'label' => 'Prestations',
       'instance_settings' => array(
         'id' => '',
         'classes' => 'group-brand-products field-group-div',
@@ -708,14 +708,14 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_brand_tabs';
   $field_group->data = array(
-    'label' => 'Solutions',
+    'label' => 'Offre',
     'weight' => '27',
     'children' => array(
       0 => 'group_solutions_rows',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Solutions',
+      'label' => 'Offre',
       'instance_settings' => array(
         'classes' => 'group-brand-trainings-tab field-group-bootstrap_fieldgroup_nav_item solutions',
       ),
@@ -1238,7 +1238,7 @@ function crealead_brands_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = 'group_pole_tabs';
   $field_group->data = array(
-    'label' => 'Solutions',
+    'label' => 'Offre',
     'weight' => '14',
     'children' => array(
       0 => 'group_pole_solutions_products',
@@ -1246,10 +1246,9 @@ function crealead_brands_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Offre',
       'instance_settings' => array(
         'classes' => 'group-pole-solutions-tab field-group-bootstrap_fieldgroup_nav_item',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -1626,7 +1625,7 @@ function crealead_brands_field_group_info() {
   $field_group->parent_name = 'group_solutions_rows';
   $field_group->data = array(
     'label' => 'Produits',
-    'weight' => '15',
+    'weight' => '17',
     'children' => array(
       0 => 'group_brand_products',
     ),
@@ -1958,8 +1957,10 @@ function crealead_brands_field_group_info() {
   t('Marques');
   t('Marques associées');
   t('Marques et produits');
+  t('Offre');
   t('Onglets');
   t('Onglets marque');
+  t('Prestations');
   t('Produits');
   t('Produits et formations');
   t('Présentation');

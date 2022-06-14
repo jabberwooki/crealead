@@ -1,0 +1,16 @@
+#edit-field-introduction .field-help-emphasis {
+    font-size: 120%;
+    font-weight: 700;
+}
+
+#edit-field-introduction .char-limit {
+    /*color: red;*/
+    font-size: 120%;
+    /*font-weight: 700;*/
+}
+
+#edit-field-introduction .remaining-chars {
+    color: mediumseagreen;
+    font-size: 120%;
+    font-weight: 700;
+}

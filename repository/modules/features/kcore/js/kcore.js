@@ -60,7 +60,6 @@ console.log(context_li);
         changeCoETextLink();
       });
       function changeCoETextLink() {
-        console.log("in changeCoETextLink");
         if ($(".field-group-bootstrap_fieldgroup_nav_itemactive").length &&
         !$(".field-group-bootstrap_fieldgroup_nav_item.active").length) {
           //$(".field-group-bootstrap_fieldgroup_nav_itemactive").addClass("active");

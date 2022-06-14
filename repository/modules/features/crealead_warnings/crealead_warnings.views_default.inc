@@ -157,12 +157,12 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_frequency']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Champ: Contenu : Lien de modification */
+  /* Champ: Contenu : Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Action';
-  /* Champ: Contenu : Lien de suppression */
+  /* Champ: Contenu : Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -181,7 +181,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -252,12 +252,12 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_warning_when']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Champ: Contenu : Lien de modification */
+  /* Champ: Contenu : Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Action';
-  /* Champ: Contenu : Lien de suppression */
+  /* Champ: Contenu : Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -395,7 +395,7 @@ function crealead_warnings_views_default_views() {
     'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relation: Contenu : Auteur */
+  /* Relation: Contenu : Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -455,7 +455,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['fields']['field_recipient_email']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Champ: Contenu : Lien de modification */
+  /* Champ: Contenu : Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -463,7 +463,7 @@ function crealead_warnings_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Critère de filtrage: Contenu : Publié */
+  /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -543,7 +543,7 @@ function crealead_warnings_views_default_views() {
     t('Quand'),
     t('Fréquence'),
     t('Action'),
-    t('Lien de suppression'),
+    t('Link to delete content'),
     t('Alertes utilisateur'),
     t('Type de contenu'),
     t('Type de sélection'),

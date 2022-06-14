@@ -96,12 +96,25 @@ function kcore_permission() {
  * Thanks to pfournier, creator of module Empty Front Page (https://www.drupal.org/project/empty_front_page)
  */
 function kcore_menu_alter(&$items) {
-	$items['node']['page callback'] = 'empty_front_page_callback';
+  // Génère une page d'accueil vide.
+  $items['node']['page callback'] = 'empty_front_page_callback';
+
+  // Empêche les non admin d'accéder à la page Admin > Configuration > Rédaction de contenu > Link
+  $items['admin/config/content/link']['access callback'] = 'kcore_link_settings_access';
 }
 
 function empty_front_page_callback() {
 	drupal_set_title('');
 	return array();
+}
+
+function kcore_link_settings_access() {
+  global $user;
+  if ($user->uid != 1 && !in_array('administrateur', $user->roles)) {
+    return false;
+  }
+
+  return true;
 }
 
 /**
@@ -248,23 +261,38 @@ travailler ensemble.</span></div>';
         'fond-social-europeen' => array(
           'url' => '',
           //'logo-file' => 'fds-social-europeen_506x130.png',
-          'logo-file' => 'fds-social-europeen_506x105_transparent.png'
+          'logo-file' => 'fds-social-europeen_506x105_transparent.png',
+          'image-title' => ''
         ),
         'caisse-epargne' => array(
           'url' => 'https://www.caisse-epargne.fr/languedoc-roussillon/banque-assurance-banque-a-distance.aspx',
-          'logo-file' => 'ca-lr_263x57.png'
+          'logo-file' => 'ca-lr_263x57.png',
+          'image-title' => ''
         ),
         'prefecture' => array(
           'url' => '',
-          'logo-file' => 'prefecture_78x100.jpg'
+          'logo-file' => 'prefecture_78x100.jpg',
+          'image-title' => ''
         ),
         'montpellier-metropole' => array(
           'url' => 'http://www.montpellier3m.fr/',
-          'logo-file' => 'montpellier-metropole_100x100.png'
+          'logo-file' => 'montpellier-metropole_100x100.png',
+          'image-title' => ''
         ),
         'cd34' => array(
           'url' => 'http://www.herault.fr/',
-          'logo-file' => 'CD34_134x63.png'
+          'logo-file' => 'CD34_134x63.png',
+          'image-title' => ''
+        ),
+        'qualiopi' => array(
+          'url' => '',
+          'logo-file' => 'qualiopi_269x105.png',
+          'image-title' =>
+          '
+          La certification qualité a été délivrée au titre des catégories d\'action suivantes
+          ACTIONS DE FORMATION
+          BILANS DE COMPÉTENCES
+          VALIDATION DES ACQUIS DE L\' EXPÉRIENCE'
         ),
       );
 
@@ -272,7 +300,10 @@ travailler ensemble.</span></div>';
       $content = '<div id="crealead-sponsor">';
       foreach ($sponsors as $name=>$sponsor) {
         $content .= '<span id="' . $name . '">';
-        $img = theme('image', array('path' => $path . $sponsor['logo-file']));
+        $img = theme('image', array(
+          'path' => $path . $sponsor['logo-file'],
+          'title' => $sponsor['image-title'],
+        ));
         if ($sponsor['url'] != '') {
           $logo = l($img,$sponsor['url'], array('html' => TRUE));
         }
@@ -330,6 +361,37 @@ function kcore_admin_menu_output_alter(&$content) {
 function kcore_node_access($node, $op, $account) {
   if (isset($node->type) && $node->type == 'webform' && !user_is_logged_in()) {
     return NODE_ACCESS_DENY;
+  }
+
+  $current_user_roles = $account->roles;
+
+  unset($current_user_roles[array_search('debug', $current_user_roles)]);
+  unset($current_user_roles[array_search('authenticated user', $current_user_roles)]);
+
+  // Paramétrage de ce qu'un associé externe ne doit pas voir comme contenu.
+  if (count($current_user_roles) == 1 && current($current_user_roles) == 'associé') {
+
+    // Types de contenu non autorisés aux associés externes
+    $forbidden_content_types = [
+      'business_group',
+      'gazette',
+      'link_to_doc',
+      'need',
+      'offer',
+      'room_event',
+      'structure_event',
+      'newsflash',
+      'webform',
+    ];
+
+    if (isset($node->type) && in_array($node->type, $forbidden_content_types)) {
+      return NODE_ACCESS_DENY;
+    }
+
+    // Un associé externe ne peut voir que les lettres d'info du CA (Gouvernance).
+    if (isset($node->type) && $node->type == 'newsletter' && $node->field_newsletter_type['und'][0]['value'] == 'st') {
+      return NODE_ACCESS_DENY;
+    }
   }
 
   // A décommenter et completer s'il faut vraiment interdire à l'utilisateur
@@ -685,11 +747,21 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         global $user;
         $full_user = user_load($user->uid);
 
-        if (user_is_logged_in()
-            && !in_array('administrateur', $full_user->roles)
-            && isset($full_user->field_pole_manager['und'][0]['tid'])
-            && $full_user->field_pole_manager['und'][0]['tid'] != $router_item['map'][2]->tid) {
-            $data = array();
+//        if (user_is_logged_in()
+//            && !in_array('administrateur', $full_user->roles)
+//            && isset($full_user->field_pole_manager['und'][0]['tid'])
+//            && $full_user->field_pole_manager['und'][0]['tid'] != $router_item['map'][2]->tid) {
+//            $data = array();
+//        }
+        // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+        // Un utilisateur peut-être responsable de plusieurs pôles.
+        if (user_is_logged_in() && !in_array('administrateur', $full_user->roles)
+            && isset($full_user->field_pole_manager['und'][0]['tid'])) {
+
+            $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
+            if (!in_array($router_item['map'][2]->tid, $cleaned_user_pole_ids)) {
+                $data = array();
+            }
         }
     }
     elseif ($root_path == 'node/%') {
@@ -699,7 +771,6 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         // Mais en fait, il ne faut lui laisser ce droit que pour les nodes
         // qui ont été rattachées à son pole par l'auteur de l'actualité ou de la réalisation
 
-
         if (user_is_logged_in()) {
             if (in_array($router_item['page_arguments'][0]->type, array('news','achievement'))) {
                 global $user;
@@ -708,30 +779,53 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
                 if ($router_item['page_arguments'][0]->uid != $user->uid) {
                     $full_user = user_load($user->uid);
 
+                    // Si le user connecté n'est pas admin et s'il est gestionnaire d'au moins un pôle
                     if (!in_array('administrateur', $full_user->roles) && isset($full_user->field_pole_manager['und'][0]['tid'])) {
+                        $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
                         $can_user_edit_node = false;
 
-                        // Soit le node actu ou réalisation affiché à été précédemment rattaché à un pole
+                        // Soit le node actu ou réalisation affiché à été précédemment rattaché à un pole (field_related_sector_brand)
                         // et il faut vérifier que le user connecté est bien gestionnaire de ce pole,
                         if (!empty($router_item['page_arguments'][0]->field_related_sector_brands)) {
-                            $related_sector_brands = $router_item['page_arguments'][0]->field_related_sector_brands['und'];
-                            foreach ($related_sector_brands as $sector_brand) {
-                                if ($sector_brand['tid'] == $full_user->field_pole_manager['und'][0]['tid']) {
-                                    $can_user_edit_node = true;
-                                    break;
-                                }
+//                            $related_sector_brands = $router_item['page_arguments'][0]->field_related_sector_brands['und'];
+//                            foreach ($related_sector_brands as $sector_brand) {
+//                                if ($sector_brand['tid'] == $full_user->field_pole_manager['und'][0]['tid']) {
+//                                    $can_user_edit_node = true;
+//                                    break;
+//                                }
+//                            }
+                            // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                            // Un utilisateur peut-être responsable de plusieurs pôles.
+                            $cleaned_node_related_poles_ids = array_map(
+                                function ($item) { return $item['tid']; },
+                                $router_item['page_arguments'][0]->field_related_sector_brands['und']
+                            );
+
+                            if (!empty(array_intersect($cleaned_user_pole_ids, $cleaned_node_related_poles_ids))) {
+                                $can_user_edit_node = true;
                             }
                         }
-                        // soit ce node a été créé par un gestionnaire de pole sans avoir été rattaché à ce pole, mais seulement affiché dans ce pole
-                        // et là aussi
+                        // soit ce node a été créé par un gestionnaire de pole sans avoir été rattaché à ce pole,
+                        // mais seulement affiché dans ce pole (field_related_pole = Actualité/Réalisation visible à la une )
+                        // et là aussi il faut vérifier que le user connecté est bien gestionnaire de ce pole
                         elseif (!empty($router_item['page_arguments'][0]->field_related_pole)) {
-                            if ($router_item['page_arguments'][0]->field_related_pole['und'][0]['tid'] == $full_user->field_pole_manager['und'][0]['tid']) {
+//                            if ($router_item['page_arguments'][0]->field_related_pole['und'][0]['tid'] == $full_user->field_pole_manager['und'][0]['tid']) {
+//                                $can_user_edit_node = true;
+//                            }
+                            // Code ci-dessus modifié suite au changement de cardinalité du champ User field_pole_manager (S14-2).
+                            // Un utilisateur peut-être responsable de plusieurs pôles.
+                            $cleaned_node_displayed_poles_ids = array_map(
+                                function ($item) { return $item['tid']; },
+                                $router_item['page_arguments'][0]->field_related_pole['und']
+                            );
+
+                            if (!empty(array_intersect($cleaned_user_pole_ids, $cleaned_node_displayed_poles_ids))) {
                                 $can_user_edit_node = true;
                             }
                         }
 
                         if (!$can_user_edit_node) {
-                        $data = array();
+                            $data = array();
                         }
                     }
                 }
@@ -739,3 +833,4 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
         }
     }
 }
+

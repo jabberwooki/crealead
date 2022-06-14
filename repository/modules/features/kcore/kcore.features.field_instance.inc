@@ -481,7 +481,7 @@ function kcore_field_default_field_instances() {
         'label_help_description' => '',
       ),
       'type' => 'socialfield_widget',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 

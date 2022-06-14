@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_multimedia.context_config.inc
@@ -41,6 +42,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(
@@ -80,6 +82,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(
@@ -119,6 +122,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(
@@ -158,6 +162,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(
@@ -197,6 +202,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(
@@ -236,6 +242,7 @@ function crealead_multimedia_default_scald_context_config() {
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(

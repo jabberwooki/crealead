@@ -95,13 +95,6 @@ function kcore_user_default_roles() {
     'machine_name' => 'pole_manager',
   );
 
-  // Exported role: rédacteur.
-  $roles['rédacteur'] = array(
-    'name' => 'rédacteur',
-    'weight' => 7,
-    'machine_name' => 'redactor',
-  );
-
   // Exported role: référent.
   $roles['référent'] = array(
     'name' => 'référent',

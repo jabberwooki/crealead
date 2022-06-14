@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kedition.features.user_permission.inc

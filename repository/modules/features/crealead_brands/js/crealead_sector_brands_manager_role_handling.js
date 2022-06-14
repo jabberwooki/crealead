@@ -6,7 +6,7 @@
   Drupal.behaviors.sector_brands_manager_role = {
     attach: function (context, settings) {
       //////////// GESTION DU ROLE GESTIONNAIRE DE POLE DANS LE FORMULAIRE UTILISATEUR /////////////////////////////////
-      poleManagerRoleId = settings.crealead_pole_manager.role_id;
+      let poleManagerRoleId = settings.crealead_pole_manager.role_id;
 
       // 1 - Si un pole est déjà sélectionné et que le role Responsable de pole ne l'est pas encore
       // (situation antérieure à la mise en place des controles ci-dessous)
@@ -21,12 +21,10 @@
           $('#edit-roles-' + poleManagerRoleId).prop('checked', true);
       }
 
-
       // 2 - Gestion du clic sur le champ Responsable de pole.
-      $('#edit-field-pole-manager input[type="radio"]').click(function () {
-        let value = $(this).val();
-
-        if (value === '_none') {
+      $('#edit-field-pole-manager input[type="checkbox"]').click(function () {
+        // let value = $(this).val();
+        if ($('#edit-field-pole-manager input[type="checkbox"]:checked').length == 0) {
           $('#edit-roles-' + poleManagerRoleId).prop('checked', false);
         }
         else {
@@ -39,7 +37,6 @@
       // 3 - Gestion du clic sur la case à cocher Responsable de pole du champ Roles.
       $('#edit-roles-' + poleManagerRoleId).click(function (){
         if ($(this).prop('checked')) {
-
           let attributes = '';
 
           let checkboxMsg = '<span class="pole-manager-message" style="padding-left: 20px; font-size: 120%; color : red;">'
@@ -55,7 +52,9 @@
           $('#edit-submit').attr('disabled', 'disabled');
         }
         else {
-          $('#edit-field-pole-manager-und-none').prop('checked', true);
+          $('#edit-field-pole-manager input[type="checkbox"]').each(function() {
+            $(this).prop('checked', false);
+          });
           $('.pole-manager-message').remove();
           $('#edit-submit').removeAttr('disabled');
         }

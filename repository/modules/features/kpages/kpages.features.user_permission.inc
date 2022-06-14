@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kpages.features.user_permission.inc
@@ -15,6 +16,7 @@ function kpages_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -25,6 +27,7 @@ function kpages_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -35,6 +38,7 @@ function kpages_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -45,6 +49,7 @@ function kpages_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'pôle gestion' => 'pôle gestion',
       'webmaster' => 'webmaster',
     ),
@@ -56,6 +61,7 @@ function kpages_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'direction' => 'direction',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',

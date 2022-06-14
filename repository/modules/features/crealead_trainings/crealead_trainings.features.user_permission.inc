@@ -35,6 +35,7 @@ function crealead_trainings_user_default_permissions() {
     'name' => 'create training content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
@@ -46,6 +47,7 @@ function crealead_trainings_user_default_permissions() {
   $permissions['create training_session content'] = array(
     'name' => 'create training_session content',
     'roles' => array(
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
@@ -56,6 +58,7 @@ function crealead_trainings_user_default_permissions() {
     'name' => 'delete any training content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -67,6 +70,7 @@ function crealead_trainings_user_default_permissions() {
     'name' => 'delete any training_session content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
     ),
     'module' => 'node',
   );
@@ -75,6 +79,7 @@ function crealead_trainings_user_default_permissions() {
   $permissions['delete own training content'] = array(
     'name' => 'delete own training content',
     'roles' => array(
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
@@ -84,6 +89,7 @@ function crealead_trainings_user_default_permissions() {
   $permissions['delete own training_session content'] = array(
     'name' => 'delete own training_session content',
     'roles' => array(
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
@@ -104,6 +110,7 @@ function crealead_trainings_user_default_permissions() {
     'name' => 'edit any training content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
       'référent' => 'référent',
       'webmaster' => 'webmaster',
     ),
@@ -115,6 +122,7 @@ function crealead_trainings_user_default_permissions() {
     'name' => 'edit any training_session content',
     'roles' => array(
       'administrateur' => 'administrateur',
+      'assistant' => 'assistant',
       'référent' => 'référent',
     ),
     'module' => 'node',
@@ -124,6 +132,7 @@ function crealead_trainings_user_default_permissions() {
   $permissions['edit own training content'] = array(
     'name' => 'edit own training content',
     'roles' => array(
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',
@@ -133,6 +142,7 @@ function crealead_trainings_user_default_permissions() {
   $permissions['edit own training_session content'] = array(
     'name' => 'edit own training_session content',
     'roles' => array(
+      'assistant' => 'assistant',
       'entrepreneur' => 'entrepreneur',
     ),
     'module' => 'node',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kedition.features.ckeditor_profile.inc
@@ -141,7 +142,7 @@ function kedition_ckeditor_profile_defaults() {
         'language_direction' => 'default',
         'allowed_content' => 'f',
         'extraAllowedContent' => 'config.allowedContent = true; ',
-        'enter_mode' => 'p',
+        'enter_mode' => 'br',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
         'custom_formatting' => 'f',
@@ -155,11 +156,11 @@ function kedition_ckeditor_profile_defaults() {
             'pre_indent' => 0,
           ),
         ),
-        'css_mode' => 'none',
+        'css_mode' => 'theme',
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'imce',
+        'filebrowser' => 'none',
         'filebrowser_image' => '',
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
@@ -167,8 +168,11 @@ function kedition_ckeditor_profile_defaults() {
         'forcePasteAsPlainText' => 't',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
-        'theme_config_js' => 'f',
-        'js_conf' => 'CKEDITOR.config.format_tags = \'h3;h4;h5;h6;p;div\';',
+        'disableNativeSpellChecker' => 'f',
+        'config_js' => 'none',
+        'config_js_path' => '',
+        'js_conf' => 'CKEDITOR.config.format_tags = \'h3;h4;h5;h6;p;div\';
+CKEDITOR.config.extraPlugins = ‘maxlength’;',
         'loadPlugins' => array(
           'dndck4' => array(
             'name' => 'dndck4',
@@ -187,6 +191,11 @@ function kedition_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 't',
+          ),
+          'maxlength' => array(
+            'name' => 'maxlength',
+            'desc' => 'Maxlength - Plugin for characters number limitation',
+            'path' => '/profiles/crealead/modules/features/crealead_products/ckeditor_plugins/maxlength/',
           ),
           'tableresize' => array(
             'name' => 'tableresize',

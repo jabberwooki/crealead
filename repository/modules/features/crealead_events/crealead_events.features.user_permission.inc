@@ -15,7 +15,9 @@ function crealead_events_user_default_permissions() {
   $permissions['create event content'] = array(
     'name' => 'create event content',
     'roles' => array(
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -23,7 +25,10 @@ function crealead_events_user_default_permissions() {
   // Exported permission: 'delete any event content'.
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+      'référent' => 'référent',
+    ),
     'module' => 'node',
   );
 
@@ -31,7 +36,9 @@ function crealead_events_user_default_permissions() {
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
     'roles' => array(
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );
@@ -39,7 +46,10 @@ function crealead_events_user_default_permissions() {
   // Exported permission: 'edit any event content'.
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
-    'roles' => array(),
+    'roles' => array(
+      'direction' => 'direction',
+      'référent' => 'référent',
+    ),
     'module' => 'node',
   );
 
@@ -47,7 +57,9 @@ function crealead_events_user_default_permissions() {
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
     'roles' => array(
+      'direction' => 'direction',
       'entrepreneur' => 'entrepreneur',
+      'référent' => 'référent',
     ),
     'module' => 'node',
   );

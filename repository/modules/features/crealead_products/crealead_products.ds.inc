@@ -21,15 +21,17 @@ function crealead_products_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'body',
+        0 => 'field_introduction',
+        1 => 'body',
       ),
       'right' => array(
-        1 => 'field_product_earnings',
-        2 => 'field_product_to_whom',
-        3 => 'field_product_related_brands',
+        2 => 'field_product_earnings',
+        3 => 'field_product_to_whom',
+        4 => 'field_product_related_brands',
       ),
     ),
     'fields' => array(
+      'field_introduction' => 'left',
       'body' => 'left',
       'field_product_earnings' => 'right',
       'field_product_to_whom' => 'right',
