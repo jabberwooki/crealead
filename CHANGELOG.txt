@@ -1,3 +1,68 @@
+Crealead v3.17 (Sprint V3-14) / 2022-06-14
+------------------------------------------
+  * Correction de bug : Dysfonctionnement du contrôle d'existence de cllients dans le formulaire de création de client. Rapporté par F.Bellouard le 13/06/22 (cf message gmail du même jour).
+  * Correction du bug faisant apparaitre les onglets de tous les profils dans un compte utilisateur alors qu'il n'est que coe. Dû au fait que j'avais donné le même nom de behaviour (Drupal.behaviours.userProfiles) à 2 fichiers jquery différents. Le second ficher écrasait le code jquery du premier.
+  * Modif du formulaire Profil Entrepreneur : Correction d'un bug trouvé par S.Mathon : WSOD lorsqu'on essaie de soumettre le formulaire au référent et que le référent n'est pas encore renseigné dans le compte Drupal. Un fichier javascript est chargé dans ce cas là pour désactiver le bouton radio 'Soumettre à la validation...'.
+  * 14-11 modif après recette : Correction du bug déclenché lorsque ->content['field_introduction'] est vide, découvert par S.Mathon le 08/06 (voir mail Tests site WEB).
+  * 14-12 modif après recette : Nouvelle amélioration de la fonction pour supprimer les localisations redondantes.
+  * 14-12 modif après recette : Amélioration de la fonction pour supprimer les localisations redondantes.
+  * 14-1 modif après recette : 1) Correction du bug de permissions découvert par S.Mathon le 08/06/22 (voir carte Trello). 2) Dans la page d'admin du vocabulaire Pôles d'activités, la liste est maintenant réduite aux pôles dont l'utilisateur est responsable.
+  * 14-12 modif après recette : Création d'une fonction pour supprimer les localisations redondantes. Modif de la vue users_geolocation/coes_geolocation pour supprimer les marqueurs multiples (notamment à cause de villes à orthographes multiples). Correction du code postal 34070 en 34000 pour le marqueur de Montpellier dans le template de vue.
+  * 14-12 modif après recette : Création de 2 fonctions pour corriger 'à la main' le décalage de position entre l'ancienne géolocalisation Gmaps et la nouvelle géolocalisation OSM.
+  * Diminution de la taille du logo Qualiopi (hauteur passée de 250 à 105 px).
+  * 14-13 suite : Ajout d'un attribut title à l'image des logos sponsors pour un meilleur affichage du logo Qualiopi.
+  * 14-13 suite : Augmentation de la taille du logo Qualiopi (hauteur passée de 135 à 250 px).
+  * 14-12 modif après recette : Désactivation du mécanisme de géocodage faisant appel à l'API Gmaps, remplacé par un mécanisme de géocodage custom faisant appel à l'API OpenStreetMap (Nominatim).
+  * 14-11 modif après recette : Amélioration affichage Produits : remplacement de la fonction crealead_products_truncate() par la fonction truncate_html(). Voir détails dans crealead_products.module.
+  * 14-11 modif après recette : Amélioration affichage Produits : vignettes sont de même hauteur, gestion du nombre de caractères du champ Introduction amélioré.
+  * 14-5 modif après recette : Prestation remplacé par Produit partout ou ça trainait encore.
+  * 14-2 modif après recette : correction du dysfonctionnement du contrôle jquery sur le cochage du champ Responsable de pôle (devenu multiple) et du rôle 'responsable de pôle'.
+  * Maintenance du code : suppression des console.log() qui trainent un peu partout.
+  * 14-1 modif après recette : attribution de la permission 'Utiliser les pages d'administration et l'aide' au rôle 'Certifications et labels'. Ré-ecriture de la permission d'accès à admin/config/content/link pour éviter que les non admin aient accès à Configuration > Rédaction de contenu > Link.
+  * 14-13 suite : Augmentation de la taille du logo Qualiopi (hauteur passée de 120 à 135 px).
+  * 14-3 : Ajout du logo partenaire Qualiopi.
+  * 14-12 : La géolocalisation des coes fonctionne à nouveau.
+  * 14-11 : Amélioration affichage Produits dans les pôles et les marques.
+  * 14-10 suite : ajout du nouveau champ field_email_display du compte utilisateur, oublié dans le commit précédent.
+  * 14-10 : Un utilisateur peut choisir d'afficher ou pas son adresse email dans la fiche individuelle.
+  * 14-8 : L'onglet Solutions devient Offre dans une page de pôle d'activité.
+  * 14-7 : Modif de la vue Comptes-rendus (report) : Suppression de la restriction d'accès au rôle 'associé' sur les displays Page CA et CR comités d'étude. Réglage des droits d'accès via le module contrib roles_for_menu.
+  * 14-6 suite : Activation du module roles_per_menu dans crealead.install, oublié dans le commit précédent.
+  * 14-6 : Install du module roles_per_menu puis paramétrage et codage (kcore.module) de la restriction d'accès à l'espace Co-entrepreneur pour les associés externes.
+  * 14-5 suite : Dans l'onglet Offre d'une marque, Formations placé à gauche et Prestations à droite.
+  * 14-5 : Modification du vocabulaire des mini-sites.
+  * 14-3 : Paramétrage de nombreux droits sur de nombreux rôles en fonction des notes d'Andréa et de Sandrine.
+  * 14-2 : Modifications de code custom dans crealead_brands.module, crealead_news.module et kcore.module suite au changement de cardinalité du champ field_pole_manager de User.
+  * 14-2 : Modif du champ Responsable de pôle (field_pole_manager) dans User : cardinalité passée de 1 à illimité.
+  * 14-1 : Création du rôle 'certifications et labels'. Paramétrage des permissions ajouter/modifier/supprimer pour ce rôle sur les vocabulaires 'Certificats et labels' et 'Catégories de certifications et labels'.
+  * Modif RoleAssign : les rôles assignables sont maintenant entrepreneur, entrepreneur prestataire, associé et responsable de pôle.
+  * Correction de bug rapporté par Philippe Sarfati : Notice : Undefined index: #markup dans crealead_needs_node_view(). Corrigé directement en prod, puis correction reproduite en dev pour le prochain déploiement.
+  * Correction de bug rapporté par Philippe Sarfati : Undefined index #field_type dans rdf_field_attach_view_alter(). Le patch noyau est disponible ici : https://www.drupal.org/project/drupal/issues/2356541. Déclaré dans drupal-org-core.make.
+  * Correction du bug 'Undefined index: #markup dans crealead_brands_views_pre_render() (ligne 807...' dans la page d'une marque.
+  * Correction du bug 'Undefined index: #markup dans crealead_trainings_views_pre_render() (ligne 899...' dans la vue 'Nos formations'.
+  * 13-5 : Modifs recette : Correction du bug Formulaire de contact.
+  * 13-2 : Modifs recette : 'Finançable CFP' corrigé en 'Finançable CPF'.
+  * 13-3 : Modifs recette : Correction du bug 'Array to string conversion...' dans le template views-bootstrap-grid-plugin-style--training--list-page.tpl.php'.
+  * 13-2 : Modifs recette : Correction du bug 'Undefined index: field_recommended_by' repéré par Andréa (Voir https://www.drupal.org/project/drupal/issues/2356283).
+  * 13-2 : Modifs recette : Le picto 'Chaise roulante' est déplacé du côté droit de l'en-tête de la fiche Formation.
+  * 13-1 : Retrait de l'affichage des liens d'inscription à Nimes et à Sète.
+  * 13-3 :  Modif du moteur de recherche Formations.
+  * Suppression d'une triple notice PHP 'undefined index' pour les champs field_custom_coopins_value, field_custom_crealead_price_value et field_custom_crealead_funded_value dans la fonction crealead_page() du fichier template.php.
+  * 13-2 : Modif fiche formation : Mise à jour automatique de la vue traingins par Drupal : Suppression du view handler concernant le champ field_training_type supprimé dans cette même story 13-2.
+  * 13-2 : Modif fiche formation : Suppression du champ Dispositif de financement (field_training_funding).
+  * 13-2 : Modif fiche formation : Suppression du champ Dispositif de financement (field_training_funding).
+  * 13-2 : Modif fiche formation : Export des modifs de la feature crealead_trainings oublié dans le commit précédent.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Éligibilité au CPF' et ses sous-champs 'Code RNCP', 'Titre officiel' et 'Fiche publique CPF'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Catégories d'action de formation'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Modalités pédagogiques'.
+  * 13-2 : Modif fiche formation : Suppression du champ Type (field_training_type).
+  * 13-2 : Modif fiche formation : Ajout du champ 'Engagement accessibilité handicapés'.
+  * 13-2 : Modif fiche formation : Ajout du champ 'Modalités d\'inscription'.
+  * Mises à jour de sécurité : export des modifs de la feature crealead_brands dues à la mise à jour du module field_slideshow.
+  * Mises à jour de sécurité : export de toutes les modifs de fichiers de features dues à la mise à jour du module Features (11 features concernées).
+  * Mises à jour de sécurité : remplacement des numéros de version core et contrib dans les fichiers make.
+  * Modif de paramétrage de roleassign et de view_unpublished : ajout du rôle 'editeur gazette' à la liste des rôles attribuables et ajout de la permission 'voir les newsletter non publiées' au rôle 'éditeur gazette'."
+
 Hotfix brand_full_node_Undefined_index_#markup / 2021-10-05
 -----------------------------------------------------------
   * Correction du bug 'Undefined index: #markup dans crealead_brands_views_pre_render() (ligne 807...' dans la page d'une marque.
