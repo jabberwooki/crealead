@@ -19,7 +19,7 @@
    *
    * Donc, un petit coup de str_replace pour remplacer Titre par Titre + Numéro Jour dans la chaine formatée $output
    */
-  $output = str_replace($row->field_field_related_training[0]['rendered']['#markup'], $row->node_title, $output);
+  $output = str_replace($row->field_field_related_training[0]['rendered']['#label'], $row->node_title, $output);
   $funded = 0;
   $funded_logo_markup = '';
 
