@@ -1,3 +1,7 @@
+Hotfix training_calendar_undefined_index_markup_bugfix / 2022-06-17
+-------------------------------------------------------------------
+  * S14 Modif après recette : correction du bug undefined index 'markup' dans la page Calendrier des formations.
+
 Crealead v3.17.1 (Sprint V3-14) / 2022-06-17
 --------------------------------------------
   * Modif après recette : Correction de l'absence du bouton 'Explorer le serveur' dans CKEditor.
