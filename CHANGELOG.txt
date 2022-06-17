@@ -1,3 +1,7 @@
+Crealead v3.17.1 (Sprint V3-14) / 2022-06-17
+--------------------------------------------
+  * Modif après recette : Correction de l'absence du bouton 'Explorer le serveur' dans CKEditor.
+
 Crealead v3.17 (Sprint V3-14) / 2022-06-14
 ------------------------------------------
   * Correction de bug : Dysfonctionnement du contrôle d'existence de cllients dans le formulaire de création de client. Rapporté par F.Bellouard le 13/06/22 (cf message gmail du même jour).

@@ -35,7 +35,7 @@
         $( "#block-menu-menu-coe-area ul li.dropdown > a" ).click(function(e){
           e.preventDefault();
           var context_li = $(this).closest( "li" );
-console.log(context_li);
+// console.log(context_li);
           $(".dropdown-menu",context_li).toggle();
         });
         $("#block-menu-menu-top ul.menu.nav>li:nth-of-type(3)").click(function(e){
@@ -74,6 +74,16 @@ console.log(context_li);
       // Positionnement de l'onglet Réglages confidentialité
       //console.log($('.eu-cookie-withdraw-tab').css('left'));
 
+      // Pour faire réapparaître le bouton "Explorer le serveur" de l'upload d'image CKEditor.
+      // $("#cke_103_uiElement").css("display", "");
+      // $("#cke_103_uiElement").css("border", "1px solid red");
+      // $("#cke_103_uiElement").parent().css("border", "1px solid red");
+
+      // console.log($("#cke_103_uiElement"));
+      // console.log($(".cke_dialog_ui_hbox_last"));
+
+      // console.log($(".cke_button__image"));
+      console.log($("#cke_28").length);
     }
   };
 }(jQuery))
