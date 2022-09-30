@@ -1,3 +1,7 @@
+Hotfix undefined-index-und-in-poles-pages - 2022-09-30
+------------------------------------------------------
+  * Correction des notices PHP : undefined index:und dans les fonctions crealead_brand_entity_view_alter(1 notice) et crealead_brands_views_pre_render(3 notices).
+
 Hotfix training_calendar_undefined_index_markup_bugfix / 2022-06-17
 -------------------------------------------------------------------
   * S14 Modif après recette : correction du bug undefined index 'markup' dans la page Calendrier des formations.
