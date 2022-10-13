@@ -588,21 +588,30 @@ function crealead_brands_form_alter(&$form, &$form_state, $form_id) {
     elseif ($form_id == 'taxonomy_overview_terms') {
       // Dans la page d'admin du vocabulaire Pôles d'activités, il faut cacher à l'utilisateur
       // les pôles dont il n'est pas responsable.
+
+      // Debug du 13-10-2022 (bon anniversaire Lorane !)
+      // Reporté par Sandrine Mathon le 12-10-2022.
+      // Message d'erreur : Notice : Undefined index: und dans crealead_brands_form_alter() (ligne 594...
+      // Si un utilisateur n'est responsable d'aucun pôle, alors $full_user->field_pole_manager['und'] = null
+      // Donc il faut tester avant.
       global $user;
       $full_user = user_load($user->uid);
-      $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
 
-      $listed_poles = array_filter(
-        $form,
-        function($k) {
-          return substr($k,0,4) == 'tid:';
-        },
-        ARRAY_FILTER_USE_KEY
-      );
+      if (!empty($full_user->field_pole_manager)) {
+        $cleaned_user_pole_ids = array_map(function ($item) { return $item['tid']; }, $full_user->field_pole_manager['und']);
 
-      foreach ($listed_poles as $key => $pole) {
-        if (!in_array(str_replace(['tid:', ':0'], ['',''], $key), $cleaned_user_pole_ids)) {
-          unset($form[$key]);
+        $listed_poles = array_filter(
+          $form,
+          function($k) {
+            return substr($k,0,4) == 'tid:';
+          },
+          ARRAY_FILTER_USE_KEY
+        );
+
+        foreach ($listed_poles as $key => $pole) {
+          if (!in_array(str_replace(['tid:', ':0'], ['',''], $key), $cleaned_user_pole_ids)) {
+            unset($form[$key]);
+          }
         }
       }
     }

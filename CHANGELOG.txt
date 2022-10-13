@@ -1,4 +1,8 @@
-Hotfix undefined-index-und-in-poles-pages - 2022-09-30
+Hotfix undefined-index-und-in-taxonomy-overview-terms-page-fix / 2022-10-13
+---------------------------------------------------------------------------
+  * Correction du bug dans la page des termes d'un vocabulaire. Reporté par S.Mathon le 12/10/22. Message d'erreur : Undefined index: und dans crealead_brands_form_alter() (ligne 594...).
+
+Hotfix undefined-index-und-in-poles-pages / 2022-09-30
 ------------------------------------------------------
   * Correction des notices PHP : undefined index:und dans les fonctions crealead_brand_entity_view_alter(1 notice) et crealead_brands_views_pre_render(3 notices).
 
