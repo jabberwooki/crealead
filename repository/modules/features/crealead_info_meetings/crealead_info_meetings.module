@@ -560,6 +560,7 @@ function crealead_info_meetings_block_view($delta = '') {
     case 'crealead_meetings_locations' :
       $locations = array(
         'mo' => 'Montpellier',
+        'ba' => 'une réunion<br/><span class="building-special">spécial Bâtiment à Montpellier</span>',
 //        'ni' => 'Nîmes',
 //        'se' => 'Sète',
         'di' => 'une réunion à distance'
@@ -589,6 +590,15 @@ function crealead_info_meetings_node_postinsert($node) {
     $warning_sentence .= 'Ce paramétrage se fait sur la page <a href="/admin/config/crealead/info-meetings">Configuration > Crealead > Réunions d\'information</a>.';
     switch($location_code) {
       case 'mo':
+        $mo_map = variable_get('meetings_default_map_mo', null);
+        if ($mo_map) {
+          $map_default_value = $mo_map['value'];
+        }
+        else {
+          $map_default_value = str_replace('CITY', 'Montpellier', $warning_sentence);
+        }
+        break;
+      case 'ba':
         $mo_map = variable_get('meetings_default_map_mo', null);
         if ($mo_map) {
           $map_default_value = $mo_map['value'];

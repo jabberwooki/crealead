@@ -1,3 +1,7 @@
+Crealead v3.18 (Sprint V3-15) / 2022-10-20
+------------------------------------------
+  * Ajout des réunions d'info spécial Bâtiment.
+
 Hotfix undefined-index-und-in-taxonomy-overview-terms-page-fix / 2022-10-13
 ---------------------------------------------------------------------------
   * Correction du bug dans la page des termes d'un vocabulaire. Reporté par S.Mathon le 12/10/22. Message d'erreur : Undefined index: und dans crealead_brands_form_alter() (ligne 594...).

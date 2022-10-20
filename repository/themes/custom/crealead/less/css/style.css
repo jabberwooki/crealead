@@ -11439,6 +11439,7 @@ body.node-type-brand #colorbox {
   margin-bottom: 20px;
   height: 35px;
   overflow: hidden;
+  height: unset;
   min-width: 223px;
   text-align: left !important;
 }
@@ -11477,6 +11478,9 @@ body.node-type-brand #colorbox {
 }
 .page-reunions-information .info-meetings-location-links a:hover:before {
   color: #f2cc2b;
+}
+.page-reunions-information .info-meetings-location-links a .building-special {
+  padding-left: 1.6em;
 }
 .page-reunions-information ul.coche-rouge {
   font-size: 0.8em;

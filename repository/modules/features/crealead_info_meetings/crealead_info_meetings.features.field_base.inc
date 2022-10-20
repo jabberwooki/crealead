@@ -250,6 +250,7 @@ function crealead_info_meetings_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'mo' => 'Montpellier',
+        'ba' => 'Montpellier Bâtiment',
         'ni' => 'Nîmes',
         'se' => 'Sète',
         'di' => 'à distance',
