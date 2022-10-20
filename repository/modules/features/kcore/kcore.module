@@ -834,3 +834,14 @@ function kcore_menu_local_tasks_alter(&$data, $router_item, $root_path) {
     }
 }
 
+/**
+ * Implements hook_menu_link_alter().
+ *
+ * @return void
+ */
+function kcore_menu_link_alter(&$item) {
+//  dpm($item['link_path']);
+  if (strpos($item['link_path'], 'announcementcenter')) {
+    $item['options']['attributes']['target'] = '_blank';
+  }
+}
