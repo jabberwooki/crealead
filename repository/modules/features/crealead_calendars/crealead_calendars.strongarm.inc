@@ -70,7 +70,7 @@ function crealead_calendars_strongarm() {
         'custom_settings' => FALSE,
       ),
       'ical' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -163,7 +163,7 @@ function crealead_calendars_strongarm() {
         'custom_settings' => TRUE,
       ),
       'ical' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,

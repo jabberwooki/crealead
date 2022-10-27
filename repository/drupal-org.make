@@ -137,7 +137,7 @@ projects[date][version] = "2.10"
 ;projects[date][patch][] = "https://www.drupal.org/files/issues/2375235_calendar-pager_not_advancing-25.patch"
 
 projects[date_ical][subdir] = contrib
-projects[date_ical][version] = "3.9"
+projects[date_ical][version] = "3.10"
 
 projects[date_multiselect][subdir] = contrib
 projects[date_multiselect][version] = "1.0"

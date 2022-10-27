@@ -573,39 +573,92 @@ function crealead_calendars_views_default_views() {
 
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'feed_1');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'date_ical';
-  $handler->display->display_options['row_plugin'] = 'date_ical';
-  $handler->display->display_options['row_options']['date_field'] = 'field_data_field_gclal_date.field_gclal_date_value';
+  $handler->display->display_options['style_options']['cal_name'] = '';
+  $handler->display->display_options['style_options']['disable_webcal'] = TRUE;
+  $handler->display->display_options['row_plugin'] = 'date_ical_fields';
+  $handler->display->display_options['row_options']['date_field'] = 'field_gclal_date';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['description_field'] = 'field_gcal_description';
+  $handler->display->display_options['row_options']['location_field'] = 'field_gcal_location';
+  $handler->display->display_options['row_options']['categories_field'] = 'field_room';
+  $handler->display->display_options['row_options']['additional_settings'] = array(
+    'skip_blank_dates' => 0,
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  /* Champ: Contenu : Date */
+  $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['label'] = '';
+  $handler->display->display_options['fields']['field_gclal_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => '',
+  );
+  $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
+  /* Champ: Contenu : Lieu */
+  $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['label'] = '';
+  $handler->display->display_options['fields']['field_gcal_location']['element_label_colon'] = FALSE;
+  /* Champ: Contenu : Description */
+  $handler->display->display_options['fields']['field_gcal_description']['id'] = 'field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['table'] = 'field_data_field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
+  $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
+  /* Champ: Contenu : Salle */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['label'] = '';
+  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Critère de filtrage: Date : Date (node) */
-  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
-  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
-  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
-  $handler->display->display_options['filters']['date_filter']['operator'] = '>=';
-  $handler->display->display_options['filters']['date_filter']['default_date'] = 'now';
-  $handler->display->display_options['filters']['date_filter']['add_delta'] = 'yes';
-  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
-    'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'room_event' => 'room_event',
   );
-  $handler->display->display_options['path'] = 'calendar-node-field-gclal-date/ical/%/calendar.ics';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'calendar/calendar-events-export/room-events.ics';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
-    'page_1' => 'page_1',
-    'page_2' => 'page_2',
-    'page_3' => 'page_3',
-    'block_1' => 'block_1',
-    'block_2' => 'block_2',
+    'rooms_month' => 'rooms_month',
     'default' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page' => 0,
+    'block_1' => 0,
+    'block_2' => 0,
   );
 
   /* Display: Upcoming */
@@ -1104,11 +1157,66 @@ function crealead_calendars_views_default_views() {
 
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'feed_1');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'date_ical';
-  $handler->display->display_options['row_plugin'] = 'date_ical';
-  $handler->display->display_options['row_options']['date_field'] = 'field_data_field_gclal_date.field_gclal_date_value';
+  $handler->display->display_options['style_options']['cal_name'] = '';
+  $handler->display->display_options['style_options']['disable_webcal'] = TRUE;
+  $handler->display->display_options['row_plugin'] = 'date_ical_fields';
+  $handler->display->display_options['row_options']['date_field'] = 'field_gclal_date';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['description_field'] = 'field_gcal_description';
+  $handler->display->display_options['row_options']['location_field'] = 'field_gcal_location';
+  $handler->display->display_options['row_options']['categories_field'] = 'field_theme_breve';
+  $handler->display->display_options['row_options']['additional_settings'] = array(
+    'skip_blank_dates' => 0,
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Champ: Contenu : Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  /* Champ: Contenu : Date */
+  $handler->display->display_options['fields']['field_gclal_date']['id'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['table'] = 'field_data_field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['field'] = 'field_gclal_date';
+  $handler->display->display_options['fields']['field_gclal_date']['label'] = '';
+  $handler->display->display_options['fields']['field_gclal_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => '',
+  );
+  $handler->display->display_options['fields']['field_gclal_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_gclal_date']['delta_offset'] = '0';
+  /* Champ: Contenu : Lieu */
+  $handler->display->display_options['fields']['field_gcal_location']['id'] = 'field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['table'] = 'field_data_field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['field'] = 'field_gcal_location';
+  $handler->display->display_options['fields']['field_gcal_location']['label'] = '';
+  $handler->display->display_options['fields']['field_gcal_location']['element_label_colon'] = FALSE;
+  /* Champ: Contenu : Description */
+  $handler->display->display_options['fields']['field_gcal_description']['id'] = 'field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['table'] = 'field_data_field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
+  $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
+  $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
+  /* Champ: Contenu : Thème */
+  $handler->display->display_options['fields']['field_theme_breve']['id'] = 'field_theme_breve';
+  $handler->display->display_options['fields']['field_theme_breve']['table'] = 'field_data_field_theme_breve';
+  $handler->display->display_options['fields']['field_theme_breve']['field'] = 'field_theme_breve';
+  $handler->display->display_options['fields']['field_theme_breve']['label'] = '';
+  $handler->display->display_options['fields']['field_theme_breve']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme_breve']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1116,27 +1224,28 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Critère de filtrage: Date : Date (node) */
-  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
-  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
-  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
-  $handler->display->display_options['filters']['date_filter']['operator'] = '>=';
-  $handler->display->display_options['filters']['date_filter']['default_date'] = 'now';
-  $handler->display->display_options['filters']['date_filter']['add_delta'] = 'yes';
-  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
-    'field_data_field_gclal_date.field_gclal_date_value' => 'field_data_field_gclal_date.field_gclal_date_value',
+  /* Critère de filtrage: Contenu : Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'structure_event' => 'structure_event',
   );
-  $handler->display->display_options['path'] = 'calendar-node-field-gclal-date/ical/%/calendar.ics';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'calendar/calendar-events-export/structure-events.ics';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
-    'page_1' => 'page_1',
-    'page_2' => 'page_2',
-    'page_3' => 'page_3',
-    'block_1' => 'block_1',
-    'block_2' => 'block_2',
+    'structure_month' => 'structure_month',
     'default' => 0,
+    'structure' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page' => 0,
+    'block_1' => 0,
+    'cob' => 0,
+    'cop' => 0,
   );
 
   /* Display: Bloc espace coes */
