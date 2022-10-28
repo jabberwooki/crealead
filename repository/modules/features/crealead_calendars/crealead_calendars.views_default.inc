@@ -709,7 +709,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['row_options']['title_field'] = 'title';
   $handler->display->display_options['row_options']['description_field'] = 'field_gcal_description';
   $handler->display->display_options['row_options']['location_field'] = 'field_gcal_location';
-  $handler->display->display_options['row_options']['categories_field'] = 'field_room';
   $handler->display->display_options['row_options']['additional_settings'] = array(
     'skip_blank_dates' => 0,
   );
@@ -752,12 +751,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -851,12 +844,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -950,12 +937,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1049,12 +1030,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1148,12 +1123,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1247,12 +1216,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1346,12 +1309,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1445,12 +1402,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1544,12 +1495,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
@@ -1643,12 +1588,6 @@ function crealead_calendars_views_default_views() {
   $handler->display->display_options['fields']['field_gcal_description']['field'] = 'field_gcal_description';
   $handler->display->display_options['fields']['field_gcal_description']['label'] = '';
   $handler->display->display_options['fields']['field_gcal_description']['element_label_colon'] = FALSE;
-  /* Champ: Contenu : Salle */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = '';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Critère de filtrage: Contenu : Published status */
