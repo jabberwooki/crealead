@@ -10,3 +10,8 @@
 #block-menu-menu-calendriers ul li a.active{
     color: gray;
 }
+
+.view-display-id-rooms_month div.feed-icon a.ical-icon img {
+    padding: 0.5em;
+    display: inline;
+}
