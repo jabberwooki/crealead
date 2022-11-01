@@ -1,3 +1,13 @@
+Crealead v3.19 (Sprint V3-15) / 2022-11-01
+------------------------------------------
+  * Ajout de l'export 'Depuis 2022' de toutes les salles. Ajout du filtre date>=2022 à tous les exports par salle.
+  * Ajout de l'export 'Depuis 2022' le calendrier Structure.
+  * Suppression du champ Salle dans les exports d'événements salle par salle.
+  * Création d'un mécanisme d'export par salle en plus de l'export complet.
+  * Création des mécanismes d'export ical des événenements Salles et Structure.
+  * Modif du hook_menu_link_alter() pour ajouter l'ouverture du lien Documents lui aussi dans un nouvel onglet;
+  * Implémentation du hook_menu_link_alter() dans kcore.module pour pouvoir ajouter l'attribut target=_blank aux liens de menu que l'on souhaite.
+
 Crealead v3.18 (Sprint V3-15) / 2022-10-20
 ------------------------------------------
   * Ajout des réunions d'info spécial Bâtiment.
