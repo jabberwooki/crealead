@@ -1,3 +1,7 @@
+Crealead v3.20 (Sprint V3.15) / 2022-11-02
+------------------------------------------
+  * Désactivation de la feature Google Web Stats et du module contrib google_analytics.
+
 Crealead v3.19 (Sprint V3-15) / 2022-11-01
 ------------------------------------------
   * Ajout de l'export 'Depuis 2022' de toutes les salles. Ajout du filtre date>=2022 à tous les exports par salle.
