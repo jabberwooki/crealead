@@ -232,7 +232,7 @@ function crealead_preprocess_views_view(&$vars) {
     $header = $vars['header'];
     $parts = explode('<p class="coes-number">', $header);
     $part1 = $parts[1];
-    if ($part1{0} == '1') {
+    if ($part1[0] == '1') {
       $part1 = str_replace('s</p>','</p>', $part1);
       $vars['header'] = $parts[0] . '<p class="coes-number">' . $part1;
     }

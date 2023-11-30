@@ -851,3 +851,12 @@ function kcore_menu_link_alter(&$item) {
     }
   }
 }
+
+function kcore_views_pre_render(&$view) {
+  if ($view->name == 'diaporama' && $view->current_display == 'block_home_slideshow') {
+    foreach ($view->result as $key => $item) {
+      $view->result[$key]->field_field_image_scald[0]['rendered']['#markup'] =
+        str_replace($_SERVER['SERVER_ADDR'], $_SERVER['SERVER_NAME'], $item->field_field_image_scald[0]['rendered']['#markup']);
+    }
+  }
+}
