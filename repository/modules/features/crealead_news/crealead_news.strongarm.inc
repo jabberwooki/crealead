@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_news.strongarm.inc
