@@ -240,8 +240,8 @@ accompagner et gérer</span></div>';
       $number = variable_get('speakers_number_value', '10');
 
       $content = '<div id="speakers-number" class="number speakers-number">' . $number . '</div>';
-      $content .= '<div id="speakers-text" class="text speakers-text">Intervenants<br><span class="under-key-data">en formations, animations et
-prestations.</span></div>';
+      $content .= '<div id="speakers-text" class="text speakers-text">Pôles d\'activités<br><span class="under-key-data">Bâtiment, Design, 
+      Évolution, Formation, Numérique.</span></div>';
       $block['content'] = $content;
       break;
 
