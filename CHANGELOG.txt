@@ -1,3 +1,10 @@
+Crealead v3.21 (Demandes hors projet) / 2023-12-13
+--------------------------------------------------
+  * Modifications blocs page d'accueil.
+  * Blocs Chiffres Clé en page d'accueil : remplacement du bloc Intervenants par un bloc Pôles d'activités.
+  * Ajout du dossier data-exports à gitignore.
+  * Correction de l'absence d'images dans le diaporama de la page d'accueil.
+
 Crealead v3.20 (Sprint V3.15) / 2022-11-02
 ------------------------------------------
   * Désactivation de la feature Google Web Stats et du module contrib google_analytics.
