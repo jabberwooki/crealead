@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * crealead_news.features.fe_block_settings.inc
@@ -41,7 +42,7 @@ function crealead_news_default_fe_block_settings() {
 
   $export['views-news-block_news_focus'] = array(
     'cache' => -1,
-    'css_class' => 'col-md-6',
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'news-block_news_focus',
     'module' => 'views',

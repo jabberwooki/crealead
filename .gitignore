@@ -19,3 +19,7 @@ repository/themes/custom/crealead/less/prepros-6.config
 repository/themes/custom/crealead/less/node_modules/
 # gulp
 repository/themes/custom/crealead/less/package.json
+
+# export de données
+data-exports
+

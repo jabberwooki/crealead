@@ -240,8 +240,8 @@ accompagner et gérer</span></div>';
       $number = variable_get('speakers_number_value', '10');
 
       $content = '<div id="speakers-number" class="number speakers-number">' . $number . '</div>';
-      $content .= '<div id="speakers-text" class="text speakers-text">Intervenants<br><span class="under-key-data">en formations, animations et
-prestations.</span></div>';
+      $content .= '<div id="speakers-text" class="text speakers-text">Pôles d\'activités<br><span class="under-key-data">Bâtiment, Design, 
+      Évolution, Formation, Numérique.</span></div>';
       $block['content'] = $content;
       break;
 
@@ -848,6 +848,15 @@ function kcore_menu_link_alter(&$item) {
   foreach ($new_tab_links as $link) {
     if (strpos($item['link_path'], $link)) {
       $item['options']['attributes']['target'] = '_blank';
+    }
+  }
+}
+
+function kcore_views_pre_render(&$view) {
+  if ($view->name == 'diaporama' && $view->current_display == 'block_home_slideshow') {
+    foreach ($view->result as $key => $item) {
+      $view->result[$key]->field_field_image_scald[0]['rendered']['#markup'] =
+        str_replace($_SERVER['SERVER_ADDR'], $_SERVER['SERVER_NAME'], $item->field_field_image_scald[0]['rendered']['#markup']);
     }
   }
 }
